@@ -1,0 +1,460 @@
+﻿# ============================================================
+# NYROXIS DOCUMENTATION - MkDocs Configuration
+# Professional Multi-language Documentation Site
+# ============================================================
+
+# Site Information
+site_name: Nyroxis Documentation
+site_description: Lightweight, Privacy-First, Offline Cybersecurity Platform
+site_author: Nyroxis Team
+site_url: https://Nyroxis.github.io/Nyroxis-docs/
+copyright: Copyright &copy; 2025 Nyroxis
+
+# Repository
+repo_name: Nyroxis/Nyroxis-docs
+repo_url: https://github.com/Nyroxis/Nyroxis-docs
+edit_uri: edit/main/docs/
+
+# Theme Configuration
+theme:
+  name: material
+  language: en
+  custom_dir: overrides
+  logo: assets/images/logo.png
+  favicon: assets/images/logo.png
+  
+  # Font Configuration
+  font:
+    text: Roboto
+    code: JetBrains Mono
+  
+  # Color Palette
+  palette:
+    # Light Mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    
+    # Dark Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  
+  # Theme Features
+  features:
+    # Navigation
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    
+    # Table of Contents
+    - toc.follow
+    - toc.integrate
+    
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+    
+    # Header
+    - header.autohide
+    
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+
+# Extra CSS
+extra_css:
+  - styles.css
+
+# Extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+      toc_depth: 3
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: Nyroxis
+      repo: Nyroxis-docs
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Plugins
+plugins:
+  - search:
+      lang:
+        - en
+        - fr
+        - de
+      separator: '[\s\-\.]+'
+
+# Extra Configuration
+extra:
+  # Social Links
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Nyroxis
+      name: Nyroxis on GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Nyroxis
+      name: Nyroxis on Twitter
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/nyroxis
+      name: Nyroxis on LinkedIn
+  
+  alternate:
+    - name: English
+      link: en/
+      lang: en
+      icon: 🇬🇧
+    - name: Français
+      link: fr/
+      lang: fr
+      icon: 🇫🇷
+    - name: Deutsch
+      link: de/
+      lang: de
+      icon: 🇩🇪
+    - name: עברית
+      link: he/
+      lang: he
+      icon: 🇮🇱
+      
+# Navigation Structure
+nav:
+  # English Documentation
+  - 🇬🇧 English:
+      - Home: en/index.md
+      - Overview:
+          - Introduction: en/public/01-Overview/introduction_en.md
+          - Vision: en/public/01-Overview/vision_en.md
+          - Problem Context: en/public/01-Overview/problem_context_en.md
+          - Personas: en/public/01-Overview/personas_en.md
+          - Value Proposition: en/public/01-Overview/value_proposition_en.md
+          - Features: en/public/01-Overview/features_en.md
+          - Overview Index: en/public/01-Overview/overview_index_en.md
+      
+      - Architecture:
+          - Components: en/public/02-Architecture/components_en.md
+          - Data Flow: en/public/02-Architecture/data_flow_en.md
+          - High Level: en/public/02-Architecture/high_level_en.md
+      
+      - Agent:
+          - Agent Overview: en/public/03-Agent/agent_overview_en.md
+          - Event Collector: en/public/03-Agent/event_collector_en.md
+          - Protection: en/public/03-Agent/protection_en.md
+      
+      - Dashboard:
+          - UI Design: en/public/04-Dashboard/ui_design_en.md
+          - Logs & Search: en/public/04-Dashboard/logs_en.md
+          - Charts & Analytics: en/public/04-Dashboard/charts_en.md
+          - Rule Matching: en/public/04-Dashboard/rule_matching_en.md
+      
+      - AI Engine:
+          - AI Overview: en/public/05-AI/ai_overview_en.md
+          - AI Engine: en/public/05-AI/ai_engine_en.md
+          - Detections: en/public/05-AI/detections_en.md
+          - Scenarios: en/public/05-AI/scenarios_en.md
+      
+      - Privacy:
+          - Data Storage: en/public/06-Privacy/data_storage_en.md
+          - Offline Mode: en/public/06-Privacy/offline_mode_en.md
+          - Security Model: en/public/06-Privacy/security_model_en.md
+          - User Control: en/public/06-Privacy/user_control_en.md
+      
+      - Use Cases:
+          - Overview: en/public/07-Use-Cases/use_cases_overview_en.md
+          - Family Protection: en/public/07-Use-Cases/family_protection_en.md
+          - Executives: en/public/07-Use-Cases/executives_en.md
+          - Professionals: en/public/07-Use-Cases/professionals_en.md
+          - Technical Users: en/public/07-Use-Cases/technical_users_en.md
+          - Contractors: en/public/07-Use-Cases/contractors_en.md
+      
+      - Security:
+          - Security Overview: en/public/09-Security/security_overview_en.md
+          - Encryption Model: en/public/09-Security/encryption_en.md
+          - Offline Security: en/public/09-Security/offline_security_en.md
+          - Tamper Protection: en/public/09-Security/tamper_protection_en.md
+          - Local AI: en/public/09-Security/local_ai_en.md
+      
+      - Roadmap:
+          - 2025 Roadmap: en/public/10-Roadmap/roadmap-2025_en.md
+      
+      - Licensing:
+          - Editions Overview: en/public/11-Licensing/editions-overview_en.md
+          - Community vs Pro: en/public/11-Licensing/community-vs-pro_en.md
+      
+      - FAQ & Glossary:
+          - FAQ: en/public/12-FAQ-Glossary/faq_en.md
+          - Glossary: en/public/12-FAQ-Glossary/glossary_en.md
+  
+  # French Documentation
+  - 🇫🇷 Français:
+      - Accueil: fr/index.md
+      - Aperçu:
+          - Introduction: fr/public/01-Overview/introduction_fr.md
+          - Vision: fr/public/01-Overview/vision_fr.md
+          - Problématique: fr/public/01-Overview/problem_context_fr.md
+          - Personas: fr/public/01-Overview/personas_fr.md
+          - Proposition de valeur: fr/public/01-Overview/value_proposition_fr.md
+          - Fonctionnalités: fr/public/01-Overview/features_fr.md
+          - Index: fr/public/01-Overview/overview_index_fr.md
+      
+      - Architecture:
+          - Composants: fr/public/02-Architecture/components_fr.md
+          - Flux de données: fr/public/02-Architecture/data_flow_fr.md
+          - Vue d'ensemble: fr/public/02-Architecture/high_level_fr.md
+      
+      - Agent:
+          - Vue Agent: fr/public/03-Agent/agent_overview_fr.md
+          - Collecteur d'événements: fr/public/03-Agent/event_collector_fr.md
+          - Protection: fr/public/03-Agent/protection_fr.md
+      
+      - Dashboard:
+          - Interface: fr/public/04-Dashboard/ui_design_fr.md
+          - Logs: fr/public/04-Dashboard/logs_fr.md
+          - Graphiques: fr/public/04-Dashboard/charts_fr.md
+          - Règles: fr/public/04-Dashboard/rule_matching_fr.md
+      
+      - Moteur IA:
+          - Aperçu IA: fr/public/05-AI/ai_overview_fr.md
+          - Moteur IA: fr/public/05-AI/ai_engine_fr.md
+          - Détections: fr/public/05-AI/detections_fr.md
+          - Scénarios: fr/public/05-AI/scenarios_fr.md
+      
+      - Confidentialité:
+          - Stockage: fr/public/06-Privacy/data_storage_fr.md
+          - Mode hors-ligne: fr/public/06-Privacy/offline_mode_fr.md
+          - Modèle de sécurité: fr/public/06-Privacy/security_model_fr.md
+          - Contrôle utilisateur: fr/public/06-Privacy/user_control_fr.md
+      
+      - Cas d'usage:
+          - Aperçu: fr/public/07-Use-Cases/use_cases_overview_fr.md
+          - Protection familiale: fr/public/07-Use-Cases/family_protection_fr.md
+          - Dirigeants: fr/public/07-Use-Cases/executives_fr.md
+          - Professionnels: fr/public/07-Use-Cases/professionals_fr.md
+          - Utilisateurs techniques: fr/public/07-Use-Cases/technical_users_fr.md
+          - Consultants: fr/public/07-Use-Cases/contractors_fr.md
+      
+      - Sécurité:
+          - Aperçu sécurité: fr/public/09-Security/security_overview_fr.md
+          - Chiffrement: fr/public/09-Security/encryption_fr.md
+          - Sécurité hors-ligne: fr/public/09-Security/offline_security_fr.md
+          - Protection anti-tamper: fr/public/09-Security/tamper_protection_fr.md
+          - IA locale: fr/public/09-Security/local_ai_fr.md
+      
+      - Feuille de route:
+          - Roadmap 2025: fr/public/10-Roadmap/roadmap-2025_fr.md
+      
+      - Licensing:
+          - Aperçu éditions: fr/public/11-Licensing/editions-overview_fr.md
+          - Community vs Pro: fr/public/11-Licensing/community-vs-pro_fr.md
+      
+      - FAQ & Glossaire:
+          - FAQ: fr/public/12-FAQ-Glossary/faq_fr.md
+          - Glossaire: fr/public/12-FAQ-Glossary/glossary_fr.md
+          
+  # German Documentation       
+  # German Documentation
+  - 🇩🇪 Deutsch:
+      - Startseite: de/index.md
+      - Übersicht:
+          - Einführung: de/public/01-Overview/introduction_de.md
+          - Vision: de/public/01-Overview/vision_de.md
+          - Problemkontext: de/public/01-Overview/problem_context_de.md
+          - Personas: de/public/01-Overview/personas_de.md
+          - Wertversprechen: de/public/01-Overview/value_proposition_de.md
+          - Funktionen: de/public/01-Overview/features_de.md
+          - Übersicht Index: de/public/01-Overview/overview_index_de.md
+      
+      - Architektur:
+          - Komponenten: de/public/02-Architecture/components_de.md
+          - Datenfluss: de/public/02-Architecture/data_flow_de.md
+          - High Level: de/public/02-Architecture/high_level_de.md
+      
+      - Agent:
+          - Agent Übersicht: de/public/03-Agent/agent_overview_de.md
+          - Event Collector: de/public/03-Agent/event_collector_de.md
+          - Schutz: de/public/03-Agent/protection_de.md
+      
+      - Dashboard:
+          - Benutzeroberfläche: de/public/04-Dashboard/ui_design_de.md
+          - Protokolle: de/public/04-Dashboard/logs_de.md
+          - Diagramme: de/public/04-Dashboard/charts_de.md
+          - Regelabgleich: de/public/04-Dashboard/rule_matching_de.md
+      
+      - KI-Engine:
+          - KI Übersicht: de/public/05-AI/ai_overview_de.md
+          - KI Engine: de/public/05-AI/ai_engine_de.md
+          - Erkennungen: de/public/05-AI/detections_de.md
+          - Szenarien: de/public/05-AI/scenarios_de.md
+      
+      - Datenschutz:
+          - Datenspeicherung: de/public/06-Privacy/data_storage_de.md
+          - Offline-Modus: de/public/06-Privacy/offline_mode_de.md
+          - Sicherheitsmodell: de/public/06-Privacy/security_model_de.md
+          - Benutzerkontrolle: de/public/06-Privacy/user_control_de.md
+      
+      - Anwendungsfälle:
+          - Übersicht: de/public/07-Use-Cases/use_cases_overview_de.md
+          - Familienschutz: de/public/07-Use-Cases/family_protection_de.md
+          - Führungskräfte: de/public/07-Use-Cases/executives_de.md
+          - Fachleute: de/public/07-Use-Cases/professionals_de.md
+          - Technische Benutzer: de/public/07-Use-Cases/technical_users_de.md
+          - Auftragnehmer: de/public/07-Use-Cases/contractors_de.md
+      
+      - Sicherheit:
+          - Sicherheitsübersicht: de/public/09-Security/security_overview_de.md
+          - Verschlüsselung: de/public/09-Security/encryption_de.md
+          - Offline-Sicherheit: de/public/09-Security/offline_security_de.md
+          - Manipulationsschutz: de/public/09-Security/tamper_protection_de.md
+          - Lokale KI: de/public/09-Security/local_ai_de.md
+      
+      - Roadmap:
+          - Roadmap 2025: de/public/10-Roadmap/roadmap-2025_de.md
+      
+      - Lizenzierung:
+          - Editions Übersicht: de/public/11-Licensing/editions-overview_de.md
+          - Community vs Pro: de/public/11-Licensing/community-vs-pro_de.md
+      
+      - FAQ & Glossar:
+          - FAQ: de/public/12-FAQ-Glossary/faq_de.md
+          - Glossar: de/public/12-FAQ-Glossary/glossary_de.md
+  
+
+  # Hebrew Documentation
+  - 🇮🇱 עברית:
+      - בית: he/index.md
+      - סקירה:
+          - מבוא: he/public/01-Overview/introduction_he.md
+          - חזון: he/public/01-Overview/vision_he.md
+          - בעייתיות: he/public/01-Overview/problem_context_he.md
+          - פרסונות: he/public/01-Overview/personas_he.md
+          - ערך: he/public/01-Overview/value_proposition_he.md
+          - פיצ'רים: he/public/01-Overview/features_he.md
+          - אינדקס: he/public/01-Overview/overview_index_he.md
+      
+      - ארכיטקטורה:
+          - רכיבים: he/public/02-Architecture/components_he.md
+          - זרימת נתונים: he/public/02-Architecture/data_flow_he.md
+          - רמה גבוהה: he/public/02-Architecture/high_level_he.md
+      
+      - Agent:
+          - סקירה: he/public/03-Agent/agent_overview_he.md
+          - איסוף אירועים: he/public/03-Agent/event_collector_he.md
+          - הגנה: he/public/03-Agent/protection_he.md
+      
+      - Dashboard:
+          - ממשק: he/public/04-Dashboard/ui_design_he.md
+          - לוגים: he/public/04-Dashboard/logs_he.md
+          - גרפים: he/public/04-Dashboard/charts_he.md
+          - חוקים: he/public/04-Dashboard/rule_matching_he.md
+      
+      - מנוע AI:
+          - סקירת AI: he/public/05-AI/ai_overview_he.md
+          - מנוע AI: he/public/05-AI/ai_engine_he.md
+          - זיהויים: he/public/05-AI/detections_he.md
+          - תרחישים: he/public/05-AI/scenarios_he.md
+      
+      - פרטיות:
+          - אחסון: he/public/06-Privacy/data_storage_he.md
+          - מצב אופליין: he/public/06-Privacy/offline_mode_he.md
+          - מודל אבטחה: he/public/06-Privacy/security_model_he.md
+          - שליטת משתמש: he/public/06-Privacy/user_control_he.md
+      
+      - מקרי שימוש:
+          - סקירה: he/public/07-Use-Cases/use_cases_overview_he.md
+          - הגנת משפחות: he/public/07-Use-Cases/family_protection_he.md
+          - מנהלים: he/public/07-Use-Cases/executives_he.md
+          - מקצועיים: he/public/07-Use-Cases/professionals_he.md
+          - טכנאים: he/public/07-Use-Cases/technical_users_he.md
+          - קבלנים: he/public/07-Use-Cases/contractors_he.md
+      
+      - אבטחה:
+          - סקירת אבטחה: he/public/09-Security/security_overview_he.md
+          - הצפנה: he/public/09-Security/encryption_he.md
+          - אבטחה אופליין: he/public/09-Security/offline_security_he.md
+          - אנטי-טמפר: he/public/09-Security/tamper_protection_he.md
+          - AI מקומי: he/public/09-Security/local_ai_he.md
+      
+      - מפת דרכים:
+          - Roadmap 2025: he/public/10-Roadmap/roadmap-2025_he.md
+      
+      - רישוי:
+          - סקירת מהדורות: he/public/11-Licensing/editions-overview_he.md
+          - Community vs Pro: he/public/11-Licensing/community-vs-pro_he.md
+      
+      - FAQ & מילון:
+          - שאלות נפוצות: he/public/12-FAQ-Glossary/faq_he.md
+          - מילון מונחים: he/public/12-FAQ-Glossary/glossary_he.md
+
+
+# Validation
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: warn
+    absolute_links: info
+    unrecognized_links: info

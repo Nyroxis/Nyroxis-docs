@@ -1,0 +1,43 @@
+/* Nyroxis minimal branding */
+:root {
+  --md-primary-fg-color: #1f1f2e;
+  --md-accent-fg-color: #3b6be0;
+}
+
+/* Hebrew RTL support */
+:lang(he) {
+  direction: rtl;
+  text-align: right;
+}
+/* Highlight TOP-LEVEL sections (Overview, Architecture, Agent, Dashboard, AI Engine) */
+.md-nav--primary .md-nav__item--section > .md-nav__title {
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    color: var(--md-default-fg-color) !important;
+    padding-top: 12px !important;
+    padding-bottom: 4px !important;
+    opacity: 0.95 !important;
+}
+
+/* Make child items visually softer */
+.md-nav--primary .md-nav__item:not(.md-nav__item--section) > .md-nav__link {
+    font-size: 0.78rem !important;
+    font-weight: 400 !important;
+    color: var(--md-default-fg-color--light) !important;
+    padding-left: 8px !important;
+}
+
+/* Add spacing between each section block */
+.md-nav--primary .md-nav__item--section {
+    margin-top: 12px !important;
+}
+
+
+.md-header__button.md-logo img {
+    height: 48px !important;
+    width: auto !important;
+}
+
+
