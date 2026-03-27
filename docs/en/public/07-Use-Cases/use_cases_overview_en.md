@@ -1,79 +1,86 @@
 # Use Cases — Overview
 
-Nyroxis is designed to protect individuals, families, professionals, and high‑value users who need strong security **without** exposing their data to the cloud.  
-This section provides a high‑level overview of the core use cases where Nyroxis delivers real value.
+Nyroxis is designed to protect individuals, families, professionals, and high-value users who need strong security **without** exposing their data to the cloud.
+This section provides a high-level overview of the core use cases where Nyroxis delivers real value.
 
 ---
 
-## ‍ 1. Personal Security for Everyday Users
-Nyroxis protects non‑technical users by:
-- Detecting suspicious behavior  
-- Highlighting unusual activity  
-- Providing clear alerts  
-- Operating fully offline  
+## 1. Executives & High-Value Targets
 
-Ideal for users who want simple, private, trustworthy security.
-
----
-
-##  2. Family Device Protection
-Nyroxis strengthens security for families by:
-- Monitoring child and parent devices  
-- Preventing silent malware  
-- Detecting unsafe patterns  
-- Keeping all data fully local  
-
-No cloud dependency for sensitive family devices.
-
----
-
-##  3. Executives & High‑Value Targets
-Executives and public‑facing individuals face higher digital risks.
+Executives, senior managers, judges, and public figures face a significantly higher level of digital risk — and their personal devices are rarely covered by corporate security.
 
 Nyroxis provides:
-- Local AI detection  
-- Offline anomaly analysis  
-- Zero‑cloud data processing  
-- Private incident visibility  
+- Multi-layer detection across 27 + 12 + 2 rules
+- Local AI/ML anomaly detection
+- Zero-cloud data processing
+- Forensic-grade evidence always ready
+- Full offline operation — even during travel
 
-Perfect for people who cannot risk cloud exposure.
-
----
-
-##  4. Professionals in High‑Privacy Fields
-Such as:
-- Lawyers  
-- Journalists  
-- Psychologists  
-- NGOs  
-- Researchers  
-- Human‑rights activists  
-
-Nyroxis ensures they keep full control of sensitive digital activity.
+Perfect for people who cannot risk cloud exposure and must maintain strict personal privacy.
 
 ---
 
-##  5. Independent Contractors & Consultants
-For professionals using personal laptops:
-- No corporate EDR installed  
-- No centralized monitoring  
-- High exposure during travel  
+## 2. Legal Professionals, Judges & Public Servants
 
-Nyroxis provides local, autonomous protection.
+Professionals in sensitive roles need protection that does not compromise client confidentiality or expose case-related activity to third parties.
+
+Nyroxis provides:
+- Fully local detection and storage
+- Tamper-resistant forensic evidence
+- No behavioral data leaving the device
+- Protection suitable for legal and regulatory requirements
 
 ---
 
-##  6. Technical Users & Security Analysts
-Nyroxis helps technical users by providing:
-- Local visibility  
-- Raw logs (encrypted)  
-- Offline analysis  
-- Behavioral insights  
-- No vendor lock‑in  
+## 3. Doctors, Journalists & High-Privacy Professions
 
-Ideal for users who demand transparency and control.
+Lawyers, journalists, psychologists, NGOs, researchers, and medical professionals handle regulated or sensitive information and cannot risk cloud-based monitoring tools.
+
+Nyroxis ensures:
+- No external servers
+- No telemetry
+- No remote monitoring
+- Detection without exposure of client data
+
+---
+
+## 4. Family Device Protection
+
+Modern families face silent malware, phishing attacks, unsafe downloads, and compromised home devices — with no structured monitoring to detect them.
+
+Nyroxis provides:
+- Protection for child and parent devices
+- Clear, simple alerts for non-technical users
+- No monitoring of personal content
+- All data fully local and encrypted
+
+---
+
+## 5. Independent Contractors & Consultants
+
+Freelancers and consultants use personal laptops, connect to unsecured networks, and handle sensitive client material — without corporate EDR protection.
+
+Nyroxis provides:
+- Local-only protection without corporate surveillance
+- Offline AI detection for mobile workflows
+- No collection of client data
+- Autonomous protection across multiple client environments
+
+---
+
+## 6. Technical Users & Security Analysts
+
+Security professionals and cybersecurity enthusiasts want local visibility, transparent AI behavior, extensible detection, and full control over their data.
+
+Nyroxis provides:
+- Encrypted raw event logs
+- Extensible rule engine — write and deploy custom rules
+- Local AI/ML with explainable anomaly scores
+- No vendor lock-in, no cloud telemetry
+- Hands-on forensic investigation capability
 
 ---
 
 ## Summary
-Nyroxis supports a diverse range of users — from families to executives — providing private, offline, encrypted security insights without exposing any data to the cloud.
+
+Nyroxis supports a diverse range of users — from families to executives, from independent consultants to security professionals — providing private, offline, forensic-grade security without exposing any data to the cloud.

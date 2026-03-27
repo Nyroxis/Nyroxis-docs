@@ -1,61 +1,59 @@
 # Architecture Overview
 
-Nyroxis is built on a lightweight, privacy‑first architecture designed to deliver enterprise‑grade visibility without relying on the cloud.  
-The system runs fully on the user’s device and is composed of clear, independent components that work together securely.
+Nyroxis is built on a lightweight, privacy-first architecture designed to deliver enterprise-grade visibility and detection without relying on the cloud.
+The system runs fully on the user's device and is composed of four independent components that work together securely.
 
 ---
 
 ## Core Components
 
-Nyroxis consists of the following high-level modules:
-
-### **1. Nyroxis Agent**
+### 1. Nyroxis Agent
 A lightweight endpoint monitor that:
-- Collects security‑relevant events  
-- Encrypts and stores them locally  
-- Ensures tamper‑resistant data integrity  
-- Operates 100% offline  
+- Collects security-relevant events from multiple system channels
+- Normalizes and encrypts them immediately at capture
+- Stores everything in a local tamper-resistant database
+- Operates 100% offline — ~57 MB RAM, ~0.1% CPU
 
-### **2. Encrypted Local Database**
-All collected events are stored in:
-- A secured local datastore  
-- Fully encrypted at rest  
-- Structured for fast analysis and timeline reconstruction  
+### 2. Nyroxis Intelligence
+A high-speed detection and correlation engine that:
+- Applies 27 detection rules against individual events
+- Runs 12 correlation rules across related events over time
+- Executes 2 chain rules to detect multi-stage attack sequences
+- Raises immediate alerts on any rule match
+- Accepts custom rules from security professionals
+- ~87 MB RAM, ~1.8% CPU
 
-### **3. Nyroxis Dashboard**
-A clean and intuitive interface that:
-- Displays logs, alerts, and correlations  
-- Generates charts and timelines  
-- Provides explanations and severity indicators  
-- Helps both experts and non‑technical users  
+### 3. Nyroxis System Guardian
+A silent system tray guardian that:
+- Monitors Nyroxis Agent and Intelligence every 3 seconds
+- Manages backups and HWID-based license validation (fully offline)
+- Checks for updates automatically
+- Stops services automatically if license expires
+- ~6.5 MB RAM, ~0.1% CPU
 
-### **4. Local Analysis Engine**
-Nyroxis includes:
-- Lightweight behavioral heuristics  
-- AI‑assisted scoring  
-- Event correlation logic  
-All processing happens **locally**, ensuring privacy.
-
-### **5. Optional Licensing Validation (Local‑First)**
-Nyroxis can validate license integrity without sending event data.  
-Only minimal metadata (if required by the user) is exchanged — never logs.
+### 4. Nyroxis Dashboard
+A clear and intuitive interface that:
+- Displays events, detections, correlations, and chains
+- Provides forensic search, charts, and PDF/CSV reporting
+- Includes a local AI/ML engine (Isolation Forest + statistical analysis)
+- Supports English, French, and German
 
 ---
 
 ## High-Level Data Flow
 
-The architecture follows a simple, transparent lifecycle:
-
 ```
-[ System Events ]  
-        ↓  
-[ Nyroxis Agent ]  
-        ↓ (encrypted)
-[ Local Encrypted Database ]  
-        ↓  
-[ Local Analysis Engine ]  
-        ↓  
-[ Nyroxis Dashboard ]
+[ System Events ]
+        ↓
+[ Nyroxis Agent ]          ← collect, normalize, encrypt
+        ↓
+[ Local Encrypted DB ]     ← AES-256, SQLite, hash-chained
+        ↓
+[ Nyroxis Intelligence ]   ← 27 detection + 12 correlation + 2 chain rules
+        ↓
+[ Nyroxis Dashboard ]      ← visibility, AI/ML, forensics, reporting
+        ↑
+[ Nyroxis System Guardian ] ← monitors, backs up, validates license
 ```
 
 At no stage are logs or sensitive data uploaded to external servers.
@@ -64,27 +62,30 @@ At no stage are logs or sensitive data uploaded to external servers.
 
 ## Design Principles
 
-### **Privacy by Design**
-- No cloud ingestion  
-- Local encryption  
-- User retains full control  
+### Privacy by Design
+- No cloud ingestion
+- Local encryption at capture
+- User retains full control at all times
 
-### **Simplicity & Clarity**
-- Clean architecture  
-- Easy to understand  
-- Suitable for families, professionals, and experts  
+### Forensic Integrity
+- AES-256 encrypted logs
+- Hash-chained event blocks
+- Tamper-resistant storage suitable for legal proceedings
 
-### **Lightweight Operation**
-Built to run smoothly even on older laptops and home devices.
+### Lightweight Operation
+Built to run smoothly on personal laptops and workstations without impacting daily productivity.
 
-### **Offline‑First Security**
+### Offline-First Security
 No internet connection is required for:
-- Monitoring  
-- Analysis  
-- Dashboard usage  
-- Event correlation  
+- Monitoring and detection
+- AI/ML analysis
+- Dashboard usage
+- License validation
+
+### Extensibility
+Security professionals can write and deploy custom detection, correlation, and chain rules without modifying the core system.
 
 ---
 
 ## Summary
-Nyroxis provides a modern, minimalistic, and secure architecture that brings professional‑grade visibility to personal devices — entirely offline and with full respect for user privacy.
+Nyroxis provides a modern, modular, and forensically sound architecture that brings professional-grade visibility and detection to personal devices — entirely offline, with full respect for user privacy.

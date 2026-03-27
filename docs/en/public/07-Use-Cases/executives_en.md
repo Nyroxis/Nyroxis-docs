@@ -1,88 +1,94 @@
 # Executives & High-Value Individuals
 
-Executives, public figures, and high‑value individuals face a significantly higher level of digital risk.  
-Nyroxis provides a private, offline, tamper‑resistant protection layer designed specifically for people who cannot risk cloud exposure.
+Executives, public figures, senior managers, and high-value individuals face a significantly higher level of digital risk.
+Nyroxis provides a private, offline, tamper-resistant protection layer designed specifically for people who cannot risk cloud exposure.
 
 ---
 
-##  Why Executives Are High-Risk Targets
+## Why Executives Are High-Risk Targets
+
 Executives are frequently targeted due to:
-- Access to sensitive corporate information  
-- Financial influence  
-- Public visibility  
-- Travel with unsecured networks  
-- Personal devices that lack corporate protection  
+- Access to sensitive corporate information and strategic decisions
+- Financial influence and access to corporate systems
+- Public visibility making them identifiable targets
+- Travel with unsecured and untrusted networks
+- Personal devices that are entirely outside corporate EDR coverage
 
-Nyroxis protects them without requiring cloud-based EDR or centralized monitoring.
+A single compromised personal device can become the entry point into critical corporate infrastructure.
 
 ---
 
-##  1. Private, Local Security — No Cloud Exposure
+## 1. Private, Local Security — No Cloud Exposure
+
 Executives often cannot send device data to:
-- External security companies  
-- Cloud providers  
-- Third‑party SOCs  
+- External security companies
+- Cloud providers
+- Third-party SOCs
 
 Nyroxis solves this with:
-- Fully local encryption  
-- Local AI detection  
-- Zero‑cloud data processing  
-- No telemetry  
+- Fully local encryption (AES-256)
+- Multi-layer rule-based detection (27 + 12 + 2 rules)
+- Local AI/ML anomaly detection
+- Zero-cloud data processing
+- No telemetry of any kind
 
 Nothing is uploaded. Ever.
 
 ---
 
-##  2. Detects Targeted Attacks Early
+## 2. Detects Targeted Attacks Early
+
 Nyroxis identifies behaviors associated with:
-- Spear‑phishing payloads  
-- Targeted malware  
-- Credential theft attempts  
-- Silent persistence mechanisms  
-- Network beaconing to foreign hosts  
-- Long‑term, low‑noise intrusions  
+- Spear-phishing payloads and script execution
+- Targeted malware and silent backdoors
+- Credential theft attempts
+- Silent persistence mechanisms
+- Network beaconing to foreign or unknown hosts
+- Long-term, low-noise intrusions (chain detection)
 
-Executives receive clear explanations and severity levels.
+Executives receive clear severity indicators and forensic-grade evidence.
 
 ---
 
-##  3. Offline AI (NyXIA) for High-Risk Environments
+## 3. Offline Operation for High-Risk Environments
+
 Executives often work:
-- On the move  
-- In foreign hotels  
-- On public or semi‑public Wi‑Fi  
-- On personal laptops outside corporate control  
+- On the move across multiple countries
+- In foreign hotels on untrusted networks
+- On public or semi-public Wi-Fi
+- On personal laptops entirely outside corporate control
 
-NyXIA analyzes all activity locally, offering:
-- Behavioral anomaly detection  
-- Scenario interpretation  
-- Early warning signals  
-
-All offline, encrypted, and private.
+Nyroxis operates with:
+- Full offline capability — no internet required
+- Continuous monitoring regardless of connectivity
+- Forensic evidence preserved even without network access
 
 ---
 
-##  4. Perfect for Travel
-During travel, risks increase:
-- Evil‑twin Wi‑Fi  
-- Compromised routers  
-- Malicious USB charging ports  
-- Local interception attempts  
+## 4. Perfect for Travel
 
-Nyroxis provides an autonomous protection layer that works even without internet access.
+During travel, risks increase significantly:
+- Evil-twin Wi-Fi networks
+- Compromised routers and hotel networks
+- Malicious USB charging ports
+- Local interception and surveillance attempts
+
+Nyroxis provides an autonomous, air-gap-capable protection layer that travels with the executive and requires no external infrastructure.
 
 ---
 
-##  5. No Central Monitoring — True Personal Privacy
+## 5. No Central Monitoring — True Personal Privacy
+
 Unlike enterprise EDR, Nyroxis:
-- Does not send logs to any server  
-- Does not give administrators remote access  
-- Does not track user behavior  
-- Does not collect corporate data  
+- Does not send logs to any server
+- Does not give IT administrators remote access to personal device data
+- Does not track user behavior or habits
+- Does not collect any corporate or personal content
 
 The executive retains full device privacy.
 
 ---
 
-##  Summary
-Nyroxis gives executives high‑grade, private, fully offline protection — ideal for individuals who cannot risk cloud exposure and must maintain strict personal security.
+## Summary
+
+Nyroxis gives executives high-grade, private, fully offline protection — ideal for individuals who cannot risk cloud exposure, need forensic-grade evidence, and must maintain strict personal and professional security at all times.

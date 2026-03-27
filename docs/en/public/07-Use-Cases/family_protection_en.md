@@ -4,74 +4,77 @@ Nyroxis provides a safe, private, and offline security layer for families — en
 
 ---
 
-## ‍ Why Family Protection Matters
-Modern families face risks such as:
-- Silent malware on kids’ laptops  
-- Unsafe download habits  
-- Phishing attacks  
-- Compromised home devices  
-- Tracking or spying software  
+## Why Family Protection Matters
+
+Modern families face risks that are often invisible:
+- Silent malware installed on kids' laptops
+- Phishing attacks targeting family members
+- Compromised home devices used as entry points
+- Tracking or spying software running undetected
+- Unsafe downloads and scripts executed without awareness
 
 Nyroxis protects families **without monitoring content**, respecting privacy at every step.
 
 ---
 
-##  1. Local, Private Security for All Family Members
+## 1. Local, Private Security for All Family Members
+
 Nyroxis helps protect:
-- Child devices  
-- Parent laptops  
-- Shared home computers  
-- Work-from-home devices  
+- Children's laptops and shared computers
+- Parent work-from-home devices
+- Family tablets and home workstations
 
 No data leaves the home — everything stays encrypted and local.
+No cloud account is required. No subscription to a monitoring service.
 
 ---
 
-##  2. Detects Dangerous Behavior Early
+## 2. Detects Dangerous Behavior Early
+
 Nyroxis identifies:
-- Suspicious downloads  
-- Unknown processes  
-- Unexpected network connections  
-- Unusual activity patterns  
-- Ransomware-like behavior  
+- Unknown processes running silently
+- Unexpected network connections to unknown destinations
+- Suspicious script execution
+- Ransomware-like file modification patterns
+- Persistence mechanisms attempting to survive reboot
 
 Families are notified with clear, easy-to-understand alerts.
 
 ---
 
-##  3. Offline AI for Household Safety
-NyXIA works offline and provides:
-- Behavioral anomaly detection  
-- Scenario explanations  
-- Early warning signals  
-- Local-only analysis  
+## 3. Local AI/ML for Household Safety
 
-No cloud tracking, no data collection.
+The local AI/ML engine runs fully offline and provides:
+- Behavioral anomaly detection per device
+- Scenario-based explanations of suspicious activity
+- Early warning signals before threats escalate
+- Z-Score statistical classification for clear severity levels
+
+No cloud tracking, no behavioral profiling, no data collection.
 
 ---
 
-##  4. Perfect for Children’s Privacy
+## 4. Security Without Content Monitoring
+
 Nyroxis does **not** monitor:
-- Browsing history  
-- Personal files  
-- Messages or chats  
-- Photos or documents  
+- Browsing history
+- Personal files or documents
+- Messages or chats
+- Photos or videos
 
-It protects **security**, not **content**.
+It protects **security events** — not content.
 
-This ensures that children’s privacy remains intact.
-
----
-
-##  5. Multiple Users, One Protection Model
-Nyroxis adapts to:
-- Different usage patterns  
-- Different activity windows  
-- Different household routines  
-
-Each device builds its own local behavioral profile.
+Children's privacy remains fully intact.
 
 ---
 
-##  Summary
-Nyroxis provides a strong, private, cloud-free security solution for families — protecting everyone in the home while keeping all data encrypted and local.
+## 5. Each Device Builds Its Own Profile
+
+Each device in the household develops its own local behavioral baseline.
+Nyroxis adapts to different usage patterns, different activity windows, and different routines — providing personalized anomaly detection without exposing data across devices.
+
+---
+
+## Summary
+
+Nyroxis provides a strong, private, cloud-free security solution for families — protecting everyone in the home while keeping all data encrypted and local, and never monitoring personal content.

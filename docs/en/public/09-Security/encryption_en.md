@@ -1,108 +1,109 @@
 # Encryption Model
 
-Nyroxis implements a strict, multi‑layered encryption model designed to ensure that **no readable data ever touches disk**, and that all security events remain protected, private, and verifiable.
-
-This page describes how encryption is applied across the entire platform.
+Nyroxis implements a strict, multi-layered encryption model designed to ensure that **no readable data ever touches disk**, and that all security events remain protected, private, and verifiable.
 
 ---
 
-##  Core Goals of the Encryption Model
-Nyroxis encryption is designed to achieve:
+## Core Goals
 
-- **Confidentiality** — no one can read user data  
-- **Integrity** — no one can modify logs undetected  
-- **Isolation** — data never leaves the device  
-- **Zero plaintext storage** — everything encrypted at capture  
-- **Offline operation** — no need for cloud keys or servers  
+Nyroxis encryption achieves:
+- **Confidentiality** — no one can read user data
+- **Integrity** — no one can modify logs undetected
+- **Isolation** — data never leaves the device
+- **Zero plaintext storage** — everything encrypted at capture
+- **Offline operation** — no cloud keys or servers required
 
 ---
 
-##  1. Encryption at Event Capture
-Every system event is encrypted *the moment it is collected* by the Agent.
+## 1. Encryption at Event Capture
+
+Every system event is encrypted the moment it is collected by Nyroxis Agent.
 
 Steps:
-1. Event is serialized in memory  
-2. A device‑specific key is loaded  
-3. The event is encrypted with AES‑based encryption  
-4. Only the encrypted block is written to storage  
+1. Event is serialized in memory
+2. A device-specific key is derived from hardware identifiers (HWID)
+3. The event is encrypted with AES-256
+4. Only the encrypted block is written to storage
 
 No plaintext logs are ever written.
 
 ---
 
-##  2. Encrypted Local Database
-All logs and metadata are stored inside a secure encrypted database.
+## 2. Encrypted Local Database
 
-Features include:
-- AES‑encrypted data pages  
-- Encrypted metadata  
-- Hash‑chained storage blocks  
-- Per‑record integrity verification  
-- No plaintext caching  
+All logs, detection findings, AI results, and metadata are stored inside a secure SQLite database.
 
-The database cannot be opened or read outside Nyroxis.
+Features:
+- AES-256 encrypted data pages
+- Encrypted metadata
+- Hash-chained storage blocks
+- Per-record integrity verification
+- No plaintext caching
+
+The database cannot be opened or read outside Nyroxis, and cannot be decrypted on a different device.
 
 ---
 
-##  3. In‑Memory Decryption Only (AI & Dashboard)
+## 3. In-Memory Decryption Only
+
 Nyroxis decrypts records *only while processing them*:
+- AI/ML engine decrypts event batches in RAM during analysis
+- Dashboard decrypts only what it needs to display, in memory
+- Nothing is written back in plaintext
+- Memory buffers are cleared after use
 
-- NyXIA decrypts event batches in RAM  
-- Dashboard decrypts only what it needs to display summaries  
-- Nothing is written back in plaintext  
-- Memory buffers are securely cleared  
-
-This eliminates risk of forensic recovery.
-
----
-
-##  4. Device‑Bound Keys
-Encryption keys are tied to the user’s machine using:
-- Hardware identifiers  
-- Local derivation  
-- Salted hashing  
-- Split secrets  
-
-Keys are **never stored directly** and **never transmitted**.
-
-Even if the database is copied, it cannot be decrypted elsewhere.
+This eliminates the risk of forensic recovery of plaintext from disk.
 
 ---
 
-##  5. Integrity Protection
+## 4. Device-Bound Keys
+
+Encryption keys are:
+- Derived from the user's hardware identifiers (HWID)
+- Generated locally using salted hashing
+- Never stored directly inside the application
+- Never transmitted to any server
+
+Even if the database file is copied to another device, it cannot be decrypted — it is bound to the original hardware.
+
+---
+
+## 5. Integrity Protection — Hash Chain
+
 Each encrypted block contains:
-- Integrity hash  
-- Event sequence marker  
-- Tamper flag  
-- Link to the previous block  
+- Integrity hash of the block content
+- Event sequence index
+- Hash of the previous block
 
-This forms a **hash‑chain** that exposes:
-- Log deletion  
-- Log modification  
-- Log reordering  
-- Log injection  
+This forms a **hash chain** that exposes:
+- Log deletion — next block's previous-hash will not match
+- Log modification — block hash will not match
+- Log reordering — sequence index will be wrong
+- Log injection — chain and sequence checks will fail
 
-Tampering becomes immediately detectable.
-
----
-
-##  6. No Cloud Involvement
-Nyroxis does *not* use:
-- Cloud key vaults  
-- Remote servers  
-- Online activation  
-- Telemetry systems  
-
-All encryption, key derivation, and verification are local.
+Tampering is immediately detectable.
 
 ---
 
-##  Summary
+## 6. No Cloud Involvement
+
+Nyroxis does not use:
+- Cloud key vaults
+- Remote key servers
+- Online activation
+- Telemetry systems
+
+All encryption, key derivation, and integrity verification are entirely local.
+
+---
+
+## Summary
+
 Nyroxis encryption ensures:
-- Zero plaintext  
-- Encrypted‑everywhere design  
-- Local‑only keys  
-- Tamper‑resistant logs  
-- Privacy‑preserving AI  
+- Zero plaintext storage
+- Encrypted-everywhere design
+- Device-bound local keys
+- Hash-chained tamper-resistant logs
+- In-memory-only decryption
 
 A modern encryption model built for personal security and full offline autonomy.

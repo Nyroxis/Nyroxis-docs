@@ -1,103 +1,111 @@
 # AI Engine — Internal Mechanics
 
-The Nyroxis AI Engine (NyXIA) is designed to run fully locally, performing intelligent analysis on encrypted security events without relying on cloud services.  
-This document explains the internal mechanics in a simple, semi-technical way suitable for both users and investors.
+The Nyroxis AI/ML engine is designed to run fully locally, performing intelligent analysis on encrypted security events without relying on cloud services.
 
 ---
 
-##  Core Design Principles
-NyXIA is built on four foundational principles:
+## Core Design Principles
 
-### **1. Privacy‑First**
-- No cloud processing  
-- No external APIs  
-- No data sharing  
-All intelligence runs on the user’s own device.
+### 1. Privacy-First
+- No cloud processing
+- No external APIs
+- No data sharing
 
-### **2. Lightweight AI**
-Models are optimized for:
-- Low CPU usage  
-- Minimal memory  
-- Real-time execution  
+All intelligence runs on the user's own device.
 
-### **3. Behavioral Understanding**
-Instead of analyzing logs individually, NyXIA understands *patterns* that occur across time.
+### 2. Lightweight Implementation
+Built entirely in Rust without external ML libraries:
+- ~Low CPU usage
+- Minimal memory footprint
+- Real-time execution
 
-### **4. Fully Offline Operation**
-All analysis, learning, and decision-making happen locally.
+### 3. Behavioral Understanding
+Instead of analyzing events individually, the engine understands *patterns* that occur across time and across multiple event dimensions.
+
+### 4. Fully Offline Operation
+All analysis, scoring, and feature extraction happen locally — no internet required at any stage.
 
 ---
 
-##  How the Engine Processes Data
+## Isolation Forest — How It Works
 
-### **1. Event Intake**
-Nyroxis Agent collects:
-- Process events  
-- Network events  
-- File system changes  
-- Privilege-related actions  
-All encrypted before reaching NyXIA.
+The Isolation Forest algorithm isolates anomalies by building random decision trees and measuring how quickly each data point is separated from the rest.
 
-### **2. Sequence Builder**
-Events are grouped into short windows:
+**The principle:**
+- Normal events require many splits to isolate (they blend in with others)
+- Anomalous events require fewer splits (they stand out)
+- Shorter isolation path = higher anomaly score
+
+**Nyroxis implementation:**
+- 100 isolation trees built per analysis cycle
+- 256 random samples used per tree
+- All 8 behavioral features normalized before analysis
+- Anomaly score threshold: 0.6 (above this = detection triggered)
+- Contributing features identified via Z-score deviation (threshold: 2.0 standard deviations)
+
+---
+
+## Statistical Analysis Pipeline
+
+### Z-Score Classification
+Every monitored value is evaluated against its historical baseline:
+
 ```
-w(t) = {event_t, event_t+1, ..., event_t+k}
+z = (value - mean) / standard_deviation
 ```
-This allows the AI to detect multi-step behavior.
 
-### **3. Feature Extraction**
-For each window, NyXIA extracts lightweight features:
-- Process lineage  
-- Network entropy  
-- File access patterns  
-- Timing irregularities  
-- Behavioral deltas  
+| |z| | Severity | Confidence |
+|------|----------|------------|
+| > 3.0 | Critical | 99.7% |
+| > 2.0 | High | 95% |
+| > 1.5 | Medium | 86% |
+| > 1.0 | Low | 68% |
 
-### **4. Local Model Inference**
-NyXIA evaluates:
-- Anomaly scores  
-- Behavior class  
-- Deviation from normal profile  
-- Likelihood of malicious activity  
+### IQR Outlier Detection
+```
+lower_bound = Q1 - 1.5 × IQR
+upper_bound = Q3 + 1.5 × IQR
+```
+Values outside this range are flagged as statistical outliers.
 
-All computations stay on-device.
+### Moving Averages
+- **Simple Moving Average** — baseline trend over configurable time windows
+- **Exponential Moving Average** — weights recent activity more heavily for faster response to emerging patterns
 
-### **5. Scenario Mapping**
-The engine correlates detections to larger scenarios such as:
-- Persistence attempts  
-- Unauthorized network activity  
-- Privilege escalation attempts  
-- Multi-stage intrusion  
+### Spike Detection
+```
+current_value > mean + (threshold_multiplier × std_dev)
+```
 
 ---
 
-##  Local Behavioral Baseline
-NyXIA builds a private baseline of:
-- Normal processes  
-- Typical connection patterns  
-- Expected file activity  
-- Usual time-of-day behavior  
+## What the Engine Outputs
+
+For each analysis cycle:
+- `is_anomaly` — boolean flag
+- `anomaly_score` — 0.0 to 1.0 (higher = more anomalous)
+- `confidence` — 0.0 to 0.95
+- `contributing_features` — list of features with Z-scores that drove the detection
+
+These outputs are displayed in the AI / ML Analysis section of the Dashboard.
+
+---
+
+## Local Behavioral Baseline
+
+The engine builds a private baseline per device:
+- Normal process patterns
+- Typical network connection behavior
+- Expected file activity
+- Usual time-of-day and day-of-week behavior
 
 The baseline is:
-- Stored locally  
-- Fully encrypted  
-- Resettable by the user  
-
-No usage profile ever leaves the device.
-
----
-
-##  Safe-by-Design AI
-NyXIA explicitly avoids:
-- User tracking  
-- Cloud training  
-- Personal data storage  
-- Remote telemetry  
-
-The AI belongs to the user — not to the server.
+- Stored locally in encrypted form
+- Resettable by the user at any time
+- Never transmitted or shared
 
 ---
 
 ## Summary
-The AI Engine combines privacy-first design with intelligent behavioral detection.  
-It processes encrypted system events locally, identifies risky patterns, and provides real‑world security insight — all without cloud dependence.
+
+The AI engine combines Isolation Forest with statistical analysis to deliver transparent, explainable, privacy-preserving anomaly detection — entirely on the user's device, with no cloud dependency.

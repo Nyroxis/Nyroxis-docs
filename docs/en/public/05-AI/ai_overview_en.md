@@ -1,90 +1,90 @@
-# AI Engine (NyXIA) — Overview
+# AI & Machine Learning Engine — Overview
 
-NyXIA is the local AI engine inside Nyroxis, designed to analyze security events **without sending any data to the cloud**.  
-It brings intelligent behavioral detection to personal and professional devices while preserving privacy and operating fully offline.
-
----
-
-##  Purpose of NyXIA
-NyXIA provides:
-- Behavioral analysis of events  
-- Detection of unusual or suspicious patterns  
-- Local anomaly detection  
-- Lightweight on-device inference  
-- Zero data sharing outside the device  
-
-It is engineered to enhance visibility without compromising privacy.
+The Nyroxis AI/ML engine is a fully local, offline anomaly detection system embedded in the Dashboard.
+It analyzes security events without sending any data to the cloud, delivering behavioral intelligence with absolute privacy.
 
 ---
 
-##  How NyXIA Works
-NyXIA processes:
-- Process sequences  
-- Network behaviors  
-- File activity  
-- Privilege actions  
-- Time-based patterns  
+## A Different Approach to AI
 
-Instead of analyzing each event independently, NyXIA groups short sequences of activity to reveal hidden behaviors.
+Most AI-powered security solutions rely on cloud infrastructure — sending telemetry to remote servers for analysis.
+Nyroxis takes the opposite approach: every aspect of the AI engine runs locally, on the user's own device.
+No data is transmitted. No external service is consulted. No behavioral profile ever leaves the machine.
 
-This makes it capable of detecting:
-- Slow attacks  
-- Multi-step intrusions  
-- Persistence techniques  
-- Lateral movement indicators  
+This is not a limitation — it is a deliberate architectural commitment to privacy.
 
 ---
 
-##  Key Capabilities
+## What the AI Engine Provides
 
-### **1. Sequence-Based Analysis**
-NyXIA evaluates windows of events rather than single entries.  
-This helps identify suspicious behavior chains that traditional tools may miss.
-
----
-
-### **2. Local Behavioral Profiles**
-NyXIA maintains a private behavioral baseline for each device:
-- Normal daily patterns  
-- Usual processes  
-- Typical network endpoints  
-
-Deviations are flagged as anomalies.
-
-All baselines are stored locally and encrypted.
+- Behavioral anomaly detection using Isolation Forest
+- Statistical analysis: Z-Score, IQR, moving averages, spike detection
+- Severity classification: Critical / High / Medium / Low
+- Contributing feature identification — explains *why* something was flagged
+- Behavioral baseline building per device
 
 ---
 
-### **3. Lightweight AI Models**
-Models are optimized for:
-- Low CPU impact  
-- On-device processing  
-- Minimal memory use  
+## Isolation Forest — Core Algorithm
 
-Perfect for laptops, home devices, and sensitive environments.
+At the core of the engine is a custom implementation of the Isolation Forest algorithm, built entirely in Rust — no external ML library required.
 
----
+**How it works:**
+Isolation Forest builds a forest of random decision trees. Anomalous events are statistically rare or structurally unusual — they require fewer splits to isolate, and therefore receive a higher anomaly score.
 
-### **4. No Cloud, No Uploads, No Tracking**
-NyXIA never:
-- Sends data to servers  
-- Uploads event logs  
-- Uses online AI APIs ( Optional )
-
-Everything is computed locally and encrypted.
+**Implementation:**
+- 100 isolation trees per analysis cycle
+- 256 samples maximum per tree
+- 8 behavioral features per analysis window
+- Anomaly score > 0.6 triggers a detection
 
 ---
 
-##  Full Privacy Guarantee
-NyXIA respects full user privacy by design:
-- Offline-only  
-- Encrypted input/output  
-- Local inference  
-- No telemetry  
+## 8 Behavioral Features Analyzed
 
-The AI engine belongs entirely to the user’s device.
+| Feature | Description |
+|---------|-------------|
+| Event count | Total events in the analysis window |
+| Unique sources | Number of distinct event sources |
+| Unique destinations | Number of distinct network destinations |
+| Hour of day | Time context for behavioral baseline |
+| Day of week | Weekly pattern recognition |
+| Events per hour | Activity rate normalization |
+| New sources ratio | Proportion of previously unseen sources |
+| New destinations ratio | Proportion of previously unseen destinations |
+
+All features are normalized using z-score standardization before analysis.
+
+---
+
+## Statistical Analysis Engine
+
+Running in parallel with Isolation Forest:
+
+| Z-Score | Severity | Confidence |
+|---------|----------|------------|
+| > 3.0 | Critical | 99.7% |
+| > 2.0 | High | 95% |
+| > 1.5 | Medium | 86% |
+| > 1.0 | Low | 68% |
+
+Additional methods: IQR outlier detection, moving average, exponential moving average, spike detection, correlation analysis.
+
+---
+
+## Full Privacy Guarantee
+
+The AI engine:
+- Runs entirely offline
+- Processes only locally encrypted event data
+- Never sends data to servers
+- Never uploads behavioral profiles
+- Never uses cloud inference or online APIs
+
+The AI engine belongs entirely to the user's device.
 
 ---
 
 ## Summary
-NyXIA brings intelligent, privacy‑preserving behavioral detection to Nyroxis — offering real security insights without cloud dependency or data exposure.
+
+The Nyroxis AI/ML engine provides on-device Isolation Forest anomaly detection combined with statistical analysis — delivering cloud-quality behavioral intelligence without the privacy trade-off.
