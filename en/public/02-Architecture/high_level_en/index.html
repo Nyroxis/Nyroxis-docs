@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1001,10 +1001,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-encrypted-local-database" class="md-nav__link">
+  <a href="#2-nyroxis-intelligence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Encrypted Local Database
+        2. Nyroxis Intelligence
       
     </span>
   </a>
@@ -1012,10 +1012,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-nyroxis-dashboard" class="md-nav__link">
+  <a href="#3-nyroxis-system-guardian" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Nyroxis Dashboard
+        3. Nyroxis System Guardian
       
     </span>
   </a>
@@ -1023,21 +1023,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-local-analysis-engine" class="md-nav__link">
+  <a href="#4-nyroxis-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Local Analysis Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-optional-licensing-validation-localfirst" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Optional Licensing Validation (Local‑First)
+        4. Nyroxis Dashboard
       
     </span>
   </a>
@@ -1084,10 +1073,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#simplicity-clarity" class="md-nav__link">
+  <a href="#forensic-integrity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simplicity &amp; Clarity
+        Forensic Integrity
       
     </span>
   </a>
@@ -1106,10 +1095,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#offlinefirst-security" class="md-nav__link">
+  <a href="#offline-first-security" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offline‑First Security
+        Offline-First Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensibility
       
     </span>
   </a>
@@ -8819,76 +8819,79 @@
 
 
 <h1 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Link to this section">&para;</a></h1>
-<p>Nyroxis is built on a lightweight, privacy‑first architecture designed to deliver enterprise‑grade visibility without relying on the cloud.<br />
-The system runs fully on the user’s device and is composed of clear, independent components that work together securely.</p>
+<p>Nyroxis is built on a lightweight, privacy-first architecture designed to deliver enterprise-grade visibility and detection without relying on the cloud.
+The system runs fully on the user's device and is composed of four independent components that work together securely.</p>
 <hr />
 <h2 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Link to this section">&para;</a></h2>
-<p>Nyroxis consists of the following high-level modules:</p>
-<h3 id="1-nyroxis-agent"><strong>1. Nyroxis Agent</strong><a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h3>
+<h3 id="1-nyroxis-agent">1. Nyroxis Agent<a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h3>
 <p>A lightweight endpoint monitor that:
-- Collects security‑relevant events<br />
-- Encrypts and stores them locally<br />
-- Ensures tamper‑resistant data integrity<br />
-- Operates 100% offline  </p>
-<h3 id="2-encrypted-local-database"><strong>2. Encrypted Local Database</strong><a class="headerlink" href="#2-encrypted-local-database" title="Link to this section">&para;</a></h3>
-<p>All collected events are stored in:
-- A secured local datastore<br />
-- Fully encrypted at rest<br />
-- Structured for fast analysis and timeline reconstruction  </p>
-<h3 id="3-nyroxis-dashboard"><strong>3. Nyroxis Dashboard</strong><a class="headerlink" href="#3-nyroxis-dashboard" title="Link to this section">&para;</a></h3>
-<p>A clean and intuitive interface that:
-- Displays logs, alerts, and correlations<br />
-- Generates charts and timelines<br />
-- Provides explanations and severity indicators<br />
-- Helps both experts and non‑technical users  </p>
-<h3 id="4-local-analysis-engine"><strong>4. Local Analysis Engine</strong><a class="headerlink" href="#4-local-analysis-engine" title="Link to this section">&para;</a></h3>
-<p>Nyroxis includes:
-- Lightweight behavioral heuristics<br />
-- AI‑assisted scoring<br />
-- Event correlation logic<br />
-All processing happens <strong>locally</strong>, ensuring privacy.</p>
-<h3 id="5-optional-licensing-validation-localfirst"><strong>5. Optional Licensing Validation (Local‑First)</strong><a class="headerlink" href="#5-optional-licensing-validation-localfirst" title="Link to this section">&para;</a></h3>
-<p>Nyroxis can validate license integrity without sending event data.<br />
-Only minimal metadata (if required by the user) is exchanged — never logs.</p>
+- Collects security-relevant events from multiple system channels
+- Normalizes and encrypts them immediately at capture
+- Stores everything in a local tamper-resistant database
+- Operates 100% offline — ~57 MB RAM, ~0.1% CPU</p>
+<h3 id="2-nyroxis-intelligence">2. Nyroxis Intelligence<a class="headerlink" href="#2-nyroxis-intelligence" title="Link to this section">&para;</a></h3>
+<p>A high-speed detection and correlation engine that:
+- Applies 27 detection rules against individual events
+- Runs 12 correlation rules across related events over time
+- Executes 2 chain rules to detect multi-stage attack sequences
+- Raises immediate alerts on any rule match
+- Accepts custom rules from security professionals
+- ~87 MB RAM, ~1.8% CPU</p>
+<h3 id="3-nyroxis-system-guardian">3. Nyroxis System Guardian<a class="headerlink" href="#3-nyroxis-system-guardian" title="Link to this section">&para;</a></h3>
+<p>A silent system tray guardian that:
+- Monitors Nyroxis Agent and Intelligence every 3 seconds
+- Manages backups and HWID-based license validation (fully offline)
+- Checks for updates automatically
+- Stops services automatically if license expires
+- ~6.5 MB RAM, ~0.1% CPU</p>
+<h3 id="4-nyroxis-dashboard">4. Nyroxis Dashboard<a class="headerlink" href="#4-nyroxis-dashboard" title="Link to this section">&para;</a></h3>
+<p>A clear and intuitive interface that:
+- Displays events, detections, correlations, and chains
+- Provides forensic search, charts, and PDF/CSV reporting
+- Includes a local AI/ML engine (Isolation Forest + statistical analysis)
+- Supports English, French, and German</p>
 <hr />
 <h2 id="high-level-data-flow">High-Level Data Flow<a class="headerlink" href="#high-level-data-flow" title="Link to this section">&para;</a></h2>
-<p>The architecture follows a simple, transparent lifecycle:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ System Events ]  
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓  
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]  
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓ (encrypted)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Local Encrypted Database ]  
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓  
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Local Analysis Engine ]  
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓  
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Nyroxis Dashboard ]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ System Events ]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← collect, normalize, encrypt
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Local Encrypted DB ]     ← AES-256, SQLite, hash-chained
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 detection + 12 correlation + 2 chain rules
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Nyroxis Dashboard ]      ← visibility, AI/ML, forensics, reporting
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↑
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis System Guardian ] ← monitors, backs up, validates license
 </span></code></pre></div>
 <p>At no stage are logs or sensitive data uploaded to external servers.</p>
 <hr />
 <h2 id="design-principles">Design Principles<a class="headerlink" href="#design-principles" title="Link to this section">&para;</a></h2>
-<h3 id="privacy-by-design"><strong>Privacy by Design</strong><a class="headerlink" href="#privacy-by-design" title="Link to this section">&para;</a></h3>
+<h3 id="privacy-by-design">Privacy by Design<a class="headerlink" href="#privacy-by-design" title="Link to this section">&para;</a></h3>
 <ul>
-<li>No cloud ingestion  </li>
-<li>Local encryption  </li>
-<li>User retains full control  </li>
+<li>No cloud ingestion</li>
+<li>Local encryption at capture</li>
+<li>User retains full control at all times</li>
 </ul>
-<h3 id="simplicity-clarity"><strong>Simplicity &amp; Clarity</strong><a class="headerlink" href="#simplicity-clarity" title="Link to this section">&para;</a></h3>
+<h3 id="forensic-integrity">Forensic Integrity<a class="headerlink" href="#forensic-integrity" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Clean architecture  </li>
-<li>Easy to understand  </li>
-<li>Suitable for families, professionals, and experts  </li>
+<li>AES-256 encrypted logs</li>
+<li>Hash-chained event blocks</li>
+<li>Tamper-resistant storage suitable for legal proceedings</li>
 </ul>
-<h3 id="lightweight-operation"><strong>Lightweight Operation</strong><a class="headerlink" href="#lightweight-operation" title="Link to this section">&para;</a></h3>
-<p>Built to run smoothly even on older laptops and home devices.</p>
-<h3 id="offlinefirst-security"><strong>Offline‑First Security</strong><a class="headerlink" href="#offlinefirst-security" title="Link to this section">&para;</a></h3>
+<h3 id="lightweight-operation">Lightweight Operation<a class="headerlink" href="#lightweight-operation" title="Link to this section">&para;</a></h3>
+<p>Built to run smoothly on personal laptops and workstations without impacting daily productivity.</p>
+<h3 id="offline-first-security">Offline-First Security<a class="headerlink" href="#offline-first-security" title="Link to this section">&para;</a></h3>
 <p>No internet connection is required for:
-- Monitoring<br />
-- Analysis<br />
-- Dashboard usage<br />
-- Event correlation  </p>
+- Monitoring and detection
+- AI/ML analysis
+- Dashboard usage
+- License validation</p>
+<h3 id="extensibility">Extensibility<a class="headerlink" href="#extensibility" title="Link to this section">&para;</a></h3>
+<p>Security professionals can write and deploy custom detection, correlation, and chain rules without modifying the core system.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Nyroxis provides a modern, minimalistic, and secure architecture that brings professional‑grade visibility to personal devices — entirely offline and with full respect for user privacy.</p>
+<p>Nyroxis provides a modern, modular, and forensically sound architecture that brings professional-grade visibility and detection to personal devices — entirely offline, with full respect for user privacy.</p>
 
 
 
@@ -8936,10 +8939,10 @@ Only minimal metadata (if required by the user) is exchanged — never logs.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

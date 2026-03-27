@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1635,10 +1635,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-metadata-for-analysis" class="md-nav__link">
+  <a href="#2-detection-correlation-findings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Metadata for Analysis
+        2. Detection &amp; Correlation Findings
       
     </span>
   </a>
@@ -1646,10 +1646,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-local-behavioral-baseline" class="md-nav__link">
+  <a href="#3-aiml-analysis-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Local Behavioral Baseline
+        3. AI/ML Analysis Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-metadata-for-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Metadata for Analysis
       
     </span>
   </a>
@@ -1665,7 +1676,7 @@
   <a href="#what-nyroxis-does-not-store" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Nyroxis Does Not Store
+        What Nyroxis Does NOT Store
       
     </span>
   </a>
@@ -1695,10 +1706,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-retention-lifetime" class="md-nav__link">
+  <a href="#data-retention" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Retention Lifetime
+        Data Retention
       
     </span>
   </a>
@@ -8780,82 +8791,86 @@
 
 
 <h1 id="secure-data-storage">Secure Data Storage<a class="headerlink" href="#secure-data-storage" title="Link to this section">&para;</a></h1>
-<p>Nyroxis stores only the minimum amount of data required to provide security insights — and all stored data is fully encrypted, local, and tamper-resistant.<br />
+<p>Nyroxis stores only the minimum amount of data required to provide security insights — and all stored data is fully encrypted, local, and tamper-resistant.
 This ensures privacy for individuals, families, and professionals who rely on Nyroxis for real protection without exposure.</p>
 <hr />
 <h2 id="what-nyroxis-stores">What Nyroxis Stores<a class="headerlink" href="#what-nyroxis-stores" title="Link to this section">&para;</a></h2>
-<p>Nyroxis keeps <strong>only security‑relevant information</strong>, such as:</p>
-<h3 id="1-event-logs"><strong>1. Event Logs</strong><a class="headerlink" href="#1-event-logs" title="Link to this section">&para;</a></h3>
+<p>Nyroxis keeps <strong>only security-relevant information</strong>:</p>
+<h3 id="1-event-logs">1. Event Logs<a class="headerlink" href="#1-event-logs" title="Link to this section">&para;</a></h3>
 <p>Encrypted entries for:
-- Process activity<br />
-- Network connections<br />
-- File changes<br />
-- Privilege actions<br />
-- System behavior  </p>
-<h3 id="2-metadata-for-analysis"><strong>2. Metadata for Analysis</strong><a class="headerlink" href="#2-metadata-for-analysis" title="Link to this section">&para;</a></h3>
+- Process activity
+- Network connections
+- File changes and registry modifications
+- Privilege actions
+- System and Windows Event Log entries</p>
+<h3 id="2-detection-correlation-findings">2. Detection &amp; Correlation Findings<a class="headerlink" href="#2-detection-correlation-findings" title="Link to this section">&para;</a></h3>
+<p>Results from Nyroxis Intelligence rule evaluation:
+- Detection findings (27 rules)
+- Correlation findings (12 rules)
+- Chain findings (2 rules)</p>
+<h3 id="3-aiml-analysis-results">3. AI/ML Analysis Results<a class="headerlink" href="#3-aiml-analysis-results" title="Link to this section">&para;</a></h3>
+<p>Output from the local Isolation Forest and statistical engine:
+- Anomaly scores and severity classifications
+- Contributing feature breakdowns
+- Behavioral baseline data</p>
+<h3 id="4-metadata-for-analysis">4. Metadata for Analysis<a class="headerlink" href="#4-metadata-for-analysis" title="Link to this section">&para;</a></h3>
 <p>Lightweight metadata needed for:
-- AI behavioral detection<br />
-- Rule matching<br />
-- Correlation building  </p>
-<h3 id="3-local-behavioral-baseline"><strong>3. Local Behavioral Baseline</strong><a class="headerlink" href="#3-local-behavioral-baseline" title="Link to this section">&para;</a></h3>
-<p>Created by NyXIA:
-- Typical processes<br />
-- Usual network endpoints<br />
-- Normal activity windows<br />
-Stored locally and encrypted.</p>
+- Rule matching and correlation
+- AI behavioral baseline building
+- Timeline reconstruction</p>
 <hr />
-<h2 id="what-nyroxis-does-not-store">What Nyroxis Does <em>Not</em> Store<a class="headerlink" href="#what-nyroxis-does-not-store" title="Link to this section">&para;</a></h2>
+<h2 id="what-nyroxis-does-not-store">What Nyroxis Does NOT Store<a class="headerlink" href="#what-nyroxis-does-not-store" title="Link to this section">&para;</a></h2>
 <p>Nyroxis deliberately avoids collecting or saving personal or sensitive content.</p>
 <p>It does <strong>NOT</strong> store:
-- Personal documents<br />
-- Images or videos<br />
-- Browser history<br />
-- Location data<br />
-- Passwords or credentials<br />
-- Contents of files<br />
-- User messages or emails  </p>
-<p>Only security‑oriented technical data is retained.</p>
+- Personal documents or project files
+- Images or videos
+- Browser history
+- Location data
+- Passwords or credentials
+- Contents of files
+- User messages or emails
+- Any data unrelated to security events</p>
+<p>Only security-oriented technical data is retained.</p>
 <hr />
 <h2 id="encryption-model">Encryption Model<a class="headerlink" href="#encryption-model" title="Link to this section">&para;</a></h2>
 <p>All stored data is:
-- Encrypted at the moment of capture<br />
-- Saved only in encrypted form<br />
-- Never written in plaintext<br />
-- Decrypted only in memory during read  </p>
+- Encrypted at the moment of capture (AES-256)
+- Saved only in encrypted form — never written in plaintext
+- Decrypted only in memory during read operations
+- Protected by hash-chained integrity structures</p>
 <p>Encryption keys are:
-- Local to the device<br />
-- Dynamically generated<br />
-- Never embedded inside the app<br />
-- Not transmitted to servers  </p>
+- Local to the device
+- Derived from hardware identifiers (HWID)
+- Never embedded inside the application
+- Never transmitted to servers</p>
 <hr />
 <h2 id="tamper-resistant-structures">Tamper-Resistant Structures<a class="headerlink" href="#tamper-resistant-structures" title="Link to this section">&para;</a></h2>
-<p>Nyroxis uses:
-- Hash‑chained event blocks<br />
-- Integrity verification<br />
-- Protected write paths<br />
-- Anti‑tamper checks during reads  </p>
-<p>This prevents attackers from modifying or wiping event history.</p>
+<p>Nyroxis uses hash-chained event blocks where each block contains:
+- Encrypted payload
+- Integrity hash
+- Sequential index
+- Link to the previous block</p>
+<p>This makes tampering immediately detectable:
+- Deletion, modification, injection, or reordering breaks the chain
+- Any mismatch is flagged as a security event</p>
 <hr />
-<h2 id="data-retention-lifetime">Data Retention Lifetime<a class="headerlink" href="#data-retention-lifetime" title="Link to this section">&para;</a></h2>
-<p>Nyroxis keeps logs only as long as needed for:
-- Visibility<br />
-- Detection<br />
-- Correlation  </p>
-<p>Users may:
-- Reset logs<br />
-- Clear history<br />
-- Export encrypted backups (optional in future versions)  </p>
+<h2 id="data-retention">Data Retention<a class="headerlink" href="#data-retention" title="Link to this section">&para;</a></h2>
+<p>Users have full control over their data:
+- Reset logs at any time
+- Clear the AI behavioral baseline
+- Manage retention duration from the Settings view
+- Export encrypted backups from the Backup section</p>
 <hr />
 <h2 id="fully-local-storage">Fully Local Storage<a class="headerlink" href="#fully-local-storage" title="Link to this section">&para;</a></h2>
 <p>All storage is:
-- Local-only<br />
-- Offline<br />
-- Encrypted<br />
-- Zero cloud upload  </p>
+- Local-only on the user's device
+- Fully offline
+- AES-256 encrypted
+- Zero cloud upload — ever</p>
 <p>Your security data stays on your machine — always.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Nyroxis stores only encrypted, minimal, security‑focused information — never personal content — ensuring real privacy and protection for every user.</p>
+<p>Nyroxis stores only encrypted, minimal, security-focused information — never personal content — ensuring real privacy and forensic-grade protection for every user.</p>
 
 
 
@@ -8903,10 +8918,10 @@ Stored locally and encrypted.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

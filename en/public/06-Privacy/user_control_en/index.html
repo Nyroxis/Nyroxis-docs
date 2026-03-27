@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1740,10 +1740,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-transparent-ai" class="md-nav__link">
+  <a href="#4-transparent-aiml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Transparent AI
+        4. Transparent AI/ML
       
     </span>
   </a>
@@ -1762,10 +1762,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-verification-of-offline-operation" class="md-nav__link">
+  <a href="#6-backup-control" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Verification of Offline Operation
+        6. Backup Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-verification-of-offline-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Verification of Offline Operation
       
     </span>
   </a>
@@ -8752,66 +8763,78 @@
 
 
 <h1 id="user-control-transparency">User Control &amp; Transparency<a class="headerlink" href="#user-control-transparency" title="Link to this section">&para;</a></h1>
-<p>Nyroxis is designed to give users full control over their security data, system behavior, and privacy settings.<br />
+<p>Nyroxis is designed to give users full control over their security data, system behavior, and privacy settings.
 No hidden processes, no background uploads, no cloud connections — everything is transparent and locally managed.</p>
 <hr />
 <h2 id="core-principles-of-user-control">Core Principles of User Control<a class="headerlink" href="#core-principles-of-user-control" title="Link to this section">&para;</a></h2>
 <p>Nyroxis ensures that users can:
-- See what is being monitored<br />
-- Control what is stored<br />
-- Reset or delete data at any time<br />
-- Verify offline operation<br />
-- Understand how AI decisions are made  </p>
+- See what is being monitored
+- Control what is stored and for how long
+- Reset or delete data at any time
+- Verify that the platform operates offline
+- Understand how AI/ML decisions are made</p>
 <p>The user always stays in charge.</p>
 <hr />
 <h2 id="1-no-silent-data-collection">1. No Silent Data Collection<a class="headerlink" href="#1-no-silent-data-collection" title="Link to this section">&para;</a></h2>
 <p>Nyroxis collects <strong>only</strong> what is necessary for security analysis:
-- Logs of processes<br />
-- Network events<br />
-- File changes<br />
-- Privilege actions  </p>
-<p>No personal files, photos, messages, or browsing data are ever collected.</p>
-<p>Everything is explained clearly in the documentation.</p>
+- Logs of processes and services
+- Network connection events
+- File system and registry changes
+- Privilege actions
+- Windows Event Log entries</p>
+<p>No personal files, photos, messages, browsing data, or credentials are ever collected.
+Everything collected is documented in this documentation.</p>
 <hr />
 <h2 id="2-full-data-reset">2. Full Data Reset<a class="headerlink" href="#2-full-data-reset" title="Link to this section">&para;</a></h2>
-<p>Users can reset:
-- Logs<br />
-- Metadata<br />
-- AI behavioral baseline<br />
-- Correlation cache  </p>
+<p>Users can reset at any time from the Dashboard:
+- Event logs
+- Detection and correlation findings
+- AI/ML behavioral baseline
+- All metadata</p>
 <p>A full reset restores Nyroxis to a clean state without leftovers.</p>
 <hr />
 <h2 id="3-local-only-storage">3. Local-Only Storage<a class="headerlink" href="#3-local-only-storage" title="Link to this section">&para;</a></h2>
-<p>All user-controlled data is:
-- Stored locally<br />
-- Fully encrypted<br />
-- Never transmitted externally  </p>
+<p>All data is:
+- Stored locally in the encrypted SQLite database
+- Fully encrypted (AES-256)
+- Never transmitted externally
+- Under the user's sole control</p>
 <p>Users do not depend on cloud accounts, online authentication, or remote storage.</p>
 <hr />
-<h2 id="4-transparent-ai">4. Transparent AI<a class="headerlink" href="#4-transparent-ai" title="Link to this section">&para;</a></h2>
-<p>NyXIA provides:
-- Clear explanations of detections<br />
-- Visibility into why a decision was made<br />
-- Scenario-based reasoning summaries  </p>
-<p>AI decisions are designed to be understandable, not black-boxed.</p>
+<h2 id="4-transparent-aiml">4. Transparent AI/ML<a class="headerlink" href="#4-transparent-aiml" title="Link to this section">&para;</a></h2>
+<p>The AI/ML engine provides:
+- Clear anomaly score with severity classification
+- Contributing features — the specific behavioral dimensions that drove the detection, with Z-score values
+- Scenario-based reasoning summaries</p>
+<p>AI decisions are designed to be understandable and explainable — not black-boxed.</p>
 <hr />
 <h2 id="5-customization-options">5. Customization Options<a class="headerlink" href="#5-customization-options" title="Link to this section">&para;</a></h2>
-<p>Users can adjust:
-- Retention duration<br />
-- Severity thresholds<br />
-- Rule-matching preferences<br />
-- Notification settings  </p>
-<p>All settings are optional and local.</p>
+<p>Users can adjust from the Settings view:
+- Database file path and storage location
+- Dashboard refresh interval
+- Default lookback window for event queries
+- Default sample limit
+- Interface language: English, French, German
+- Theme configuration</p>
+<p>All settings are local.</p>
 <hr />
-<h2 id="6-verification-of-offline-operation">6. Verification of Offline Operation<a class="headerlink" href="#6-verification-of-offline-operation" title="Link to this section">&para;</a></h2>
-<p>Nyroxis exposes tools and UI indicators that allow users to verify:
-- No outgoing network connections<br />
-- No background telemetry<br />
-- No cloud dependency  </p>
+<h2 id="6-backup-control">6. Backup Control<a class="headerlink" href="#6-backup-control" title="Link to this section">&para;</a></h2>
+<p>From the Backup section, users can:
+- Schedule automatic backups
+- Run on-demand backups
+- Review backup history with timestamps and file sizes
+- All backups are encrypted and stored locally</p>
+<hr />
+<h2 id="7-verification-of-offline-operation">7. Verification of Offline Operation<a class="headerlink" href="#7-verification-of-offline-operation" title="Link to this section">&para;</a></h2>
+<p>The Dashboard and Nyroxis System Guardian expose indicators allowing users to verify:
+- No outgoing network connections from Nyroxis processes
+- No background telemetry
+- No cloud dependency
+- Agent and Intelligence service status in real time</p>
 <p>Trust is measurable — not assumed.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Nyroxis empowers users with full control over their data, full transparency of its operations, and the ability to manage, reset, or verify everything locally — without cloud reliance or hidden processes.</p>
+<p>Nyroxis empowers users with full control over their data, full transparency of its operations, and the ability to manage, reset, back up, or verify everything locally — without cloud reliance or hidden processes.</p>
 
 
 
@@ -8859,10 +8882,10 @@ No hidden processes, no background uploads, no cloud connections — everything 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

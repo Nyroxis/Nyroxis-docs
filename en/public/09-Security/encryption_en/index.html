@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2076,10 +2076,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-goals-of-the-encryption-model" class="md-nav__link">
+  <a href="#core-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Goals of the Encryption Model
+        Core Goals
       
     </span>
   </a>
@@ -2109,10 +2109,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-inmemory-decryption-only-ai-dashboard" class="md-nav__link">
+  <a href="#3-in-memory-decryption-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. In‑Memory Decryption Only (AI &amp; Dashboard)
+        3. In-Memory Decryption Only
       
     </span>
   </a>
@@ -2120,10 +2120,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-devicebound-keys" class="md-nav__link">
+  <a href="#4-device-bound-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Device‑Bound Keys
+        4. Device-Bound Keys
       
     </span>
   </a>
@@ -2131,10 +2131,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-integrity-protection" class="md-nav__link">
+  <a href="#5-integrity-protection-hash-chain" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Integrity Protection
+        5. Integrity Protection — Hash Chain
       
     </span>
   </a>
@@ -8752,85 +8752,78 @@
 
 
 <h1 id="encryption-model">Encryption Model<a class="headerlink" href="#encryption-model" title="Link to this section">&para;</a></h1>
-<p>Nyroxis implements a strict, multi‑layered encryption model designed to ensure that <strong>no readable data ever touches disk</strong>, and that all security events remain protected, private, and verifiable.</p>
-<p>This page describes how encryption is applied across the entire platform.</p>
+<p>Nyroxis implements a strict, multi-layered encryption model designed to ensure that <strong>no readable data ever touches disk</strong>, and that all security events remain protected, private, and verifiable.</p>
 <hr />
-<h2 id="core-goals-of-the-encryption-model">Core Goals of the Encryption Model<a class="headerlink" href="#core-goals-of-the-encryption-model" title="Link to this section">&para;</a></h2>
-<p>Nyroxis encryption is designed to achieve:</p>
-<ul>
-<li><strong>Confidentiality</strong> — no one can read user data  </li>
-<li><strong>Integrity</strong> — no one can modify logs undetected  </li>
-<li><strong>Isolation</strong> — data never leaves the device  </li>
-<li><strong>Zero plaintext storage</strong> — everything encrypted at capture  </li>
-<li><strong>Offline operation</strong> — no need for cloud keys or servers  </li>
-</ul>
+<h2 id="core-goals">Core Goals<a class="headerlink" href="#core-goals" title="Link to this section">&para;</a></h2>
+<p>Nyroxis encryption achieves:
+- <strong>Confidentiality</strong> — no one can read user data
+- <strong>Integrity</strong> — no one can modify logs undetected
+- <strong>Isolation</strong> — data never leaves the device
+- <strong>Zero plaintext storage</strong> — everything encrypted at capture
+- <strong>Offline operation</strong> — no cloud keys or servers required</p>
 <hr />
 <h2 id="1-encryption-at-event-capture">1. Encryption at Event Capture<a class="headerlink" href="#1-encryption-at-event-capture" title="Link to this section">&para;</a></h2>
-<p>Every system event is encrypted <em>the moment it is collected</em> by the Agent.</p>
+<p>Every system event is encrypted the moment it is collected by Nyroxis Agent.</p>
 <p>Steps:
-1. Event is serialized in memory<br />
-2. A device‑specific key is loaded<br />
-3. The event is encrypted with AES‑based encryption<br />
-4. Only the encrypted block is written to storage  </p>
+1. Event is serialized in memory
+2. A device-specific key is derived from hardware identifiers (HWID)
+3. The event is encrypted with AES-256
+4. Only the encrypted block is written to storage</p>
 <p>No plaintext logs are ever written.</p>
 <hr />
 <h2 id="2-encrypted-local-database">2. Encrypted Local Database<a class="headerlink" href="#2-encrypted-local-database" title="Link to this section">&para;</a></h2>
-<p>All logs and metadata are stored inside a secure encrypted database.</p>
-<p>Features include:
-- AES‑encrypted data pages<br />
-- Encrypted metadata<br />
-- Hash‑chained storage blocks<br />
-- Per‑record integrity verification<br />
-- No plaintext caching  </p>
-<p>The database cannot be opened or read outside Nyroxis.</p>
+<p>All logs, detection findings, AI results, and metadata are stored inside a secure SQLite database.</p>
+<p>Features:
+- AES-256 encrypted data pages
+- Encrypted metadata
+- Hash-chained storage blocks
+- Per-record integrity verification
+- No plaintext caching</p>
+<p>The database cannot be opened or read outside Nyroxis, and cannot be decrypted on a different device.</p>
 <hr />
-<h2 id="3-inmemory-decryption-only-ai-dashboard">3. In‑Memory Decryption Only (AI &amp; Dashboard)<a class="headerlink" href="#3-inmemory-decryption-only-ai-dashboard" title="Link to this section">&para;</a></h2>
-<p>Nyroxis decrypts records <em>only while processing them</em>:</p>
-<ul>
-<li>NyXIA decrypts event batches in RAM  </li>
-<li>Dashboard decrypts only what it needs to display summaries  </li>
-<li>Nothing is written back in plaintext  </li>
-<li>Memory buffers are securely cleared  </li>
-</ul>
-<p>This eliminates risk of forensic recovery.</p>
+<h2 id="3-in-memory-decryption-only">3. In-Memory Decryption Only<a class="headerlink" href="#3-in-memory-decryption-only" title="Link to this section">&para;</a></h2>
+<p>Nyroxis decrypts records <em>only while processing them</em>:
+- AI/ML engine decrypts event batches in RAM during analysis
+- Dashboard decrypts only what it needs to display, in memory
+- Nothing is written back in plaintext
+- Memory buffers are cleared after use</p>
+<p>This eliminates the risk of forensic recovery of plaintext from disk.</p>
 <hr />
-<h2 id="4-devicebound-keys">4. Device‑Bound Keys<a class="headerlink" href="#4-devicebound-keys" title="Link to this section">&para;</a></h2>
-<p>Encryption keys are tied to the user’s machine using:
-- Hardware identifiers<br />
-- Local derivation<br />
-- Salted hashing<br />
-- Split secrets  </p>
-<p>Keys are <strong>never stored directly</strong> and <strong>never transmitted</strong>.</p>
-<p>Even if the database is copied, it cannot be decrypted elsewhere.</p>
+<h2 id="4-device-bound-keys">4. Device-Bound Keys<a class="headerlink" href="#4-device-bound-keys" title="Link to this section">&para;</a></h2>
+<p>Encryption keys are:
+- Derived from the user's hardware identifiers (HWID)
+- Generated locally using salted hashing
+- Never stored directly inside the application
+- Never transmitted to any server</p>
+<p>Even if the database file is copied to another device, it cannot be decrypted — it is bound to the original hardware.</p>
 <hr />
-<h2 id="5-integrity-protection">5. Integrity Protection<a class="headerlink" href="#5-integrity-protection" title="Link to this section">&para;</a></h2>
+<h2 id="5-integrity-protection-hash-chain">5. Integrity Protection — Hash Chain<a class="headerlink" href="#5-integrity-protection-hash-chain" title="Link to this section">&para;</a></h2>
 <p>Each encrypted block contains:
-- Integrity hash<br />
-- Event sequence marker<br />
-- Tamper flag<br />
-- Link to the previous block  </p>
-<p>This forms a <strong>hash‑chain</strong> that exposes:
-- Log deletion<br />
-- Log modification<br />
-- Log reordering<br />
-- Log injection  </p>
-<p>Tampering becomes immediately detectable.</p>
+- Integrity hash of the block content
+- Event sequence index
+- Hash of the previous block</p>
+<p>This forms a <strong>hash chain</strong> that exposes:
+- Log deletion — next block's previous-hash will not match
+- Log modification — block hash will not match
+- Log reordering — sequence index will be wrong
+- Log injection — chain and sequence checks will fail</p>
+<p>Tampering is immediately detectable.</p>
 <hr />
 <h2 id="6-no-cloud-involvement">6. No Cloud Involvement<a class="headerlink" href="#6-no-cloud-involvement" title="Link to this section">&para;</a></h2>
-<p>Nyroxis does <em>not</em> use:
-- Cloud key vaults<br />
-- Remote servers<br />
-- Online activation<br />
-- Telemetry systems  </p>
-<p>All encryption, key derivation, and verification are local.</p>
+<p>Nyroxis does not use:
+- Cloud key vaults
+- Remote key servers
+- Online activation
+- Telemetry systems</p>
+<p>All encryption, key derivation, and integrity verification are entirely local.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
 <p>Nyroxis encryption ensures:
-- Zero plaintext<br />
-- Encrypted‑everywhere design<br />
-- Local‑only keys<br />
-- Tamper‑resistant logs<br />
-- Privacy‑preserving AI  </p>
+- Zero plaintext storage
+- Encrypted-everywhere design
+- Device-bound local keys
+- Hash-chained tamper-resistant logs
+- In-memory-only decryption</p>
 <p>A modern encryption model built for personal security and full offline autonomy.</p>
 
 
@@ -8879,10 +8872,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

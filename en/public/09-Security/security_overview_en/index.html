@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2093,10 +2093,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-offline-ai-nyxia" class="md-nav__link">
+  <a href="#4-multi-layer-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Offline AI (NyXIA)
+        4. Multi-Layer Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-local-aiml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Local AI/ML
       
     </span>
   </a>
@@ -2143,10 +2154,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-local-behavioral-baselines" class="md-nav__link">
+  <a href="#3-platform-resilience" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Local Behavioral Baselines
+        3. Platform Resilience
       
     </span>
   </a>
@@ -2154,10 +2165,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-rule-matching-layer" class="md-nav__link">
+  <a href="#4-hwid-based-licensing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Rule Matching Layer
+        4. HWID-Based Licensing
       
     </span>
   </a>
@@ -2192,10 +2203,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Conclusion
+        Summary
       
     </span>
   </a>
@@ -8823,79 +8834,84 @@
 <p>This overview summarizes the main security principles and mechanisms used across the platform.</p>
 <hr />
 <h2 id="core-security-principles">Core Security Principles<a class="headerlink" href="#core-security-principles" title="Link to this section">&para;</a></h2>
-<h3 id="1-privacy-by-design"><strong>1. Privacy by Design</strong><a class="headerlink" href="#1-privacy-by-design" title="Link to this section">&para;</a></h3>
-<p>Nyroxis does not upload, sync, or transmit any data to servers.<br />
-All security logic, monitoring, and AI analysis run entirely on the device.</p>
-<h3 id="2-encryption-everywhere"><strong>2. Encryption Everywhere</strong><a class="headerlink" href="#2-encryption-everywhere" title="Link to this section">&para;</a></h3>
+<h3 id="1-privacy-by-design">1. Privacy by Design<a class="headerlink" href="#1-privacy-by-design" title="Link to this section">&para;</a></h3>
+<p>Nyroxis does not upload, sync, or transmit any data to servers.
+All security logic, monitoring, detection, and AI analysis run entirely on the device.</p>
+<h3 id="2-encryption-everywhere">2. Encryption Everywhere<a class="headerlink" href="#2-encryption-everywhere" title="Link to this section">&para;</a></h3>
 <p>Every captured event is:
-- Encrypted instantly<br />
-- Stored only in encrypted form<br />
-- Decrypted exclusively in memory<br />
-- Protected with integrity hashes  </p>
+- Encrypted instantly at capture (AES-256)
+- Stored only in encrypted form — never in plaintext
+- Decrypted exclusively in memory during processing
+- Protected with integrity hashes</p>
 <p>No plaintext logs ever exist on disk.</p>
-<h3 id="3-zero-cloud-dependency"><strong>3. Zero Cloud Dependency</strong><a class="headerlink" href="#3-zero-cloud-dependency" title="Link to this section">&para;</a></h3>
+<h3 id="3-zero-cloud-dependency">3. Zero Cloud Dependency<a class="headerlink" href="#3-zero-cloud-dependency" title="Link to this section">&para;</a></h3>
 <p>Nyroxis does not rely on:
-- Cloud storage<br />
-- External APIs<br />
-- Remote servers<br />
-- Telemetry pipelines  </p>
+- Cloud storage or processing
+- External APIs
+- Remote servers
+- Telemetry pipelines
+- Online authentication</p>
 <p>Users maintain full autonomy and zero external exposure.</p>
-<h3 id="4-offline-ai-nyxia"><strong>4. Offline AI (NyXIA)</strong><a class="headerlink" href="#4-offline-ai-nyxia" title="Link to this section">&para;</a></h3>
-<p>The AI engine processes data locally:
-- Behavioral detection<br />
-- Anomaly scoring<br />
-- Scenario evaluation  </p>
-<p>No cloud training, no cloud inference.</p>
+<h3 id="4-multi-layer-detection">4. Multi-Layer Detection<a class="headerlink" href="#4-multi-layer-detection" title="Link to this section">&para;</a></h3>
+<p>Nyroxis Intelligence provides:
+- 27 detection rules — known threat patterns
+- 12 correlation rules — multi-event patterns over time
+- 2 chain rules — multi-stage attack sequences
+- Extensible by security professionals without modifying core components</p>
+<h3 id="5-local-aiml">5. Local AI/ML<a class="headerlink" href="#5-local-aiml" title="Link to this section">&para;</a></h3>
+<p>The AI/ML engine processes data locally:
+- Isolation Forest anomaly detection
+- Z-Score statistical classification
+- Contributing feature identification</p>
+<p>No cloud training, no cloud inference, no data sharing.</p>
 <hr />
 <h2 id="key-security-mechanisms">Key Security Mechanisms<a class="headerlink" href="#key-security-mechanisms" title="Link to this section">&para;</a></h2>
-<h3 id="1-secure-event-capture"><strong>1. Secure Event Capture</strong><a class="headerlink" href="#1-secure-event-capture" title="Link to this section">&para;</a></h3>
-<p>The agent captures:
-- Processes<br />
-- Files<br />
-- Network<br />
-- Privilege actions  </p>
-<p>All events are encrypted immediately.</p>
-<hr />
-<h3 id="2-tamper-resistant-storage"><strong>2. Tamper-Resistant Storage</strong><a class="headerlink" href="#2-tamper-resistant-storage" title="Link to this section">&para;</a></h3>
-<p>The local database includes:
-- AES encryption<br />
-- Hash-chained blocks<br />
-- Protected write paths<br />
-- Integrity checks  </p>
-<p>Attackers cannot modify logs without detection.</p>
-<hr />
-<h3 id="3-local-behavioral-baselines"><strong>3. Local Behavioral Baselines</strong><a class="headerlink" href="#3-local-behavioral-baselines" title="Link to this section">&para;</a></h3>
-<p>Nyroxis builds:
-- Per-device profiles<br />
-- Local activity patterns<br />
-- Secure baselines  </p>
-<p>Used to detect anomalies without exposing user habits to the cloud.</p>
-<hr />
-<h3 id="4-rule-matching-layer"><strong>4. Rule Matching Layer</strong><a class="headerlink" href="#4-rule-matching-layer" title="Link to this section">&para;</a></h3>
-<p>Provides:
-- Threshold-based alerts<br />
-- Pattern detection<br />
-- Correlation cues  </p>
-<p>All rule logic runs locally.</p>
-<hr />
-<h3 id="5-dashboard-security"><strong>5. Dashboard Security</strong><a class="headerlink" href="#5-dashboard-security" title="Link to this section">&para;</a></h3>
-<p>The UI:
-- Reads decrypted summaries only in RAM<br />
-- Never exposes raw logs<br />
-- Does not connect to external sources  </p>
+<h3 id="1-secure-event-capture">1. Secure Event Capture<a class="headerlink" href="#1-secure-event-capture" title="Link to this section">&para;</a></h3>
+<p>Nyroxis Agent captures:
+- Processes and services
+- File system and registry changes
+- Network connections
+- Privilege actions
+- Windows Event Log entries</p>
+<p>All events are encrypted immediately at capture.</p>
+<h3 id="2-tamper-resistant-storage">2. Tamper-Resistant Storage<a class="headerlink" href="#2-tamper-resistant-storage" title="Link to this section">&para;</a></h3>
+<p>The local SQLite database includes:
+- AES-256 encryption
+- Hash-chained event blocks
+- Protected write paths
+- Integrity verification on every read</p>
+<p>Attackers cannot modify, delete, or inject logs without detection.</p>
+<h3 id="3-platform-resilience">3. Platform Resilience<a class="headerlink" href="#3-platform-resilience" title="Link to this section">&para;</a></h3>
+<p>Nyroxis System Guardian:
+- Monitors Agent and Intelligence every 3 seconds
+- Detects unexpected service stops immediately
+- Logs shutdown attempts as security events
+- Manages backups and offline license validation</p>
+<p>The platform cannot be silently disabled.</p>
+<h3 id="4-hwid-based-licensing">4. HWID-Based Licensing<a class="headerlink" href="#4-hwid-based-licensing" title="Link to this section">&para;</a></h3>
+<p>License validation:
+- Bound to device hardware (HWID-derived key)
+- Validated offline using AES-GCM and HMAC
+- Enforced by System Guardian — services stop automatically if license is invalid</p>
+<h3 id="5-dashboard-security">5. Dashboard Security<a class="headerlink" href="#5-dashboard-security" title="Link to this section">&para;</a></h3>
+<p>The Dashboard:
+- Reads decrypted summaries only in RAM
+- Never writes back decrypted data to disk
+- Does not connect to external sources
+- Provides read-only access to log storage</p>
 <hr />
 <h2 id="security-layers-summary">Security Layers Summary<a class="headerlink" href="#security-layers-summary" title="Link to this section">&para;</a></h2>
 <p>Nyroxis integrates multiple defensive layers:
-- Local encryption<br />
-- Local AI<br />
-- Offline operation<br />
-- Secure storage<br />
-- Integrity verification<br />
-- Zero cloud exposure<br />
-- Privacy-first architecture  </p>
+- AES-256 encryption at capture
+- Hash-chained tamper-resistant storage
+- Platform guardian for service resilience
+- Local-only AI/ML engine
+- Offline license validation
+- Zero cloud exposure
+- Privacy-first architecture throughout</p>
 <hr />
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Link to this section">&para;</a></h2>
-<p>Nyroxis provides a modern, private, offline security model that protects users without tracking them — combining transparency, control, and strong defensive design.</p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
+<p>Nyroxis provides a modern, private, offline security model that protects users without tracking them — combining transparency, control, forensic integrity, and strong defensive design at every layer.</p>
 
 
 
@@ -8943,10 +8959,10 @@ All security logic, monitoring, and AI analysis run entirely on the device.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

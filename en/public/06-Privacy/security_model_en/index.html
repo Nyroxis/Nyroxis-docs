@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1701,10 +1701,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-private-on-device-ai" class="md-nav__link">
+  <a href="#3-platform-resilience-nyroxis-system-guardian" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Private On-Device AI
+        3. Platform Resilience (Nyroxis System Guardian)
       
     </span>
   </a>
@@ -1712,10 +1712,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-full-offline-operation" class="md-nav__link">
+  <a href="#4-local-aiml-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Full Offline Operation
+        4. Local AI/ML Engine
       
     </span>
   </a>
@@ -1723,10 +1723,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-minimal-data-retention" class="md-nav__link">
+  <a href="#5-full-offline-operation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Minimal Data Retention
+        5. Full Offline Operation
       
     </span>
   </a>
@@ -1734,10 +1734,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-transparent-logic" class="md-nav__link">
+  <a href="#6-minimal-data-retention" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Transparent Logic
+        6. Minimal Data Retention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-transparent-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Transparent Logic
       
     </span>
   </a>
@@ -8752,80 +8763,88 @@
 
 
 <h1 id="security-model">Security Model<a class="headerlink" href="#security-model" title="Link to this section">&para;</a></h1>
-<p>The Nyroxis Security Model ensures that all monitoring, AI analysis, and event storage operate under strict privacy-first and tamper-resistant principles.<br />
+<p>The Nyroxis Security Model ensures that all monitoring, detection, AI analysis, and event storage operate under strict privacy-first and tamper-resistant principles.
 This model is designed for individuals, professionals, and executives who require trustworthy security without sacrificing privacy.</p>
 <hr />
 <h2 id="core-objectives">Core Objectives<a class="headerlink" href="#core-objectives" title="Link to this section">&para;</a></h2>
 <p>Nyroxis protects:
-- Data confidentiality<br />
-- System integrity<br />
-- User privacy<br />
-- Local autonomy (no cloud dependency)  </p>
+- Data confidentiality — no unauthorized access to event logs
+- System integrity — tamper-resistant evidence chain
+- User privacy — no cloud transmission, no behavioral profiling
+- Platform resilience — continuous monitoring, protected from interference</p>
 <p>The result: enterprise-grade protection on a personal device.</p>
 <hr />
 <h2 id="1-end-to-end-local-encryption">1. End-to-End Local Encryption<a class="headerlink" href="#1-end-to-end-local-encryption" title="Link to this section">&para;</a></h2>
 <p>All event data is:
-- Encrypted at the moment of capture<br />
-- Stored only in encrypted form<br />
-- Accessible only through secure read-paths<br />
-- Never written to disk in plaintext  </p>
+- Encrypted at the moment of capture (AES-256)
+- Stored only in encrypted form — never written in plaintext
+- Accessible only through secure read-paths
+- Decrypted only in memory during processing</p>
 <p>Encryption keys are:
-- Local<br />
-- Dynamic<br />
-- Never stored inside the app<br />
-- Not transmitted externally  </p>
+- Derived from the device's hardware (HWID)
+- Local to the device
+- Never stored inside the application
+- Never transmitted externally</p>
 <hr />
 <h2 id="2-tamper-resistant-storage">2. Tamper-Resistant Storage<a class="headerlink" href="#2-tamper-resistant-storage" title="Link to this section">&para;</a></h2>
-<p>Nyroxis integrates:
-- Integrity checks<br />
-- Protected write paths<br />
-- Hash-chained event blocks<br />
-- Anti-tamper verification during read/write operations  </p>
-<p>This prevents attackers from altering logs or covering their tracks.</p>
+<p>Nyroxis uses hash-chained event blocks:
+- Each block contains a hash of the previous block
+- Integrity is verified on every read operation
+- Any deletion, modification, injection, or reordering breaks the chain and triggers an alert
+- Protected write paths prevent partial or corrupted writes</p>
+<p>Attackers cannot alter logs or cover their tracks undetected.</p>
 <hr />
-<h2 id="3-private-on-device-ai">3. Private On-Device AI<a class="headerlink" href="#3-private-on-device-ai" title="Link to this section">&para;</a></h2>
-<p>NyXIA (the AI engine):
-- Runs fully offline<br />
-- Processes encrypted event data<br />
-- Generates detections and scenarios locally<br />
-- Never sends logs to servers  </p>
+<h2 id="3-platform-resilience-nyroxis-system-guardian">3. Platform Resilience (Nyroxis System Guardian)<a class="headerlink" href="#3-platform-resilience-nyroxis-system-guardian" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian monitors the operational status of Nyroxis Agent and Nyroxis Intelligence every 3 seconds.</p>
+<p>If either service is stopped — by a crash, system event, or deliberate interference:
+- Guardian detects the disruption immediately
+- Corrective action is taken
+- The shutdown attempt is logged as a security event</p>
+<p>The platform cannot be silently disabled.</p>
+<hr />
+<h2 id="4-local-aiml-engine">4. Local AI/ML Engine<a class="headerlink" href="#4-local-aiml-engine" title="Link to this section">&para;</a></h2>
+<p>The AI/ML engine:
+- Runs fully offline
+- Processes only locally encrypted event data
+- Generates anomaly detections and statistical findings locally
+- Never sends any data to servers
+- Never uploads behavioral profiles or model feedback</p>
 <p>Your data stays on your device, always.</p>
 <hr />
-<h2 id="4-full-offline-operation">4. Full Offline Operation<a class="headerlink" href="#4-full-offline-operation" title="Link to this section">&para;</a></h2>
+<h2 id="5-full-offline-operation">5. Full Offline Operation<a class="headerlink" href="#5-full-offline-operation" title="Link to this section">&para;</a></h2>
 <p>Nyroxis does not require:
-- Cloud processing<br />
-- Online authentication<br />
-- External APIs<br />
-- Remote storage  </p>
-<p>This removes entire classes of privacy risks.</p>
+- Cloud processing or storage
+- Online authentication
+- External APIs
+- Remote servers of any kind</p>
+<p>This removes entire classes of privacy risks — cloud breaches, third-party access, and network-based attacks on the security platform itself.</p>
 <hr />
-<h2 id="5-minimal-data-retention">5. Minimal Data Retention<a class="headerlink" href="#5-minimal-data-retention" title="Link to this section">&para;</a></h2>
+<h2 id="6-minimal-data-retention">6. Minimal Data Retention<a class="headerlink" href="#6-minimal-data-retention" title="Link to this section">&para;</a></h2>
 <p>Nyroxis stores only:
-- Security events<br />
-- Metadata needed for detection  </p>
+- Encrypted security events
+- Detection and correlation findings
+- AI/ML analysis results
+- Metadata needed for detection and forensics</p>
 <p>It does <strong>not</strong> store:
-- Personal documents<br />
-- User files<br />
-- Browsing history<br />
-- Credentials<br />
-- Location data  </p>
-<p>Only what is necessary for security analysis.</p>
+- Personal documents or files
+- Browsing history
+- Credentials or passwords
+- Location data
+- Any content unrelated to security events</p>
 <hr />
-<h2 id="6-transparent-logic">6. Transparent Logic<a class="headerlink" href="#6-transparent-logic" title="Link to this section">&para;</a></h2>
-<p>The security model is intentionally simple:
-- Local collection<br />
-- Local encryption<br />
-- Local AI<br />
-- Local alerts  </p>
-<p>Nothing hidden, no silent uploads, no telemetry.</p>
+<h2 id="7-transparent-logic">7. Transparent Logic<a class="headerlink" href="#7-transparent-logic" title="Link to this section">&para;</a></h2>
+<p>The security model is intentionally simple and verifiable:
+- Local collection → local encryption → local detection → local AI → local alerts
+- No silent uploads, no telemetry, no hidden network connections</p>
+<p>Users can verify the platform's behavior through the Dashboard and system network monitoring.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Nyroxis provides a strong, privacy-focused security foundation:
-- Encrypted event storage<br />
-- Tamper protection<br />
-- Local-only AI<br />
-- No cloud risks  </p>
-<p>A modern security model designed for people who value both privacy and protection.</p>
+<p>Nyroxis provides a strong, privacy-focused, forensically sound security model:
+- AES-256 encrypted event storage
+- Hash-chained tamper protection
+- Local-only AI/ML
+- Platform guardian for resilience
+- No cloud risks, no telemetry, no external dependencies</p>
 
 
 
@@ -8873,10 +8892,10 @@ This model is designed for individuals, professionals, and executives who requir
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

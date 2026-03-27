@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2126,10 +2126,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-offline-ai-nyxia" class="md-nav__link">
+  <a href="#3-offline-license-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Offline AI (NyXIA)
+        3. Offline License Validation
       
     </span>
   </a>
@@ -2137,10 +2137,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-local-encrypted-storage" class="md-nav__link">
+  <a href="#4-offline-aiml-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Local Encrypted Storage
+        4. Offline AI/ML Engine
       
     </span>
   </a>
@@ -2148,10 +2148,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-no-external-fetching" class="md-nav__link">
+  <a href="#5-local-encrypted-storage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. No External Fetching
+        5. Local Encrypted Storage
       
     </span>
   </a>
@@ -2159,10 +2159,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-works-in-airgapped-environments" class="md-nav__link">
+  <a href="#6-no-external-fetching" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Works in Air‑Gapped Environments
+        6. No External Fetching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-works-in-air-gapped-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Works in Air-Gapped Environments
       
     </span>
   </a>
@@ -8741,65 +8752,71 @@
 
 
 <h1 id="offline-security">Offline Security<a class="headerlink" href="#offline-security" title="Link to this section">&para;</a></h1>
-<p>Nyroxis is designed to operate fully offline without any dependency on cloud services, external APIs, or remote servers.<br />
-This ensures complete autonomy, privacy, and protection even in disconnected environments.</p>
+<p>Nyroxis is designed to operate fully offline without any dependency on cloud services, external APIs, or remote servers.
+This ensures complete autonomy, privacy, and protection even in disconnected or air-gapped environments.</p>
 <hr />
 <h2 id="1-no-cloud-communication">1. No Cloud Communication<a class="headerlink" href="#1-no-cloud-communication" title="Link to this section">&para;</a></h2>
 <p>Nyroxis never:
-- Sends telemetry<br />
-- Syncs logs<br />
-- Contacts remote servers<br />
-- Uses cloud AI<br />
-- Requires online activation  </p>
+- Sends telemetry or usage data
+- Syncs logs to remote servers
+- Contacts cloud services for any function
+- Uses cloud AI or external ML APIs
+- Requires online activation</p>
 <p>Every function is local.</p>
 <hr />
 <h2 id="2-local-only-key-management">2. Local-Only Key Management<a class="headerlink" href="#2-local-only-key-management" title="Link to this section">&para;</a></h2>
 <p>Encryption keys are:
-- Generated locally<br />
-- Bound to device hardware<br />
-- Never transmitted<br />
-- Never stored in plaintext<br />
-- Reconstructed only when needed  </p>
-<p>All crypto happens offline.</p>
+- Derived locally from hardware identifiers (HWID)
+- Bound to the specific device
+- Never transmitted to any server
+- Never stored in plaintext
+- Reconstructed only in memory when needed</p>
+<p>All cryptographic operations happen offline.</p>
 <hr />
-<h2 id="3-offline-ai-nyxia">3. Offline AI (NyXIA)<a class="headerlink" href="#3-offline-ai-nyxia" title="Link to this section">&para;</a></h2>
-<p>NyXIA provides:
-- Behavioral detection<br />
-- Sequence analysis<br />
-- Anomaly scoring<br />
-- Scenario generation  </p>
-<p>All without cloud inference or cloud training.</p>
+<h2 id="3-offline-license-validation">3. Offline License Validation<a class="headerlink" href="#3-offline-license-validation" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian validates the license entirely offline:
+- License bound to HWID-derived cryptographic key
+- Validation uses AES-GCM encryption and HMAC verification locally
+- No internet connection required for any aspect of license management
+- Services stop automatically if license is invalid — enforced locally</p>
 <hr />
-<h2 id="4-local-encrypted-storage">4. Local Encrypted Storage<a class="headerlink" href="#4-local-encrypted-storage" title="Link to this section">&para;</a></h2>
-<p>All event logs and metadata remain:
-- Fully encrypted<br />
-- Stored in a protected database<br />
-- Accessible only on the same device  </p>
+<h2 id="4-offline-aiml-engine">4. Offline AI/ML Engine<a class="headerlink" href="#4-offline-aiml-engine" title="Link to this section">&para;</a></h2>
+<p>The Isolation Forest and statistical analysis engine runs completely offline:
+- Behavioral anomaly detection
+- Z-Score statistical classification
+- Spike detection and baseline comparison</p>
+<p>All computed directly from encrypted local events — no cloud inference, no network access.</p>
+<hr />
+<h2 id="5-local-encrypted-storage">5. Local Encrypted Storage<a class="headerlink" href="#5-local-encrypted-storage" title="Link to this section">&para;</a></h2>
+<p>All event logs, detection findings, and AI results remain:
+- Fully encrypted (AES-256)
+- Stored in a protected local database
+- Accessible only on the same device
+- Protected by hash-chained integrity structures</p>
 <p>No risk of remote breaches or cloud leaks.</p>
 <hr />
-<h2 id="5-no-external-fetching">5. No External Fetching<a class="headerlink" href="#5-no-external-fetching" title="Link to this section">&para;</a></h2>
+<h2 id="6-no-external-fetching">6. No External Fetching<a class="headerlink" href="#6-no-external-fetching" title="Link to this section">&para;</a></h2>
 <p>Nyroxis does not download:
-- Rules<br />
-- Models<br />
-- Signatures<br />
-- Threat intel  </p>
-<p>Everything is embedded locally.</p>
+- Detection rules or rule updates
+- AI models or model updates
+- Signatures or threat intelligence feeds</p>
+<p>Everything is embedded and managed locally. Rule updates come through manual installation.</p>
 <hr />
-<h2 id="6-works-in-airgapped-environments">6. Works in Air‑Gapped Environments<a class="headerlink" href="#6-works-in-airgapped-environments" title="Link to this section">&para;</a></h2>
+<h2 id="7-works-in-air-gapped-environments">7. Works in Air-Gapped Environments<a class="headerlink" href="#7-works-in-air-gapped-environments" title="Link to this section">&para;</a></h2>
 <p>Nyroxis runs perfectly on:
-- Offline laptops<br />
-- Isolated corporate environments<br />
-- Sensitive government setups<br />
-- High-risk locations with no internet  </p>
+- Fully offline laptops
+- Isolated corporate environments
+- High-security government setups
+- High-risk locations with no internet access</p>
 <p>Full functionality requires <strong>zero connectivity</strong>.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
 <p>Nyroxis offline security ensures:
-- Full autonomy<br />
-- Zero cloud exposure<br />
-- Local-only AI<br />
-- Private encrypted storage<br />
-- Complete independence  </p>
+- Full autonomy — no external infrastructure dependency
+- Zero cloud exposure
+- Local-only AI/ML
+- Private encrypted storage
+- Complete independence from internet connectivity</p>
 <p>A security model built for maximum privacy and control.</p>
 
 
@@ -8848,10 +8865,10 @@ This ensures complete autonomy, privacy, and protection even in disconnected env
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

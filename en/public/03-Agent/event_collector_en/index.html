@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1174,10 +1174,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-system-kernel-level-events" class="md-nav__link">
+  <a href="#5-system-service-events" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. System &amp; Kernel-Level Events
+        5. System &amp; Service Events
       
     </span>
   </a>
@@ -1186,6 +1186,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization Pipeline
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1204,7 +1215,7 @@
   <a href="#lightweight-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ️ Lightweight Implementation
+        Lightweight Implementation
       
     </span>
   </a>
@@ -1212,21 +1223,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#antitamper-protections" class="md-nav__link">
+  <a href="#offline-first-by-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Anti‑Tamper Protections
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#offlinefirst-by-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Offline‑First by Design
+        Offline-First by Design
       
     </span>
   </a>
@@ -8802,84 +8802,83 @@
 
 
 <h1 id="event-collector">Event Collector<a class="headerlink" href="#event-collector" title="Link to this section">&para;</a></h1>
-<p>The Event Collector is the subsystem inside the Nyroxis Agent responsible for capturing all security‑relevant activity on the device.<br />
-It is designed to be lightweight, private, and fully offline, while providing enterprise‑grade visibility into endpoint behavior.</p>
+<p>The Event Collector is the subsystem inside the Nyroxis Agent responsible for capturing all security-relevant activity on the device.
+It is designed to be lightweight, private, and fully offline, while providing enterprise-grade visibility into endpoint behavior.</p>
 <hr />
 <h2 id="purpose-of-the-event-collector">Purpose of the Event Collector<a class="headerlink" href="#purpose-of-the-event-collector" title="Link to this section">&para;</a></h2>
-<p>The Event Collector’s main goal is to gather actionable, structured information that helps users understand:
-- What is happening on their device<br />
-- When events occur<br />
-- Whether activity is normal or suspicious  </p>
+<p>The Event Collector's main goal is to gather actionable, structured information that helps users understand:
+- What is happening on their device
+- When events occur
+- Whether activity is normal or suspicious</p>
 <p>All without exposing data externally.</p>
 <hr />
 <h2 id="what-the-event-collector-monitors">What the Event Collector Monitors<a class="headerlink" href="#what-the-event-collector-monitors" title="Link to this section">&para;</a></h2>
-<p>Nyroxis focuses on the most security‑critical categories of events:</p>
-<h3 id="1-process-events"><strong>1. Process Events</strong><a class="headerlink" href="#1-process-events" title="Link to this section">&para;</a></h3>
+<p>Nyroxis focuses on the most security-critical categories of events:</p>
+<h3 id="1-process-events">1. Process Events<a class="headerlink" href="#1-process-events" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Process creation  </li>
-<li>Process termination  </li>
-<li>Parent/child relationships  </li>
+<li>Process creation and termination</li>
+<li>Parent/child relationships</li>
 <li>Command-line parameters (where available)</li>
+<li>Execution paths and binary metadata</li>
 </ul>
-<h3 id="2-network-events"><strong>2. Network Events</strong><a class="headerlink" href="#2-network-events" title="Link to this section">&para;</a></h3>
+<h3 id="2-network-events">2. Network Events<a class="headerlink" href="#2-network-events" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Outgoing connections  </li>
-<li>Incoming connections  </li>
-<li>Destination IPs, ports  </li>
-<li>Protocol type  </li>
-<li>Suspicious repeated attempts  </li>
+<li>Outgoing and incoming connections</li>
+<li>Destination IPs and ports</li>
+<li>Protocol type</li>
+<li>Repeated connection attempts</li>
 </ul>
-<h3 id="3-file-system-activity"><strong>3. File System Activity</strong><a class="headerlink" href="#3-file-system-activity" title="Link to this section">&para;</a></h3>
+<h3 id="3-file-system-activity">3. File System Activity<a class="headerlink" href="#3-file-system-activity" title="Link to this section">&para;</a></h3>
 <ul>
-<li>File creation  </li>
-<li>File deletion  </li>
-<li>Modifications  </li>
-<li>Access to sensitive directories  </li>
+<li>File creation, modification, and deletion</li>
+<li>Access to sensitive directories</li>
+<li>Registry modifications</li>
 </ul>
-<h3 id="4-privilege-security-events"><strong>4. Privilege &amp; Security Events</strong><a class="headerlink" href="#4-privilege-security-events" title="Link to this section">&para;</a></h3>
+<h3 id="4-privilege-security-events">4. Privilege &amp; Security Events<a class="headerlink" href="#4-privilege-security-events" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Elevation attempts  </li>
-<li>Sensitive system calls  </li>
-<li>Registry/config changes (on supported platforms)  </li>
-<li>Access to protected resources  </li>
+<li>Elevation attempts</li>
+<li>Sensitive system calls</li>
+<li>Registry and config changes</li>
+<li>Access to protected resources</li>
 </ul>
-<h3 id="5-system-kernel-level-events"><strong>5. System &amp; Kernel-Level Events</strong><a class="headerlink" href="#5-system-kernel-level-events" title="Link to this section">&para;</a></h3>
+<h3 id="5-system-service-events">5. System &amp; Service Events<a class="headerlink" href="#5-system-service-events" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Service start/stop  </li>
-<li>Driver loading  </li>
-<li>System warnings  </li>
-<li>Indicators of persistence mechanisms  </li>
+<li>Service start/stop</li>
+<li>Driver loading</li>
+<li>Windows Event Log entries (Security, System, Application)</li>
+<li>Indicators of persistence mechanisms</li>
+<li>PowerShell and script execution</li>
 </ul>
-<p>The exact scope is optimized per operating system.</p>
+<p>The exact scope is optimized for Windows (v1.0). macOS and Linux support is in development.</p>
+<hr />
+<h2 id="normalization-pipeline">Normalization Pipeline<a class="headerlink" href="#normalization-pipeline" title="Link to this section">&para;</a></h2>
+<p>After collection, each event is:
+1. Parsed and structured into a normalized format
+2. Enriched with contextual metadata (timestamp, source, severity hint)
+3. Prepared for encryption and storage
+4. Made ready for consumption by Nyroxis Intelligence</p>
+<p>This normalization ensures consistent rule evaluation across all event types.</p>
 <hr />
 <h2 id="secure-collection-immediate-encryption">Secure Collection &amp; Immediate Encryption<a class="headerlink" href="#secure-collection-immediate-encryption" title="Link to this section">&para;</a></h2>
 <p>Every event gathered by the collector is:
-- Encrypted instantly<br />
-- Stored in tamper‑resistant form<br />
-- Indexed with timestamps and metadata  </p>
-<p>No unencrypted logs are ever written to disk.</p>
+- Encrypted instantly with AES-256
+- Stored in tamper-resistant hash-chained form
+- Indexed with timestamps and metadata
+- Never written to disk in plaintext</p>
 <hr />
-<h2 id="lightweight-implementation">️ Lightweight Implementation<a class="headerlink" href="#lightweight-implementation" title="Link to this section">&para;</a></h2>
+<h2 id="lightweight-implementation">Lightweight Implementation<a class="headerlink" href="#lightweight-implementation" title="Link to this section">&para;</a></h2>
 <p>The Event Collector is optimized for:
-- Minimal CPU overhead<br />
-- Low memory usage<br />
-- Zero impact on everyday tasks<br />
-- Stable operation over long periods  </p>
-<p>This ensures Nyroxis remains suitable for home and professional environments.</p>
+- Minimal CPU overhead (~0.1%)
+- Low memory usage (~57 MB RAM total for the Agent)
+- Zero impact on everyday tasks
+- Stable long-term operation</p>
 <hr />
-<h2 id="antitamper-protections">Anti‑Tamper Protections<a class="headerlink" href="#antitamper-protections" title="Link to this section">&para;</a></h2>
-<p>To ensure collected logs cannot be altered or erased:
-- Integrity checks are applied<br />
-- Secure write‑paths are enforced<br />
-- Critical files are monitored for unauthorized changes  </p>
-<p>This increases trustworthiness during investigations.</p>
-<hr />
-<h2 id="offlinefirst-by-design">Offline‑First by Design<a class="headerlink" href="#offlinefirst-by-design" title="Link to this section">&para;</a></h2>
-<p>The Event Collector operates with <strong>zero cloud interaction</strong>.<br />
-All monitoring, encryption, and storage happen locally — preserving user privacy even in sensitive environments.</p>
+<h2 id="offline-first-by-design">Offline-First by Design<a class="headerlink" href="#offline-first-by-design" title="Link to this section">&para;</a></h2>
+<p>The Event Collector operates with <strong>zero cloud interaction</strong>.
+All monitoring, normalization, encryption, and storage happen locally — preserving user privacy even in sensitive or air-gapped environments.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>The Event Collector is the foundation of Nyroxis’ visibility layer, capturing every important security‑related activity while staying lightweight, encrypted, and completely offline.</p>
+<p>The Event Collector is the foundation of Nyroxis' visibility layer, capturing every important security-related activity while staying lightweight, encrypted, and completely offline.</p>
 
 
 
@@ -8927,10 +8926,10 @@ All monitoring, encryption, and storage happen locally — preserving user priva
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

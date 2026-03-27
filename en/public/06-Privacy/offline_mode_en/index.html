@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1673,10 +1673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-local-ai-nyxia" class="md-nav__link">
+  <a href="#3-offline-license-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Local AI (NyXIA)
+        3. Offline License Validation
       
     </span>
   </a>
@@ -1684,10 +1684,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-secure-updates-optional" class="md-nav__link">
+  <a href="#4-local-aiml-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Secure Updates (Optional)
+        4. Local AI/ML Engine
       
     </span>
   </a>
@@ -1695,10 +1695,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-transparent-architecture" class="md-nav__link">
+  <a href="#5-update-checking-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Transparent Architecture
+        5. Update Checking (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-transparent-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Transparent Architecture
       
     </span>
   </a>
@@ -8741,65 +8752,63 @@
 
 
 <h1 id="offline-mode">Offline Mode<a class="headerlink" href="#offline-mode" title="Link to this section">&para;</a></h1>
-<p>Nyroxis is built from the ground up to operate fully offline — without requiring cloud access, remote authentication, or external APIs.<br />
+<p>Nyroxis is built from the ground up to operate fully offline — without requiring cloud access, remote authentication, or external APIs.
 This design gives users security, privacy, and full autonomy over their device.</p>
 <hr />
 <h2 id="why-offline-matters">Why Offline Matters<a class="headerlink" href="#why-offline-matters" title="Link to this section">&para;</a></h2>
 <p>Operating offline ensures:
-- <strong>No data leaves the device</strong>
-- <strong>No exposure to cloud breaches</strong>
-- <strong>No dependency on external infrastructure</strong>
-- <strong>No risk of third-party monitoring</strong></p>
+- <strong>No data leaves the device</strong> — ever
+- <strong>No exposure to cloud breaches</strong> or third-party infrastructure failures
+- <strong>No dependency on external servers</strong> for monitoring or detection
+- <strong>No risk of third-party monitoring</strong> or behavioral profiling
+- <strong>Full functionality even without internet</strong> — including in air-gapped environments</p>
 <p>Users retain complete control over their security data.</p>
 <hr />
 <h2 id="1-full-local-operation">1. Full Local Operation<a class="headerlink" href="#1-full-local-operation" title="Link to this section">&para;</a></h2>
-<p>Nyroxis performs:
-- Event collection<br />
-- Encryption<br />
-- Storage<br />
-- AI analysis<br />
-- Rule matching<br />
-- Correlations<br />
-- Alerts  </p>
-<p>All locally on the device.</p>
-<p>Nothing is uploaded.</p>
+<p>Every function of the Nyroxis platform operates locally:
+- Event collection and normalization (Nyroxis Agent)
+- Detection, correlation, and chain rule evaluation (Nyroxis Intelligence)
+- Service monitoring, backup, and license validation (Nyroxis System Guardian)
+- AI/ML anomaly detection and statistical analysis
+- Dashboard visualization and reporting</p>
+<p>Nothing is uploaded. Nothing is transmitted.</p>
 <hr />
 <h2 id="2-no-cloud-no-servers">2. No Cloud, No Servers<a class="headerlink" href="#2-no-cloud-no-servers" title="Link to this section">&para;</a></h2>
-<p>Nyroxis does <em>not</em> use:
-- Cloud processing<br />
-- Telemetry<br />
-- Remote logging<br />
-- Online scanning<br />
-- External data sources  </p>
+<p>Nyroxis does not use:
+- Cloud processing or storage
+- Telemetry or usage tracking
+- Remote logging
+- Online scanning or threat intelligence feeds
+- External authentication services</p>
 <p>This eliminates entire classes of privacy and attack risks.</p>
 <hr />
-<h2 id="3-local-ai-nyxia">3. Local AI (NyXIA)<a class="headerlink" href="#3-local-ai-nyxia" title="Link to this section">&para;</a></h2>
-<p>NyXIA runs completely offline:
-- Behavioral detection<br />
-- Anomaly scoring<br />
-- Scenario generation  </p>
-<p>All computed directly from encrypted local events.</p>
+<h2 id="3-offline-license-validation">3. Offline License Validation<a class="headerlink" href="#3-offline-license-validation" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian validates the HWID-based license entirely offline:
+- No internet connection required
+- Validation uses AES-GCM encryption and HMAC verification locally
+- License integrity is enforced without contacting any external server</p>
 <hr />
-<h2 id="4-secure-updates-optional">4. Secure Updates (Optional)<a class="headerlink" href="#4-secure-updates-optional" title="Link to this section">&para;</a></h2>
-<p>Nyroxis can receive updates:
-- Manually<br />
-- Offline package installation  </p>
-<p>No forced cloud connections.</p>
+<h2 id="4-local-aiml-engine">4. Local AI/ML Engine<a class="headerlink" href="#4-local-aiml-engine" title="Link to this section">&para;</a></h2>
+<p>The Isolation Forest and statistical analysis engine runs completely offline:
+- Behavioral anomaly detection
+- Z-Score classification
+- Spike detection and baseline comparison</p>
+<p>All computed directly from encrypted local events — no cloud inference, no model updates over the network.</p>
 <hr />
-<h2 id="5-transparent-architecture">5. Transparent Architecture<a class="headerlink" href="#5-transparent-architecture" title="Link to this section">&para;</a></h2>
-<p>Offline architecture avoids:
-- Background tracking<br />
-- Invisible network calls<br />
-- Cloud-based analytics  </p>
-<p>Users can verify that Nyroxis does not connect to the internet.</p>
+<h2 id="5-update-checking-optional">5. Update Checking (Optional)<a class="headerlink" href="#5-update-checking-optional" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian can check for updates at configurable intervals.
+Update installation remains manual — there are no forced or automatic cloud connections.
+The platform operates at full capability regardless of update status.</p>
+<hr />
+<h2 id="6-transparent-architecture">6. Transparent Architecture<a class="headerlink" href="#6-transparent-architecture" title="Link to this section">&para;</a></h2>
+<p>Nyroxis exposes clear indicators in the Dashboard that allow users to verify:
+- No outgoing network connections from Nyroxis processes
+- No background telemetry
+- No cloud dependency</p>
+<p>Trust is measurable — not assumed.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Offline Mode guarantees that Nyroxis remains:
-- Private<br />
-- Encrypted<br />
-- Autonomous<br />
-- Fully local  </p>
-<p>A security platform designed to protect users <em>without</em> exposing their data.</p>
+<p>Offline Mode guarantees that Nyroxis remains private, encrypted, autonomous, and fully local — a security platform designed to protect users without ever exposing their data.</p>
 
 
 
@@ -8847,10 +8856,10 @@ This design gives users security, privacy, and full autonomy over their device.<
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

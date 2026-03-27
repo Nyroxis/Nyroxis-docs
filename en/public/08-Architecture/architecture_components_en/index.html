@@ -29,7 +29,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -37,7 +37,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -8575,74 +8575,79 @@
 
 
 <h1 id="architecture-components">Architecture Components<a class="headerlink" href="#architecture-components" title="Link to this section">&para;</a></h1>
-<p>This section describes each core component of the Nyroxis platform and how they work together to deliver private, offline, tamper‑resistant security.</p>
+<p>This section describes each core component of the Nyroxis platform and how they work together to deliver private, offline, tamper-resistant security.</p>
 <hr />
-<h2 id="1-nyroxis-agent-event-collector">1. Nyroxis Agent (Event Collector)<a class="headerlink" href="#1-nyroxis-agent-event-collector" title="Link to this section">&para;</a></h2>
-<p>The Agent is the lightweight background service responsible for:
-- Monitoring processes<br />
-- Tracking network connections<br />
-- Observing file changes<br />
-- Watching privilege activity<br />
-- Capturing system events in real time  </p>
-<p>All events are <strong>encrypted immediately</strong> before being written anywhere.</p>
-<p>It is designed to be:
-- Silent<br />
-- Efficient<br />
-- Low‑resource<br />
-- Fully offline  </p>
+<h2 id="1-nyroxis-agent">1. Nyroxis Agent<a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h2>
+<p>The lightweight background service responsible for:
+- Monitoring processes, network connections, file changes, and privilege activity
+- Capturing Windows Event Log entries (Security, System, Application)
+- Monitoring PowerShell and script execution
+- Normalizing event data in real time
+- Encrypting every event immediately before writing</p>
+<p>Properties:
+- ~57 MB RAM, ~0.1% CPU
+- Silent Windows service
+- Fully offline — nothing leaves the device</p>
 <hr />
-<h2 id="2-secure-local-database">2. Secure Local Database<a class="headerlink" href="#2-secure-local-database" title="Link to this section">&para;</a></h2>
-<p>A protected, encrypted local storage that holds:
-- Event logs<br />
-- Metadata<br />
-- Behavioral baselines<br />
-- Correlation indexes  </p>
-<p>Security features include:
-- AES‑based encryption<br />
-- Integrity checking<br />
-- Hash‑chained event blocks<br />
-- No plaintext storage  </p>
+<h2 id="2-nyroxis-intelligence">2. Nyroxis Intelligence<a class="headerlink" href="#2-nyroxis-intelligence" title="Link to this section">&para;</a></h2>
+<p>The detection and correlation engine:
+- <strong>27 detection rules</strong> — known threat patterns in individual events
+- <strong>12 correlation rules</strong> — patterns across related events over time
+- <strong>2 chain rules</strong> — multi-stage attack sequence detection</p>
+<p>Properties:
+- ~87 MB RAM, ~1.8% CPU
+- Fully extensible — security professionals can write and deploy custom rules in JSON format
+- Raises immediate alerts on rule matches
+- Stores findings in dedicated detection databases</p>
+<hr />
+<h2 id="3-nyroxis-system-guardian">3. Nyroxis System Guardian<a class="headerlink" href="#3-nyroxis-system-guardian" title="Link to this section">&para;</a></h2>
+<p>The platform guardian running as a system tray application:
+- Monitors Nyroxis Agent and Intelligence every 3 seconds
+- Manages scheduled and on-demand database backups
+- Validates HWID-based license offline (AES-GCM + HMAC)
+- Automatically stops services if license expires
+- Checks for platform updates at configurable intervals</p>
+<p>Properties:
+- ~6.5 MB RAM, ~0.1% CPU
+- Fully offline license validation
+- Critical for platform resilience and forensic integrity</p>
+<hr />
+<h2 id="4-secure-local-database">4. Secure Local Database<a class="headerlink" href="#4-secure-local-database" title="Link to this section">&para;</a></h2>
+<p>A protected SQLite database holding:
+- Encrypted event logs
+- Detection and correlation findings
+- AI/ML analysis results
+- Behavioral baseline data
+- Metadata for forensic timeline reconstruction</p>
+<p>Security features:
+- AES-256 encryption at rest
+- Hash-chained event blocks for tamper detection
+- Protected write paths
+- Integrity verification on every read</p>
 <p>The database <strong>never leaves the device</strong>.</p>
 <hr />
-<h2 id="3-nyxia-local-ai-engine">3. NyXIA — Local AI Engine<a class="headerlink" href="#3-nyxia-local-ai-engine" title="Link to this section">&para;</a></h2>
-<p>NyXIA is the offline AI engine powering:
-- Behavioral anomaly detection<br />
-- Scenario generation<br />
-- Risk scoring<br />
-- Sequence pattern analysis  </p>
-<p>It processes encrypted events locally and does not require:
-- Cloud AI<br />
-- Telemetry<br />
-- Network access  </p>
-<p>Privacy‑first by design.</p>
+<h2 id="5-local-aiml-engine">5. Local AI/ML Engine<a class="headerlink" href="#5-local-aiml-engine" title="Link to this section">&para;</a></h2>
+<p>The offline anomaly detection engine embedded in the Dashboard:
+- Custom Isolation Forest (100 trees, 256 samples, 8 behavioral features)
+- Z-Score statistical classification: Critical / High / Medium / Low
+- IQR outlier detection, moving averages, spike detection
+- Contributing feature identification with Z-score values
+- Local behavioral baseline building</p>
+<p>No cloud, no external ML library, no data sharing.</p>
 <hr />
-<h2 id="4-rule-matching-engine">4. Rule Matching Engine<a class="headerlink" href="#4-rule-matching-engine" title="Link to this section">&para;</a></h2>
-<p>A deterministic rule‑based engine used for:
-- Pattern detection<br />
-- Event frequency checks<br />
-- Threshold‑based alerts<br />
-- Correlation support  </p>
-<p>It complements AI with predictable, transparent logic.</p>
-<hr />
-<h2 id="5-dashboard-user-interface">5. Dashboard (User Interface)<a class="headerlink" href="#5-dashboard-user-interface" title="Link to this section">&para;</a></h2>
-<p>The Dashboard provides:
-- Real‑time visibility<br />
-- Event search<br />
-- AI insights<br />
-- Charts &amp; analytics<br />
-- Settings and retention control  </p>
+<h2 id="6-nyroxis-dashboard">6. Nyroxis Dashboard<a class="headerlink" href="#6-nyroxis-dashboard" title="Link to this section">&para;</a></h2>
+<p>The user interface providing:
+- Real-time event monitoring with forensic search and filtering
+- Detection, correlation, and chain result visualization
+- AI/ML analysis with contributing feature breakdown
+- Reporting — PDF/CSV export
+- Database backup management
+- Settings and retention control
+- Multilingual: English, French, German</p>
 <p>Everything displayed is retrieved locally from the secure database.</p>
 <hr />
-<h2 id="6-security-layer">6. Security Layer<a class="headerlink" href="#6-security-layer" title="Link to this section">&para;</a></h2>
-<p>Every component is protected by:
-- Local encryption<br />
-- Integrity verification<br />
-- No cloud communication<br />
-- Strict offline operation<br />
-- Tamper‑resistant data structures  </p>
-<hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Nyroxis components work as an integrated, private, offline ecosystem — providing strong security without exposing any user data to the cloud.</p>
+<p>Nyroxis components work as an integrated, private, offline ecosystem — providing enterprise-grade visibility, multi-layer detection, local AI/ML intelligence, and forensic-grade evidence without exposing any user data to the cloud.</p>
 
 
 
@@ -8690,10 +8695,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

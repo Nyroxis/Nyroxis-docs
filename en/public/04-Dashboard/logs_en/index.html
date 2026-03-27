@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1364,7 +1364,7 @@
   <a href="#available-filters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Available filters
+        Available Filters
       
     </span>
   </a>
@@ -1375,7 +1375,7 @@
   <a href="#search-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Search capabilities
+        Search Capabilities
       
     </span>
   </a>
@@ -1388,10 +1388,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#event-details-panel" class="md-nav__link">
+  <a href="#event-details" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Event Details Panel
+        Event Details
       
     </span>
   </a>
@@ -1399,10 +1399,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#privacy-offlinefirst" class="md-nav__link">
+  <a href="#privacy-offline-first" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Privacy &amp; Offline‑First
+        Privacy &amp; Offline-First
       
     </span>
   </a>
@@ -8819,91 +8819,90 @@
 
 
 <h1 id="logs-search">Logs &amp; Search<a class="headerlink" href="#logs-search" title="Link to this section">&para;</a></h1>
-<p>The Logs section of the Nyroxis Dashboard provides a clear, searchable, and structured view of all security‑relevant events collected by the Nyroxis Agent.<br />
-It is designed to give both non‑technical users and professionals instant visibility into what is happening on their device.</p>
+<p>The Logs section of the Nyroxis Dashboard provides a clear, searchable, and structured view of all security-relevant events collected by Nyroxis Agent.
+It is the forensic core of the platform — designed to give both non-technical users and security professionals instant visibility into what is happening on their device.</p>
 <hr />
 <h2 id="purpose-of-logs-view">Purpose of Logs View<a class="headerlink" href="#purpose-of-logs-view" title="Link to this section">&para;</a></h2>
 <p>The Logs module helps users understand:
-- What events occurred<br />
-- When they happened<br />
-- Which processes, files, or network connections were involved<br />
-- Whether the activity appears normal or suspicious  </p>
-<p>It turns raw system data into readable, timestamped entries.</p>
+- What events occurred and when
+- Which processes, files, or network connections were involved
+- Whether the activity appears normal or suspicious
+- The full context of any event for forensic investigation</p>
+<p>It turns raw encrypted event data into readable, timestamped, searchable entries.</p>
 <hr />
 <h2 id="event-categories">Event Categories<a class="headerlink" href="#event-categories" title="Link to this section">&para;</a></h2>
 <p>Nyroxis organizes logs into intuitive groups:</p>
-<h3 id="1-process-events"><strong>1. Process Events</strong><a class="headerlink" href="#1-process-events" title="Link to this section">&para;</a></h3>
+<h3 id="1-process-events">1. Process Events<a class="headerlink" href="#1-process-events" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Process start / stop  </li>
-<li>Parent / child relationships  </li>
-<li>Execution paths  </li>
+<li>Process start and stop</li>
+<li>Parent/child relationships</li>
+<li>Execution paths and command-line parameters</li>
 </ul>
-<h3 id="2-network-events"><strong>2. Network Events</strong><a class="headerlink" href="#2-network-events" title="Link to this section">&para;</a></h3>
+<h3 id="2-network-events">2. Network Events<a class="headerlink" href="#2-network-events" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Outgoing / incoming connections  </li>
-<li>IP / port details  </li>
-<li>Protocol types  </li>
+<li>Outgoing and incoming connections</li>
+<li>IP addresses and port details</li>
+<li>Protocol types</li>
 </ul>
-<h3 id="3-file-system-events"><strong>3. File System Events</strong><a class="headerlink" href="#3-file-system-events" title="Link to this section">&para;</a></h3>
+<h3 id="3-file-system-events">3. File System Events<a class="headerlink" href="#3-file-system-events" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Creation  </li>
-<li>Deletion  </li>
-<li>Modification  </li>
-<li>Sensitive file access  </li>
+<li>File creation, modification, and deletion</li>
+<li>Access to sensitive directories</li>
+<li>Registry changes</li>
 </ul>
-<h3 id="4-privilege-security-events"><strong>4. Privilege &amp; Security Events</strong><a class="headerlink" href="#4-privilege-security-events" title="Link to this section">&para;</a></h3>
+<h3 id="4-privilege-security-events">4. Privilege &amp; Security Events<a class="headerlink" href="#4-privilege-security-events" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Elevation attempts  </li>
-<li>Access to restricted resources  </li>
-<li>System policy changes  </li>
+<li>Elevation attempts</li>
+<li>Access to restricted resources</li>
+<li>System policy changes</li>
+<li>Credential-related activity</li>
 </ul>
-<h3 id="5-system-activity"><strong>5. System Activity</strong><a class="headerlink" href="#5-system-activity" title="Link to this section">&para;</a></h3>
+<h3 id="5-system-activity">5. System Activity<a class="headerlink" href="#5-system-activity" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Services  </li>
-<li>Drivers  </li>
-<li>Kernel‑related behaviors  </li>
+<li>Service start and stop</li>
+<li>Driver loading</li>
+<li>Windows Event Log entries (Security, System, Application)</li>
+<li>PowerShell and script execution</li>
 </ul>
 <hr />
 <h2 id="search-filtering">Search &amp; Filtering<a class="headerlink" href="#search-filtering" title="Link to this section">&para;</a></h2>
 <p>The Logs interface includes a powerful filtering panel:</p>
-<h3 id="available-filters"><strong>Available filters</strong><a class="headerlink" href="#available-filters" title="Link to this section">&para;</a></h3>
+<h3 id="available-filters">Available Filters<a class="headerlink" href="#available-filters" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Date &amp; time range  </li>
-<li>Event category  </li>
-<li>Severity level  </li>
-<li>Process name  </li>
-<li>File path  </li>
-<li>Network endpoint  </li>
-<li>Keywords  </li>
+<li>Date and time range</li>
+<li>Event category</li>
+<li>Severity level (Critical / High / Warning / Info)</li>
+<li>Source and channel</li>
+<li>Process name</li>
+<li>File path</li>
+<li>Network endpoint</li>
+<li>Keywords</li>
 </ul>
-<h3 id="search-capabilities"><strong>Search capabilities</strong><a class="headerlink" href="#search-capabilities" title="Link to this section">&para;</a></h3>
+<h3 id="search-capabilities">Search Capabilities<a class="headerlink" href="#search-capabilities" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Real‑time filtering  </li>
-<li>Regex‑friendly (optional)  </li>
-<li>Multi‑field search  </li>
-<li>Instant refresh  </li>
+<li>Real-time filtering</li>
+<li>Multi-field search</li>
+<li>Export to CSV for legal documentation or external analysis</li>
 </ul>
-<p>Designed to support both beginners and analysts.</p>
+<p>Designed to support both beginners and professional analysts.</p>
 <hr />
-<h2 id="event-details-panel">Event Details Panel<a class="headerlink" href="#event-details-panel" title="Link to this section">&para;</a></h2>
-<p>Clicking an event opens a details card displaying:
-- Full metadata<br />
-- Process lineage<br />
-- Related files or connections<br />
-- Severity score<br />
-- Explanation of risk<br />
-- Recommendations (if applicable)  </p>
+<h2 id="event-details">Event Details<a class="headerlink" href="#event-details" title="Link to this section">&para;</a></h2>
+<p>Clicking an event opens a details panel displaying:
+- Full event metadata
+- Process lineage
+- Related files or network connections
+- Severity score
+- Raw payload details</p>
 <hr />
-<h2 id="privacy-offlinefirst">Privacy &amp; Offline‑First<a class="headerlink" href="#privacy-offlinefirst" title="Link to this section">&para;</a></h2>
+<h2 id="privacy-offline-first">Privacy &amp; Offline-First<a class="headerlink" href="#privacy-offline-first" title="Link to this section">&para;</a></h2>
 <p>All logs:
-- Are stored locally<br />
-- Are fully encrypted<br />
-- Never leave the device<br />
-- Are processed without cloud interaction  </p>
-<p>Nyroxis ensures that users retain full control over their event data.</p>
+- Are stored locally in the encrypted SQLite database
+- Are fully encrypted (AES-256)
+- Never leave the device
+- Are processed without any cloud interaction</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>The Logs &amp; Search module provides a transparent, organized, and fully private way to explore system activity — giving users true visibility without exposing any data externally.</p>
+<p>The Logs &amp; Search module provides a transparent, organized, and fully private way to explore system activity — giving users true forensic visibility without exposing any data externally.</p>
 
 
 
@@ -8951,10 +8950,10 @@ It is designed to give both non‑technical users and professionals instant visi
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

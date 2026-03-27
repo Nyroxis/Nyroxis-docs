@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1157,10 +1157,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-integrity-protection-anti-tamper" class="md-nav__link">
+  <a href="#2-integrity-protection-hash-chained-event-blocks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Integrity Protection (Anti-Tamper)
+        2. Integrity Protection — Hash-Chained Event Blocks
       
     </span>
   </a>
@@ -1168,10 +1168,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-agent-self-protection" class="md-nav__link">
+  <a href="#3-platform-service-protection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Agent Self-Protection
+        3. Platform Service Protection
       
     </span>
   </a>
@@ -8741,59 +8741,60 @@
 
 
 <h1 id="protection-core">Protection Core<a class="headerlink" href="#protection-core" title="Link to this section">&para;</a></h1>
-<p>The Protection Core is the security backbone of the Nyroxis Agent.<br />
-It reinforces the integrity of monitoring, ensures encrypted event handling, and prevents attackers from tampering with logs or disabling the Agent.</p>
+<p>The Protection Core is the security backbone of the Nyroxis Agent.
+It reinforces the integrity of monitoring, ensures encrypted event handling, and prevents attackers from tampering with logs or disabling the platform.</p>
 <p>Its design follows strict privacy-first and offline-first principles.</p>
 <hr />
 <h2 id="core-objectives">Core Objectives<a class="headerlink" href="#core-objectives" title="Link to this section">&para;</a></h2>
 <p>The Protection Core ensures:
-- Security events cannot be altered<br />
-- Logs remain encrypted from source to storage<br />
-- The Agent cannot be silently disabled<br />
-- Sensitive components are protected from unauthorized changes  </p>
-<p>This creates trust in the visibility layer.</p>
+- Security events cannot be altered or deleted undetected
+- Logs remain encrypted from source to storage
+- The platform cannot be silently disabled
+- Sensitive components are protected from unauthorized changes</p>
+<p>This creates trust in the visibility and forensic layer.</p>
 <hr />
 <h2 id="1-end-to-end-local-encryption">1. End-to-End Local Encryption<a class="headerlink" href="#1-end-to-end-local-encryption" title="Link to this section">&para;</a></h2>
 <p>Every event captured by Nyroxis is:
-- Encrypted immediately<br />
-- Written to disk in encrypted form only<br />
-- Indexed with timestamps and metadata<br />
-- Never stored in plaintext  </p>
+- Encrypted immediately at the moment of capture
+- Written to disk in encrypted form only (AES-256)
+- Indexed with timestamps and metadata
+- Never stored in plaintext</p>
 <p>The encryption model prevents attackers from reading or modifying event history.</p>
 <hr />
-<h2 id="2-integrity-protection-anti-tamper">2. Integrity Protection (Anti-Tamper)<a class="headerlink" href="#2-integrity-protection-anti-tamper" title="Link to this section">&para;</a></h2>
-<p>Nyroxis applies mechanisms such as:
-- Protected write paths<br />
-- Hashing &amp; verification of event blocks<br />
-- Monitoring of its own critical files<br />
-- Alerting on suspicious modification attempts  </p>
-<p>These components help detect attempts to erase traces.</p>
+<h2 id="2-integrity-protection-hash-chained-event-blocks">2. Integrity Protection — Hash-Chained Event Blocks<a class="headerlink" href="#2-integrity-protection-hash-chained-event-blocks" title="Link to this section">&para;</a></h2>
+<p>Nyroxis stores events in a hash-chained structure where each block contains:
+- Encrypted payload
+- Integrity hash
+- Sequential index
+- Link to the previous block</p>
+<p>This makes tampering immediately detectable:
+- <strong>Deletion</strong> — the next block's previous-hash will not match
+- <strong>Modification</strong> — the hash of the altered block will not match
+- <strong>Injection</strong> — sequence numbers and chain hashes will fail</p>
+<p>Any tampering is flagged as a security event.</p>
 <hr />
-<h2 id="3-agent-self-protection">3. Agent Self-Protection<a class="headerlink" href="#3-agent-self-protection" title="Link to this section">&para;</a></h2>
-<p>The Protection Core ensures the Agent cannot be quietly disabled.</p>
-<p>Protections include:
-- Monitoring the Agent’s runtime state<br />
-- Detecting unexpected shutdowns<br />
-- Ensuring immediate restart on interruption<br />
-- Logging shutdown attempts as security events  </p>
-<p>This ensures persistent monitoring even under attack.</p>
+<h2 id="3-platform-service-protection">3. Platform Service Protection<a class="headerlink" href="#3-platform-service-protection" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian is responsible for ensuring that Nyroxis Agent and Nyroxis Intelligence remain running at all times.</p>
+<p>Every 3 seconds, Guardian verifies the operational status of both services. If either service stops unexpectedly — due to a system event, crash, or deliberate interference — Guardian detects it immediately and takes corrective action.</p>
+<p>Shutdown attempts are logged as security events, preserving evidence of interference.</p>
 <hr />
 <h2 id="4-offline-security">4. Offline Security<a class="headerlink" href="#4-offline-security" title="Link to this section">&para;</a></h2>
 <p>The Protection Core never requires:
-- Cloud validation<br />
-- External APIs<br />
-- Remote servers  </p>
-<p>All checks and verification happen <strong>100% offline</strong>.</p>
+- Cloud validation
+- External APIs
+- Remote servers</p>
+<p>All integrity checks and verification happen <strong>100% offline</strong>.
+License validation also operates fully offline via AES-GCM encryption and HMAC verification.</p>
 <hr />
 <h2 id="5-secure-interaction-with-the-dashboard">5. Secure Interaction with the Dashboard<a class="headerlink" href="#5-secure-interaction-with-the-dashboard" title="Link to this section">&para;</a></h2>
-<p>The Dashboard accesses data through:
-- Verified secure read-paths<br />
-- Read-only access to logs<br />
-- Strict separation between visualization and event storage  </p>
+<p>The Dashboard accesses event data through:
+- Verified secure read-paths
+- Read-only access to logs
+- Strict separation between visualization and event storage</p>
 <p>This prevents UI-layer attacks from modifying real data.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>The Protection Core ensures that monitoring, encryption, and event integrity remain trustworthy — even in hostile environments — while keeping all data private and fully local.</p>
+<p>The Protection Core — combined with Nyroxis System Guardian — ensures that monitoring, encryption, and event integrity remain trustworthy even in hostile environments, while keeping all data private, local, and forensically reliable.</p>
 
 
 
@@ -8841,10 +8842,10 @@ It reinforces the integrity of monitoring, ensures encrypted event handling, and
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

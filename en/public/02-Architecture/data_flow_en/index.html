@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -950,10 +950,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-event-collection" class="md-nav__link">
+  <a href="#1-event-collection-nyroxis-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Event Collection
+        1. Event Collection (Nyroxis Agent)
       
     </span>
   </a>
@@ -961,10 +961,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-encryption-at-source" class="md-nav__link">
+  <a href="#2-normalization-encryption-at-source" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Encryption at Source
+        2. Normalization &amp; Encryption at Source
       
     </span>
   </a>
@@ -983,10 +983,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-local-analysis-engine" class="md-nav__link">
+  <a href="#4-nyroxis-intelligence-rule-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Local Analysis Engine
+        4. Nyroxis Intelligence — Rule Engine
       
     </span>
   </a>
@@ -994,10 +994,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-dashboard-visualization" class="md-nav__link">
+  <a href="#5-local-aiml-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Dashboard Visualization
+        5. Local AI/ML Engine
       
     </span>
   </a>
@@ -1005,10 +1005,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-data-lifecycle-diagram" class="md-nav__link">
+  <a href="#6-dashboard-visualization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Full Data Lifecycle Diagram
+        6. Dashboard Visualization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-data-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Data Lifecycle
       
     </span>
   </a>
@@ -8741,65 +8752,81 @@
 
 
 <h1 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Link to this section">&para;</a></h1>
-<p>This section explains how data moves inside Nyroxis — from event collection to user interpretation — while remaining fully local, encrypted, and private.</p>
-<p>Nyroxis follows a simple, transparent, privacy-first lifecycle.</p>
+<p>This section explains how data moves inside Nyroxis — from event collection to user interpretation — while remaining fully local, encrypted, and private at every step.</p>
 <hr />
-<h2 id="1-event-collection">1. Event Collection<a class="headerlink" href="#1-event-collection" title="Link to this section">&para;</a></h2>
-<p>The Nyroxis Agent continuously monitors:
-- Processes<br />
-- Network connections<br />
-- File changes<br />
-- Privilege actions<br />
-- System &amp; security events  </p>
+<h2 id="1-event-collection-nyroxis-agent">1. Event Collection (Nyroxis Agent)<a class="headerlink" href="#1-event-collection-nyroxis-agent" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Agent continuously monitors:
+- Processes and services
+- Network connections and traffic metadata
+- File system changes and registry modifications
+- Privilege actions
+- System and security events (Windows Event Logs)
+- PowerShell and script execution</p>
 <p>All data is collected <strong>locally</strong>, without any cloud interaction.</p>
 <hr />
-<h2 id="2-encryption-at-source">2. Encryption at Source<a class="headerlink" href="#2-encryption-at-source" title="Link to this section">&para;</a></h2>
+<h2 id="2-normalization-encryption-at-source">2. Normalization &amp; Encryption at Source<a class="headerlink" href="#2-normalization-encryption-at-source" title="Link to this section">&para;</a></h2>
 <p>Immediately after collection:
-- Events are encrypted<br />
-- Integrity protections are applied<br />
-- Data becomes tamper-resistant  </p>
-<p>This ensures logs cannot be altered or read by attackers.</p>
+- Events are normalized and enriched with context
+- Payload is encrypted with AES-256
+- Integrity hash is applied
+- Data is written to the local database in encrypted form only</p>
+<p>No plaintext ever touches the disk.</p>
 <hr />
 <h2 id="3-local-encrypted-database">3. Local Encrypted Database<a class="headerlink" href="#3-local-encrypted-database" title="Link to this section">&para;</a></h2>
-<p>Encrypted events are stored inside a secure, local datastore.</p>
+<p>Encrypted events are stored inside a secure SQLite database.</p>
 <p>Properties:
-- Fully encrypted at rest<br />
-- Structured for fast lookups<br />
-- Optimized for timeline reconstruction<br />
-- No external transmission ever occurs  </p>
+- Fully encrypted at rest (AES-256)
+- Hash-chained event blocks for tamper detection
+- Structured for fast lookups and timeline reconstruction
+- No external transmission — ever</p>
 <p>The database never leaves the device.</p>
 <hr />
-<h2 id="4-local-analysis-engine">4. Local Analysis Engine<a class="headerlink" href="#4-local-analysis-engine" title="Link to this section">&para;</a></h2>
-<p>The analysis engine processes encrypted data locally to generate:
-- Behavioral insights<br />
-- Anomaly detection<br />
-- AI-assisted scoring<br />
-- Correlation between events  </p>
-<p>No external servers or cloud services are involved.</p>
+<h2 id="4-nyroxis-intelligence-rule-engine">4. Nyroxis Intelligence — Rule Engine<a class="headerlink" href="#4-nyroxis-intelligence-rule-engine" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence reads from the encrypted database and evaluates events across three layers:
+- <strong>27 detection rules</strong> — individual event pattern matching
+- <strong>12 correlation rules</strong> — multi-event pattern detection across time
+- <strong>2 chain rules</strong> — multi-stage attack sequence detection</p>
+<p>When a rule is triggered:
+- An alert is raised immediately
+- The finding is stored in a dedicated detections database
+- The user is notified via the Dashboard</p>
 <hr />
-<h2 id="5-dashboard-visualization">5. Dashboard Visualization<a class="headerlink" href="#5-dashboard-visualization" title="Link to this section">&para;</a></h2>
-<p>The Nyroxis Dashboard transforms technical data into:
-- Logs<br />
-- Alerts<br />
-- Charts &amp; trends<br />
-- Severity indicators<br />
-- Explanations in simple language  </p>
+<h2 id="5-local-aiml-engine">5. Local AI/ML Engine<a class="headerlink" href="#5-local-aiml-engine" title="Link to this section">&para;</a></h2>
+<p>In parallel, the AI/ML engine processes events locally:
+- Isolation Forest anomaly scoring
+- Z-Score statistical classification
+- Behavioral baseline comparison
+- Contributing feature identification</p>
+<p>All computation stays on the device — no cloud inference, no data sharing.</p>
+<hr />
+<h2 id="6-dashboard-visualization">6. Dashboard Visualization<a class="headerlink" href="#6-dashboard-visualization" title="Link to this section">&para;</a></h2>
+<p>The Nyroxis Dashboard transforms all of the above into:
+- Event logs with forensic search and filtering
+- Detection, correlation, and chain findings
+- AI/ML anomaly results with contributing feature breakdown
+- Charts, severity indicators, and trend analysis
+- Exportable reports (PDF/CSV)</p>
 <p>Everything remains local and private.</p>
 <hr />
-<h2 id="full-data-lifecycle-diagram">Full Data Lifecycle Diagram<a class="headerlink" href="#full-data-lifecycle-diagram" title="Link to this section">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ System Events ] 
+<h2 id="full-data-lifecycle">Full Data Lifecycle<a class="headerlink" href="#full-data-lifecycle" title="Link to this section">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ System Events ]
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓ (encrypted)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Local Encrypted Database ]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← collect, normalize, encrypt
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Local Encrypted DB ]     ← AES-256, SQLite, hash-chained
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Local Analysis Engine ]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 detection + 12 correlation + 2 chain rules
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Nyroxis Dashboard ]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Local AI/ML Engine ]     ← Isolation Forest + statistical analysis
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↓
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis Dashboard ]      ← visibility, forensics, reporting
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        ↑
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[ Nyroxis System Guardian ] ← monitors, backs up, validates license
 </span></code></pre></div>
+<p>At no stage are logs or sensitive data uploaded to external servers.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Nyroxis maintains a strictly local, encrypted, and privacy-first data flow — giving users visibility without exposing their information to the cloud or third parties.</p>
+<p>Nyroxis maintains a strictly local, encrypted, and privacy-first data flow — giving users full visibility and forensic-grade evidence without exposing any information to the cloud or third parties.</p>
 
 
 
@@ -8847,10 +8874,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

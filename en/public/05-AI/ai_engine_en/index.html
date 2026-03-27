@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1465,10 +1465,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-privacyfirst" class="md-nav__link">
+  <a href="#1-privacy-first" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Privacy‑First
+        1. Privacy-First
       
     </span>
   </a>
@@ -1476,10 +1476,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-lightweight-ai" class="md-nav__link">
+  <a href="#2-lightweight-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Lightweight AI
+        2. Lightweight Implementation
       
     </span>
   </a>
@@ -1514,22 +1514,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-the-engine-processes-data" class="md-nav__link">
+  <a href="#isolation-forest-how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How the Engine Processes Data
+        Isolation Forest — How It Works
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How the Engine Processes Data">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistical-analysis-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistical Analysis Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistical Analysis Pipeline">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-event-intake" class="md-nav__link">
+  <a href="#z-score-classification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Event Intake
+        Z-Score Classification
       
     </span>
   </a>
@@ -1537,10 +1548,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sequence-builder" class="md-nav__link">
+  <a href="#iqr-outlier-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Sequence Builder
+        IQR Outlier Detection
       
     </span>
   </a>
@@ -1548,10 +1559,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-feature-extraction" class="md-nav__link">
+  <a href="#moving-averages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Feature Extraction
+        Moving Averages
       
     </span>
   </a>
@@ -1559,21 +1570,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-local-model-inference" class="md-nav__link">
+  <a href="#spike-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Local Model Inference
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-scenario-mapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Scenario Mapping
+        Spike Detection
       
     </span>
   </a>
@@ -1586,10 +1586,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-behavioral-baseline" class="md-nav__link">
+  <a href="#what-the-engine-outputs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Local Behavioral Baseline
+        What the Engine Outputs
       
     </span>
   </a>
@@ -1597,10 +1597,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#safe-by-design-ai" class="md-nav__link">
+  <a href="#local-behavioral-baseline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Safe-by-Design AI
+        Local Behavioral Baseline
       
     </span>
   </a>
@@ -8830,85 +8830,85 @@
 
 
 <h1 id="ai-engine-internal-mechanics">AI Engine — Internal Mechanics<a class="headerlink" href="#ai-engine-internal-mechanics" title="Link to this section">&para;</a></h1>
-<p>The Nyroxis AI Engine (NyXIA) is designed to run fully locally, performing intelligent analysis on encrypted security events without relying on cloud services.<br />
-This document explains the internal mechanics in a simple, semi-technical way suitable for both users and investors.</p>
+<p>The Nyroxis AI/ML engine is designed to run fully locally, performing intelligent analysis on encrypted security events without relying on cloud services.</p>
 <hr />
 <h2 id="core-design-principles">Core Design Principles<a class="headerlink" href="#core-design-principles" title="Link to this section">&para;</a></h2>
-<p>NyXIA is built on four foundational principles:</p>
-<h3 id="1-privacyfirst"><strong>1. Privacy‑First</strong><a class="headerlink" href="#1-privacyfirst" title="Link to this section">&para;</a></h3>
+<h3 id="1-privacy-first">1. Privacy-First<a class="headerlink" href="#1-privacy-first" title="Link to this section">&para;</a></h3>
 <ul>
-<li>No cloud processing  </li>
-<li>No external APIs  </li>
-<li>No data sharing<br />
-All intelligence runs on the user’s own device.</li>
+<li>No cloud processing</li>
+<li>No external APIs</li>
+<li>No data sharing</li>
 </ul>
-<h3 id="2-lightweight-ai"><strong>2. Lightweight AI</strong><a class="headerlink" href="#2-lightweight-ai" title="Link to this section">&para;</a></h3>
-<p>Models are optimized for:
-- Low CPU usage<br />
-- Minimal memory<br />
-- Real-time execution  </p>
-<h3 id="3-behavioral-understanding"><strong>3. Behavioral Understanding</strong><a class="headerlink" href="#3-behavioral-understanding" title="Link to this section">&para;</a></h3>
-<p>Instead of analyzing logs individually, NyXIA understands <em>patterns</em> that occur across time.</p>
-<h3 id="4-fully-offline-operation"><strong>4. Fully Offline Operation</strong><a class="headerlink" href="#4-fully-offline-operation" title="Link to this section">&para;</a></h3>
-<p>All analysis, learning, and decision-making happen locally.</p>
+<p>All intelligence runs on the user's own device.</p>
+<h3 id="2-lightweight-implementation">2. Lightweight Implementation<a class="headerlink" href="#2-lightweight-implementation" title="Link to this section">&para;</a></h3>
+<p>Built entirely in Rust without external ML libraries:
+- ~Low CPU usage
+- Minimal memory footprint
+- Real-time execution</p>
+<h3 id="3-behavioral-understanding">3. Behavioral Understanding<a class="headerlink" href="#3-behavioral-understanding" title="Link to this section">&para;</a></h3>
+<p>Instead of analyzing events individually, the engine understands <em>patterns</em> that occur across time and across multiple event dimensions.</p>
+<h3 id="4-fully-offline-operation">4. Fully Offline Operation<a class="headerlink" href="#4-fully-offline-operation" title="Link to this section">&para;</a></h3>
+<p>All analysis, scoring, and feature extraction happen locally — no internet required at any stage.</p>
 <hr />
-<h2 id="how-the-engine-processes-data">How the Engine Processes Data<a class="headerlink" href="#how-the-engine-processes-data" title="Link to this section">&para;</a></h2>
-<h3 id="1-event-intake"><strong>1. Event Intake</strong><a class="headerlink" href="#1-event-intake" title="Link to this section">&para;</a></h3>
-<p>Nyroxis Agent collects:
-- Process events<br />
-- Network events<br />
-- File system changes<br />
-- Privilege-related actions<br />
-All encrypted before reaching NyXIA.</p>
-<h3 id="2-sequence-builder"><strong>2. Sequence Builder</strong><a class="headerlink" href="#2-sequence-builder" title="Link to this section">&para;</a></h3>
-<p>Events are grouped into short windows:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>w(t) = {event_t, event_t+1, ..., event_t+k}
+<h2 id="isolation-forest-how-it-works">Isolation Forest — How It Works<a class="headerlink" href="#isolation-forest-how-it-works" title="Link to this section">&para;</a></h2>
+<p>The Isolation Forest algorithm isolates anomalies by building random decision trees and measuring how quickly each data point is separated from the rest.</p>
+<p><strong>The principle:</strong>
+- Normal events require many splits to isolate (they blend in with others)
+- Anomalous events require fewer splits (they stand out)
+- Shorter isolation path = higher anomaly score</p>
+<p><strong>Nyroxis implementation:</strong>
+- 100 isolation trees built per analysis cycle
+- 256 random samples used per tree
+- All 8 behavioral features normalized before analysis
+- Anomaly score threshold: 0.6 (above this = detection triggered)
+- Contributing features identified via Z-score deviation (threshold: 2.0 standard deviations)</p>
+<hr />
+<h2 id="statistical-analysis-pipeline">Statistical Analysis Pipeline<a class="headerlink" href="#statistical-analysis-pipeline" title="Link to this section">&para;</a></h2>
+<h3 id="z-score-classification">Z-Score Classification<a class="headerlink" href="#z-score-classification" title="Link to this section">&para;</a></h3>
+<p>Every monitored value is evaluated against its historical baseline:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>z = (value - mean) / standard_deviation
 </span></code></pre></div>
-This allows the AI to detect multi-step behavior.</p>
-<h3 id="3-feature-extraction"><strong>3. Feature Extraction</strong><a class="headerlink" href="#3-feature-extraction" title="Link to this section">&para;</a></h3>
-<p>For each window, NyXIA extracts lightweight features:
-- Process lineage<br />
-- Network entropy<br />
-- File access patterns<br />
-- Timing irregularities<br />
-- Behavioral deltas  </p>
-<h3 id="4-local-model-inference"><strong>4. Local Model Inference</strong><a class="headerlink" href="#4-local-model-inference" title="Link to this section">&para;</a></h3>
-<p>NyXIA evaluates:
-- Anomaly scores<br />
-- Behavior class<br />
-- Deviation from normal profile<br />
-- Likelihood of malicious activity  </p>
-<p>All computations stay on-device.</p>
-<h3 id="5-scenario-mapping"><strong>5. Scenario Mapping</strong><a class="headerlink" href="#5-scenario-mapping" title="Link to this section">&para;</a></h3>
-<p>The engine correlates detections to larger scenarios such as:
-- Persistence attempts<br />
-- Unauthorized network activity<br />
-- Privilege escalation attempts<br />
-- Multi-stage intrusion  </p>
+<p>| |z| | Severity | Confidence |
+|------|----------|------------|
+| &gt; 3.0 | Critical | 99.7% |
+| &gt; 2.0 | High | 95% |
+| &gt; 1.5 | Medium | 86% |
+| &gt; 1.0 | Low | 68% |</p>
+<h3 id="iqr-outlier-detection">IQR Outlier Detection<a class="headerlink" href="#iqr-outlier-detection" title="Link to this section">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lower_bound = Q1 - 1.5 × IQR
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>upper_bound = Q3 + 1.5 × IQR
+</span></code></pre></div>
+Values outside this range are flagged as statistical outliers.</p>
+<h3 id="moving-averages">Moving Averages<a class="headerlink" href="#moving-averages" title="Link to this section">&para;</a></h3>
+<ul>
+<li><strong>Simple Moving Average</strong> — baseline trend over configurable time windows</li>
+<li><strong>Exponential Moving Average</strong> — weights recent activity more heavily for faster response to emerging patterns</li>
+</ul>
+<h3 id="spike-detection">Spike Detection<a class="headerlink" href="#spike-detection" title="Link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>current_value &gt; mean + (threshold_multiplier × std_dev)
+</span></code></pre></div>
+<hr />
+<h2 id="what-the-engine-outputs">What the Engine Outputs<a class="headerlink" href="#what-the-engine-outputs" title="Link to this section">&para;</a></h2>
+<p>For each analysis cycle:
+- <code>is_anomaly</code> — boolean flag
+- <code>anomaly_score</code> — 0.0 to 1.0 (higher = more anomalous)
+- <code>confidence</code> — 0.0 to 0.95
+- <code>contributing_features</code> — list of features with Z-scores that drove the detection</p>
+<p>These outputs are displayed in the AI / ML Analysis section of the Dashboard.</p>
 <hr />
 <h2 id="local-behavioral-baseline">Local Behavioral Baseline<a class="headerlink" href="#local-behavioral-baseline" title="Link to this section">&para;</a></h2>
-<p>NyXIA builds a private baseline of:
-- Normal processes<br />
-- Typical connection patterns<br />
-- Expected file activity<br />
-- Usual time-of-day behavior  </p>
+<p>The engine builds a private baseline per device:
+- Normal process patterns
+- Typical network connection behavior
+- Expected file activity
+- Usual time-of-day and day-of-week behavior</p>
 <p>The baseline is:
-- Stored locally<br />
-- Fully encrypted<br />
-- Resettable by the user  </p>
-<p>No usage profile ever leaves the device.</p>
-<hr />
-<h2 id="safe-by-design-ai">Safe-by-Design AI<a class="headerlink" href="#safe-by-design-ai" title="Link to this section">&para;</a></h2>
-<p>NyXIA explicitly avoids:
-- User tracking<br />
-- Cloud training<br />
-- Personal data storage<br />
-- Remote telemetry  </p>
-<p>The AI belongs to the user — not to the server.</p>
+- Stored locally in encrypted form
+- Resettable by the user at any time
+- Never transmitted or shared</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>The AI Engine combines privacy-first design with intelligent behavioral detection.<br />
-It processes encrypted system events locally, identifies risky patterns, and provides real‑world security insight — all without cloud dependence.</p>
+<p>The AI engine combines Isolation Forest with statistical analysis to deliver transparent, explainable, privacy-preserving anomaly detection — entirely on the user's device, with no cloud dependency.</p>
 
 
 
@@ -8956,10 +8956,10 @@ It processes encrypted system events locally, identifies risky patterns, and pro
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

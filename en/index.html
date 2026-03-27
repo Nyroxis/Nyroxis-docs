@@ -31,7 +31,7 @@
       
       
       <link rel="icon" href="../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -39,7 +39,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -8616,53 +8616,71 @@
 
 <h1 id="what-is-nyroxis">What is Nyroxis?<a class="headerlink" href="#what-is-nyroxis" title="Link to this section">&para;</a></h1>
 <p>Nyroxis is a lightweight, AI-assisted cybersecurity platform designed to protect <strong>personal and unmanaged endpoints</strong> — the devices that traditional enterprise security tools often ignore.</p>
-<p>It provides continuous, privacy-first monitoring of your device and helps you detect suspicious activity early, without requiring cloud connectivity or technical knowledge.</p>
+<p>It provides continuous, privacy-first monitoring and brings SOC-grade detection to personal devices, without requiring cloud connectivity, technical expertise, or enterprise infrastructure.</p>
 <h2 id="why-nyroxis-exists">Why Nyroxis Exists<a class="headerlink" href="#why-nyroxis-exists" title="Link to this section">&para;</a></h2>
-<p>Modern cyberattacks no longer target only companies. Executives, lawyers, doctors, journalists, and even families are targeted on <strong>their personal devices</strong>, where they have no SOC, no SIEM, and no security team watching over them.</p>
-<p>Nyroxis fills this gap by bringing <strong>enterprise-grade visibility</strong> to the personal level — without the complexity.</p>
+<p>Modern cyberattacks no longer target only companies. Executives, lawyers, judges, doctors, journalists, and even families are targeted on <strong>their personal devices</strong> — where there is no SOC, no SIEM, and no security team watching over them.</p>
+<p>Nyroxis fills this gap by bringing <strong>enterprise-grade visibility and detection</strong> to the personal level — silently, locally, and without compromise.</p>
 <h2 id="who-is-nyroxis-for">Who is Nyroxis For?<a class="headerlink" href="#who-is-nyroxis-for" title="Link to this section">&para;</a></h2>
 <ul>
 <li>Executives &amp; high-profile individuals</li>
-<li>Lawyers, doctors &amp; professionals handling sensitive data</li>
+<li>Lawyers, judges, doctors &amp; professionals handling sensitive data</li>
 <li>Families seeking digital safety visibility</li>
 <li>Cybersecurity engineers &amp; SOC analysts at home</li>
 <li>Frequent travelers and remote workers</li>
+<li>Independent contractors and consultants</li>
 </ul>
 <h2 id="how-nyroxis-works-high-level">How Nyroxis Works (High-Level)<a class="headerlink" href="#how-nyroxis-works-high-level" title="Link to this section">&para;</a></h2>
-<p>Nyroxis has two core components:</p>
+<p>Nyroxis is built around four core components working in concert:</p>
 <h3 id="nyroxis-agent">Nyroxis Agent<a class="headerlink" href="#nyroxis-agent" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Quiet local monitoring</li>
-<li>Collects important security events</li>
-<li>Stores everything encrypted locally</li>
-<li>Works fully offline</li>
-<li>Tamper-resistant design</li>
+<li>Continuous silent monitoring from multiple system channels</li>
+<li>Normalizes, encrypts and stores everything locally</li>
+<li>Works fully offline — tamper-resistant design</li>
+<li>~57 MB RAM, 0.1% CPU</li>
+</ul>
+<h3 id="nyroxis-intelligence">Nyroxis Intelligence<a class="headerlink" href="#nyroxis-intelligence" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Three-layer detection engine</li>
+<li>27 detection rules, 12 correlation rules, 2 chain rules (growing continuously)</li>
+<li>Extensible by security professionals — custom rules in JSON format</li>
+<li>~87 MB RAM, 1.8% CPU</li>
+</ul>
+<h3 id="nyroxis-system-guardian">Nyroxis System Guardian<a class="headerlink" href="#nyroxis-system-guardian" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Silent system tray guardian</li>
+<li>Monitors all services every 3 seconds</li>
+<li>Manages backups, offline license validation, and update checking</li>
+<li>Stops services automatically if license expires</li>
+<li>~6.5 MB RAM, 0.1% CPU</li>
 </ul>
 <h3 id="nyroxis-dashboard">Nyroxis Dashboard<a class="headerlink" href="#nyroxis-dashboard" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Clear logs and alerts</li>
-<li>Security trends and insights</li>
-<li>Behavioral analysis and AI scoring</li>
-<li>Simple explanations for suspicious actions</li>
+<li>Real-time visibility across events, detections, correlations, and chains</li>
+<li>Forensic search, AI/ML analysis, PDF/CSV reporting</li>
+<li>English, French, and German</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Device ]
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |--&gt; Nyroxis Agent
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   |--&gt; Nyroxis Dashboard
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |--&gt; Nyroxis Agent          (collection &amp; encryption)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   |--&gt; Nyroxis Intelligence   (detection &amp; correlation)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   |--&gt; Nyroxis System Guardian (monitoring &amp; protection)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   |--&gt; Nyroxis Dashboard      (visibility &amp; analysis)
 </span></code></pre></div>
 <h2 id="key-advantages">Key Advantages<a class="headerlink" href="#key-advantages" title="Link to this section">&para;</a></h2>
 <ul>
-<li>Privacy-first encrypted storage</li>
-<li>Offline by design</li>
-<li>Lightweight</li>
-<li>AI-assisted detection</li>
-<li>User-friendly</li>
+<li>All data stays on your device — always</li>
+<li>Forensic-grade encrypted storage (AES-256)</li>
+<li>27 + 12 + 2 detection rule layers, extensible by security professionals</li>
+<li>Local AI/ML anomaly detection — no cloud, no telemetry</li>
+<li>HWID-based offline licensing</li>
+<li>Lightweight and silent — invisible to attackers</li>
 </ul>
 <h2 id="documentation-guide">Documentation Guide<a class="headerlink" href="#documentation-guide" title="Link to this section">&para;</a></h2>
 <p>This documentation includes:
-- Architecture
-- Agent &amp; Dashboard
-- Security &amp; privacy
-- Use cases
+- Architecture &amp; Components
+- Agent, Intelligence &amp; System Guardian
+- Dashboard &amp; AI/ML Engine
+- Security &amp; Privacy
+- Use Cases
 - Roadmap
 - Licensing
 - FAQ &amp; Glossary</p>
@@ -8713,10 +8731,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

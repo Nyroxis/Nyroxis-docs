@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rule-matching" class="md-skip">
+        <a href="#rule-matching-detection" class="md-skip">
           Skip to content
         </a>
       
@@ -1333,22 +1333,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rule-types" class="md-nav__link">
+  <a href="#three-detection-layers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rule Types
+        Three Detection Layers
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Rule Types">
+    <nav class="md-nav" aria-label="Three Detection Layers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-threshold-based-rules" class="md-nav__link">
+  <a href="#layer-1-detection-rules-27-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Threshold-Based Rules
+        Layer 1 — Detection Rules (27 rules)
       
     </span>
   </a>
@@ -1356,10 +1356,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sequence-rules" class="md-nav__link">
+  <a href="#layer-2-correlation-rules-12-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Sequence Rules
+        Layer 2 — Correlation Rules (12 rules)
       
     </span>
   </a>
@@ -1367,21 +1367,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-time-window-rules" class="md-nav__link">
+  <a href="#layer-3-chain-rules-2-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Time-Window Rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-entity-specific-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Entity-Specific Rules
+        Layer 3 — Chain Rules (2 rules)
       
     </span>
   </a>
@@ -1394,10 +1383,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-nyroxis-evaluates-rules" class="md-nav__link">
+  <a href="#extensible-by-security-professionals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Nyroxis Evaluates Rules
+        Extensible by Security Professionals
       
     </span>
   </a>
@@ -1405,10 +1394,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rule-hit-details" class="md-nav__link">
+  <a href="#how-the-engine-evaluates-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rule Hit Details
+        How the Engine Evaluates Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-a-rule-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a Rule Triggers
       
     </span>
   </a>
@@ -8779,69 +8779,76 @@
   
 
 
-<h1 id="rule-matching">Rule Matching<a class="headerlink" href="#rule-matching" title="Link to this section">&para;</a></h1>
-<p>The Rule Matching module allows Nyroxis to highlight events that match predefined security rules.<br />
-It brings SIEM-style logic to personal devices — fully offline and privacy-first.</p>
+<h1 id="rule-matching-detection">Rule Matching &amp; Detection<a class="headerlink" href="#rule-matching-detection" title="Link to this section">&para;</a></h1>
+<p>The Rule Matching module is how Nyroxis Intelligence evaluates security events and generates alerts.
+It brings SIEM-style detection logic to personal devices — fully offline, privacy-first, and extensible by security professionals.</p>
 <hr />
 <h2 id="what-rule-matching-does">What Rule Matching Does<a class="headerlink" href="#what-rule-matching-does" title="Link to this section">&para;</a></h2>
-<p>Nyroxis evaluates events against a set of local rules to identify:
-- Suspicious behaviors<br />
-- Repeated anomalous patterns<br />
-- High-risk combinations of events<br />
-- Indicators of compromise (IoCs)  </p>
+<p>Nyroxis Intelligence evaluates events against three layers of local rules to identify:
+- Known threat patterns in individual events
+- Suspicious relationships between events over time
+- Multi-stage attack sequences</p>
 <p>No rules or logs are ever sent online.</p>
 <hr />
-<h2 id="rule-types">Rule Types<a class="headerlink" href="#rule-types" title="Link to this section">&para;</a></h2>
-<h3 id="1-threshold-based-rules"><strong>1. Threshold-Based Rules</strong><a class="headerlink" href="#1-threshold-based-rules" title="Link to this section">&para;</a></h3>
-<p>Trigger when something happens too often in a short time:
-- Multiple failed network connections<br />
-- Repeated privilege elevation attempts<br />
-- Excessive file modifications  </p>
+<h2 id="three-detection-layers">Three Detection Layers<a class="headerlink" href="#three-detection-layers" title="Link to this section">&para;</a></h2>
+<h3 id="layer-1-detection-rules-27-rules">Layer 1 — Detection Rules (27 rules)<a class="headerlink" href="#layer-1-detection-rules-27-rules" title="Link to this section">&para;</a></h3>
+<p>Pattern matching against individual events.</p>
+<p><strong>Trigger types:</strong>
+- Suspicious process execution
+- Unauthorized service installation
+- Abnormal network behavior
+- Credential access attempts
+- Indicators of known malware activity</p>
+<p>When a detection rule fires, an immediate alert is generated and stored in the detections database.</p>
 <hr />
-<h3 id="2-sequence-rules"><strong>2. Sequence Rules</strong><a class="headerlink" href="#2-sequence-rules" title="Link to this section">&para;</a></h3>
-<p>Detect harmful event chains:
-- Process → network → persistence<br />
-- Script execution → system modification<br />
-- Unknown process → sensitive file access  </p>
+<h3 id="layer-2-correlation-rules-12-rules">Layer 2 — Correlation Rules (12 rules)<a class="headerlink" href="#layer-2-correlation-rules-12-rules" title="Link to this section">&para;</a></h3>
+<p>Pattern matching across related events over time and across sources.</p>
+<p><strong>Trigger types:</strong>
+- Failed login followed by a successful one from a different location
+- New process spawning immediately after USB device connection
+- Repeated failed connections followed by a successful outbound call
+- Script execution followed by file system modification</p>
+<p>Correlation rules reveal threat patterns that no single event would expose alone.</p>
 <hr />
-<h3 id="3-time-window-rules"><strong>3. Time-Window Rules</strong><a class="headerlink" href="#3-time-window-rules" title="Link to this section">&para;</a></h3>
-<p>Identify patterns only visible over time:
-- Gradual privilege escalation<br />
-- Slow lateral movement<br />
-- Hourly failed connections  </p>
+<h3 id="layer-3-chain-rules-2-rules">Layer 3 — Chain Rules (2 rules)<a class="headerlink" href="#layer-3-chain-rules-2-rules" title="Link to this section">&para;</a></h3>
+<p>Detection of multi-stage attack sequences spread across multiple events and time windows.</p>
+<p>Chain rules are the highest-priority alerts in the system. They represent coordinated, progressive intrusions — the kind that characterize advanced persistent threats.</p>
+<p>Each chain finding includes a full reconstruction of the detected attack sequence.</p>
 <hr />
-<h3 id="4-entity-specific-rules"><strong>4. Entity-Specific Rules</strong><a class="headerlink" href="#4-entity-specific-rules" title="Link to this section">&para;</a></h3>
-<p>Target activity involving:
-- A specific file path<br />
-- A specific process<br />
-- A specific registry/config entry  </p>
+<h2 id="extensible-by-security-professionals">Extensible by Security Professionals<a class="headerlink" href="#extensible-by-security-professionals" title="Link to this section">&para;</a></h2>
+<p>The rule engine is fully open for extension. Security professionals can:
+- Write custom detection, correlation, or chain rules in JSON format
+- Deploy them directly into the system without modifying core components
+- Test rules against existing event data before deployment
+- Version and manage their custom rule library</p>
+<p>This allows Nyroxis to be adapted to specific environments, threat models, or organizational requirements.</p>
 <hr />
-<h2 id="how-nyroxis-evaluates-rules">How Nyroxis Evaluates Rules<a class="headerlink" href="#how-nyroxis-evaluates-rules" title="Link to this section">&para;</a></h2>
-<p>The engine matches rules against:
-- Event metadata<br />
-- Timestamps<br />
-- Process lineage<br />
-- Network endpoints<br />
-- Severity indicators  </p>
-<p>Evaluations are real-time and fully local.</p>
+<h2 id="how-the-engine-evaluates-rules">How the Engine Evaluates Rules<a class="headerlink" href="#how-the-engine-evaluates-rules" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence matches rules against:
+- Event metadata and content
+- Timestamps and time windows
+- Process lineage
+- Network endpoints
+- Severity indicators
+- Cross-event relationships</p>
+<p>All evaluations are real-time and fully local.</p>
 <hr />
-<h2 id="rule-hit-details">Rule Hit Details<a class="headerlink" href="#rule-hit-details" title="Link to this section">&para;</a></h2>
-<p>When a rule is triggered, Nyroxis provides:
-- A clear explanation<br />
-- Involved events<br />
-- Severity level<br />
-- Recommended actions<br />
-- Context panel with supporting details  </p>
+<h2 id="when-a-rule-triggers">When a Rule Triggers<a class="headerlink" href="#when-a-rule-triggers" title="Link to this section">&para;</a></h2>
+<p>When a rule is matched, Nyroxis:
+- Raises an immediate alert
+- Stores the finding in the dedicated detections database
+- Records the matched events, severity level, and rule details
+- Makes the finding visible in the Detection, Correlation, or Chain view of the Dashboard</p>
 <hr />
 <h2 id="privacy-guarantee">Privacy Guarantee<a class="headerlink" href="#privacy-guarantee" title="Link to this section">&para;</a></h2>
 <p>All rule matching:
-- Happens locally<br />
-- Does not communicate with external services<br />
-- Uses encrypted event data only<br />
-- Never uploads logs or pattern matches  </p>
+- Happens locally on the device
+- Does not communicate with external services
+- Uses encrypted event data only
+- Never uploads logs, rules, or pattern matches</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Rule Matching brings structured, SIEM-like detection to personal endpoints — but without cloud dependency or loss of privacy.</p>
+<p>The Nyroxis rule matching engine brings structured, SIEM-like detection to personal endpoints — across three layers, growing continuously, and extensible by security professionals — without cloud dependency or privacy compromise.</p>
 
 
 
@@ -8889,10 +8896,10 @@ It brings SIEM-style logic to personal devices — fully offline and privacy-fir
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

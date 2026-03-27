@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1083,6 +1083,17 @@
     <span class="md-ellipsis">
       
         What the Agent Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collection-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collection Pipeline
       
     </span>
   </a>
@@ -8730,52 +8741,61 @@
 
 
 <h1 id="nyroxis-agent-overview">Nyroxis Agent — Overview<a class="headerlink" href="#nyroxis-agent-overview" title="Link to this section">&para;</a></h1>
-<p>The Nyroxis Agent is the core monitoring component of the platform.<br />
-It runs locally on the user’s device, quietly collecting essential security events while maintaining full privacy and minimal resource usage.</p>
+<p>The Nyroxis Agent is the core monitoring and collection component of the platform.
+It runs locally on the user's device, quietly collecting and normalizing security events, encrypting them, and storing them in a tamper-resistant local database — all with minimal resource usage.</p>
 <hr />
 <h2 id="what-the-agent-does">What the Agent Does<a class="headerlink" href="#what-the-agent-does" title="Link to this section">&para;</a></h2>
-<p>The Agent continuously observes system activity and builds a structured security timeline.</p>
+<p>The Agent continuously observes system activity and builds a structured, encrypted security timeline.</p>
 <p>It monitors:
-- Process creation &amp; termination<br />
-- Network connections<br />
-- File modifications<br />
-- Privilege actions<br />
-- System and security events  </p>
-<p>All events are collected <strong>privately and locally</strong>.</p>
+- Process creation and termination
+- Network connections and traffic metadata
+- File modifications and registry changes
+- Privilege actions and credential access attempts
+- System and security events (Windows Event Logs)
+- PowerShell and script execution</p>
+<p>All events are collected <strong>privately and locally</strong> — nothing is transmitted externally.</p>
+<hr />
+<h2 id="collection-pipeline">Collection Pipeline<a class="headerlink" href="#collection-pipeline" title="Link to this section">&para;</a></h2>
+<ol>
+<li><strong>Collection</strong> — events are ingested from multiple system channels simultaneously</li>
+<li><strong>Normalization</strong> — raw data is enriched and standardized for the detection engine</li>
+<li><strong>Encryption</strong> — payload is encrypted with AES-256 before any write operation</li>
+<li><strong>Storage</strong> — encrypted events are written to the local SQLite database</li>
+<li><strong>Feed</strong> — data flows to Nyroxis Intelligence for real-time rule evaluation</li>
+</ol>
 <hr />
 <h2 id="privacy-first-operation">Privacy-First Operation<a class="headerlink" href="#privacy-first-operation" title="Link to this section">&para;</a></h2>
-<p>The Agent never uploads logs or sends event data to external servers.<br />
-Everything remains on the device and is:</p>
-<ul>
-<li>Encrypted at the moment of collection  </li>
-<li>Protected against tampering  </li>
-<li>Stored in a secure local database  </li>
-</ul>
+<p>The Agent never uploads logs or sends event data to external servers.
+Everything remains on the device and is:
+- Encrypted at the moment of collection
+- Protected against tampering via hash-chained event blocks
+- Stored in a secure local SQLite database
+- Under the user's sole control at all times</p>
 <hr />
 <h2 id="lightweight-by-design">Lightweight by Design<a class="headerlink" href="#lightweight-by-design" title="Link to this section">&para;</a></h2>
-<p>The Agent is optimized for:
-- Low CPU usage<br />
-- Minimal RAM footprint<br />
-- Silent background operation<br />
-- Reliability even on older laptops  </p>
-<p>This makes Nyroxis suitable for families, professionals, and high-security environments.</p>
+<p>The Agent is optimized for minimal footprint:
+- ~57 MB RAM
+- ~0.1% CPU
+- Silent background operation as a Windows service
+- Suitable for continuous operation on personal laptops without impacting daily productivity</p>
 <hr />
 <h2 id="resilient-tamper-aware">Resilient &amp; Tamper-Aware<a class="headerlink" href="#resilient-tamper-aware" title="Link to this section">&para;</a></h2>
 <p>The Agent incorporates protective mechanisms to ensure:
-- Collected event data cannot be altered<br />
-- Attackers cannot easily cover their tracks<br />
-- System integrity remains trustworthy  </p>
+- Collected event data cannot be altered or deleted undetected
+- Attackers cannot silently erase their activity
+- Hash-chained event blocks expose any deletion, modification, or injection attempt</p>
+<p>Nyroxis System Guardian monitors the Agent's operational status every 3 seconds and takes corrective action if the service stops unexpectedly.</p>
 <hr />
 <h2 id="works-completely-offline">Works Completely Offline<a class="headerlink" href="#works-completely-offline" title="Link to this section">&para;</a></h2>
 <p>No internet connection is required for:
-- Monitoring<br />
-- Encryption<br />
-- Data storage<br />
-- Analysis  </p>
-<p>Nyroxis is fully functional even in isolated or high-privacy environments.</p>
+- Monitoring
+- Normalization and encryption
+- Data storage
+- Feeding Nyroxis Intelligence</p>
+<p>Nyroxis is fully functional in isolated or air-gapped environments.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>The Nyroxis Agent delivers continuous, encrypted, offline monitoring — giving users enterprise-grade visibility without exposing their data to third parties.</p>
+<p>The Nyroxis Agent delivers continuous, encrypted, offline monitoring — giving users enterprise-grade visibility without exposing their data to third parties, and providing forensic-grade evidence suitable for legal and regulatory proceedings.</p>
 
 
 
@@ -8823,10 +8843,10 @@ Everything remains on the device and is:</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

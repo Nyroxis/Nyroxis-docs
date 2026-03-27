@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1328,10 +1328,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-top-event-sources" class="md-nav__link">
+  <a href="#2-severity-distribution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Top Event Sources
+        2. Severity Distribution
       
     </span>
   </a>
@@ -1339,10 +1339,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-severity-trend" class="md-nav__link">
+  <a href="#3-top-event-sources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Severity Trend
+        3. Top Event Sources
       
     </span>
   </a>
@@ -1350,10 +1350,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-special-security-indicators" class="md-nav__link">
+  <a href="#4-detection-correlation-trend" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Special Security Indicators
+        4. Detection &amp; Correlation Trend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-aiml-anomaly-score-trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. AI/ML Anomaly Score Trend
       
     </span>
   </a>
@@ -1370,17 +1381,6 @@
     <span class="md-ellipsis">
       
         Local Analytics Engine
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ️ Interactivity
       
     </span>
   </a>
@@ -8780,68 +8780,55 @@
 
 
 <h1 id="charts-analytics">Charts &amp; Analytics<a class="headerlink" href="#charts-analytics" title="Link to this section">&para;</a></h1>
-<p>The Charts &amp; Analytics section of the Nyroxis Dashboard transforms raw security events into visual insights, helping users quickly understand trends, anomalies, and potential risks.<br />
+<p>The Charts &amp; Analytics section of the Nyroxis Dashboard transforms raw security events into visual insights, helping users quickly understand trends, anomalies, and potential risks.
 All analytics are generated locally, preserving full privacy.</p>
 <hr />
 <h2 id="purpose-of-visual-analytics">Purpose of Visual Analytics<a class="headerlink" href="#purpose-of-visual-analytics" title="Link to this section">&para;</a></h2>
 <p>Charts help users answer key questions immediately:
-- Is activity increasing or decreasing over time?<br />
-- Are there unusual spikes in processes or network traffic?<br />
-- Which event categories occur the most?<br />
-- Are there recurring suspicious patterns?  </p>
-<p>Visuals make complex data simple to understand.</p>
+- Is activity increasing or decreasing over time?
+- Are there unusual spikes in processes or network traffic?
+- Which event categories occur the most?
+- How are detection and correlation findings distributed by severity?
+- Are there recurring suspicious patterns over time?</p>
+<p>Visuals make complex security data immediately understandable.</p>
 <hr />
 <h2 id="available-chart-types">Available Chart Types<a class="headerlink" href="#available-chart-types" title="Link to this section">&para;</a></h2>
-<h3 id="1-event-frequency-over-time"><strong>1. Event Frequency Over Time</strong><a class="headerlink" href="#1-event-frequency-over-time" title="Link to this section">&para;</a></h3>
-<p>Shows how many events occur:
-- Hourly<br />
-- Daily<br />
-- Weekly  </p>
-<p>Useful for spotting spikes, bursts of activity, or unexpected quiet periods.</p>
-<hr />
-<h3 id="2-top-event-sources"><strong>2. Top Event Sources</strong><a class="headerlink" href="#2-top-event-sources" title="Link to this section">&para;</a></h3>
-<p>Highlights which processes, files, or network endpoints generate the most events.</p>
-<p>Examples:
-- Most active processes<br />
-- Most accessed files<br />
-- Most frequent network connections  </p>
-<hr />
-<h3 id="3-severity-trend"><strong>3. Severity Trend</strong><a class="headerlink" href="#3-severity-trend" title="Link to this section">&para;</a></h3>
-<p>Tracks the evolution of:
-- Informational events<br />
-- Warnings<br />
-- High-risk or critical activity  </p>
-<p>Helps users detect escalation before a compromise occurs.</p>
-<hr />
-<h3 id="4-special-security-indicators"><strong>4. Special Security Indicators</strong><a class="headerlink" href="#4-special-security-indicators" title="Link to this section">&para;</a></h3>
-<p>Nyroxis provides dedicated charts for high-value signals:
-- Suspicious process chains<br />
-- Repeated failed connections<br />
-- Access to sensitive locations<br />
-- Privilege-related events  </p>
-<p>These visuals help identify early signs of malicious behavior.</p>
+<h3 id="1-event-frequency-over-time">1. Event Frequency Over Time<a class="headerlink" href="#1-event-frequency-over-time" title="Link to this section">&para;</a></h3>
+<p>Shows how many events occur hourly, daily, and weekly.
+Useful for spotting spikes, bursts of activity, or unexpected quiet periods that may indicate something was disabled.</p>
+<h3 id="2-severity-distribution">2. Severity Distribution<a class="headerlink" href="#2-severity-distribution" title="Link to this section">&para;</a></h3>
+<p>Visual breakdown of events by severity level: Critical, High, Warning, Info.
+Helps users see the overall risk profile at a glance.</p>
+<h3 id="3-top-event-sources">3. Top Event Sources<a class="headerlink" href="#3-top-event-sources" title="Link to this section">&para;</a></h3>
+<p>Highlights which processes, files, or network endpoints generate the most events:
+- Most active processes
+- Most accessed files
+- Most frequent network connections</p>
+<h3 id="4-detection-correlation-trend">4. Detection &amp; Correlation Trend<a class="headerlink" href="#4-detection-correlation-trend" title="Link to this section">&para;</a></h3>
+<p>Tracks the evolution of rule matches over time:
+- Detection findings
+- Correlation findings
+- Chain findings</p>
+<p>Helps users detect escalation patterns before a full compromise occurs.</p>
+<h3 id="5-aiml-anomaly-score-trend">5. AI/ML Anomaly Score Trend<a class="headerlink" href="#5-aiml-anomaly-score-trend" title="Link to this section">&para;</a></h3>
+<p>Visualizes the output of the local Isolation Forest engine over time:
+- Anomaly score evolution
+- Severity classifications: Critical / High / Medium / Low
+- Spike events against the behavioral baseline</p>
 <hr />
 <h2 id="local-analytics-engine">Local Analytics Engine<a class="headerlink" href="#local-analytics-engine" title="Link to this section">&para;</a></h2>
 <p>All charts are powered by the local analysis engine:
-- No cloud<br />
-- No external APIs<br />
-- All computation stays on the device  </p>
-<p>Charts are generated directly from the encrypted local database.</p>
-<hr />
-<h2 id="interactivity">️  Interactivity<a class="headerlink" href="#interactivity" title="Link to this section">&para;</a></h2>
-<p>Charts support:
-- Hover details<br />
-- Zooming (optional)<br />
-- Filtering by time range<br />
-- Category selection  </p>
-<p>Designed for both simple and advanced usage.</p>
+- No cloud
+- No external APIs
+- All computation stays on the device</p>
+<p>Charts are generated directly from the encrypted local database and AI/ML engine output.</p>
 <hr />
 <h2 id="privacy-offline-operation">Privacy &amp; Offline Operation<a class="headerlink" href="#privacy-offline-operation" title="Link to this section">&para;</a></h2>
-<p>Nothing is sent to external services — ever.<br />
-Analytics are computed and rendered locally from encrypted events.</p>
+<p>Nothing is sent to external services — ever.
+Analytics are computed and rendered locally from encrypted events, entirely offline.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>Charts &amp; Analytics provide a visual, privacy-preserving way to understand system activity, detect anomalies, and gain immediate insights into device security.</p>
+<p>Charts &amp; Analytics provide a visual, privacy-preserving way to understand system activity, track detection trends, monitor AI/ML findings, and gain immediate insight into the security posture of the device.</p>
 
 
 
@@ -8889,10 +8876,10 @@ Analytics are computed and rendered locally from encrypted events.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

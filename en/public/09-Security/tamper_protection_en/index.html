@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2132,10 +2132,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-hashchained-event-blocks" class="md-nav__link">
+  <a href="#1-hash-chained-event-blocks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Hash‑Chained Event Blocks
+        1. Hash-Chained Event Blocks
       
     </span>
   </a>
@@ -2165,10 +2165,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-antideletion-protection" class="md-nav__link">
+  <a href="#4-anti-deletion-protection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Anti‑Deletion Protection
+        4. Anti-Deletion Protection
       
     </span>
   </a>
@@ -2176,10 +2176,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-antimodification-protection" class="md-nav__link">
+  <a href="#5-anti-modification-protection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Anti‑Modification Protection
+        5. Anti-Modification Protection
       
     </span>
   </a>
@@ -2187,10 +2187,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-antiinjection-protection" class="md-nav__link">
+  <a href="#6-anti-injection-protection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Anti‑Injection Protection
+        6. Anti-Injection Protection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-platform-service-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Platform Service Protection
       
     </span>
   </a>
@@ -8741,80 +8752,87 @@
 
 
 <h1 id="tamper-protection">Tamper Protection<a class="headerlink" href="#tamper-protection" title="Link to this section">&para;</a></h1>
-<p>Nyroxis includes strong tamper‑protection mechanisms designed to ensure that no attacker can delete, modify, forge, or reorder logs without detection.<br />
+<p>Nyroxis includes strong tamper-protection mechanisms designed to ensure that no attacker can delete, modify, forge, or reorder logs without detection.
 These protections operate fully offline and are enforced inside the local database and event pipeline.</p>
 <hr />
-<h2 id="1-hashchained-event-blocks">1. Hash‑Chained Event Blocks<a class="headerlink" href="#1-hashchained-event-blocks" title="Link to this section">&para;</a></h2>
+<h2 id="1-hash-chained-event-blocks">1. Hash-Chained Event Blocks<a class="headerlink" href="#1-hash-chained-event-blocks" title="Link to this section">&para;</a></h2>
 <p>Each event is stored as:
-- Encrypted payload<br />
-- Integrity hash<br />
-- Sequential index<br />
-- Link to previous block  </p>
-<p>This structure forms a <strong>hash‑chain</strong> similar to a blockchain.</p>
+- Encrypted payload
+- Integrity hash of the block content
+- Sequential index
+- Hash of the previous block</p>
+<p>This structure forms a <strong>hash chain</strong>.</p>
 <p>Tampering becomes visible if:
-- A block is removed<br />
-- A block is modified<br />
-- A block is injected<br />
-- The sequence is reordered  </p>
-<p>Any mismatch breaks the chain and is flagged immediately.</p>
+- A block is removed — next block's previous-hash will not match
+- A block is modified — block hash will not match
+- A block is injected — sequence numbers and chain hashes will fail
+- The sequence is reordered — index inconsistency is detected</p>
+<p>Any mismatch breaks the chain and triggers an immediate alert.</p>
 <hr />
 <h2 id="2-integrity-verification-at-read-time">2. Integrity Verification at Read Time<a class="headerlink" href="#2-integrity-verification-at-read-time" title="Link to this section">&para;</a></h2>
-<p>Every time NyXIA or the Dashboard reads data:
-- Hash is recalculated<br />
-- Sequence number is checked<br />
-- Previous‑hash match is validated  </p>
+<p>Every time the AI/ML engine or Dashboard reads data:
+- Hash is recalculated for each block
+- Sequence number is checked
+- Previous-hash match is validated</p>
 <p>If anything has been altered, the system:
-- Rejects the data<br />
-- Flags a tamper event<br />
-- Stores a security alert locally  </p>
-<p>All checks remain local and offline.</p>
+- Rejects the tampered data
+- Flags a tamper event
+- Stores a security alert in the local database</p>
+<p>All checks are local and offline.</p>
 <hr />
 <h2 id="3-protected-write-path">3. Protected Write Path<a class="headerlink" href="#3-protected-write-path" title="Link to this section">&para;</a></h2>
-<p>The Agent writes logs using:
-- Atomic operations<br />
-- Controlled file handles<br />
-- Verified write sequences<br />
-- Encrypted buffers  </p>
+<p>Nyroxis Agent writes logs using:
+- Atomic write operations
+- Controlled file handles
+- Verified write sequences
+- Encrypted buffers</p>
 <p>This prevents:
-- Partial writes<br />
-- Interrupted corruption<br />
-- Injection attacks<br />
-- Unverified metadata  </p>
+- Partial writes that corrupt the chain
+- Injection of unverified data
+- Race condition corruption</p>
 <hr />
-<h2 id="4-antideletion-protection">4. Anti‑Deletion Protection<a class="headerlink" href="#4-antideletion-protection" title="Link to this section">&para;</a></h2>
-<p>If an attacker deletes logs:
-- The next block’s previous-hash will not match<br />
-- Nyroxis will detect a gap<br />
-- A “tamper‑deletion” alert is generated  </p>
+<h2 id="4-anti-deletion-protection">4. Anti-Deletion Protection<a class="headerlink" href="#4-anti-deletion-protection" title="Link to this section">&para;</a></h2>
+<p>If an attacker deletes event blocks:
+- The next block's previous-hash will not match the deleted block's hash
+- Nyroxis detects the gap in the chain
+- A tamper-deletion alert is generated and stored locally</p>
 <p>Nothing can be removed silently.</p>
 <hr />
-<h2 id="5-antimodification-protection">5. Anti‑Modification Protection<a class="headerlink" href="#5-antimodification-protection" title="Link to this section">&para;</a></h2>
+<h2 id="5-anti-modification-protection">5. Anti-Modification Protection<a class="headerlink" href="#5-anti-modification-protection" title="Link to this section">&para;</a></h2>
 <p>If an attacker modifies:
-- Timestamp<br />
-- Metadata<br />
-- Event content<br />
-- Block ordering  </p>
+- Timestamp
+- Event metadata
+- Event content
+- Block ordering</p>
 <p>Nyroxis detects it through:
-- Hash mismatch<br />
-- Index inconsistency<br />
-- Chain breakage  </p>
+- Hash mismatch on the modified block
+- Index inconsistency
+- Chain breakage</p>
 <p>Modification is impossible without detection.</p>
 <hr />
-<h2 id="6-antiinjection-protection">6. Anti‑Injection Protection<a class="headerlink" href="#6-antiinjection-protection" title="Link to this section">&para;</a></h2>
-<p>If someone tries to insert fake logs:
-- Sequence numbers fail<br />
-- Hash chain fails<br />
-- Integrity check fails  </p>
-<p>Nyroxis rejects the entire data slice and warns the user.</p>
+<h2 id="6-anti-injection-protection">6. Anti-Injection Protection<a class="headerlink" href="#6-anti-injection-protection" title="Link to this section">&para;</a></h2>
+<p>If someone tries to insert fake log entries:
+- Sequence numbers fail validation
+- Hash chain validation fails
+- Integrity check fails</p>
+<p>Nyroxis rejects the entire affected data slice and warns the user.</p>
+<hr />
+<h2 id="7-platform-service-protection">7. Platform Service Protection<a class="headerlink" href="#7-platform-service-protection" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian monitors Nyroxis Agent and Intelligence every 3 seconds.</p>
+<p>If either service is stopped — by crash, system event, or deliberate interference:
+- Guardian detects it immediately
+- The shutdown attempt is logged as a security event
+- Corrective action is taken</p>
+<p>The monitoring platform itself cannot be silently disabled.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
 <p>Nyroxis tamper protection ensures:
-- Logs cannot be deleted<br />
-- Logs cannot be modified<br />
-- Logs cannot be injected<br />
-- Logs cannot be reordered<br />
-- Any tampering is detectable  </p>
-<p>All protections operate <strong>locally, offline, and without cloud assistance</strong>.</p>
+- Logs cannot be deleted without detection
+- Logs cannot be modified without detection
+- Logs cannot be injected without detection
+- Logs cannot be reordered without detection
+- The platform cannot be silently disabled</p>
+<p>All protections operate <strong>locally, offline, and without cloud assistance</strong> — providing forensic-grade evidence integrity at all times.</p>
 
 
 
@@ -8862,10 +8880,10 @@ These protections operate fully offline and are enforced inside the local databa
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1515,10 +1515,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-behavioral-sequence-alerts" class="md-nav__link">
+  <a href="#2-statistical-outliers-z-score" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Behavioral Sequence Alerts
+        2. Statistical Outliers (Z-Score)
       
     </span>
   </a>
@@ -1526,10 +1526,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-rare-event-patterns" class="md-nav__link">
+  <a href="#3-spike-detections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Rare Event Patterns
+        3. Spike Detections
       
     </span>
   </a>
@@ -1537,10 +1537,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-persistent-suspicious-behavior" class="md-nav__link">
+  <a href="#4-persistent-anomalies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Persistent Suspicious Behavior
+        4. Persistent Anomalies
       
     </span>
   </a>
@@ -8769,65 +8769,63 @@
 
 
 <h1 id="ai-detections">AI Detections<a class="headerlink" href="#ai-detections" title="Link to this section">&para;</a></h1>
-<p>The AI Detections module shows insights produced by NyXIA — the local AI engine — when it identifies unusual or suspicious activity on the device.<br />
+<p>The AI Detections view shows anomalies identified by the local AI/ML engine — when it identifies unusual or suspicious activity on the device based on behavioral analysis and statistical scoring.
 All detections are generated locally, without cloud processing or data sharing.</p>
 <hr />
 <h2 id="purpose-of-ai-detections">Purpose of AI Detections<a class="headerlink" href="#purpose-of-ai-detections" title="Link to this section">&para;</a></h2>
-<p>NyXIA detects:
-- Behavioral anomalies<br />
-- Suspicious event sequences<br />
-- Rare or unexpected patterns<br />
-- Indicators of compromise (IoCs)<br />
-- High-risk deviations from the device’s normal profile  </p>
-<p>These detections help users see threats early.</p>
+<p>The AI engine detects:
+- Behavioral anomalies — deviations from the established device baseline
+- Suspicious activity sequences
+- Rare or unexpected patterns
+- Statistical outliers across behavioral features
+- High-risk deviations identified by Isolation Forest scoring</p>
+<p>These detections complement the rule-based findings from Nyroxis Intelligence, adding a layer of behavioral intelligence that does not rely on predefined rules.</p>
 <hr />
 <h2 id="types-of-ai-detections">Types of AI Detections<a class="headerlink" href="#types-of-ai-detections" title="Link to this section">&para;</a></h2>
-<h3 id="1-anomaly-based-detections"><strong>1. Anomaly-Based Detections</strong><a class="headerlink" href="#1-anomaly-based-detections" title="Link to this section">&para;</a></h3>
-<p>Triggered when behavior significantly deviates from the usual device baseline.</p>
+<h3 id="1-anomaly-based-detections">1. Anomaly-Based Detections<a class="headerlink" href="#1-anomaly-based-detections" title="Link to this section">&para;</a></h3>
+<p>Triggered when the Isolation Forest anomaly score exceeds 0.6 — meaning the observed behavioral pattern is statistically isolated from the normal baseline.</p>
 <p>Example cases:
-- Unusual process activity<br />
-- Irregular network connections<br />
-- Unexpected file modifications<br />
-- Activity outside typical time periods  </p>
+- Unusual process activity at unexpected times
+- Irregular network connection patterns
+- Unexpected file modification bursts
+- Activity far outside typical hour-of-day or day-of-week baseline</p>
 <hr />
-<h3 id="2-behavioral-sequence-alerts"><strong>2. Behavioral Sequence Alerts</strong><a class="headerlink" href="#2-behavioral-sequence-alerts" title="Link to this section">&para;</a></h3>
-<p>NyXIA examines short windows of events to detect:
-- Multi-step intrusion attempts<br />
-- Script + privilege escalation sequences<br />
-- Process chains indicative of malware  </p>
+<h3 id="2-statistical-outliers-z-score">2. Statistical Outliers (Z-Score)<a class="headerlink" href="#2-statistical-outliers-z-score" title="Link to this section">&para;</a></h3>
+<p>Triggered when a specific behavioral feature deviates significantly from the historical mean:
+- Critical: Z-score &gt; 3.0 (99.7% confidence)
+- High: Z-score &gt; 2.0 (95% confidence)
+- Medium: Z-score &gt; 1.5 (86% confidence)
+- Low: Z-score &gt; 1.0 (68% confidence)</p>
 <hr />
-<h3 id="3-rare-event-patterns"><strong>3. Rare Event Patterns</strong><a class="headerlink" href="#3-rare-event-patterns" title="Link to this section">&para;</a></h3>
-<p>Highlighted when:
-- A process behaves differently than normal<br />
-- A new rare endpoint appears<br />
-- Activity resembles early-stage compromise  </p>
+<h3 id="3-spike-detections">3. Spike Detections<a class="headerlink" href="#3-spike-detections" title="Link to this section">&para;</a></h3>
+<p>Triggered when a monitored metric suddenly jumps far above its historical average:
+- Sudden burst of events per hour
+- Spike in new network destinations
+- Rapid increase in unique sources</p>
 <hr />
-<h3 id="4-persistent-suspicious-behavior"><strong>4. Persistent Suspicious Behavior</strong><a class="headerlink" href="#4-persistent-suspicious-behavior" title="Link to this section">&para;</a></h3>
-<p>Long-term anomalies, such as:
-- Repeated failed connections<br />
-- Slow privilege escalation<br />
-- Unusual background activity  </p>
+<h3 id="4-persistent-anomalies">4. Persistent Anomalies<a class="headerlink" href="#4-persistent-anomalies" title="Link to this section">&para;</a></h3>
+<p>Long-term deviations that accumulate over time:
+- Gradual increase in new destination ratio
+- Slow-building unusual activity patterns
+- Repeated low-score anomalies forming a trend</p>
 <hr />
 <h2 id="detection-details">Detection Details<a class="headerlink" href="#detection-details" title="Link to this section">&para;</a></h2>
 <p>Each AI detection includes:
-- Description of the anomaly<br />
-- Affected processes or paths<br />
-- Related network activity<br />
-- Severity rating<br />
-- Contextual explanation<br />
-- Recommendations (if enabled)  </p>
-<p>Nyroxis ensures these insights remain understandable for non-technical users.</p>
+- Description of the anomaly
+- Anomaly score (0.0 – 1.0)
+- Severity classification
+- Contributing features — the specific behavioral dimensions that deviated most significantly from baseline, with Z-score values
+- Timestamp and analysis window</p>
 <hr />
 <h2 id="100-local-private">100% Local &amp; Private<a class="headerlink" href="#100-local-private" title="Link to this section">&para;</a></h2>
 <p>All AI detections are:
-- Computed offline<br />
-- Stored locally<br />
-- Derived from encrypted logs<br />
-- Never uploaded to servers  </p>
-<p>Your data never leaves your device.</p>
+- Computed offline on the device
+- Stored locally in the encrypted database
+- Derived from encrypted event logs
+- Never uploaded to servers or shared with any third party</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>AI Detections provide intelligent, privacy-preserving alerts that help users identify dangerous or abnormal activity early — with full local processing and no cloud dependency.</p>
+<p>AI Detections provide intelligent, privacy-preserving anomaly alerts that complement rule-based detection — helping users identify dangerous or abnormal activity early, with full local processing and no cloud dependency.</p>
 
 
 
@@ -8875,10 +8873,10 @@ All detections are generated locally, without cloud processing or data sharing.<
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

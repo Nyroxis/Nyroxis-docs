@@ -33,7 +33,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/Logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1614,10 +1614,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fully-local-interpretation" class="md-nav__link">
+  <a href="#fully-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fully Local Interpretation
+        Fully Local
       
     </span>
   </a>
@@ -8791,79 +8791,79 @@
 
 
 <h1 id="ai-scenarios">AI Scenarios<a class="headerlink" href="#ai-scenarios" title="Link to this section">&para;</a></h1>
-<p>AI Scenarios represent predefined, high-level security situations that NyXIA is capable of detecting based on behavioral patterns, sequences, and anomalies.<br />
-They help users understand <em>context</em>, not just individual events.</p>
+<p>AI Scenarios represent high-level security situations that the local AI/ML engine identifies based on behavioral patterns, event sequences, and anomaly correlations.
+They help users understand <em>context</em> — not just individual events or isolated anomalies.</p>
 <hr />
 <h2 id="purpose-of-ai-scenarios">Purpose of AI Scenarios<a class="headerlink" href="#purpose-of-ai-scenarios" title="Link to this section">&para;</a></h2>
-<p>While detections highlight specific anomalies, <strong>Scenarios</strong> explain <em>why those anomalies matter</em> by grouping signals into meaningful categories.</p>
+<p>While detections highlight specific anomalies and rule matches flag individual threats, <strong>Scenarios</strong> explain <em>why those signals matter</em> by grouping related findings into meaningful, real-world attack contexts.</p>
 <p>Scenarios give users clarity about:
-- The type of threat<br />
-- The probable cause<br />
-- How events are related<br />
-- What the risk means in real-world terms  </p>
-<p>This helps even non-technical users understand what is happening.</p>
+- The type of threat being observed
+- How individual events and anomalies are related
+- What the combined pattern means in real-world terms
+- What the recommended next steps are</p>
+<p>This makes sophisticated threat patterns understandable even for non-technical users.</p>
 <hr />
 <h2 id="types-of-scenarios">Types of Scenarios<a class="headerlink" href="#types-of-scenarios" title="Link to this section">&para;</a></h2>
-<h3 id="1-suspicious-process-chain"><strong>1. Suspicious Process Chain</strong><a class="headerlink" href="#1-suspicious-process-chain" title="Link to this section">&para;</a></h3>
-<p>Detected when a process chain resembles known malicious behavior:
-- Unknown process → script engine<br />
-- Script engine → modification → network call<br />
-- Process spawning multiple children rapidly  </p>
-<p>Useful for catching early-stage malware or scripts.</p>
+<h3 id="1-suspicious-process-chain">1. Suspicious Process Chain<a class="headerlink" href="#1-suspicious-process-chain" title="Link to this section">&para;</a></h3>
+<p>Detected when a sequence of process activity resembles known malicious behavior:
+- Unknown process spawning a script engine
+- Script engine triggering file modification followed by a network call
+- Process spawning multiple children in rapid succession</p>
+<p>Useful for catching early-stage malware, dropper behavior, or living-off-the-land techniques.</p>
 <hr />
-<h3 id="2-unauthorized-network-activity"><strong>2. Unauthorized Network Activity</strong><a class="headerlink" href="#2-unauthorized-network-activity" title="Link to this section">&para;</a></h3>
-<p>Triggered when NyXIA observes:
-- Outbound connections to unknown or rare endpoints<br />
-- Repeated failed connections<br />
-- High-volume network activity outside normal patterns  </p>
+<h3 id="2-unauthorized-network-activity">2. Unauthorized Network Activity<a class="headerlink" href="#2-unauthorized-network-activity" title="Link to this section">&para;</a></h3>
+<p>Triggered when the engine observes:
+- Outbound connections to unknown or rare network endpoints
+- Repeated failed connections followed by a successful outbound call
+- High-volume network activity far outside normal baseline patterns</p>
 <p>May indicate scanning, beaconing, or data exfiltration attempts.</p>
 <hr />
-<h3 id="3-abnormal-file-activity"><strong>3. Abnormal File Activity</strong><a class="headerlink" href="#3-abnormal-file-activity" title="Link to this section">&para;</a></h3>
+<h3 id="3-abnormal-file-activity">3. Abnormal File Activity<a class="headerlink" href="#3-abnormal-file-activity" title="Link to this section">&para;</a></h3>
 <p>Occurs when:
-- Sensitive files are accessed unexpectedly<br />
-- Many files change in a short window<br />
-- Modifications align with suspicious process behavior  </p>
-<p>Useful for detecting ransomware-like behavior or tampering.</p>
+- Sensitive files or directories are accessed unexpectedly
+- A large number of files are modified in a short time window
+- File modifications correlate with suspicious process or network behavior</p>
+<p>Useful for detecting ransomware-like behavior, data staging, or tampering.</p>
 <hr />
-<h3 id="4-privilege-escalation-attempt"><strong>4. Privilege Escalation Attempt</strong><a class="headerlink" href="#4-privilege-escalation-attempt" title="Link to this section">&para;</a></h3>
+<h3 id="4-privilege-escalation-attempt">4. Privilege Escalation Attempt<a class="headerlink" href="#4-privilege-escalation-attempt" title="Link to this section">&para;</a></h3>
 <p>Triggered by:
-- Repeated privilege actions<br />
-- Rare or unusual system calls<br />
-- Behavior inconsistent with normal user activity  </p>
-<p>This helps identify local exploitation attempts.</p>
+- Repeated privilege elevation attempts
+- Rare or unusual system calls
+- Behavior inconsistent with the device's normal user activity pattern</p>
+<p>Helps identify local exploitation attempts or credential abuse.</p>
 <hr />
-<h3 id="5-persistence-indicator"><strong>5. Persistence Indicator</strong><a class="headerlink" href="#5-persistence-indicator" title="Link to this section">&para;</a></h3>
-<p>Occurs when a process tries to:
-- Modify startup locations<br />
-- Create scheduled tasks<br />
-- Alter system configuration to survive reboot  </p>
-<p>This scenario warns about long-term compromise attempts.</p>
+<h3 id="5-persistence-indicator">5. Persistence Indicator<a class="headerlink" href="#5-persistence-indicator" title="Link to this section">&para;</a></h3>
+<p>Occurs when a process attempts to:
+- Modify startup locations or scheduled tasks
+- Alter system configuration to survive reboot
+- Install services or drivers unexpectedly</p>
+<p>Warns about long-term compromise and attacker foothold establishment.</p>
 <hr />
-<h3 id="6-slow-intrusion-pattern"><strong>6. Slow Intrusion Pattern</strong><a class="headerlink" href="#6-slow-intrusion-pattern" title="Link to this section">&para;</a></h3>
-<p>NyXIA identifies long-term anomalies such as:
-- Gradual escalation<br />
-- Rare periodic activity<br />
-- Multi-stage behavior spread over hours/days  </p>
-<p>This detects stealthy attackers that evade traditional tools.</p>
+<h3 id="6-slow-intrusion-pattern">6. Slow Intrusion Pattern<a class="headerlink" href="#6-slow-intrusion-pattern" title="Link to this section">&para;</a></h3>
+<p>The engine identifies long-term, low-noise anomalies such as:
+- Gradual escalation of unusual activity over hours or days
+- Rare periodic activity that repeats on a schedule
+- Multi-stage behavioral sequences spread across extended time windows</p>
+<p>Detects stealthy attackers who deliberately avoid triggering threshold-based rules.</p>
 <hr />
 <h2 id="scenario-report-details">Scenario Report Details<a class="headerlink" href="#scenario-report-details" title="Link to this section">&para;</a></h2>
 <p>Each scenario provides:
-- Description of the situation<br />
-- Affected events<br />
-- Sequence explanation<br />
-- Severity level<br />
-- Real-world interpretation<br />
-- Recommended next steps  </p>
+- Description of the situation in plain language
+- Affected events and findings
+- Sequence explanation showing how signals are connected
+- Severity level
+- Real-world interpretation
+- Recommended next steps</p>
 <hr />
-<h2 id="fully-local-interpretation">Fully Local Interpretation<a class="headerlink" href="#fully-local-interpretation" title="Link to this section">&para;</a></h2>
+<h2 id="fully-local">Fully Local<a class="headerlink" href="#fully-local" title="Link to this section">&para;</a></h2>
 <p>All scenario logic:
-- Runs offline<br />
-- Uses encrypted log data<br />
-- Never contacts cloud services<br />
-- Preserves user privacy  </p>
+- Runs offline on the device
+- Uses encrypted local event data
+- Never contacts cloud services
+- Preserves full user privacy</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">&para;</a></h2>
-<p>AI Scenarios help users see the <em>bigger picture</em>, giving meaning to individual anomalies and enabling early detection of sophisticated threats — all fully offline and private.</p>
+<p>AI Scenarios help users see the bigger picture — giving meaning to individual anomalies and rule matches by mapping them to real-world attack contexts, enabling early detection of sophisticated threats entirely offline and privately.</p>
 
 
 
@@ -8911,10 +8911,10 @@ They help users understand <em>context</em>, not just individual events.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
