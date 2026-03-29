@@ -1,80 +1,90 @@
-# Moteur IA (NyXIA) — Vue d’ensemble
+# Moteur IA & Apprentissage automatique — Vue d'ensemble
 
-NyXIA est le moteur d’IA local de Nyroxis, conçu pour analyser les événements de sécurité **sans envoyer aucune donnée vers le cloud**.  
-Il apporte une détection comportementale avancée aux appareils personnels et professionnels tout en respectant la confidentialité.
-
----
-
-##  Objectif de NyXIA
-NyXIA permet :
-- Analyse comportementale  
-- Détection d’anomalies  
-- Identification de modèles suspects  
-- Inférence locale légère  
-- Aucune fuite de données  
+Le moteur IA/ML de Nyroxis est un système de détection d'anomalies entièrement local et hors ligne, intégré dans le tableau de bord.
+Il analyse les événements de sécurité sans envoyer de données vers le cloud, offrant une intelligence comportementale avec une confidentialité absolue.
 
 ---
 
-##  Fonctionnement
-NyXIA analyse :
-- Séquences de processus  
-- Comportements réseau  
-- Activité fichier  
-- Actions liées aux privilèges  
-- Modèles temporels  
+## Une approche différente de l'IA
 
-Il ne traite pas les événements isolément — il étudie des fenêtres d’activité pour révéler des comportements cachés.
+La plupart des solutions de sécurité alimentées par IA s'appuient sur une infrastructure cloud — envoyant des données télémétriques vers des serveurs distants pour analyse.
+Nyroxis adopte l'approche opposée : chaque aspect du moteur IA s'exécute localement, sur l'appareil propre de l'utilisateur.
+Aucune donnée n'est transmise. Aucun service externe n'est consulté. Aucun profil comportemental ne quitte jamais la machine.
+
+Ce n'est pas une limitation — c'est un engagement architectural délibéré envers la confidentialité.
 
 ---
 
-##  Capacités clés
+## Ce que le moteur IA fournit
 
-### **1. Analyse par séquences**
-Permet de détecter :
-- Attaques lentes  
-- Intrusions multi-étapes  
-- Techniquess de persistance  
-- Mouvement latéral  
-
----
-
-### **2. Profils comportementaux locaux**
-NyXIA construit un profil propre à l’appareil :
-- Activité habituelle  
-- Processus fréquents  
-- Connexions typiques  
-
-Les écarts sont signalés comme anomalies.  
-Tout est stocké localement et chiffré.
+- Détection d'anomalies comportementales via Isolation Forest
+- Analyse statistique : Z-Score, IQR, moyennes mobiles, détection de pics
+- Classification de gravité : Critique / Élevé / Moyen / Faible
+- Identification des caractéristiques contributives — explique *pourquoi* quelque chose a été signalé
+- Construction d'une ligne de base comportementale par appareil
 
 ---
 
-### **3. Modèles IA légers**
-Optimisés pour :
-- Faible consommation CPU  
-- Inférence hors-ligne  
-- Peu de mémoire  
+## Isolation Forest — Algorithme de base
+
+Au cœur du moteur se trouve une implémentation personnalisée de l'algorithme Isolation Forest, développée entièrement en Rust — aucune bibliothèque ML externe requise.
+
+**Fonctionnement :**
+Isolation Forest construit une forêt d'arbres de décision aléatoires. Les événements anormaux sont statistiquement rares ou structurellement inhabituels — ils nécessitent moins de divisions pour être isolés et reçoivent donc un score d'anomalie plus élevé.
+
+**Implémentation :**
+- 100 arbres d'isolation par cycle d'analyse
+- 256 échantillons maximum par arbre
+- 8 caractéristiques comportementales par fenêtre d'analyse
+- Score d'anomalie > 0,6 déclenche une détection
 
 ---
 
-### **4. Sans cloud, sans upload**
-NyXIA ne :
-- Transmet aucune donnée  
-- N’utilise aucune API externe ( facultative ) 
-- N’envoie aucun log  
+## 8 caractéristiques comportementales analysées
 
-Tout est local.
+| Caractéristique | Description |
+|---------|-------------|
+| Nombre d'événements | Total des événements dans la fenêtre d'analyse |
+| Sources uniques | Nombre de sources d'événements distinctes |
+| Destinations uniques | Nombre de destinations réseau distinctes |
+| Heure du jour | Contexte temporel pour la ligne de base comportementale |
+| Jour de la semaine | Reconnaissance de modèles hebdomadaires |
+| Événements par heure | Normalisation du taux d'activité |
+| Ratio de nouvelles sources | Proportion de sources jamais vues auparavant |
+| Ratio de nouvelles destinations | Proportion de destinations jamais vues auparavant |
+
+Toutes les caractéristiques sont normalisées via la standardisation z-score avant l'analyse.
 
 ---
 
-##  Confidentialité totale
-NyXIA fonctionne :
-- 100% hors‑ligne  
-- Avec données chiffrées  
-- Sans télémétrie  
-- Sans profilage utilisateur  
+## Moteur d'analyse statistique
+
+Fonctionnant en parallèle avec Isolation Forest :
+
+| Z-Score | Gravité | Confiance |
+|---------|----------|------------|
+| > 3,0 | Critique | 99,7 % |
+| > 2,0 | Élevé | 95 % |
+| > 1,5 | Moyen | 86 % |
+| > 1,0 | Faible | 68 % |
+
+Méthodes supplémentaires : détection des valeurs aberrantes IQR, moyenne mobile, moyenne mobile exponentielle, détection de pics, analyse de corrélation.
+
+---
+
+## Garantie de confidentialité totale
+
+Le moteur IA :
+- Fonctionne entièrement hors ligne
+- Traite uniquement des données d'événements chiffrées localement
+- N'envoie jamais de données à des serveurs
+- Ne télécharge jamais de profils comportementaux
+- N'utilise jamais d'inférence cloud ou d'APIs en ligne
+
+Le moteur IA appartient entièrement à l'appareil de l'utilisateur.
 
 ---
 
 ## Résumé
-NyXIA apporte une détection comportementale avancée, privée et hors-ligne — sans dépendance cloud.
+
+Le moteur IA/ML de Nyroxis fournit une détection d'anomalies Isolation Forest sur l'appareil combinée à une analyse statistique — offrant une intelligence comportementale de qualité cloud sans compromis sur la vie privée.

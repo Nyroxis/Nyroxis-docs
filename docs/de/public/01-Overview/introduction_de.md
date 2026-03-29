@@ -1,26 +1,29 @@
 # Einführung
 
-Nyroxis ist eine datenschutzorientierte und leichtgewichtige Cybersicherheitsplattform, die Einzelpersonen und Fachkräften dieselbe Transparenz und denselben Schutz bietet, wie sie sonst nur Unternehmen erhalten — jedoch ohne Komplexität, ohne hohe Kosten und ohne Cloud-Abhängigkeit.
+Nyroxis ist eine datenschutzorientierte, leichtgewichtige Cybersicherheitsplattform, die Einzelpersonen und Fachleuten dasselbe Maß an Sichtbarkeit und Schutz bieten soll, das Unternehmen erhalten — ohne die Komplexität, die Kosten oder die Cloud-Abhängigkeit.
 
-Im heutigen digitalen Alltag sind persönliche und nicht verwaltete Endgeräte zum schwächsten Glied geworden. Laptops zu Hause, persönliche Arbeitsstationen und Alltagsgeräte enthalten sensible Informationen, verfügen jedoch häufig über keinerlei strukturierte Überwachung oder Frühwarnsysteme.
+Im modernen digitalen Leben sind persönliche und nicht verwaltete Endpunkte zum schwächsten Glied geworden. Der persönliche Laptop eines CEOs, ein Familientablet, das dasselbe WLAN wie ein leitender Administrator teilt, die nächtliche Browsing-Sitzung eines Richters oder Anwalts — diese Geräte existieren außerhalb der Sicherheitsperimeter von Unternehmen, unüberwacht und exponiert. Angreifer wissen das. Sie nutzen es gezielt aus.
 
-Nyroxis bietet darauf eine klare und einfache Antwort: **lokale Sicherheitsintelligenz**, direkt auf dem Gerät — mit verschlüsselter Speicherung und KI-unterstützter Analyse.
+Nyroxis liefert eine klare, einfache Antwort: **lokale Sicherheitsintelligenz**, direkt auf dem Gerät, mit verschlüsseltem Speicher, einer mehrschichtigen Erkennungs-Engine und KI-gestützter Analyse.
 
 ## Die Lücke, die Nyroxis schließt
-Während Unternehmen über SOC-Teams, SIEM-Plattformen und eine 24/7-Überwachung verfügen, fehlt Einzelpersonen und kleineren professionellen Umgebungen dieser Schutz vollständig.
 
-Dadurch entsteht eine kritische Lücke:
-- Keine Sichtbarkeit darüber, welche Prozesse, Verbindungen oder Aktionen auf dem Gerät stattfinden  
-- Keine Warnungen bei verdächtigen Aktivitäten  
-- Keine Möglichkeit festzustellen, ob das System angegriffen wird  
-- Keine einheitliche Sicherheitszeitleiste zur Analyse von Vorfällen  
+Während Organisationen von SOC-Teams, SIEM-Plattformen und 24/7-Überwachung profitieren, haben Einzelpersonen und kleine professionelle Umgebungen keinen Zugang dazu.
 
-Nyroxis schließt diese Lücke durch eine strukturierte, intelligente und vollständig offline-fähige Sicherheits­schicht.
+Dies schafft eine kritische Lücke:
+- Keine Sichtbarkeit über Prozesse, Verbindungen oder Aktionen auf dem Gerät
+- Keine Benachrichtigung bei verdächtigen Aktivitäten
+- Keine forensischen Beweise bei einem Vorfall
+- Keine Möglichkeit, mehrstufige oder verdeckte Angriffe zu erkennen
+
+Nyroxis überbrückt diese Lücke, indem es eine strukturierte, intelligente und offline-fähige Sicherheitsschicht bietet — eine, die überwacht, erkennt und forensische Beweise sichert, ohne jemals Daten außerhalb des Geräts zu senden.
 
 ## Unser Ansatz
-Nyroxis basiert auf drei Kernprinzipien:
-- **Local-first Security** — alle Protokolle verbleiben ausschließlich auf dem Gerät  
-- **Intelligente Erkennung** — verhaltensbewusste KI-Unterstützung  
-- **Benutzerfreundliche Transparenz** — klare Dashboards und verständliche Erläuterungen  
 
-Das Ergebnis ist ein System, das Sicherheitsbewusstsein auf Unternehmensniveau in eine Form bringt, die für Familien, Fachleute, Führungskräfte und Cybersicherheitspraktiker gleichermaßen geeignet ist.
+Nyroxis konzentriert sich auf vier Kernprinzipien:
+- **Local-first-Sicherheit** — alle Protokolle und Analysen verbleiben auf dem Gerät
+- **Mehrschichtige Erkennung** — 27 Erkennungsregeln, 12 Korrelationsregeln, 2 Kettenregeln und lokale KI
+- **Forensische Bereitschaft** — manipulationsresistente, vor Gericht verwertbare verschlüsselte Beweise
+- **Benutzerfreundliche Sichtbarkeit** — übersichtliche Dashboards und Erklärungen für jeden Nutzer
+
+Das Ergebnis ist ein System, das unternehmensweites Bewusstsein und Erkennung in eine Form bringt, die für Familien, Fachleute, Führungskräfte und Cybersicherheitspraktiker geeignet ist.

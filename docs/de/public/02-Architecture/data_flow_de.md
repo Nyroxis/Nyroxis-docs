@@ -1,84 +1,109 @@
 # Datenfluss
 
-Dieser Abschnitt beschreibt, wie Daten innerhalb von Nyroxis verarbeitet werden – von der Ereigniserfassung bis zur Darstellung im Dashboard – vollständig lokal, verschlüsselt und datenschutzorientiert.
-
-Nyroxis folgt einem einfachen, transparenten und privacy-first orientierten Datenlebenszyklus.
+Dieser Abschnitt erklärt, wie Daten innerhalb von Nyroxis fließen — von der Ereigniserfassung bis zur Interpretation durch den Benutzer — während sie bei jedem Schritt vollständig lokal, verschlüsselt und privat bleiben.
 
 ---
 
-## 1. Ereigniserfassung
-Der Nyroxis Agent überwacht kontinuierlich:
-- Prozesse  
-- Netzwerkverbindungen  
-- Dateiänderungen  
-- Berechtigungsbezogene Aktionen  
-- System- und Sicherheitsereignisse  
+## 1. Ereigniserfassung (Nyroxis Agent)
 
-Alle Daten werden **lokal** erfasst – ohne jegliche Cloud-Interaktion.
+Nyroxis Agent überwacht kontinuierlich:
+- Prozesse und Dienste
+- Netzwerkverbindungen und Datenverkehrs-Metadaten
+- Dateisystemänderungen und Registry-Modifikationen
+- Rechtebezogene Aktionen
+- System- und Sicherheitsereignisse (Windows-Ereignisprotokolle)
+- PowerShell- und Skriptausführung
+
+Alle Daten werden **lokal** erfasst, ohne jegliche Cloud-Interaktion.
 
 ---
 
-## 2. Verschlüsselung an der Quelle
+## 2. Normalisierung und Verschlüsselung an der Quelle
+
 Unmittelbar nach der Erfassung:
-- werden Ereignisse verschlüsselt  
-- werden Integritätsschutzmechanismen angewendet  
-- wird das Datenmaterial manipulationsresistent  
+- Ereignisse werden normalisiert und mit Kontext angereichert
+- Die Nutzlast wird mit AES-256 verschlüsselt
+- Ein Integritäts-Hash wird angewendet
+- Daten werden ausschließlich in verschlüsselter Form in die lokale Datenbank geschrieben
 
-So können Angreifer Protokolle weder lesen noch verändern.
+Kein Klartext berührt jemals den Datenträger.
 
 ---
 
 ## 3. Lokale verschlüsselte Datenbank
-Die verschlüsselten Ereignisse werden in einem sicheren lokalen Datenspeicher abgelegt.
+
+Verschlüsselte Ereignisse werden in einer sicheren SQLite-Datenbank gespeichert.
 
 Eigenschaften:
-- vollständig verschlüsselt im Ruhezustand  
-- strukturiert für schnelle Abfragen  
-- optimiert für die Erstellung von Zeitachsen  
-- keinerlei externe Übertragung  
+- Vollständig verschlüsselt im Ruhezustand (AES-256)
+- Hash-verkettete Ereignisblöcke zur Manipulationserkennung
+- Strukturiert für schnelle Suchabfragen und Zeitstrahlrekonstruktion
+- Keine externe Übertragung — niemals
 
 Die Datenbank verlässt das Gerät niemals.
 
 ---
 
-## 4. Lokale Analyse-Engine
-Die Analyse-Engine verarbeitet die verschlüsselten Daten lokal und generiert:
-- Verhaltensanalysen  
-- Anomalieerkennung  
-- KI-gestützte Bewertungen  
-- Korrelationen zwischen Ereignissen  
+## 4. Nyroxis Intelligence — Regel-Engine
 
-Keine externen Server oder Cloud-Dienste werden verwendet.
+Nyroxis Intelligence liest aus der verschlüsselten Datenbank und wertet Ereignisse über drei Schichten aus:
+- **27 Erkennungsregeln** — Mustererkennung einzelner Ereignisse
+- **12 Korrelationsregeln** — Multi-Ereignis-Mustererkennung über die Zeit
+- **2 Kettenregeln** — Erkennung mehrstufiger Angriffsequenzen
 
----
-
-## 5. Dashboard-Visualisierung
-Das Nyroxis Dashboard verwandelt technische Daten in:
-- Logansichten  
-- Warnungen  
-- Diagramme und Trends  
-- Schweregradindikatoren  
-- einfach verständliche Erläuterungen  
-
-Alles erfolgt lokal und privat.
+Wenn eine Regel ausgelöst wird:
+- Wird sofort eine Warnung ausgegeben
+- Der Fund wird in einer dedizierten Erkennungsdatenbank gespeichert
+- Der Benutzer wird über das Dashboard benachrichtigt
 
 ---
 
-## Vollständiges Datenflussdiagramm
+## 5. Lokale KI/ML-Engine
+
+Parallel dazu verarbeitet die KI/ML-Engine Ereignisse lokal:
+- Isolation-Forest-Anomalie-Scoring
+- Z-Score-Statistikklassifizierung
+- Verhaltensbasislinie-Vergleich
+- Identifikation beitragender Merkmale
+
+Alle Berechnungen verbleiben auf dem Gerät — keine Cloud-Inferenz, kein Datenaustausch.
+
+---
+
+## 6. Dashboard-Visualisierung
+
+Das Nyroxis Dashboard wandelt all das oben Genannte um in:
+- Ereignisprotokolle mit forensischer Suche und Filterung
+- Erkennungs-, Korrelations- und Kettenbefunde
+- KI/ML-Anomalieergebnisse mit Aufschlüsselung der beitragenden Merkmale
+- Diagramme, Schweregradindikatoren und Trendanalysen
+- Exportierbare Berichte (PDF/CSV)
+
+Alles bleibt lokal und privat.
+
+---
+
+## Vollständiger Datenlebenszyklus
 
 ```
-[ Systemereignisse ] 
+[ Systemereignisse ]
         ↓
-[ Nyroxis Agent ]
-        ↓ (verschlüsselt)
-[ Lokale verschlüsselte Datenbank ]
+[ Nyroxis Agent ]          ← erfassen, normalisieren, verschlüsseln
         ↓
-[ Lokale Analyse-Engine ]
+[ Lokale verschlüsselte DB ] ← AES-256, SQLite, hash-verkettet
         ↓
-[ Nyroxis Dashboard ]
+[ Nyroxis Intelligence ]   ← 27 Erkennung + 12 Korrelation + 2 Kettenregeln
+        ↓
+[ Lokale KI/ML-Engine ]    ← Isolation Forest + statistische Analyse
+        ↓
+[ Nyroxis Dashboard ]      ← Sichtbarkeit, Forensik, Berichterstellung
+        ↑
+[ Nyroxis System Guardian ] ← überwacht, sichert, validiert Lizenz
 ```
+
+In keiner Phase werden Protokolle oder sensible Daten auf externe Server hochgeladen.
 
 ---
 
 ## Zusammenfassung
-Nyroxis gewährleistet einen strikt lokalen, verschlüsselten und datenschutzorientierten Datenfluss – für maximale Transparenz ohne Preisgabe persönlicher Informationen.
+Nyroxis pflegt einen strikt lokalen, verschlüsselten und datenschutzorientierten Datenfluss — und gibt Benutzern vollständige Sichtbarkeit und forensisch verwertbare Beweise, ohne Informationen an die Cloud oder Dritte preiszugeben.

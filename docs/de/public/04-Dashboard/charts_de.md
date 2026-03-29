@@ -1,70 +1,73 @@
 # Diagramme & Analysen
 
-Der Bereich „Charts & Analytics“ des Nyroxis Dashboards verwandelt rohe sicherheitsrelevante Ereignisse in visuelle Erkenntnisse und hilft Nutzern, Trends, Anomalien und potenzielle Risiken schnell zu erkennen.  
-Alle Analysen werden vollständig lokal erzeugt, wodurch maximale Privatsphäre gewährleistet ist.
+Der Bereich Diagramme & Analysen des Nyroxis-Dashboards wandelt rohe Sicherheitsereignisse in visuelle Einblicke um und hilft Benutzern, Trends, Anomalien und potenzielle Risiken schnell zu verstehen.
+Alle Analysen werden lokal generiert und wahren die vollständige Privatsphäre.
 
-## Zweck visueller Analysen
-Diagramme helfen Nutzern, sofort Fragen zu beantworten wie:
-- Nimmt die Aktivität zu oder ab?  
-- Gibt es ungewöhnliche Spitzen bei Prozessen oder Netzwerkverbindungen?  
-- Welche Ereigniskategorien treten am häufigsten auf?  
-- Gibt es wiederkehrende verdächtige Muster?  
+---
 
-Visuelle Darstellungen machen komplexe Daten leicht verständlich.
+## Zweck der visuellen Analyse
+
+Diagramme helfen Benutzern, wichtige Fragen sofort zu beantworten:
+- Nimmt die Aktivität im Laufe der Zeit zu oder ab?
+- Gibt es ungewöhnliche Spitzen bei Prozessen oder Netzwerkverkehr?
+- Welche Ereigniskategorien treten am häufigsten auf?
+- Wie sind Erkennungs- und Korrelationsergebnisse nach Schweregrad verteilt?
+- Gibt es wiederkehrende verdächtige Muster im Laufe der Zeit?
+
+Visualisierungen machen komplexe Sicherheitsdaten sofort verständlich.
+
+---
 
 ## Verfügbare Diagrammtypen
 
-### **1. Ereignishäufigkeit über die Zeit**
-Zeigt, wie viele Ereignisse auftreten:
-- stündlich  
-- täglich  
-- wöchentlich  
+### 1. Ereignishäufigkeit über Zeit
+Zeigt, wie viele Ereignisse stündlich, täglich und wöchentlich auftreten.
+Nützlich zum Erkennen von Spitzen, Aktivitätsschüben oder unerwarteten Ruhephasen, die darauf hindeuten könnten, dass etwas deaktiviert wurde.
 
-Ideal zur Erkennung von Aktivitätsspitzen oder ungewöhnlichen Ruhephasen.
+### 2. Schweregradverteilung
+Visuelle Aufschlüsselung der Ereignisse nach Schweregrad: Kritisch, Hoch, Warnung, Info.
+Hilft Benutzern, das gesamte Risikoprofil auf einen Blick zu sehen.
 
-### **2. Top-Ereignisquellen**
-Hebt hervor, welche Prozesse, Dateien oder Netzwerkendpunkte die meisten Ereignisse erzeugen.
+### 3. Top-Ereignisquellen
+Hebt hervor, welche Prozesse, Dateien oder Netzwerkendpunkte die meisten Ereignisse erzeugen:
+- Aktivste Prozesse
+- Am häufigsten zugegriffene Dateien
+- Häufigste Netzwerkverbindungen
 
-Beispiele:
-- aktivste Prozesse  
-- am häufigsten genutzte Dateien  
-- häufigste Netzwerkverbindungen  
+### 4. Erkennungs- & Korrelationstrend
+Verfolgt die Entwicklung von Regelübereinstimmungen über die Zeit:
+- Erkennungsergebnisse
+- Korrelationsergebnisse
+- Ketten-Ergebnisse
 
-### **3. Verlauf des Schweregrads**
-Verfolgt die Entwicklung von:
-- Informational  
-- Warnungen  
-- Hochrisiko- oder kritischer Aktivität  
+Hilft Benutzern, Eskalationsmuster zu erkennen, bevor eine vollständige Kompromittierung eintritt.
 
-Hilft, eskalierende Muster frühzeitig zu erkennen.
+### 5. KI/ML-Anomalie-Score-Trend
+Visualisiert die Ausgabe des lokalen Isolation-Forest-Engines über die Zeit:
+- Entwicklung des Anomalie-Scores
+- Schweregradklassifizierungen: Kritisch / Hoch / Mittel / Niedrig
+- Spike-Ereignisse gegenüber der Verhaltensbasislinie
 
-### **4. Spezielle Sicherheitsindikatoren**
-Nyroxis liefert spezielle Diagramme für hochwertige Signale:
-- verdächtige Prozessketten  
-- wiederholte fehlgeschlagene Verbindungen  
-- Zugriffe auf sensible Bereiche  
-- Berechtigungsbezogene Ereignisse  
-
-Diese Grafiken unterstützen bei der Erkennung früher Anzeichen bösartiger Aktivitäten.
+---
 
 ## Lokale Analyse-Engine
-Alle Diagramme werden ausschließlich durch die lokale Analyse-Engine erzeugt:
-- keine Cloud  
-- keine externen APIs  
-- vollständige Verarbeitung auf dem Gerät  
 
-Die Diagramme basieren direkt auf der verschlüsselten lokalen Datenbank.
+Alle Diagramme werden von der lokalen Analyse-Engine angetrieben:
+- Kein Cloud
+- Keine externen APIs
+- Alle Berechnungen verbleiben auf dem Gerät
 
-## Interaktivität
-Diagramme unterstützen:
-- Hover-Details  
-- optionales Zoomen  
-- Filter nach Zeitbereich  
-- Auswahl bestimmter Kategorien  
+Diagramme werden direkt aus der verschlüsselten lokalen Datenbank und der KI/ML-Engine-Ausgabe generiert.
 
-## Privatsphäre & Offline-Fähigkeit
-Nichts wird jemals an externe Dienste gesendet.  
-Analysen werden ausschließlich lokal aus verschlüsselten Ereignissen generiert.
+---
+
+## Datenschutz & Offline-Betrieb
+
+Nichts wird jemals an externe Dienste gesendet.
+Analysen werden lokal aus verschlüsselten Ereignissen berechnet und gerendert, vollständig offline.
+
+---
 
 ## Zusammenfassung
-„Charts & Analytics“ bietet eine private, visuelle Möglichkeit, Systemaktivitäten zu verstehen, Anomalien zu erkennen und sofortige Einblicke in den Sicherheitsstatus zu gewinnen.
+
+Diagramme & Analysen bieten eine visuelle, datenschutzfreundliche Möglichkeit, Systemaktivitäten zu verstehen, Erkennungstrends zu verfolgen, KI/ML-Ergebnisse zu überwachen und sofortige Einblicke in die Sicherheitslage des Geräts zu gewinnen.

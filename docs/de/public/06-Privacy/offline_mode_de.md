@@ -1,67 +1,88 @@
-# Offline‑Modus
+# Offline-Modus
 
-Nyroxis wurde von Grund auf so entwickelt, dass es vollständig offline betrieben werden kann — ohne Cloud‑Zugang, ohne externe Authentifizierung oder APIs.  
-Dieses Design ermöglicht Nutzern Sicherheit, Privatsphäre und vollständige Autonomie über ihr Gerät.
+Nyroxis ist von Grund auf für den vollständig offline Betrieb ausgelegt — ohne Cloud-Zugang, Remote-Authentifizierung oder externe APIs zu benötigen.
+Dieses Design gibt Benutzern Sicherheit, Privatsphäre und volle Autonomie über ihr Gerät.
+
+---
 
 ## Warum Offline wichtig ist
-Der Offline‑Modus stellt sicher:
-- keine Daten verlassen das Gerät  
-- kein Risiko durch Cloud‑Lecks  
-- keine Abhängigkeit von externer Infrastruktur  
-- kein Monitoring durch Dritte  
 
-Die volle Kontrolle bleibt beim Benutzer.
+Der Offline-Betrieb gewährleistet:
+- **Keine Daten verlassen das Gerät** — jemals
+- **Keine Exposition gegenüber Cloud-Verstößen** oder Ausfällen von Drittanbieter-Infrastrukturen
+- **Keine Abhängigkeit von externen Servern** für Überwachung oder Erkennung
+- **Kein Risiko der Drittanbieter-Überwachung** oder Verhaltensprofilierung
+- **Volle Funktionalität auch ohne Internet** — einschließlich in air-gapped Umgebungen
 
-## 1. Vollständig lokale Arbeitsweise
-Nyroxis führt folgende Aufgaben vollständig lokal aus:
-- Ereigniserfassung  
-- Verschlüsselung  
-- Speicherung  
-- KI‑Analyse  
-- Rule Matching  
-- Korrelationen  
-- Warnmeldungen  
+Benutzer behalten die vollständige Kontrolle über ihre Sicherheitsdaten.
 
-Nichts wird hochgeladen.
+---
 
-## 2. Keine Cloud, keine Server
-Nyroxis nutzt *keine*:
-- Cloud‑Verarbeitung  
-- Telemetrie  
-- Remote‑Logs  
-- Online‑Scans  
-- externen Datenquellen  
+## 1. Vollständiger lokaler Betrieb
 
-Dies eliminiert ganze Klassen von Risiken.
+Jede Funktion der Nyroxis-Plattform arbeitet lokal:
+- Ereigniserfassung und -normalisierung (Nyroxis Agent)
+- Erkennung, Korrelation und Kettenregelauswertung (Nyroxis Intelligence)
+- Dienstüberwachung, Backup und Lizenzvalidierung (Nyroxis System Guardian)
+- KI/ML-Anomalieerkennung und statistische Analyse
+- Dashboard-Visualisierung und Berichterstattung
 
-## 3. Lokale KI (NyXIA)
-NyXIA arbeitet vollständig offline:
-- Verhaltensanalyse  
-- Anomaliebewertung  
-- Szenarioerzeugung  
+Nichts wird hochgeladen. Nichts wird übertragen.
 
-Basierend auf verschlüsselten lokalen Ereignissen.
+---
 
-## 4. Sichere Updates (optional)
-Updates können:
-- manuell  
-- per Offline‑Paket  
+## 2. Kein Cloud, keine Server
 
-installiert werden.
+Nyroxis verwendet nicht:
+- Cloud-Verarbeitung oder -Speicherung
+- Telemetrie oder Nutzungsverfolgung
+- Remote-Protokollierung
+- Online-Scanning oder Bedrohungsintelligenz-Feeds
+- Externe Authentifizierungsdienste
 
-## 5. Transparente Architektur
-Der Offline‑Modus verhindert:
-- Hintergrundtracking  
-- unsichtbare Netzwerkkommunikation  
-- Cloud‑basierte Verarbeitung  
+Dies eliminiert ganze Klassen von Datenschutz- und Angriffsrisiken.
 
-Nutzer können jederzeit überprüfen, dass Nyroxis keine Internetverbindung nutzt.
+---
+
+## 3. Offline-Lizenzvalidierung
+
+Nyroxis System Guardian validiert die HWID-basierte Lizenz vollständig offline:
+- Keine Internetverbindung erforderlich
+- Die Validierung verwendet AES-GCM-Verschlüsselung und HMAC-Verifizierung lokal
+- Die Lizenzintegrität wird ohne Kontaktaufnahme mit einem externen Server durchgesetzt
+
+---
+
+## 4. Lokaler KI/ML-Motor
+
+Der Isolation-Forest- und Statistikanalysemotor läuft vollständig offline:
+- Erkennung von Verhaltensanomalien
+- Z-Score-Klassifizierung
+- Spitzenerkennung und Basislinienvergleich
+
+Alles wird direkt aus verschlüsselten lokalen Ereignissen berechnet — keine Cloud-Inferenz, keine Modellaktualisierungen über das Netzwerk.
+
+---
+
+## 5. Update-Prüfung (optional)
+
+Nyroxis System Guardian kann Updates in konfigurierbaren Intervallen prüfen.
+Die Update-Installation bleibt manuell — es gibt keine erzwungenen oder automatischen Cloud-Verbindungen.
+Die Plattform arbeitet unabhängig vom Update-Status mit voller Kapazität.
+
+---
+
+## 6. Transparente Architektur
+
+Nyroxis zeigt im Dashboard klare Indikatoren, die Benutzern ermöglichen zu überprüfen:
+- Keine ausgehenden Netzwerkverbindungen von Nyroxis-Prozessen
+- Keine Hintergrundtelemetrie
+- Keine Cloud-Abhängigkeit
+
+Vertrauen ist messbar — nicht angenommen.
+
+---
 
 ## Zusammenfassung
-Der Offline‑Modus garantiert, dass Nyroxis:
-- privat  
-- verschlüsselt  
-- autonom  
-- vollständig lokal  
 
-arbeitet — eine Sicherheitsplattform, die schützt, ohne Daten offenzulegen.
+Der Offline-Modus garantiert, dass Nyroxis privat, verschlüsselt, autonom und vollständig lokal bleibt — eine Sicherheitsplattform, die darauf ausgelegt ist, Benutzer zu schützen, ohne ihre Daten jemals preiszugeben.

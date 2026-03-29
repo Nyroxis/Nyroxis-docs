@@ -1,90 +1,111 @@
-# KI‑Engine — Interne Mechanik
+# KI-Engine — Interne Mechanik
 
-Die Nyroxis KI‑Engine (NyXIA) arbeitet vollständig lokal und analysiert verschlüsselte Sicherheitsereignisse ohne Cloud‑Abhängigkeit.  
-Dieses Dokument erklärt die internen Mechanismen in einer klaren, halbtechnischen Form, geeignet für Nutzer und Investoren gleichermaßen.
+Die Nyroxis KI/ML-Engine ist darauf ausgelegt, vollständig lokal zu laufen und intelligente Analysen auf verschlüsselten Sicherheitsereignissen durchzuführen, ohne auf Cloud-Dienste angewiesen zu sein.
 
-## Grundprinzipien
+---
 
-### Privacy‑First
-- Keine Cloud‑Verarbeitung  
-- Keine externen APIs  
-- Keine Datenübertragung  
-Alle Intelligenz verbleibt auf dem Gerät des Nutzers.
+## Grundlegende Designprinzipien
 
-### Leichtgewichtige KI
-Optimiert für:
-- geringe CPU‑Last  
-- niedrigen Speicherverbrauch  
-- Echtzeit‑Ausführung  
+### 1. Datenschutz zuerst
+- Keine Cloud-Verarbeitung
+- Keine externen APIs
+- Keine Datenweitergabe
 
-### Verhaltensorientiertes Verständnis
-NyXIA analysiert nicht einzelne Logs isoliert, sondern erkennt Muster über Zeitfenster hinweg.
+Die gesamte Intelligenz läuft auf dem eigenen Gerät des Benutzers.
 
-### Vollständig offline
-Alle Analysen und Entscheidungen erfolgen lokal.
+### 2. Leichtgewichtige Implementierung
+Vollständig in Rust ohne externe ML-Bibliotheken entwickelt:
+- ~Geringe CPU-Auslastung
+- Minimaler Speicherbedarf
+- Echtzeitausführung
 
-## Datenverarbeitung
+### 3. Verhaltensverständnis
+Anstatt Ereignisse einzeln zu analysieren, versteht die Engine *Muster*, die zeitübergreifend und über mehrere Ereignisdimensionen hinweg auftreten.
 
-### Ereignisaufnahme
-Der Nyroxis Agent erfasst:
-- Prozessaktivität  
-- Netzwerkverhalten  
-- Dateioperationen  
-- Berechtigungsrelevante Aktionen  
+### 4. Vollständig offline
+Alle Analysen, Bewertungen und Merkmalsextraktionen finden lokal statt — zu keinem Zeitpunkt ist eine Internetverbindung erforderlich.
 
-Alles wird vor der Analyse verschlüsselt.
+---
 
-### Sequenzbildung
-Ereignisse werden zu Sequenzen gruppiert:
+## Isolation Forest — Funktionsweise
+
+Der Isolation-Forest-Algorithmus isoliert Anomalien, indem er zufällige Entscheidungsbäume aufbaut und misst, wie schnell jeder Datenpunkt vom Rest getrennt wird.
+
+**Das Prinzip:**
+- Normale Ereignisse benötigen viele Splits zur Isolation (sie mischen sich mit anderen)
+- Anomale Ereignisse benötigen weniger Splits (sie stechen hervor)
+- Kürzerer Isolationspfad = höherer Anomalie-Score
+
+**Nyroxis-Implementierung:**
+- 100 Isolationsbäume pro Analysezyklus
+- 256 zufällige Stichproben pro Baum
+- Alle 8 Verhaltensmerkmale vor der Analyse normalisiert
+- Anomalie-Score-Schwellenwert: 0,6 (darüber = Erkennung ausgelöst)
+- Beitragende Merkmale identifiziert über Z-Score-Abweichung (Schwellenwert: 2,0 Standardabweichungen)
+
+---
+
+## Statistische Analyse-Pipeline
+
+### Z-Score-Klassifizierung
+Jeder überwachte Wert wird gegen seine historische Basislinie bewertet:
 
 ```
-w(t) = {event_t, event_t+1, ..., event_t+k}
+z = (Wert - Mittelwert) / Standardabweichung
 ```
 
-So erkennt die KI mehrstufige oder schleichende Angriffe.
+| |z| | Schweregrad | Konfidenz |
+|------|----------|------------|
+| > 3,0 | Kritisch | 99,7 % |
+| > 2,0 | Hoch | 95 % |
+| > 1,5 | Mittel | 86 % |
+| > 1,0 | Niedrig | 68 % |
 
-### Merkmalsextraktion
-Für jedes Fenster extrahiert NyXIA Merkmale wie:
-- Prozessbeziehungen  
-- Netzwerkentropie  
-- Dateizugriffsmuster  
-- zeitliche Unregelmäßigkeiten  
-- Verhaltensänderungen  
+### IQR-Ausreißererkennung
+```
+untere_Grenze = Q1 - 1,5 × IQR
+obere_Grenze = Q3 + 1,5 × IQR
+```
+Werte außerhalb dieses Bereichs werden als statistische Ausreißer markiert.
 
-### Lokale KI‑Entscheidung
-NyXIA berechnet:
-- Anomaliewerte  
-- Verhaltensklassifizierung  
-- Abweichungen vom Normalprofil  
-- Risiko einer bösartigen Aktivität  
+### Gleitende Durchschnitte
+- **Einfacher gleitender Durchschnitt** — Basislinitentrend über konfigurierbare Zeitfenster
+- **Exponentieller gleitender Durchschnitt** — gewichtet neuere Aktivitäten stärker für schnellere Reaktion auf aufkommende Muster
 
-Alles bleibt lokal.
+### Spike-Erkennung
+```
+aktueller_Wert > Mittelwert + (Schwellenmultiplikator × Standardabweichung)
+```
 
-### Szenario‑Zuordnung
-Erkannte Muster werden Szenarien zugeordnet:
-- Persistenzversuche  
-- unerlaubte Netzwerkaktivität  
-- Privilegieneskalation  
-- mehrstufige Intrusion  
+---
 
-## Lokaler Verhaltensbaseline
-NyXIA erstellt ein privates Baseline‑Profil:
-- typische Prozesse  
-- normale Netzwerkziele  
-- übliche Dateimuster  
-- erwartete Zeitmuster  
+## Was die Engine ausgibt
 
-Die Baseline ist:
-- lokal gespeichert  
-- vollständig verschlüsselt  
-- jederzeit zurücksetzbar  
+Für jeden Analysezyklus:
+- `is_anomaly` — boolescher Indikator
+- `anomaly_score` — 0,0 bis 1,0 (höher = anomaler)
+- `confidence` — 0,0 bis 0,95
+- `contributing_features` — Liste der Merkmale mit Z-Scores, die die Erkennung ausgelöst haben
 
-## Safe‑by‑Design
-NyXIA vermeidet:
-- Nutzertracking  
-- Cloud‑Training  
-- Speicherung persönlicher Daten  
-- Telemetrie  
+Diese Ausgaben werden im Abschnitt KI / ML-Analyse des Dashboards angezeigt.
+
+---
+
+## Lokale Verhaltensbasislinie
+
+Die Engine erstellt eine private Basislinie pro Gerät:
+- Normale Prozessmuster
+- Typisches Netzwerkverbindungsverhalten
+- Erwartete Dateiaktivität
+- Übliches Tageszeit- und Wochentagsverhalten
+
+Die Basislinie ist:
+- Lokal in verschlüsselter Form gespeichert
+- Jederzeit vom Benutzer zurücksetzbar
+- Wird niemals übertragen oder geteilt
+
+---
 
 ## Zusammenfassung
-NyXIA kombiniert Datenschutz, lokale Intelligenz und verhaltensbasierte Erkennung zu einem zuverlässigen, vollständig privaten KI‑Modul.
+
+Die KI-Engine kombiniert Isolation Forest mit statistischer Analyse, um transparente, erklärbare und datenschutzfreundliche Anomalieerkennung zu liefern — vollständig auf dem Gerät des Benutzers, ohne Cloud-Abhängigkeit.

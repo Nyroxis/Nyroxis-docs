@@ -1,63 +1,80 @@
-# Nyroxis Agent — Vue d’ensemble
+# Nyroxis Agent — Vue d'ensemble
 
-Nyroxis Agent est le composant central de surveillance de la plateforme.  
-Il fonctionne localement sur l’appareil de l’utilisateur et collecte en continu les événements de sécurité avec une consommation minimale de ressources.
+Le Nyroxis Agent est le composant principal de surveillance et de collecte de la plateforme.
+Il s'exécute localement sur l'appareil de l'utilisateur, collectant et normalisant discrètement les événements de sécurité, les chiffrant et les stockant dans une base de données locale résistante aux manipulations — le tout avec une utilisation minimale des ressources.
 
 ---
 
-##  Rôle de l’Agent
-L’Agent observe et structure l’activité du système en créant une timeline de sécurité.
+## Ce que fait l'Agent
+
+L'Agent observe en permanence l'activité du système et construit une chronologie de sécurité structurée et chiffrée.
 
 Il surveille :
-- Processus (création / arrêt)  
-- Connexions réseau  
-- Modifications de fichiers  
-- Actions liées aux privilèges  
-- Événements système & sécurité  
+- La création et la terminaison de processus
+- Les connexions réseau et les métadonnées de trafic
+- Les modifications de fichiers et les changements de registre
+- Les actions de privilèges et les tentatives d'accès aux informations d'identification
+- Les événements système et de sécurité (Journaux d'événements Windows)
+- L'exécution de PowerShell et de scripts
 
-Toutes les données restent **locales et privées**.
-
----
-
-##  Opération Privacy-First
-L’Agent n’envoie jamais de journaux vers un serveur externe.
-
-Les données sont :
-- Chiffrées dès la collecte  
-- Protégées contre la falsification  
-- Stockées dans une base locale sécurisée  
+Tous les événements sont collectés **de manière privée et locale** — rien n'est transmis à l'extérieur.
 
 ---
 
-##  Léger & optimisé
-L’Agent est conçu pour :
-- Faible utilisation CPU  
-- Empreinte mémoire réduite  
-- Fonctionnement silencieux  
-- Stabilité même sur machines anciennes  
+## Pipeline de collecte
 
-Convient aux familles, professionnels et environnements sensibles.
-
----
-
-##  Résistant à la falsification
-L’Agent intègre des mécanismes garantissant :
-- L’impossibilité de modifier les événements collectés  
-- La difficulté d’effacer des traces d’attaque  
-- L’intégrité globale du système  
+1. **Collecte** — les événements sont ingérés simultanément depuis plusieurs canaux système
+2. **Normalisation** — les données brutes sont enrichies et standardisées pour le moteur de détection
+3. **Chiffrement** — la charge utile est chiffrée avec AES-256 avant toute opération d'écriture
+4. **Stockage** — les événements chiffrés sont écrits dans la base de données SQLite locale
+5. **Alimentation** — les données transitent vers Nyroxis Intelligence pour l'évaluation des règles en temps réel
 
 ---
 
-##  Fonctionnement 100% hors-ligne
-L’Agent n’a pas besoin d’internet pour :
-- Surveiller  
-- Chiffrer  
-- Stocker  
-- Analyser  
+## Fonctionnement axé sur la confidentialité
 
-Nyroxis reste pleinement fonctionnel même en environnement isolé.
+L'Agent ne télécharge jamais de journaux ni n'envoie de données d'événements vers des serveurs externes.
+Tout reste sur l'appareil et est :
+- Chiffré au moment de la collecte
+- Protégé contre les manipulations via des blocs d'événements chaînés par hachage
+- Stocké dans une base de données SQLite locale sécurisée
+- Sous le contrôle exclusif de l'utilisateur à tout moment
+
+---
+
+## Léger par conception
+
+L'Agent est optimisé pour une empreinte minimale :
+- ~57 Mo de RAM
+- ~0,1 % de CPU
+- Fonctionnement silencieux en arrière-plan en tant que service Windows
+- Adapté à un fonctionnement continu sur des ordinateurs portables personnels sans impact sur la productivité quotidienne
+
+---
+
+## Résilient et conscient des manipulations
+
+L'Agent intègre des mécanismes de protection pour garantir :
+- Les données d'événements collectées ne peuvent être modifiées ou supprimées sans être détectées
+- Les attaquants ne peuvent pas effacer silencieusement leur activité
+- Les blocs d'événements chaînés par hachage exposent toute tentative de suppression, modification ou injection
+
+Nyroxis System Guardian surveille l'état opérationnel de l'Agent toutes les 3 secondes et prend des mesures correctives si le service s'arrête de manière inattendue.
+
+---
+
+## Fonctionne entièrement hors ligne
+
+Aucune connexion Internet n'est requise pour :
+- La surveillance
+- La normalisation et le chiffrement
+- Le stockage des données
+- L'alimentation de Nyroxis Intelligence
+
+Nyroxis est entièrement fonctionnel dans des environnements isolés ou à air gap.
 
 ---
 
 ## Résumé
-Nyroxis Agent assure une surveillance continue, chiffrée et hors-ligne — offrant une visibilité professionnelle sans exposer les données au cloud.
+
+Le Nyroxis Agent offre une surveillance continue, chiffrée et hors ligne — donnant aux utilisateurs une visibilité de niveau entreprise sans exposer leurs données à des tiers, et fournissant des preuves de qualité forensique adaptées aux procédures judiciaires et réglementaires.

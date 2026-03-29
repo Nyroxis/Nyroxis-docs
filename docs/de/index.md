@@ -1,56 +1,77 @@
 # Was ist Nyroxis?
 
-Nyroxis ist eine leichtgewichtige, KI-unterstützte Cybersicherheitsplattform, die **persönliche und nicht verwaltete Endgeräte** schützt — genau jene Geräte, die von herkömmlichen Enterprise-Sicherheitslösungen oft übersehen werden.  
-Sie bietet kontinuierliche, datenschutzorientierte Überwachung und hilft, verdächtige Aktivitäten frühzeitig zu erkennen — ohne Cloud, ohne komplexe Konfiguration.
+Nyroxis ist eine leichtgewichtige, KI-gestützte Cybersicherheitsplattform zum Schutz **persönlicher und nicht verwalteter Endpoints** — der Geräte, die traditionelle Enterprise-Sicherheitstools oft ignorieren.
 
-## Warum es Nyroxis gibt
-Moderne Angriffe richten sich nicht mehr nur gegen Unternehmen.  
-Führungskräfte, Anwälte, Ärzte, Journalisten und sogar Familien werden heute auf **ihren privaten Geräten** angegriffen — dort, wo es kein SOC, kein SIEM und kein Sicherheitsteam gibt.
+Sie bietet kontinuierliche, datenschutzzentrierte Überwachung und bringt SOC-grade Erkennung auf persönliche Geräte, ohne Cloud-Konnektivität, technisches Fachwissen oder Enterprise-Infrastruktur zu erfordern.
 
-Nyroxis schließt diese Lücke, indem es **Sichtbarkeit auf Enterprise-Niveau** auf die persönliche Ebene bringt — ohne technische Hürden.
+## Warum Nyroxis Existiert
 
-## Für wen ist Nyroxis geeignet?
-- Führungskräfte & exponierte Personen  
-- Anwälte, Ärzte & Berufe mit sensiblen Daten  
-- Familien, die digitale Sicherheit benötigen  
-- Cybersecurity Engineers & SOC-Analysten zu Hause  
-- Vielreisende & Remote-Mitarbeiter  
+Moderne Cyberangriffe zielen nicht mehr nur auf Unternehmen ab. Führungskräfte, Anwälte, Richter, Ärzte, Journalisten und sogar Familien werden auf **ihren persönlichen Geräten** angegriffen — wo es kein SOC, kein SIEM und kein Sicherheitsteam gibt, das über sie wacht.
 
-## Wie Nyroxis funktioniert (High-Level)
-Nyroxis besteht aus zwei Kernkomponenten:
+Nyroxis füllt diese Lücke, indem es **Sichtbarkeit und Erkennung auf Enterprise-Niveau** auf die persönliche Ebene bringt — still, lokal und ohne Kompromisse.
+
+## Für Wen ist Nyroxis?
+
+- Führungskräfte und hochrangige Persönlichkeiten
+- Rechtsanwälte, Richter, Ärzte und Fachleute, die mit sensiblen Daten umgehen
+- Familien, die digitale Sicherheitstransparenz suchen
+- Cybersicherheitsingenieure und SOC-Analysten zu Hause
+- Vielreisende und Remote-Mitarbeiter
+- Freie Mitarbeiter und Berater
+
+## Wie Nyroxis Funktioniert (Überblick)
+
+Nyroxis ist um vier Kernkomponenten aufgebaut, die zusammenarbeiten:
 
 ### Nyroxis Agent
-- Leise lokale Überwachung  
-- Erfasst sicherheitsrelevante Ereignisse  
-- Speichert alles verschlüsselt lokal  
-- Arbeitet vollständig offline  
-- Manipulationsresistentes Design  
+- Kontinuierliche stille Überwachung aus mehreren Systemkanälen
+- Normalisiert, verschlüsselt und speichert alles lokal
+- Arbeitet vollständig offline — manipulationssicheres Design
+- ~57 MB RAM, 0,1 % CPU
+
+### Nyroxis Intelligence
+- Dreischichtige Erkennungs-Engine
+- 27 Erkennungsregeln, 12 Korrelationsregeln, 2 Kettenregeln (kontinuierlich wachsend)
+- Erweiterbar durch Sicherheitsexperten — benutzerdefinierte Regeln im JSON-Format
+- ~87 MB RAM, 1,8 % CPU
+
+### Nyroxis System Guardian
+- Stiller Systemtray-Wächter
+- Überwacht alle Dienste alle 3 Sekunden
+- Verwaltet Sicherungen, Offline-Lizenzvalidierung und Update-Prüfung
+- Stoppt Dienste automatisch, wenn die Lizenz abläuft
+- ~6,5 MB RAM, 0,1 % CPU
 
 ### Nyroxis Dashboard
-- Klare Logs und Warnungen  
-- Sicherheits-Trends und Einblicke  
-- Verhaltensanalyse und KI-Bewertungen  
-- Verständliche Erklärungen für verdächtige Aktionen  
+- Echtzeit-Sichtbarkeit über Ereignisse, Erkennungen, Korrelationen und Ketten
+- Forensische Suche, KI/ML-Analyse, PDF/CSV-Berichte
+- Englisch, Französisch und Deutsch
 
 ```
 [ Gerät ]
-   |--> Nyroxis Agent
-   |--> Nyroxis Dashboard
+   |--> Nyroxis Agent          (Erfassung & Verschlüsselung)
+   |--> Nyroxis Intelligence   (Erkennung & Korrelation)
+   |--> Nyroxis System Guardian (Überwachung & Schutz)
+   |--> Nyroxis Dashboard      (Sichtbarkeit & Analyse)
 ```
 
-## Zentrale Vorteile
-- Privacy-first & verschlüsselt  
-- Offline by Design  
-- Leichtgewichtig  
-- KI-gestützte Erkennung  
-- Benutzerfreundlich  
+## Hauptvorteile
+
+- Alle Daten verbleiben auf Ihrem Gerät — immer
+- Forensisch geeigneter verschlüsselter Speicher (AES-256)
+- 27 + 12 + 2 Erkennungsregelschichten, erweiterbar durch Sicherheitsexperten
+- Lokale KI/ML-Anomalieerkennung — keine Cloud, keine Telemetrie
+- HWID-basierte Offline-Lizenzierung
+- Leichtgewichtig und still — für Angreifer unsichtbar
 
 ## Dokumentationsübersicht
-Diese Dokumentation enthält:  
-- Architektur  
-- Agent & Dashboard  
-- Sicherheit & Datenschutz  
-- Anwendungsfälle  
-- Roadmap  
-- Lizenzen  
-- FAQ & Glossar  
+
+Diese Dokumentation umfasst:
+- Architektur & Komponenten
+- Agent, Intelligence & System Guardian
+- Dashboard & KI/ML-Engine
+- Sicherheit & Datenschutz
+- Anwendungsfälle
+- Roadmap
+- Lizenzierung
+- FAQ & Glossar

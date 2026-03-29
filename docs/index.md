@@ -89,7 +89,7 @@ Every language contains:
 - Architecture & Data Flow
 - Agent, Dashboard & AI Engine
 - Security & Local Privacy Model
-- Roadmap 2025
+- Roadmap 2026
 - Licensing & Editions
 - FAQ & Glossary
 

@@ -1,93 +1,91 @@
-# Architektur – Übersicht
+# Architekturübersicht
 
-Nyroxis basiert auf einer leichtgewichtigen, datenschutzorientierten Architektur, die Unternehmenssichtbarkeit ohne Cloud-Abhängigkeit ermöglicht.  
-Das gesamte System läuft vollständig auf dem Gerät des Nutzers und besteht aus klar definierten, unabhängigen Komponenten, die sicher zusammenarbeiten.
-
----
-
-## Zentrale Komponenten
-
-Nyroxis besteht aus den folgenden übergeordneten Modulen:
-
-### **1. Nyroxis Agent**
-Ein leichtgewichtiger Endpoint-Monitor, der:
-- sicherheitsrelevante Ereignisse erfasst  
-- sie lokal verschlüsselt und speichert  
-- eine manipulationsresistente Datenintegrität gewährleistet  
-- vollständig offline arbeitet  
-
-### **2. Lokale verschlüsselte Datenbank**
-Alle erfassten Ereignisse werden in:
-- einem gesicherten lokalen Datenspeicher  
-- vollständig verschlüsselt im Ruhezustand  
-- strukturiert für schnelle Analyse und Wiederherstellung von Zeitachsen  
-
-abgelegt.
-
-### **3. Nyroxis Dashboard**
-Eine klare und intuitive Benutzeroberfläche, die:
-- Logs, Warnungen und Korrelationen darstellt  
-- Diagramme und Zeitachsen generiert  
-- Erklärungen und Schweregradindikatoren liefert  
-- sowohl Experten als auch nicht-technische Nutzer unterstützt  
-
-### **4. Lokale Analyse-Engine**
-Nyroxis umfasst:
-- leichtgewichtige Verhaltensheuristiken  
-- KI-unterstützte Bewertungen  
-- Ereigniskorrelationslogik  
-
-Alle Analysen erfolgen **lokal**, um den Datenschutz vollständig zu gewährleisten.
-
-### **5. Optionale Lizenzvalidierung (Local‑First)**
-Nyroxis kann die Lizenzintegrität validieren, ohne Ereignisdaten zu übertragen.  
-Nur minimale Metadaten – sofern vom Nutzer erforderlich – werden ausgetauscht, niemals Logs.
+Nyroxis basiert auf einer leichtgewichtigen, datenschutzorientierten Architektur, die darauf ausgelegt ist, Sichtbarkeit und Erkennung auf Unternehmensebene zu liefern, ohne auf die Cloud angewiesen zu sein.
+Das System läuft vollständig auf dem Gerät des Benutzers und besteht aus vier unabhängigen Komponenten, die sicher zusammenarbeiten.
 
 ---
 
-## High-Level Datenfluss
+## Kernkomponenten
 
-Die Architektur folgt einem einfachen, transparenten Lebenszyklus:
+### 1. Nyroxis Agent
+Ein leichtgewichtiger Endpunktmonitor, der:
+- Sicherheitsrelevante Ereignisse aus mehreren Systemkanälen erfasst
+- Sie sofort bei der Erfassung normalisiert und verschlüsselt
+- Alles in einer lokalen, manipulationsresistenten Datenbank speichert
+- 100 % offline arbeitet — ~57 MB RAM, ~0,1 % CPU
+
+### 2. Nyroxis Intelligence
+Eine hochgeschwindigkeits-Erkennungs- und Korrelations-Engine, die:
+- 27 Erkennungsregeln auf einzelne Ereignisse anwendet
+- 12 Korrelationsregeln über zusammenhängende Ereignisse im Zeitverlauf ausführt
+- 2 Kettenregeln ausführt, um mehrstufige Angriffsequenzen zu erkennen
+- Bei jeder Regelübereinstimmung sofortige Alarme auslöst
+- Benutzerdefinierte Regeln von Sicherheitsprofis akzeptiert
+- ~87 MB RAM, ~1,8 % CPU
+
+### 3. Nyroxis System Guardian
+Ein stiller Systemtray-Wächter, der:
+- Nyroxis Agent und Intelligence alle 3 Sekunden überwacht
+- Backups und HWID-basierte Lizenzvalidierung verwaltet (vollständig offline)
+- Automatisch auf Updates prüft
+- Dienste automatisch stoppt, wenn die Lizenz abläuft
+- ~6,5 MB RAM, ~0,1 % CPU
+
+### 4. Nyroxis Dashboard
+Eine klare und intuitive Oberfläche, die:
+- Ereignisse, Erkennungen, Korrelationen und Ketten anzeigt
+- Forensische Suche, Diagramme und PDF/CSV-Berichte bereitstellt
+- Eine lokale KI/ML-Engine enthält (Isolation Forest + statistische Analyse)
+- Englisch, Französisch und Deutsch unterstützt
+
+---
+
+## Datenfluss auf hoher Ebene
 
 ```
-[ Systemereignisse ]  
-        ↓  
-[ Nyroxis Agent ]  
-        ↓ (verschlüsselt)
-[ Lokale verschlüsselte Datenbank ]  
-        ↓  
-[ Lokale Analyse-Engine ]  
-        ↓  
-[ Nyroxis Dashboard ]
+[ Systemereignisse ]
+        ↓
+[ Nyroxis Agent ]          ← erfassen, normalisieren, verschlüsseln
+        ↓
+[ Lokale verschlüsselte DB ] ← AES-256, SQLite, hash-verkettet
+        ↓
+[ Nyroxis Intelligence ]   ← 27 Erkennung + 12 Korrelation + 2 Kettenregeln
+        ↓
+[ Nyroxis Dashboard ]      ← Sichtbarkeit, KI/ML, Forensik, Berichterstellung
+        ↑
+[ Nyroxis System Guardian ] ← überwacht, sichert, validiert Lizenz
 ```
 
-Zu keinem Zeitpunkt werden Protokolle oder sensible Daten an externe Server übertragen.
+In keiner Phase werden Protokolle oder sensible Daten auf externe Server hochgeladen.
 
 ---
 
 ## Designprinzipien
 
-### **Privacy by Design**
-- keine Cloud-Datenverarbeitung  
-- lokale Verschlüsselung  
-- vollständige Benutzerkontrolle  
+### Datenschutz by Design
+- Keine Cloud-Ingestion
+- Lokale Verschlüsselung bei der Erfassung
+- Der Benutzer behält jederzeit die volle Kontrolle
 
-### **Einfachheit & Klarheit**
-- klare Architektur  
-- leicht verständlich  
-- geeignet für Familien, Fachkräfte und Experten  
+### Forensische Integrität
+- AES-256-verschlüsselte Protokolle
+- Hash-verkettete Ereignisblöcke
+- Manipulationsresistenter Speicher, geeignet für Rechtsverfahren
 
-### **Leichtgewichtiges Design**
-Optimiert für flüssigen Betrieb – selbst auf älteren Laptops oder Heimgeräten.
+### Leichtgewichtiger Betrieb
+Entwickelt, um auf persönlichen Laptops und Workstations reibungslos zu laufen, ohne die tägliche Produktivität zu beeinträchtigen.
 
-### **Offline‑First Sicherheit**
+### Offline-First-Sicherheit
 Keine Internetverbindung erforderlich für:
-- Überwachung  
-- Analyse  
-- Dashboard-Nutzung  
-- Ereigniskorrelation  
+- Überwachung und Erkennung
+- KI/ML-Analyse
+- Dashboard-Nutzung
+- Lizenzvalidierung
+
+### Erweiterbarkeit
+Sicherheitsprofis können benutzerdefinierte Erkennungs-, Korrelations- und Kettenregeln schreiben und einsetzen, ohne das Kernsystem zu modifizieren.
 
 ---
 
 ## Zusammenfassung
-Nyroxis bietet eine moderne, minimalistische und sichere Architektur, die professionelle Sichtbarkeit auf persönliche Geräte bringt – vollständig offline und mit uneingeschränktem Respekt für die Privatsphäre der Nutzer.
+Nyroxis bietet eine moderne, modulare und forensisch fundierte Architektur, die professionelle Sichtbarkeit und Erkennung auf persönliche Geräte bringt — vollständig offline, mit vollständigem Respekt für die Privatsphäre des Benutzers.

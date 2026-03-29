@@ -1,61 +1,91 @@
 # Zielgruppen
 
-Nyroxis wurde für reale Menschen entwickelt, die einen stärkeren Schutz benötigen als das, was herkömmliche Endverbraucher‑Sicherheitsprodukte bieten können.  
-Im Folgenden sind die wichtigsten Anwendergruppen aufgeführt, für die die Plattform konzipiert wurde.
+Nyroxis ist für echte Menschen konzipiert, die einen stärkeren Schutz benötigen, als traditionelle Verbrauchersicherheitstools bieten können.
+Im Folgenden sind die primären Zielgruppen aufgeführt, für die die Plattform entwickelt wurde.
 
 ---
 
-## Führungskräfte und Personen mit hoher öffentlicher Sichtbarkeit
-Führungskräfte und öffentliche Persönlichkeiten sind häufig Ziel von:
-- Diebstahl von Zugangsdaten  
-- Social‑Engineering‑Angriffen  
-- zielgerichteter Malware  
-- Überwachungsversuchen  
+## Führungskräfte & Senior Management
 
-Nyroxis bietet ihnen lokale Transparenz über verdächtige Aktivitäten — ohne Abhängigkeit von externen Cloud‑Diensten.
+Führungskräfte und Persönlichkeiten des öffentlichen Lebens sind häufige Ziele von:
+- Identitätsdiebstahl und Spear-Phishing
+- Social Engineering und gezielter Malware
+- Überwachung und Netzwerkabfang
+- Langfristigen, geräuscharmen Eindringlingen
 
----
-
-## Juristen, Ärzte und andere vertrauliche Berufsgruppen
-Berufstätige, die mit sensiblen oder vertraulichen Daten arbeiten, benötigen:
-- starken Datenschutz  
-- manipulationsresistente Ereignisprotokollierung  
-- frühzeitige Erkennung ungewöhnlicher Aktivitäten  
-
-Nyroxis schützt Geräte, auf denen juristische Dokumente, medizinische Akten, Verträge oder vertrauliche Kommunikation gespeichert sind.
+Ihre persönlichen Laptops — zu Hause, in Hotels und auf Reisen genutzt — sind selten durch unternehmenseigene EDR-Systeme abgedeckt.
+Nyroxis gibt ihnen lokale, stille Sichtbarkeit auf verdächtige Aktivitäten, ohne auf externe Cloud-Dienste oder Unternehmensüberwachung angewiesen zu sein.
 
 ---
 
-## Familien und Alltagsnutzer
-Familien fehlt oft ein Werkzeug, das verständlich erklärt:
-- was auf ihrem Computer passiert  
-- ob etwas Verdächtiges vor sich geht  
-- welche Risiken für Kinder und Jugendliche bestehen  
+## Rechtsanwälte, Richter & Beamte
 
-Nyroxis bietet einfache Transparenz und ein Gefühl der Sicherheit.
+Fachleute in sensiblen Positionen benötigen:
+- Starken Datenschutz — keine Cloud-Übertragung fallbezogener Aktivitäten
+- Manipulationsresistente Ereignisprotokollierung für potenzielle Rechtsverfahren
+- Früherkennung von Überwachungs- oder Kompromittierungsversuchen
 
----
-
-## Cybersicherheitsenthusiasten und SOC‑Analysten zu Hause
-Experten wünschen sich:
-- eine persönliche SIEM‑ähnliche Ereigniszeitleiste  
-- verhaltensbasierte Einblicke  
-- lokal verschlüsselte Protokolle  
-- vollständige Cloud‑Unabhängigkeit  
-
-Nyroxis stellt ihnen eine strukturierte Umgebung zur Verfügung, um ihre eigenen Geräte zu überwachen.
+Nyroxis schützt Geräte, die Rechtsdokumente, Fallakten, Verträge und vertrauliche Kommunikation speichern — mit jederzeit bereitstehenden forensischen Beweisen.
 
 ---
 
-## Remote‑Mitarbeiter und Vielreisende
-Reisende und Remote‑Professionals sind konfrontiert mit:
-- unsicheren oder unzuverlässigen Netzwerken  
-- erhöhter Angriffsfläche  
-- hohem Risiko von Identitäts‑ oder Zugangsdiebstahl  
+## Ärzte, Journalisten & Berufe mit hohem Datenschutzbedarf
 
-Nyroxis bietet eine portable, zuverlässige und vollständig offline‑fähige Sicherheits­ebene, die den Benutzer überallhin begleitet.
+Fachleute, die mit regulierten oder sensiblen Informationen umgehen — Krankenakten, Quellenschutz, Finanzdaten — können es sich nicht leisten, Cloud-basierte Überwachungstools einzusetzen.
+
+Nyroxis bietet:
+- Vollständig lokale Erkennung und Speicherung
+- Keine verhaltensbezogenen Daten, die das Gerät verlassen
+- Schutz ohne Drittanbieterzugriff
+
+---
+
+## Familien & Alltagsnutzer
+
+Familien fehlen oft Tools, die erklären:
+- Was auf ihrem Computer passiert
+- Ob etwas Verdächtiges vorgeht
+- Welche Risiken für Kinder und Jugendliche bestehen
+
+Nyroxis bietet einfache Sichtbarkeit, klare Warnungen und ein sicheres Gefühl — ohne technische Kenntnisse vorauszusetzen.
+
+---
+
+## Cybersicherheitsfachleute & SOC-Analysten zu Hause
+
+Experten wollen:
+- Eine persönliche SIEM-ähnliche Ereigniszeitachse
+- Verhaltens- und Korrelationserkenntnisse
+- Lokale verschlüsselte Protokollierung mit forensischer Integrität
+- Eine erweiterbare Regel-Engine für benutzerdefinierte Erkennungen
+- Keine Cloud-Abhängigkeiten
+
+Nyroxis gibt ihnen eine strukturierte, professionelle Umgebung zur Überwachung ihrer eigenen Geräte — mit der Möglichkeit, eigene Erkennungsregeln zu schreiben und einzusetzen.
+
+---
+
+## Remote-Mitarbeiter & Vielreisende
+
+Reisende und Remote-Fachleute sind konfrontiert mit:
+- Nicht vertrauenswürdigen Netzwerken und kompromittierten Routern
+- Evil-Twin-WLAN und lokalen Abfangversuchen
+- Erhöhtem Risiko für Identitätsdiebstahl
+
+Nyroxis bietet eine portable, autonome, Offline-First-Sicherheitsschicht, die mit dem Benutzer reist und kein Internet zum Funktionieren benötigt.
+
+---
+
+## Freiberufler & Berater
+
+Freiberufler, die mit sensiblen Kundendaten arbeiten, benötigen:
+- Schutz ohne Unternehmensüberwachung
+- Keine Cloud-Telemetrie oder Fernzugriff
+- Erkennung, die auf persönlichen Geräten funktioniert
+
+Nyroxis bietet ausschließlich lokalen, kundendiskreten Schutz — ideal für professionelle Umgebungen mit mehreren Kunden.
 
 ---
 
 ## Zusammenfassung
-Nyroxis richtet sich an alle, die Klarheit und Schutz auf persönlicher Ebene benötigen — von Familien über hochkarätige Berufsgruppen bis hin zu Remote‑Mitarbeitern und Cybersicherheitspraktikern.
+
+Nyroxis ist für jeden gedacht, der Klarheit und Schutz auf persönlicher Ebene benötigt — von Familien bis zu hochrangigen Fachleuten, von Remote-Mitarbeitern bis zu Cybersicherheitspraktikern, und von unabhängigen Beratern bis zu leitenden Führungskräften, deren persönliche Geräte nie wirklich außer Betrieb sind.

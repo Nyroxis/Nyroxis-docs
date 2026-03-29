@@ -1,62 +1,103 @@
-# Architektur – Komponenten
+# Architekturkomponenten
 
-Nyroxis besteht aus mehreren klar definierten, voneinander getrennten Komponenten, die zusammen eine vollständig lokale, datenschutzorientierte Sicherheitsplattform bilden.  
-Jedes Modul ist so konzipiert, dass es unabhängig funktioniert, minimale Angriffsfläche bietet und keinerlei Cloud-Abhängigkeit besitzt.
+Dieser Abschnitt beschreibt jeden Kernbestandteil der Nyroxis-Plattform und erläutert, wie sie zusammenarbeiten, um private, offline und manipulationssichere Sicherheit zu gewährleisten.
+
+---
 
 ## 1. Nyroxis Agent
-Der Agent ist die Hauptkomponente, die direkt auf dem Endgerät läuft und für folgende Aufgaben verantwortlich ist:
-- Erfassung sicherheitsrelevanter Ereignisse  
-- Strukturierung der Daten  
-- sofortige Verschlüsselung  
-- zuverlässige Speicherung in der lokalen Datenbank  
-- Weitergabe relevanter Informationen an Analyse- und Erkennungsmechanismen  
 
-Er arbeitet leichtgewichtig, stabil und vollständig offline.
+Der schlanke Hintergrunddienst, verantwortlich für:
+- Überwachung von Prozessen, Netzwerkverbindungen, Dateiänderungen und Berechtigungsaktivitäten
+- Erfassung von Windows-Ereignisprotokolleinträgen (Sicherheit, System, Anwendung)
+- Überwachung von PowerShell- und Skriptausführungen
+- Normalisierung von Ereignisdaten in Echtzeit
+- Sofortige Verschlüsselung jedes Ereignisses vor dem Schreiben
 
-## 2. Lokale verschlüsselte Datenbank
-Alle Daten werden gespeichert in:
-- einem lokalen Speicherbereich  
-- vollständig verschlüsselt  
-- manipulationsresistent  
-- ohne Klartextzugriffe  
+Eigenschaften:
+- ~57 MB RAM, ~0,1 % CPU
+- Stiller Windows-Dienst
+- Vollständig offline — nichts verlässt das Gerät
 
-Die Datenbank besteht nur aus sicherheitsbezogenen Ereignissen und minimalen Metadaten.
+---
 
-## 3. Analyse-Engine
-Die Analyse-Engine verarbeitet:
-- Zeitreihen  
-- Sequenzen  
-- Metadaten  
-- Prozess- und Netzwerkzusammenhänge  
+## 2. Nyroxis Intelligence
 
-Sie bewertet Ereignisse anhand lokaler Regeln und Heuristiken.
+Die Erkennungs- und Korrelations-Engine:
+- **27 Erkennungsregeln** — bekannte Bedrohungsmuster in einzelnen Ereignissen
+- **12 Korrelationsregeln** — Muster über zusammenhängende Ereignisse hinweg
+- **2 Kettenregeln** — Erkennung mehrstufiger Angriffssequenzen
 
-## 4. KI-Modul (NyXIA)
-NyXIA ist das leichte, lokale KI-Modul, das:
-- Verhaltensmuster erkennt  
-- Anomalien identifiziert  
-- Szenarien erzeugt  
-- Risikoindikatoren liefert  
+Eigenschaften:
+- ~87 MB RAM, ~1,8 % CPU
+- Vollständig erweiterbar — Sicherheitsexperten können eigene Regeln im JSON-Format schreiben und bereitstellen
+- Löst sofortige Warnungen bei Regelübereinstimmungen aus
+- Speichert Befunde in dedizierten Erkennungsdatenbanken
 
-Alles wird offline ausgeführt, basierend auf lokal verschlüsselten Ereignissen.
+---
 
-## 5. Dashboard
-Die Benutzeroberfläche zeigt:
-- Logs  
-- Diagramme  
-- Detektionen  
-- Szenarien  
-- Regelübereinstimmungen  
-- Einstellungen  
+## 3. Nyroxis System Guardian
 
-Das Dashboard ist der zentrale Punkt für Transparenz und Benutzerkontrolle.
+Der Plattformwächter, der als Systemtray-Anwendung läuft:
+- Überwacht Nyroxis Agent und Intelligence alle 3 Sekunden
+- Verwaltet geplante und auf Anfrage durchgeführte Datenbanksicherungen
+- Validiert HWID-basierte Lizenzen offline (AES-GCM + HMAC)
+- Stoppt Dienste automatisch, wenn die Lizenz abläuft
+- Prüft Plattform-Updates in konfigurierbaren Intervallen
 
-## 6. Secure Storage Layer
-Diese Schicht sorgt für:
-- Integrität der Datenspeicherung  
-- hashverkettete Ereignisse  
-- Anti-Tamper-Schutz  
-- sichere Lese- und Schreiboperationen  
+Eigenschaften:
+- ~6,5 MB RAM, ~0,1 % CPU
+- Vollständig offline Lizenzvalidierung
+- Entscheidend für die Plattformresilienz und forensische Integrität
+
+---
+
+## 4. Sichere Lokale Datenbank
+
+Eine geschützte SQLite-Datenbank mit:
+- Verschlüsselten Ereignisprotokollen
+- Erkennungs- und Korrelationsbefunden
+- KI/ML-Analyseergebnissen
+- Verhaltens-Baselinedaten
+- Metadaten zur forensischen Zeitachsenrekonstruktion
+
+Sicherheitsmerkmale:
+- AES-256-Verschlüsselung im Ruhezustand
+- Hash-verkettete Ereignisblöcke zur Manipulationserkennung
+- Geschützte Schreibpfade
+- Integritätsprüfung bei jedem Lesevorgang
+
+Die Datenbank **verlässt das Gerät niemals**.
+
+---
+
+## 5. Lokale KI/ML-Engine
+
+Die offline Anomalieerkennungs-Engine, eingebettet in das Dashboard:
+- Angepasster Isolation Forest (100 Bäume, 256 Stichproben, 8 Verhaltensmerkmale)
+- Z-Score-statistische Klassifizierung: Kritisch / Hoch / Mittel / Niedrig
+- IQR-Ausreißererkennung, gleitende Durchschnitte, Spitzenwert-Erkennung
+- Identifikation beitragender Merkmale mit Z-Score-Werten
+- Lokaler Aufbau der Verhaltens-Baseline
+
+Keine Cloud, keine externe ML-Bibliothek, keine Datenweitergabe.
+
+---
+
+## 6. Nyroxis Dashboard
+
+Die Benutzeroberfläche bietet:
+- Echtzeit-Ereignisüberwachung mit forensischer Suche und Filterung
+- Visualisierung von Erkennungs-, Korrelations- und Kettenergebnissen
+- KI/ML-Analyse mit Aufschlüsselung der beitragenden Merkmale
+- Berichte — PDF/CSV-Export
+- Verwaltung von Datenbanksicherungen
+- Einstellungen und Aufbewahrungssteuerung
+- Mehrsprachig: Englisch, Französisch, Deutsch
+
+Alles Angezeigte wird lokal aus der sicheren Datenbank abgerufen.
+
+---
 
 ## Zusammenfassung
-Die Komponentenarchitektur von Nyroxis ermöglicht vollständige lokale Sicherheit, klare Aufteilung der Verantwortlichkeiten und maximale Privatsphäre — ohne Cloud-Abhängigkeit.
+
+Die Nyroxis-Komponenten arbeiten als integriertes, privates, offline-Ökosystem — und bieten Sichtbarkeit auf Unternehmensniveau, mehrschichtige Erkennung, lokale KI/ML-Intelligenz und forensisch verwertbare Nachweise, ohne Benutzerdaten in die Cloud zu übertragen.

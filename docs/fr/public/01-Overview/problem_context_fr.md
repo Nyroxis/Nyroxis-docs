@@ -1,52 +1,60 @@
-# Problématique & Contexte
+# Problème & Contexte
 
-La cybersécurité a évolué, mais la protection personnelle, elle, est restée presque inexistante.  
-Les entreprises disposent d’équipes SOC, de SIEM et d’une surveillance avancée — les particuliers et petits environnements professionnels non.
+La cybersécurité a évolué, mais la protection personnelle n'a pas suivi.
+Alors que les entreprises utilisent des équipes SOC, des plateformes SIEM et une surveillance avancée, les particuliers et les petits environnements professionnels restent exposés.
 
-## Les terminaux personnels sont devenus des cibles
-Les attaquants visent désormais :
-- Cadres et personnes à haut profil  
-- Avocats, médecins et professions sensibles  
-- Familles et enfants  
-- Télétravailleurs et voyageurs  
+## Les terminaux personnels sont désormais des cibles privilégiées
+
+Les attaquants ciblent de plus en plus :
+- Les cadres dirigeants et les personnalités à haute visibilité
+- Les avocats, juges, médecins et professionnels détenant des données sensibles
+- Les administrateurs SOC et responsables informatiques dont les identifiants personnels peuvent déverrouiller l'infrastructure d'entreprise
+- Les familles et les enfants
+- Les télétravailleurs et les voyageurs
 
 Ces appareils contiennent souvent :
-- Communications privées  
-- Données financières  
-- Informations légales ou médicales  
-- Accès aux comptes professionnels  
-- Photos et documents personnels  
+- Des communications privées et des décisions stratégiques
+- Des informations financières et juridiques
+- L'accès à des comptes et systèmes d'entreprise
+- Des photos et documents personnels
 
-Pourtant, ils n’ont aucune surveillance structurée.
+Pourtant, ils ne disposent d'aucune capacité de surveillance ou de détection structurée.
 
-## Manque de visibilité = risque accru
-La majorité des utilisateurs ne voit pas :
-- Les processus en cours  
-- Les connexions réseau  
-- Les modifications de fichiers  
-- Les signes de présence d’un malware  
-- Les tentatives d’espionnage ou de persistance  
+## L'angle mort structurel
 
-Sans visibilité, les attaques passent inaperçues.
+Les réseaux domestiques ne sont pas surveillés. Les ordinateurs portables personnels ne sont pas inscrits dans les systèmes EDR d'entreprise. Les appareils familiaux partagent le Wi-Fi avec des communications professionnelles sensibles.
 
-## Pourquoi les outils classiques ne suffisent pas
-Les antivirus reposent sur des signatures.  
-Mais les attaques modernes exploitent :
-- Des techniques “living off the land”  
-- Des comportements lents et furtifs  
-- Des attaques fileless  
-- Du vol d’identifiants  
-- De l’élévation de privilèges locale  
+Un seul appareil personnel compromis peut devenir le point d'entrée silencieux vers une infrastructure critique, des communications de direction ou des procédures judiciaires sensibles. L'attaquant n'a pas besoin de franchir le pare-feu — il lui suffit d'atteindre la personne qui se trouve derrière.
 
-Ces menaces nécessitent une **visibilité comportementale**, pas seulement un scan.
+## Absence de visibilité = Risque accru
 
-## Le problème central
-Il n’existe **aucun équivalent personnel** aux plateformes SIEM d’entreprise.
+La plupart des utilisateurs ne peuvent pas voir :
+- Quels processus s'exécutent sur leur appareil
+- Ce qui se connecte à Internet
+- Quels fichiers sont modifiés
+- Si des logiciels malveillants ou des mécanismes de persistance existent
+- Si quelqu'un les espionne
 
-Nyroxis comble ce manque avec :
-- Surveillance locale  
-- Stockage chiffré  
-- Analyse comportementale et IA  
-- Tableau clair et simple  
+Sans visibilité, les attaques restent inaperçues jusqu'à ce qu'il soit trop tard.
 
-Le tout sans dépendance au cloud ni complexité technique.
+## Pourquoi les outils traditionnels ne suffisent pas
+
+Les outils antivirus se concentrent sur la détection basée sur les signatures.
+Mais les menaces modernes reposent sur :
+- Des techniques de "living-off-the-land"
+- Des schémas comportementaux lents et furtifs
+- Des attaques sans fichier
+- Le vol d'identifiants
+- Des séquences d'intrusion en plusieurs étapes
+
+Ces techniques nécessitent **une visibilité comportementale et une détection multicouche** — pas seulement une analyse.
+
+## Le problème fondamental
+
+Il n'existe pas de couche de visibilité personnelle équivalente au SIEM d'entreprise.
+Aucune solution légère, respectueuse de la vie privée et utilisable hors ligne, conçue spécifiquement pour protéger les terminaux personnels des individus à haute valeur.
+
+Les outils d'entreprise sont trop lourds, trop intrusifs et trop dépendants de l'infrastructure d'entreprise.
+L'antivirus grand public est trop superficiel.
+
+**Nyroxis existe pour combler ce fossé.**

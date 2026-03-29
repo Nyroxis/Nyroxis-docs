@@ -1,54 +1,50 @@
 # Proposition de valeur
 
-Nyroxis introduit une nouvelle catégorie de cybersécurité personnelle :  
-**la visibilité de niveau entreprise, sans la complexité d’entreprise.**
+Nyroxis offre une nouvelle catégorie de cybersécurité personnelle :
+**une visibilité et une détection de niveau entreprise, sans la complexité de l'entreprise.**
 
-Contrairement aux antivirus classiques, Nyroxis offre une conscience de situation en continu — permettant à l’utilisateur de comprendre ce qui se passe sur son appareil, avec des informations claires et un stockage chiffré local.
+Contrairement aux outils antivirus traditionnels, Nyroxis fournit une conscience situationnelle continue avec un moteur de détection multicouche, des preuves forensiques et une analyse IA locale — sans envoyer un seul octet vers le cloud.
 
-## Pourquoi Nyroxis est différente
-La plupart des outils de sécurité se situent entre deux extrêmes :
-- **Trop simples** (antivirus grand public) → visibilité limitée, signatures uniquement  
-- **Trop complexes** (SIEM/SOC d’entreprise) → lourds, coûteux, dépendants du cloud  
+## Pourquoi Nyroxis est différent
 
-Nyroxis vise précisément l’équilibre :
-- Léger  
-- Privacy‑first  
-- Assisté par IA  
-- Fonctionnement hors‑ligne  
-- Accessible  
+La plupart des outils de sécurité se situent dans deux extrêmes :
+- **Trop simples** (antivirus grand public) → basés sur les signatures, réactifs, sans forensique, sans corrélation
+- **Trop complexes** (SIEM/SOC d'entreprise) → lourds, coûteux, dépendants du cloud, non conçus pour un usage personnel
 
-Elle apporte **une surveillance professionnelle** adaptée aux particuliers et petits environnements professionnels.
+Nyroxis est conçu spécifiquement pour le juste milieu :
+- Léger et discret
+- Axé sur la confidentialité et utilisable hors ligne
+- Détection multicouche — pas seulement des signatures
+- Préservation des preuves forensiques
+- Extensible par les professionnels de la sécurité
+- Convivial pour les utilisateurs non techniques
 
-## Avantages clés
+## Avantages essentiels
 
-### ✔ Visibilité locale
-Nyroxis montre les processus, connexions et modifications — des informations invisibles pour la plupart des utilisateurs.
+### ✔ Détection multicouche
+27 règles de détection, 12 règles de corrélation, 2 règles de chaîne — couvrant les événements individuels, les relations entre événements et les attaques en plusieurs étapes.
+La bibliothèque de règles s'enrichit en continu, et les professionnels de la sécurité peuvent ajouter leurs propres règles personnalisées sans modifier le système central.
 
-### ✔ Détection précoce
-L’analyse comportementale et le scoring IA détectent les motifs suspects avant qu’ils ne deviennent critiques.
+### ✔ Preuves forensiques
+Tous les événements sont chiffrés, horodatés et stockés dans des blocs chaînés par hachage inviolables — adaptés aux procédures juridiques et réglementaires.
 
-### ✔ Chiffrement local complet
-Tous les journaux sont chiffrés et stockés localement.  
-Aucune donnée cloud. Aucun accès tiers.
+### ✔ Chiffrement local intégral
+Tous les journaux et événements sont chiffrés au repos (AES-256) et stockés localement.
+Aucun stockage cloud. Aucun accès par des tiers. Jamais.
 
-### ✔ Informations intelligentes
-Nyroxis filtre le bruit et met en avant l’essentiel, avec des explications claires.
+### ✔ Intelligence IA/ML locale
+Implémentation personnalisée d'Isolation Forest — aucune bibliothèque ML externe, aucune inférence cloud.
+Détection d'anomalies avec décomposition des caractéristiques contributives, classification Z-Score et détection de pics.
 
-### ✔ Simple pour les non‑experts
-Les concepts complexes sont traduits en langage clair :
-- Ce qui s’est passé  
-- Pourquoi c’est important  
-- Ce qu’il faut faire  
+### ✔ Résilience de la plateforme
+Nyroxis System Guardian surveille tous les services toutes les 3 secondes, gère les sauvegardes, valide la licence basée sur le HWID hors ligne et garantit que la plateforme ne peut pas être désactivée silencieusement.
 
-### ✔ Adapté aux familles & professionnels
-Nyroxis convient aux :
-- Appareils de cadres  
-- Ordinateurs d’avocats/médecins  
-- Home labs cybersécurité  
-- Télétravailleurs  
-- Ordinateurs familiaux  
+### ✔ Simple pour les non-experts, puissant pour les professionnels
+Les utilisateurs non techniques bénéficient d'indicateurs de gravité clairs et d'un chargement de règles en un clic.
+Les professionnels de la sécurité disposent d'une recherche forensique, d'une personnalisation des règles, d'une analyse de corrélation et d'une révision des anomalies pilotée par l'IA.
 
-## La promesse Nyroxis
-**Une sécurité au service des personnes, pas seulement des systèmes.**
+## La promesse de Nyroxis
 
-Nyroxis offre clarté, confiance et contrôle — sans compromettre la vie privée ou la performance.
+**Une sécurité qui protège les personnes, pas seulement les systèmes.**
+
+Nyroxis transforme la vulnérabilité la plus négligée de la cybersécurité moderne — l'appareil personnel d'un individu à haute valeur — en un actif de sécurité contrôlé, surveillé et forensiquement prêt.

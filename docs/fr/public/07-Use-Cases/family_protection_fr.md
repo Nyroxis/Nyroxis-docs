@@ -1,74 +1,80 @@
 # Protection familiale
 
-Nyroxis offre une protection privée et hors-ligne pour les familles, garantissant la sécurité des enfants, des parents et des appareils partagés — sans exposer aucune donnée au cloud.
+Nyroxis fournit une couche de sécurité sûre, privée et hors ligne pour les familles — garantissant que les enfants, les parents et les appareils domestiques partagés restent protégés sans exposer de données sensibles au cloud.
 
 ---
 
-##  Pourquoi la protection familiale est essentielle
-Les risques courants incluent :
-- Malware silencieux sur l’ordinateur des enfants  
-- Téléchargements à risque  
-- Attaques de phishing  
-- Logiciels espions  
-- Activité réseau anormale  
+## Pourquoi la protection familiale est importante
 
-Nyroxis protège la famille **sans surveiller le contenu**.
+Les familles modernes font face à des risques souvent invisibles :
+- Des logiciels malveillants silencieux installés sur les ordinateurs portables des enfants
+- Des attaques de phishing ciblant les membres de la famille
+- Des appareils domestiques compromis utilisés comme points d'entrée
+- Des logiciels de suivi ou d'espionnage fonctionnant sans être détectés
+- Des téléchargements non sécurisés et des scripts exécutés à leur insu
 
----
-
-##  1. Sécurité locale et privée
-Nyroxis protège :
-- Les appareils des enfants  
-- Les ordinateurs des parents  
-- Les postes partagés  
-- Les appareils de télétravail  
-
-Toutes les données restent localement, chiffrées.
+Nyroxis protège les familles **sans surveiller le contenu**, en respectant la vie privée à chaque étape.
 
 ---
 
-##  2. Détection précoce des activités dangereuses
+## 1. Sécurité locale et privée pour tous les membres de la famille
+
+Nyroxis aide à protéger :
+- Les ordinateurs portables des enfants et les ordinateurs partagés
+- Les appareils de télétravail des parents
+- Les tablettes familiales et les postes de travail domestiques
+
+Aucune donnée ne quitte le domicile — tout reste chiffré et local.
+Aucun compte cloud n'est requis. Aucun abonnement à un service de surveillance.
+
+---
+
+## 2. Détecte les comportements dangereux tôt
+
 Nyroxis identifie :
-- Téléchargements suspects  
-- Processus inconnus  
-- Connexions réseau inhabituelles  
-- Modèles anormaux  
-- Activité similaire à un ransomware  
+- Les processus inconnus s'exécutant silencieusement
+- Les connexions réseau inattendues vers des destinations inconnues
+- L'exécution de scripts suspects
+- Les patterns de modification de fichiers similaires aux ransomwares
+- Les mécanismes de persistance tentant de survivre au redémarrage
 
-Alertes simples et compréhensibles pour toute la famille.
-
----
-
-##  3. IA hors-ligne pour la sécurité du foyer
-NyXIA fournit :
-- Détection comportementale  
-- Explication des scénarios  
-- Avertissements précoces  
-
-Aucun tracking cloud.
+Les familles sont notifiées avec des alertes claires et faciles à comprendre.
 
 ---
 
-##  4. Respect total de la vie privée des enfants
-Nyroxis ne surveille **jamais** :
-- Historique de navigation  
-- Fichiers personnels  
-- Messages ou chats  
-- Photos ou documents  
+## 3. IA/ML locale pour la sécurité du foyer
 
-Nyroxis protège **la sécurité**, pas **la vie privée**.
+Le moteur IA/ML local fonctionne entièrement hors ligne et fournit :
+- Détection d'anomalies comportementales par appareil
+- Explications basées sur des scénarios d'activité suspecte
+- Signaux d'alerte précoce avant que les menaces n'escaladent
+- Classification statistique Z-Score pour des niveaux de gravité clairs
 
----
-
-##  5. Adaptation à plusieurs profils
-Nyroxis s’adapte :
-- Aux usages de chaque membre  
-- Aux habitudes du foyer  
-- Aux appareils variés  
-
-Chaque appareil construit son propre profil local.
+Pas de suivi cloud, pas de profilage comportemental, pas de collecte de données.
 
 ---
 
-##  Résumé
-Nyroxis protège les familles avec une solution privée, chiffrée et hors-ligne — sans collecter la moindre donnée personnelle.
+## 4. Sécurité sans surveillance du contenu
+
+Nyroxis ne surveille **pas** :
+- L'historique de navigation
+- Les fichiers personnels ou documents
+- Les messages ou chats
+- Les photos ou vidéos
+
+Il protège les **événements de sécurité** — pas le contenu.
+
+La vie privée des enfants reste entièrement intacte.
+
+---
+
+## 5. Chaque appareil construit son propre profil
+
+Chaque appareil du foyer développe sa propre référence comportementale locale.
+Nyroxis s'adapte aux différents schémas d'utilisation, différentes fenêtres d'activité et différentes routines — fournissant une détection d'anomalies personnalisée sans exposer de données entre appareils.
+
+---
+
+## Résumé
+
+Nyroxis fournit une solution de sécurité solide, privée et sans cloud pour les familles — protégeant tous les membres du foyer tout en gardant toutes les données chiffrées et locales, et sans jamais surveiller le contenu personnel.

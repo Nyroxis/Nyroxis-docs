@@ -1,88 +1,112 @@
 # Sichere Datenspeicherung
 
-Nyroxis speichert nur die minimale Menge an Daten, die notwendig ist, um sicherheitsrelevante Erkenntnisse zu liefern — und alle gespeicherten Daten sind vollständig verschlüsselt, lokal und manipulationsresistent.  
-Dies gewährleistet echte Privatsphäre für Einzelpersonen, Familien und Fachkräfte, die Nyroxis nutzen, ohne ihre Daten einem Risiko auszusetzen.
+Nyroxis speichert nur die Mindestmenge an Daten, die zur Bereitstellung von Sicherheitseinblicken erforderlich ist — und alle gespeicherten Daten sind vollständig verschlüsselt, lokal und manipulationsgeschützt.
+Dies gewährleistet die Privatsphäre von Einzelpersonen, Familien und Fachleuten, die sich auf Nyroxis für echten Schutz ohne Offenlegung verlassen.
+
+---
 
 ## Was Nyroxis speichert
-Nyroxis behält **ausschließlich sicherheitsrelevante Informationen**, darunter:
+
+Nyroxis bewahrt **nur sicherheitsrelevante Informationen**:
 
 ### 1. Ereignisprotokolle
-Verschlüsselte Einträge zu:
-- Prozessaktivitäten  
-- Netzwerkverbindungen  
-- Dateiänderungen  
-- Berechtigungsaktionen  
-- Systemverhalten  
+Verschlüsselte Einträge für:
+- Prozessaktivität
+- Netzwerkverbindungen
+- Datei- und Registrierungsänderungen
+- Berechtigungsaktionen
+- System- und Windows-Ereignisprotokolleinträge
 
-### 2. Metadaten für Analysen
-Leichtgewichtige Metadaten für:
-- KI‑gestützte Verhaltensanalyse  
-- Rule Matching  
-- Korrelationen  
+### 2. Erkennungs- und Korrelationsergebnisse
+Ergebnisse der Nyroxis Intelligence-Regelauswertung:
+- Erkennungsergebnisse (27 Regeln)
+- Korrelationsergebnisse (12 Regeln)
+- Kettenergebnisse (2 Regeln)
 
-### 3. Lokale Verhaltensbasislinie
-Von NyXIA erstellt:
-- typische Prozesse  
-- übliche Netzwerkendpunkte  
-- normale Aktivitätsfenster  
+### 3. KI/ML-Analyseergebnisse
+Ausgabe des lokalen Isolation-Forest- und Statistikmotors:
+- Anomalie-Scores und Schweregradklassifizierungen
+- Aufschlüsselungen der beitragenden Merkmale
+- Verhaltensbasislinien-Daten
 
-Lokal gespeichert und verschlüsselt.
+### 4. Metadaten für die Analyse
+Leichtgewichtige Metadaten, die benötigt werden für:
+- Regelabgleich und Korrelation
+- Aufbau der KI-Verhaltensbasislinie
+- Zeitachsenrekonstruktion
 
-## Was Nyroxis *nicht* speichert
-Nyroxis sammelt oder speichert **keine persönlichen oder sensiblen Inhalte**.
+---
 
-Es speichert NICHT:
-- persönliche Dokumente  
-- Bilder oder Videos  
-- Browserverlauf  
-- Standortdaten  
-- Passwörter oder Zugangsdaten  
-- Inhalte von Dateien  
-- Nachrichten oder E‑Mails  
+## Was Nyroxis NICHT speichert
 
-Es wird ausschließlich technische sicherheitsbezogene Information gespeichert.
+Nyroxis vermeidet bewusst das Sammeln oder Speichern persönlicher oder sensibler Inhalte.
+
+Es speichert **NICHT**:
+- Persönliche Dokumente oder Projektdateien
+- Bilder oder Videos
+- Browserverlauf
+- Standortdaten
+- Passwörter oder Anmeldedaten
+- Dateiinhalte
+- Benutzernachrichten oder E-Mails
+- Daten, die nicht mit Sicherheitsereignissen zusammenhängen
+
+Nur sicherheitsorientierte technische Daten werden aufbewahrt.
+
+---
 
 ## Verschlüsselungsmodell
-Alle gespeicherten Daten werden:
-- zum Zeitpunkt der Erfassung verschlüsselt  
-- ausschließlich verschlüsselt abgelegt  
-- niemals im Klartext geschrieben  
-- nur im Arbeitsspeicher entschlüsselt  
 
-Die Schlüssel sind:
-- lokal auf dem Gerät  
-- dynamisch erzeugt  
-- nicht in der App hinterlegt  
-- werden niemals übertragen  
+Alle gespeicherten Daten sind:
+- Zum Zeitpunkt der Erfassung verschlüsselt (AES-256)
+- Nur in verschlüsselter Form gespeichert — niemals im Klartext geschrieben
+- Nur im Speicher während Lesevorgängen entschlüsselt
+- Durch hashverkettete Integritätsstrukturen geschützt
 
-## Manipulationsresistente Strukturen
-Nyroxis nutzt:
-- hashverkettete Ereignisblöcke  
-- Integritätsprüfungen  
-- geschützte Schreibpfade  
-- Anti‑Tamper‑Verifikation beim Lesen  
+Verschlüsselungsschlüssel sind:
+- Lokal auf dem Gerät
+- Aus Hardware-Identifikatoren (HWID) abgeleitet
+- Niemals in der Anwendung eingebettet
+- Niemals an Server übertragen
 
-Dies verhindert, dass Angreifer Protokolle manipulieren oder löschen.
+---
 
-## Aufbewahrungsdauer
-Nyroxis speichert Logs nur so lange, wie sie benötigt werden für:
-- Sichtbarkeit  
-- Erkennung  
-- Korrelation  
+## Manipulationsgeschützte Strukturen
 
-Benutzer können:
-- Logs zurücksetzen  
-- Verlauf löschen  
-- verschlüsselte Backups exportieren (optional in zukünftigen Versionen)  
+Nyroxis verwendet hash-verkettete Ereignisblöcke, wobei jeder Block enthält:
+- Verschlüsselte Nutzlast
+- Integritäts-Hash
+- Sequenziellen Index
+- Link zum vorherigen Block
+
+Dies macht Manipulationen sofort erkennbar:
+- Löschung, Änderung, Injektion oder Neuanordnung unterbricht die Kette
+- Jede Abweichung wird als Sicherheitsereignis markiert
+
+---
+
+## Datenspeicherung
+
+Benutzer haben die volle Kontrolle über ihre Daten:
+- Protokolle jederzeit zurücksetzen
+- KI-Verhaltensbasislinie löschen
+- Aufbewahrungsdauer über die Einstellungsansicht verwalten
+- Verschlüsselte Backups aus dem Backup-Bereich exportieren
+
+---
 
 ## Vollständig lokale Speicherung
-Alle Speicherung ist:
-- ausschließlich lokal  
-- offline  
-- verschlüsselt  
-- ohne Cloud‑Upload  
 
-Ihre Sicherheitsdaten bleiben immer auf Ihrem Gerät.
+Die gesamte Speicherung ist:
+- Nur lokal auf dem Gerät des Benutzers
+- Vollständig offline
+- AES-256 verschlüsselt
+- Kein Cloud-Upload — jemals
+
+Ihre Sicherheitsdaten bleiben auf Ihrem Gerät — immer.
+
+---
 
 ## Zusammenfassung
-Nyroxis speichert ausschließlich verschlüsselte, minimale, sicherheitsfokussierte Daten — niemals persönliche Inhalte — und bietet damit echte Privatsphäre und Schutz.
+
+Nyroxis speichert nur verschlüsselte, minimale, sicherheitsorientierte Informationen — niemals persönliche Inhalte — und gewährleistet echten Datenschutz und forensischen Schutz für jeden Benutzer.

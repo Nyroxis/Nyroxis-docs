@@ -1,79 +1,99 @@
-# Logs & Suche
+# Protokolle & Suche
 
-Der Bereich „Logs“ des Nyroxis Dashboards bietet eine klare, durchsuchbare und strukturierte Ansicht aller sicherheitsrelevanten Ereignisse, die vom Nyroxis Agent erfasst wurden.  
-Er wurde entwickelt, um sowohl nicht-technischen Nutzern als auch Profis sofortige Transparenz über die Aktivitäten ihres Geräts zu geben.
+Der Protokolle-Bereich des Nyroxis-Dashboards bietet eine klare, durchsuchbare und strukturierte Ansicht aller sicherheitsrelevanten Ereignisse, die vom Nyroxis Agent gesammelt wurden.
+Er ist der forensische Kern der Plattform — darauf ausgelegt, sowohl nicht-technischen Benutzern als auch Sicherheitsprofis sofortige Sichtbarkeit darüber zu geben, was auf ihrem Gerät passiert.
 
-## Zweck der Log-Ansicht
-Das Logs-Modul hilft Nutzern zu verstehen:
-- welche Ereignisse aufgetreten sind  
-- wann sie aufgetreten sind  
-- welche Prozesse, Dateien oder Netzwerkverbindungen beteiligt waren  
-- ob die Aktivität normal oder verdächtig erscheint  
+---
 
-Rohdaten werden in verständliche, zeitgestempelte Einträge umgewandelt.
+## Zweck der Protokollansicht
+
+Das Protokollmodul hilft Benutzern zu verstehen:
+- Welche Ereignisse wann stattgefunden haben
+- Welche Prozesse, Dateien oder Netzwerkverbindungen beteiligt waren
+- Ob die Aktivität normal oder verdächtig erscheint
+- Den vollständigen Kontext eines jeden Ereignisses für forensische Untersuchungen
+
+Es wandelt rohe verschlüsselte Ereignisdaten in lesbare, mit Zeitstempeln versehene, durchsuchbare Einträge um.
+
+---
 
 ## Ereigniskategorien
-Nyroxis organisiert Logs in intuitive Gruppen:
 
-### **1. Prozessereignisse**
-- Prozessstart / -ende  
-- Parent-/Child-Beziehungen  
-- Ausführungspfade  
+Nyroxis organisiert Protokolle in intuitive Gruppen:
 
-### **2. Netzwerkereignisse**
-- eingehende / ausgehende Verbindungen  
-- IP-/Port-Details  
-- Protokolltypen  
+### 1. Prozessereignisse
+- Prozessstart und -stopp
+- Eltern-/Kind-Beziehungen
+- Ausführungspfade und Befehlszeilenparameter
 
-### **3. Dateisystemereignisse**
-- Erstellung  
-- Löschung  
-- Änderung  
-- Zugriff auf sensible Dateien  
+### 2. Netzwerkereignisse
+- Ausgehende und eingehende Verbindungen
+- IP-Adressen und Port-Details
+- Protokolltypen
 
-### **4. Berechtigungs- & Sicherheitsevents**
-- Versuche der Rechteerhöhung  
-- Zugriffe auf eingeschränkte Ressourcen  
-- Änderungen an Systemsicherheitsrichtlinien  
+### 3. Dateisystemereignisse
+- Dateierstellung, -änderung und -löschung
+- Zugriff auf sensible Verzeichnisse
+- Registrierungsänderungen
 
-### **5. Systemaktivität**
-- Dienste  
-- Treiber  
-- kernelbezogene Vorgänge  
+### 4. Berechtigungs- & Sicherheitsereignisse
+- Erhöhungsversuche
+- Zugriff auf eingeschränkte Ressourcen
+- Systemrichtlinienänderungen
+- Anmeldeinformationsbezogene Aktivitäten
 
-## Suche & Filter
-Das Logs-Modul enthält ein leistungsstarkes Filtersystem:
+### 5. Systemaktivität
+- Dienststarten und -stoppen
+- Treiberladen
+- Windows-Ereignisprotokolleinträge (Sicherheit, System, Anwendung)
+- PowerShell- und Skriptausführung
+
+---
+
+## Suche & Filterung
+
+Die Protokollschnittstelle enthält ein leistungsstarkes Filterpanel:
 
 ### Verfügbare Filter
-- Zeitbereich  
-- Ereigniskategorie  
-- Schweregrad  
-- Prozessname  
-- Dateipfad  
-- Netzwerkendpunkt  
-- Schlüsselwörter  
+- Datums- und Zeitbereich
+- Ereigniskategorie
+- Schweregrad (Kritisch / Hoch / Warnung / Info)
+- Quelle und Kanal
+- Prozessname
+- Dateipfad
+- Netzwerkendpunkt
+- Schlüsselwörter
 
 ### Suchfunktionen
-- Echtzeitfilterung  
-- optional regex-fähig  
-- Mehrfeldsuche  
-- sofortige Aktualisierung  
+- Echtzeitfilterung
+- Mehrfeld-Suche
+- CSV-Export für rechtliche Dokumentation oder externe Analyse
 
-## Detailansicht
-Beim Anklicken eines Ereignisses öffnet sich eine Detailkarte mit:
-- vollständigen Metadaten  
-- Prozessverlauf  
-- zugehörigen Dateien oder Verbindungen  
-- Schweregrad  
-- Risikoerklärung  
-- Empfehlungen (falls zutreffend)  
+Für Einsteiger und professionelle Analysten gleichermaßen konzipiert.
 
-## Privatsphäre & Offline-First
-Alle Logs:
-- werden lokal gespeichert  
-- sind vollständig verschlüsselt  
-- verlassen das Gerät niemals  
-- werden vollständig offline verarbeitet  
+---
+
+## Ereignisdetails
+
+Ein Klick auf ein Ereignis öffnet ein Detailpanel mit:
+- Vollständigen Ereignismetadaten
+- Prozessherkunft
+- Zugehörige Dateien oder Netzwerkverbindungen
+- Schweregradwert
+- Details der rohen Nutzlast
+
+---
+
+## Datenschutz & Offline-First
+
+Alle Protokolle:
+- Werden lokal in der verschlüsselten SQLite-Datenbank gespeichert
+- Sind vollständig verschlüsselt (AES-256)
+- Verlassen das Gerät nie
+- Werden ohne jegliche Cloud-Interaktion verarbeitet
+
+---
 
 ## Zusammenfassung
-„Logs & Search“ bietet eine transparente, organisierte und vollständig private Möglichkeit, Systemaktivitäten zu verstehen und zu analysieren.
+
+Das Modul Protokolle & Suche bietet eine transparente, organisierte und vollständig private Möglichkeit, Systemaktivitäten zu erkunden — und gibt Benutzern echte forensische Sichtbarkeit, ohne Daten extern preiszugeben.

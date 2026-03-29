@@ -1,80 +1,73 @@
-# Graphiques & Analyse
+# Graphiques & Analyses
 
-La section Graphiques & Analyse du Dashboard Nyroxis transforme les événements de sécurité en visualisations claires, permettant de comprendre rapidement les tendances et anomalies.  
-Toutes les analyses sont générées localement pour préserver la confidentialité.
-
----
-
-##  Objectif
-Les graphiques permettent de répondre immédiatement à des questions essentielles :
-- L’activité augmente-t-elle ou diminue-t-elle ?  
-- Y a-t-il des pics inhabituels ?  
-- Quels types d’événements sont les plus fréquents ?  
-- Peut-on identifier des modèles suspects récurrents ?  
-
-Les données complexes deviennent lisibles visuellement.
+La section Graphiques & Analyses du tableau de bord Nyroxis transforme les événements de sécurité bruts en insights visuels, aidant les utilisateurs à comprendre rapidement les tendances, les anomalies et les risques potentiels.
+Toutes les analyses sont générées localement, préservant une confidentialité totale.
 
 ---
 
-##  Types de graphiques
+## Objectif de l'analyse visuelle
 
-### **1. Fréquence des événements**
-Affichage par :
-- Heure  
-- Jour  
-- Semaine  
+Les graphiques aident les utilisateurs à répondre immédiatement aux questions clés :
+- L'activité augmente-t-elle ou diminue-t-elle au fil du temps ?
+- Y a-t-il des pics inhabituels dans les processus ou le trafic réseau ?
+- Quelles catégories d'événements surviennent le plus souvent ?
+- Comment les résultats de détection et de corrélation sont-ils répartis par gravité ?
+- Y a-t-il des modèles suspects récurrents au fil du temps ?
 
-Permet d’identifier pics et périodes anormales.
-
----
-
-### **2. Sources principales d’événements**
-Met en avant les processus, fichiers ou endpoints réseau les plus actifs.
+Les visuels rendent les données de sécurité complexes immédiatement compréhensibles.
 
 ---
 
-### **3. Tendance de sévérité**
-Évolution dans le temps des :
-- Informations  
-- Avertissements  
-- Activités critiques  
+## Types de graphiques disponibles
 
-Aide à détecter une escalade.
+### 1. Fréquence des événements dans le temps
+Affiche le nombre d'événements survenant par heure, par jour et par semaine.
+Utile pour repérer les pics, les rafales d'activité ou les périodes de calme inattendues pouvant indiquer qu'un élément a été désactivé.
 
----
+### 2. Répartition par gravité
+Décomposition visuelle des événements par niveau de gravité : Critique, Élevé, Avertissement, Info.
+Aide les utilisateurs à voir le profil de risque global en un coup d'œil.
 
-### **4. Indicateurs spéciaux**
-Graphiques dédiés :
-- Chaînes de processus suspects  
-- Échecs de connexion répétés  
-- Accès à des zones sensibles  
-- Événements liés aux privilèges  
+### 3. Principales sources d'événements
+Met en évidence les processus, fichiers ou points de terminaison réseau qui génèrent le plus d'événements :
+- Processus les plus actifs
+- Fichiers les plus consultés
+- Connexions réseau les plus fréquentes
 
----
+### 4. Tendance de détection & corrélation
+Suit l'évolution des correspondances de règles dans le temps :
+- Résultats de détection
+- Résultats de corrélation
+- Résultats de chaîne
 
-##  Moteur d’analyse local
-Tout est traité localement :
-- Pas de cloud  
-- Pas d’API externe  
-- Aucune fuite de données  
+Aide les utilisateurs à détecter les schémas d'escalade avant qu'une compromission complète ne survienne.
 
-Les graphiques sont générés directement à partir de la base chiffrée.
-
----
-
-## ️ Interactivité
-Les graphiques permettent :
-- Survol pour détails  
-- Zoom (optionnel)  
-- Filtrage par période  
-- Sélection de catégories  
+### 5. Tendance du score d'anomalie IA/ML
+Visualise la sortie du moteur Isolation Forest local dans le temps :
+- Évolution du score d'anomalie
+- Classifications de gravité : Critique / Élevé / Moyen / Faible
+- Événements de pic par rapport à la ligne de base comportementale
 
 ---
 
-##  Confidentialité totale
-Les données restent toujours sur l’appareil.
+## Moteur d'analyse local
+
+Tous les graphiques sont alimentés par le moteur d'analyse local :
+- Pas de cloud
+- Pas d'APIs externes
+- Tous les calculs restent sur l'appareil
+
+Les graphiques sont générés directement depuis la base de données locale chiffrée et la sortie du moteur IA/ML.
+
+---
+
+## Confidentialité & fonctionnement hors ligne
+
+Rien n'est envoyé à des services externes — jamais.
+Les analyses sont calculées et rendues localement à partir d'événements chiffrés, entièrement hors ligne.
 
 ---
 
 ## Résumé
-Les Graphiques & Analyse offrent une compréhension visuelle et privée de l’activité système, permettant d’identifier anomalies et tendances rapidement.
+
+Graphiques & Analyses offrent un moyen visuel et respectueux de la vie privée pour comprendre l'activité du système, suivre les tendances de détection, surveiller les résultats IA/ML et obtenir une vue immédiate de la posture de sécurité de l'appareil.

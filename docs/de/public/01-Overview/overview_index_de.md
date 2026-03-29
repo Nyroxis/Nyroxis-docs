@@ -1,67 +1,67 @@
 # Übersicht (Index)
 
-Dieser Abschnitt führt in die grundlegenden Konzepte von Nyroxis ein und vermittelt ein strukturiertes, verständliches High‑Level‑Bild der Plattform.
-
-Nachfolgend finden Sie eine Zusammenfassung dessen, was der Bereich „Overview“ umfasst:
+Dieser Abschnitt stellt die Kernkonzepte von Nyroxis vor und bietet ein strukturiertes Verständnis der Plattform auf hoher Ebene.
 
 ---
 
-## Introduction
-Eine klare, verständliche Erklärung, was Nyroxis ist, warum es existiert und wie es Transparenz auf Enterprise‑Niveau für private und berufliche Geräte ermöglicht.
+## Einführung
+Was Nyroxis ist, warum es existiert und wie es Unternehmens-Überwachung und -Erkennung auf persönliche und professionelle Geräte bringt — still, lokal und ohne Cloud-Abhängigkeit.
 
 ---
 
-## Problem & Context
-Eine Analyse der zunehmenden Herausforderungen in der persönlichen Cybersicherheit:
-- Zunahme von Angriffen auf nicht verwaltete persönliche Geräte  
-- Fehlende Sichtbarkeit für Einzelpersonen und kleine professionelle Arbeitsumgebungen  
-- Warum herkömmliche Tools nicht mehr ausreichen  
+## Problem & Kontext
+Eine Analyse der wachsenden Lücke in der persönlichen Cybersicherheit:
+- Warum Unternehmensabwehr persönliche Endpunkte ungeschützt lässt
+- Wie Angreifer die Heimnetzwerke und persönlichen Geräte von Führungskräften, Richtern, Anwälten und Familien ausnutzen
+- Warum Antivirenprogramme allein gegen moderne verhaltensbasierte und mehrstufige Bedrohungen nicht ausreichen
 
 ---
 
 ## Vision
 Die langfristige Mission von Nyroxis:
-- Security‑by‑Privacy  
-- Benutzerfreundliche, erklärbare Intelligenz  
-- Enterprise‑Sichtbarkeit für alle  
-- Eine Zukunft, in der persönliche Geräte keine blinden Flecken mehr sind  
+- Datenschutzorientierte Sicherheit, die dort beginnt, wo Unternehmenssicherheit endet
+- Forensisch-qualifizierter Schutz ohne Cloud-Abhängigkeit
+- Unternehmensweite Sichtbarkeit für Einzelpersonen
+- Eine Zukunft, in der persönliche Geräte keine blinden Flecken mehr sind
 
 ---
 
-## Value Proposition
-Was Nyroxis einzigartig macht:
-- Lokales Monitoring  
-- Vollständige Verschlüsselung  
-- KI‑gestützte Analyse  
-- Entwickelt für Familien, Fachkräfte und Sicherheitsexperten  
-- Klare, verständliche Einblicke ohne technische Komplexität  
+## Wertversprechen
+Wie sich Nyroxis differenziert:
+- Mehrschichtige Erkennung (27 Erkennungs- + 12 Korrelations- + 2 Kettenregeln, erweiterbar)
+- Forensisch-qualifizierte verschlüsselte Beweise
+- Lokale KI/ML ohne Cloud
+- Plattformwächter für Resilienz
+- Einfach für Benutzer, leistungsstark für Fachleute
 
 ---
 
-## Key Features
-Eine detaillierte Auflistung der Funktionen von Nyroxis:
-- Lokale Ereignisüberwachung  
-- Verschlüsselter Speicher  
-- Verhaltensbasierte KI‑Analyse  
-- Klar strukturiertes Dashboard  
-- Offline‑First‑Arbeitsweise  
+## Hauptfunktionen
+Ein detaillierter Überblick über das Angebot von Nyroxis:
+- Nyroxis Agent — lokale Erfassung, Normalisierung und Verschlüsselung
+- Nyroxis Intelligence — dreischichtige Erkennungs-Engine
+- Nyroxis System Guardian — Plattformüberwachung, Backup, Lizenz
+- Nyroxis Dashboard — Sichtbarkeit, Forensik, KI/ML, Berichte
+- Offline-First-Betrieb und manipulationsresistente Architektur
 
 ---
 
 ## Personas
-Die Nutzergruppen, für die Nyroxis entwickelt wurde:
-- Führungskräfte  
-- Berufe mit sensiblen Daten  
-- Familien  
-- Cybersicherheitsanalysten  
-- Remote‑Mitarbeiter und Vielreisende  
+Die Benutzertypen, für die Nyroxis entwickelt wurde:
+- Führungskräfte und hochrangige Persönlichkeiten
+- Rechtsanwälte, Richter und Beamte
+- Ärzte, Journalisten und Berufe mit hohem Datenschutzbedarf
+- Familien und alltägliche Nutzer
+- Cybersicherheitsfachleute und SOC-Analysten
+- Remote-Mitarbeiter, Reisende und Freiberufler
 
 ---
 
-## Summary
-Dieser Abschnitt bildet die Grundlage für das Verständnis von Nyroxis.  
-Als Nächstes können Sie fortfahren mit:
-➡ Architecture  
-➡ Agent  
-➡ Dashboard  
-➡ Security & Privacy
+## Zusammenfassung
+Dieser Übersichtsabschnitt legt das Fundament für das Verständnis von Nyroxis.
+Sie können nun fortfahren zu:
+➡ Architektur
+➡ Agent, Intelligence & System Guardian
+➡ Dashboard & KI-Engine
+➡ Sicherheit & Datenschutz
+➡ Anwendungsfälle
