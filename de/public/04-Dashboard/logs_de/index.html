@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#logs-suche" class="md-skip">
+        <a href="#protokolle-suche" class="md-skip">
           Skip to content
         </a>
       
@@ -5330,10 +5330,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#zweck-der-log-ansicht" class="md-nav__link">
+  <a href="#zweck-der-protokollansicht" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zweck der Log-Ansicht
+        Zweck der Protokollansicht
       
     </span>
   </a>
@@ -5386,10 +5386,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-berechtigungs-sicherheitsevents" class="md-nav__link">
+  <a href="#4-berechtigungs-sicherheitsereignisse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Berechtigungs- &amp; Sicherheitsevents
+        4. Berechtigungs- &amp; Sicherheitsereignisse
       
     </span>
   </a>
@@ -5413,15 +5413,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#suche-filter" class="md-nav__link">
+  <a href="#suche-filterung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Suche &amp; Filter
+        Suche &amp; Filterung
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Suche &amp; Filter">
+    <nav class="md-nav" aria-label="Suche &amp; Filterung">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5452,10 +5452,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailansicht" class="md-nav__link">
+  <a href="#ereignisdetails" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detailansicht
+        Ereignisdetails
       
     </span>
   </a>
@@ -5463,10 +5463,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#privatsphare-offline-first" class="md-nav__link">
+  <a href="#datenschutz-offline-first" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Privatsphäre &amp; Offline-First
+        Datenschutz &amp; Offline-First
       
     </span>
   </a>
@@ -8818,84 +8818,91 @@
   
 
 
-<h1 id="logs-suche">Logs &amp; Suche<a class="headerlink" href="#logs-suche" title="Link to this section">&para;</a></h1>
-<p>Der Bereich „Logs“ des Nyroxis Dashboards bietet eine klare, durchsuchbare und strukturierte Ansicht aller sicherheitsrelevanten Ereignisse, die vom Nyroxis Agent erfasst wurden.<br />
-Er wurde entwickelt, um sowohl nicht-technischen Nutzern als auch Profis sofortige Transparenz über die Aktivitäten ihres Geräts zu geben.</p>
-<h2 id="zweck-der-log-ansicht">Zweck der Log-Ansicht<a class="headerlink" href="#zweck-der-log-ansicht" title="Link to this section">&para;</a></h2>
-<p>Das Logs-Modul hilft Nutzern zu verstehen:
-- welche Ereignisse aufgetreten sind<br />
-- wann sie aufgetreten sind<br />
-- welche Prozesse, Dateien oder Netzwerkverbindungen beteiligt waren<br />
-- ob die Aktivität normal oder verdächtig erscheint  </p>
-<p>Rohdaten werden in verständliche, zeitgestempelte Einträge umgewandelt.</p>
+<h1 id="protokolle-suche">Protokolle &amp; Suche<a class="headerlink" href="#protokolle-suche" title="Link to this section">&para;</a></h1>
+<p>Der Protokolle-Bereich des Nyroxis-Dashboards bietet eine klare, durchsuchbare und strukturierte Ansicht aller sicherheitsrelevanten Ereignisse, die vom Nyroxis Agent gesammelt wurden.
+Er ist der forensische Kern der Plattform — darauf ausgelegt, sowohl nicht-technischen Benutzern als auch Sicherheitsprofis sofortige Sichtbarkeit darüber zu geben, was auf ihrem Gerät passiert.</p>
+<hr />
+<h2 id="zweck-der-protokollansicht">Zweck der Protokollansicht<a class="headerlink" href="#zweck-der-protokollansicht" title="Link to this section">&para;</a></h2>
+<p>Das Protokollmodul hilft Benutzern zu verstehen:
+- Welche Ereignisse wann stattgefunden haben
+- Welche Prozesse, Dateien oder Netzwerkverbindungen beteiligt waren
+- Ob die Aktivität normal oder verdächtig erscheint
+- Den vollständigen Kontext eines jeden Ereignisses für forensische Untersuchungen</p>
+<p>Es wandelt rohe verschlüsselte Ereignisdaten in lesbare, mit Zeitstempeln versehene, durchsuchbare Einträge um.</p>
+<hr />
 <h2 id="ereigniskategorien">Ereigniskategorien<a class="headerlink" href="#ereigniskategorien" title="Link to this section">&para;</a></h2>
-<p>Nyroxis organisiert Logs in intuitive Gruppen:</p>
-<h3 id="1-prozessereignisse"><strong>1. Prozessereignisse</strong><a class="headerlink" href="#1-prozessereignisse" title="Link to this section">&para;</a></h3>
+<p>Nyroxis organisiert Protokolle in intuitive Gruppen:</p>
+<h3 id="1-prozessereignisse">1. Prozessereignisse<a class="headerlink" href="#1-prozessereignisse" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Prozessstart / -ende  </li>
-<li>Parent-/Child-Beziehungen  </li>
-<li>Ausführungspfade  </li>
+<li>Prozessstart und -stopp</li>
+<li>Eltern-/Kind-Beziehungen</li>
+<li>Ausführungspfade und Befehlszeilenparameter</li>
 </ul>
-<h3 id="2-netzwerkereignisse"><strong>2. Netzwerkereignisse</strong><a class="headerlink" href="#2-netzwerkereignisse" title="Link to this section">&para;</a></h3>
+<h3 id="2-netzwerkereignisse">2. Netzwerkereignisse<a class="headerlink" href="#2-netzwerkereignisse" title="Link to this section">&para;</a></h3>
 <ul>
-<li>eingehende / ausgehende Verbindungen  </li>
-<li>IP-/Port-Details  </li>
-<li>Protokolltypen  </li>
+<li>Ausgehende und eingehende Verbindungen</li>
+<li>IP-Adressen und Port-Details</li>
+<li>Protokolltypen</li>
 </ul>
-<h3 id="3-dateisystemereignisse"><strong>3. Dateisystemereignisse</strong><a class="headerlink" href="#3-dateisystemereignisse" title="Link to this section">&para;</a></h3>
+<h3 id="3-dateisystemereignisse">3. Dateisystemereignisse<a class="headerlink" href="#3-dateisystemereignisse" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Erstellung  </li>
-<li>Löschung  </li>
-<li>Änderung  </li>
-<li>Zugriff auf sensible Dateien  </li>
+<li>Dateierstellung, -änderung und -löschung</li>
+<li>Zugriff auf sensible Verzeichnisse</li>
+<li>Registrierungsänderungen</li>
 </ul>
-<h3 id="4-berechtigungs-sicherheitsevents"><strong>4. Berechtigungs- &amp; Sicherheitsevents</strong><a class="headerlink" href="#4-berechtigungs-sicherheitsevents" title="Link to this section">&para;</a></h3>
+<h3 id="4-berechtigungs-sicherheitsereignisse">4. Berechtigungs- &amp; Sicherheitsereignisse<a class="headerlink" href="#4-berechtigungs-sicherheitsereignisse" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Versuche der Rechteerhöhung  </li>
-<li>Zugriffe auf eingeschränkte Ressourcen  </li>
-<li>Änderungen an Systemsicherheitsrichtlinien  </li>
+<li>Erhöhungsversuche</li>
+<li>Zugriff auf eingeschränkte Ressourcen</li>
+<li>Systemrichtlinienänderungen</li>
+<li>Anmeldeinformationsbezogene Aktivitäten</li>
 </ul>
-<h3 id="5-systemaktivitat"><strong>5. Systemaktivität</strong><a class="headerlink" href="#5-systemaktivitat" title="Link to this section">&para;</a></h3>
+<h3 id="5-systemaktivitat">5. Systemaktivität<a class="headerlink" href="#5-systemaktivitat" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Dienste  </li>
-<li>Treiber  </li>
-<li>kernelbezogene Vorgänge  </li>
+<li>Dienststarten und -stoppen</li>
+<li>Treiberladen</li>
+<li>Windows-Ereignisprotokolleinträge (Sicherheit, System, Anwendung)</li>
+<li>PowerShell- und Skriptausführung</li>
 </ul>
-<h2 id="suche-filter">Suche &amp; Filter<a class="headerlink" href="#suche-filter" title="Link to this section">&para;</a></h2>
-<p>Das Logs-Modul enthält ein leistungsstarkes Filtersystem:</p>
+<hr />
+<h2 id="suche-filterung">Suche &amp; Filterung<a class="headerlink" href="#suche-filterung" title="Link to this section">&para;</a></h2>
+<p>Die Protokollschnittstelle enthält ein leistungsstarkes Filterpanel:</p>
 <h3 id="verfugbare-filter">Verfügbare Filter<a class="headerlink" href="#verfugbare-filter" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Zeitbereich  </li>
-<li>Ereigniskategorie  </li>
-<li>Schweregrad  </li>
-<li>Prozessname  </li>
-<li>Dateipfad  </li>
-<li>Netzwerkendpunkt  </li>
-<li>Schlüsselwörter  </li>
+<li>Datums- und Zeitbereich</li>
+<li>Ereigniskategorie</li>
+<li>Schweregrad (Kritisch / Hoch / Warnung / Info)</li>
+<li>Quelle und Kanal</li>
+<li>Prozessname</li>
+<li>Dateipfad</li>
+<li>Netzwerkendpunkt</li>
+<li>Schlüsselwörter</li>
 </ul>
 <h3 id="suchfunktionen">Suchfunktionen<a class="headerlink" href="#suchfunktionen" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Echtzeitfilterung  </li>
-<li>optional regex-fähig  </li>
-<li>Mehrfeldsuche  </li>
-<li>sofortige Aktualisierung  </li>
+<li>Echtzeitfilterung</li>
+<li>Mehrfeld-Suche</li>
+<li>CSV-Export für rechtliche Dokumentation oder externe Analyse</li>
 </ul>
-<h2 id="detailansicht">Detailansicht<a class="headerlink" href="#detailansicht" title="Link to this section">&para;</a></h2>
-<p>Beim Anklicken eines Ereignisses öffnet sich eine Detailkarte mit:
-- vollständigen Metadaten<br />
-- Prozessverlauf<br />
-- zugehörigen Dateien oder Verbindungen<br />
-- Schweregrad<br />
-- Risikoerklärung<br />
-- Empfehlungen (falls zutreffend)  </p>
-<h2 id="privatsphare-offline-first">Privatsphäre &amp; Offline-First<a class="headerlink" href="#privatsphare-offline-first" title="Link to this section">&para;</a></h2>
-<p>Alle Logs:
-- werden lokal gespeichert<br />
-- sind vollständig verschlüsselt<br />
-- verlassen das Gerät niemals<br />
-- werden vollständig offline verarbeitet  </p>
+<p>Für Einsteiger und professionelle Analysten gleichermaßen konzipiert.</p>
+<hr />
+<h2 id="ereignisdetails">Ereignisdetails<a class="headerlink" href="#ereignisdetails" title="Link to this section">&para;</a></h2>
+<p>Ein Klick auf ein Ereignis öffnet ein Detailpanel mit:
+- Vollständigen Ereignismetadaten
+- Prozessherkunft
+- Zugehörige Dateien oder Netzwerkverbindungen
+- Schweregradwert
+- Details der rohen Nutzlast</p>
+<hr />
+<h2 id="datenschutz-offline-first">Datenschutz &amp; Offline-First<a class="headerlink" href="#datenschutz-offline-first" title="Link to this section">&para;</a></h2>
+<p>Alle Protokolle:
+- Werden lokal in der verschlüsselten SQLite-Datenbank gespeichert
+- Sind vollständig verschlüsselt (AES-256)
+- Verlassen das Gerät nie
+- Werden ohne jegliche Cloud-Interaktion verarbeitet</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>„Logs &amp; Search“ bietet eine transparente, organisierte und vollständig private Möglichkeit, Systemaktivitäten zu verstehen und zu analysieren.</p>
+<p>Das Modul Protokolle &amp; Suche bietet eine transparente, organisierte und vollständig private Möglichkeit, Systemaktivitäten zu erkunden — und gibt Benutzern echte forensische Sichtbarkeit, ohne Daten extern preiszugeben.</p>
 
 
 

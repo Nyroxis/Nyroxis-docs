@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kidetektionen" class="md-skip">
+        <a href="#ki-erkennungen" class="md-skip">
           Skip to content
         </a>
       
@@ -5545,10 +5545,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#zweck" class="md-nav__link">
+  <a href="#zweck-der-ki-erkennungen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zweck
+        Zweck der KI-Erkennungen
       
     </span>
   </a>
@@ -5556,22 +5556,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detektionstypen" class="md-nav__link">
+  <a href="#arten-von-ki-erkennungen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detektionstypen
+        Arten von KI-Erkennungen
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Detektionstypen">
+    <nav class="md-nav" aria-label="Arten von KI-Erkennungen">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#anomaliebasierte-erkennung" class="md-nav__link">
+  <a href="#1-anomaliebasierte-erkennungen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Anomaliebasierte Erkennung
+        1. Anomaliebasierte Erkennungen
       
     </span>
   </a>
@@ -5579,10 +5579,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sequenzwarnungen" class="md-nav__link">
+  <a href="#2-statistische-ausreier-z-score" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sequenzwarnungen
+        2. Statistische Ausreißer (Z-Score)
       
     </span>
   </a>
@@ -5590,10 +5590,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#seltene-muster" class="md-nav__link">
+  <a href="#3-spike-erkennungen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Seltene Muster
+        3. Spike-Erkennungen
       
     </span>
   </a>
@@ -5601,10 +5601,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#anhaltend-verdachtiges-verhalten" class="md-nav__link">
+  <a href="#4-persistente-anomalien" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Anhaltend verdächtiges Verhalten
+        4. Persistente Anomalien
       
     </span>
   </a>
@@ -5617,10 +5617,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detektionsdetails" class="md-nav__link">
+  <a href="#erkennungsdetails" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detektionsdetails
+        Erkennungsdetails
       
     </span>
   </a>
@@ -5628,10 +5628,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#100-lokal" class="md-nav__link">
+  <a href="#100-lokal-privat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        100% lokal
+        100 % Lokal &amp; Privat
       
     </span>
   </a>
@@ -8768,47 +8768,64 @@
   
 
 
-<h1 id="kidetektionen">KI‑Detektionen<a class="headerlink" href="#kidetektionen" title="Link to this section">&para;</a></h1>
-<p>Das Modul „AI Detections“ zeigt Erkenntnisse, die NyXIA erzeugt, wenn ungewöhnliche oder verdächtige Aktivitäten erkannt werden.<br />
-Alle Detektionen erfolgen vollständig lokal.</p>
-<h2 id="zweck">Zweck<a class="headerlink" href="#zweck" title="Link to this section">&para;</a></h2>
-<p>NyXIA identifiziert:
-- Verhaltensanomalien<br />
-- ungewöhnliche Sequenzen<br />
-- seltene Muster<br />
-- mögliche Kompromittierungsindikatoren<br />
-- Risikoabweichungen vom Normalverhalten  </p>
-<h2 id="detektionstypen">Detektionstypen<a class="headerlink" href="#detektionstypen" title="Link to this section">&para;</a></h2>
-<h3 id="anomaliebasierte-erkennung">Anomaliebasierte Erkennung<a class="headerlink" href="#anomaliebasierte-erkennung" title="Link to this section">&para;</a></h3>
-<p>Bei starker Abweichung vom Normalprofil.</p>
-<h3 id="sequenzwarnungen">Sequenzwarnungen<a class="headerlink" href="#sequenzwarnungen" title="Link to this section">&para;</a></h3>
-<p>Erkennt:
-- mehrstufige Angriffsketten<br />
-- Skript + Privilegieneskalation<br />
-- Malware‑ähnliche Prozessketten  </p>
-<h3 id="seltene-muster">Seltene Muster<a class="headerlink" href="#seltene-muster" title="Link to this section">&para;</a></h3>
-<p>Wenn Prozesse oder Endpunkte ungewohnt auftreten.</p>
-<h3 id="anhaltend-verdachtiges-verhalten">Anhaltend verdächtiges Verhalten<a class="headerlink" href="#anhaltend-verdachtiges-verhalten" title="Link to this section">&para;</a></h3>
-<p>z. B.:
-- wiederholte Fehlverbindungen<br />
-- schleichende Rechteerhöhung<br />
-- ungewöhnliche Hintergrundaktivität  </p>
-<h2 id="detektionsdetails">Detektionsdetails<a class="headerlink" href="#detektionsdetails" title="Link to this section">&para;</a></h2>
-<p>Beinhaltet:
-- Beschreibung<br />
-- betroffene Prozesse<br />
-- Netzwerkdetails<br />
-- Schweregrad<br />
-- Kontext und Erklärung<br />
-- Empfehlungen  </p>
-<h2 id="100-lokal">100% lokal<a class="headerlink" href="#100-lokal" title="Link to this section">&para;</a></h2>
-<ul>
-<li>lokal berechnet  </li>
-<li>verschlüsselte Grundlagen  </li>
-<li>niemals hochgeladen  </li>
-</ul>
+<h1 id="ki-erkennungen">KI-Erkennungen<a class="headerlink" href="#ki-erkennungen" title="Link to this section">&para;</a></h1>
+<p>Die KI-Erkennungsansicht zeigt Anomalien, die von der lokalen KI/ML-Engine identifiziert wurden — wenn diese ungewöhnliche oder verdächtige Aktivitäten auf dem Gerät basierend auf Verhaltensanalyse und statistischer Bewertung erkennt.
+Alle Erkennungen werden lokal generiert, ohne Cloud-Verarbeitung oder Datenweitergabe.</p>
+<hr />
+<h2 id="zweck-der-ki-erkennungen">Zweck der KI-Erkennungen<a class="headerlink" href="#zweck-der-ki-erkennungen" title="Link to this section">&para;</a></h2>
+<p>Die KI-Engine erkennt:
+- Verhaltensanomalien — Abweichungen von der etablierten Gerätbasislinie
+- Verdächtige Aktivitätssequenzen
+- Seltene oder unerwartete Muster
+- Statistische Ausreißer über Verhaltensmerkmale hinweg
+- Hochrisikoabweichungen, die durch Isolation-Forest-Bewertung identifiziert werden</p>
+<p>Diese Erkennungen ergänzen die regelbasierten Ergebnisse von Nyroxis Intelligence und fügen eine Schicht verhaltensbasierter Intelligenz hinzu, die nicht auf vordefinierten Regeln basiert.</p>
+<hr />
+<h2 id="arten-von-ki-erkennungen">Arten von KI-Erkennungen<a class="headerlink" href="#arten-von-ki-erkennungen" title="Link to this section">&para;</a></h2>
+<h3 id="1-anomaliebasierte-erkennungen">1. Anomaliebasierte Erkennungen<a class="headerlink" href="#1-anomaliebasierte-erkennungen" title="Link to this section">&para;</a></h3>
+<p>Ausgelöst, wenn der Isolation-Forest-Anomalie-Score 0,6 überschreitet — was bedeutet, dass das beobachtete Verhaltensmuster statistisch von der normalen Basislinie isoliert ist.</p>
+<p>Beispielfälle:
+- Ungewöhnliche Prozessaktivität zu unerwarteten Zeiten
+- Unregelmäßige Netzwerkverbindungsmuster
+- Unerwartete Dateiänderungsschübe
+- Aktivität weit außerhalb der typischen Tageszeit- oder Wochentagsbasislinie</p>
+<hr />
+<h3 id="2-statistische-ausreier-z-score">2. Statistische Ausreißer (Z-Score)<a class="headerlink" href="#2-statistische-ausreier-z-score" title="Link to this section">&para;</a></h3>
+<p>Ausgelöst, wenn ein bestimmtes Verhaltensmerkmal erheblich vom historischen Mittelwert abweicht:
+- Kritisch: Z-Score &gt; 3,0 (99,7 % Konfidenz)
+- Hoch: Z-Score &gt; 2,0 (95 % Konfidenz)
+- Mittel: Z-Score &gt; 1,5 (86 % Konfidenz)
+- Niedrig: Z-Score &gt; 1,0 (68 % Konfidenz)</p>
+<hr />
+<h3 id="3-spike-erkennungen">3. Spike-Erkennungen<a class="headerlink" href="#3-spike-erkennungen" title="Link to this section">&para;</a></h3>
+<p>Ausgelöst, wenn eine überwachte Metrik plötzlich weit über ihren historischen Durchschnitt springt:
+- Plötzlicher Ereignisschub pro Stunde
+- Spike bei neuen Netzwerkzielen
+- Schneller Anstieg eindeutiger Quellen</p>
+<hr />
+<h3 id="4-persistente-anomalien">4. Persistente Anomalien<a class="headerlink" href="#4-persistente-anomalien" title="Link to this section">&para;</a></h3>
+<p>Langfristige Abweichungen, die sich im Laufe der Zeit ansammeln:
+- Allmählicher Anstieg des Neue-Ziele-Verhältnisses
+- Sich langsam aufbauende ungewöhnliche Aktivitätsmuster
+- Wiederholte Anomalien mit niedrigem Score, die einen Trend bilden</p>
+<hr />
+<h2 id="erkennungsdetails">Erkennungsdetails<a class="headerlink" href="#erkennungsdetails" title="Link to this section">&para;</a></h2>
+<p>Jede KI-Erkennung enthält:
+- Beschreibung der Anomalie
+- Anomalie-Score (0,0 – 1,0)
+- Schweregradklassifizierung
+- Beitragende Merkmale — die spezifischen Verhaltensdimensionen, die am stärksten von der Basislinie abwichen, mit Z-Score-Werten
+- Zeitstempel und Analysefenster</p>
+<hr />
+<h2 id="100-lokal-privat">100 % Lokal &amp; Privat<a class="headerlink" href="#100-lokal-privat" title="Link to this section">&para;</a></h2>
+<p>Alle KI-Erkennungen sind:
+- Offline auf dem Gerät berechnet
+- Lokal in der verschlüsselten Datenbank gespeichert
+- Aus verschlüsselten Ereignisprotokollen abgeleitet
+- Werden niemals auf Server hochgeladen oder mit Dritten geteilt</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>AI Detections bieten frühzeitige, intelligente Warnungen — vollständig offline und privat.</p>
+<p>KI-Erkennungen liefern intelligente, datenschutzfreundliche Anomaliewarnungen, die die regelbasierte Erkennung ergänzen — und Benutzern helfen, gefährliche oder abnormale Aktivitäten frühzeitig zu erkennen, mit vollständig lokaler Verarbeitung und ohne Cloud-Abhängigkeit.</p>
 
 
 

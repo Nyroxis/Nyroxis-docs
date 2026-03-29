@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ia-locale-nyxia" class="md-skip">
+        <a href="#moteur-iaml-local" class="md-skip">
           Skip to content
         </a>
       
@@ -4192,10 +4192,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-ia-100-hors-ligne" class="md-nav__link">
+  <a href="#1-moteur-entierement-hors-ligne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. IA 100% hors-ligne
+        1. Moteur Entièrement Hors Ligne
       
     </span>
   </a>
@@ -4203,10 +4203,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-analyse-de-sequences-comportementales" class="md-nav__link">
+  <a href="#2-isolation-forest-algorithme-central" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Analyse de séquences comportementales
+        2. Isolation Forest — Algorithme Central
       
     </span>
   </a>
@@ -4214,10 +4214,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-scores-danomalies" class="md-nav__link">
+  <a href="#3-moteur-danalyse-statistique" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Scores d’anomalies
+        3. Moteur d'Analyse Statistique
       
     </span>
   </a>
@@ -4225,10 +4225,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-profils-locaux" class="md-nav__link">
+  <a href="#4-resultats-explicables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Profils locaux
+        4. Résultats Explicables
       
     </span>
   </a>
@@ -4236,10 +4236,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-scenarios" class="md-nav__link">
+  <a href="#5-references-comportementales-locales" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Scénarios
+        5. Références Comportementales Locales
       
     </span>
   </a>
@@ -4247,10 +4247,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-aucun-entrainement-cloud" class="md-nav__link">
+  <a href="#6-aucun-entrainement-ni-telechargement-vers-le-cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Aucun entraînement cloud
+        6. Aucun Entraînement ni Téléchargement vers le Cloud
       
     </span>
   </a>
@@ -4258,10 +4258,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-leger-et-optimise" class="md-nav__link">
+  <a href="#7-leger-et-efficace-en-ressources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ️ 7. Léger et optimisé
+        7. Léger et Efficace en Ressources
       
     </span>
   </a>
@@ -8751,76 +8751,146 @@
   
 
 
-<h1 id="ia-locale-nyxia">IA locale (NyXIA)<a class="headerlink" href="#ia-locale-nyxia" title="Link to this section">&para;</a></h1>
-<p>NyXIA est le moteur d’IA entièrement local de Nyroxis.<br />
-Il détecte les comportements suspects, analyse les séquences et génère des scénarios — le tout <strong>sans cloud</strong>.</p>
+<h1 id="moteur-iaml-local">Moteur IA/ML Local<a class="headerlink" href="#moteur-iaml-local" title="Link to this section">&para;</a></h1>
+<p>Le moteur IA/ML de Nyroxis est entièrement local et hors ligne.
+Il effectue toutes les analyses comportementales, la détection d'anomalies et la notation statistique <strong>sans envoyer aucune donnée vers le cloud</strong>.</p>
 <hr />
-<h2 id="1-ia-100-hors-ligne">1. IA 100% hors-ligne<a class="headerlink" href="#1-ia-100-hors-ligne" title="Link to this section">&para;</a></h2>
-<p>NyXIA ne contacte jamais :
-- un serveur externe<br />
-- un cloud<br />
-- une API distante<br />
-- une plateforme de télémétrie  </p>
-<p>Toutes les analyses sont locales.</p>
+<h2 id="1-moteur-entierement-hors-ligne">1. Moteur Entièrement Hors Ligne<a class="headerlink" href="#1-moteur-entierement-hors-ligne" title="Link to this section">&para;</a></h2>
+<p>Le moteur IA/ML fonctionne entièrement sur l'appareil :
+- Aucune communication avec des serveurs
+- Aucune mise à jour de modèle en ligne
+- Aucune télémétrie
+- Aucune dépendance externe</p>
+<p>Toute inférence et tout traitement sont isolés dans l'environnement d'exécution local.
+Construit en Rust sans dépendance à une bibliothèque ML externe.</p>
 <hr />
-<h2 id="2-analyse-de-sequences-comportementales">2. Analyse de séquences comportementales<a class="headerlink" href="#2-analyse-de-sequences-comportementales" title="Link to this section">&para;</a></h2>
-<p>NyXIA analyse des séquences complètes, permettant de détecter :
-- attaques en plusieurs étapes<br />
-- comportements anormaux<br />
-- accès fichiers suspects<br />
-- actions de privilèges inhabituelles  </p>
-<p>Plus précis que les analyses événement-par-événement.</p>
+<h2 id="2-isolation-forest-algorithme-central">2. Isolation Forest — Algorithme Central<a class="headerlink" href="#2-isolation-forest-algorithme-central" title="Link to this section">&para;</a></h2>
+<p>Le moteur implémente un algorithme Isolation Forest personnalisé :
+- 100 arbres d'isolation par cycle d'analyse
+- 256 échantillons maximum par arbre
+- 8 caractéristiques comportementales par fenêtre d'analyse
+- Seuil de score d'anomalie : 0,6</p>
+<p>Les événements anormaux nécessitent moins de divisions pour être isolés — un chemin d'isolation plus court = un score d'anomalie plus élevé.</p>
+<p><strong>8 caractéristiques comportementales analysées :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre d'événements</td>
+<td>Total des événements dans la fenêtre d'analyse</td>
+</tr>
+<tr>
+<td>Sources uniques</td>
+<td>Sources d'événements distinctes</td>
+</tr>
+<tr>
+<td>Destinations uniques</td>
+<td>Destinations réseau distinctes</td>
+</tr>
+<tr>
+<td>Heure du jour</td>
+<td>Contexte temporel pour la référence comportementale</td>
+</tr>
+<tr>
+<td>Jour de la semaine</td>
+<td>Reconnaissance des schémas hebdomadaires</td>
+</tr>
+<tr>
+<td>Événements par heure</td>
+<td>Normalisation du taux d'activité</td>
+</tr>
+<tr>
+<td>Ratio de nouvelles sources</td>
+<td>Proportion de sources précédemment inconnues</td>
+</tr>
+<tr>
+<td>Ratio de nouvelles destinations</td>
+<td>Proportion de destinations précédemment inconnues</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="3-scores-danomalies">3. Scores d’anomalies<a class="headerlink" href="#3-scores-danomalies" title="Link to this section">&para;</a></h2>
-<p>Chaque séquence reçoit :
-- un embedding comportemental<br />
-- un score de déviation<br />
-- une classification de risque<br />
-- une explication  </p>
-<p>Transparence totale.</p>
+<h2 id="3-moteur-danalyse-statistique">3. Moteur d'Analyse Statistique<a class="headerlink" href="#3-moteur-danalyse-statistique" title="Link to this section">&para;</a></h2>
+<p>Fonctionnant en parallèle avec Isolation Forest :</p>
+<table>
+<thead>
+<tr>
+<th>Z-Score</th>
+<th>Sévérité</th>
+<th>Confiance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 3,0</td>
+<td>Critique</td>
+<td>99,7 %</td>
+</tr>
+<tr>
+<td>&gt; 2,0</td>
+<td>Élevée</td>
+<td>95 %</td>
+</tr>
+<tr>
+<td>&gt; 1,5</td>
+<td>Moyenne</td>
+<td>86 %</td>
+</tr>
+<tr>
+<td>&gt; 1,0</td>
+<td>Faible</td>
+<td>68 %</td>
+</tr>
+</tbody>
+</table>
+<p>Méthodes supplémentaires :
+- Détection de valeurs aberrantes IQR
+- Moyennes mobiles simples et exponentielles
+- Détection de pics par rapport aux références historiques
+- Analyse de corrélation entre les signaux comportementaux</p>
 <hr />
-<h2 id="4-profils-locaux">4. Profils locaux<a class="headerlink" href="#4-profils-locaux" title="Link to this section">&para;</a></h2>
-<p>Chaque appareil construit :
-- son propre profil normal<br />
-- ses modèles réseau habituels<br />
-- ses schémas d'utilisation<br />
-- ses accès fichiers  </p>
-<p>Jamais envoyés en ligne.</p>
+<h2 id="4-resultats-explicables">4. Résultats Explicables<a class="headerlink" href="#4-resultats-explicables" title="Link to this section">&para;</a></h2>
+<p>Chaque détection comprend :
+- Score d'anomalie (0,0–1,0)
+- Classification de la sévérité
+- Caractéristiques contributives — les dimensions comportementales spécifiques qui ont le plus dévié, avec les valeurs Z-Score</p>
+<p>Le système met en évidence <strong>pourquoi</strong> quelque chose est suspect — transparent et vérifiable localement.</p>
 <hr />
-<h2 id="5-scenarios">5. Scénarios<a class="headerlink" href="#5-scenarios" title="Link to this section">&para;</a></h2>
-<p>NyXIA regroupe les événements en scénarios :
-- chaînes de processus<br />
-- anomalies réseau<br />
-- accès fichiers suspects<br />
-- escalades de privilèges  </p>
-<p>Chaque scénario comprend :
-- description<br />
-- sévérité<br />
-- preuves<br />
-- horodatage  </p>
+<h2 id="5-references-comportementales-locales">5. Références Comportementales Locales<a class="headerlink" href="#5-references-comportementales-locales" title="Link to this section">&para;</a></h2>
+<p>Chaque appareil construit son propre profil de référence privé :
+- Activité normale des processus
+- Schémas typiques de connexions réseau
+- Schémas d'accès aux fichiers attendus
+- Comportement habituel selon l'heure du jour et le jour de la semaine</p>
+<p>Les références :
+- Stockées localement sous forme chiffrée
+- Réinitialisables par l'utilisateur à tout moment
+- Jamais transmises ni partagées</p>
 <hr />
-<h2 id="6-aucun-entrainement-cloud">6. Aucun entraînement cloud<a class="headerlink" href="#6-aucun-entrainement-cloud" title="Link to this section">&para;</a></h2>
-<p>Rien n’est envoyé :
-- journaux<br />
-- profils<br />
-- anomalies<br />
-- données utilisateur  </p>
-<p>Tout reste local.</p>
+<h2 id="6-aucun-entrainement-ni-telechargement-vers-le-cloud">6. Aucun Entraînement ni Téléchargement vers le Cloud<a class="headerlink" href="#6-aucun-entrainement-ni-telechargement-vers-le-cloud" title="Link to this section">&para;</a></h2>
+<p>Le moteur IA/ML ne télécharge <strong>pas</strong> :
+- Les journaux ou données d'événements
+- Les échantillons d'anomalies
+- Les profils comportementaux
+- Les retours sur les modèles
+- Aucune donnée utilisateur</p>
+<p>L'entraînement et l'inférence sont exclusivement hors ligne.</p>
 <hr />
-<h2 id="7-leger-et-optimise">️ 7. Léger et optimisé<a class="headerlink" href="#7-leger-et-optimise" title="Link to this section">&para;</a></h2>
-<p>Fonctionne sur :
-- ordinateurs personnels<br />
-- postes sensibles<br />
-- environnements isolés  </p>
-<p>Sans consommation excessive.</p>
+<h2 id="7-leger-et-efficace-en-ressources">7. Léger et Efficace en Ressources<a class="headerlink" href="#7-leger-et-efficace-en-ressources" title="Link to this section">&para;</a></h2>
+<p>Optimisé pour les ordinateurs portables personnels, les appareils de direction et les systèmes en mode air-gap — le moteur IA/ML fournit une détection comportementale robuste sans nécessiter de matériel d'entreprise.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>NyXIA fournit :
-- IA locale<br />
-- Détection comportementale avancée<br />
-- Confidentialité totale<br />
-- Analyse transparente  </p>
-<p>Une IA moderne conçue pour la cybersécurité privée.</p>
+<p>Le moteur IA/ML de Nyroxis garantit :
+- Inférence locale uniquement — aucune dépendance cloud
+- Confidentialité totale — aucun partage de données
+- Détection comportementale robuste via Isolation Forest
+- Profondeur statistique via Z-Score, IQR et détection de pics
+- Résultats transparents et explicables avec caractéristiques contributives</p>
 
 
 

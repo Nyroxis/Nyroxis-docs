@@ -33,7 +33,7 @@
     
     
       
-        <title>Architecture — Vue d’ensemble - Nyroxis Documentation</title>
+        <title>Architecture de Haut Niveau - Nyroxis Documentation</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture-vue-densemble" class="md-skip">
+        <a href="#architecture-de-haut-niveau" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture — Vue d’ensemble
+              Architecture de Haut Niveau
             
           </span>
         </div>
@@ -8574,69 +8574,91 @@
   
 
 
-<h1 id="architecture-vue-densemble">Architecture — Vue d’ensemble<a class="headerlink" href="#architecture-vue-densemble" title="Link to this section">&para;</a></h1>
-<p>L’architecture Nyroxis fournit une sécurité forte, une confidentialité totale et une autonomie complète hors-ligne.<br />
-Cette vue d’ensemble décrit comment les composants interagissent tout en protégeant les données localement.</p>
+<h1 id="architecture-de-haut-niveau">Architecture de Haut Niveau<a class="headerlink" href="#architecture-de-haut-niveau" title="Link to this section">&para;</a></h1>
+<p>L'architecture Nyroxis est conçue pour offrir une sécurité robuste, une confidentialité totale et une autonomie hors ligne complète.
+Cette vue d'ensemble de haut niveau explique comment tous les composants majeurs fonctionnent ensemble tout en maintenant les données utilisateur protégées et chiffrées localement.</p>
 <hr />
-<h2 id="principes-fondamentaux">Principes fondamentaux<a class="headerlink" href="#principes-fondamentaux" title="Link to this section">&para;</a></h2>
-<h3 id="1-fonctionnement-entierement-local"><strong>1. Fonctionnement entièrement local</strong><a class="headerlink" href="#1-fonctionnement-entierement-local" title="Link to this section">&para;</a></h3>
-<p>Toutes les analyses et stockages sont réalisés sur l’appareil.</p>
-<h3 id="2-confidentialite-des-la-conception"><strong>2. Confidentialité dès la conception</strong><a class="headerlink" href="#2-confidentialite-des-la-conception" title="Link to this section">&para;</a></h3>
-<p>Aucun cloud, aucune télémétrie, aucun envoi externe.</p>
-<h3 id="3-legerete"><strong>3. Légèreté</strong><a class="headerlink" href="#3-legerete" title="Link to this section">&para;</a></h3>
-<p>Optimisé pour les appareils personnels et professionnels.</p>
-<h3 id="4-resistance-aux-falsifications"><strong>4. Résistance aux falsifications</strong><a class="headerlink" href="#4-resistance-aux-falsifications" title="Link to this section">&para;</a></h3>
-<p>Logs chiffrés, baselines sécurisées, vérifications d’intégrité.</p>
+<h2 id="principes-architecturaux-fondamentaux">Principes Architecturaux Fondamentaux<a class="headerlink" href="#principes-architecturaux-fondamentaux" title="Link to this section">&para;</a></h2>
+<h3 id="1-fonctionnement-entierement-local">1. Fonctionnement Entièrement Local<a class="headerlink" href="#1-fonctionnement-entierement-local" title="Link to this section">&para;</a></h3>
+<p>Tout le traitement — collecte, détection, analyse IA, stockage, rapports — s'effectue sur l'appareil. Rien n'est téléchargé ou transmis.</p>
+<h3 id="2-confidentialite-par-conception">2. Confidentialité par Conception<a class="headerlink" href="#2-confidentialite-par-conception" title="Link to this section">&para;</a></h3>
+<p>Aucun cloud. Aucune télémétrie. Aucune surveillance à distance. Aucun profilage comportemental.</p>
+<h3 id="3-leger-et-efficace">3. Léger et Efficace<a class="headerlink" href="#3-leger-et-efficace" title="Link to this section">&para;</a></h3>
+<p>Conçu pour fonctionner en continu sur des ordinateurs portables personnels sans impacter la productivité quotidienne.</p>
+<h3 id="4-integrite-forensique">4. Intégrité Forensique<a class="headerlink" href="#4-integrite-forensique" title="Link to this section">&para;</a></h3>
+<p>Les journaux d'événements sont chiffrés, enchaînés par hachage et inviolables — adaptés aux procédures juridiques et réglementaires.</p>
 <hr />
-<h2 id="composants-principaux">Composants principaux<a class="headerlink" href="#composants-principaux" title="Link to this section">&para;</a></h2>
-<h3 id="1-agent-nyroxis"><strong>1. Agent Nyroxis</strong><a class="headerlink" href="#1-agent-nyroxis" title="Link to this section">&para;</a></h3>
-<p>Collecte :
-- Processus<br />
-- Réseau<br />
-- Fichiers<br />
-- Actions de privilèges  </p>
-<p>Chiffre immédiatement les événements.</p>
-<hr />
-<h3 id="2-base-de-donnees-locale-securisee"><strong>2. Base de données locale sécurisée</strong><a class="headerlink" href="#2-base-de-donnees-locale-securisee" title="Link to this section">&para;</a></h3>
-<p>Stocke :
-- Journaux chiffrés<br />
-- Métadonnées<br />
-- Profils comportementaux  </p>
-<p>Toujours chiffrée et locale.</p>
-<hr />
-<h3 id="3-moteur-ia-nyxia"><strong>3. Moteur IA NyXIA</strong><a class="headerlink" href="#3-moteur-ia-nyxia" title="Link to this section">&para;</a></h3>
-<p>Assure :
-- Détection comportementale<br />
-- Analyse des scénarios<br />
-- Scores d’anomalie  </p>
-<p>Fonctionne hors-ligne.</p>
-<hr />
-<h3 id="4-moteur-de-regles"><strong>4. Moteur de règles</strong><a class="headerlink" href="#4-moteur-de-regles" title="Link to this section">&para;</a></h3>
-<p>Fournit :
-- Détection de motifs<br />
-- Alertes basées sur seuils<br />
-- Corrélations simples  </p>
-<p>Complémentaire au moteur IA.</p>
-<hr />
-<h3 id="5-tableau-de-bord"><strong>5. Tableau de bord</strong><a class="headerlink" href="#5-tableau-de-bord" title="Link to this section">&para;</a></h3>
-<p>Affiche :
-- Journaux<br />
-- Alertes<br />
-- Scénarios<br />
-- Analyses IA  </p>
-<p>Permet la gestion locale des réglages.</p>
-<hr />
-<h2 id="couches-de-securite">Couches de sécurité<a class="headerlink" href="#couches-de-securite" title="Link to this section">&para;</a></h2>
+<h2 id="composants-de-haut-niveau">Composants de Haut Niveau<a class="headerlink" href="#composants-de-haut-niveau" title="Link to this section">&para;</a></h2>
+<h3 id="1-nyroxis-agent">1. Nyroxis Agent<a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Chiffrement à la capture  </li>
-<li>Stockage chiffré  </li>
-<li>Hash-chaining  </li>
-<li>IA hors-ligne  </li>
-<li>Vérifications anti-tamper  </li>
+<li>Capture les événements système en temps réel depuis plusieurs canaux</li>
+<li>Normalise et chiffre immédiatement</li>
+<li>Stocke les événements chiffrés dans la base de données locale</li>
+<li>~57 Mo de RAM, ~0,1 % du CPU</li>
+</ul>
+<h3 id="2-nyroxis-intelligence">2. Nyroxis Intelligence<a class="headerlink" href="#2-nyroxis-intelligence" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Évalue les événements selon 27 règles de détection + 12 règles de corrélation + 2 règles de chaîne</li>
+<li>Génère des alertes immédiates lors de correspondances de règles</li>
+<li>Entièrement extensible par les professionnels de la sécurité (format de règle JSON)</li>
+<li>~87 Mo de RAM, ~1,8 % du CPU</li>
+</ul>
+<h3 id="3-nyroxis-system-guardian">3. Nyroxis System Guardian<a class="headerlink" href="#3-nyroxis-system-guardian" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Surveille Agent et Intelligence toutes les 3 secondes</li>
+<li>Gère les sauvegardes et la validation de licence HWID hors ligne</li>
+<li>Arrête les services si la licence expire</li>
+<li>~6,5 Mo de RAM, ~0,1 % du CPU</li>
+</ul>
+<h3 id="4-base-de-donnees-locale-securisee">4. Base de Données Locale Sécurisée<a class="headerlink" href="#4-base-de-donnees-locale-securisee" title="Link to this section">&para;</a></h3>
+<ul>
+<li>SQLite avec chiffrement AES-256</li>
+<li>Blocs d'événements enchaînés par hachage pour la détection de falsification</li>
+<li>Stocke les événements, résultats, résultats IA et références comportementales</li>
+<li>Ne quitte jamais l'appareil</li>
+</ul>
+<h3 id="5-moteur-iaml-local">5. Moteur IA/ML Local<a class="headerlink" href="#5-moteur-iaml-local" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Détection d'anomalies Isolation Forest (100 arbres, 8 caractéristiques)</li>
+<li>Z-Score, IQR, moyenne mobile, détection de pics</li>
+<li>Décomposition des caractéristiques contributives pour les analystes</li>
+<li>Entièrement hors ligne — aucune inférence cloud</li>
+</ul>
+<h3 id="6-nyroxis-dashboard">6. Nyroxis Dashboard<a class="headerlink" href="#6-nyroxis-dashboard" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Visibilité en temps réel : événements, détections, corrélations, chaînes, IA/ML</li>
+<li>Recherche forensique, graphiques, rapports (PDF/CSV)</li>
+<li>Gestion des sauvegardes, paramètres, multilingue (EN/FR/DE)</li>
+<li>Toutes les données récupérées localement</li>
 </ul>
 <hr />
+<h2 id="couches-de-securite">Couches de Sécurité<a class="headerlink" href="#couches-de-securite" title="Link to this section">&para;</a></h2>
+<p>L'architecture comprend plusieurs couches de défense :
+- Chiffrement à la capture (AES-256)
+- Structures d'événements enchaînées par hachage
+- Chemins d'écriture protégés
+- Gardien de plateforme pour la résilience des services
+- Validation de licence hors ligne
+- Aucune communication externe d'aucune sorte</p>
+<hr />
+<h2 id="resume-du-flux-de-donnees">Résumé du Flux de Données<a class="headerlink" href="#resume-du-flux-de-donnees" title="Link to this section">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Événements Système ]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← collecte, normalise, chiffre
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Base de Données Chiffrée Locale ]  ← AES-256, SQLite, enchaîné par hachage
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 détection + 12 corrélation + 2 règles de chaîne
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Moteur IA/ML Local ]     ← Isolation Forest + analyse statistique
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↓
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis Dashboard ]      ← visibilité, forensique, rapports
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        ↑
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[ Nyroxis System Guardian ] ← surveille, sauvegarde, valide la licence
+</span></code></pre></div>
+<hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Une architecture privée, locale, légère et puissante — sans cloud.</p>
+<p>L'architecture Nyroxis offre une sécurité puissante, privée et hors ligne en combinant quatre composants essentiels — Agent, Intelligence, System Guardian et Dashboard — fonctionnant ensemble avec une IA/ML locale et un stockage de qualité forensique, entièrement sans exposition au cloud.</p>
 
 
 

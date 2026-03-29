@@ -5771,10 +5771,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-keine-stille-datensammlung" class="md-nav__link">
+  <a href="#1-keine-stille-datenerfassung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Keine stille Datensammlung
+        1. Keine stille Datenerfassung
       
     </span>
   </a>
@@ -5782,10 +5782,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-vollstandiger-reset" class="md-nav__link">
+  <a href="#2-vollstandige-datenzurucksetzung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Vollständiger Reset
+        2. Vollständige Datenzurücksetzung
       
     </span>
   </a>
@@ -5793,10 +5793,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-lokale-speicherung" class="md-nav__link">
+  <a href="#3-ausschlielich-lokale-speicherung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Lokale Speicherung
+        3. Ausschließlich lokale Speicherung
       
     </span>
   </a>
@@ -5804,10 +5804,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-transparente-ki" class="md-nav__link">
+  <a href="#4-transparente-kiml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Transparente KI
+        4. Transparente KI/ML
       
     </span>
   </a>
@@ -5815,10 +5815,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-anpassungsmoglichkeiten" class="md-nav__link">
+  <a href="#5-anpassungsoptionen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Anpassungsmöglichkeiten
+        5. Anpassungsoptionen
       
     </span>
   </a>
@@ -5826,10 +5826,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-uberprufung-der-offlinearbeitsweise" class="md-nav__link">
+  <a href="#6-backup-kontrolle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Überprüfung der Offline‑Arbeitsweise
+        6. Backup-Kontrolle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-uberprufung-des-offline-betriebs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Überprüfung des Offline-Betriebs
       
     </span>
   </a>
@@ -8752,57 +8763,78 @@
 
 
 <h1 id="benutzerkontrolle-transparenz">Benutzerkontrolle &amp; Transparenz<a class="headerlink" href="#benutzerkontrolle-transparenz" title="Link to this section">&para;</a></h1>
-<p>Nyroxis wurde entwickelt, um Nutzern vollständige Kontrolle über ihre Sicherheitsdaten, Systemverhalten und Datenschutzeinstellungen zu geben.<br />
-Keine versteckten Prozesse, keine Hintergrunduploads, keine Cloud — alles ist transparent und lokal.</p>
+<p>Nyroxis ist darauf ausgelegt, Benutzern die vollständige Kontrolle über ihre Sicherheitsdaten, das Systemverhalten und die Datenschutzeinstellungen zu geben.
+Keine versteckten Prozesse, keine Hintergrund-Uploads, keine Cloud-Verbindungen — alles ist transparent und lokal verwaltet.</p>
+<hr />
 <h2 id="grundprinzipien-der-benutzerkontrolle">Grundprinzipien der Benutzerkontrolle<a class="headerlink" href="#grundprinzipien-der-benutzerkontrolle" title="Link to this section">&para;</a></h2>
-<p>Nyroxis ermöglicht Nutzern:
-- zu sehen, was überwacht wird<br />
-- zu kontrollieren, was gespeichert wird<br />
-- Daten jederzeit zurückzusetzen oder zu löschen<br />
-- die Offline‑Arbeitsweise zu verifizieren<br />
-- KI‑Entscheidungen zu verstehen  </p>
-<p>Der Benutzer bleibt immer vollständig in Kontrolle.</p>
-<h2 id="1-keine-stille-datensammlung">1. Keine stille Datensammlung<a class="headerlink" href="#1-keine-stille-datensammlung" title="Link to this section">&para;</a></h2>
-<p>Nyroxis erfasst <strong>nur</strong>, was für Sicherheitsanalysen notwendig ist:
-- Prozesse<br />
-- Netzwerkevents<br />
-- Dateiänderungen<br />
-- Berechtigungsaktionen  </p>
-<p>Keine persönlichen Dateien oder Inhalte.</p>
-<h2 id="2-vollstandiger-reset">2. Vollständiger Reset<a class="headerlink" href="#2-vollstandiger-reset" title="Link to this section">&para;</a></h2>
-<p>Benutzer können zurücksetzen:
-- Logs<br />
-- Metadaten<br />
-- KI‑Baseline<br />
-- Korrelationscache  </p>
-<p>Der Reset stellt ein vollständig sauberes System her.</p>
-<h2 id="3-lokale-speicherung">3. Lokale Speicherung<a class="headerlink" href="#3-lokale-speicherung" title="Link to this section">&para;</a></h2>
+<p>Nyroxis stellt sicher, dass Benutzer:
+- Sehen können, was überwacht wird
+- Kontrollieren können, was gespeichert wird und wie lange
+- Daten jederzeit zurücksetzen oder löschen können
+- Überprüfen können, dass die Plattform offline arbeitet
+- Verstehen können, wie KI/ML-Entscheidungen getroffen werden</p>
+<p>Der Benutzer behält immer die Kontrolle.</p>
+<hr />
+<h2 id="1-keine-stille-datenerfassung">1. Keine stille Datenerfassung<a class="headerlink" href="#1-keine-stille-datenerfassung" title="Link to this section">&para;</a></h2>
+<p>Nyroxis erfasst <strong>nur</strong>, was für die Sicherheitsanalyse notwendig ist:
+- Protokolle von Prozessen und Diensten
+- Netzwerkverbindungsereignisse
+- Dateisystem- und Registrierungsänderungen
+- Berechtigungsaktionen
+- Windows-Ereignisprotokolleinträge</p>
+<p>Keine persönlichen Dateien, Fotos, Nachrichten, Browserdaten oder Anmeldedaten werden jemals erfasst.
+Alles Erfasste ist in dieser Dokumentation dokumentiert.</p>
+<hr />
+<h2 id="2-vollstandige-datenzurucksetzung">2. Vollständige Datenzurücksetzung<a class="headerlink" href="#2-vollstandige-datenzurucksetzung" title="Link to this section">&para;</a></h2>
+<p>Benutzer können jederzeit vom Dashboard aus zurücksetzen:
+- Ereignisprotokolle
+- Erkennungs- und Korrelationsergebnisse
+- KI/ML-Verhaltensbasislinie
+- Alle Metadaten</p>
+<p>Eine vollständige Zurücksetzung stellt Nyroxis in einen sauberen Zustand ohne Überreste wieder her.</p>
+<hr />
+<h2 id="3-ausschlielich-lokale-speicherung">3. Ausschließlich lokale Speicherung<a class="headerlink" href="#3-ausschlielich-lokale-speicherung" title="Link to this section">&para;</a></h2>
 <p>Alle Daten sind:
-- lokal gespeichert<br />
-- vollständig verschlüsselt<br />
-- niemals extern übertragen  </p>
-<p>Keine Cloud‑Konten, keine Remote‑Abhängigkeiten.</p>
-<h2 id="4-transparente-ki">4. Transparente KI<a class="headerlink" href="#4-transparente-ki" title="Link to this section">&para;</a></h2>
-<p>NyXIA bietet:
-- klare Erklärungen<br />
-- Begründungen für Entscheidungen<br />
-- Szenario‑Zusammenfassungen  </p>
-<p>Keine Black‑Box‑Logik.</p>
-<h2 id="5-anpassungsmoglichkeiten">5. Anpassungsmöglichkeiten<a class="headerlink" href="#5-anpassungsmoglichkeiten" title="Link to this section">&para;</a></h2>
-<p>Benutzer können konfigurieren:
-- Aufbewahrungszeit<br />
-- Schwellwerte für Schweregrad<br />
-- Regelpräferenzen<br />
-- Benachrichtigungen  </p>
-<p>Alle Einstellungen sind optional und lokal.</p>
-<h2 id="6-uberprufung-der-offlinearbeitsweise">6. Überprüfung der Offline‑Arbeitsweise<a class="headerlink" href="#6-uberprufung-der-offlinearbeitsweise" title="Link to this section">&para;</a></h2>
-<p>Nyroxis ermöglicht die Überprüfung, dass:
-- keine externen Verbindungen bestehen<br />
-- keine Telemetrie vorhanden ist<br />
-- keine Cloud genutzt wird  </p>
-<p>Vertrauen ist überprüfbar.</p>
+- Lokal in der verschlüsselten SQLite-Datenbank gespeichert
+- Vollständig verschlüsselt (AES-256)
+- Niemals extern übertragen
+- Unter der alleinigen Kontrolle des Benutzers</p>
+<p>Benutzer sind nicht auf Cloud-Konten, Online-Authentifizierung oder Remote-Speicherung angewiesen.</p>
+<hr />
+<h2 id="4-transparente-kiml">4. Transparente KI/ML<a class="headerlink" href="#4-transparente-kiml" title="Link to this section">&para;</a></h2>
+<p>Der KI/ML-Motor bietet:
+- Klaren Anomalie-Score mit Schweregradklassifizierung
+- Beitragende Merkmale — die spezifischen Verhaltensdimensionen, die die Erkennung ausgelöst haben, mit Z-Score-Werten
+- Szenariobasierte Begründungszusammenfassungen</p>
+<p>KI-Entscheidungen sind darauf ausgelegt, verständlich und erklärbar zu sein — keine Black Box.</p>
+<hr />
+<h2 id="5-anpassungsoptionen">5. Anpassungsoptionen<a class="headerlink" href="#5-anpassungsoptionen" title="Link to this section">&para;</a></h2>
+<p>Benutzer können über die Einstellungsansicht anpassen:
+- Datenbankdateipfad und Speicherort
+- Dashboard-Aktualisierungsintervall
+- Standard-Rückblickfenster für Ereignisabfragen
+- Standard-Stichprobenlimit
+- Schnittstellensprache: Englisch, Französisch, Deutsch
+- Theme-Konfiguration</p>
+<p>Alle Einstellungen sind lokal.</p>
+<hr />
+<h2 id="6-backup-kontrolle">6. Backup-Kontrolle<a class="headerlink" href="#6-backup-kontrolle" title="Link to this section">&para;</a></h2>
+<p>Aus dem Backup-Bereich können Benutzer:
+- Automatische Backups planen
+- On-Demand-Backups ausführen
+- Backup-Verlauf mit Zeitstempeln und Dateigrößen überprüfen
+- Alle Backups sind verschlüsselt und lokal gespeichert</p>
+<hr />
+<h2 id="7-uberprufung-des-offline-betriebs">7. Überprüfung des Offline-Betriebs<a class="headerlink" href="#7-uberprufung-des-offline-betriebs" title="Link to this section">&para;</a></h2>
+<p>Das Dashboard und Nyroxis System Guardian zeigen Indikatoren, die Benutzern ermöglichen zu überprüfen:
+- Keine ausgehenden Netzwerkverbindungen von Nyroxis-Prozessen
+- Keine Hintergrundtelemetrie
+- Keine Cloud-Abhängigkeit
+- Agent- und Intelligence-Dienststatus in Echtzeit</p>
+<p>Vertrauen ist messbar — nicht angenommen.</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Nyroxis gibt Nutzern vollständige Kontrolle über Daten, Transparenz der Abläufe und die Möglichkeit, alles lokal zu verwalten — ohne Cloud, ohne versteckte Prozesse.</p>
+<p>Nyroxis gibt Benutzern die vollständige Kontrolle über ihre Daten, vollständige Transparenz seiner Operationen und die Möglichkeit, alles lokal zu verwalten, zurückzusetzen, zu sichern oder zu überprüfen — ohne Cloud-Abhängigkeit oder versteckte Prozesse.</p>
 
 
 

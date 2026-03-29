@@ -5025,15 +5025,93 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-lokale-verschlusselte-datenbank" class="md-nav__link">
+  <a href="#2-nyroxis-intelligence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Lokale verschlüsselte Datenbank
+        2. Nyroxis Intelligence
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Lokale verschlüsselte Datenbank">
+    <nav class="md-nav" aria-label="2. Nyroxis Intelligence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drei-erkennungsschichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drei Erkennungsschichten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eigenschaften_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenschaften
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-nyroxis-system-guardian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Nyroxis System Guardian
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Nyroxis System Guardian">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aufgaben_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aufgaben
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eigenschaften_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenschaften
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-lokale-verschlusselte-datenbank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Lokale verschlüsselte Datenbank
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Lokale verschlüsselte Datenbank">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5053,15 +5131,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-nyroxis-dashboard" class="md-nav__link">
+  <a href="#5-nyroxis-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Nyroxis Dashboard
+        5. Nyroxis Dashboard
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Nyroxis Dashboard">
+    <nav class="md-nav" aria-label="5. Nyroxis Dashboard">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5092,15 +5170,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-lokale-analyseengine" class="md-nav__link">
+  <a href="#6-lokale-kiml-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Lokale Analyse‑Engine
+        6. Lokale KI/ML-Engine
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Lokale Analyse‑Engine">
+    <nav class="md-nav" aria-label="6. Lokale KI/ML-Engine">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5116,45 +5194,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-lizenzierung-verifikation-localfirst" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Lizenzierung &amp; Verifikation (Local‑First)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Lizenzierung &amp; Verifikation (Local‑First)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kernpunkte" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kernpunkte
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-optionale-integrationen-zukunftsorientiert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Optionale Integrationen (Zukunftsorientiert)
-      
-    </span>
-  </a>
   
 </li>
       
@@ -8848,78 +8887,120 @@
 
 
 <h1 id="architekturkomponenten">Architekturkomponenten<a class="headerlink" href="#architekturkomponenten" title="Link to this section">&para;</a></h1>
-<p>Dieser Abschnitt beschreibt die zentralen Bausteine des Nyroxis‑Ökosystems.<br />
-Alle Komponenten sind so konzipiert, dass sie lokal, effizient und mit einem strikt datenschutzorientierten Ansatz arbeiten.</p>
+<p>Dieser Abschnitt beschreibt die einzelnen Hauptkomponenten der Nyroxis-Plattform.
+Alle Komponenten sind so konzipiert, dass sie lokal, effizient und nach einem datenschutzorientierten Ansatz arbeiten.</p>
 <hr />
 <h2 id="1-nyroxis-agent">1. Nyroxis Agent<a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h2>
-<p>Der Kernüberwachungsdienst, der auf dem Gerät ausgeführt wird.</p>
+<p>Der zentrale Überwachungs- und Erfassungsdienst, der auf dem Gerät läuft.</p>
 <h3 id="aufgaben">Aufgaben<a class="headerlink" href="#aufgaben" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Erfassung von System- und Sicherheitsereignissen  </li>
-<li>Überwachung von Prozessen, Netzwerkaktivität, Dateioperationen und Berechtigungsaktionen  </li>
-<li>Sofortige Verschlüsselung aller Protokolle  </li>
-<li>Gewährleistung einer manipulationsresistenten Integrität  </li>
+<li>Erfasst Sicherheitsereignisse gleichzeitig aus mehreren Systemkanälen</li>
+<li>Überwacht Prozesse, Netzwerkaktivität, Dateisystem, Registry und rechtebezogene Aktionen</li>
+<li>Normalisiert Ereignisdaten in Echtzeit</li>
+<li>Verschlüsselt die Nutzlast sofort und schreibt sie in die lokale Datenbank</li>
+<li>Gewährleistet manipulationsresistente Integrität über hash-verkettete Ereignisblöcke</li>
 </ul>
 <h3 id="eigenschaften">Eigenschaften<a class="headerlink" href="#eigenschaften" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Leichtgewichtig (minimaler CPU- und RAM‑Verbrauch)  </li>
-<li>Offline‑first  </li>
-<li>Lautlos im Hintergrund ausgeführt  </li>
+<li>~57 MB RAM, ~0,1 % CPU</li>
+<li>Läuft still als Windows-Dienst im Hintergrund</li>
+<li>Offline-First — nichts verlässt das Gerät</li>
 </ul>
 <hr />
-<h2 id="2-lokale-verschlusselte-datenbank">2. Lokale verschlüsselte Datenbank<a class="headerlink" href="#2-lokale-verschlusselte-datenbank" title="Link to this section">&para;</a></h2>
-<p>Nyroxis nutzt einen gesicherten, verschlüsselten Datenspeicher für alle erfassten Ereignisse.</p>
+<h2 id="2-nyroxis-intelligence">2. Nyroxis Intelligence<a class="headerlink" href="#2-nyroxis-intelligence" title="Link to this section">&para;</a></h2>
+<p>Die Erkennungs- und Korrelations-Engine — der analytische Kern der Plattform.</p>
+<h3 id="drei-erkennungsschichten">Drei Erkennungsschichten<a class="headerlink" href="#drei-erkennungsschichten" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Schicht</th>
+<th>Regeln</th>
+<th>Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nyroxis_detection</td>
+<td>27</td>
+<td>Bekannte Bedrohungsmuster in einzelnen Ereignissen identifizieren</td>
+</tr>
+<tr>
+<td>nyroxis_correlations</td>
+<td>12</td>
+<td>Zusammenhängende verdächtige Ereignisse über Zeit und Quellen verknüpfen</td>
+</tr>
+<tr>
+<td>nyroxis_chains</td>
+<td>2</td>
+<td>Mehrstufige Angriffsequenzen erkennen</td>
+</tr>
+</tbody>
+</table>
+<h3 id="eigenschaften_1">Eigenschaften<a class="headerlink" href="#eigenschaften_1" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Arbeitet mit hoher Geschwindigkeit gleichzeitig über alle drei Schichten</li>
+<li>Die Regelbibliothek wächst kontinuierlich, wenn neue Bedrohungen auftauchen</li>
+<li>Vollständig erweiterbar — Sicherheitsprofis können benutzerdefinierte Regeln im JSON-Format schreiben und einsetzen, ohne das Kernsystem zu modifizieren</li>
+<li>~87 MB RAM, ~1,8 % CPU</li>
+</ul>
+<hr />
+<h2 id="3-nyroxis-system-guardian">3. Nyroxis System Guardian<a class="headerlink" href="#3-nyroxis-system-guardian" title="Link to this section">&para;</a></h2>
+<p>Der Plattformwächter — läuft still als Windows-Systemtray-Anwendung.</p>
+<h3 id="aufgaben_1">Aufgaben<a class="headerlink" href="#aufgaben_1" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Überwacht Nyroxis Agent und Nyroxis Intelligence alle 3 Sekunden</li>
+<li>Erkennt unerwartete Dienststopps und leitet Korrekturmaßnahmen ein</li>
+<li>Verwaltet geplante und bedarfsgesteuerte Datenbanksicherungen</li>
+<li>Validiert die HWID-basierte Lizenz offline (AES-GCM + HMAC-Überprüfung)</li>
+<li>Stoppt automatisch alle Dienste, wenn die Lizenz abläuft oder ungültig wird</li>
+<li>Prüft in konfigurierbaren Intervallen auf Plattform-Updates</li>
+</ul>
+<h3 id="eigenschaften_2">Eigenschaften<a class="headerlink" href="#eigenschaften_2" title="Link to this section">&para;</a></h3>
+<ul>
+<li>~6,5 MB RAM, ~0,1 % CPU</li>
+<li>Vollständig offline-Lizenzvalidierung — kein Internet erforderlich</li>
+<li>Entscheidend für Plattformresilienz und forensische Integrität</li>
+</ul>
+<hr />
+<h2 id="4-lokale-verschlusselte-datenbank">4. Lokale verschlüsselte Datenbank<a class="headerlink" href="#4-lokale-verschlusselte-datenbank" title="Link to this section">&para;</a></h2>
+<p>Nyroxis verwendet eine gesicherte SQLite-Datenbank, um alle erfassten Ereignisse zu speichern.</p>
 <h3 id="merkmale">Merkmale<a class="headerlink" href="#merkmale" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Vollständige Verschlüsselung im Ruhezustand  </li>
-<li>Strukturierte Ereignisablage  </li>
-<li>Integritätsschutz (Anti‑Tamper‑Design)  </li>
-<li>Optimiert für schnelle Abfragen und Zeitachsenaufbau  </li>
+<li>Vollständige Verschlüsselung im Ruhezustand (AES-256)</li>
+<li>Hash-verkettete Ereignisblöcke zur Manipulationserkennung</li>
+<li>Strukturierte Ereignisspeicherung mit Integritätsverifikation</li>
+<li>Optimiert für schnelle Suchabfragen und Zeitstrahlrekonstruktion</li>
+<li>Kein Cloud-Upload — der Benutzer ist alleiniger Eigentümer der Daten</li>
 </ul>
-<p>Es erfolgt keinerlei Cloud‑Upload — der Benutzer bleibt alleiniger Eigentümer der Daten.</p>
 <hr />
-<h2 id="3-nyroxis-dashboard">3. Nyroxis Dashboard<a class="headerlink" href="#3-nyroxis-dashboard" title="Link to this section">&para;</a></h2>
-<p>Eine visuelle Oberfläche, die rohe Sicherheitsdaten verständlich aufbereitet.</p>
+<h2 id="5-nyroxis-dashboard">5. Nyroxis Dashboard<a class="headerlink" href="#5-nyroxis-dashboard" title="Link to this section">&para;</a></h2>
+<p>Eine visuelle Schnittstelle, die rohe Sicherheitsdaten in verwertbare Erkenntnisse umwandelt.</p>
 <h3 id="bietet">Bietet<a class="headerlink" href="#bietet" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Log‑Viewer mit Filter‑ und Suchfunktionen  </li>
-<li>Diagramme, Schweregradindikatoren und tägliche Zusammenfassungen  </li>
-<li>Korrelation und Ereignisgruppierung  </li>
-<li>Verständliche Erläuterungen zu verdächtigen Aktionen  </li>
+<li>Echtzeit-Ereignisüberwachung mit forensischer Suche und Filterung</li>
+<li>Visualisierung von Erkennungs-, Korrelations- und Kettenergebnissen</li>
+<li>Integrierte lokale KI/ML-Engine (Isolation Forest + statistische Analyse)</li>
+<li>Berichterstellung — PDF/CSV-Export</li>
+<li>Verwaltung von Datenbanksicherungen</li>
+<li>Mehrsprachige Oberfläche: Englisch, Französisch, Deutsch</li>
 </ul>
 <h3 id="zielgruppe">Zielgruppe<a class="headerlink" href="#zielgruppe" title="Link to this section">&para;</a></h3>
-<p>Sowohl nicht‑technische Benutzer als auch Cybersicherheitsprofis können es effektiv nutzen.</p>
+<p>Sowohl nicht-technische Benutzer als auch Cybersicherheitsprofis können es effektiv nutzen.</p>
 <hr />
-<h2 id="4-lokale-analyseengine">4. Lokale Analyse‑Engine<a class="headerlink" href="#4-lokale-analyseengine" title="Link to this section">&para;</a></h2>
-<p>Eine leichtgewichtige Engine, die für Intelligenz und Erkennung verantwortlich ist.</p>
+<h2 id="6-lokale-kiml-engine">6. Lokale KI/ML-Engine<a class="headerlink" href="#6-lokale-kiml-engine" title="Link to this section">&para;</a></h2>
+<p>Eine vollständig offline-fähige Anomalieerkennungs-Engine, die in das Dashboard eingebettet ist.</p>
 <h3 id="funktionen">Funktionen<a class="headerlink" href="#funktionen" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Verhaltensheuristiken  </li>
-<li>KI‑unterstützte Bewertung  </li>
-<li>Ereigniskorrelation  </li>
-<li>Erkennung verdächtiger Muster  </li>
+<li>Isolation-Forest-Algorithmus (100 Bäume, 256 Samples, 8 Verhaltensmerkmale)</li>
+<li>Z-Score-Statistikklassifizierung: Kritisch / Hoch / Mittel / Niedrig</li>
+<li>IQR-Ausreißererkennung, gleitende Durchschnitte, Spike-Erkennung</li>
+<li>Aufbau einer Verhaltensbasislinie und Abweichungs-Scoring</li>
+<li>Identifikation beitragender Merkmale für den Analysten-Kontext</li>
 </ul>
-<p>Alles erfolgt lokal, um den Datenschutz des Nutzers zu gewährleisten.</p>
-<hr />
-<h2 id="5-lizenzierung-verifikation-localfirst">5. Lizenzierung &amp; Verifikation (Local‑First)<a class="headerlink" href="#5-lizenzierung-verifikation-localfirst" title="Link to this section">&para;</a></h2>
-<p>Nyroxis kann Lizenzen sicher validieren, ohne persönliche Protokolle offenzulegen.</p>
-<h3 id="kernpunkte">Kernpunkte<a class="headerlink" href="#kernpunkte" title="Link to this section">&para;</a></h3>
-<ul>
-<li>Nur minimale Metadaten werden bei Bedarf ausgetauscht  </li>
-<li>Keine Ereignisdaten oder Protokolle werden jemals hochgeladen  </li>
-<li>Lizenzintegrität bleibt auch offline erhalten  </li>
-</ul>
-<hr />
-<h2 id="6-optionale-integrationen-zukunftsorientiert">6. Optionale Integrationen (Zukunftsorientiert)<a class="headerlink" href="#6-optionale-integrationen-zukunftsorientiert" title="Link to this section">&para;</a></h2>
-<p>Nyroxis unterstützt optionale Erweiterungen, ohne den Datenschutz zu beeinträchtigen.</p>
-<p>Potenzielle zukünftige Module:
-- Lokale Synchronisation zwischen vertrauenswürdigen Geräten<br />
-- Verschlüsselte Backups (ausschließlich durch Benutzerinitiation)<br />
-- Erweiterte Korrelationspakete  </p>
-<p>Diese bleiben optional und stets datenschutzfreundlich.</p>
+<p>Alles läuft lokal — keine Cloud, keine Telemetrie, kein Datenaustausch.</p>
 <hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Nyroxis besteht aus modularen, lokal‑orientierten Komponenten, die zusammenarbeiten, um Benutzern Sichtbarkeit auf Unternehmensniveau zu bieten — privat, einfach und effizient.</p>
+<p>Nyroxis besteht aus modularen, Local-First-Komponenten, die zusammenarbeiten, um Benutzern Sichtbarkeit und Erkennung auf Unternehmensebene zu bieten — privat, effizient und ohne Cloud-Abhängigkeit.</p>
 
 
 

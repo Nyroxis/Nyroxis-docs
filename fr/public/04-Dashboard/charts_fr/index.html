@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#graphiques-analyse" class="md-skip">
+        <a href="#graphiques-analyses" class="md-skip">
           Skip to content
         </a>
       
@@ -3326,10 +3326,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectif" class="md-nav__link">
+  <a href="#objectif-de-lanalyse-visuelle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectif
+        Objectif de l'analyse visuelle
       
     </span>
   </a>
@@ -3337,22 +3337,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-de-graphiques" class="md-nav__link">
+  <a href="#types-de-graphiques-disponibles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types de graphiques
+        Types de graphiques disponibles
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types de graphiques">
+    <nav class="md-nav" aria-label="Types de graphiques disponibles">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-frequence-des-evenements" class="md-nav__link">
+  <a href="#1-frequence-des-evenements-dans-le-temps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Fréquence des événements
+        1. Fréquence des événements dans le temps
       
     </span>
   </a>
@@ -3360,10 +3360,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sources-principales-devenements" class="md-nav__link">
+  <a href="#2-repartition-par-gravite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Sources principales d’événements
+        2. Répartition par gravité
       
     </span>
   </a>
@@ -3371,10 +3371,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-tendance-de-severite" class="md-nav__link">
+  <a href="#3-principales-sources-devenements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Tendance de sévérité
+        3. Principales sources d'événements
       
     </span>
   </a>
@@ -3382,10 +3382,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-indicateurs-speciaux" class="md-nav__link">
+  <a href="#4-tendance-de-detection-correlation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Indicateurs spéciaux
+        4. Tendance de détection &amp; corrélation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-tendance-du-score-danomalie-iaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tendance du score d'anomalie IA/ML
       
     </span>
   </a>
@@ -3401,7 +3412,7 @@
   <a href="#moteur-danalyse-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Moteur d’analyse local
+        Moteur d'analyse local
       
     </span>
   </a>
@@ -3409,21 +3420,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactivite" class="md-nav__link">
+  <a href="#confidentialite-fonctionnement-hors-ligne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ️ Interactivité
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#confidentialite-totale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Confidentialité totale
+        Confidentialité &amp; fonctionnement hors ligne
       
     </span>
   </a>
@@ -8779,62 +8779,56 @@
   
 
 
-<h1 id="graphiques-analyse">Graphiques &amp; Analyse<a class="headerlink" href="#graphiques-analyse" title="Link to this section">&para;</a></h1>
-<p>La section Graphiques &amp; Analyse du Dashboard Nyroxis transforme les événements de sécurité en visualisations claires, permettant de comprendre rapidement les tendances et anomalies.<br />
-Toutes les analyses sont générées localement pour préserver la confidentialité.</p>
+<h1 id="graphiques-analyses">Graphiques &amp; Analyses<a class="headerlink" href="#graphiques-analyses" title="Link to this section">&para;</a></h1>
+<p>La section Graphiques &amp; Analyses du tableau de bord Nyroxis transforme les événements de sécurité bruts en insights visuels, aidant les utilisateurs à comprendre rapidement les tendances, les anomalies et les risques potentiels.
+Toutes les analyses sont générées localement, préservant une confidentialité totale.</p>
 <hr />
-<h2 id="objectif">Objectif<a class="headerlink" href="#objectif" title="Link to this section">&para;</a></h2>
-<p>Les graphiques permettent de répondre immédiatement à des questions essentielles :
-- L’activité augmente-t-elle ou diminue-t-elle ?<br />
-- Y a-t-il des pics inhabituels ?<br />
-- Quels types d’événements sont les plus fréquents ?<br />
-- Peut-on identifier des modèles suspects récurrents ?  </p>
-<p>Les données complexes deviennent lisibles visuellement.</p>
+<h2 id="objectif-de-lanalyse-visuelle">Objectif de l'analyse visuelle<a class="headerlink" href="#objectif-de-lanalyse-visuelle" title="Link to this section">&para;</a></h2>
+<p>Les graphiques aident les utilisateurs à répondre immédiatement aux questions clés :
+- L'activité augmente-t-elle ou diminue-t-elle au fil du temps ?
+- Y a-t-il des pics inhabituels dans les processus ou le trafic réseau ?
+- Quelles catégories d'événements surviennent le plus souvent ?
+- Comment les résultats de détection et de corrélation sont-ils répartis par gravité ?
+- Y a-t-il des modèles suspects récurrents au fil du temps ?</p>
+<p>Les visuels rendent les données de sécurité complexes immédiatement compréhensibles.</p>
 <hr />
-<h2 id="types-de-graphiques">Types de graphiques<a class="headerlink" href="#types-de-graphiques" title="Link to this section">&para;</a></h2>
-<h3 id="1-frequence-des-evenements"><strong>1. Fréquence des événements</strong><a class="headerlink" href="#1-frequence-des-evenements" title="Link to this section">&para;</a></h3>
-<p>Affichage par :
-- Heure<br />
-- Jour<br />
-- Semaine  </p>
-<p>Permet d’identifier pics et périodes anormales.</p>
+<h2 id="types-de-graphiques-disponibles">Types de graphiques disponibles<a class="headerlink" href="#types-de-graphiques-disponibles" title="Link to this section">&para;</a></h2>
+<h3 id="1-frequence-des-evenements-dans-le-temps">1. Fréquence des événements dans le temps<a class="headerlink" href="#1-frequence-des-evenements-dans-le-temps" title="Link to this section">&para;</a></h3>
+<p>Affiche le nombre d'événements survenant par heure, par jour et par semaine.
+Utile pour repérer les pics, les rafales d'activité ou les périodes de calme inattendues pouvant indiquer qu'un élément a été désactivé.</p>
+<h3 id="2-repartition-par-gravite">2. Répartition par gravité<a class="headerlink" href="#2-repartition-par-gravite" title="Link to this section">&para;</a></h3>
+<p>Décomposition visuelle des événements par niveau de gravité : Critique, Élevé, Avertissement, Info.
+Aide les utilisateurs à voir le profil de risque global en un coup d'œil.</p>
+<h3 id="3-principales-sources-devenements">3. Principales sources d'événements<a class="headerlink" href="#3-principales-sources-devenements" title="Link to this section">&para;</a></h3>
+<p>Met en évidence les processus, fichiers ou points de terminaison réseau qui génèrent le plus d'événements :
+- Processus les plus actifs
+- Fichiers les plus consultés
+- Connexions réseau les plus fréquentes</p>
+<h3 id="4-tendance-de-detection-correlation">4. Tendance de détection &amp; corrélation<a class="headerlink" href="#4-tendance-de-detection-correlation" title="Link to this section">&para;</a></h3>
+<p>Suit l'évolution des correspondances de règles dans le temps :
+- Résultats de détection
+- Résultats de corrélation
+- Résultats de chaîne</p>
+<p>Aide les utilisateurs à détecter les schémas d'escalade avant qu'une compromission complète ne survienne.</p>
+<h3 id="5-tendance-du-score-danomalie-iaml">5. Tendance du score d'anomalie IA/ML<a class="headerlink" href="#5-tendance-du-score-danomalie-iaml" title="Link to this section">&para;</a></h3>
+<p>Visualise la sortie du moteur Isolation Forest local dans le temps :
+- Évolution du score d'anomalie
+- Classifications de gravité : Critique / Élevé / Moyen / Faible
+- Événements de pic par rapport à la ligne de base comportementale</p>
 <hr />
-<h3 id="2-sources-principales-devenements"><strong>2. Sources principales d’événements</strong><a class="headerlink" href="#2-sources-principales-devenements" title="Link to this section">&para;</a></h3>
-<p>Met en avant les processus, fichiers ou endpoints réseau les plus actifs.</p>
+<h2 id="moteur-danalyse-local">Moteur d'analyse local<a class="headerlink" href="#moteur-danalyse-local" title="Link to this section">&para;</a></h2>
+<p>Tous les graphiques sont alimentés par le moteur d'analyse local :
+- Pas de cloud
+- Pas d'APIs externes
+- Tous les calculs restent sur l'appareil</p>
+<p>Les graphiques sont générés directement depuis la base de données locale chiffrée et la sortie du moteur IA/ML.</p>
 <hr />
-<h3 id="3-tendance-de-severite"><strong>3. Tendance de sévérité</strong><a class="headerlink" href="#3-tendance-de-severite" title="Link to this section">&para;</a></h3>
-<p>Évolution dans le temps des :
-- Informations<br />
-- Avertissements<br />
-- Activités critiques  </p>
-<p>Aide à détecter une escalade.</p>
-<hr />
-<h3 id="4-indicateurs-speciaux"><strong>4. Indicateurs spéciaux</strong><a class="headerlink" href="#4-indicateurs-speciaux" title="Link to this section">&para;</a></h3>
-<p>Graphiques dédiés :
-- Chaînes de processus suspects<br />
-- Échecs de connexion répétés<br />
-- Accès à des zones sensibles<br />
-- Événements liés aux privilèges  </p>
-<hr />
-<h2 id="moteur-danalyse-local">Moteur d’analyse local<a class="headerlink" href="#moteur-danalyse-local" title="Link to this section">&para;</a></h2>
-<p>Tout est traité localement :
-- Pas de cloud<br />
-- Pas d’API externe<br />
-- Aucune fuite de données  </p>
-<p>Les graphiques sont générés directement à partir de la base chiffrée.</p>
-<hr />
-<h2 id="interactivite">️ Interactivité<a class="headerlink" href="#interactivite" title="Link to this section">&para;</a></h2>
-<p>Les graphiques permettent :
-- Survol pour détails<br />
-- Zoom (optionnel)<br />
-- Filtrage par période<br />
-- Sélection de catégories  </p>
-<hr />
-<h2 id="confidentialite-totale">Confidentialité totale<a class="headerlink" href="#confidentialite-totale" title="Link to this section">&para;</a></h2>
-<p>Les données restent toujours sur l’appareil.</p>
+<h2 id="confidentialite-fonctionnement-hors-ligne">Confidentialité &amp; fonctionnement hors ligne<a class="headerlink" href="#confidentialite-fonctionnement-hors-ligne" title="Link to this section">&para;</a></h2>
+<p>Rien n'est envoyé à des services externes — jamais.
+Les analyses sont calculées et rendues localement à partir d'événements chiffrés, entièrement hors ligne.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Les Graphiques &amp; Analyse offrent une compréhension visuelle et privée de l’activité système, permettant d’identifier anomalies et tendances rapidement.</p>
+<p>Graphiques &amp; Analyses offrent un moyen visuel et respectueux de la vie privée pour comprendre l'activité du système, suivre les tendances de détection, surveiller les résultats IA/ML et obtenir une vue immédiate de la posture de sécurité de l'appareil.</p>
 
 
 

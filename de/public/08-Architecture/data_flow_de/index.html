@@ -33,7 +33,7 @@
     
     
       
-        <title>Datenfluss - Nyroxis Documentation</title>
+        <title>Datenfluss — Übergeordnete Übersicht - Nyroxis Documentation</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#datenfluss" class="md-skip">
+        <a href="#datenfluss-ubergeordnete-ubersicht" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Datenfluss
+              Datenfluss — Übergeordnete Übersicht
             
           </span>
         </div>
@@ -8574,53 +8574,92 @@
   
 
 
-<h1 id="datenfluss">Datenfluss<a class="headerlink" href="#datenfluss" title="Link to this section">&para;</a></h1>
-<p>Der Datenfluss in Nyroxis ist klar strukturiert und vollständig lokal.<br />
-Alle sicherheitsrelevanten Ereignisse werden gesammelt, verschlüsselt, analysiert und visualisiert — ohne jemals das Gerät zu verlassen.</p>
-<h2 id="1-erfassung">1. Erfassung<a class="headerlink" href="#1-erfassung" title="Link to this section">&para;</a></h2>
-<p>Der Nyroxis Agent sammelt:
-- Prozessaktivität<br />
-- Dateioperationen<br />
-- Netzwerkanfragen<br />
-- Berechtigungsänderungen<br />
-- Systemereignisse  </p>
-<p>Alles wird in Echtzeit erfasst.</p>
-<h2 id="2-verschlusselung">2. Verschlüsselung<a class="headerlink" href="#2-verschlusselung" title="Link to this section">&para;</a></h2>
-<p>Vor der Speicherung werden Daten:
-- sofort verschlüsselt<br />
-- niemals im Klartext abgelegt<br />
-- durch verknüpfte Hash-Blöcke geschützt  </p>
-<h2 id="3-speicherung">3. Speicherung<a class="headerlink" href="#3-speicherung" title="Link to this section">&para;</a></h2>
-<p>Die verschlüsselten Ereignisse werden in der lokalen Datenbank abgelegt:
-- offline<br />
-- manipulationsresistent<br />
-- vollständig privat  </p>
-<h2 id="4-analyse">4. Analyse<a class="headerlink" href="#4-analyse" title="Link to this section">&para;</a></h2>
-<p>Die Analyse erfolgt durch:
-- die lokale Analyse-Engine<br />
-- das KI-Modul NyXIA<br />
-- Rule Matching<br />
-- Korrelationen  </p>
-<p>Ziel ist das Erkennen von:
-- Anomalien<br />
-- Sequenzen<br />
-- Risiken<br />
-- Mustern  </p>
-<h2 id="5-visualisierung">5. Visualisierung<a class="headerlink" href="#5-visualisierung" title="Link to this section">&para;</a></h2>
-<p>Das Dashboard zeigt:
-- Logs<br />
-- Diagramme<br />
-- Schweregrade<br />
-- Szenarien<br />
-- KI-Erklärungen  </p>
-<h2 id="6-kontrolle-durch-den-benutzer">6. Kontrolle durch den Benutzer<a class="headerlink" href="#6-kontrolle-durch-den-benutzer" title="Link to this section">&para;</a></h2>
-<p>Der Benutzer kann jederzeit:
-- Daten zurücksetzen<br />
-- Ereignisse durchsuchen<br />
-- Regeln konfigurieren<br />
-- Offline-Betrieb überprüfen  </p>
+<h1 id="datenfluss-ubergeordnete-ubersicht">Datenfluss — Übergeordnete Übersicht<a class="headerlink" href="#datenfluss-ubergeordnete-ubersicht" title="Link to this section">&para;</a></h1>
+<p>Dieser Abschnitt erklärt, wie Daten innerhalb von Nyroxis fließen — von der Ereigniserfassung über die KI-Analyse bis zur Dashboard-Anzeige — während sie an jedem Schritt vollständig verschlüsselt, offline und privat bleiben.</p>
+<hr />
+<h2 id="1-ereigniserfassung-nyroxis-agent">1. Ereigniserfassung (Nyroxis Agent)<a class="headerlink" href="#1-ereigniserfassung-nyroxis-agent" title="Link to this section">&para;</a></h2>
+<p>Der Fluss beginnt mit Nyroxis Agent, der überwacht:
+- Prozesse und Dienste
+- Netzwerkverbindungen und Datenverkehrs-Metadaten
+- Dateisystemoperationen und Registrierungsänderungen
+- Berechtigungsaktionen
+- Windows-Ereignisprotokolleinträge (Sicherheit, System, Anwendung)
+- PowerShell- und Skriptausführungen</p>
+<p>Jedes Ereignis wird <strong>in Echtzeit</strong> erfasst.</p>
+<p>Unmittelbar nach der Erfassung:
+- Das Ereignis wird normalisiert und mit Kontext angereichert
+- Verschlüsselt mit dem lokalen, vom HWID des Geräts abgeleiteten Schlüssel (AES-256)
+- Für die Speicherung vorbereitet</p>
+<p>Kein Klartext berührt jemals die Festplatte.</p>
+<hr />
+<h2 id="2-verschlusselte-speicherung-lokale-datenbank">2. Verschlüsselte Speicherung (Lokale Datenbank)<a class="headerlink" href="#2-verschlusselte-speicherung-lokale-datenbank" title="Link to this section">&para;</a></h2>
+<p>Nach der Verschlüsselung werden Ereignisse geschrieben in:
+- Die sichere lokale SQLite-Datenbank
+- Hash-verkettete Ereignisstrukturen
+- Geschützte Schreibpfade</p>
+<p>Jeder Eintrag enthält:
+- Zeitstempel
+- Verschlüsselte Nutzlast
+- Integritäts-Hash
+- Sequenziellen Index, verknüpft mit dem vorherigen Block
+- Metadaten, die für die Regelauswertung und KI-Analyse erforderlich sind</p>
+<p>Alle Daten verbleiben auf dem Gerät des Benutzers — niemals synchronisiert oder hochgeladen.</p>
+<hr />
+<h2 id="3-regelauswertung-nyroxis-intelligence">3. Regelauswertung (Nyroxis Intelligence)<a class="headerlink" href="#3-regelauswertung-nyroxis-intelligence" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence liest aus der verschlüsselten Datenbank und bewertet Ereignisse auf drei Ebenen:
+- <strong>27 Erkennungsregeln</strong> — Mustererkennung einzelner Ereignisse
+- <strong>12 Korrelationsregeln</strong> — Multi-Ereignis-Muster über Zeit und Quellen hinweg
+- <strong>2 Kettenregeln</strong> — Erkennung mehrstufiger Angriffssequenzen</p>
+<p>Wenn eine Regel ausgelöst wird:
+- Wird sofort eine Warnung ausgelöst
+- Der Befund wird in eine dedizierte Erkennungsdatenbank geschrieben
+- Der Benutzer wird über das Dashboard benachrichtigt</p>
+<hr />
+<h2 id="4-lokale-kiml-verarbeitung">4. Lokale KI/ML-Verarbeitung<a class="headerlink" href="#4-lokale-kiml-verarbeitung" title="Link to this section">&para;</a></h2>
+<p>Parallel dazu liest die KI/ML-Engine Ereignisse aus der Datenbank:
+- Nur im Arbeitsspeicher entschlüsselt — niemals im Klartext zurückgeschrieben
+- Verarbeitet durch den Isolation Forest-Algorithmus
+- Ausgewertet durch Z-Score-, IQR- und Spitzenwert-Erkennungsmethoden</p>
+<p>Ausgaben:
+- Anomalie-Score (0,0–1,0)
+- Schweregrad-Klassifizierung
+- Beitragende Merkmale mit Z-Score-Werten
+- Aktualisierung der Verhaltens-Baseline</p>
+<p>Kein Teil der KI erfordert Cloud-Zugang oder externe Kommunikation.</p>
+<hr />
+<h2 id="5-dashboard-anzeige-lokale-benutzeroberflache">5. Dashboard-Anzeige (Lokale Benutzeroberfläche)<a class="headerlink" href="#5-dashboard-anzeige-lokale-benutzeroberflache" title="Link to this section">&para;</a></h2>
+<p>Das Dashboard ruft ausschließlich ab:
+- Im Arbeitsspeicher entschlüsselte Zusammenfassungen
+- Erkennungs-, Korrelations- und Kettenbefunde
+- KI/ML-Ergebnisse mit Aufschlüsselung der beitragenden Merkmale
+- Diagramme und Trenddaten</p>
+<p>Alle UI-Darstellungen erfolgen lokal ohne externe Kommunikation.</p>
+<hr />
+<h2 id="6-benutzeraktionen">6. Benutzeraktionen<a class="headerlink" href="#6-benutzeraktionen" title="Link to this section">&para;</a></h2>
+<p>Benutzer können:
+- Verschlüsselte Protokolle durchsuchen (während der Suche im Arbeitsspeicher entschlüsselt)
+- Befunde im PDF- oder CSV-Format exportieren
+- Daten jederzeit löschen oder zurücksetzen
+- Sicherungsvorgänge über den Sicherungsbereich verwalten
+- Einstellungen und Aufbewahrung über die Einstellungsansicht anpassen</p>
+<p>Alle Aktionen bleiben lokal und privat.</p>
+<hr />
+<h2 id="datenschutz-durch-architektur">Datenschutz durch Architektur<a class="headerlink" href="#datenschutz-durch-architektur" title="Link to this section">&para;</a></h2>
+<p>Jeder Schritt stellt sicher:
+- Keine Cloud-Nutzung
+- Keine Telemetrie
+- Kein Fernzugriff
+- Keine Online-Abhängigkeiten</p>
+<p>Nyroxis gewährleistet vollständige Privatsphäre durch Architektur — nicht nur durch Konfiguration.</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Der Datenfluss in Nyroxis stellt sicher, dass jede Phase — von Erfassung bis Analyse — privat, lokal und verschlüsselt bleibt.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ereignis erfasst      →  sofort verschlüsselt
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Sicher gespeichert    →  hash-verkettet, integritätsgeschützt
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Regelauswertung       →  27 Erkennung + 12 Korrelation + 2 Kette
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>KI/ML-Analyse         →  Isolation Forest + statistische Engine
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Lokal angezeigt       →  Dashboard, Forensik, Berichte
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Keine Cloud           →  kein Upload, keine Exposition, niemals
+</span></code></pre></div>
 
 
 

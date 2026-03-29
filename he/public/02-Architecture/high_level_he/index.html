@@ -7097,10 +7097,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-nyroxis-intelligence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. בסיס נתונים מקומי מוצפן
+        2. Nyroxis Intelligence
       
     </span>
   </a>
@@ -7108,10 +7108,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-nyroxis-dashboard" class="md-nav__link">
+  <a href="#3-nyroxis-system-guardian" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Nyroxis Dashboard
+        3. Nyroxis System Guardian
       
     </span>
   </a>
@@ -7119,21 +7119,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4-nyroxis-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. מנוע ניתוח מקומי
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. בדיקת רישוי (אופציונלי)
+        4. Nyroxis Dashboard
       
     </span>
   </a>
@@ -7149,7 +7138,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        תרשים זרימת מידע
+        זרימת נתונים ברמה גבוהה
       
     </span>
   </a>
@@ -7160,19 +7149,19 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        עקרונות תכנון
+        עקרונות עיצוב
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="עקרונות תכנון">
+    <nav class="md-nav" aria-label="עקרונות עיצוב">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        פרטיות תחילה
+        פרטיות כעיקרון מנחה
       
     </span>
   </a>
@@ -7183,7 +7172,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        פשטות ובהירות
+        שלמות פורנזית
       
     </span>
   </a>
@@ -7194,7 +7183,7 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        קל ומהיר
+        פעולה קלת משקל
       
     </span>
   </a>
@@ -7205,7 +7194,18 @@
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        עבודה מלאה אופליין
+        אבטחה מקומית עדיפה
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        יכולת הרחבה
       
     </span>
   </a>
@@ -7218,7 +7218,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8819,72 +8819,79 @@
 
 
 <h1 id="_1">סקירת ארכיטקטורה<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
-<p>Nyroxis מבוססת על ארכיטקטורה קלה וממוקדת פרטיות, המעניקה יכולות נראות ברמת ארגון — ללא תלות בענן.<br />
-הכול פועל באופן מקומי על המכשיר.</p>
+<p>Nyroxis בנויה על ארכיטקטורה קלת משקל המכוונת לפרטיות, שתוכננה לספק נראות וזיהוי ברמה ארגונית מבלי להסתמך על הענן.
+המערכת פועלת באופן מלא במכשיר המשתמש ומורכבת מארבעה רכיבים עצמאיים הפועלים יחד באופן מאובטח.</p>
 <hr />
 <h2 id="_2">רכיבים מרכזיים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<h3 id="1-nyroxis-agent"><strong>1. Nyroxis Agent</strong><a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h3>
-<p>סוכן קל משקל שמבצע:
-- איסוף אירועי אבטחה<br />
-- הצפנה ואחסון מקומי<br />
-- הגנת שלמות הלוגים<br />
-- עבודה מלאה ללא אינטרנט  </p>
-<h3 id="2"><strong>2. בסיס נתונים מקומי מוצפן</strong><a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
-<p>כל האירועים נשמרים ב:
-- אחסון מקומי מאובטח<br />
-- הצפנה מלאה במנוחה<br />
-- מבנה מותאם לניתוח מהיר  </p>
-<h3 id="3-nyroxis-dashboard"><strong>3. Nyroxis Dashboard</strong><a class="headerlink" href="#3-nyroxis-dashboard" title="Link to this section">&para;</a></h3>
-<p>ממשק משתמש ברור המציג:
-- לוגים והתראות<br />
-- גרפים וטיימליינים<br />
-- רמות חומרה<br />
-- הסברים פשוטים  </p>
-<h3 id="4"><strong>4. מנוע ניתוח מקומי</strong><a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
-<p>כולל:
-- היגיון התנהגותי<br />
-- דירוג AI<br />
-- קורלציה בין אירועים<br />
-הכול מתבצע <strong>מקומית</strong>.</p>
-<h3 id="5"><strong>5. בדיקת רישוי (אופציונלי)</strong><a class="headerlink" href="#5" title="Link to this section">&para;</a></h3>
-<p>מאמתת רשיון ללא שליחת לוגים או נתונים רגישים.</p>
+<h3 id="1-nyroxis-agent">1. Nyroxis Agent<a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h3>
+<p>מנטר נקודת קצה קל משקל שמבצע:
+- איסוף אירועים רלוונטיים לאבטחה ממספר ערוצי מערכת
+- נרמולם והצפנתם מיידית בעת הלכידה
+- אחסון הכל במסד נתונים מקומי עמיד בפני חבלה
+- פעולה 100% לא מקוונת — ~57 מגה-בייט RAM, ~0.1% CPU</p>
+<h3 id="2-nyroxis-intelligence">2. Nyroxis Intelligence<a class="headerlink" href="#2-nyroxis-intelligence" title="Link to this section">&para;</a></h3>
+<p>מנוע זיהוי וקורלציה במהירות גבוהה שמבצע:
+- הפעלת 27 כללי זיהוי על אירועים בודדים
+- הרצת 12 כללי קורלציה על אירועים קשורים לאורך זמן
+- הרצת 2 כללי שרשרת לזיהוי רצפי תקיפה רב-שלביים
+- הפעלת התראות מיידיות בכל התאמה לכלל
+- קבלת כללים מותאמים אישית מאנשי אבטחה
+- ~87 מגה-בייט RAM, ~1.8% CPU</p>
+<h3 id="3-nyroxis-system-guardian">3. Nyroxis System Guardian<a class="headerlink" href="#3-nyroxis-system-guardian" title="Link to this section">&para;</a></h3>
+<p>שומר שקט בשורת המשימות שמבצע:
+- ניטור Nyroxis Agent ו-Intelligence כל 3 שניות
+- ניהול גיבויים ואימות רישיון מבוסס HWID (מקומי לחלוטין)
+- בדיקת עדכונים אוטומטית
+- עצירה אוטומטית של שירותים אם הרישיון פג
+- ~6.5 מגה-בייט RAM, ~0.1% CPU</p>
+<h3 id="4-nyroxis-dashboard">4. Nyroxis Dashboard<a class="headerlink" href="#4-nyroxis-dashboard" title="Link to this section">&para;</a></h3>
+<p>ממשק ברור ואינטואיטיבי שמבצע:
+- הצגת אירועים, זיהויים, קורלציות ושרשראות
+- מתן חיפוש פורנזי, תרשימים ודוחות PDF/CSV
+- כולל מנוע AI/ML מקומי (Isolation Forest + ניתוח סטטיסטי)
+- תמיכה באנגלית, צרפתית וגרמנית</p>
 <hr />
-<h2 id="_3">תרשים זרימת מידע<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ אירועי מערכת ]  
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓  
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]  
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓ (מוצפן)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ בסיס נתונים מוצפן ]  
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓  
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ מנוע ניתוח ]  
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓  
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Dashboard ]
+<h2 id="_3">זרימת נתונים ברמה גבוהה<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ אירועי מערכת ]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← איסוף, נרמול, הצפנה
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ מסד נתונים מקומי מוצפן ] ← AES-256, SQLite, מקושר בהאש
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 זיהוי + 12 קורלציה + 2 כללי שרשרת
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Nyroxis Dashboard ]      ← נראות, AI/ML, פורנזיקה, דיווח
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↑
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis System Guardian ] ← מנטר, מגבה, מאמת רישיון
 </span></code></pre></div>
-<p>שום מידע לא נשלח החוצה.</p>
+<p>בשום שלב אין יומנים או נתונים רגישים המועלים לשרתים חיצוניים.</p>
 <hr />
-<h2 id="_4">עקרונות תכנון<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
-<h3 id="_5"><strong>פרטיות תחילה</strong><a class="headerlink" href="#_5" title="Link to this section">&para;</a></h3>
+<h2 id="_4">עקרונות עיצוב<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
+<h3 id="_5">פרטיות כעיקרון מנחה<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h3>
 <ul>
-<li>ללא ענן  </li>
-<li>הצפנה מקומית  </li>
-<li>שליטה מלאה למשתמש  </li>
+<li>אין קליטת נתונים בענן</li>
+<li>הצפנה מקומית בעת הלכידה</li>
+<li>המשתמש שומר על שליטה מלאה בכל עת</li>
 </ul>
-<h3 id="_6"><strong>פשטות ובהירות</strong><a class="headerlink" href="#_6" title="Link to this section">&para;</a></h3>
+<h3 id="_6">שלמות פורנזית<a class="headerlink" href="#_6" title="Link to this section">&para;</a></h3>
 <ul>
-<li>ארכיטקטורה נקייה  </li>
-<li>מתאימה גם למשפחות וגם למקצוענים  </li>
+<li>יומנים מוצפנים AES-256</li>
+<li>בלוקי אירועים מקושרים בהאש</li>
+<li>אחסון עמיד בפני חבלה המתאים להליכים משפטיים</li>
 </ul>
-<h3 id="_7"><strong>קל ומהיר</strong><a class="headerlink" href="#_7" title="Link to this section">&para;</a></h3>
-<p>פועל מצוין גם על מחשבים ישנים.</p>
-<h3 id="_8"><strong>עבודה מלאה אופליין</strong><a class="headerlink" href="#_8" title="Link to this section">&para;</a></h3>
-<p>אין צורך באינטרנט עבור:
-- ניטור<br />
-- ניתוח<br />
-- Dashboard<br />
-- קורלציה  </p>
+<h3 id="_7">פעולה קלת משקל<a class="headerlink" href="#_7" title="Link to this section">&para;</a></h3>
+<p>בנויה לפעול בצורה חלקה על מחשבים ניידים ותחנות עבודה אישיות מבלי לפגוע בפרודוקטיביות היומיומית.</p>
+<h3 id="_8">אבטחה מקומית עדיפה<a class="headerlink" href="#_8" title="Link to this section">&para;</a></h3>
+<p>אין צורך בחיבור לאינטרנט עבור:
+- ניטור וזיהוי
+- ניתוח AI/ML
+- שימוש ב-Dashboard
+- אימות רישיון</p>
+<h3 id="_9">יכולת הרחבה<a class="headerlink" href="#_9" title="Link to this section">&para;</a></h3>
+<p>אנשי אבטחה יכולים לכתוב ולפרוס כללי זיהוי, קורלציה ושרשרת מותאמים אישית מבלי לשנות את המערכת המרכזית.</p>
 <hr />
-<h2 id="_9">סיכום<a class="headerlink" href="#_9" title="Link to this section">&para;</a></h2>
-<p>Nyroxis מציעה ארכיטקטורה מודרנית, מאובטחת ומקומית — ומביאה יכולות נראות מקצועיות למכשירים אישיים.</p>
+<h2 id="_10">סיכום<a class="headerlink" href="#_10" title="Link to this section">&para;</a></h2>
+<p>Nyroxis מספקת ארכיטקטורה מודרנית, מודולרית ומוצקה פורנזית המביאה נראות וזיהוי ברמה מקצועית למכשירים אישיים — לחלוטין ללא חיבור לאינטרנט, תוך כיבוד מלא של פרטיות המשתמש.</p>
 
 
 

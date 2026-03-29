@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#agent-ubersicht" class="md-skip">
+        <a href="#nyroxis-agent-ubersicht" class="md-skip">
           Skip to content
         </a>
       
@@ -5143,10 +5143,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aufgabenbereich" class="md-nav__link">
+  <a href="#was-der-agent-tut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Aufgabenbereich
+        Was der Agent tut
       
     </span>
   </a>
@@ -5154,10 +5154,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#eigenschaften" class="md-nav__link">
+  <a href="#erfassungs-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Eigenschaften
+        Erfassungs-Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenschutzorientierter-betrieb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datenschutzorientierter Betrieb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leichtgewichtig-durch-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leichtgewichtig durch Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widerstandsfahig-und-manipulationsbewusst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widerstandsfähig und manipulationsbewusst
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funktioniert-vollstandig-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funktioniert vollständig offline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zusammenfassung
       
     </span>
   </a>
@@ -8685,22 +8740,62 @@
   
 
 
-<h1 id="agent-ubersicht">Agent – Übersicht<a class="headerlink" href="#agent-ubersicht" title="Link to this section">&para;</a></h1>
-<p>Der Nyroxis Agent ist die zentrale Komponente, die auf dem Gerät des Benutzers ausgeführt wird und alle sicherheitsrelevanten Aktivitäten lokal überwacht, analysiert und verschlüsselt speichert.<br />
-Er wurde so entwickelt, dass er leichtgewichtig, offline-fähig und vollständig datenschutzorientiert arbeitet.</p>
-<h2 id="aufgabenbereich">Aufgabenbereich<a class="headerlink" href="#aufgabenbereich" title="Link to this section">&para;</a></h2>
-<p>Der Agent ist für folgende Kernfunktionen verantwortlich:
-- Erfassung von System-, Prozess-, Netzwerk- und Dateiaktivitäten<br />
-- Sofortige Verschlüsselung aller erfassten Ereignisse<br />
-- Schutz der Integrität der gespeicherten Daten<br />
-- Übermittlung relevanter Daten an die lokale Analyse-Engine<br />
-- Bereitstellung einer manipulationsresistenten Überwachungsgrundlage  </p>
-<h2 id="eigenschaften">Eigenschaften<a class="headerlink" href="#eigenschaften" title="Link to this section">&para;</a></h2>
-<ul>
-<li>Minimaler Ressourcenverbrauch  </li>
-<li>Vollständig lokal, keine Cloud-Abhängigkeit  </li>
-<li>Robust und stabil im Dauerbetrieb  </li>
-</ul>
+<h1 id="nyroxis-agent-ubersicht">Nyroxis Agent — Übersicht<a class="headerlink" href="#nyroxis-agent-ubersicht" title="Link to this section">&para;</a></h1>
+<p>Der Nyroxis Agent ist die zentrale Überwachungs- und Erfassungskomponente der Plattform.
+Er läuft lokal auf dem Gerät des Benutzers, erfasst und normalisiert dabei still Sicherheitsereignisse, verschlüsselt sie und speichert sie in einer manipulationsresistenten lokalen Datenbank — alles mit minimalem Ressourcenverbrauch.</p>
+<hr />
+<h2 id="was-der-agent-tut">Was der Agent tut<a class="headerlink" href="#was-der-agent-tut" title="Link to this section">&para;</a></h2>
+<p>Der Agent beobachtet kontinuierlich die Systemaktivität und erstellt eine strukturierte, verschlüsselte Sicherheitszeitlinie.</p>
+<p>Er überwacht:
+- Prozesserstellung und -beendigung
+- Netzwerkverbindungen und Datenverkehrsmetadaten
+- Dateiänderungen und Registrierungsänderungen
+- Berechtigungsaktionen und Zugriffsversuche auf Anmeldeinformationen
+- System- und Sicherheitsereignisse (Windows-Ereignisprotokolle)
+- PowerShell- und Skriptausführung</p>
+<p>Alle Ereignisse werden <strong>privat und lokal</strong> erfasst — nichts wird extern übertragen.</p>
+<hr />
+<h2 id="erfassungs-pipeline">Erfassungs-Pipeline<a class="headerlink" href="#erfassungs-pipeline" title="Link to this section">&para;</a></h2>
+<ol>
+<li><strong>Erfassung</strong> — Ereignisse werden gleichzeitig aus mehreren Systemkanälen aufgenommen</li>
+<li><strong>Normalisierung</strong> — Rohdaten werden angereichert und für die Erkennungs-Engine standardisiert</li>
+<li><strong>Verschlüsselung</strong> — Die Nutzlast wird vor jedem Schreibvorgang mit AES-256 verschlüsselt</li>
+<li><strong>Speicherung</strong> — Verschlüsselte Ereignisse werden in die lokale SQLite-Datenbank geschrieben</li>
+<li><strong>Einspeisung</strong> — Daten fließen zur Nyroxis Intelligence für die Regelauswertung in Echtzeit</li>
+</ol>
+<hr />
+<h2 id="datenschutzorientierter-betrieb">Datenschutzorientierter Betrieb<a class="headerlink" href="#datenschutzorientierter-betrieb" title="Link to this section">&para;</a></h2>
+<p>Der Agent lädt niemals Protokolle hoch oder sendet Ereignisdaten an externe Server.
+Alles verbleibt auf dem Gerät und ist:
+- Im Moment der Erfassung verschlüsselt
+- Durch hash-verkettete Ereignisblöcke gegen Manipulation geschützt
+- In einer sicheren lokalen SQLite-Datenbank gespeichert
+- Jederzeit unter der alleinigen Kontrolle des Benutzers</p>
+<hr />
+<h2 id="leichtgewichtig-durch-design">Leichtgewichtig durch Design<a class="headerlink" href="#leichtgewichtig-durch-design" title="Link to this section">&para;</a></h2>
+<p>Der Agent ist für minimalen Ressourcenverbrauch optimiert:
+- ~57 MB RAM
+- ~0,1 % CPU
+- Stiller Hintergrundbetrieb als Windows-Dienst
+- Geeignet für den Dauerbetrieb auf persönlichen Laptops ohne Beeinträchtigung der täglichen Produktivität</p>
+<hr />
+<h2 id="widerstandsfahig-und-manipulationsbewusst">Widerstandsfähig und manipulationsbewusst<a class="headerlink" href="#widerstandsfahig-und-manipulationsbewusst" title="Link to this section">&para;</a></h2>
+<p>Der Agent beinhaltet Schutzmechanismen, um sicherzustellen:
+- Erfasste Ereignisdaten können nicht unbemerkt verändert oder gelöscht werden
+- Angreifer können ihre Aktivitäten nicht still löschen
+- Hash-verkettete Ereignisblöcke decken jeden Lösch-, Änderungs- oder Injektionsversuch auf</p>
+<p>Nyroxis System Guardian überwacht den Betriebsstatus des Agents alle 3 Sekunden und ergreift Korrekturmaßnahmen, wenn der Dienst unerwartet stoppt.</p>
+<hr />
+<h2 id="funktioniert-vollstandig-offline">Funktioniert vollständig offline<a class="headerlink" href="#funktioniert-vollstandig-offline" title="Link to this section">&para;</a></h2>
+<p>Keine Internetverbindung erforderlich für:
+- Überwachung
+- Normalisierung und Verschlüsselung
+- Datenspeicherung
+- Einspeisung in Nyroxis Intelligence</p>
+<p>Nyroxis ist in isolierten oder air-gapped Umgebungen vollständig funktionsfähig.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
+<p>Der Nyroxis Agent bietet kontinuierliche, verschlüsselte Offline-Überwachung — gibt Benutzern Transparenz auf Unternehmensebene, ohne ihre Daten Dritten preiszugeben, und liefert forensisch-geeignete Beweise für rechtliche und behördliche Verfahren.</p>
 
 
 

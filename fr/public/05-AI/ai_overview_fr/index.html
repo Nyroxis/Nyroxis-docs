@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#moteur-ia-nyxia-vue-densemble" class="md-skip">
+        <a href="#moteur-ia-apprentissage-automatique-vue-densemble" class="md-skip">
           Skip to content
         </a>
       
@@ -3457,10 +3457,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectif-de-nyxia" class="md-nav__link">
+  <a href="#une-approche-differente-de-lia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectif de NyXIA
+        Une approche différente de l'IA
       
     </span>
   </a>
@@ -3468,10 +3468,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fonctionnement" class="md-nav__link">
+  <a href="#ce-que-le-moteur-ia-fournit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fonctionnement
+        Ce que le moteur IA fournit
       
     </span>
   </a>
@@ -3479,71 +3479,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#capacites-cles" class="md-nav__link">
+  <a href="#isolation-forest-algorithme-de-base" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capacités clés
+        Isolation Forest — Algorithme de base
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Capacités clés">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-analyse-par-sequences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Analyse par séquences
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-profils-comportementaux-locaux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Profils comportementaux locaux
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-modeles-ia-legers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Modèles IA légers
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-sans-cloud-sans-upload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Sans cloud, sans upload
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#confidentialite-totale" class="md-nav__link">
+  <a href="#8-caracteristiques-comportementales-analysees" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Confidentialité totale
+        8 caractéristiques comportementales analysées
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moteur-danalyse-statistique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moteur d'analyse statistique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#garantie-de-confidentialite-totale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Garantie de confidentialité totale
       
     </span>
   </a>
@@ -8768,65 +8740,126 @@
   
 
 
-<h1 id="moteur-ia-nyxia-vue-densemble">Moteur IA (NyXIA) — Vue d’ensemble<a class="headerlink" href="#moteur-ia-nyxia-vue-densemble" title="Link to this section">&para;</a></h1>
-<p>NyXIA est le moteur d’IA local de Nyroxis, conçu pour analyser les événements de sécurité <strong>sans envoyer aucune donnée vers le cloud</strong>.<br />
-Il apporte une détection comportementale avancée aux appareils personnels et professionnels tout en respectant la confidentialité.</p>
+<h1 id="moteur-ia-apprentissage-automatique-vue-densemble">Moteur IA &amp; Apprentissage automatique — Vue d'ensemble<a class="headerlink" href="#moteur-ia-apprentissage-automatique-vue-densemble" title="Link to this section">&para;</a></h1>
+<p>Le moteur IA/ML de Nyroxis est un système de détection d'anomalies entièrement local et hors ligne, intégré dans le tableau de bord.
+Il analyse les événements de sécurité sans envoyer de données vers le cloud, offrant une intelligence comportementale avec une confidentialité absolue.</p>
 <hr />
-<h2 id="objectif-de-nyxia">Objectif de NyXIA<a class="headerlink" href="#objectif-de-nyxia" title="Link to this section">&para;</a></h2>
-<p>NyXIA permet :
-- Analyse comportementale<br />
-- Détection d’anomalies<br />
-- Identification de modèles suspects<br />
-- Inférence locale légère<br />
-- Aucune fuite de données  </p>
+<h2 id="une-approche-differente-de-lia">Une approche différente de l'IA<a class="headerlink" href="#une-approche-differente-de-lia" title="Link to this section">&para;</a></h2>
+<p>La plupart des solutions de sécurité alimentées par IA s'appuient sur une infrastructure cloud — envoyant des données télémétriques vers des serveurs distants pour analyse.
+Nyroxis adopte l'approche opposée : chaque aspect du moteur IA s'exécute localement, sur l'appareil propre de l'utilisateur.
+Aucune donnée n'est transmise. Aucun service externe n'est consulté. Aucun profil comportemental ne quitte jamais la machine.</p>
+<p>Ce n'est pas une limitation — c'est un engagement architectural délibéré envers la confidentialité.</p>
 <hr />
-<h2 id="fonctionnement">Fonctionnement<a class="headerlink" href="#fonctionnement" title="Link to this section">&para;</a></h2>
-<p>NyXIA analyse :
-- Séquences de processus<br />
-- Comportements réseau<br />
-- Activité fichier<br />
-- Actions liées aux privilèges<br />
-- Modèles temporels  </p>
-<p>Il ne traite pas les événements isolément — il étudie des fenêtres d’activité pour révéler des comportements cachés.</p>
+<h2 id="ce-que-le-moteur-ia-fournit">Ce que le moteur IA fournit<a class="headerlink" href="#ce-que-le-moteur-ia-fournit" title="Link to this section">&para;</a></h2>
+<ul>
+<li>Détection d'anomalies comportementales via Isolation Forest</li>
+<li>Analyse statistique : Z-Score, IQR, moyennes mobiles, détection de pics</li>
+<li>Classification de gravité : Critique / Élevé / Moyen / Faible</li>
+<li>Identification des caractéristiques contributives — explique <em>pourquoi</em> quelque chose a été signalé</li>
+<li>Construction d'une ligne de base comportementale par appareil</li>
+</ul>
 <hr />
-<h2 id="capacites-cles">Capacités clés<a class="headerlink" href="#capacites-cles" title="Link to this section">&para;</a></h2>
-<h3 id="1-analyse-par-sequences"><strong>1. Analyse par séquences</strong><a class="headerlink" href="#1-analyse-par-sequences" title="Link to this section">&para;</a></h3>
-<p>Permet de détecter :
-- Attaques lentes<br />
-- Intrusions multi-étapes<br />
-- Techniquess de persistance<br />
-- Mouvement latéral  </p>
+<h2 id="isolation-forest-algorithme-de-base">Isolation Forest — Algorithme de base<a class="headerlink" href="#isolation-forest-algorithme-de-base" title="Link to this section">&para;</a></h2>
+<p>Au cœur du moteur se trouve une implémentation personnalisée de l'algorithme Isolation Forest, développée entièrement en Rust — aucune bibliothèque ML externe requise.</p>
+<p><strong>Fonctionnement :</strong>
+Isolation Forest construit une forêt d'arbres de décision aléatoires. Les événements anormaux sont statistiquement rares ou structurellement inhabituels — ils nécessitent moins de divisions pour être isolés et reçoivent donc un score d'anomalie plus élevé.</p>
+<p><strong>Implémentation :</strong>
+- 100 arbres d'isolation par cycle d'analyse
+- 256 échantillons maximum par arbre
+- 8 caractéristiques comportementales par fenêtre d'analyse
+- Score d'anomalie &gt; 0,6 déclenche une détection</p>
 <hr />
-<h3 id="2-profils-comportementaux-locaux"><strong>2. Profils comportementaux locaux</strong><a class="headerlink" href="#2-profils-comportementaux-locaux" title="Link to this section">&para;</a></h3>
-<p>NyXIA construit un profil propre à l’appareil :
-- Activité habituelle<br />
-- Processus fréquents<br />
-- Connexions typiques  </p>
-<p>Les écarts sont signalés comme anomalies.<br />
-Tout est stocké localement et chiffré.</p>
+<h2 id="8-caracteristiques-comportementales-analysees">8 caractéristiques comportementales analysées<a class="headerlink" href="#8-caracteristiques-comportementales-analysees" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre d'événements</td>
+<td>Total des événements dans la fenêtre d'analyse</td>
+</tr>
+<tr>
+<td>Sources uniques</td>
+<td>Nombre de sources d'événements distinctes</td>
+</tr>
+<tr>
+<td>Destinations uniques</td>
+<td>Nombre de destinations réseau distinctes</td>
+</tr>
+<tr>
+<td>Heure du jour</td>
+<td>Contexte temporel pour la ligne de base comportementale</td>
+</tr>
+<tr>
+<td>Jour de la semaine</td>
+<td>Reconnaissance de modèles hebdomadaires</td>
+</tr>
+<tr>
+<td>Événements par heure</td>
+<td>Normalisation du taux d'activité</td>
+</tr>
+<tr>
+<td>Ratio de nouvelles sources</td>
+<td>Proportion de sources jamais vues auparavant</td>
+</tr>
+<tr>
+<td>Ratio de nouvelles destinations</td>
+<td>Proportion de destinations jamais vues auparavant</td>
+</tr>
+</tbody>
+</table>
+<p>Toutes les caractéristiques sont normalisées via la standardisation z-score avant l'analyse.</p>
 <hr />
-<h3 id="3-modeles-ia-legers"><strong>3. Modèles IA légers</strong><a class="headerlink" href="#3-modeles-ia-legers" title="Link to this section">&para;</a></h3>
-<p>Optimisés pour :
-- Faible consommation CPU<br />
-- Inférence hors-ligne<br />
-- Peu de mémoire  </p>
+<h2 id="moteur-danalyse-statistique">Moteur d'analyse statistique<a class="headerlink" href="#moteur-danalyse-statistique" title="Link to this section">&para;</a></h2>
+<p>Fonctionnant en parallèle avec Isolation Forest :</p>
+<table>
+<thead>
+<tr>
+<th>Z-Score</th>
+<th>Gravité</th>
+<th>Confiance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 3,0</td>
+<td>Critique</td>
+<td>99,7 %</td>
+</tr>
+<tr>
+<td>&gt; 2,0</td>
+<td>Élevé</td>
+<td>95 %</td>
+</tr>
+<tr>
+<td>&gt; 1,5</td>
+<td>Moyen</td>
+<td>86 %</td>
+</tr>
+<tr>
+<td>&gt; 1,0</td>
+<td>Faible</td>
+<td>68 %</td>
+</tr>
+</tbody>
+</table>
+<p>Méthodes supplémentaires : détection des valeurs aberrantes IQR, moyenne mobile, moyenne mobile exponentielle, détection de pics, analyse de corrélation.</p>
 <hr />
-<h3 id="4-sans-cloud-sans-upload"><strong>4. Sans cloud, sans upload</strong><a class="headerlink" href="#4-sans-cloud-sans-upload" title="Link to this section">&para;</a></h3>
-<p>NyXIA ne :
-- Transmet aucune donnée<br />
-- N’utilise aucune API externe ( facultative ) 
-- N’envoie aucun log  </p>
-<p>Tout est local.</p>
-<hr />
-<h2 id="confidentialite-totale">Confidentialité totale<a class="headerlink" href="#confidentialite-totale" title="Link to this section">&para;</a></h2>
-<p>NyXIA fonctionne :
-- 100% hors‑ligne<br />
-- Avec données chiffrées<br />
-- Sans télémétrie<br />
-- Sans profilage utilisateur  </p>
+<h2 id="garantie-de-confidentialite-totale">Garantie de confidentialité totale<a class="headerlink" href="#garantie-de-confidentialite-totale" title="Link to this section">&para;</a></h2>
+<p>Le moteur IA :
+- Fonctionne entièrement hors ligne
+- Traite uniquement des données d'événements chiffrées localement
+- N'envoie jamais de données à des serveurs
+- Ne télécharge jamais de profils comportementaux
+- N'utilise jamais d'inférence cloud ou d'APIs en ligne</p>
+<p>Le moteur IA appartient entièrement à l'appareil de l'utilisateur.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>NyXIA apporte une détection comportementale avancée, privée et hors-ligne — sans dépendance cloud.</p>
+<p>Le moteur IA/ML de Nyroxis fournit une détection d'anomalies Isolation Forest sur l'appareil combinée à une analyse statistique — offrant une intelligence comportementale de qualité cloud sans compromis sur la vie privée.</p>
 
 
 

@@ -7577,10 +7577,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#-ai" class="md-nav__link">
     <span class="md-ellipsis">
       
-        מטרת המודול
+        מטרת זיהויי ה-AI
       
     </span>
   </a>
@@ -7588,22 +7588,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#ai_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        סוגי זיהויים
+        סוגי זיהויי AI
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="סוגי זיהויים">
+    <nav class="md-nav" aria-label="סוגי זיהויי AI">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. זיהוי מבוסס אנומליה
+        1. זיהויים מבוססי חריגות
       
     </span>
   </a>
@@ -7611,10 +7611,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-z-score" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. זיהוי מבוסס רצפים
+        2. חריגים סטטיסטיים (Z-Score)
       
     </span>
   </a>
@@ -7625,7 +7625,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. דפוסים נדירים
+        3. זיהויי עליות חדות
       
     </span>
   </a>
@@ -7636,7 +7636,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. פעילות חשודה מתמשכת
+        4. חריגות מתמשכות
       
     </span>
   </a>
@@ -7649,7 +7649,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         פרטי זיהוי
@@ -7660,10 +7660,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#100" class="md-nav__link">
     <span class="md-ellipsis">
       
-        פרטיות מלאה
+        100% מקומי ופרטי
       
     </span>
   </a>
@@ -7671,7 +7671,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8769,56 +8769,63 @@
 
 
 <h1 id="ai">זיהויי AI<a class="headerlink" href="#ai" title="Link to this section">&para;</a></h1>
-<p>מודול זיהויי ה-AI מציג התראות שמנגנון NyXIA מפיק כאשר הוא מזהה פעילות חשודה או חריגה.<br />
-כל הזיהויים מתבצעים מקומית — ללא ענן.</p>
+<p>תצוגת זיהויי ה-AI מציגה חריגות שזוהו על ידי מנוע ה-AI/ML המקומי — כאשר הוא מזהה פעילות חריגה או חשודה על המכשיר המבוססת על ניתוח התנהגותי וניקוד סטטיסטי.
+כל הזיהויים נוצרים באופן מקומי, ללא עיבוד ענן או שיתוף נתונים.</p>
 <hr />
-<h2 id="_1">מטרת המודול<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<p>NyXIA מזהה:
-- אנומליות התנהגות<br />
-- רצפי אירועים חשודים<br />
-- דפוסים נדירים או לא צפויים<br />
-- אינדיקציות לפריצה<br />
-- סטיות מהרגלי פעילות רגילים  </p>
+<h2 id="-ai">מטרת זיהויי ה-AI<a class="headerlink" href="#-ai" title="Link to this section">&para;</a></h2>
+<p>מנוע ה-AI מזהה:
+- חריגות התנהגותיות — סטיות מקו הבסיס המבוסס של המכשיר
+- רצפי פעילות חשודים
+- דפוסים נדירים או בלתי צפויים
+- חריגים סטטיסטיים בתכונות התנהגותיות
+- סטיות בסיכון גבוה שזוהו על ידי ניקוד Isolation Forest</p>
+<p>זיהויים אלה משלימים את הממצאים מבוססי הכללים של Nyroxis Intelligence, ומוסיפים שכבה של אינטליגנציה התנהגותית שאינה מסתמכת על כללים מוגדרים מראש.</p>
 <hr />
-<h2 id="_2">סוגי זיהויים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<h3 id="1"><strong>1. זיהוי מבוסס אנומליה</strong><a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
-<p>כאשר התנהגות מסוימת אינה תואמת את דפוסי המכשיר.</p>
+<h2 id="ai_1">סוגי זיהויי AI<a class="headerlink" href="#ai_1" title="Link to this section">&para;</a></h2>
+<h3 id="1">1. זיהויים מבוססי חריגות<a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
+<p>מופעלים כאשר ציון החריגות של Isolation Forest עולה על 0.6 — כלומר הדפוס ההתנהגותי הנצפה מבודד סטטיסטית מקו הבסיס הרגיל.</p>
+<p>דוגמאות למקרים:
+- פעילות תהליך חריגה בשעות בלתי צפויות
+- דפוסי חיבורי רשת לא סדירים
+- פרצי שינוי קבצים בלתי צפויים
+- פעילות רחוקה מאוד מקו הבסיס הטיפוסי לפי שעת היום או יום השבוע</p>
 <hr />
-<h3 id="2"><strong>2. זיהוי מבוסס רצפים</strong><a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
-<p>NyXIA בוחן חלונות של אירועים כדי לזהות:
-- פריצות רב-שלביות<br />
-- סקריפט → העלאת הרשאות<br />
-- שרשראות תהליכים חשודות  </p>
+<h3 id="2-z-score">2. חריגים סטטיסטיים (Z-Score)<a class="headerlink" href="#2-z-score" title="Link to this section">&para;</a></h3>
+<p>מופעלים כאשר תכונה התנהגותית ספציפית סוטה משמעותית מהממוצע ההיסטורי:
+- קריטי: Z-score &gt; 3.0 (ביטחון 99.7%)
+- גבוה: Z-score &gt; 2.0 (ביטחון 95%)
+- בינוני: Z-score &gt; 1.5 (ביטחון 86%)
+- נמוך: Z-score &gt; 1.0 (ביטחון 68%)</p>
 <hr />
-<h3 id="3"><strong>3. דפוסים נדירים</strong><a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
-<p>כאשר:
-- תהליך פועל בצורה לא שגרתית<br />
-- כתובת רשת נדירה מופיעה<br />
-- המערכת מזכירה התנהגות מזיקה מוקדמת  </p>
+<h3 id="3">3. זיהויי עליות חדות<a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
+<p>מופעלים כאשר מדד מנוטר קופץ פתאום הרבה מעל הממוצע ההיסטורי שלו:
+- פרץ פתאומי של אירועים לשעה
+- עלייה חדה ביעדי רשת חדשים
+- עלייה מהירה במקורות ייחודיים</p>
 <hr />
-<h3 id="4"><strong>4. פעילות חשודה מתמשכת</strong><a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
-<p>כמו:
-- ניסיונות חיבור כושלים רבים<br />
-- העלאה איטית של הרשאות<br />
-- פעילות רקע חריגה  </p>
+<h3 id="4">4. חריגות מתמשכות<a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
+<p>סטיות ארוכות טווח שמצטברות לאורך זמן:
+- עלייה הדרגתית ביחס יעדים חדשים
+- דפוסי פעילות חריגה הבונים לאט
+- חריגות חוזרות עם ציון נמוך המרכיבות מגמה</p>
 <hr />
-<h2 id="_3">פרטי זיהוי<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<p>כל זיהוי כולל:
-- תיאור<br />
-- תהליכים או קבצים מעורבים<br />
-- מידע רשת<br />
-- חומרה<br />
-- הסבר<br />
-- המלצות  </p>
+<h2 id="_1">פרטי זיהוי<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
+<p>כל זיהוי AI כולל:
+- תיאור החריגות
+- ציון חריגות (0.0 – 1.0)
+- סיווג חומרה
+- תכונות תורמות — הממדים ההתנהגותיים הספציפיים שסטו הכי הרבה מקו הבסיס, עם ערכי Z-score
+- חותמת זמן וחלון ניתוח</p>
 <hr />
-<h2 id="_4">פרטיות מלאה<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
-<p>כל העיבוד מתבצע:
-- מקומית<br />
-- על בסיס לוגים מוצפנים<br />
-- ללא שרתים חיצוניים  </p>
+<h2 id="100">100% מקומי ופרטי<a class="headerlink" href="#100" title="Link to this section">&para;</a></h2>
+<p>כל זיהויי ה-AI:
+- מחושבים לא מקוון על המכשיר
+- מאוחסנים באופן מקומי במסד הנתונים המוצפן
+- נגזרים מיומני אירועים מוצפנים
+- לעולם אינם מועלים לשרתים או משותפים עם צדדים שלישיים</p>
 <hr />
-<h2 id="_5">סיכום<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
-<p>זיהויי AI מספקים התראות חכמות, פרטיות ומקומיות — המאפשרות לזהות פעילות מסוכנת כבר בשלבים מוקדמים.</p>
+<h2 id="_2">סיכום<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>זיהויי AI מספקים התראות חריגות חכמות ושומרות פרטיות המשלימות את הזיהוי מבוסס הכללים — עוזרים למשתמשים לזהות פעילות מסוכנת או חריגה מוקדם, עם עיבוד מקומי מלא וללא תלות בענן.</p>
 
 
 

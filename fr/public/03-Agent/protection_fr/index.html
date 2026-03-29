@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#protection-core-cur-de-protection" class="md-skip">
+        <a href="#noyau-de-protection" class="md-skip">
           Skip to content
         </a>
       
@@ -3167,10 +3167,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectifs-principaux" class="md-nav__link">
+  <a href="#objectifs-fondamentaux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectifs principaux
+        Objectifs fondamentaux
       
     </span>
   </a>
@@ -3189,10 +3189,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-protection-dintegrite-anti-tamper" class="md-nav__link">
+  <a href="#2-protection-de-lintegrite-blocs-devenements-chaines-par-hachage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Protection d’intégrité (Anti-tamper)
+        2. Protection de l'intégrité — Blocs d'événements chaînés par hachage
       
     </span>
   </a>
@@ -3200,10 +3200,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-autoprotection-de-lagent" class="md-nav__link">
+  <a href="#3-protection-du-service-de-la-plateforme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Auto‑protection de l’Agent
+        3. Protection du service de la plateforme
       
     </span>
   </a>
@@ -3214,7 +3214,7 @@
   <a href="#4-securite-hors-ligne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Sécurité hors-ligne
+        4. Sécurité hors ligne
       
     </span>
   </a>
@@ -3222,10 +3222,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-interaction-securisee-avec-le-dashboard" class="md-nav__link">
+  <a href="#5-interaction-securisee-avec-le-tableau-de-bord" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Interaction sécurisée avec le Dashboard
+        5. Interaction sécurisée avec le tableau de bord
       
     </span>
   </a>
@@ -8740,55 +8740,61 @@
   
 
 
-<h1 id="protection-core-cur-de-protection">Protection Core — Cœur de protection<a class="headerlink" href="#protection-core-cur-de-protection" title="Link to this section">&para;</a></h1>
-<p>Le Cœur de protection constitue l’ossature de sécurité du Nyroxis Agent.<br />
-Il garantit l’intégrité de la surveillance, protège les journaux et empêche toute tentative de manipulation par un attaquant.</p>
+<h1 id="noyau-de-protection">Noyau de protection<a class="headerlink" href="#noyau-de-protection" title="Link to this section">&para;</a></h1>
+<p>Le Noyau de protection est l'épine dorsale de sécurité du Nyroxis Agent.
+Il renforce l'intégrité de la surveillance, garantit un traitement chiffré des événements et empêche les attaquants de manipuler les journaux ou de désactiver la plateforme.</p>
+<p>Sa conception suit des principes stricts axés sur la confidentialité et le mode hors ligne.</p>
 <hr />
-<h2 id="objectifs-principaux">Objectifs principaux<a class="headerlink" href="#objectifs-principaux" title="Link to this section">&para;</a></h2>
-<p>Le Cœur de protection assure :
-- L’impossibilité de modifier les événements<br />
-- Le chiffrement complet des journaux<br />
-- La difficulté de désactiver l’Agent<br />
-- La protection des composants sensibles  </p>
+<h2 id="objectifs-fondamentaux">Objectifs fondamentaux<a class="headerlink" href="#objectifs-fondamentaux" title="Link to this section">&para;</a></h2>
+<p>Le Noyau de protection garantit :
+- Les événements de sécurité ne peuvent être modifiés ou supprimés sans être détectés
+- Les journaux restent chiffrés de la source au stockage
+- La plateforme ne peut pas être désactivée silencieusement
+- Les composants sensibles sont protégés contre les modifications non autorisées</p>
+<p>Cela crée une confiance dans la couche de visibilité et forensique.</p>
 <hr />
 <h2 id="1-chiffrement-local-de-bout-en-bout">1. Chiffrement local de bout en bout<a class="headerlink" href="#1-chiffrement-local-de-bout-en-bout" title="Link to this section">&para;</a></h2>
-<p>Chaque événement est :
-- Chiffré immédiatement<br />
-- Écrit uniquement sous forme chiffrée<br />
-- Indexé avec horodatage et métadonnées<br />
-- Jamais stocké en clair  </p>
-<p>Le modèle garantit confidentialité et intégrité.</p>
+<p>Chaque événement capturé par Nyroxis est :
+- Chiffré immédiatement au moment de la capture
+- Écrit sur le disque uniquement sous forme chiffrée (AES-256)
+- Indexé avec des horodatages et des métadonnées
+- Jamais stocké en texte clair</p>
+<p>Le modèle de chiffrement empêche les attaquants de lire ou de modifier l'historique des événements.</p>
 <hr />
-<h2 id="2-protection-dintegrite-anti-tamper">2. Protection d’intégrité (Anti-tamper)<a class="headerlink" href="#2-protection-dintegrite-anti-tamper" title="Link to this section">&para;</a></h2>
-<p>Nyroxis applique :
-- Des chemins d’écriture protégés<br />
-- Hashing &amp; vérification des blocs<br />
-- Surveillance de ses propres fichiers critiques<br />
-- Alertes en cas de modification suspecte  </p>
+<h2 id="2-protection-de-lintegrite-blocs-devenements-chaines-par-hachage">2. Protection de l'intégrité — Blocs d'événements chaînés par hachage<a class="headerlink" href="#2-protection-de-lintegrite-blocs-devenements-chaines-par-hachage" title="Link to this section">&para;</a></h2>
+<p>Nyroxis stocke les événements dans une structure chaînée par hachage où chaque bloc contient :
+- Charge utile chiffrée
+- Hachage d'intégrité
+- Index séquentiel
+- Lien vers le bloc précédent</p>
+<p>Cela rend toute manipulation immédiatement détectable :
+- <strong>Suppression</strong> — le hachage précédent du bloc suivant ne correspondra pas
+- <strong>Modification</strong> — le hachage du bloc modifié ne correspondra pas
+- <strong>Injection</strong> — les numéros de séquence et les hachages de chaîne échoueront</p>
+<p>Toute manipulation est signalée comme un événement de sécurité.</p>
 <hr />
-<h2 id="3-autoprotection-de-lagent">3. Auto‑protection de l’Agent<a class="headerlink" href="#3-autoprotection-de-lagent" title="Link to this section">&para;</a></h2>
-<p>Le Cœur de protection empêche la désactivation silencieuse de l’Agent.</p>
-<p>Il inclut :
-- Surveillance de l’état d’exécution<br />
-- Détection d’arrêts inattendus<br />
-- Redémarrage automatique<br />
-- Journalisation des tentatives d’arrêt  </p>
+<h2 id="3-protection-du-service-de-la-plateforme">3. Protection du service de la plateforme<a class="headerlink" href="#3-protection-du-service-de-la-plateforme" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian est responsable de s'assurer que Nyroxis Agent et Nyroxis Intelligence restent en fonctionnement à tout moment.</p>
+<p>Toutes les 3 secondes, Guardian vérifie l'état opérationnel des deux services. Si l'un ou l'autre service s'arrête de manière inattendue — en raison d'un événement système, d'un plantage ou d'une interférence délibérée — Guardian le détecte immédiatement et prend des mesures correctives.</p>
+<p>Les tentatives d'arrêt sont enregistrées comme des événements de sécurité, préservant ainsi les preuves d'interférence.</p>
 <hr />
-<h2 id="4-securite-hors-ligne">4. Sécurité hors-ligne<a class="headerlink" href="#4-securite-hors-ligne" title="Link to this section">&para;</a></h2>
-<p>Aucun besoin de :
-- Validation cloud<br />
-- API externe<br />
-- Serveur distant  </p>
-<p>Tout est vérifié localement.</p>
+<h2 id="4-securite-hors-ligne">4. Sécurité hors ligne<a class="headerlink" href="#4-securite-hors-ligne" title="Link to this section">&para;</a></h2>
+<p>Le Noyau de protection ne nécessite jamais :
+- Validation cloud
+- APIs externes
+- Serveurs distants</p>
+<p>Toutes les vérifications d'intégrité et les validations s'effectuent <strong>à 100 % hors ligne</strong>.
+La validation de licence fonctionne également entièrement hors ligne via le chiffrement AES-GCM et la vérification HMAC.</p>
 <hr />
-<h2 id="5-interaction-securisee-avec-le-dashboard">5. Interaction sécurisée avec le Dashboard<a class="headerlink" href="#5-interaction-securisee-avec-le-dashboard" title="Link to this section">&para;</a></h2>
-<p>Le Dashboard accède aux données via :
-- Des chemins de lecture vérifiés<br />
-- Accès en lecture seule<br />
-- Une séparation stricte entre stockage et interface  </p>
+<h2 id="5-interaction-securisee-avec-le-tableau-de-bord">5. Interaction sécurisée avec le tableau de bord<a class="headerlink" href="#5-interaction-securisee-avec-le-tableau-de-bord" title="Link to this section">&para;</a></h2>
+<p>Le tableau de bord accède aux données d'événements via :
+- Des chemins de lecture sécurisés vérifiés
+- Un accès en lecture seule aux journaux
+- Une séparation stricte entre la visualisation et le stockage des événements</p>
+<p>Cela empêche les attaques au niveau de la couche d'interface utilisateur de modifier les données réelles.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Le Cœur de protection garantit l’intégrité, le chiffrement et la fiabilité de la surveillance — même en environnement hostile — tout en restant 100% local.</p>
+<p>Le Noyau de protection — combiné avec Nyroxis System Guardian — garantit que la surveillance, le chiffrement et l'intégrité des événements restent fiables même dans des environnements hostiles, tout en maintenant toutes les données privées, locales et forensiquement fiables.</p>
 
 
 

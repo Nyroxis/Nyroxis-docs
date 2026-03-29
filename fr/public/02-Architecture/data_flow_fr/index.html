@@ -2982,10 +2982,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-collecte-des-evenements" class="md-nav__link">
+  <a href="#1-collecte-des-evenements-nyroxis-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Collecte des événements
+        1. Collecte des événements (Nyroxis Agent)
       
     </span>
   </a>
@@ -2993,10 +2993,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-chiffrement-a-la-source" class="md-nav__link">
+  <a href="#2-normalisation-et-chiffrement-a-la-source" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Chiffrement à la source
+        2. Normalisation et chiffrement à la source
       
     </span>
   </a>
@@ -3015,10 +3015,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-moteur-danalyse-local" class="md-nav__link">
+  <a href="#4-nyroxis-intelligence-moteur-de-regles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Moteur d’analyse local
+        4. Nyroxis Intelligence — Moteur de règles
       
     </span>
   </a>
@@ -3026,10 +3026,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-visualisation-dans-le-dashboard" class="md-nav__link">
+  <a href="#5-moteur-iaml-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Visualisation dans le Dashboard
+        5. Moteur IA/ML local
       
     </span>
   </a>
@@ -3037,10 +3037,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagramme-du-cycle-de-donnees" class="md-nav__link">
+  <a href="#6-visualisation-dans-le-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Diagramme du cycle de données
+        6. Visualisation dans le Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cycle-de-vie-complet-des-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cycle de vie complet des données
       
     </span>
   </a>
@@ -8741,65 +8752,81 @@
 
 
 <h1 id="flux-de-donnees">Flux de données<a class="headerlink" href="#flux-de-donnees" title="Link to this section">&para;</a></h1>
-<p>Cette section explique comment les données circulent dans Nyroxis — de la collecte des événements jusqu’à leur interprétation par l’utilisateur — tout en restant entièrement locales et chiffrées.</p>
-<p>Nyroxis suit un cycle simple et transparent, orienté confidentialité.</p>
+<p>Cette section explique comment les données circulent à l'intérieur de Nyroxis — de la collecte des événements à l'interprétation par l'utilisateur — tout en restant entièrement locales, chiffrées et privées à chaque étape.</p>
 <hr />
-<h2 id="1-collecte-des-evenements">1. Collecte des événements<a class="headerlink" href="#1-collecte-des-evenements" title="Link to this section">&para;</a></h2>
-<p>Le Nyroxis Agent surveille en continu :
-- Processus<br />
-- Connexions réseau<br />
-- Modifications de fichiers<br />
-- Actions liées aux privilèges<br />
-- Événements système &amp; sécurité  </p>
-<p>Toutes les données sont collectées <strong>localement</strong>, sans interaction cloud.</p>
+<h2 id="1-collecte-des-evenements-nyroxis-agent">1. Collecte des événements (Nyroxis Agent)<a class="headerlink" href="#1-collecte-des-evenements-nyroxis-agent" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Agent surveille en continu :
+- Les processus et services
+- Les connexions réseau et les métadonnées de trafic
+- Les modifications du système de fichiers et du registre
+- Les actions liées aux privilèges
+- Les événements système et de sécurité (Journaux d'événements Windows)
+- L'exécution de PowerShell et de scripts</p>
+<p>Toutes les données sont collectées <strong>localement</strong>, sans aucune interaction avec le cloud.</p>
 <hr />
-<h2 id="2-chiffrement-a-la-source">2. Chiffrement à la source<a class="headerlink" href="#2-chiffrement-a-la-source" title="Link to this section">&para;</a></h2>
-<p>Dès la collecte :
-- Les événements sont chiffrés<br />
-- L’intégrité est protégée<br />
-- Les données deviennent résistantes à la falsification  </p>
-<p>Aucun attaquant ne peut lire ou modifier les journaux.</p>
+<h2 id="2-normalisation-et-chiffrement-a-la-source">2. Normalisation et chiffrement à la source<a class="headerlink" href="#2-normalisation-et-chiffrement-a-la-source" title="Link to this section">&para;</a></h2>
+<p>Immédiatement après la collecte :
+- Les événements sont normalisés et enrichis avec du contexte
+- Le payload est chiffré avec AES-256
+- Un hachage d'intégrité est appliqué
+- Les données sont écrites dans la base de données locale uniquement sous forme chiffrée</p>
+<p>Aucun texte en clair ne touche jamais le disque.</p>
 <hr />
 <h2 id="3-base-de-donnees-locale-chiffree">3. Base de données locale chiffrée<a class="headerlink" href="#3-base-de-donnees-locale-chiffree" title="Link to this section">&para;</a></h2>
-<p>Les événements chiffrés sont stockés dans une base sécurisée.</p>
-<p>Caractéristiques :
-- Chiffrement complet<br />
-- Stockage structuré<br />
-- Optimisée pour les recherches rapides<br />
-- Aucune transmission externe  </p>
-<p>La base ne quitte jamais l’appareil.</p>
+<p>Les événements chiffrés sont stockés dans une base de données SQLite sécurisée.</p>
+<p>Propriétés :
+- Entièrement chiffrée au repos (AES-256)
+- Blocs d'événements chaînés par hachage pour la détection des altérations
+- Structurée pour des recherches rapides et la reconstruction de la chronologie
+- Aucune transmission externe — jamais</p>
+<p>La base de données ne quitte jamais l'appareil.</p>
 <hr />
-<h2 id="4-moteur-danalyse-local">4. Moteur d’analyse local<a class="headerlink" href="#4-moteur-danalyse-local" title="Link to this section">&para;</a></h2>
-<p>Le moteur analyse les données localement pour produire :
-- Insights comportementaux<br />
-- Détection d’anomalies<br />
-- Scoring IA<br />
-- Corrélation d’événements  </p>
-<p>Aucun serveur externe n’intervient.</p>
+<h2 id="4-nyroxis-intelligence-moteur-de-regles">4. Nyroxis Intelligence — Moteur de règles<a class="headerlink" href="#4-nyroxis-intelligence-moteur-de-regles" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence lit depuis la base de données chiffrée et évalue les événements sur trois couches :
+- <strong>27 règles de détection</strong> — correspondance de patterns d'événements individuels
+- <strong>12 règles de corrélation</strong> — détection de patterns multi-événements dans le temps
+- <strong>2 règles de chaîne</strong> — détection de séquences d'attaques en plusieurs étapes</p>
+<p>Lorsqu'une règle est déclenchée :
+- Une alerte est immédiatement levée
+- La constatation est stockée dans une base de données de détections dédiée
+- L'utilisateur est notifié via le Dashboard</p>
 <hr />
-<h2 id="5-visualisation-dans-le-dashboard">5. Visualisation dans le Dashboard<a class="headerlink" href="#5-visualisation-dans-le-dashboard" title="Link to this section">&para;</a></h2>
-<p>Le Nyroxis Dashboard convertit les données techniques en :
-- Journaux<br />
-- Alertes<br />
-- Graphiques &amp; tendances<br />
-- Indicateurs de sévérité<br />
-- Explications simples  </p>
-<p>Tout reste local.</p>
+<h2 id="5-moteur-iaml-local">5. Moteur IA/ML local<a class="headerlink" href="#5-moteur-iaml-local" title="Link to this section">&para;</a></h2>
+<p>En parallèle, le moteur IA/ML traite les événements localement :
+- Scoring d'anomalies par Isolation Forest
+- Classification statistique Z-Score
+- Comparaison avec la référence comportementale
+- Identification des caractéristiques contributives</p>
+<p>Tout le calcul reste sur l'appareil — aucune inférence cloud, aucun partage de données.</p>
 <hr />
-<h2 id="diagramme-du-cycle-de-donnees">Diagramme du cycle de données<a class="headerlink" href="#diagramme-du-cycle-de-donnees" title="Link to this section">&para;</a></h2>
+<h2 id="6-visualisation-dans-le-dashboard">6. Visualisation dans le Dashboard<a class="headerlink" href="#6-visualisation-dans-le-dashboard" title="Link to this section">&para;</a></h2>
+<p>Le Nyroxis Dashboard transforme tout ce qui précède en :
+- Journaux d'événements avec recherche forensique et filtrage
+- Résultats de détection, de corrélation et de chaîne
+- Résultats d'anomalies IA/ML avec décomposition des caractéristiques contributives
+- Graphiques, indicateurs de gravité et analyse de tendances
+- Rapports exportables (PDF/CSV)</p>
+<p>Tout reste local et privé.</p>
+<hr />
+<h2 id="cycle-de-vie-complet-des-donnees">Cycle de vie complet des données<a class="headerlink" href="#cycle-de-vie-complet-des-donnees" title="Link to this section">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Événements système ]
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓ (chiffré)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Base locale chiffrée ]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← collecte, normalisation, chiffrement
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Base de données locale chiffrée ] ← AES-256, SQLite, chaîné par hachage
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Moteur d’analyse ]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 détections + 12 corrélations + 2 règles de chaîne
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Dashboard ]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Moteur IA/ML local ]     ← Isolation Forest + analyse statistique
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↓
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis Dashboard ]      ← visibilité, forensique, rapports
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        ↑
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[ Nyroxis System Guardian ] ← surveille, sauvegarde, valide la licence
 </span></code></pre></div>
+<p>À aucune étape les journaux ou les données sensibles ne sont téléchargés vers des serveurs externes.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Nyroxis garantit un flux de données strictement local, chiffré et respectueux de la confidentialité — offrant visibilité et sécurité sans exposer les informations de l’utilisateur.</p>
+<p>Nyroxis maintient un flux de données strictement local, chiffré et axé sur la confidentialité — offrant aux utilisateurs une visibilité complète et des preuves forensiques sans exposer aucune information au cloud ou à des tiers.</p>
 
 
 

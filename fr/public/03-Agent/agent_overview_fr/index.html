@@ -3111,10 +3111,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#role-de-lagent" class="md-nav__link">
+  <a href="#ce-que-fait-lagent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rôle de l’Agent
+        Ce que fait l'Agent
       
     </span>
   </a>
@@ -3122,10 +3122,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operation-privacy-first" class="md-nav__link">
+  <a href="#pipeline-de-collecte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Opération Privacy-First
+        Pipeline de collecte
       
     </span>
   </a>
@@ -3133,10 +3133,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#leger-optimise" class="md-nav__link">
+  <a href="#fonctionnement-axe-sur-la-confidentialite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Léger &amp; optimisé
+        Fonctionnement axé sur la confidentialité
       
     </span>
   </a>
@@ -3144,10 +3144,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resistant-a-la-falsification" class="md-nav__link">
+  <a href="#leger-par-conception" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Résistant à la falsification
+        Léger par conception
       
     </span>
   </a>
@@ -3155,10 +3155,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fonctionnement-100-hors-ligne" class="md-nav__link">
+  <a href="#resilient-et-conscient-des-manipulations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fonctionnement 100% hors-ligne
+        Résilient et conscient des manipulations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctionne-entierement-hors-ligne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonctionne entièrement hors ligne
       
     </span>
   </a>
@@ -8729,51 +8740,62 @@
   
 
 
-<h1 id="nyroxis-agent-vue-densemble">Nyroxis Agent — Vue d’ensemble<a class="headerlink" href="#nyroxis-agent-vue-densemble" title="Link to this section">&para;</a></h1>
-<p>Nyroxis Agent est le composant central de surveillance de la plateforme.<br />
-Il fonctionne localement sur l’appareil de l’utilisateur et collecte en continu les événements de sécurité avec une consommation minimale de ressources.</p>
+<h1 id="nyroxis-agent-vue-densemble">Nyroxis Agent — Vue d'ensemble<a class="headerlink" href="#nyroxis-agent-vue-densemble" title="Link to this section">&para;</a></h1>
+<p>Le Nyroxis Agent est le composant principal de surveillance et de collecte de la plateforme.
+Il s'exécute localement sur l'appareil de l'utilisateur, collectant et normalisant discrètement les événements de sécurité, les chiffrant et les stockant dans une base de données locale résistante aux manipulations — le tout avec une utilisation minimale des ressources.</p>
 <hr />
-<h2 id="role-de-lagent">Rôle de l’Agent<a class="headerlink" href="#role-de-lagent" title="Link to this section">&para;</a></h2>
-<p>L’Agent observe et structure l’activité du système en créant une timeline de sécurité.</p>
+<h2 id="ce-que-fait-lagent">Ce que fait l'Agent<a class="headerlink" href="#ce-que-fait-lagent" title="Link to this section">&para;</a></h2>
+<p>L'Agent observe en permanence l'activité du système et construit une chronologie de sécurité structurée et chiffrée.</p>
 <p>Il surveille :
-- Processus (création / arrêt)<br />
-- Connexions réseau<br />
-- Modifications de fichiers<br />
-- Actions liées aux privilèges<br />
-- Événements système &amp; sécurité  </p>
-<p>Toutes les données restent <strong>locales et privées</strong>.</p>
+- La création et la terminaison de processus
+- Les connexions réseau et les métadonnées de trafic
+- Les modifications de fichiers et les changements de registre
+- Les actions de privilèges et les tentatives d'accès aux informations d'identification
+- Les événements système et de sécurité (Journaux d'événements Windows)
+- L'exécution de PowerShell et de scripts</p>
+<p>Tous les événements sont collectés <strong>de manière privée et locale</strong> — rien n'est transmis à l'extérieur.</p>
 <hr />
-<h2 id="operation-privacy-first">Opération Privacy-First<a class="headerlink" href="#operation-privacy-first" title="Link to this section">&para;</a></h2>
-<p>L’Agent n’envoie jamais de journaux vers un serveur externe.</p>
-<p>Les données sont :
-- Chiffrées dès la collecte<br />
-- Protégées contre la falsification<br />
-- Stockées dans une base locale sécurisée  </p>
+<h2 id="pipeline-de-collecte">Pipeline de collecte<a class="headerlink" href="#pipeline-de-collecte" title="Link to this section">&para;</a></h2>
+<ol>
+<li><strong>Collecte</strong> — les événements sont ingérés simultanément depuis plusieurs canaux système</li>
+<li><strong>Normalisation</strong> — les données brutes sont enrichies et standardisées pour le moteur de détection</li>
+<li><strong>Chiffrement</strong> — la charge utile est chiffrée avec AES-256 avant toute opération d'écriture</li>
+<li><strong>Stockage</strong> — les événements chiffrés sont écrits dans la base de données SQLite locale</li>
+<li><strong>Alimentation</strong> — les données transitent vers Nyroxis Intelligence pour l'évaluation des règles en temps réel</li>
+</ol>
 <hr />
-<h2 id="leger-optimise">Léger &amp; optimisé<a class="headerlink" href="#leger-optimise" title="Link to this section">&para;</a></h2>
-<p>L’Agent est conçu pour :
-- Faible utilisation CPU<br />
-- Empreinte mémoire réduite<br />
-- Fonctionnement silencieux<br />
-- Stabilité même sur machines anciennes  </p>
-<p>Convient aux familles, professionnels et environnements sensibles.</p>
+<h2 id="fonctionnement-axe-sur-la-confidentialite">Fonctionnement axé sur la confidentialité<a class="headerlink" href="#fonctionnement-axe-sur-la-confidentialite" title="Link to this section">&para;</a></h2>
+<p>L'Agent ne télécharge jamais de journaux ni n'envoie de données d'événements vers des serveurs externes.
+Tout reste sur l'appareil et est :
+- Chiffré au moment de la collecte
+- Protégé contre les manipulations via des blocs d'événements chaînés par hachage
+- Stocké dans une base de données SQLite locale sécurisée
+- Sous le contrôle exclusif de l'utilisateur à tout moment</p>
 <hr />
-<h2 id="resistant-a-la-falsification">Résistant à la falsification<a class="headerlink" href="#resistant-a-la-falsification" title="Link to this section">&para;</a></h2>
-<p>L’Agent intègre des mécanismes garantissant :
-- L’impossibilité de modifier les événements collectés<br />
-- La difficulté d’effacer des traces d’attaque<br />
-- L’intégrité globale du système  </p>
+<h2 id="leger-par-conception">Léger par conception<a class="headerlink" href="#leger-par-conception" title="Link to this section">&para;</a></h2>
+<p>L'Agent est optimisé pour une empreinte minimale :
+- ~57 Mo de RAM
+- ~0,1 % de CPU
+- Fonctionnement silencieux en arrière-plan en tant que service Windows
+- Adapté à un fonctionnement continu sur des ordinateurs portables personnels sans impact sur la productivité quotidienne</p>
 <hr />
-<h2 id="fonctionnement-100-hors-ligne">Fonctionnement 100% hors-ligne<a class="headerlink" href="#fonctionnement-100-hors-ligne" title="Link to this section">&para;</a></h2>
-<p>L’Agent n’a pas besoin d’internet pour :
-- Surveiller<br />
-- Chiffrer<br />
-- Stocker<br />
-- Analyser  </p>
-<p>Nyroxis reste pleinement fonctionnel même en environnement isolé.</p>
+<h2 id="resilient-et-conscient-des-manipulations">Résilient et conscient des manipulations<a class="headerlink" href="#resilient-et-conscient-des-manipulations" title="Link to this section">&para;</a></h2>
+<p>L'Agent intègre des mécanismes de protection pour garantir :
+- Les données d'événements collectées ne peuvent être modifiées ou supprimées sans être détectées
+- Les attaquants ne peuvent pas effacer silencieusement leur activité
+- Les blocs d'événements chaînés par hachage exposent toute tentative de suppression, modification ou injection</p>
+<p>Nyroxis System Guardian surveille l'état opérationnel de l'Agent toutes les 3 secondes et prend des mesures correctives si le service s'arrête de manière inattendue.</p>
+<hr />
+<h2 id="fonctionne-entierement-hors-ligne">Fonctionne entièrement hors ligne<a class="headerlink" href="#fonctionne-entierement-hors-ligne" title="Link to this section">&para;</a></h2>
+<p>Aucune connexion Internet n'est requise pour :
+- La surveillance
+- La normalisation et le chiffrement
+- Le stockage des données
+- L'alimentation de Nyroxis Intelligence</p>
+<p>Nyroxis est entièrement fonctionnel dans des environnements isolés ou à air gap.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Nyroxis Agent assure une surveillance continue, chiffrée et hors-ligne — offrant une visibilité professionnelle sans exposer les données au cloud.</p>
+<p>Le Nyroxis Agent offre une surveillance continue, chiffrée et hors ligne — donnant aux utilisateurs une visibilité de niveau entreprise sans exposer leurs données à des tiers, et fournissant des preuves de qualité forensique adaptées aux procédures judiciaires et réglementaires.</p>
 
 
 

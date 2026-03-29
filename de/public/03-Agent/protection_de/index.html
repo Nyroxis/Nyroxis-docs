@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#protection-core" class="md-skip">
+        <a href="#schutzkern" class="md-skip">
           Skip to content
         </a>
       
@@ -5199,10 +5199,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hauptfunktionen" class="md-nav__link">
+  <a href="#kernziele" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hauptfunktionen
+        Kernziele
       
     </span>
   </a>
@@ -5210,10 +5210,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zielsetzung" class="md-nav__link">
+  <a href="#1-lokale-ende-zu-ende-verschlusselung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zielsetzung
+        1. Lokale Ende-zu-Ende-Verschlüsselung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-integritatsschutz-hash-verkettete-ereignisblocke" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Integritätsschutz — Hash-verkettete Ereignisblöcke
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plattform-dienstschutz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Plattform-Dienstschutz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-offline-sicherheit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Offline-Sicherheit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sichere-interaktion-mit-dem-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sichere Interaktion mit dem Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zusammenfassung
       
     </span>
   </a>
@@ -8685,16 +8740,61 @@
   
 
 
-<h1 id="protection-core">Protection Core<a class="headerlink" href="#protection-core" title="Link to this section">&para;</a></h1>
-<p>Der Protection Core stellt sicher, dass sowohl der Nyroxis Agent als auch die gespeicherten Daten gegen Manipulation, unbefugten Zugriff und Angriffstechniken geschützt sind.</p>
-<h2 id="hauptfunktionen">Hauptfunktionen<a class="headerlink" href="#hauptfunktionen" title="Link to this section">&para;</a></h2>
-<p>Der Schutzkern umfasst:
-- Integritätssicherung für gespeicherte Ereignisdaten<br />
-- Schutzmechanismen gegen unbefugte Prozessinteraktion<br />
-- Überwachung auf potenziell gefährliche Änderungen an Kernelementen des Systems<br />
-- Lokale Validierung sicherheitsrelevanter Aktionen  </p>
-<h2 id="zielsetzung">Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link to this section">&para;</a></h2>
-<p>Der Protection Core verfolgt das Ziel, ein zuverlässiges, manipulationsresistentes Fundament bereitzustellen, das die Genauigkeit und Vertrauenswürdigkeit der gesamten Nyroxis-Plattform sicherstellt.  </p>
+<h1 id="schutzkern">Schutzkern<a class="headerlink" href="#schutzkern" title="Link to this section">&para;</a></h1>
+<p>Der Schutzkern ist das Sicherheits-Rückgrat des Nyroxis Agents.
+Er stärkt die Integrität der Überwachung, gewährleistet verschlüsselte Ereignisverarbeitung und verhindert, dass Angreifer Protokolle manipulieren oder die Plattform deaktivieren.</p>
+<p>Sein Design folgt strengen Datenschutz-First- und Offline-First-Prinzipien.</p>
+<hr />
+<h2 id="kernziele">Kernziele<a class="headerlink" href="#kernziele" title="Link to this section">&para;</a></h2>
+<p>Der Schutzkern stellt sicher:
+- Sicherheitsereignisse können nicht unbemerkt verändert oder gelöscht werden
+- Protokolle bleiben von der Quelle bis zur Speicherung verschlüsselt
+- Die Plattform kann nicht stillschweigend deaktiviert werden
+- Sensible Komponenten sind vor unbefugten Änderungen geschützt</p>
+<p>Dies schafft Vertrauen in die Sichtbarkeits- und forensische Schicht.</p>
+<hr />
+<h2 id="1-lokale-ende-zu-ende-verschlusselung">1. Lokale Ende-zu-Ende-Verschlüsselung<a class="headerlink" href="#1-lokale-ende-zu-ende-verschlusselung" title="Link to this section">&para;</a></h2>
+<p>Jedes von Nyroxis erfasste Ereignis wird:
+- Sofort im Moment der Erfassung verschlüsselt
+- Nur in verschlüsselter Form auf die Festplatte geschrieben (AES-256)
+- Mit Zeitstempeln und Metadaten indiziert
+- Niemals im Klartext gespeichert</p>
+<p>Das Verschlüsselungsmodell verhindert, dass Angreifer den Ereignisverlauf lesen oder ändern können.</p>
+<hr />
+<h2 id="2-integritatsschutz-hash-verkettete-ereignisblocke">2. Integritätsschutz — Hash-verkettete Ereignisblöcke<a class="headerlink" href="#2-integritatsschutz-hash-verkettete-ereignisblocke" title="Link to this section">&para;</a></h2>
+<p>Nyroxis speichert Ereignisse in einer hash-verketteten Struktur, bei der jeder Block enthält:
+- Verschlüsselte Nutzlast
+- Integritäts-Hash
+- Sequentiellen Index
+- Verknüpfung zum vorherigen Block</p>
+<p>Dies macht Manipulation sofort erkennbar:
+- <strong>Löschung</strong> — der vorherige Hash des nächsten Blocks wird nicht übereinstimmen
+- <strong>Änderung</strong> — der Hash des geänderten Blocks wird nicht übereinstimmen
+- <strong>Injektion</strong> — Sequenznummern und Ketten-Hashes werden fehlschlagen</p>
+<p>Jede Manipulation wird als Sicherheitsereignis gemeldet.</p>
+<hr />
+<h2 id="3-plattform-dienstschutz">3. Plattform-Dienstschutz<a class="headerlink" href="#3-plattform-dienstschutz" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian ist dafür verantwortlich sicherzustellen, dass Nyroxis Agent und Nyroxis Intelligence jederzeit in Betrieb bleiben.</p>
+<p>Alle 3 Sekunden überprüft Guardian den Betriebsstatus beider Dienste. Wenn einer der Dienste unerwartet stoppt — aufgrund eines Systemereignisses, eines Absturzes oder absichtlicher Einwirkung — erkennt Guardian dies sofort und ergreift Korrekturmaßnahmen.</p>
+<p>Abschaltversuche werden als Sicherheitsereignisse protokolliert, um Beweise für Einwirkungen zu sichern.</p>
+<hr />
+<h2 id="4-offline-sicherheit">4. Offline-Sicherheit<a class="headerlink" href="#4-offline-sicherheit" title="Link to this section">&para;</a></h2>
+<p>Der Schutzkern benötigt niemals:
+- Cloud-Validierung
+- Externe APIs
+- Remote-Server</p>
+<p>Alle Integritätsprüfungen und Verifizierungen erfolgen <strong>100 % offline</strong>.
+Die Lizenzvalidierung läuft ebenfalls vollständig offline über AES-GCM-Verschlüsselung und HMAC-Verifizierung.</p>
+<hr />
+<h2 id="5-sichere-interaktion-mit-dem-dashboard">5. Sichere Interaktion mit dem Dashboard<a class="headerlink" href="#5-sichere-interaktion-mit-dem-dashboard" title="Link to this section">&para;</a></h2>
+<p>Das Dashboard greift auf Ereignisdaten über folgende Wege zu:
+- Verifizierte sichere Lesepfade
+- Nur-Lese-Zugriff auf Protokolle
+- Strikte Trennung zwischen Visualisierung und Ereignisspeicherung</p>
+<p>Dies verhindert, dass Angriffe auf UI-Ebene echte Daten modifizieren können.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
+<p>Der Schutzkern — kombiniert mit Nyroxis System Guardian — stellt sicher, dass Überwachung, Verschlüsselung und Ereignisintegrität auch in feindlichen Umgebungen vertrauenswürdig bleiben, während alle Daten privat, lokal und forensisch zuverlässig gehalten werden.</p>
 
 
 

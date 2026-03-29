@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rule-matching" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -7418,10 +7418,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        מטרת המודול
+        מה עושה התאמת הכללים
       
     </span>
   </a>
@@ -7429,22 +7429,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        סוגי כללים
+        שלוש שכבות זיהוי
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="סוגי כללים">
+    <nav class="md-nav" aria-label="שלוש שכבות זיהוי">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-27" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. כללי סף
+        שכבה 1 — כללי זיהוי (27 כללים)
       
     </span>
   </a>
@@ -7452,10 +7452,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. כללי רצף
+        שכבה 2 — כללי מתאם (12 כללים)
       
     </span>
   </a>
@@ -7463,21 +7463,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. כללים מבוססי זמן
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. כללים ייעודיים
+        שכבה 3 — כללי שרשרת (2 כללים)
       
     </span>
   </a>
@@ -7490,21 +7479,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        איך מתבצע הזיהוי?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        פרטי ההתראה
+        ניתן להרחבה על ידי אנשי אבטחה מקצועיים
       
     </span>
   </a>
@@ -7515,7 +7493,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        פרטיות מלאה
+        כיצד המנוע מעריך כללים
       
     </span>
   </a>
@@ -7524,6 +7502,28 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        כאשר כלל מופעל
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ערובת פרטיות
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8779,69 +8779,76 @@
   
 
 
-<h1 id="rule-matching">Rule Matching — התאמת כללים<a class="headerlink" href="#rule-matching" title="Link to this section">&para;</a></h1>
-<p>מודול Rule Matching מאפשר ל-Nyroxis לזהות אירועים התואמים כללי אבטחה מוגדרים מראש.<br />
-הוא מביא יכולות דמויות-SIEM למכשירים אישיים — ללא ענן וללא חשיפת מידע.</p>
+<h1 id="_1">התאמת כללים וזיהוי<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
+<p>מודול התאמת הכללים הוא האופן שבו Nyroxis Intelligence מעריך אירועי אבטחה ומייצר התראות.
+הוא מביא לוגיקת זיהוי בסגנון SIEM למכשירים אישיים — לחלוטין לא מקוון, מכוון לפרטיות, וניתן להרחבה על ידי אנשי אבטחה מקצועיים.</p>
 <hr />
-<h2 id="_1">מטרת המודול<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<p>לזהות:
-- התנהגות חשודה<br />
-- דפוסים חוזרים חריגים<br />
-- שילובי אירועים מסוכנים<br />
-- אינדיקציות לפריצה  </p>
+<h2 id="_2">מה עושה התאמת הכללים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence מעריך אירועים מול שלוש שכבות של כללים מקומיים כדי לזהות:
+- דפוסי איומים ידועים באירועים בודדים
+- קשרים חשודים בין אירועים לאורך זמן
+- רצפי התקפה רב-שלביים</p>
+<p>שום כללים או יומנים אינם נשלחים לאינטרנט.</p>
 <hr />
-<h2 id="_2">סוגי כללים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<h3 id="1"><strong>1. כללי סף</strong><a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
-<p>מופעלים כאשר משהו קורה בתדירות גבוהה מדי:
-- כישלונות חיבור<br />
-- ניסיונות העלאת הרשאות חוזרים<br />
-- שינויים מרובים בקבצים  </p>
+<h2 id="_3">שלוש שכבות זיהוי<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
+<h3 id="1-27">שכבה 1 — כללי זיהוי (27 כללים)<a class="headerlink" href="#1-27" title="Link to this section">&para;</a></h3>
+<p>התאמת דפוסים מול אירועים בודדים.</p>
+<p><strong>סוגי טריגרים:</strong>
+- הרצת תהליך חשודה
+- התקנת שירות לא מורשית
+- התנהגות רשת חריגה
+- ניסיונות גישה לאישורים
+- מדדים של פעילות תוכנה זדונית ידועה</p>
+<p>כאשר כלל זיהוי מופעל, נוצרת התראה מיידית ומאוחסנת במסד הנתונים של הזיהויים.</p>
 <hr />
-<h3 id="2"><strong>2. כללי רצף</strong><a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
-<p>מזהים שרשראות אירועים מסוכנות:
-- תהליך → רשת → התמדה<br />
-- סקריפט → שינוי מערכת<br />
-- תהליך לא מוכר → גישה לקובץ רגיש  </p>
+<h3 id="2-12">שכבה 2 — כללי מתאם (12 כללים)<a class="headerlink" href="#2-12" title="Link to this section">&para;</a></h3>
+<p>התאמת דפוסים בין אירועים קשורים לאורך זמן ובין מקורות שונים.</p>
+<p><strong>סוגי טריגרים:</strong>
+- כניסה כושלת ואחריה כניסה מוצלחת ממיקום שונה
+- תהליך חדש שמופעל מיד לאחר חיבור התקן USB
+- ניסיונות חיבור כושלים חוזרים ואחריהם שיחה יוצאת מוצלחת
+- הרצת סקריפט ואחריה שינוי מערכת קבצים</p>
+<p>כללי מתאם חושפים דפוסי איומים שאף אירוע בודד לא יכול לחשוף לבדו.</p>
 <hr />
-<h3 id="3"><strong>3. כללים מבוססי זמן</strong><a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
-<p>מרכזים דפוסים לאורך חלון זמן:
-- עלייה הדרגתית בהרשאות<br />
-- תנועה לטרלית איטית<br />
-- ניסיונות כושלים בכל שעה  </p>
+<h3 id="3-2">שכבה 3 — כללי שרשרת (2 כללים)<a class="headerlink" href="#3-2" title="Link to this section">&para;</a></h3>
+<p>זיהוי רצפי התקפה רב-שלביים הפרושים על פני אירועים מרובים וחלונות זמן.</p>
+<p>כללי שרשרת הם ההתראות בעדיפות הגבוהה ביותר במערכת. הם מייצגים פריצות מתואמות ומתקדמות — הסוג המאפיין איומים מתמשכים מתקדמים.</p>
+<p>כל ממצא שרשרת כולל שחזור מלא של רצף ההתקפה שזוהה.</p>
 <hr />
-<h3 id="4"><strong>4. כללים ייעודיים</strong><a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
-<p>מבוססים על ישות:
-- קובץ מסוים<br />
-- תהליך מסוים<br />
-- הגדרת מערכת  </p>
+<h2 id="_4">ניתן להרחבה על ידי אנשי אבטחה מקצועיים<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
+<p>מנוע הכללים פתוח לחלוטין להרחבה. אנשי אבטחה מקצועיים יכולים:
+- לכתוב כללי זיהוי, מתאם או שרשרת מותאמים אישית בפורמט JSON
+- לפרוס אותם ישירות למערכת מבלי לשנות רכיבי ליבה
+- לבדוק כללים מול נתוני אירועים קיימים לפני פריסה
+- לנהל את ספריית הכללים המותאמת שלהם עם ניהול גרסאות</p>
+<p>זה מאפשר להתאים את Nyroxis לסביבות ספציפיות, מודלי איומים, או דרישות ארגוניות.</p>
 <hr />
-<h2 id="_3">איך מתבצע הזיהוי?<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<p>התאמת כללים מתבצעת מול:
-- מטא-דאטה<br />
-- זמנים<br />
-- עץ תהליכים<br />
-- נקודות רשת<br />
-- חומרה  </p>
-<p>הכול מקומי ובזמן אמת.</p>
+<h2 id="_5">כיצד המנוע מעריך כללים<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence מתאים כללים מול:
+- מטא-נתונים ותוכן של אירועים
+- חותמות זמן וחלונות זמן
+-系譜 תהליכים
+- נקודות קצה של רשת
+- מדדי חומרה
+- קשרים בין-אירועיים</p>
+<p>כל ההערכות הן בזמן אמת ומקומיות לחלוטין.</p>
 <hr />
-<h2 id="_4">פרטי ההתראה<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
-<p>כאשר כלל מופעל:
-- מוצגת הסבר ברור<br />
-- תיעוד האירועים המעורבים<br />
-- חומרת ההתראה<br />
-- המלצות פעולה<br />
-- פאנל הקשר  </p>
+<h2 id="_6">כאשר כלל מופעל<a class="headerlink" href="#_6" title="Link to this section">&para;</a></h2>
+<p>כאשר כלל מותאם, Nyroxis:
+- מעלה התראה מיידית
+- מאחסן את הממצא במסד הנתונים הייעודי של זיהויים
+- מתעד את האירועים שהותאמו, רמת החומרה ופרטי הכלל
+- הופך את הממצא לגלוי בתצוגת זיהוי, מתאם או שרשרת בלוח המחוונים</p>
 <hr />
-<h2 id="_5">פרטיות מלאה<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
-<ul>
-<li>ללא ענן  </li>
-<li>ללא API חיצוני  </li>
-<li>ללא שליחת לוגים  </li>
-<li>כל העיבוד מקומי  </li>
-</ul>
+<h2 id="_7">ערובת פרטיות<a class="headerlink" href="#_7" title="Link to this section">&para;</a></h2>
+<p>כל התאמת הכללים:
+- מתרחשת באופן מקומי על המכשיר
+- אינה מתקשרת עם שירותים חיצוניים
+- משתמשת אך ורק בנתוני אירועים מוצפנים
+- לעולם אינה מעלה יומנים, כללים או התאמות דפוסים</p>
 <hr />
-<h2 id="_6">סיכום<a class="headerlink" href="#_6" title="Link to this section">&para;</a></h2>
-<p>Rule Matching מביא זיהוי מאורגן וחכם למכשירים אישיים — תוך שמירה מוחלטת על פרטיות.</p>
+<h2 id="_8">סיכום<a class="headerlink" href="#_8" title="Link to this section">&para;</a></h2>
+<p>מנוע התאמת הכללים של Nyroxis מביא זיהוי מובנה בסגנון SIEM לנקודות קצה אישיות — בשלוש שכבות, גדל ברציפות וניתן להרחבה על ידי אנשי אבטחה מקצועיים — ללא תלות בענן או פשרה על הפרטיות.</p>
 
 
 

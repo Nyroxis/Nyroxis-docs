@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#moteur-ia-mecanismes-internes" class="md-skip">
+        <a href="#moteur-ia-mecanique-interne" class="md-skip">
           Skip to content
         </a>
       
@@ -3485,22 +3485,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#principes-fondamentaux" class="md-nav__link">
+  <a href="#principes-de-conception-fondamentaux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Principes fondamentaux
+        Principes de conception fondamentaux
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Principes fondamentaux">
+    <nav class="md-nav" aria-label="Principes de conception fondamentaux">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-confidentialite-absolue" class="md-nav__link">
+  <a href="#1-confidentialite-en-premier" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Confidentialité absolue
+        1. Confidentialité en premier
       
     </span>
   </a>
@@ -3508,10 +3508,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-ia-legere" class="md-nav__link">
+  <a href="#2-implementation-legere" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. IA légère
+        2. Implémentation légère
       
     </span>
   </a>
@@ -3519,10 +3519,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-analyse-comportementale" class="md-nav__link">
+  <a href="#3-comprehension-comportementale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Analyse comportementale
+        3. Compréhension comportementale
       
     </span>
   </a>
@@ -3530,10 +3530,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-fonctionnement-horsligne" class="md-nav__link">
+  <a href="#4-fonctionnement-entierement-hors-ligne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Fonctionnement hors‑ligne
+        4. Fonctionnement entièrement hors ligne
       
     </span>
   </a>
@@ -3546,22 +3546,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#traitement-interne" class="md-nav__link">
+  <a href="#isolation-forest-comment-ca-fonctionne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Traitement interne
+        Isolation Forest — Comment ça fonctionne
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Traitement interne">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-danalyse-statistique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline d'analyse statistique
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline d&#39;analyse statistique">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-reception-des-evenements" class="md-nav__link">
+  <a href="#classification-z-score" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Réception des événements
+        Classification Z-Score
       
     </span>
   </a>
@@ -3569,10 +3580,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-construction-de-sequences" class="md-nav__link">
+  <a href="#detection-des-valeurs-aberrantes-iqr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Construction de séquences
+        Détection des valeurs aberrantes IQR
       
     </span>
   </a>
@@ -3580,10 +3591,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-extraction-de-caracteristiques" class="md-nav__link">
+  <a href="#moyennes-mobiles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Extraction de caractéristiques
+        Moyennes mobiles
       
     </span>
   </a>
@@ -3591,21 +3602,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-inference-locale" class="md-nav__link">
+  <a href="#detection-des-pics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Inférence locale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-cartographie-des-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Cartographie des scénarios
+        Détection des pics
       
     </span>
   </a>
@@ -3618,10 +3618,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#profil-comportemental-local" class="md-nav__link">
+  <a href="#ce-que-le-moteur-produit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Profil comportemental local
+        Ce que le moteur produit
       
     </span>
   </a>
@@ -3629,10 +3629,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ia-ethique" class="md-nav__link">
+  <a href="#ligne-de-base-comportementale-locale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IA éthique
+        Ligne de base comportementale locale
       
     </span>
   </a>
@@ -8829,73 +8829,86 @@
   
 
 
-<h1 id="moteur-ia-mecanismes-internes">Moteur IA — Mécanismes internes<a class="headerlink" href="#moteur-ia-mecanismes-internes" title="Link to this section">&para;</a></h1>
-<p>Le moteur d’IA Nyroxis (NyXIA) fonctionne entièrement en local, analysant les événements de sécurité chiffrés sans aucun recours au cloud.<br />
-Ce document présente son fonctionnement interne de manière simple et semi‑technique.</p>
+<h1 id="moteur-ia-mecanique-interne">Moteur IA — Mécanique interne<a class="headerlink" href="#moteur-ia-mecanique-interne" title="Link to this section">&para;</a></h1>
+<p>Le moteur IA/ML de Nyroxis est conçu pour fonctionner entièrement en local, effectuant une analyse intelligente sur des événements de sécurité chiffrés sans dépendre de services cloud.</p>
 <hr />
-<h2 id="principes-fondamentaux">Principes fondamentaux<a class="headerlink" href="#principes-fondamentaux" title="Link to this section">&para;</a></h2>
-<h3 id="1-confidentialite-absolue"><strong>1. Confidentialité absolue</strong><a class="headerlink" href="#1-confidentialite-absolue" title="Link to this section">&para;</a></h3>
+<h2 id="principes-de-conception-fondamentaux">Principes de conception fondamentaux<a class="headerlink" href="#principes-de-conception-fondamentaux" title="Link to this section">&para;</a></h2>
+<h3 id="1-confidentialite-en-premier">1. Confidentialité en premier<a class="headerlink" href="#1-confidentialite-en-premier" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Aucun cloud  </li>
-<li>Aucune API externe  </li>
-<li>Aucune transmission de données  </li>
+<li>Aucun traitement cloud</li>
+<li>Aucune API externe</li>
+<li>Aucun partage de données</li>
 </ul>
-<h3 id="2-ia-legere"><strong>2. IA légère</strong><a class="headerlink" href="#2-ia-legere" title="Link to this section">&para;</a></h3>
-<p>Modèles optimisés pour :
-- Faible usage CPU<br />
-- Faible mémoire<br />
-- Exécution en temps réel  </p>
-<h3 id="3-analyse-comportementale"><strong>3. Analyse comportementale</strong><a class="headerlink" href="#3-analyse-comportementale" title="Link to this section">&para;</a></h3>
-<p>NyXIA détecte des <em>modèles</em> plutôt que des événements isolés.</p>
-<h3 id="4-fonctionnement-horsligne"><strong>4. Fonctionnement hors‑ligne</strong><a class="headerlink" href="#4-fonctionnement-horsligne" title="Link to this section">&para;</a></h3>
-<p>Toutes les analyses sont locales.</p>
+<p>Toute l'intelligence s'exécute sur l'appareil propre de l'utilisateur.</p>
+<h3 id="2-implementation-legere">2. Implémentation légère<a class="headerlink" href="#2-implementation-legere" title="Link to this section">&para;</a></h3>
+<p>Entièrement développé en Rust sans bibliothèques ML externes :
+- ~Faible utilisation CPU
+- Empreinte mémoire minimale
+- Exécution en temps réel</p>
+<h3 id="3-comprehension-comportementale">3. Compréhension comportementale<a class="headerlink" href="#3-comprehension-comportementale" title="Link to this section">&para;</a></h3>
+<p>Au lieu d'analyser les événements individuellement, le moteur comprend les <em>modèles</em> qui se produisent dans le temps et à travers plusieurs dimensions d'événements.</p>
+<h3 id="4-fonctionnement-entierement-hors-ligne">4. Fonctionnement entièrement hors ligne<a class="headerlink" href="#4-fonctionnement-entierement-hors-ligne" title="Link to this section">&para;</a></h3>
+<p>Toute l'analyse, la notation et l'extraction de caractéristiques se déroulent localement — aucune connexion internet requise à aucun stade.</p>
 <hr />
-<h2 id="traitement-interne">Traitement interne<a class="headerlink" href="#traitement-interne" title="Link to this section">&para;</a></h2>
-<h3 id="1-reception-des-evenements"><strong>1. Réception des événements</strong><a class="headerlink" href="#1-reception-des-evenements" title="Link to this section">&para;</a></h3>
-<p>Le Nyroxis Agent collecte :
-- Processus<br />
-- Réseau<br />
-- Fichiers<br />
-- Privilèges  </p>
-<p>Les événements arrivent chiffrés.</p>
-<h3 id="2-construction-de-sequences"><strong>2. Construction de séquences</strong><a class="headerlink" href="#2-construction-de-sequences" title="Link to this section">&para;</a></h3>
-<p>Les événements sont regroupés :
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>w(t) = {event_t ... event_t+k}
-</span></code></pre></div></p>
-<h3 id="3-extraction-de-caracteristiques"><strong>3. Extraction de caractéristiques</strong><a class="headerlink" href="#3-extraction-de-caracteristiques" title="Link to this section">&para;</a></h3>
-<p>NyXIA extrait des informations clés :
-- Arbre de processus<br />
-- Modèles réseau<br />
-- Activité fichiers<br />
-- Anomalies temporelles  </p>
-<h3 id="4-inference-locale"><strong>4. Inférence locale</strong><a class="headerlink" href="#4-inference-locale" title="Link to this section">&para;</a></h3>
-<p>Le moteur évalue :
-- Score d’anomalie<br />
-- Classe comportementale<br />
-- Déviation du profil normal  </p>
-<p>Tous les calculs sont locaux.</p>
-<h3 id="5-cartographie-des-scenarios"><strong>5. Cartographie des scénarios</strong><a class="headerlink" href="#5-cartographie-des-scenarios" title="Link to this section">&para;</a></h3>
-<p>NyXIA identifie :
-- Persistance<br />
-- Activités réseau suspectes<br />
-- Escalade de privilèges<br />
-- Intrusion multi‑étapes  </p>
+<h2 id="isolation-forest-comment-ca-fonctionne">Isolation Forest — Comment ça fonctionne<a class="headerlink" href="#isolation-forest-comment-ca-fonctionne" title="Link to this section">&para;</a></h2>
+<p>L'algorithme Isolation Forest isole les anomalies en construisant des arbres de décision aléatoires et en mesurant à quelle vitesse chaque point de données est séparé des autres.</p>
+<p><strong>Le principe :</strong>
+- Les événements normaux nécessitent de nombreuses divisions pour être isolés (ils se fondent avec les autres)
+- Les événements anormaux nécessitent moins de divisions (ils se distinguent)
+- Chemin d'isolation plus court = score d'anomalie plus élevé</p>
+<p><strong>Implémentation Nyroxis :</strong>
+- 100 arbres d'isolation construits par cycle d'analyse
+- 256 échantillons aléatoires utilisés par arbre
+- Les 8 caractéristiques comportementales normalisées avant l'analyse
+- Seuil du score d'anomalie : 0,6 (au-dessus = détection déclenchée)
+- Caractéristiques contributives identifiées via la déviation Z-score (seuil : 2,0 écarts-types)</p>
 <hr />
-<h2 id="profil-comportemental-local">Profil comportemental local<a class="headerlink" href="#profil-comportemental-local" title="Link to this section">&para;</a></h2>
-<p>NyXIA construit un profil :
-- Processus habituels<br />
-- Connexions typiques<br />
-- Activités normales  </p>
-<p>Stocké et chiffré localement.</p>
+<h2 id="pipeline-danalyse-statistique">Pipeline d'analyse statistique<a class="headerlink" href="#pipeline-danalyse-statistique" title="Link to this section">&para;</a></h2>
+<h3 id="classification-z-score">Classification Z-Score<a class="headerlink" href="#classification-z-score" title="Link to this section">&para;</a></h3>
+<p>Chaque valeur surveillée est évaluée par rapport à sa ligne de base historique :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>z = (valeur - moyenne) / écart_type
+</span></code></pre></div>
+<p>| |z| | Gravité | Confiance |
+|------|----------|------------|
+| &gt; 3,0 | Critique | 99,7 % |
+| &gt; 2,0 | Élevé | 95 % |
+| &gt; 1,5 | Moyen | 86 % |
+| &gt; 1,0 | Faible | 68 % |</p>
+<h3 id="detection-des-valeurs-aberrantes-iqr">Détection des valeurs aberrantes IQR<a class="headerlink" href="#detection-des-valeurs-aberrantes-iqr" title="Link to this section">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>borne_inférieure = Q1 - 1,5 × IQR
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>borne_supérieure = Q3 + 1,5 × IQR
+</span></code></pre></div>
+Les valeurs en dehors de cette plage sont signalées comme des valeurs aberrantes statistiques.</p>
+<h3 id="moyennes-mobiles">Moyennes mobiles<a class="headerlink" href="#moyennes-mobiles" title="Link to this section">&para;</a></h3>
+<ul>
+<li><strong>Moyenne mobile simple</strong> — tendance de la ligne de base sur des fenêtres temporelles configurables</li>
+<li><strong>Moyenne mobile exponentielle</strong> — pondère davantage l'activité récente pour une réponse plus rapide aux modèles émergents</li>
+</ul>
+<h3 id="detection-des-pics">Détection des pics<a class="headerlink" href="#detection-des-pics" title="Link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>valeur_actuelle &gt; moyenne + (multiplicateur_seuil × écart_type)
+</span></code></pre></div>
 <hr />
-<h2 id="ia-ethique">IA éthique<a class="headerlink" href="#ia-ethique" title="Link to this section">&para;</a></h2>
-<p>NyXIA :
-- Ne trace pas<br />
-- N’apprend pas dans le cloud<br />
-- Ne collecte aucune donnée personnelle  </p>
+<h2 id="ce-que-le-moteur-produit">Ce que le moteur produit<a class="headerlink" href="#ce-que-le-moteur-produit" title="Link to this section">&para;</a></h2>
+<p>Pour chaque cycle d'analyse :
+- <code>is_anomaly</code> — indicateur booléen
+- <code>anomaly_score</code> — 0,0 à 1,0 (plus élevé = plus anormal)
+- <code>confidence</code> — 0,0 à 0,95
+- <code>contributing_features</code> — liste de caractéristiques avec Z-scores qui ont conduit à la détection</p>
+<p>Ces sorties sont affichées dans la section Analyse IA / ML du tableau de bord.</p>
+<hr />
+<h2 id="ligne-de-base-comportementale-locale">Ligne de base comportementale locale<a class="headerlink" href="#ligne-de-base-comportementale-locale" title="Link to this section">&para;</a></h2>
+<p>Le moteur construit une ligne de base privée par appareil :
+- Modèles de processus normaux
+- Comportement typique des connexions réseau
+- Activité de fichiers attendue
+- Comportement habituel selon l'heure du jour et le jour de la semaine</p>
+<p>La ligne de base est :
+- Stockée localement sous forme chiffrée
+- Réinitialisable par l'utilisateur à tout moment
+- Jamais transmise ni partagée</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>NyXIA combine confidentialité totale et détection comportementale avancée, sans dépendre du cloud.</p>
+<p>Le moteur IA combine Isolation Forest avec une analyse statistique pour offrir une détection d'anomalies transparente, explicable et respectueuse de la vie privée — entièrement sur l'appareil de l'utilisateur, sans dépendance cloud.</p>
 
 
 

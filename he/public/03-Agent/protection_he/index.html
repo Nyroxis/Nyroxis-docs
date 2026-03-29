@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#protection-core" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -7231,10 +7231,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        מטרות עיקריות
+        מטרות מרכזיות
       
     </span>
   </a>
@@ -7245,7 +7245,7 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. הצפנה מקומית מקצה־לקצה
+        1. הצפנה מקומית מקצה לקצה
       
     </span>
   </a>
@@ -7253,10 +7253,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-antitamper" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. הגנת תקינות (Anti‑Tamper)
+        2. הגנת שלמות — בלוקי אירועים מקושרים בחשיש
       
     </span>
   </a>
@@ -7264,10 +7264,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-selfprotection" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. הגנת Self‑Protection
+        3. הגנת שירות הפלטפורמה
       
     </span>
   </a>
@@ -7278,7 +7278,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. אבטחה מלאה אופליין
+        4. אבטחה לא מקוונת
       
     </span>
   </a>
@@ -7286,10 +7286,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-dashboard" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. אינטראקציה מאובטחת עם ה-Dashboard
+        5. אינטראקציה מאובטחת עם לוח המחוונים
       
     </span>
   </a>
@@ -7297,7 +7297,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8740,54 +8740,61 @@
   
 
 
-<h1 id="protection-core">Protection Core — מנגנון ההגנה המרכזי<a class="headerlink" href="#protection-core" title="Link to this section">&para;</a></h1>
-<p>Protection Core הוא החלק המגן של Nyroxis Agent.<br />
-הוא שומר על שלמות הנתונים, מונע מניפולציה בלוגים, ומבטיח שה-Agent ימשיך לפעול גם תחת תקיפה.</p>
+<h1 id="_1">ליבת ההגנה<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
+<p>ליבת ההגנה היא עמוד השדרה של האבטחה של Nyroxis Agent.
+היא מחזקת את שלמות הניטור, מבטיחה טיפול מוצפן באירועים ומונעת מתוקפים לחבל ביומנים או להשבית את הפלטפורמה.</p>
+<p>עיצובה פועל לפי עקרונות מחמירים של פרטיות-ראשונה ולא מקוון-ראשונה.</p>
 <hr />
-<h2 id="_1">מטרות עיקריות<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<p>המנגנון מבטיח:
-- אי‑יכולת לשנות אירועים קיימים<br />
-- הצפנה מלאה של הנתונים<br />
-- מניעת כיבוי שקט של ה-Agent<br />
-- הגנה על רכיבים רגישים  </p>
+<h2 id="_2">מטרות מרכזיות<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>ליבת ההגנה מבטיחה:
+- אירועי אבטחה אינם יכולים להשתנות או להימחק ללא זיהוי
+- יומנים נשארים מוצפנים ממקור לאחסון
+- הפלטפורמה אינה יכולה להיות מושבתת בשקט
+- רכיבים רגישים מוגנים מפני שינויים לא מורשים</p>
+<p>זה יוצר אמון בשכבת הנראות והפורנזיקה.</p>
 <hr />
-<h2 id="1">1. הצפנה מקומית מקצה־לקצה<a class="headerlink" href="#1" title="Link to this section">&para;</a></h2>
-<p>כל אירוע:
-- מוצפן מיד<br />
-- נכתב לדיסק רק בצורה מוצפנת<br />
-- כולל חותמת זמן ומטא־דאטה<br />
-- אינו נשמר לעולם כטקסט גלוי  </p>
+<h2 id="1">1. הצפנה מקומית מקצה לקצה<a class="headerlink" href="#1" title="Link to this section">&para;</a></h2>
+<p>כל אירוע שנלכד על ידי Nyroxis:
+- מוצפן מיידית ברגע הלכידה
+- נכתב לדיסק בצורה מוצפנת בלבד (AES-256)
+- מאונדקס עם חותמות זמן ומטא-נתונים
+- לעולם אינו מאוחסן בטקסט רגיל</p>
+<p>מודל ההצפנה מונע מתוקפים לקרוא או לשנות את היסטוריית האירועים.</p>
 <hr />
-<h2 id="2-antitamper">2. הגנת תקינות (Anti‑Tamper)<a class="headerlink" href="#2-antitamper" title="Link to this section">&para;</a></h2>
-<p>Nyroxis מיישמת:
-- מסלולי כתיבה מוגנים<br />
-- בדיקות Hash ואימות בלוקים<br />
-- ניטור קבצים קריטיים<br />
-- התראות על שינוי חשוד  </p>
+<h2 id="2">2. הגנת שלמות — בלוקי אירועים מקושרים בחשיש<a class="headerlink" href="#2" title="Link to this section">&para;</a></h2>
+<p>Nyroxis מאחסן אירועים במבנה מקושר בחשיש שבו כל בלוק מכיל:
+- מטען מוצפן
+- חשיש שלמות
+- אינדקס רציף
+- קישור לבלוק הקודם</p>
+<p>זה הופך חבלה לניתנת לזיהוי מיידי:
+- <strong>מחיקה</strong> — החשיש הקודם של הבלוק הבא לא יתאים
+- <strong>שינוי</strong> — החשיש של הבלוק שהשתנה לא יתאים
+- <strong>הזרקה</strong> — מספרי רצף וחשישי שרשרת ייכשלו</p>
+<p>כל חבלה מסומנת כאירוע אבטחה.</p>
 <hr />
-<h2 id="3-selfprotection">3. הגנת Self‑Protection<a class="headerlink" href="#3-selfprotection" title="Link to this section">&para;</a></h2>
-<p>ה-Agent אינו מאפשר כיבוי שקט.</p>
-<p>ההגנות כוללות:
-- ניטור מצב הריצה<br />
-- זיהוי עצירות לא צפויות<br />
-- הפעלה מחדש אוטומטית<br />
-- רישום ניסיונות כיבוי  </p>
+<h2 id="3">3. הגנת שירות הפלטפורמה<a class="headerlink" href="#3" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian אחראי להבטיח ש-Nyroxis Agent ו-Nyroxis Intelligence יישארו פעילים בכל עת.</p>
+<p>כל 3 שניות, Guardian מאמת את המצב התפעולי של שני השירותים. אם אחד מהשירותים נעצר באופן בלתי צפוי — עקב אירוע מערכת, קריסה או הפרעה מכוונת — Guardian מזהה זאת מיידית ונוקט פעולה מתקנת.</p>
+<p>ניסיונות כיבוי מתועדים כאירועי אבטחה, ושומרים על ראיות של הפרעה.</p>
 <hr />
-<h2 id="4">4. אבטחה מלאה אופליין<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
-<p>אין תלות ב:
-- ענן<br />
-- API חיצוני<br />
-- שרתים מרוחקים  </p>
-<p>הכול מתבצע מקומית בלבד.</p>
+<h2 id="4">4. אבטחה לא מקוונת<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
+<p>ליבת ההגנה לעולם אינה דורשת:
+- אימות ענן
+- ממשקי API חיצוניים
+- שרתים מרוחקים</p>
+<p>כל בדיקות השלמות והאימות מתרחשות <strong>100% לא מקוון</strong>.
+אימות הרישיון פועל גם הוא לחלוטין לא מקוון באמצעות הצפנת AES-GCM ואימות HMAC.</p>
 <hr />
-<h2 id="5-dashboard">5. אינטראקציה מאובטחת עם ה-Dashboard<a class="headerlink" href="#5-dashboard" title="Link to this section">&para;</a></h2>
-<p>הגישה ללוגים מתבצעת דרך:
-- מסלולי קריאה מאומתים<br />
-- הרשאות קריאה בלבד<br />
-- הפרדה מוחלטת בין ממשק למידע  </p>
+<h2 id="5">5. אינטראקציה מאובטחת עם לוח המחוונים<a class="headerlink" href="#5" title="Link to this section">&para;</a></h2>
+<p>לוח המחוונים ניגש לנתוני אירועים דרך:
+- נתיבי קריאה מאובטחים ומאומתים
+- גישה לקריאה בלבד ליומנים
+- הפרדה קפדנית בין ויזואליזציה לאחסון אירועים</p>
+<p>זה מונע מהתקפות בשכבת ממשק המשתמש לשנות נתונים אמיתיים.</p>
 <hr />
-<h2 id="_2">סיכום<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<p>Protection Core מבטיח שלמות ואמינות — גם תחת תקיפה — וכל זאת כשהמידע נשאר מקומי ומוצפן לחלוטין.</p>
+<h2 id="_3">סיכום<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
+<p>ליבת ההגנה — בשילוב עם Nyroxis System Guardian — מבטיחה שניטור, הצפנה ושלמות אירועים נשארים אמינים גם בסביבות עוינות, תוך שמירה על כל הנתונים פרטיים, מקומיים ואמינים מבחינה פורנזית.</p>
 
 
 

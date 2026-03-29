@@ -3513,10 +3513,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectif" class="md-nav__link">
+  <a href="#objectif-des-detections-ia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectif
+        Objectif des détections IA
       
     </span>
   </a>
@@ -3524,22 +3524,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-de-detections" class="md-nav__link">
+  <a href="#types-de-detections-ia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types de détections
+        Types de détections IA
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types de détections">
+    <nav class="md-nav" aria-label="Types de détections IA">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-detections-basees-sur-lanomalie" class="md-nav__link">
+  <a href="#1-detections-basees-sur-les-anomalies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Détections basées sur l’anomalie
+        1. Détections basées sur les anomalies
       
     </span>
   </a>
@@ -3547,10 +3547,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-alertes-basees-sur-les-sequences" class="md-nav__link">
+  <a href="#2-valeurs-aberrantes-statistiques-z-score" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Alertes basées sur les séquences
+        2. Valeurs aberrantes statistiques (Z-Score)
       
     </span>
   </a>
@@ -3558,10 +3558,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-modeles-rares" class="md-nav__link">
+  <a href="#3-detections-de-pics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Modèles rares
+        3. Détections de pics
       
     </span>
   </a>
@@ -3569,10 +3569,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-comportement-suspect-persistant" class="md-nav__link">
+  <a href="#4-anomalies-persistantes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Comportement suspect persistant
+        4. Anomalies persistantes
       
     </span>
   </a>
@@ -3585,10 +3585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details-dune-detection" class="md-nav__link">
+  <a href="#details-de-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Détails d’une détection
+        Détails de détection
       
     </span>
   </a>
@@ -3599,7 +3599,7 @@
   <a href="#100-local-prive" class="md-nav__link">
     <span class="md-ellipsis">
       
-        100% local &amp; privé
+        100 % Local &amp; Privé
       
     </span>
   </a>
@@ -8769,56 +8769,63 @@
 
 
 <h1 id="detections-ia">Détections IA<a class="headerlink" href="#detections-ia" title="Link to this section">&para;</a></h1>
-<p>Le module Détections IA présente les alertes générées par NyXIA — le moteur IA local — lorsqu’il identifie des comportements inhabituels ou suspects.<br />
-Toutes les détections sont effectuées localement, sans cloud.</p>
+<p>La vue Détections IA affiche les anomalies identifiées par le moteur IA/ML local — lorsqu'il identifie une activité inhabituelle ou suspecte sur l'appareil basée sur une analyse comportementale et une notation statistique.
+Toutes les détections sont générées localement, sans traitement cloud ni partage de données.</p>
 <hr />
-<h2 id="objectif">Objectif<a class="headerlink" href="#objectif" title="Link to this section">&para;</a></h2>
-<p>NyXIA détecte :
-- Anomalies comportementales<br />
-- Séquences suspectes<br />
-- Modèles rares ou inattendus<br />
-- Indicateurs de compromission<br />
-- Écarts par rapport au profil habituel de l’appareil  </p>
+<h2 id="objectif-des-detections-ia">Objectif des détections IA<a class="headerlink" href="#objectif-des-detections-ia" title="Link to this section">&para;</a></h2>
+<p>Le moteur IA détecte :
+- Les anomalies comportementales — des déviations par rapport à la ligne de base établie de l'appareil
+- Les séquences d'activités suspectes
+- Les modèles rares ou inattendus
+- Les valeurs aberrantes statistiques à travers les caractéristiques comportementales
+- Les déviations à haut risque identifiées par la notation Isolation Forest</p>
+<p>Ces détections complètent les résultats basés sur les règles de Nyroxis Intelligence, ajoutant une couche d'intelligence comportementale qui ne repose pas sur des règles prédéfinies.</p>
 <hr />
-<h2 id="types-de-detections">Types de détections<a class="headerlink" href="#types-de-detections" title="Link to this section">&para;</a></h2>
-<h3 id="1-detections-basees-sur-lanomalie"><strong>1. Détections basées sur l’anomalie</strong><a class="headerlink" href="#1-detections-basees-sur-lanomalie" title="Link to this section">&para;</a></h3>
-<p>Déclenchées lorsqu’un comportement diffère fortement du profil normal.</p>
+<h2 id="types-de-detections-ia">Types de détections IA<a class="headerlink" href="#types-de-detections-ia" title="Link to this section">&para;</a></h2>
+<h3 id="1-detections-basees-sur-les-anomalies">1. Détections basées sur les anomalies<a class="headerlink" href="#1-detections-basees-sur-les-anomalies" title="Link to this section">&para;</a></h3>
+<p>Déclenchées lorsque le score d'anomalie Isolation Forest dépasse 0,6 — ce qui signifie que le modèle comportemental observé est statistiquement isolé de la ligne de base normale.</p>
+<p>Exemples de cas :
+- Activité de processus inhabituelle à des moments inattendus
+- Modèles de connexion réseau irréguliers
+- Bursts inattendus de modifications de fichiers
+- Activité très en dehors de la ligne de base typique selon l'heure du jour ou le jour de la semaine</p>
 <hr />
-<h3 id="2-alertes-basees-sur-les-sequences"><strong>2. Alertes basées sur les séquences</strong><a class="headerlink" href="#2-alertes-basees-sur-les-sequences" title="Link to this section">&para;</a></h3>
-<p>NyXIA analyse des fenêtres d’événements :
-- Intrusions multi-étapes<br />
-- Séquences script → élévation<br />
-- Chaînes de processus suspectes  </p>
+<h3 id="2-valeurs-aberrantes-statistiques-z-score">2. Valeurs aberrantes statistiques (Z-Score)<a class="headerlink" href="#2-valeurs-aberrantes-statistiques-z-score" title="Link to this section">&para;</a></h3>
+<p>Déclenchées lorsqu'une caractéristique comportementale spécifique dévie significativement de la moyenne historique :
+- Critique : Z-score &gt; 3,0 (confiance à 99,7 %)
+- Élevé : Z-score &gt; 2,0 (confiance à 95 %)
+- Moyen : Z-score &gt; 1,5 (confiance à 86 %)
+- Faible : Z-score &gt; 1,0 (confiance à 68 %)</p>
 <hr />
-<h3 id="3-modeles-rares"><strong>3. Modèles rares</strong><a class="headerlink" href="#3-modeles-rares" title="Link to this section">&para;</a></h3>
-<p>Survient lorsque :
-- Un processus agit de façon inhabituelle<br />
-- Un nouvel endpoint rare apparaît<br />
-- L’activité rappelle une compromission précoce  </p>
+<h3 id="3-detections-de-pics">3. Détections de pics<a class="headerlink" href="#3-detections-de-pics" title="Link to this section">&para;</a></h3>
+<p>Déclenchées lorsqu'une métrique surveillée saute soudainement bien au-dessus de sa moyenne historique :
+- Burst soudain d'événements par heure
+- Pic de nouvelles destinations réseau
+- Augmentation rapide des sources uniques</p>
 <hr />
-<h3 id="4-comportement-suspect-persistant"><strong>4. Comportement suspect persistant</strong><a class="headerlink" href="#4-comportement-suspect-persistant" title="Link to this section">&para;</a></h3>
-<p>Anomalies à long terme, comme :
-- Échecs de connexion répétés<br />
-- Escalade lente des privilèges<br />
-- Activité en arrière-plan inhabituelle  </p>
+<h3 id="4-anomalies-persistantes">4. Anomalies persistantes<a class="headerlink" href="#4-anomalies-persistantes" title="Link to this section">&para;</a></h3>
+<p>Déviations à long terme qui s'accumulent dans le temps :
+- Augmentation graduelle du ratio de nouvelles destinations
+- Modèles d'activité inhabituelle se construisant lentement
+- Anomalies répétées à faible score formant une tendance</p>
 <hr />
-<h2 id="details-dune-detection">Détails d’une détection<a class="headerlink" href="#details-dune-detection" title="Link to this section">&para;</a></h2>
+<h2 id="details-de-detection">Détails de détection<a class="headerlink" href="#details-de-detection" title="Link to this section">&para;</a></h2>
 <p>Chaque détection IA inclut :
-- Description<br />
-- Processus concernés<br />
-- Activité réseau associée<br />
-- Niveau de sévérité<br />
-- Explication<br />
-- Recommandations  </p>
+- Description de l'anomalie
+- Score d'anomalie (0,0 – 1,0)
+- Classification de gravité
+- Caractéristiques contributives — les dimensions comportementales spécifiques qui se sont le plus écartées de la ligne de base, avec les valeurs Z-score
+- Horodatage et fenêtre d'analyse</p>
 <hr />
-<h2 id="100-local-prive">100% local &amp; privé<a class="headerlink" href="#100-local-prive" title="Link to this section">&para;</a></h2>
-<p>Aucune donnée transmise :
-- Calculs locaux<br />
-- Données chiffrées<br />
-- Aucune télémetrie  </p>
+<h2 id="100-local-prive">100 % Local &amp; Privé<a class="headerlink" href="#100-local-prive" title="Link to this section">&para;</a></h2>
+<p>Toutes les détections IA sont :
+- Calculées hors ligne sur l'appareil
+- Stockées localement dans la base de données chiffrée
+- Dérivées des journaux d'événements chiffrés
+- Jamais téléchargées vers des serveurs ni partagées avec des tiers</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Détections IA offre des alertes intelligentes, locales et confidentielles permettant d’identifier les comportements dangereux le plus tôt possible.</p>
+<p>Les détections IA fournissent des alertes d'anomalies intelligentes et respectueuses de la vie privée qui complètent la détection basée sur les règles — aidant les utilisateurs à identifier tôt les activités dangereuses ou anormales, avec un traitement entièrement local et sans dépendance cloud.</p>
 
 
 

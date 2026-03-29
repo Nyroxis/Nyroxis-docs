@@ -5014,10 +5014,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-ereigniserfassung" class="md-nav__link">
+  <a href="#1-ereigniserfassung-nyroxis-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Ereigniserfassung
+        1. Ereigniserfassung (Nyroxis Agent)
       
     </span>
   </a>
@@ -5025,10 +5025,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-verschlusselung-an-der-quelle" class="md-nav__link">
+  <a href="#2-normalisierung-und-verschlusselung-an-der-quelle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Verschlüsselung an der Quelle
+        2. Normalisierung und Verschlüsselung an der Quelle
       
     </span>
   </a>
@@ -5047,10 +5047,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-lokale-analyse-engine" class="md-nav__link">
+  <a href="#4-nyroxis-intelligence-regel-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Lokale Analyse-Engine
+        4. Nyroxis Intelligence — Regel-Engine
       
     </span>
   </a>
@@ -5058,10 +5058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-dashboard-visualisierung" class="md-nav__link">
+  <a href="#5-lokale-kiml-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Dashboard-Visualisierung
+        5. Lokale KI/ML-Engine
       
     </span>
   </a>
@@ -5069,10 +5069,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vollstandiges-datenflussdiagramm" class="md-nav__link">
+  <a href="#6-dashboard-visualisierung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vollständiges Datenflussdiagramm
+        6. Dashboard-Visualisierung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vollstandiger-datenlebenszyklus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vollständiger Datenlebenszyklus
       
     </span>
   </a>
@@ -8741,65 +8752,81 @@
 
 
 <h1 id="datenfluss">Datenfluss<a class="headerlink" href="#datenfluss" title="Link to this section">&para;</a></h1>
-<p>Dieser Abschnitt beschreibt, wie Daten innerhalb von Nyroxis verarbeitet werden – von der Ereigniserfassung bis zur Darstellung im Dashboard – vollständig lokal, verschlüsselt und datenschutzorientiert.</p>
-<p>Nyroxis folgt einem einfachen, transparenten und privacy-first orientierten Datenlebenszyklus.</p>
+<p>Dieser Abschnitt erklärt, wie Daten innerhalb von Nyroxis fließen — von der Ereigniserfassung bis zur Interpretation durch den Benutzer — während sie bei jedem Schritt vollständig lokal, verschlüsselt und privat bleiben.</p>
 <hr />
-<h2 id="1-ereigniserfassung">1. Ereigniserfassung<a class="headerlink" href="#1-ereigniserfassung" title="Link to this section">&para;</a></h2>
-<p>Der Nyroxis Agent überwacht kontinuierlich:
-- Prozesse<br />
-- Netzwerkverbindungen<br />
-- Dateiänderungen<br />
-- Berechtigungsbezogene Aktionen<br />
-- System- und Sicherheitsereignisse  </p>
-<p>Alle Daten werden <strong>lokal</strong> erfasst – ohne jegliche Cloud-Interaktion.</p>
+<h2 id="1-ereigniserfassung-nyroxis-agent">1. Ereigniserfassung (Nyroxis Agent)<a class="headerlink" href="#1-ereigniserfassung-nyroxis-agent" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Agent überwacht kontinuierlich:
+- Prozesse und Dienste
+- Netzwerkverbindungen und Datenverkehrs-Metadaten
+- Dateisystemänderungen und Registry-Modifikationen
+- Rechtebezogene Aktionen
+- System- und Sicherheitsereignisse (Windows-Ereignisprotokolle)
+- PowerShell- und Skriptausführung</p>
+<p>Alle Daten werden <strong>lokal</strong> erfasst, ohne jegliche Cloud-Interaktion.</p>
 <hr />
-<h2 id="2-verschlusselung-an-der-quelle">2. Verschlüsselung an der Quelle<a class="headerlink" href="#2-verschlusselung-an-der-quelle" title="Link to this section">&para;</a></h2>
+<h2 id="2-normalisierung-und-verschlusselung-an-der-quelle">2. Normalisierung und Verschlüsselung an der Quelle<a class="headerlink" href="#2-normalisierung-und-verschlusselung-an-der-quelle" title="Link to this section">&para;</a></h2>
 <p>Unmittelbar nach der Erfassung:
-- werden Ereignisse verschlüsselt<br />
-- werden Integritätsschutzmechanismen angewendet<br />
-- wird das Datenmaterial manipulationsresistent  </p>
-<p>So können Angreifer Protokolle weder lesen noch verändern.</p>
+- Ereignisse werden normalisiert und mit Kontext angereichert
+- Die Nutzlast wird mit AES-256 verschlüsselt
+- Ein Integritäts-Hash wird angewendet
+- Daten werden ausschließlich in verschlüsselter Form in die lokale Datenbank geschrieben</p>
+<p>Kein Klartext berührt jemals den Datenträger.</p>
 <hr />
 <h2 id="3-lokale-verschlusselte-datenbank">3. Lokale verschlüsselte Datenbank<a class="headerlink" href="#3-lokale-verschlusselte-datenbank" title="Link to this section">&para;</a></h2>
-<p>Die verschlüsselten Ereignisse werden in einem sicheren lokalen Datenspeicher abgelegt.</p>
+<p>Verschlüsselte Ereignisse werden in einer sicheren SQLite-Datenbank gespeichert.</p>
 <p>Eigenschaften:
-- vollständig verschlüsselt im Ruhezustand<br />
-- strukturiert für schnelle Abfragen<br />
-- optimiert für die Erstellung von Zeitachsen<br />
-- keinerlei externe Übertragung  </p>
+- Vollständig verschlüsselt im Ruhezustand (AES-256)
+- Hash-verkettete Ereignisblöcke zur Manipulationserkennung
+- Strukturiert für schnelle Suchabfragen und Zeitstrahlrekonstruktion
+- Keine externe Übertragung — niemals</p>
 <p>Die Datenbank verlässt das Gerät niemals.</p>
 <hr />
-<h2 id="4-lokale-analyse-engine">4. Lokale Analyse-Engine<a class="headerlink" href="#4-lokale-analyse-engine" title="Link to this section">&para;</a></h2>
-<p>Die Analyse-Engine verarbeitet die verschlüsselten Daten lokal und generiert:
-- Verhaltensanalysen<br />
-- Anomalieerkennung<br />
-- KI-gestützte Bewertungen<br />
-- Korrelationen zwischen Ereignissen  </p>
-<p>Keine externen Server oder Cloud-Dienste werden verwendet.</p>
+<h2 id="4-nyroxis-intelligence-regel-engine">4. Nyroxis Intelligence — Regel-Engine<a class="headerlink" href="#4-nyroxis-intelligence-regel-engine" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence liest aus der verschlüsselten Datenbank und wertet Ereignisse über drei Schichten aus:
+- <strong>27 Erkennungsregeln</strong> — Mustererkennung einzelner Ereignisse
+- <strong>12 Korrelationsregeln</strong> — Multi-Ereignis-Mustererkennung über die Zeit
+- <strong>2 Kettenregeln</strong> — Erkennung mehrstufiger Angriffsequenzen</p>
+<p>Wenn eine Regel ausgelöst wird:
+- Wird sofort eine Warnung ausgegeben
+- Der Fund wird in einer dedizierten Erkennungsdatenbank gespeichert
+- Der Benutzer wird über das Dashboard benachrichtigt</p>
 <hr />
-<h2 id="5-dashboard-visualisierung">5. Dashboard-Visualisierung<a class="headerlink" href="#5-dashboard-visualisierung" title="Link to this section">&para;</a></h2>
-<p>Das Nyroxis Dashboard verwandelt technische Daten in:
-- Logansichten<br />
-- Warnungen<br />
-- Diagramme und Trends<br />
-- Schweregradindikatoren<br />
-- einfach verständliche Erläuterungen  </p>
-<p>Alles erfolgt lokal und privat.</p>
+<h2 id="5-lokale-kiml-engine">5. Lokale KI/ML-Engine<a class="headerlink" href="#5-lokale-kiml-engine" title="Link to this section">&para;</a></h2>
+<p>Parallel dazu verarbeitet die KI/ML-Engine Ereignisse lokal:
+- Isolation-Forest-Anomalie-Scoring
+- Z-Score-Statistikklassifizierung
+- Verhaltensbasislinie-Vergleich
+- Identifikation beitragender Merkmale</p>
+<p>Alle Berechnungen verbleiben auf dem Gerät — keine Cloud-Inferenz, kein Datenaustausch.</p>
 <hr />
-<h2 id="vollstandiges-datenflussdiagramm">Vollständiges Datenflussdiagramm<a class="headerlink" href="#vollstandiges-datenflussdiagramm" title="Link to this section">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Systemereignisse ] 
+<h2 id="6-dashboard-visualisierung">6. Dashboard-Visualisierung<a class="headerlink" href="#6-dashboard-visualisierung" title="Link to this section">&para;</a></h2>
+<p>Das Nyroxis Dashboard wandelt all das oben Genannte um in:
+- Ereignisprotokolle mit forensischer Suche und Filterung
+- Erkennungs-, Korrelations- und Kettenbefunde
+- KI/ML-Anomalieergebnisse mit Aufschlüsselung der beitragenden Merkmale
+- Diagramme, Schweregradindikatoren und Trendanalysen
+- Exportierbare Berichte (PDF/CSV)</p>
+<p>Alles bleibt lokal und privat.</p>
+<hr />
+<h2 id="vollstandiger-datenlebenszyklus">Vollständiger Datenlebenszyklus<a class="headerlink" href="#vollstandiger-datenlebenszyklus" title="Link to this section">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Systemereignisse ]
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓ (verschlüsselt)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Lokale verschlüsselte Datenbank ]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← erfassen, normalisieren, verschlüsseln
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Lokale verschlüsselte DB ] ← AES-256, SQLite, hash-verkettet
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Lokale Analyse-Engine ]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 Erkennung + 12 Korrelation + 2 Kettenregeln
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Nyroxis Dashboard ]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Lokale KI/ML-Engine ]    ← Isolation Forest + statistische Analyse
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↓
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis Dashboard ]      ← Sichtbarkeit, Forensik, Berichterstellung
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        ↑
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[ Nyroxis System Guardian ] ← überwacht, sichert, validiert Lizenz
 </span></code></pre></div>
+<p>In keiner Phase werden Protokolle oder sensible Daten auf externe Server hochgeladen.</p>
 <hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Nyroxis gewährleistet einen strikt lokalen, verschlüsselten und datenschutzorientierten Datenfluss – für maximale Transparenz ohne Preisgabe persönlicher Informationen.</p>
+<p>Nyroxis pflegt einen strikt lokalen, verschlüsselten und datenschutzorientierten Datenfluss — und gibt Benutzern vollständige Sichtbarkeit und forensisch verwertbare Beweise, ohne Informationen an die Cloud oder Dritte preiszugeben.</p>
 
 
 

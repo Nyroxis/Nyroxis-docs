@@ -7046,10 +7046,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-nyroxis-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. איסוף אירועים
+        1. איסוף אירועים (Nyroxis Agent)
       
     </span>
   </a>
@@ -7060,7 +7060,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. הצפנה מיידית
+        2. נרמול והצפנה במקור
       
     </span>
   </a>
@@ -7071,7 +7071,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. בסיס נתונים מוצפן מקומי
+        3. מסד נתונים מקומי מוצפן
       
     </span>
   </a>
@@ -7079,10 +7079,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4-nyroxis-intelligence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. מנוע ניתוח מקומי
+        4. Nyroxis Intelligence — מנוע כללים
       
     </span>
   </a>
@@ -7090,10 +7090,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-dashboard" class="md-nav__link">
+  <a href="#5-aiml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. הצגה ב-Dashboard
+        5. מנוע AI/ML מקומי
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ויזואליזציה ב-Dashboard
       
     </span>
   </a>
@@ -7104,7 +7115,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        תרשים זרימת נתונים
+        מחזור חיים מלא של הנתונים
       
     </span>
   </a>
@@ -8740,66 +8751,82 @@
   
 
 
-<h1 id="_1">זרימת מידע<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
-<p>חלק זה מסביר כיצד המידע זורם בתוך Nyroxis — מהאיסוף ועד להצגתו — תוך שמירה מלאה על פרטיות והצפנה מקומית.</p>
-<p>Nyroxis בנויה על מחזור נתונים פשוט ושקוף.</p>
+<h1 id="_1">זרימת נתונים<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
+<p>סעיף זה מסביר כיצד נתונים זורמים בתוך Nyroxis — מאיסוף האירועים ועד לפרשנות המשתמש — תוך שמירה על נתונים מקומיים לחלוטין, מוצפנים ופרטיים בכל שלב.</p>
 <hr />
-<h2 id="1">1. איסוף אירועים<a class="headerlink" href="#1" title="Link to this section">&para;</a></h2>
-<p>Nyroxis Agent מנטר באופן רציף:
-- תהליכים<br />
-- חיבורים לרשת<br />
-- שינויים בקבצים<br />
-- פעולות הרשאה<br />
-- אירועי מערכת ואבטחה  </p>
-<p>הכול נאסף <strong>מקומית</strong>, ללא ענן.</p>
+<h2 id="1-nyroxis-agent">1. איסוף אירועים (Nyroxis Agent)<a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Agent מנטר ברציפות:
+- תהליכים ושירותים
+- חיבורי רשת ומטא-נתוני תעבורה
+- שינויים במערכת קבצים ושינויי רגיסטרי
+- פעולות הקשורות להרשאות
+- אירועי מערכת ואבטחה (יומני אירועי Windows)
+- הרצת PowerShell וסקריפטים</p>
+<p>כל הנתונים נאספים <strong>באופן מקומי</strong>, ללא כל אינטראקציה עם הענן.</p>
 <hr />
-<h2 id="2">2. הצפנה מיידית<a class="headerlink" href="#2" title="Link to this section">&para;</a></h2>
+<h2 id="2">2. נרמול והצפנה במקור<a class="headerlink" href="#2" title="Link to this section">&para;</a></h2>
 <p>מיד לאחר האיסוף:
-- הנתונים מוצפנים<br />
-- מיושמת הגנת תקינות<br />
-- המידע נהיה עמיד למניפולציה  </p>
-<p>כך לא ניתן לקרוא או לשנות לוגים.</p>
+- אירועים מנורמלים ומועשרים בהקשר
+- המטען מוצפן באמצעות AES-256
+- מוחל האש שלמות
+- הנתונים נכתבים למסד הנתונים המקומי בצורה מוצפנת בלבד</p>
+<p>שום טקסט גלוי לעולם אינו נוגע בדיסק.</p>
 <hr />
-<h2 id="3">3. בסיס נתונים מוצפן מקומי<a class="headerlink" href="#3" title="Link to this section">&para;</a></h2>
-<p>האירועים המוצפנים נשמרים במאגר מהימן.</p>
+<h2 id="3">3. מסד נתונים מקומי מוצפן<a class="headerlink" href="#3" title="Link to this section">&para;</a></h2>
+<p>אירועים מוצפנים מאוחסנים במסד נתונים מאובטח מסוג SQLite.</p>
 <p>מאפיינים:
-- מוצפן לחלוטין<br />
-- מבנה נתונים מאורגן<br />
-- מותאם לחיפוש מהיר<br />
-- ללא שליחה למקור חיצוני  </p>
-<p>המאגר נשאר תמיד במכשיר.</p>
+- מוצפן לחלוטין במנוחה (AES-256)
+- בלוקי אירועים מקושרים בהאש לזיהוי חבלה
+- מובנה לחיפושים מהירים ולשחזור ציר זמן
+- אין שידור חיצוני — לעולם</p>
+<p>מסד הנתונים לעולם אינו יוצא מהמכשיר.</p>
 <hr />
-<h2 id="4">4. מנוע ניתוח מקומי<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
-<p>המנוע מפיק:
-- תובנות התנהגות<br />
-- זיהוי חריגות<br />
-- דירוג סיכון מבוסס AI<br />
-- קורלציה בין אירועים  </p>
-<p>הכול מתבצע מקומית בלבד.</p>
+<h2 id="4-nyroxis-intelligence">4. Nyroxis Intelligence — מנוע כללים<a class="headerlink" href="#4-nyroxis-intelligence" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence קורא ממסד הנתונים המוצפן ומעריך אירועים על פני שלוש שכבות:
+- <strong>27 כללי זיהוי</strong> — התאמת דפוסי אירועים בודדים
+- <strong>12 כללי קורלציה</strong> — זיהוי דפוסים מרובי אירועים לאורך זמן
+- <strong>2 כללי שרשרת</strong> — זיהוי רצפי תקיפה רב-שלביים</p>
+<p>כאשר כלל מופעל:
+- התראה מוּעלת מיידית
+- הממצא מאוחסן במסד נתונים ייעודי לזיהויים
+- המשתמש מקבל הודעה דרך ה-Dashboard</p>
 <hr />
-<h2 id="5-dashboard">5. הצגה ב-Dashboard<a class="headerlink" href="#5-dashboard" title="Link to this section">&para;</a></h2>
-<p>המערכת מציגה:
-- לוגים<br />
-- התראות<br />
-- גרפים ומגמות<br />
-- רמות חומרה<br />
-- הסברים פשוטים  </p>
-<p>הכול נשאר מקומי ופרטי.</p>
+<h2 id="5-aiml">5. מנוע AI/ML מקומי<a class="headerlink" href="#5-aiml" title="Link to this section">&para;</a></h2>
+<p>במקביל, מנוע ה-AI/ML מעבד אירועים באופן מקומי:
+- ניקוד חריגים של Isolation Forest
+- סיווג סטטיסטי Z-Score
+- השוואה לקו בסיס התנהגותי
+- זיהוי מאפיינים תורמים</p>
+<p>כל החישוב נשאר במכשיר — אין הסקה בענן, אין שיתוף נתונים.</p>
 <hr />
-<h2 id="_2">תרשים זרימת נתונים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<h2 id="6-dashboard">6. ויזואליזציה ב-Dashboard<a class="headerlink" href="#6-dashboard" title="Link to this section">&para;</a></h2>
+<p>ה-Nyroxis Dashboard הופך את כל האמור לעיל ל:
+- יומני אירועים עם חיפוש פורנזי וסינון
+- ממצאי זיהוי, קורלציה ושרשרת
+- תוצאות חריגים של AI/ML עם פירוט מאפיינים תורמים
+- תרשימים, מדדי חומרה וניתוח מגמות
+- דוחות ניתנים לייצוא (PDF/CSV)</p>
+<p>הכל נשאר מקומי ופרטי.</p>
+<hr />
+<h2 id="_2">מחזור חיים מלא של הנתונים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ אירועי מערכת ]
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓ (מוצפן)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ בסיס נתונים מוצפן ]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← איסוף, נרמול, הצפנה
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ מסד נתונים מקומי מוצפן ] ← AES-256, SQLite, מקושר בהאש
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ מנוע ניתוח ]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 זיהוי + 12 קורלציה + 2 כללי שרשרת
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Dashboard ]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ מנוע AI/ML מקומי ]      ← Isolation Forest + ניתוח סטטיסטי
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↓
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis Dashboard ]      ← נראות, פורנזיקה, דיווח
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        ↑
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[ Nyroxis System Guardian ] ← מנטר, מגבה, מאמת רישיון
 </span></code></pre></div>
+<p>בשום שלב אין יומנים או נתונים רגישים המועלים לשרתים חיצוניים.</p>
 <hr />
 <h2 id="_3">סיכום<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<p>Nyroxis שומרת על זרימת מידע מקומית בלבד, מוצפנת ובטוחה — ומעניקה למשתמש נראות ללא פגיעה בפרטיות.</p>
+<p>Nyroxis שומרת על זרימת נתונים מקומית, מוצפנת ומכוונת לפרטיות — ומעניקה למשתמשים נראות מלאה וראיות פורנזיות מבלי לחשוף מידע לענן או לצדדים שלישיים.</p>
 
 
 

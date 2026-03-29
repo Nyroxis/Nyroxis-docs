@@ -5358,10 +5358,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#zweck-visueller-analysen" class="md-nav__link">
+  <a href="#zweck-der-visuellen-analyse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Zweck visueller Analysen
+        Zweck der visuellen Analyse
       
     </span>
   </a>
@@ -5381,10 +5381,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-ereignishaufigkeit-uber-die-zeit" class="md-nav__link">
+  <a href="#1-ereignishaufigkeit-uber-zeit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Ereignishäufigkeit über die Zeit
+        1. Ereignishäufigkeit über Zeit
       
     </span>
   </a>
@@ -5392,10 +5392,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-top-ereignisquellen" class="md-nav__link">
+  <a href="#2-schweregradverteilung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Top-Ereignisquellen
+        2. Schweregradverteilung
       
     </span>
   </a>
@@ -5403,10 +5403,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-verlauf-des-schweregrads" class="md-nav__link">
+  <a href="#3-top-ereignisquellen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Verlauf des Schweregrads
+        3. Top-Ereignisquellen
       
     </span>
   </a>
@@ -5414,10 +5414,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-spezielle-sicherheitsindikatoren" class="md-nav__link">
+  <a href="#4-erkennungs-korrelationstrend" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Spezielle Sicherheitsindikatoren
+        4. Erkennungs- &amp; Korrelationstrend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-kiml-anomalie-score-trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. KI/ML-Anomalie-Score-Trend
       
     </span>
   </a>
@@ -5441,21 +5452,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interaktivitat" class="md-nav__link">
+  <a href="#datenschutz-offline-betrieb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interaktivität
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#privatsphare-offline-fahigkeit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Privatsphäre &amp; Offline-Fähigkeit
+        Datenschutz &amp; Offline-Betrieb
       
     </span>
   </a>
@@ -8780,58 +8780,55 @@
 
 
 <h1 id="diagramme-analysen">Diagramme &amp; Analysen<a class="headerlink" href="#diagramme-analysen" title="Link to this section">&para;</a></h1>
-<p>Der Bereich „Charts &amp; Analytics“ des Nyroxis Dashboards verwandelt rohe sicherheitsrelevante Ereignisse in visuelle Erkenntnisse und hilft Nutzern, Trends, Anomalien und potenzielle Risiken schnell zu erkennen.<br />
-Alle Analysen werden vollständig lokal erzeugt, wodurch maximale Privatsphäre gewährleistet ist.</p>
-<h2 id="zweck-visueller-analysen">Zweck visueller Analysen<a class="headerlink" href="#zweck-visueller-analysen" title="Link to this section">&para;</a></h2>
-<p>Diagramme helfen Nutzern, sofort Fragen zu beantworten wie:
-- Nimmt die Aktivität zu oder ab?<br />
-- Gibt es ungewöhnliche Spitzen bei Prozessen oder Netzwerkverbindungen?<br />
-- Welche Ereigniskategorien treten am häufigsten auf?<br />
-- Gibt es wiederkehrende verdächtige Muster?  </p>
-<p>Visuelle Darstellungen machen komplexe Daten leicht verständlich.</p>
+<p>Der Bereich Diagramme &amp; Analysen des Nyroxis-Dashboards wandelt rohe Sicherheitsereignisse in visuelle Einblicke um und hilft Benutzern, Trends, Anomalien und potenzielle Risiken schnell zu verstehen.
+Alle Analysen werden lokal generiert und wahren die vollständige Privatsphäre.</p>
+<hr />
+<h2 id="zweck-der-visuellen-analyse">Zweck der visuellen Analyse<a class="headerlink" href="#zweck-der-visuellen-analyse" title="Link to this section">&para;</a></h2>
+<p>Diagramme helfen Benutzern, wichtige Fragen sofort zu beantworten:
+- Nimmt die Aktivität im Laufe der Zeit zu oder ab?
+- Gibt es ungewöhnliche Spitzen bei Prozessen oder Netzwerkverkehr?
+- Welche Ereigniskategorien treten am häufigsten auf?
+- Wie sind Erkennungs- und Korrelationsergebnisse nach Schweregrad verteilt?
+- Gibt es wiederkehrende verdächtige Muster im Laufe der Zeit?</p>
+<p>Visualisierungen machen komplexe Sicherheitsdaten sofort verständlich.</p>
+<hr />
 <h2 id="verfugbare-diagrammtypen">Verfügbare Diagrammtypen<a class="headerlink" href="#verfugbare-diagrammtypen" title="Link to this section">&para;</a></h2>
-<h3 id="1-ereignishaufigkeit-uber-die-zeit"><strong>1. Ereignishäufigkeit über die Zeit</strong><a class="headerlink" href="#1-ereignishaufigkeit-uber-die-zeit" title="Link to this section">&para;</a></h3>
-<p>Zeigt, wie viele Ereignisse auftreten:
-- stündlich<br />
-- täglich<br />
-- wöchentlich  </p>
-<p>Ideal zur Erkennung von Aktivitätsspitzen oder ungewöhnlichen Ruhephasen.</p>
-<h3 id="2-top-ereignisquellen"><strong>2. Top-Ereignisquellen</strong><a class="headerlink" href="#2-top-ereignisquellen" title="Link to this section">&para;</a></h3>
-<p>Hebt hervor, welche Prozesse, Dateien oder Netzwerkendpunkte die meisten Ereignisse erzeugen.</p>
-<p>Beispiele:
-- aktivste Prozesse<br />
-- am häufigsten genutzte Dateien<br />
-- häufigste Netzwerkverbindungen  </p>
-<h3 id="3-verlauf-des-schweregrads"><strong>3. Verlauf des Schweregrads</strong><a class="headerlink" href="#3-verlauf-des-schweregrads" title="Link to this section">&para;</a></h3>
-<p>Verfolgt die Entwicklung von:
-- Informational<br />
-- Warnungen<br />
-- Hochrisiko- oder kritischer Aktivität  </p>
-<p>Hilft, eskalierende Muster frühzeitig zu erkennen.</p>
-<h3 id="4-spezielle-sicherheitsindikatoren"><strong>4. Spezielle Sicherheitsindikatoren</strong><a class="headerlink" href="#4-spezielle-sicherheitsindikatoren" title="Link to this section">&para;</a></h3>
-<p>Nyroxis liefert spezielle Diagramme für hochwertige Signale:
-- verdächtige Prozessketten<br />
-- wiederholte fehlgeschlagene Verbindungen<br />
-- Zugriffe auf sensible Bereiche<br />
-- Berechtigungsbezogene Ereignisse  </p>
-<p>Diese Grafiken unterstützen bei der Erkennung früher Anzeichen bösartiger Aktivitäten.</p>
+<h3 id="1-ereignishaufigkeit-uber-zeit">1. Ereignishäufigkeit über Zeit<a class="headerlink" href="#1-ereignishaufigkeit-uber-zeit" title="Link to this section">&para;</a></h3>
+<p>Zeigt, wie viele Ereignisse stündlich, täglich und wöchentlich auftreten.
+Nützlich zum Erkennen von Spitzen, Aktivitätsschüben oder unerwarteten Ruhephasen, die darauf hindeuten könnten, dass etwas deaktiviert wurde.</p>
+<h3 id="2-schweregradverteilung">2. Schweregradverteilung<a class="headerlink" href="#2-schweregradverteilung" title="Link to this section">&para;</a></h3>
+<p>Visuelle Aufschlüsselung der Ereignisse nach Schweregrad: Kritisch, Hoch, Warnung, Info.
+Hilft Benutzern, das gesamte Risikoprofil auf einen Blick zu sehen.</p>
+<h3 id="3-top-ereignisquellen">3. Top-Ereignisquellen<a class="headerlink" href="#3-top-ereignisquellen" title="Link to this section">&para;</a></h3>
+<p>Hebt hervor, welche Prozesse, Dateien oder Netzwerkendpunkte die meisten Ereignisse erzeugen:
+- Aktivste Prozesse
+- Am häufigsten zugegriffene Dateien
+- Häufigste Netzwerkverbindungen</p>
+<h3 id="4-erkennungs-korrelationstrend">4. Erkennungs- &amp; Korrelationstrend<a class="headerlink" href="#4-erkennungs-korrelationstrend" title="Link to this section">&para;</a></h3>
+<p>Verfolgt die Entwicklung von Regelübereinstimmungen über die Zeit:
+- Erkennungsergebnisse
+- Korrelationsergebnisse
+- Ketten-Ergebnisse</p>
+<p>Hilft Benutzern, Eskalationsmuster zu erkennen, bevor eine vollständige Kompromittierung eintritt.</p>
+<h3 id="5-kiml-anomalie-score-trend">5. KI/ML-Anomalie-Score-Trend<a class="headerlink" href="#5-kiml-anomalie-score-trend" title="Link to this section">&para;</a></h3>
+<p>Visualisiert die Ausgabe des lokalen Isolation-Forest-Engines über die Zeit:
+- Entwicklung des Anomalie-Scores
+- Schweregradklassifizierungen: Kritisch / Hoch / Mittel / Niedrig
+- Spike-Ereignisse gegenüber der Verhaltensbasislinie</p>
+<hr />
 <h2 id="lokale-analyse-engine">Lokale Analyse-Engine<a class="headerlink" href="#lokale-analyse-engine" title="Link to this section">&para;</a></h2>
-<p>Alle Diagramme werden ausschließlich durch die lokale Analyse-Engine erzeugt:
-- keine Cloud<br />
-- keine externen APIs<br />
-- vollständige Verarbeitung auf dem Gerät  </p>
-<p>Die Diagramme basieren direkt auf der verschlüsselten lokalen Datenbank.</p>
-<h2 id="interaktivitat">Interaktivität<a class="headerlink" href="#interaktivitat" title="Link to this section">&para;</a></h2>
-<p>Diagramme unterstützen:
-- Hover-Details<br />
-- optionales Zoomen<br />
-- Filter nach Zeitbereich<br />
-- Auswahl bestimmter Kategorien  </p>
-<h2 id="privatsphare-offline-fahigkeit">Privatsphäre &amp; Offline-Fähigkeit<a class="headerlink" href="#privatsphare-offline-fahigkeit" title="Link to this section">&para;</a></h2>
-<p>Nichts wird jemals an externe Dienste gesendet.<br />
-Analysen werden ausschließlich lokal aus verschlüsselten Ereignissen generiert.</p>
+<p>Alle Diagramme werden von der lokalen Analyse-Engine angetrieben:
+- Kein Cloud
+- Keine externen APIs
+- Alle Berechnungen verbleiben auf dem Gerät</p>
+<p>Diagramme werden direkt aus der verschlüsselten lokalen Datenbank und der KI/ML-Engine-Ausgabe generiert.</p>
+<hr />
+<h2 id="datenschutz-offline-betrieb">Datenschutz &amp; Offline-Betrieb<a class="headerlink" href="#datenschutz-offline-betrieb" title="Link to this section">&para;</a></h2>
+<p>Nichts wird jemals an externe Dienste gesendet.
+Analysen werden lokal aus verschlüsselten Ereignissen berechnet und gerendert, vollständig offline.</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>„Charts &amp; Analytics“ bietet eine private, visuelle Möglichkeit, Systemaktivitäten zu verstehen, Anomalien zu erkennen und sofortige Einblicke in den Sicherheitsstatus zu gewinnen.</p>
+<p>Diagramme &amp; Analysen bieten eine visuelle, datenschutzfreundliche Möglichkeit, Systemaktivitäten zu verstehen, Erkennungstrends zu verfolgen, KI/ML-Ergebnisse zu überwachen und sofortige Einblicke in die Sicherheitslage des Geräts zu gewinnen.</p>
 
 
 

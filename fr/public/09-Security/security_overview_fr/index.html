@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vue-densemble-de-la-securite" class="md-skip">
+        <a href="#apercu-de-la-securite" class="md-skip">
           Skip to content
         </a>
       
@@ -4080,22 +4080,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#principes-fondamentaux" class="md-nav__link">
+  <a href="#principes-fondamentaux-de-securite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Principes fondamentaux
+        Principes Fondamentaux de Sécurité
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Principes fondamentaux">
+    <nav class="md-nav" aria-label="Principes Fondamentaux de Sécurité">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1-confidentialite-par-conception" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Confidentialité par conception
+        1. Confidentialité par Conception
       
     </span>
   </a>
@@ -4103,10 +4103,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-chiffrement-systematique" class="md-nav__link">
+  <a href="#2-chiffrement-partout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Chiffrement systématique
+        2. Chiffrement Partout
       
     </span>
   </a>
@@ -4117,7 +4117,7 @@
   <a href="#3-zero-dependance-cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Zéro dépendance cloud
+        3. Zéro Dépendance Cloud
       
     </span>
   </a>
@@ -4125,10 +4125,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-ia-hors-ligne-nyxia" class="md-nav__link">
+  <a href="#4-detection-multi-couches" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. IA hors-ligne (NyXIA)
+        4. Détection Multi-Couches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-iaml-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. IA/ML Local
       
     </span>
   </a>
@@ -4141,22 +4152,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mecanismes-cles" class="md-nav__link">
+  <a href="#mecanismes-de-securite-cles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mécanismes clés
+        Mécanismes de Sécurité Clés
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Mécanismes clés">
+    <nav class="md-nav" aria-label="Mécanismes de Sécurité Clés">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1-capture-securisee-des-evenements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Capture sécurisée des événements
+        1. Capture Sécurisée des Événements
       
     </span>
   </a>
@@ -4164,10 +4175,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-stockage-anti-falsification" class="md-nav__link">
+  <a href="#2-stockage-inviolable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Stockage anti-falsification
+        2. Stockage Inviolable
       
     </span>
   </a>
@@ -4175,10 +4186,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-profils-comportementaux-locaux" class="md-nav__link">
+  <a href="#3-resilience-de-la-plateforme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Profils comportementaux locaux
+        3. Résilience de la Plateforme
       
     </span>
   </a>
@@ -4186,10 +4197,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-moteur-de-regles" class="md-nav__link">
+  <a href="#4-licences-basees-sur-le-hwid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Moteur de règles
+        4. Licences Basées sur le HWID
       
     </span>
   </a>
@@ -4197,10 +4208,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-securite-du-tableau-de-bord" class="md-nav__link">
+  <a href="#5-securite-du-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Sécurité du tableau de bord
+        5. Sécurité du Dashboard
       
     </span>
   </a>
@@ -4209,6 +4220,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resume-des-couches-de-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résumé des Couches de Sécurité
+      
+    </span>
+  </a>
   
 </li>
       
@@ -8807,62 +8829,89 @@
   
 
 
-<h1 id="vue-densemble-de-la-securite">Vue d’ensemble de la sécurité<a class="headerlink" href="#vue-densemble-de-la-securite" title="Link to this section">&para;</a></h1>
-<p>Nyroxis repose sur une philosophie stricte de sécurité : opérations locales, données chiffrées, stockage protégé, IA hors-ligne — aucune exposition cloud.</p>
+<h1 id="apercu-de-la-securite">Aperçu de la Sécurité<a class="headerlink" href="#apercu-de-la-securite" title="Link to this section">&para;</a></h1>
+<p>Nyroxis est conçu avec une philosophie stricte de sécurité d'abord : toutes les opérations sont locales, chiffrées, inviolables et conçues pour protéger l'utilisateur sans exposer aucune donnée à des tiers.</p>
+<p>Cette vue d'ensemble résume les principaux principes et mécanismes de sécurité utilisés sur l'ensemble de la plateforme.</p>
 <hr />
-<h2 id="principes-fondamentaux">Principes fondamentaux<a class="headerlink" href="#principes-fondamentaux" title="Link to this section">&para;</a></h2>
-<h3 id="1-confidentialite-par-conception"><strong>1. Confidentialité par conception</strong><a class="headerlink" href="#1-confidentialite-par-conception" title="Link to this section">&para;</a></h3>
-<p>Aucune transmission de données.<br />
-Toutes les analyses et détections sont locales.</p>
-<h3 id="2-chiffrement-systematique"><strong>2. Chiffrement systématique</strong><a class="headerlink" href="#2-chiffrement-systematique" title="Link to this section">&para;</a></h3>
-<p>Chaque événement est :
-- Chiffré immédiatement<br />
-- Stocké uniquement chiffré<br />
-- Déchiffré en mémoire<br />
-- Protégé par hash d’intégrité  </p>
-<p>Aucune donnée en clair.</p>
-<h3 id="3-zero-dependance-cloud"><strong>3. Zéro dépendance cloud</strong><a class="headerlink" href="#3-zero-dependance-cloud" title="Link to this section">&para;</a></h3>
-<p>Nyroxis n’utilise :
-- Aucun cloud<br />
-- Aucune API externe<br />
-- Aucune télémétrie  </p>
-<p>L’utilisateur reste autonome.</p>
-<h3 id="4-ia-hors-ligne-nyxia"><strong>4. IA hors-ligne (NyXIA)</strong><a class="headerlink" href="#4-ia-hors-ligne-nyxia" title="Link to this section">&para;</a></h3>
-<p>Analyse :
-- Comportements<br />
-- Anomalies<br />
-- Scénarios  </p>
-<p>Sans cloud ni collecte.</p>
+<h2 id="principes-fondamentaux-de-securite">Principes Fondamentaux de Sécurité<a class="headerlink" href="#principes-fondamentaux-de-securite" title="Link to this section">&para;</a></h2>
+<h3 id="1-confidentialite-par-conception">1. Confidentialité par Conception<a class="headerlink" href="#1-confidentialite-par-conception" title="Link to this section">&para;</a></h3>
+<p>Nyroxis ne télécharge, synchronise ni transmet aucune donnée vers des serveurs.
+Toute la logique de sécurité, la surveillance, la détection et l'analyse IA s'exécutent entièrement sur l'appareil.</p>
+<h3 id="2-chiffrement-partout">2. Chiffrement Partout<a class="headerlink" href="#2-chiffrement-partout" title="Link to this section">&para;</a></h3>
+<p>Chaque événement capturé est :
+- Chiffré instantanément à la capture (AES-256)
+- Stocké uniquement sous forme chiffrée — jamais en clair
+- Déchiffré exclusivement en mémoire lors du traitement
+- Protégé par des hashes d'intégrité</p>
+<p>Aucun journal en clair n'existe jamais sur le disque.</p>
+<h3 id="3-zero-dependance-cloud">3. Zéro Dépendance Cloud<a class="headerlink" href="#3-zero-dependance-cloud" title="Link to this section">&para;</a></h3>
+<p>Nyroxis ne s'appuie pas sur :
+- Le stockage ou traitement cloud
+- Les API externes
+- Les serveurs distants
+- Les pipelines de télémétrie
+- L'authentification en ligne</p>
+<p>Les utilisateurs maintiennent une autonomie totale et une exposition externe nulle.</p>
+<h3 id="4-detection-multi-couches">4. Détection Multi-Couches<a class="headerlink" href="#4-detection-multi-couches" title="Link to this section">&para;</a></h3>
+<p>Nyroxis Intelligence offre :
+- 27 règles de détection — patterns de menaces connues
+- 12 règles de corrélation — patterns multi-événements dans le temps
+- 2 règles de chaîne — séquences d'attaques en plusieurs étapes
+- Extensible par les professionnels de la sécurité sans modifier les composants centraux</p>
+<h3 id="5-iaml-local">5. IA/ML Local<a class="headerlink" href="#5-iaml-local" title="Link to this section">&para;</a></h3>
+<p>Le moteur IA/ML traite les données localement :
+- Détection d'anomalies Isolation Forest
+- Classification statistique Z-Score
+- Identification des caractéristiques contributives</p>
+<p>Aucun entraînement cloud, aucune inférence cloud, aucun partage de données.</p>
 <hr />
-<h2 id="mecanismes-cles">Mécanismes clés<a class="headerlink" href="#mecanismes-cles" title="Link to this section">&para;</a></h2>
-<h3 id="1-capture-securisee-des-evenements"><strong>1. Capture sécurisée des événements</strong><a class="headerlink" href="#1-capture-securisee-des-evenements" title="Link to this section">&para;</a></h3>
-<p>Processus, fichiers, réseau, privilèges — chiffrés immédiatement.</p>
+<h2 id="mecanismes-de-securite-cles">Mécanismes de Sécurité Clés<a class="headerlink" href="#mecanismes-de-securite-cles" title="Link to this section">&para;</a></h2>
+<h3 id="1-capture-securisee-des-evenements">1. Capture Sécurisée des Événements<a class="headerlink" href="#1-capture-securisee-des-evenements" title="Link to this section">&para;</a></h3>
+<p>Nyroxis Agent capture :
+- Les processus et services
+- Les modifications du système de fichiers et du registre
+- Les connexions réseau
+- Les actions de privilèges
+- Les entrées du journal d'événements Windows</p>
+<p>Tous les événements sont chiffrés immédiatement à la capture.</p>
+<h3 id="2-stockage-inviolable">2. Stockage Inviolable<a class="headerlink" href="#2-stockage-inviolable" title="Link to this section">&para;</a></h3>
+<p>La base de données SQLite locale comprend :
+- Le chiffrement AES-256
+- Les blocs d'événements enchaînés par hachage
+- Les chemins d'écriture protégés
+- La vérification de l'intégrité à chaque lecture</p>
+<p>Les attaquants ne peuvent pas modifier, supprimer ou injecter des journaux sans être détectés.</p>
+<h3 id="3-resilience-de-la-plateforme">3. Résilience de la Plateforme<a class="headerlink" href="#3-resilience-de-la-plateforme" title="Link to this section">&para;</a></h3>
+<p>Nyroxis System Guardian :
+- Surveille Agent et Intelligence toutes les 3 secondes
+- Détecte immédiatement les arrêts de service inattendus
+- Enregistre les tentatives d'arrêt comme événements de sécurité
+- Gère les sauvegardes et la validation de licence hors ligne</p>
+<p>La plateforme ne peut pas être désactivée silencieusement.</p>
+<h3 id="4-licences-basees-sur-le-hwid">4. Licences Basées sur le HWID<a class="headerlink" href="#4-licences-basees-sur-le-hwid" title="Link to this section">&para;</a></h3>
+<p>La validation de licence :
+- Liée au matériel de l'appareil (clé dérivée du HWID)
+- Validée hors ligne avec AES-GCM et HMAC
+- Appliquée par System Guardian — les services s'arrêtent automatiquement si la licence est invalide</p>
+<h3 id="5-securite-du-dashboard">5. Sécurité du Dashboard<a class="headerlink" href="#5-securite-du-dashboard" title="Link to this section">&para;</a></h3>
+<p>Le Dashboard :
+- Lit les résumés déchiffrés uniquement en RAM
+- Ne réécrit jamais de données déchiffrées sur le disque
+- Ne se connecte pas à des sources externes
+- Fournit un accès en lecture seule au stockage des journaux</p>
 <hr />
-<h3 id="2-stockage-anti-falsification"><strong>2. Stockage anti-falsification</strong><a class="headerlink" href="#2-stockage-anti-falsification" title="Link to this section">&para;</a></h3>
-<p>Inclut :
-- AES<br />
-- Hash-chaining<br />
-- Vérification d’intégrité  </p>
-<p>Empêche la modification des logs.</p>
-<hr />
-<h3 id="3-profils-comportementaux-locaux"><strong>3. Profils comportementaux locaux</strong><a class="headerlink" href="#3-profils-comportementaux-locaux" title="Link to this section">&para;</a></h3>
-<p>Créés et stockés localement pour détecter les anomalies.</p>
-<hr />
-<h3 id="4-moteur-de-regles"><strong>4. Moteur de règles</strong><a class="headerlink" href="#4-moteur-de-regles" title="Link to this section">&para;</a></h3>
-<p>Alertes basées sur seuils et motifs.</p>
-<hr />
-<h3 id="5-securite-du-tableau-de-bord"><strong>5. Sécurité du tableau de bord</strong><a class="headerlink" href="#5-securite-du-tableau-de-bord" title="Link to this section">&para;</a></h3>
-<p>Aucune donnée brute exposée.<br />
-Tout est local.</p>
+<h2 id="resume-des-couches-de-securite">Résumé des Couches de Sécurité<a class="headerlink" href="#resume-des-couches-de-securite" title="Link to this section">&para;</a></h2>
+<p>Nyroxis intègre plusieurs couches de défense :
+- Chiffrement AES-256 à la capture
+- Stockage inviolable enchaîné par hachage
+- Gardien de plateforme pour la résilience des services
+- Moteur IA/ML local uniquement
+- Validation de licence hors ligne
+- Zéro exposition au cloud
+- Architecture axée sur la confidentialité tout au long</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Nyroxis combine :
-- Chiffrement<br />
-- IA locale<br />
-- Hors-ligne<br />
-- Intégrité<br />
-- Zéro cloud  </p>
-<p>Pour une sécurité moderne et privée.</p>
+<p>Nyroxis offre un modèle de sécurité moderne, privé et hors ligne qui protège les utilisateurs sans les tracer — combinant transparence, contrôle, intégrité forensique et conception défensive robuste à chaque niveau.</p>
 
 
 

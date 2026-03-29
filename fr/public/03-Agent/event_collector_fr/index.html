@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#event-collector-collecteur-devenements" class="md-skip">
+        <a href="#collecteur-devenements" class="md-skip">
           Skip to content
         </a>
       
@@ -3139,10 +3139,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectif-du-collecteur" class="md-nav__link">
+  <a href="#objectif-du-collecteur-devenements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectif du Collecteur
+        Objectif du Collecteur d'événements
       
     </span>
   </a>
@@ -3150,15 +3150,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-devenements-surveilles" class="md-nav__link">
+  <a href="#ce-que-surveille-le-collecteur-devenements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types d’événements surveillés
+        Ce que surveille le Collecteur d'événements
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types d’événements surveillés">
+    <nav class="md-nav" aria-label="Ce que surveille le Collecteur d&#39;événements">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3195,10 +3195,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-evenements-de-privilege-securite" class="md-nav__link">
+  <a href="#4-evenements-de-privileges-et-de-securite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Événements de privilège &amp; sécurité
+        4. Événements de privilèges et de sécurité
       
     </span>
   </a>
@@ -3206,10 +3206,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-evenements-systeme-basniveau" class="md-nav__link">
+  <a href="#5-evenements-systeme-et-de-service" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Événements système &amp; bas‑niveau
+        5. Événements système et de service
       
     </span>
   </a>
@@ -3222,10 +3222,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#securisation-chiffrement-immediat" class="md-nav__link">
+  <a href="#pipeline-de-normalisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sécurisation &amp; chiffrement immédiat
+        Pipeline de normalisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collecte-securisee-et-chiffrement-immediat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collecte sécurisée et chiffrement immédiat
       
     </span>
   </a>
@@ -3244,21 +3255,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#protection-antifalsification" class="md-nav__link">
+  <a href="#hors-ligne-par-conception" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Protection anti‑falsification
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonctionnement-horsligne" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fonctionnement hors‑ligne
+        Hors ligne par conception
       
     </span>
   </a>
@@ -8801,80 +8801,84 @@
   
 
 
-<h1 id="event-collector-collecteur-devenements">Event Collector — Collecteur d’événements<a class="headerlink" href="#event-collector-collecteur-devenements" title="Link to this section">&para;</a></h1>
-<p>Le Collecteur d’événements est le sous‑système du Nyroxis Agent chargé de capturer toute l’activité liée à la sécurité sur l’appareil.<br />
-Il est léger, privé et totalement hors‑ligne, tout en offrant une visibilité de niveau entreprise.</p>
+<h1 id="collecteur-devenements">Collecteur d'événements<a class="headerlink" href="#collecteur-devenements" title="Link to this section">&para;</a></h1>
+<p>Le Collecteur d'événements est le sous-système au sein du Nyroxis Agent responsable de la capture de toute l'activité pertinente en matière de sécurité sur l'appareil.
+Il est conçu pour être léger, privé et entièrement hors ligne, tout en offrant une visibilité de niveau entreprise sur le comportement des points de terminaison.</p>
 <hr />
-<h2 id="objectif-du-collecteur">Objectif du Collecteur<a class="headerlink" href="#objectif-du-collecteur" title="Link to this section">&para;</a></h2>
-<p>Le Collecteur permet de comprendre :
-- Ce qui se passe sur l’appareil<br />
-- À quel moment les événements surviennent<br />
-- Si l’activité est normale ou suspecte  </p>
-<p>Le tout sans exposer les données.</p>
+<h2 id="objectif-du-collecteur-devenements">Objectif du Collecteur d'événements<a class="headerlink" href="#objectif-du-collecteur-devenements" title="Link to this section">&para;</a></h2>
+<p>L'objectif principal du Collecteur d'événements est de rassembler des informations structurées et exploitables qui aident les utilisateurs à comprendre :
+- Ce qui se passe sur leur appareil
+- Quand les événements se produisent
+- Si l'activité est normale ou suspecte</p>
+<p>Le tout sans exposer les données à l'extérieur.</p>
 <hr />
-<h2 id="types-devenements-surveilles">Types d’événements surveillés<a class="headerlink" href="#types-devenements-surveilles" title="Link to this section">&para;</a></h2>
-<h3 id="1-evenements-de-processus"><strong>1. Événements de processus</strong><a class="headerlink" href="#1-evenements-de-processus" title="Link to this section">&para;</a></h3>
+<h2 id="ce-que-surveille-le-collecteur-devenements">Ce que surveille le Collecteur d'événements<a class="headerlink" href="#ce-que-surveille-le-collecteur-devenements" title="Link to this section">&para;</a></h2>
+<p>Nyroxis se concentre sur les catégories d'événements les plus critiques en matière de sécurité :</p>
+<h3 id="1-evenements-de-processus">1. Événements de processus<a class="headerlink" href="#1-evenements-de-processus" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Création de processus  </li>
-<li>Arrêt  </li>
-<li>Relations parent/enfant  </li>
-<li>Paramètres de commande (selon plateforme)</li>
+<li>Création et terminaison de processus</li>
+<li>Relations parent/enfant</li>
+<li>Paramètres de ligne de commande (lorsque disponibles)</li>
+<li>Chemins d'exécution et métadonnées binaires</li>
 </ul>
-<h3 id="2-evenements-reseau"><strong>2. Événements réseau</strong><a class="headerlink" href="#2-evenements-reseau" title="Link to this section">&para;</a></h3>
+<h3 id="2-evenements-reseau">2. Événements réseau<a class="headerlink" href="#2-evenements-reseau" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Connexions sortantes et entrantes  </li>
-<li>IP/ports de destination  </li>
-<li>Type de protocole  </li>
-<li>Tentatives répétées suspectes  </li>
+<li>Connexions sortantes et entrantes</li>
+<li>Adresses IP et ports de destination</li>
+<li>Type de protocole</li>
+<li>Tentatives de connexion répétées</li>
 </ul>
-<h3 id="3-activite-du-systeme-de-fichiers"><strong>3. Activité du système de fichiers</strong><a class="headerlink" href="#3-activite-du-systeme-de-fichiers" title="Link to this section">&para;</a></h3>
+<h3 id="3-activite-du-systeme-de-fichiers">3. Activité du système de fichiers<a class="headerlink" href="#3-activite-du-systeme-de-fichiers" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Création  </li>
-<li>Suppression  </li>
-<li>Modification  </li>
-<li>Accès à des répertoires sensibles  </li>
+<li>Création, modification et suppression de fichiers</li>
+<li>Accès aux répertoires sensibles</li>
+<li>Modifications du registre</li>
 </ul>
-<h3 id="4-evenements-de-privilege-securite"><strong>4. Événements de privilège &amp; sécurité</strong><a class="headerlink" href="#4-evenements-de-privilege-securite" title="Link to this section">&para;</a></h3>
+<h3 id="4-evenements-de-privileges-et-de-securite">4. Événements de privilèges et de sécurité<a class="headerlink" href="#4-evenements-de-privileges-et-de-securite" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Tentatives d’élévation  </li>
-<li>Appels système sensibles  </li>
-<li>Modifications de configuration/registre  </li>
-<li>Accès à des ressources sensibles  </li>
+<li>Tentatives d'élévation</li>
+<li>Appels système sensibles</li>
+<li>Modifications du registre et de la configuration</li>
+<li>Accès aux ressources protégées</li>
 </ul>
-<h3 id="5-evenements-systeme-basniveau"><strong>5. Événements système &amp; bas‑niveau</strong><a class="headerlink" href="#5-evenements-systeme-basniveau" title="Link to this section">&para;</a></h3>
+<h3 id="5-evenements-systeme-et-de-service">5. Événements système et de service<a class="headerlink" href="#5-evenements-systeme-et-de-service" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Démarrage/arrêt de services  </li>
-<li>Chargement de pilotes  </li>
-<li>Avertissements système  </li>
-<li>Mécanismes potentiels de persistance  </li>
+<li>Démarrage/arrêt de services</li>
+<li>Chargement de pilotes</li>
+<li>Entrées du Journal d'événements Windows (Sécurité, Système, Application)</li>
+<li>Indicateurs de mécanismes de persistance</li>
+<li>Exécution de PowerShell et de scripts</li>
 </ul>
+<p>La portée exacte est optimisée pour Windows (v1.0). La prise en charge de macOS et Linux est en cours de développement.</p>
 <hr />
-<h2 id="securisation-chiffrement-immediat">Sécurisation &amp; chiffrement immédiat<a class="headerlink" href="#securisation-chiffrement-immediat" title="Link to this section">&para;</a></h2>
-<p>Chaque événement est :
-- Chiffré instantanément<br />
-- Stocké avec protection anti‑falsification<br />
-- Indexé avec horodatage et métadonnées  </p>
-<p>Aucun journal non chiffré n’est écrit sur le disque.</p>
+<h2 id="pipeline-de-normalisation">Pipeline de normalisation<a class="headerlink" href="#pipeline-de-normalisation" title="Link to this section">&para;</a></h2>
+<p>Après la collecte, chaque événement est :
+1. Analysé et structuré dans un format normalisé
+2. Enrichi avec des métadonnées contextuelles (horodatage, source, indication de gravité)
+3. Préparé pour le chiffrement et le stockage
+4. Rendu disponible pour la consommation par Nyroxis Intelligence</p>
+<p>Cette normalisation garantit une évaluation cohérente des règles pour tous les types d'événements.</p>
+<hr />
+<h2 id="collecte-securisee-et-chiffrement-immediat">Collecte sécurisée et chiffrement immédiat<a class="headerlink" href="#collecte-securisee-et-chiffrement-immediat" title="Link to this section">&para;</a></h2>
+<p>Chaque événement collecté par le collecteur est :
+- Chiffré instantanément avec AES-256
+- Stocké sous forme chaînée par hachage résistante aux manipulations
+- Indexé avec des horodatages et des métadonnées
+- Jamais écrit sur le disque en texte clair</p>
 <hr />
 <h2 id="implementation-legere">Implémentation légère<a class="headerlink" href="#implementation-legere" title="Link to this section">&para;</a></h2>
-<p>Le Collecteur est optimisé pour :
-- Une faible utilisation CPU<br />
-- Un minimum de mémoire<br />
-- Aucune gêne pour l’utilisateur<br />
-- Une stabilité longue durée  </p>
+<p>Le Collecteur d'événements est optimisé pour :
+- Une surcharge CPU minimale (~0,1 %)
+- Une faible utilisation de la mémoire (~57 Mo de RAM au total pour l'Agent)
+- Aucun impact sur les tâches quotidiennes
+- Un fonctionnement stable à long terme</p>
 <hr />
-<h2 id="protection-antifalsification">Protection anti‑falsification<a class="headerlink" href="#protection-antifalsification" title="Link to this section">&para;</a></h2>
-<p>Pour empêcher toute manipulation :
-- Vérifications d’intégrité<br />
-- Chemins d’écriture sécurisés<br />
-- Surveillance de fichiers critiques  </p>
-<hr />
-<h2 id="fonctionnement-horsligne">Fonctionnement hors‑ligne<a class="headerlink" href="#fonctionnement-horsligne" title="Link to this section">&para;</a></h2>
-<p>Aucune interaction cloud.<br />
-Toute la logique est locale — surveillance, chiffrement, stockage et analyse.</p>
+<h2 id="hors-ligne-par-conception">Hors ligne par conception<a class="headerlink" href="#hors-ligne-par-conception" title="Link to this section">&para;</a></h2>
+<p>Le Collecteur d'événements fonctionne avec <strong>zéro interaction cloud</strong>.
+Toute la surveillance, la normalisation, le chiffrement et le stockage s'effectuent localement — préservant la confidentialité de l'utilisateur même dans des environnements sensibles ou à air gap.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Le Collecteur d’événements constitue la base de la visibilité Nyroxis — capturant toute activité pertinente de manière chiffrée, légère et totalement locale.</p>
+<p>Le Collecteur d'événements est le fondement de la couche de visibilité de Nyroxis, capturant chaque activité importante liée à la sécurité tout en restant léger, chiffré et entièrement hors ligne.</p>
 
 
 

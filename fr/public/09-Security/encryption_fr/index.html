@@ -4108,10 +4108,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectifs-principaux" class="md-nav__link">
+  <a href="#objectifs-fondamentaux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectifs principaux
+        Objectifs Fondamentaux
       
     </span>
   </a>
@@ -4119,10 +4119,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-chiffrement-lors-de-la-capture" class="md-nav__link">
+  <a href="#1-chiffrement-a-la-capture-des-evenements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Chiffrement lors de la capture
+        1. Chiffrement à la Capture des Événements
       
     </span>
   </a>
@@ -4130,10 +4130,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-base-locale-chiffree" class="md-nav__link">
+  <a href="#2-base-de-donnees-locale-chiffree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Base locale chiffrée
+        2. Base de Données Locale Chiffrée
       
     </span>
   </a>
@@ -4141,10 +4141,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-dechiffrement-uniquement-en-memoire" class="md-nav__link">
+  <a href="#3-dechiffrement-en-memoire-uniquement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Déchiffrement uniquement en mémoire
+        3. Déchiffrement en Mémoire Uniquement
       
     </span>
   </a>
@@ -4155,7 +4155,7 @@
   <a href="#4-cles-liees-a-lappareil" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Clés liées à l’appareil
+        4. Clés Liées à l'Appareil
       
     </span>
   </a>
@@ -4163,10 +4163,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-protection-dintegrite" class="md-nav__link">
+  <a href="#5-protection-de-lintegrite-chaine-de-hachage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Protection d’intégrité
+        5. Protection de l'Intégrité — Chaîne de Hachage
       
     </span>
   </a>
@@ -4174,10 +4174,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-aucun-cloud" class="md-nav__link">
+  <a href="#6-aucune-implication-du-cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Aucun cloud
+        6. Aucune Implication du Cloud
       
     </span>
   </a>
@@ -8751,80 +8751,80 @@
   
 
 
-<h1 id="modele-de-chiffrement">Modèle de chiffrement<a class="headerlink" href="#modele-de-chiffrement" title="Link to this section">&para;</a></h1>
-<p>Nyroxis applique un modèle de chiffrement strict conçu pour garantir qu’aucune donnée en clair n’est jamais stockée et que tous les événements restent protégés, privés et vérifiables.</p>
+<h1 id="modele-de-chiffrement">Modèle de Chiffrement<a class="headerlink" href="#modele-de-chiffrement" title="Link to this section">&para;</a></h1>
+<p>Nyroxis met en œuvre un modèle de chiffrement strict et multicouche conçu pour garantir qu'<strong>aucune donnée lisible ne touche jamais le disque</strong>, et que tous les événements de sécurité restent protégés, privés et vérifiables.</p>
 <hr />
-<h2 id="objectifs-principaux">Objectifs principaux<a class="headerlink" href="#objectifs-principaux" title="Link to this section">&para;</a></h2>
-<p>Le chiffrement Nyroxis garantit :</p>
-<ul>
-<li><strong>Confidentialité</strong>  </li>
-<li><strong>Intégrité</strong>  </li>
-<li><strong>Isolation locale</strong>  </li>
-<li><strong>Aucune donnée en clair</strong>  </li>
-<li><strong>Fonctionnement hors‑ligne</strong>  </li>
-</ul>
+<h2 id="objectifs-fondamentaux">Objectifs Fondamentaux<a class="headerlink" href="#objectifs-fondamentaux" title="Link to this section">&para;</a></h2>
+<p>Le chiffrement Nyroxis garantit :
+- <strong>Confidentialité</strong> — personne ne peut lire les données utilisateur
+- <strong>Intégrité</strong> — personne ne peut modifier les journaux sans être détecté
+- <strong>Isolation</strong> — les données ne quittent jamais l'appareil
+- <strong>Zéro stockage en clair</strong> — tout est chiffré à la capture
+- <strong>Fonctionnement hors ligne</strong> — aucune clé ou serveur cloud requis</p>
 <hr />
-<h2 id="1-chiffrement-lors-de-la-capture">1. Chiffrement lors de la capture<a class="headerlink" href="#1-chiffrement-lors-de-la-capture" title="Link to this section">&para;</a></h2>
-<p>Chaque événement est chiffré <strong>dès sa collecte</strong>.</p>
+<h2 id="1-chiffrement-a-la-capture-des-evenements">1. Chiffrement à la Capture des Événements<a class="headerlink" href="#1-chiffrement-a-la-capture-des-evenements" title="Link to this section">&para;</a></h2>
+<p>Chaque événement système est chiffré au moment où il est collecté par Nyroxis Agent.</p>
 <p>Étapes :
-1. Sérialisation en mémoire<br />
-2. Chargement d’une clé dérivée localement<br />
-3. Chiffrement AES<br />
-4. Stockage uniquement du bloc chiffré  </p>
-<p>Aucune trace en clair.</p>
+1. L'événement est sérialisé en mémoire
+2. Une clé spécifique à l'appareil est dérivée des identifiants matériels (HWID)
+3. L'événement est chiffré avec AES-256
+4. Seul le bloc chiffré est écrit dans le stockage</p>
+<p>Aucun journal en clair n'est jamais écrit.</p>
 <hr />
-<h2 id="2-base-locale-chiffree">2. Base locale chiffrée<a class="headerlink" href="#2-base-locale-chiffree" title="Link to this section">&para;</a></h2>
-<p>Base sécurisée contenant :</p>
-<ul>
-<li>Pages AES chiffrées  </li>
-<li>Métadonnées chiffrées  </li>
-<li>Hash‑chaining  </li>
-<li>Vérification d’intégrité  </li>
-<li>Aucun cache en clair  </li>
-</ul>
-<p>Impossible à lire en dehors de Nyroxis.</p>
+<h2 id="2-base-de-donnees-locale-chiffree">2. Base de Données Locale Chiffrée<a class="headerlink" href="#2-base-de-donnees-locale-chiffree" title="Link to this section">&para;</a></h2>
+<p>Tous les journaux, résultats de détection, résultats IA et métadonnées sont stockés dans une base de données SQLite sécurisée.</p>
+<p>Fonctionnalités :
+- Pages de données chiffrées en AES-256
+- Métadonnées chiffrées
+- Blocs de stockage enchaînés par hachage
+- Vérification de l'intégrité par enregistrement
+- Aucune mise en cache en clair</p>
+<p>La base de données ne peut pas être ouverte ou lue en dehors de Nyroxis, et ne peut pas être déchiffrée sur un autre appareil.</p>
 <hr />
-<h2 id="3-dechiffrement-uniquement-en-memoire">3. Déchiffrement uniquement en mémoire<a class="headerlink" href="#3-dechiffrement-uniquement-en-memoire" title="Link to this section">&para;</a></h2>
-<p>Utilisé uniquement par :
-- NyXIA (analyse)<br />
-- Tableau de bord (visualisation)  </p>
-<p>Les données sont :
-- Déchiffrées en RAM<br />
-- Non écrites en clair<br />
-- Effacées après traitement  </p>
+<h2 id="3-dechiffrement-en-memoire-uniquement">3. Déchiffrement en Mémoire Uniquement<a class="headerlink" href="#3-dechiffrement-en-memoire-uniquement" title="Link to this section">&para;</a></h2>
+<p>Nyroxis déchiffre les enregistrements <em>uniquement lors de leur traitement</em> :
+- Le moteur IA/ML déchiffre les lots d'événements dans la RAM pendant l'analyse
+- Le Dashboard déchiffre uniquement ce qu'il doit afficher, en mémoire
+- Rien n'est réécrit en clair
+- Les tampons mémoire sont effacés après utilisation</p>
+<p>Cela élimine le risque de récupération forensique de données en clair depuis le disque.</p>
 <hr />
-<h2 id="4-cles-liees-a-lappareil">4. Clés liées à l’appareil<a class="headerlink" href="#4-cles-liees-a-lappareil" title="Link to this section">&para;</a></h2>
-<p>Générées à partir de :
-- Identifiants matériels<br />
-- Sels locaux<br />
-- Secrets divisés  </p>
-<p>Jamais stockées, jamais transmises.</p>
+<h2 id="4-cles-liees-a-lappareil">4. Clés Liées à l'Appareil<a class="headerlink" href="#4-cles-liees-a-lappareil" title="Link to this section">&para;</a></h2>
+<p>Les clés de chiffrement sont :
+- Dérivées des identifiants matériels de l'utilisateur (HWID)
+- Générées localement à l'aide d'un hachage salé
+- Jamais stockées directement dans l'application
+- Jamais transmises à aucun serveur</p>
+<p>Même si le fichier de base de données est copié sur un autre appareil, il ne peut pas être déchiffré — il est lié au matériel d'origine.</p>
 <hr />
-<h2 id="5-protection-dintegrite">5. Protection d’intégrité<a class="headerlink" href="#5-protection-dintegrite" title="Link to this section">&para;</a></h2>
-<p>Chaque bloc contient :
-- Hash d’intégrité<br />
-- Marqueur de séquence<br />
-- Lien vers le bloc précédent  </p>
-<p>Permet de détecter :
-- Suppression<br />
-- Modification<br />
-- Réinsertion<br />
-- Réordonnancement  </p>
+<h2 id="5-protection-de-lintegrite-chaine-de-hachage">5. Protection de l'Intégrité — Chaîne de Hachage<a class="headerlink" href="#5-protection-de-lintegrite-chaine-de-hachage" title="Link to this section">&para;</a></h2>
+<p>Chaque bloc chiffré contient :
+- Le hash d'intégrité du contenu du bloc
+- L'index de séquence des événements
+- Le hash du bloc précédent</p>
+<p>Cela forme une <strong>chaîne de hachage</strong> qui expose :
+- La suppression de journaux — le hash-précédent du bloc suivant ne correspondra pas
+- La modification de journaux — le hash du bloc ne correspondra pas
+- Le réordonnancement des journaux — l'index de séquence sera incorrect
+- L'injection de journaux — les vérifications de chaîne et de séquence échoueront</p>
+<p>La falsification est immédiatement détectable.</p>
 <hr />
-<h2 id="6-aucun-cloud">6. Aucun cloud<a class="headerlink" href="#6-aucun-cloud" title="Link to this section">&para;</a></h2>
-<p>Pas de :
-- Vault distant<br />
-- API externe<br />
-- Activation en ligne<br />
-- Télémétrie  </p>
+<h2 id="6-aucune-implication-du-cloud">6. Aucune Implication du Cloud<a class="headerlink" href="#6-aucune-implication-du-cloud" title="Link to this section">&para;</a></h2>
+<p>Nyroxis n'utilise pas :
+- Les coffres-forts de clés cloud
+- Les serveurs de clés distants
+- L'activation en ligne
+- Les systèmes de télémétrie</p>
+<p>Tout le chiffrement, la dérivation de clés et la vérification de l'intégrité sont entièrement locaux.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Un modèle moderne :
-- Chiffrement complet<br />
-- IA locale<br />
-- Logs protégés<br />
-- Clés locales<br />
-- Respect total de la vie privée  </p>
+<p>Le chiffrement Nyroxis garantit :
+- Zéro stockage en clair
+- Conception chiffrée partout
+- Clés locales liées à l'appareil
+- Journaux inviolables enchaînés par hachage
+- Déchiffrement en mémoire uniquement</p>
+<p>Un modèle de chiffrement moderne conçu pour la sécurité personnelle et l'autonomie hors ligne complète.</p>
 
 
 

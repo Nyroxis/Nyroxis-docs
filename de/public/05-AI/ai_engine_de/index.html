@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kiengine-interne-mechanik" class="md-skip">
+        <a href="#ki-engine-interne-mechanik" class="md-skip">
           Skip to content
         </a>
       
@@ -5517,22 +5517,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#grundprinzipien" class="md-nav__link">
+  <a href="#grundlegende-designprinzipien" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grundprinzipien
+        Grundlegende Designprinzipien
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Grundprinzipien">
+    <nav class="md-nav" aria-label="Grundlegende Designprinzipien">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#privacyfirst" class="md-nav__link">
+  <a href="#1-datenschutz-zuerst" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Privacy‑First
+        1. Datenschutz zuerst
       
     </span>
   </a>
@@ -5540,10 +5540,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#leichtgewichtige-ki" class="md-nav__link">
+  <a href="#2-leichtgewichtige-implementierung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Leichtgewichtige KI
+        2. Leichtgewichtige Implementierung
       
     </span>
   </a>
@@ -5551,10 +5551,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#verhaltensorientiertes-verstandnis" class="md-nav__link">
+  <a href="#3-verhaltensverstandnis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verhaltensorientiertes Verständnis
+        3. Verhaltensverständnis
       
     </span>
   </a>
@@ -5562,10 +5562,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#vollstandig-offline" class="md-nav__link">
+  <a href="#4-vollstandig-offline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vollständig offline
+        4. Vollständig offline
       
     </span>
   </a>
@@ -5578,22 +5578,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#datenverarbeitung" class="md-nav__link">
+  <a href="#isolation-forest-funktionsweise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Datenverarbeitung
+        Isolation Forest — Funktionsweise
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Datenverarbeitung">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistische-analyse-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistische Analyse-Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistische Analyse-Pipeline">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ereignisaufnahme" class="md-nav__link">
+  <a href="#z-score-klassifizierung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ereignisaufnahme
+        Z-Score-Klassifizierung
       
     </span>
   </a>
@@ -5601,10 +5612,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sequenzbildung" class="md-nav__link">
+  <a href="#iqr-ausreiererkennung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sequenzbildung
+        IQR-Ausreißererkennung
       
     </span>
   </a>
@@ -5612,10 +5623,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#merkmalsextraktion" class="md-nav__link">
+  <a href="#gleitende-durchschnitte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Merkmalsextraktion
+        Gleitende Durchschnitte
       
     </span>
   </a>
@@ -5623,21 +5634,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lokale-kientscheidung" class="md-nav__link">
+  <a href="#spike-erkennung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lokale KI‑Entscheidung
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#szenariozuordnung" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Szenario‑Zuordnung
+        Spike-Erkennung
       
     </span>
   </a>
@@ -5650,10 +5650,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lokaler-verhaltensbaseline" class="md-nav__link">
+  <a href="#was-die-engine-ausgibt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lokaler Verhaltensbaseline
+        Was die Engine ausgibt
       
     </span>
   </a>
@@ -5661,10 +5661,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#safebydesign" class="md-nav__link">
+  <a href="#lokale-verhaltensbasislinie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Safe‑by‑Design
+        Lokale Verhaltensbasislinie
       
     </span>
   </a>
@@ -8829,77 +8829,86 @@
   
 
 
-<h1 id="kiengine-interne-mechanik">KI‑Engine — Interne Mechanik<a class="headerlink" href="#kiengine-interne-mechanik" title="Link to this section">&para;</a></h1>
-<p>Die Nyroxis KI‑Engine (NyXIA) arbeitet vollständig lokal und analysiert verschlüsselte Sicherheitsereignisse ohne Cloud‑Abhängigkeit.<br />
-Dieses Dokument erklärt die internen Mechanismen in einer klaren, halbtechnischen Form, geeignet für Nutzer und Investoren gleichermaßen.</p>
-<h2 id="grundprinzipien">Grundprinzipien<a class="headerlink" href="#grundprinzipien" title="Link to this section">&para;</a></h2>
-<h3 id="privacyfirst">Privacy‑First<a class="headerlink" href="#privacyfirst" title="Link to this section">&para;</a></h3>
+<h1 id="ki-engine-interne-mechanik">KI-Engine — Interne Mechanik<a class="headerlink" href="#ki-engine-interne-mechanik" title="Link to this section">&para;</a></h1>
+<p>Die Nyroxis KI/ML-Engine ist darauf ausgelegt, vollständig lokal zu laufen und intelligente Analysen auf verschlüsselten Sicherheitsereignissen durchzuführen, ohne auf Cloud-Dienste angewiesen zu sein.</p>
+<hr />
+<h2 id="grundlegende-designprinzipien">Grundlegende Designprinzipien<a class="headerlink" href="#grundlegende-designprinzipien" title="Link to this section">&para;</a></h2>
+<h3 id="1-datenschutz-zuerst">1. Datenschutz zuerst<a class="headerlink" href="#1-datenschutz-zuerst" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Keine Cloud‑Verarbeitung  </li>
-<li>Keine externen APIs  </li>
-<li>Keine Datenübertragung<br />
-Alle Intelligenz verbleibt auf dem Gerät des Nutzers.</li>
+<li>Keine Cloud-Verarbeitung</li>
+<li>Keine externen APIs</li>
+<li>Keine Datenweitergabe</li>
 </ul>
-<h3 id="leichtgewichtige-ki">Leichtgewichtige KI<a class="headerlink" href="#leichtgewichtige-ki" title="Link to this section">&para;</a></h3>
-<p>Optimiert für:
-- geringe CPU‑Last<br />
-- niedrigen Speicherverbrauch<br />
-- Echtzeit‑Ausführung  </p>
-<h3 id="verhaltensorientiertes-verstandnis">Verhaltensorientiertes Verständnis<a class="headerlink" href="#verhaltensorientiertes-verstandnis" title="Link to this section">&para;</a></h3>
-<p>NyXIA analysiert nicht einzelne Logs isoliert, sondern erkennt Muster über Zeitfenster hinweg.</p>
-<h3 id="vollstandig-offline">Vollständig offline<a class="headerlink" href="#vollstandig-offline" title="Link to this section">&para;</a></h3>
-<p>Alle Analysen und Entscheidungen erfolgen lokal.</p>
-<h2 id="datenverarbeitung">Datenverarbeitung<a class="headerlink" href="#datenverarbeitung" title="Link to this section">&para;</a></h2>
-<h3 id="ereignisaufnahme">Ereignisaufnahme<a class="headerlink" href="#ereignisaufnahme" title="Link to this section">&para;</a></h3>
-<p>Der Nyroxis Agent erfasst:
-- Prozessaktivität<br />
-- Netzwerkverhalten<br />
-- Dateioperationen<br />
-- Berechtigungsrelevante Aktionen  </p>
-<p>Alles wird vor der Analyse verschlüsselt.</p>
-<h3 id="sequenzbildung">Sequenzbildung<a class="headerlink" href="#sequenzbildung" title="Link to this section">&para;</a></h3>
-<p>Ereignisse werden zu Sequenzen gruppiert:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>w(t) = {event_t, event_t+1, ..., event_t+k}
+<p>Die gesamte Intelligenz läuft auf dem eigenen Gerät des Benutzers.</p>
+<h3 id="2-leichtgewichtige-implementierung">2. Leichtgewichtige Implementierung<a class="headerlink" href="#2-leichtgewichtige-implementierung" title="Link to this section">&para;</a></h3>
+<p>Vollständig in Rust ohne externe ML-Bibliotheken entwickelt:
+- ~Geringe CPU-Auslastung
+- Minimaler Speicherbedarf
+- Echtzeitausführung</p>
+<h3 id="3-verhaltensverstandnis">3. Verhaltensverständnis<a class="headerlink" href="#3-verhaltensverstandnis" title="Link to this section">&para;</a></h3>
+<p>Anstatt Ereignisse einzeln zu analysieren, versteht die Engine <em>Muster</em>, die zeitübergreifend und über mehrere Ereignisdimensionen hinweg auftreten.</p>
+<h3 id="4-vollstandig-offline">4. Vollständig offline<a class="headerlink" href="#4-vollstandig-offline" title="Link to this section">&para;</a></h3>
+<p>Alle Analysen, Bewertungen und Merkmalsextraktionen finden lokal statt — zu keinem Zeitpunkt ist eine Internetverbindung erforderlich.</p>
+<hr />
+<h2 id="isolation-forest-funktionsweise">Isolation Forest — Funktionsweise<a class="headerlink" href="#isolation-forest-funktionsweise" title="Link to this section">&para;</a></h2>
+<p>Der Isolation-Forest-Algorithmus isoliert Anomalien, indem er zufällige Entscheidungsbäume aufbaut und misst, wie schnell jeder Datenpunkt vom Rest getrennt wird.</p>
+<p><strong>Das Prinzip:</strong>
+- Normale Ereignisse benötigen viele Splits zur Isolation (sie mischen sich mit anderen)
+- Anomale Ereignisse benötigen weniger Splits (sie stechen hervor)
+- Kürzerer Isolationspfad = höherer Anomalie-Score</p>
+<p><strong>Nyroxis-Implementierung:</strong>
+- 100 Isolationsbäume pro Analysezyklus
+- 256 zufällige Stichproben pro Baum
+- Alle 8 Verhaltensmerkmale vor der Analyse normalisiert
+- Anomalie-Score-Schwellenwert: 0,6 (darüber = Erkennung ausgelöst)
+- Beitragende Merkmale identifiziert über Z-Score-Abweichung (Schwellenwert: 2,0 Standardabweichungen)</p>
+<hr />
+<h2 id="statistische-analyse-pipeline">Statistische Analyse-Pipeline<a class="headerlink" href="#statistische-analyse-pipeline" title="Link to this section">&para;</a></h2>
+<h3 id="z-score-klassifizierung">Z-Score-Klassifizierung<a class="headerlink" href="#z-score-klassifizierung" title="Link to this section">&para;</a></h3>
+<p>Jeder überwachte Wert wird gegen seine historische Basislinie bewertet:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>z = (Wert - Mittelwert) / Standardabweichung
 </span></code></pre></div>
-<p>So erkennt die KI mehrstufige oder schleichende Angriffe.</p>
-<h3 id="merkmalsextraktion">Merkmalsextraktion<a class="headerlink" href="#merkmalsextraktion" title="Link to this section">&para;</a></h3>
-<p>Für jedes Fenster extrahiert NyXIA Merkmale wie:
-- Prozessbeziehungen<br />
-- Netzwerkentropie<br />
-- Dateizugriffsmuster<br />
-- zeitliche Unregelmäßigkeiten<br />
-- Verhaltensänderungen  </p>
-<h3 id="lokale-kientscheidung">Lokale KI‑Entscheidung<a class="headerlink" href="#lokale-kientscheidung" title="Link to this section">&para;</a></h3>
-<p>NyXIA berechnet:
-- Anomaliewerte<br />
-- Verhaltensklassifizierung<br />
-- Abweichungen vom Normalprofil<br />
-- Risiko einer bösartigen Aktivität  </p>
-<p>Alles bleibt lokal.</p>
-<h3 id="szenariozuordnung">Szenario‑Zuordnung<a class="headerlink" href="#szenariozuordnung" title="Link to this section">&para;</a></h3>
-<p>Erkannte Muster werden Szenarien zugeordnet:
-- Persistenzversuche<br />
-- unerlaubte Netzwerkaktivität<br />
-- Privilegieneskalation<br />
-- mehrstufige Intrusion  </p>
-<h2 id="lokaler-verhaltensbaseline">Lokaler Verhaltensbaseline<a class="headerlink" href="#lokaler-verhaltensbaseline" title="Link to this section">&para;</a></h2>
-<p>NyXIA erstellt ein privates Baseline‑Profil:
-- typische Prozesse<br />
-- normale Netzwerkziele<br />
-- übliche Dateimuster<br />
-- erwartete Zeitmuster  </p>
-<p>Die Baseline ist:
-- lokal gespeichert<br />
-- vollständig verschlüsselt<br />
-- jederzeit zurücksetzbar  </p>
-<h2 id="safebydesign">Safe‑by‑Design<a class="headerlink" href="#safebydesign" title="Link to this section">&para;</a></h2>
-<p>NyXIA vermeidet:
-- Nutzertracking<br />
-- Cloud‑Training<br />
-- Speicherung persönlicher Daten<br />
-- Telemetrie  </p>
+<p>| |z| | Schweregrad | Konfidenz |
+|------|----------|------------|
+| &gt; 3,0 | Kritisch | 99,7 % |
+| &gt; 2,0 | Hoch | 95 % |
+| &gt; 1,5 | Mittel | 86 % |
+| &gt; 1,0 | Niedrig | 68 % |</p>
+<h3 id="iqr-ausreiererkennung">IQR-Ausreißererkennung<a class="headerlink" href="#iqr-ausreiererkennung" title="Link to this section">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>untere_Grenze = Q1 - 1,5 × IQR
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>obere_Grenze = Q3 + 1,5 × IQR
+</span></code></pre></div>
+Werte außerhalb dieses Bereichs werden als statistische Ausreißer markiert.</p>
+<h3 id="gleitende-durchschnitte">Gleitende Durchschnitte<a class="headerlink" href="#gleitende-durchschnitte" title="Link to this section">&para;</a></h3>
+<ul>
+<li><strong>Einfacher gleitender Durchschnitt</strong> — Basislinitentrend über konfigurierbare Zeitfenster</li>
+<li><strong>Exponentieller gleitender Durchschnitt</strong> — gewichtet neuere Aktivitäten stärker für schnellere Reaktion auf aufkommende Muster</li>
+</ul>
+<h3 id="spike-erkennung">Spike-Erkennung<a class="headerlink" href="#spike-erkennung" title="Link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>aktueller_Wert &gt; Mittelwert + (Schwellenmultiplikator × Standardabweichung)
+</span></code></pre></div>
+<hr />
+<h2 id="was-die-engine-ausgibt">Was die Engine ausgibt<a class="headerlink" href="#was-die-engine-ausgibt" title="Link to this section">&para;</a></h2>
+<p>Für jeden Analysezyklus:
+- <code>is_anomaly</code> — boolescher Indikator
+- <code>anomaly_score</code> — 0,0 bis 1,0 (höher = anomaler)
+- <code>confidence</code> — 0,0 bis 0,95
+- <code>contributing_features</code> — Liste der Merkmale mit Z-Scores, die die Erkennung ausgelöst haben</p>
+<p>Diese Ausgaben werden im Abschnitt KI / ML-Analyse des Dashboards angezeigt.</p>
+<hr />
+<h2 id="lokale-verhaltensbasislinie">Lokale Verhaltensbasislinie<a class="headerlink" href="#lokale-verhaltensbasislinie" title="Link to this section">&para;</a></h2>
+<p>Die Engine erstellt eine private Basislinie pro Gerät:
+- Normale Prozessmuster
+- Typisches Netzwerkverbindungsverhalten
+- Erwartete Dateiaktivität
+- Übliches Tageszeit- und Wochentagsverhalten</p>
+<p>Die Basislinie ist:
+- Lokal in verschlüsselter Form gespeichert
+- Jederzeit vom Benutzer zurücksetzbar
+- Wird niemals übertragen oder geteilt</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>NyXIA kombiniert Datenschutz, lokale Intelligenz und verhaltensbasierte Erkennung zu einem zuverlässigen, vollständig privaten KI‑Modul.</p>
+<p>Die KI-Engine kombiniert Isolation Forest mit statistischer Analyse, um transparente, erklärbare und datenschutzfreundliche Anomalieerkennung zu liefern — vollständig auf dem Gerät des Benutzers, ohne Cloud-Abhängigkeit.</p>
 
 
 

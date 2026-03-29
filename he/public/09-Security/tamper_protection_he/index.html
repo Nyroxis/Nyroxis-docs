@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#antitamper" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -8228,10 +8228,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-hash" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. בלוקים בשרשרת Hash
+        1. בלוקי אירועים המקושרים בגיבוב
       
     </span>
   </a>
@@ -8242,7 +8242,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. בדיקות שלמות בזמן קריאה
+        2. אימות שלמות בזמן קריאה
       
     </span>
   </a>
@@ -8253,7 +8253,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. כתיבה מוגנת
+        3. נתיב כתיבה מוגן
       
     </span>
   </a>
@@ -8264,7 +8264,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. מניעת מחיקה
+        4. הגנה מפני מחיקה
       
     </span>
   </a>
@@ -8275,7 +8275,7 @@
   <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. מניעת שינוי
+        5. הגנה מפני שינוי
       
     </span>
   </a>
@@ -8286,7 +8286,7 @@
   <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. מניעת הזרקה
+        6. הגנה מפני הזרקה
       
     </span>
   </a>
@@ -8294,7 +8294,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. הגנה על שירותי הפלטפורמה
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8740,61 +8751,88 @@
   
 
 
-<h1 id="antitamper">הגנת Anti‑Tamper<a class="headerlink" href="#antitamper" title="Link to this section">&para;</a></h1>
-<p>Nyroxis כוללת מנגנוני Anti‑Tamper חזקים שמבטיחים שאי אפשר למחוק, לשנות, או להחדיר לוגים — בלי שהמערכת תזהה.</p>
+<h1 id="_1">הגנה מפני חבלה<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
+<p>Nyroxis כולל מנגנוני הגנה חזקים מפני חבלה שנועדו להבטיח שאף תוקף אינו יכול למחוק, לשנות, לזייף או לשנות את סדר היומנים מבלי להתגלות.
+הגנות אלו פועלות באופן לא מקוון לחלוטין ומיושמות בתוך מסד הנתונים המקומי וצינור האירועים.</p>
 <hr />
-<h2 id="1-hash">1. בלוקים בשרשרת Hash<a class="headerlink" href="#1-hash" title="Link to this section">&para;</a></h2>
-<p>כל אירוע כולל:
-- מידע מוצפן<br />
-- Hash שלמות<br />
-- מספר רצף<br />
-- קישור לבלוק הקודם  </p>
-<p>תצורה זו יוצרת <strong>שרשרת Hash</strong>.</p>
-<p>כל שינוי שוברת את השרשרת.</p>
+<h2 id="1">1. בלוקי אירועים המקושרים בגיבוב<a class="headerlink" href="#1" title="Link to this section">&para;</a></h2>
+<p>כל אירוע מאוחסן כ:
+- מטען מוצפן
+- גיבוב שלמות של תוכן הבלוק
+- אינדקס רציף
+- גיבוב הבלוק הקודם</p>
+<p>מבנה זה יוצר <strong>שרשרת גיבוב</strong>.</p>
+<p>חבלה הופכת גלויה אם:
+- בלוק מוסר — גיבוב-הקודם של הבלוק הבא לא יתאים
+- בלוק משונה — גיבוב הבלוק לא יתאים
+- בלוק מוזרק — מספרי הרצף וגיבובי השרשרת ייכשלו
+- הרצף משונה — אי-עקביות אינדקס מזוהה</p>
+<p>כל אי-התאמה שוברת את השרשרת ומפעילה התראה מיידית.</p>
 <hr />
-<h2 id="2">2. בדיקות שלמות בזמן קריאה<a class="headerlink" href="#2" title="Link to this section">&para;</a></h2>
-<p>בכל שליפה:
-- מחשבים Hash מחדש<br />
-- בודקים מספר רצף<br />
-- מאמתים קישור לקודם  </p>
-<p>במקרה של זיוף:
-- הנתונים נדחים<br />
-- נרשמת התראה  </p>
+<h2 id="2">2. אימות שלמות בזמן קריאה<a class="headerlink" href="#2" title="Link to this section">&para;</a></h2>
+<p>בכל פעם שמנוע הבינה המלאכותית/ML או ה-Dashboard קורא נתונים:
+- גיבוב מחושב מחדש לכל בלוק
+- מספר הרצף נבדק
+- התאמת גיבוב-הקודם מאומתת</p>
+<p>אם משהו שונה, המערכת:
+- דוחה את הנתונים שנפגעו
+- מסמנת אירוע חבלה
+- מאחסנת התראת אבטחה במסד הנתונים המקומי</p>
+<p>כל הבדיקות הן מקומיות ולא מקוונות.</p>
 <hr />
-<h2 id="3">3. כתיבה מוגנת<a class="headerlink" href="#3" title="Link to this section">&para;</a></h2>
-<p>ה-Agent כותב בעזרת:
-- פעולות אטומיות<br />
-- סדר כתיבה מאומת<br />
-- באפרים מוצפנים  </p>
-<p>מונע:
-- כתיבה חלקית<br />
-- שחיתות<br />
-- הזרקת נתונים  </p>
+<h2 id="3">3. נתיב כתיבה מוגן<a class="headerlink" href="#3" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Agent כותב יומנים באמצעות:
+- פעולות כתיבה אטומיות
+- נקודות אחיזה לקבצים מבוקרות
+- רצפי כתיבה מאומתים
+- מאגרים מוצפנים</p>
+<p>זה מונע:
+- כתיבות חלקיות המשחיתות את השרשרת
+- הזרקת נתונים לא מאומתים
+- השחתה עקב תנאי מרוץ</p>
 <hr />
-<h2 id="4">4. מניעת מחיקה<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
-<p>אם לוג נמחק:
-- ה-Hash הבא לא יתאים<br />
-- נוצרת התראת מחיקה  </p>
+<h2 id="4">4. הגנה מפני מחיקה<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
+<p>אם תוקף מוחק בלוקי אירועים:
+- גיבוב-הקודם של הבלוק הבא לא יתאים לגיבוב הבלוק שנמחק
+- Nyroxis מזהה את הפער בשרשרת
+- התראת מחיקה-חבלה נוצרת ומאוחסנת באופן מקומי</p>
+<p>שום דבר לא יכול להיות מוסר בשקט.</p>
 <hr />
-<h2 id="5">5. מניעת שינוי<a class="headerlink" href="#5" title="Link to this section">&para;</a></h2>
-<p>שינוי נתונים גורם:
-- Hash לא תקין<br />
-- שבירת שרשרת<br />
-- חוסר עקביות  </p>
+<h2 id="5">5. הגנה מפני שינוי<a class="headerlink" href="#5" title="Link to this section">&para;</a></h2>
+<p>אם תוקף משנה:
+- חותמת זמן
+- מטא-נתוני אירוע
+- תוכן האירוע
+- סדר הבלוקים</p>
+<p>Nyroxis מזהה זאת דרך:
+- אי-התאמת גיבוב על הבלוק ששונה
+- אי-עקביות אינדקס
+- שבירת השרשרת</p>
+<p>שינוי הוא בלתי אפשרי ללא גילוי.</p>
 <hr />
-<h2 id="6">6. מניעת הזרקה<a class="headerlink" href="#6" title="Link to this section">&para;</a></h2>
-<p>לוגים מזויפים ייכשלו:
-- בבדיקת Hash<br />
-- בבדיקת רצף<br />
-- בבדיקת שלמות  </p>
+<h2 id="6">6. הגנה מפני הזרקה<a class="headerlink" href="#6" title="Link to this section">&para;</a></h2>
+<p>אם מישהו מנסה להכניס רשומות יומן מזויפות:
+- מספרי הרצף נכשלים באימות
+- אימות שרשרת הגיבוב נכשל
+- בדיקת השלמות נכשלת</p>
+<p>Nyroxis דוחה את כל פרוסת הנתונים המושפעת ומזהיר את המשתמש.</p>
 <hr />
-<h2 id="_1">סיכום<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<p>לוגי Nyroxis הם:
-- בלתי ניתנים לשינוי<br />
-- בלתי ניתנים למחיקה<br />
-- בלתי ניתנים להזרקה<br />
-- ניתנים לאימות  </p>
-<p>הכול מקומי ואופליין.</p>
+<h2 id="7">7. הגנה על שירותי הפלטפורמה<a class="headerlink" href="#7" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian מנטר את Nyroxis Agent ו-Intelligence כל 3 שניות.</p>
+<p>אם אחד השירותים נעצר — עקב קריסה, אירוע מערכת או התערבות מכוונת:
+- Guardian מזהה זאת באופן מיידי
+- ניסיון הכיבוי מתועד כאירוע אבטחה
+- פעולה מתקנת ננקטת</p>
+<p>לא ניתן להשבית את פלטפורמת הניטור עצמה בשקט.</p>
+<hr />
+<h2 id="_2">סיכום<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>הגנת Nyroxis מפני חבלה מבטיחה:
+- לא ניתן למחוק יומנים מבלי להתגלות
+- לא ניתן לשנות יומנים מבלי להתגלות
+- לא ניתן להזריק יומנים מבלי להתגלות
+- לא ניתן לשנות את סדר היומנים מבלי להתגלות
+- לא ניתן להשבית את הפלטפורמה בשקט</p>
+<p>כל ההגנות פועלות <strong>באופן מקומי, לא מקוון וללא סיוע ענן</strong> — ומספקות שלמות ראיות ברמה פורנזית בכל עת.</p>
 
 
 

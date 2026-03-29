@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#event-collector" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -7203,10 +7203,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#collector" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        מטרת ה‑Collector
+        מטרת אוסף האירועים
       
     </span>
   </a>
@@ -7214,22 +7214,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        אילו אירועים נאספים?
+        מה אוסף האירועים מנטר
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="אילו אירועים נאספים?">
+    <nav class="md-nav" aria-label="מה אוסף האירועים מנטר">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. תהליכים
+        1. אירועי תהליכים
       
     </span>
   </a>
@@ -7240,7 +7240,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. רשת
+        2. אירועי רשת
       
     </span>
   </a>
@@ -7251,7 +7251,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. מערכת קבצים
+        3. פעילות מערכת הקבצים
       
     </span>
   </a>
@@ -7262,7 +7262,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. הרשאות ואבטחה
+        4. אירועי הרשאות ואבטחה
       
     </span>
   </a>
@@ -7273,7 +7273,7 @@
   <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. אירועי מערכת
+        5. אירועי מערכת ושירות
       
     </span>
   </a>
@@ -7286,43 +7286,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        הצפנה מיידית
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ️ ביצועים קלים
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#antitamper" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        מנגנוני Anti‑Tamper
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        עבודה מלאה ללא אינטרנט
+        צינור הנרמול
       
     </span>
   </a>
@@ -7331,6 +7298,39 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        איסוף מאובטח והצפנה מיידית
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        יישום קל משקל
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        לא מקוון כעיקרון עיצובי
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8801,80 +8801,84 @@
   
 
 
-<h1 id="event-collector">Event Collector — מנגנון איסוף אירועים<a class="headerlink" href="#event-collector" title="Link to this section">&para;</a></h1>
-<p>Event Collector הוא תת‑הרכיב של Nyroxis Agent שאוסף את כל פעילות האבטחה במערכת.<br />
-הוא קל, פרטי, ופועל לחלוטין אופליין — ועדיין מספק נראות ברמת ארגון.</p>
+<h1 id="_1">אוסף האירועים<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
+<p>אוסף האירועים הוא תת-המערכת בתוך Nyroxis Agent האחראית על לכידת כל הפעילות הרלוונטית לאבטחה במכשיר.
+הוא תוכנן להיות קל משקל, פרטי ולא מקוון לחלוטין, תוך מתן נראות ברמה ארגונית על התנהגות נקודות הקצה.</p>
 <hr />
-<h2 id="collector">מטרת ה‑Collector<a class="headerlink" href="#collector" title="Link to this section">&para;</a></h2>
-<p>המנגנון נועד לעזור למשתמש להבין:
-- מה קורה במכשיר<br />
-- מתי אירועים מתרחשים<br />
-- האם הפעילות תקינה או חשודה  </p>
-<p>—all ללא חשיפת המידע.</p>
+<h2 id="_2">מטרת אוסף האירועים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>המטרה העיקרית של אוסף האירועים היא לאסוף מידע מובנה וניתן לפעולה שעוזר למשתמשים להבין:
+- מה קורה במכשיר שלהם
+- מתי אירועים מתרחשים
+- האם הפעילות נורמלית או חשודה</p>
+<p>הכל מבלי לחשוף נתונים לגורמים חיצוניים.</p>
 <hr />
-<h2 id="_1">אילו אירועים נאספים?<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<h3 id="1"><strong>1. תהליכים</strong><a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
+<h2 id="_3">מה אוסף האירועים מנטר<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
+<p>Nyroxis מתמקד בקטגוריות האירועים הקריטיות ביותר לאבטחה:</p>
+<h3 id="1">1. אירועי תהליכים<a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
 <ul>
-<li>יצירה  </li>
-<li>סיום  </li>
-<li>קשרי הורה/ילד  </li>
-<li>פרמטרי שורת פקודה  </li>
+<li>יצירה וסיום של תהליכים</li>
+<li>קשרי הורה/ילד</li>
+<li>פרמטרים של שורת הפקודה (כשזמינים)</li>
+<li>נתיבי הרצה ומטא-נתונים בינאריים</li>
 </ul>
-<h3 id="2"><strong>2. רשת</strong><a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
+<h3 id="2">2. אירועי רשת<a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
 <ul>
-<li>חיבורים יוצאים  </li>
-<li>חיבורים נכנסים  </li>
-<li>כתובות IP ופורט  </li>
-<li>סוג פרוטוקול  </li>
-<li>ניסיונות חריגים חוזרים  </li>
+<li>חיבורים יוצאים ונכנסים</li>
+<li>כתובות IP ויציאות יעד</li>
+<li>סוג פרוטוקול</li>
+<li>ניסיונות חיבור חוזרים</li>
 </ul>
-<h3 id="3"><strong>3. מערכת קבצים</strong><a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
+<h3 id="3">3. פעילות מערכת הקבצים<a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
 <ul>
-<li>יצירה  </li>
-<li>מחיקה  </li>
-<li>שינוי  </li>
-<li>גישה לתיקיות רגישות  </li>
+<li>יצירה, שינוי ומחיקה של קבצים</li>
+<li>גישה לספריות רגישות</li>
+<li>שינויי רגיסטרי</li>
 </ul>
-<h3 id="4"><strong>4. הרשאות ואבטחה</strong><a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
+<h3 id="4">4. אירועי הרשאות ואבטחה<a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
 <ul>
-<li>ניסיונות העלאת הרשאות  </li>
-<li>קריאות מערכת רגישות  </li>
-<li>שינויי Registry/Config  </li>
-<li>גישה למשאבים מוגנים  </li>
+<li>ניסיונות הגבהת הרשאות</li>
+<li>קריאות מערכת רגישות</li>
+<li>שינויי רגיסטרי ותצורה</li>
+<li>גישה למשאבים מוגנים</li>
 </ul>
-<h3 id="5"><strong>5. אירועי מערכת</strong><a class="headerlink" href="#5" title="Link to this section">&para;</a></h3>
+<h3 id="5">5. אירועי מערכת ושירות<a class="headerlink" href="#5" title="Link to this section">&para;</a></h3>
 <ul>
-<li>הפעלת שירותים  </li>
-<li>טעינת דרייברים  </li>
-<li>אזהרות מערכת  </li>
-<li>סימני Persistence  </li>
+<li>הפעלה/עצירה של שירותים</li>
+<li>טעינת דרייברים</li>
+<li>רשומות Windows Event Log (אבטחה, מערכת, יישום)</li>
+<li>מדדים של מנגנוני התמדה</li>
+<li>הרצת PowerShell וסקריפטים</li>
 </ul>
+<p>ההיקף המדויק מותאם ל-Windows (v1.0). תמיכה ב-macOS וב-Linux נמצאת בפיתוח.</p>
 <hr />
-<h2 id="_2">הצפנה מיידית<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<p>כל אירוע:
-- מוצפן מיד<br />
-- מוגן מפני שינוי<br />
-- נשמר עם חותמת זמן ומטא‑דאטה  </p>
-<p>אין בשום מצב כתיבה של לוגים לא מוצפנים.</p>
+<h2 id="_4">צינור הנרמול<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
+<p>לאחר האיסוף, כל אירוע:
+1. מנותח ומובנה לפורמט מנורמל
+2. מועשר עם מטא-נתונים הקשריים (חותמת זמן, מקור, רמז חומרה)
+3. מוכן להצפנה ואחסון
+4. הופך זמין לצריכה על ידי Nyroxis Intelligence</p>
+<p>נרמול זה מבטיח הערכת כללים עקבית בכל סוגי האירועים.</p>
 <hr />
-<h2 id="_3">️ ביצועים קלים<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<p>ה‑Collector מותאם ל:
-- שימוש CPU נמוך<br />
-- צריכת זיכרון מינימלית<br />
-- יציבות לאורך זמן  </p>
+<h2 id="_5">איסוף מאובטח והצפנה מיידית<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
+<p>כל אירוע שנאסף על ידי האוסף:
+- מוצפן מיידית עם AES-256
+- מאוחסן בצורה מקושרת בחשיש עמידה לחבלה
+- מאונדקס עם חותמות זמן ומטא-נתונים
+- לעולם אינו נכתב לדיסק בטקסט רגיל</p>
 <hr />
-<h2 id="antitamper">מנגנוני Anti‑Tamper<a class="headerlink" href="#antitamper" title="Link to this section">&para;</a></h2>
-<p>כולל:
-- בדיקות תקינות<br />
-- מסלולי כתיבה מוגנים<br />
-- ניטור קבצים קריטיים  </p>
+<h2 id="_6">יישום קל משקל<a class="headerlink" href="#_6" title="Link to this section">&para;</a></h2>
+<p>אוסף האירועים מותאם ל:
+- עומס CPU מינימלי (~0.1%)
+- שימוש נמוך בזיכרון (~57 MB RAM סה"כ עבור ה-Agent)
+- אפס השפעה על משימות יומיומיות
+- פעולה יציבה לטווח ארוך</p>
 <hr />
-<h2 id="_4">עבודה מלאה ללא אינטרנט<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
-<p>אין שימוש בענן או שרת חיצוני.<br />
-כל הניטור, ההצפנה והאחסון נשארים מקומיים בלבד.</p>
+<h2 id="_7">לא מקוון כעיקרון עיצובי<a class="headerlink" href="#_7" title="Link to this section">&para;</a></h2>
+<p>אוסף האירועים פועל עם <strong>אפס אינטראקציה עם הענן</strong>.
+כל הניטור, הנרמול, ההצפנה והאחסון מתרחשים באופן מקומי — תוך שמירה על פרטיות המשתמש גם בסביבות רגישות או air-gapped.</p>
 <hr />
-<h2 id="_5">סיכום<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
-<p>Event Collector הוא בסיס שכבת הנראות של Nyroxis — אוסף כל פעילות חשובה בצורה מוצפנת, קלה ופשוטה.</p>
+<h2 id="_8">סיכום<a class="headerlink" href="#_8" title="Link to this section">&para;</a></h2>
+<p>אוסף האירועים הוא הבסיס של שכבת הנראות של Nyroxis, לוכד כל פעילות חשובה הקשורה לאבטחה תוך שמירה על קלות משקל, הצפנה ומצב לא מקוון מלא.</p>
 
 
 

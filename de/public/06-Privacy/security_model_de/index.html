@@ -5743,10 +5743,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-endezuendeverschlusselung" class="md-nav__link">
+  <a href="#1-end-to-end-lokale-verschlusselung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Ende‑zu‑Ende‑Verschlüsselung
+        1. End-to-End lokale Verschlüsselung
       
     </span>
   </a>
@@ -5765,10 +5765,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-private-ondeviceki" class="md-nav__link">
+  <a href="#3-plattformresilienz-nyroxis-system-guardian" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Private On‑Device‑KI
+        3. Plattformresilienz (Nyroxis System Guardian)
       
     </span>
   </a>
@@ -5776,10 +5776,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-vollstandig-offline" class="md-nav__link">
+  <a href="#4-lokaler-kiml-motor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Vollständig offline
+        4. Lokaler KI/ML-Motor
       
     </span>
   </a>
@@ -5787,10 +5787,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-minimale-datenspeicherung" class="md-nav__link">
+  <a href="#5-vollstandiger-offline-betrieb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Minimale Datenspeicherung
+        5. Vollständiger Offline-Betrieb
       
     </span>
   </a>
@@ -5798,10 +5798,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-transparente-logik" class="md-nav__link">
+  <a href="#6-minimale-datenspeicherung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Transparente Logik
+        6. Minimale Datenspeicherung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-transparente-logik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Transparente Logik
       
     </span>
   </a>
@@ -8752,72 +8763,88 @@
 
 
 <h1 id="sicherheitsmodell">Sicherheitsmodell<a class="headerlink" href="#sicherheitsmodell" title="Link to this section">&para;</a></h1>
-<p>Das Nyroxis‑Sicherheitsmodell stellt sicher, dass Überwachung, KI‑Analyse und Ereignisspeicherung unter strengen privacy‑first‑ und manipulationsresistenten Prinzipien arbeiten.<br />
-Dieses Modell ist für Benutzer gedacht, die zuverlässige Sicherheit benötigen, ohne ihre Privatsphäre zu gefährden.</p>
+<p>Das Nyroxis-Sicherheitsmodell stellt sicher, dass alle Überwachungs-, Erkennungs-, KI-Analyse- und Ereignisspeichervorgänge unter strengen Grundsätzen der Datenschutz-Priorität und Manipulationsresistenz operieren.
+Dieses Modell ist für Einzelpersonen, Fachleute und Führungskräfte konzipiert, die vertrauenswürdige Sicherheit ohne Einbußen bei der Privatsphäre benötigen.</p>
+<hr />
 <h2 id="kernziele">Kernziele<a class="headerlink" href="#kernziele" title="Link to this section">&para;</a></h2>
 <p>Nyroxis schützt:
-- Vertraulichkeit der Daten<br />
-- Integrität des Systems<br />
-- Privatsphäre der Benutzer<br />
-- lokale Unabhängigkeit (keine Cloud)  </p>
-<p>Ergebnis: Schutz auf Enterprise‑Niveau für persönliche Geräte.</p>
-<h2 id="1-endezuendeverschlusselung">1. Ende‑zu‑Ende‑Verschlüsselung<a class="headerlink" href="#1-endezuendeverschlusselung" title="Link to this section">&para;</a></h2>
-<p>Alle Ereignisdaten werden:
-- zum Zeitpunkt der Erfassung verschlüsselt<br />
-- ausschließlich verschlüsselt gespeichert<br />
-- nur über sichere Lesewege entschlüsselt<br />
-- niemals im Klartext geschrieben  </p>
-<p>Schlüssel sind:
-- lokal<br />
-- dynamisch<br />
-- nicht im Code gespeichert<br />
-- nicht extern übertragen  </p>
+- Datenvertraulichkeit — kein unbefugter Zugriff auf Ereignisprotokolle
+- Systemintegrität — manipulationsresistente Beweiskette
+- Benutzerprivatsphäre — keine Cloud-Übertragung, kein Verhaltens-Profiling
+- Plattformresilienz — kontinuierliche Überwachung, geschützt vor Störungen</p>
+<p>Das Ergebnis: Unternehmensschutz auf einem persönlichen Gerät.</p>
+<hr />
+<h2 id="1-end-to-end-lokale-verschlusselung">1. End-to-End lokale Verschlüsselung<a class="headerlink" href="#1-end-to-end-lokale-verschlusselung" title="Link to this section">&para;</a></h2>
+<p>Alle Ereignisdaten sind:
+- Zum Zeitpunkt der Erfassung verschlüsselt (AES-256)
+- Nur in verschlüsselter Form gespeichert — niemals im Klartext geschrieben
+- Nur über sichere Lesepfade zugänglich
+- Nur im Speicher während der Verarbeitung entschlüsselt</p>
+<p>Verschlüsselungsschlüssel sind:
+- Aus der Hardware des Geräts (HWID) abgeleitet
+- Lokal auf dem Gerät
+- Niemals in der Anwendung gespeichert
+- Niemals extern übertragen</p>
+<hr />
 <h2 id="2-manipulationsresistente-speicherung">2. Manipulationsresistente Speicherung<a class="headerlink" href="#2-manipulationsresistente-speicherung" title="Link to this section">&para;</a></h2>
-<p>Nyroxis verwendet:
-- Integritätsprüfungen<br />
-- geschützte Schreiboperationen<br />
-- hashverkettete Ereignisblöcke<br />
-- Anti‑Tamper‑Verifikation  </p>
-<p>Dies verhindert das Verfälschen oder Löschen von Logs.</p>
-<h2 id="3-private-ondeviceki">3. Private On‑Device‑KI<a class="headerlink" href="#3-private-ondeviceki" title="Link to this section">&para;</a></h2>
-<p>NyXIA:
-- läuft vollständig offline<br />
-- verarbeitet verschlüsselte Ereignisse<br />
-- erzeugt Detektionen lokal<br />
-- übermittelt keine Logs  </p>
-<p>Daten bleiben immer auf dem Gerät.</p>
-<h2 id="4-vollstandig-offline">4. Vollständig offline<a class="headerlink" href="#4-vollstandig-offline" title="Link to this section">&para;</a></h2>
-<p>Nyroxis benötigt keine:
-- Cloud<br />
-- Online‑Authentifizierung<br />
-- externen APIs<br />
-- Remote‑Speicher  </p>
-<p>Dadurch entfallen ganze Risikokategorien.</p>
-<h2 id="5-minimale-datenspeicherung">5. Minimale Datenspeicherung<a class="headerlink" href="#5-minimale-datenspeicherung" title="Link to this section">&para;</a></h2>
+<p>Nyroxis verwendet hash-verkettete Ereignisblöcke:
+- Jeder Block enthält einen Hash des vorherigen Blocks
+- Die Integrität wird bei jedem Lesevorgang überprüft
+- Jede Löschung, Änderung, Injektion oder Neuanordnung unterbricht die Kette und löst einen Alarm aus
+- Geschützte Schreibpfade verhindern partielle oder beschädigte Schreibvorgänge</p>
+<p>Angreifer können Protokolle nicht ändern oder ihre Spuren unentdeckt verwischen.</p>
+<hr />
+<h2 id="3-plattformresilienz-nyroxis-system-guardian">3. Plattformresilienz (Nyroxis System Guardian)<a class="headerlink" href="#3-plattformresilienz-nyroxis-system-guardian" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian überwacht den Betriebsstatus von Nyroxis Agent und Nyroxis Intelligence alle 3 Sekunden.</p>
+<p>Wenn einer der Dienste gestoppt wird — durch einen Absturz, ein Systemereignis oder absichtliche Störung:
+- Guardian erkennt die Störung sofort
+- Korrekturmaßnahmen werden ergriffen
+- Der Abschaltversuch wird als Sicherheitsereignis protokolliert</p>
+<p>Die Plattform kann nicht still deaktiviert werden.</p>
+<hr />
+<h2 id="4-lokaler-kiml-motor">4. Lokaler KI/ML-Motor<a class="headerlink" href="#4-lokaler-kiml-motor" title="Link to this section">&para;</a></h2>
+<p>Der KI/ML-Motor:
+- Läuft vollständig offline
+- Verarbeitet nur lokal verschlüsselte Ereignisdaten
+- Generiert Anomalieerkennungen und statistische Ergebnisse lokal
+- Sendet niemals Daten an Server
+- Lädt niemals Verhaltensprofile oder Modell-Feedback hoch</p>
+<p>Ihre Daten bleiben immer auf Ihrem Gerät.</p>
+<hr />
+<h2 id="5-vollstandiger-offline-betrieb">5. Vollständiger Offline-Betrieb<a class="headerlink" href="#5-vollstandiger-offline-betrieb" title="Link to this section">&para;</a></h2>
+<p>Nyroxis benötigt nicht:
+- Cloud-Verarbeitung oder -Speicherung
+- Online-Authentifizierung
+- Externe APIs
+- Remote-Server jeglicher Art</p>
+<p>Dies beseitigt ganze Klassen von Datenschutzrisiken — Cloud-Verstöße, Drittanbieter-Zugriff und netzwerkbasierte Angriffe auf die Sicherheitsplattform selbst.</p>
+<hr />
+<h2 id="6-minimale-datenspeicherung">6. Minimale Datenspeicherung<a class="headerlink" href="#6-minimale-datenspeicherung" title="Link to this section">&para;</a></h2>
 <p>Nyroxis speichert nur:
-- sicherheitsrelevante Ereignisse<br />
-- Metadaten für Erkennung  </p>
-<p>Es speichert NICHT:
-- persönliche Dateien<br />
-- Benutzerinhalte<br />
-- Passwörter<br />
-- Standort<br />
-- Browserverläufe  </p>
-<p>Nur das, was sicherheitsrelevant ist.</p>
-<h2 id="6-transparente-logik">6. Transparente Logik<a class="headerlink" href="#6-transparente-logik" title="Link to this section">&para;</a></h2>
-<p>Das Modell ist bewusst einfach:
-- lokale Erfassung<br />
-- lokale Verschlüsselung<br />
-- lokale KI<br />
-- lokale Warnungen  </p>
-<p>Nichts versteckt, keine Telemetrie.</p>
+- Verschlüsselte Sicherheitsereignisse
+- Erkennungs- und Korrelationsergebnisse
+- KI/ML-Analyseergebnisse
+- Für Erkennung und Forensik benötigte Metadaten</p>
+<p>Es speichert <strong>nicht</strong>:
+- Persönliche Dokumente oder Dateien
+- Browserverlauf
+- Anmeldedaten oder Passwörter
+- Standortdaten
+- Inhalte, die nicht mit Sicherheitsereignissen zusammenhängen</p>
+<hr />
+<h2 id="7-transparente-logik">7. Transparente Logik<a class="headerlink" href="#7-transparente-logik" title="Link to this section">&para;</a></h2>
+<p>Das Sicherheitsmodell ist absichtlich einfach und überprüfbar:
+- Lokale Erfassung → lokale Verschlüsselung → lokale Erkennung → lokale KI → lokale Alarme
+- Keine stillen Uploads, keine Telemetrie, keine versteckten Netzwerkverbindungen</p>
+<p>Benutzer können das Verhalten der Plattform über das Dashboard und die System-Netzwerküberwachung verifizieren.</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Nyroxis bietet ein starkes, privates Sicherheitsfundament:
-- verschlüsselte Speicherung<br />
-- Manipulationsschutz<br />
-- lokale KI<br />
-- keine Cloud‑Risiken  </p>
-<p>Ein modernes Modell für Menschen, die Privatsphäre und Sicherheit gleichermaßen schätzen.</p>
+<p>Nyroxis bietet ein starkes, datenschutzorientiertes und forensisch solides Sicherheitsmodell:
+- AES-256 verschlüsselte Ereignisspeicherung
+- Hash-verketteter Manipulationsschutz
+- Ausschließlich lokale KI/ML
+- Plattformwächter für Resilienz
+- Keine Cloud-Risiken, keine Telemetrie, keine externen Abhängigkeiten</p>
 
 
 

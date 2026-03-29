@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#event-collector" class="md-skip">
+        <a href="#ereignis-collector" class="md-skip">
           Skip to content
         </a>
       
@@ -5171,10 +5171,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#erfasste-kategorien" class="md-nav__link">
+  <a href="#zweck-des-ereignis-collectors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Erfasste Kategorien
+        Zweck des Ereignis-Collectors
       
     </span>
   </a>
@@ -5182,10 +5182,126 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verarbeitung" class="md-nav__link">
+  <a href="#was-der-ereignis-collector-uberwacht" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verarbeitung
+        Was der Ereignis-Collector überwacht
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Was der Ereignis-Collector überwacht">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prozessereignisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prozessereignisse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-netzwerkereignisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Netzwerkereignisse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dateisystemaktivitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Dateisystemaktivität
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-berechtigungs-und-sicherheitsereignisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Berechtigungs- und Sicherheitsereignisse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-system-und-dienstereignisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. System- und Dienstereignisse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalisierungs-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalisierungs-Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sichere-erfassung-und-sofortige-verschlusselung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sichere Erfassung und sofortige Verschlüsselung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leichtgewichtige-implementierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leichtgewichtige Implementierung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offline-first-durch-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline-First durch Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zusammenfassung
       
     </span>
   </a>
@@ -8685,23 +8801,84 @@
   
 
 
-<h1 id="event-collector">Event Collector<a class="headerlink" href="#event-collector" title="Link to this section">&para;</a></h1>
-<p>Der Event Collector ist das Modul innerhalb des Nyroxis Agents, das für die kontinuierliche Erfassung sicherheitsrelevanter Ereignisse verantwortlich ist.<br />
-Er stellt sicher, dass alle Aktivitäten auf dem Gerät strukturiert, zuverlässig und vollständig lokal registriert werden.</p>
-<h2 id="erfasste-kategorien">Erfasste Kategorien<a class="headerlink" href="#erfasste-kategorien" title="Link to this section">&para;</a></h2>
-<p>Der Collector sammelt unter anderem:
-- Prozessstarts und -beendigungen<br />
-- Netzwerkverbindungen<br />
-- Dateiänderungen und Dateizugriffe<br />
-- Berechtigungs- und Sicherheitsereignisse<br />
-- Aktivitäten des Systems und installierter Software  </p>
-<h2 id="verarbeitung">Verarbeitung<a class="headerlink" href="#verarbeitung" title="Link to this section">&para;</a></h2>
-<p>Sobald ein Ereignis erkannt wird:
-- wird es klassifiziert<br />
-- wird es mit Zeitstempel versehen<br />
-- wird es an die Verschlüsselungsschicht weitergegeben<br />
-- wird es lokal gespeichert  </p>
-<p>Die Erfassung erfolgt vollständig offline und ohne externe Weiterleitung.</p>
+<h1 id="ereignis-collector">Ereignis-Collector<a class="headerlink" href="#ereignis-collector" title="Link to this section">&para;</a></h1>
+<p>Der Ereignis-Collector ist das Teilsystem innerhalb des Nyroxis Agents, das für die Erfassung aller sicherheitsrelevanten Aktivitäten auf dem Gerät verantwortlich ist.
+Er ist darauf ausgelegt, leichtgewichtig, privat und vollständig offline zu sein, während er gleichzeitig Transparenz auf Unternehmensebene über das Endpunktverhalten bietet.</p>
+<hr />
+<h2 id="zweck-des-ereignis-collectors">Zweck des Ereignis-Collectors<a class="headerlink" href="#zweck-des-ereignis-collectors" title="Link to this section">&para;</a></h2>
+<p>Das Hauptziel des Ereignis-Collectors ist es, verwertbare, strukturierte Informationen zu sammeln, die Benutzern helfen zu verstehen:
+- Was auf ihrem Gerät passiert
+- Wann Ereignisse auftreten
+- Ob die Aktivität normal oder verdächtig ist</p>
+<p>Alles ohne externe Datenoffenlegung.</p>
+<hr />
+<h2 id="was-der-ereignis-collector-uberwacht">Was der Ereignis-Collector überwacht<a class="headerlink" href="#was-der-ereignis-collector-uberwacht" title="Link to this section">&para;</a></h2>
+<p>Nyroxis konzentriert sich auf die sicherheitskritischsten Ereigniskategorien:</p>
+<h3 id="1-prozessereignisse">1. Prozessereignisse<a class="headerlink" href="#1-prozessereignisse" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Prozesserstellung und -beendigung</li>
+<li>Eltern-/Kind-Beziehungen</li>
+<li>Befehlszeilenparameter (soweit verfügbar)</li>
+<li>Ausführungspfade und Binär-Metadaten</li>
+</ul>
+<h3 id="2-netzwerkereignisse">2. Netzwerkereignisse<a class="headerlink" href="#2-netzwerkereignisse" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Ausgehende und eingehende Verbindungen</li>
+<li>Ziel-IPs und -Ports</li>
+<li>Protokolltyp</li>
+<li>Wiederholte Verbindungsversuche</li>
+</ul>
+<h3 id="3-dateisystemaktivitat">3. Dateisystemaktivität<a class="headerlink" href="#3-dateisystemaktivitat" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Dateierstellung, -änderung und -löschung</li>
+<li>Zugriff auf sensible Verzeichnisse</li>
+<li>Registrierungsänderungen</li>
+</ul>
+<h3 id="4-berechtigungs-und-sicherheitsereignisse">4. Berechtigungs- und Sicherheitsereignisse<a class="headerlink" href="#4-berechtigungs-und-sicherheitsereignisse" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Erhöhungsversuche</li>
+<li>Sensible Systemaufrufe</li>
+<li>Registrierungs- und Konfigurationsänderungen</li>
+<li>Zugriff auf geschützte Ressourcen</li>
+</ul>
+<h3 id="5-system-und-dienstereignisse">5. System- und Dienstereignisse<a class="headerlink" href="#5-system-und-dienstereignisse" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Dienststarten/-stoppen</li>
+<li>Treiberladen</li>
+<li>Windows-Ereignisprotokolleinträge (Sicherheit, System, Anwendung)</li>
+<li>Indikatoren für Persistenzmechanismen</li>
+<li>PowerShell- und Skriptausführung</li>
+</ul>
+<p>Der genaue Umfang ist für Windows (v1.0) optimiert. macOS- und Linux-Unterstützung befindet sich in der Entwicklung.</p>
+<hr />
+<h2 id="normalisierungs-pipeline">Normalisierungs-Pipeline<a class="headerlink" href="#normalisierungs-pipeline" title="Link to this section">&para;</a></h2>
+<p>Nach der Erfassung wird jedes Ereignis:
+1. Geparst und in ein normalisiertes Format strukturiert
+2. Mit kontextuellen Metadaten angereichert (Zeitstempel, Quelle, Schweregradhinweis)
+3. Für Verschlüsselung und Speicherung vorbereitet
+4. Für die Nutzung durch Nyroxis Intelligence bereitgestellt</p>
+<p>Diese Normalisierung gewährleistet eine konsistente Regelauswertung für alle Ereignistypen.</p>
+<hr />
+<h2 id="sichere-erfassung-und-sofortige-verschlusselung">Sichere Erfassung und sofortige Verschlüsselung<a class="headerlink" href="#sichere-erfassung-und-sofortige-verschlusselung" title="Link to this section">&para;</a></h2>
+<p>Jedes vom Collector erfasste Ereignis wird:
+- Sofort mit AES-256 verschlüsselt
+- In manipulationsresistenter, hash-verketteter Form gespeichert
+- Mit Zeitstempeln und Metadaten indiziert
+- Niemals im Klartext auf die Festplatte geschrieben</p>
+<hr />
+<h2 id="leichtgewichtige-implementierung">Leichtgewichtige Implementierung<a class="headerlink" href="#leichtgewichtige-implementierung" title="Link to this section">&para;</a></h2>
+<p>Der Ereignis-Collector ist optimiert für:
+- Minimalen CPU-Overhead (~0,1 %)
+- Geringen Speicherverbrauch (~57 MB RAM gesamt für den Agent)
+- Keinerlei Auswirkungen auf alltägliche Aufgaben
+- Stabilen Langzeitbetrieb</p>
+<hr />
+<h2 id="offline-first-durch-design">Offline-First durch Design<a class="headerlink" href="#offline-first-durch-design" title="Link to this section">&para;</a></h2>
+<p>Der Ereignis-Collector arbeitet mit <strong>null Cloud-Interaktion</strong>.
+Alle Überwachung, Normalisierung, Verschlüsselung und Speicherung erfolgen lokal — die Privatsphäre des Benutzers wird auch in sensiblen oder air-gapped Umgebungen gewahrt.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
+<p>Der Ereignis-Collector ist das Fundament der Sichtbarkeitsschicht von Nyroxis, erfasst jede wichtige sicherheitsbezogene Aktivität und bleibt dabei leichtgewichtig, verschlüsselt und vollständig offline.</p>
 
 
 

@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nyxia" class="md-skip">
+        <a href="#ai" class="md-skip">
           Skip to content
         </a>
       
@@ -7521,10 +7521,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nyxia_1" class="md-nav__link">
+  <a href="#-ai" class="md-nav__link">
     <span class="md-ellipsis">
       
-        מטרת NyXIA
+        גישה שונה ל-AI
       
     </span>
   </a>
@@ -7532,10 +7532,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nyxia_2" class="md-nav__link">
+  <a href="#-ai_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        איך NyXIA עובד
+        מה מנוע ה-AI מספק
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isolation-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isolation Forest — האלגוריתם המרכזי
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 תכונות התנהגותיות מנותחות
       
     </span>
   </a>
@@ -7546,60 +7568,10 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        יכולות עיקריות
+        מנוע ניתוח סטטיסטי
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="יכולות עיקריות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. ניתוח מבוסס רצפים
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. פרופיל התנהגות מקומי
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. מודלים קלי משקל
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. ללא ענן, ללא העלאות
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -7607,7 +7579,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        פרטיות מלאה
+        ערובת פרטיות מלאה
       
     </span>
   </a>
@@ -8768,65 +8740,126 @@
   
 
 
-<h1 id="nyxia">מנוע הבינה (NyXIA) — סקירה מלאה<a class="headerlink" href="#nyxia" title="Link to this section">&para;</a></h1>
-<p>NyXIA הוא מנוע ה‑AI המקומי הפועל בתוך Nyroxis.<br />
-הוא מנתח אירועי אבטחה בצורה חכמה — <strong>ללא שליחת נתונים לענן</strong>.</p>
+<h1 id="ai">מנוע AI ולמידת מכונה — סקירה כללית<a class="headerlink" href="#ai" title="Link to this section">&para;</a></h1>
+<p>מנוע ה-AI/ML של Nyroxis הוא מערכת זיהוי חריגות מקומית לחלוטין ולא מקוונת, המשובצת בלוח המחוונים.
+הוא מנתח אירועי אבטחה מבלי לשלוח נתונים לענן, ומספק אינטליגנציה התנהגותית עם פרטיות מוחלטת.</p>
 <hr />
-<h2 id="nyxia_1">מטרת NyXIA<a class="headerlink" href="#nyxia_1" title="Link to this section">&para;</a></h2>
-<p>NyXIA מספק:
-- ניתוח התנהגותי<br />
-- איתור אנומליות<br />
-- זיהוי דפוסים חשודים<br />
-- אינפרנס מקומי<br />
-- פרטיות מלאה ללא זליגת מידע  </p>
+<h2 id="-ai">גישה שונה ל-AI<a class="headerlink" href="#-ai" title="Link to this section">&para;</a></h2>
+<p>רוב פתרונות האבטחה המונעים על ידי AI מסתמכים על תשתית ענן — שולחים טלמטריה לשרתים מרוחקים לניתוח.
+Nyroxis נוקט בגישה ההפוכה: כל היבט של מנוע ה-AI פועל באופן מקומי, על המכשיר הפרטי של המשתמש.
+שום נתון אינו מועבר. שום שירות חיצוני אינו מתייעץ. שום פרופיל התנהגותי לעולם אינו עוזב את המכשיר.</p>
+<p>זו אינה מגבלה — זוהי התחייבות ארכיטקטונית מכוונת לפרטיות.</p>
 <hr />
-<h2 id="nyxia_2">איך NyXIA עובד<a class="headerlink" href="#nyxia_2" title="Link to this section">&para;</a></h2>
-<p>NyXIA מנתח:
-- רצפי תהליכים<br />
-- התנהגות רשת<br />
-- פעילות קבצים<br />
-- פעולות הרשאה<br />
-- דפוסי זמן  </p>
-<p>במקום לנתח כל אירוע בנפרד — הוא מזהה רצפים קצרים של פעילות כדי לחשוף התנהגות חריגה.</p>
+<h2 id="-ai_1">מה מנוע ה-AI מספק<a class="headerlink" href="#-ai_1" title="Link to this section">&para;</a></h2>
+<ul>
+<li>זיהוי חריגות התנהגותיות באמצעות Isolation Forest</li>
+<li>ניתוח סטטיסטי: Z-Score, IQR, ממוצעים נעים, זיהוי עליות חדות</li>
+<li>סיווג חומרה: קריטי / גבוה / בינוני / נמוך</li>
+<li>זיהוי תכונות תורמות — מסביר <em>מדוע</em> משהו סומן</li>
+<li>בניית קו בסיס התנהגותי לכל מכשיר</li>
+</ul>
 <hr />
-<h2 id="_1">יכולות עיקריות<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<h3 id="1"><strong>1. ניתוח מבוסס רצפים</strong><a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
-<p>מאפשר לזהות:
-- מתקפות איטיות<br />
-- פריצות רב‑שלביות<br />
-- Persistence<br />
-- תנועה לטרלית  </p>
+<h2 id="isolation-forest">Isolation Forest — האלגוריתם המרכזי<a class="headerlink" href="#isolation-forest" title="Link to this section">&para;</a></h2>
+<p>בלב המנוע נמצא יישום מותאם אישית של אלגוריתם Isolation Forest, פותח לחלוטין ב-Rust — אין צורך בספריית ML חיצונית.</p>
+<p><strong>כיצד זה עובד:</strong>
+Isolation Forest בונה יער של עצי החלטה אקראיים. אירועים חריגים הם נדירים סטטיסטית או חריגים מבנית — הם דורשים פחות פיצולים לבידוד, ולכן מקבלים ציון חריגות גבוה יותר.</p>
+<p><strong>יישום:</strong>
+- 100 עצי בידוד לכל מחזור ניתוח
+- מקסימום 256 דגימות לכל עץ
+- 8 תכונות התנהגותיות לכל חלון ניתוח
+- ציון חריגות &gt; 0.6 מפעיל זיהוי</p>
 <hr />
-<h3 id="2"><strong>2. פרופיל התנהגות מקומי</strong><a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
-<p>NyXIA בונה פרופיל התנהגות ייחודי לכל התקן:
-- דפוסים יומיומיים<br />
-- תהליכים נפוצים<br />
-- יעדי רשת מוכרים  </p>
-<p>חריגות מסומנות מיד.<br />
-הכול מוצפן ונשמר מקומית.</p>
+<h2 id="8">8 תכונות התנהגותיות מנותחות<a class="headerlink" href="#8" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>תכונה</th>
+<th>תיאור</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ספירת אירועים</td>
+<td>סך האירועים בחלון הניתוח</td>
+</tr>
+<tr>
+<td>מקורות ייחודיים</td>
+<td>מספר מקורות אירועים נבדלים</td>
+</tr>
+<tr>
+<td>יעדים ייחודיים</td>
+<td>מספר יעדי רשת נבדלים</td>
+</tr>
+<tr>
+<td>שעת היום</td>
+<td>הקשר זמן לקו הבסיס ההתנהגותי</td>
+</tr>
+<tr>
+<td>יום השבוע</td>
+<td>זיהוי דפוסים שבועיים</td>
+</tr>
+<tr>
+<td>אירועים לשעה</td>
+<td>נרמול קצב פעילות</td>
+</tr>
+<tr>
+<td>יחס מקורות חדשים</td>
+<td>שיעור מקורות שלא נראו קודם</td>
+</tr>
+<tr>
+<td>יחס יעדים חדשים</td>
+<td>שיעור יעדים שלא נראו קודם</td>
+</tr>
+</tbody>
+</table>
+<p>כל התכונות מנורמלות באמצעות תקנון Z-score לפני הניתוח.</p>
 <hr />
-<h3 id="3"><strong>3. מודלים קלי משקל</strong><a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
-<p>מותאם ל:
-- שימוש מינימלי ב‑CPU<br />
-- עיבוד מקומי בלבד<br />
-- צריכת זיכרון נמוכה  </p>
+<h2 id="_1">מנוע ניתוח סטטיסטי<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
+<p>פועל במקביל ל-Isolation Forest:</p>
+<table>
+<thead>
+<tr>
+<th>Z-Score</th>
+<th>חומרה</th>
+<th>ביטחון</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 3.0</td>
+<td>קריטי</td>
+<td>99.7%</td>
+</tr>
+<tr>
+<td>&gt; 2.0</td>
+<td>גבוה</td>
+<td>95%</td>
+</tr>
+<tr>
+<td>&gt; 1.5</td>
+<td>בינוני</td>
+<td>86%</td>
+</tr>
+<tr>
+<td>&gt; 1.0</td>
+<td>נמוך</td>
+<td>68%</td>
+</tr>
+</tbody>
+</table>
+<p>שיטות נוספות: זיהוי חריגים IQR, ממוצע נע, ממוצע נע מעריכי, זיהוי עליות חדות, ניתוח מתאם.</p>
 <hr />
-<h3 id="4"><strong>4. ללא ענן, ללא העלאות</strong><a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
-<p>NyXIA לעולם לא שולח:
-- יומנים<br />
-- מידע אישי<br />
-- דפוסי פעילות  </p>
-<p>כל החישובים מתבצעים מקומית בלבד.</p>
-<hr />
-<h2 id="_2">פרטיות מלאה<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<p>NyXIA נבנה כך שישמור על פרטיות המשתמש:
-- אופליין לחלוטין<br />
-- נתונים מוצפנים<br />
-- ללא טלמטריה<br />
-- ללא מעקב  </p>
+<h2 id="_2">ערובת פרטיות מלאה<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>מנוע ה-AI:
+- פועל לחלוטין לא מקוון
+- מעבד רק נתוני אירועים מוצפנים מקומית
+- לעולם אינו שולח נתונים לשרתים
+- לעולם אינו מעלה פרופילים התנהגותיים
+- לעולם אינו משתמש בהסקת ענן או ממשקי API מקוונים</p>
+<p>מנוע ה-AI שייך לחלוטין למכשיר המשתמש.</p>
 <hr />
 <h2 id="_3">סיכום<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<p>NyXIA מספק יכולות AI מתקדמות וזיהוי התנהגותי חכם — תוך שמירה מוחלטת על פרטיות וללא תלות בענן.</p>
+<p>מנוע ה-AI/ML של Nyroxis מספק זיהוי חריגות Isolation Forest על המכשיר בשילוב ניתוח סטטיסטי — מספק אינטליגנציה התנהגותית באיכות ענן ללא פשרה על הפרטיות.</p>
 
 
 

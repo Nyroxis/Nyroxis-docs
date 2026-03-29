@@ -7739,7 +7739,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        למה אופליין חשוב?
+        מדוע הפעולה במצב לא מקוון חשובה
       
     </span>
   </a>
@@ -7761,7 +7761,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. ללא ענן
+        2. אין ענן, אין שרתים
       
     </span>
   </a>
@@ -7769,10 +7769,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ai-nyxia" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. AI מקומי (NyXIA)
+        3. אימות רישיון במצב לא מקוון
       
     </span>
   </a>
@@ -7783,7 +7783,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. עדכונים ידניים (אופציונלי)
+        4. מנוע בינה מלאכותית/למידת מכונה מקומי
       
     </span>
   </a>
@@ -7794,7 +7794,18 @@
   <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. ארכיטקטורה שקופה
+        5. בדיקת עדכונים (אופציונלי)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ארכיטקטורה שקופה
       
     </span>
   </a>
@@ -8740,52 +8751,64 @@
   
 
 
-<h1 id="_1">מצב אופליין<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
-<p>Nyroxis פועלת כולה במצב אופליין — ללא ענן, ללא אימות מרחוק וללא API חיצוני.<br />
-המערכת מספקת פרטיות מלאה ושליטה מוחלטת למשתמש.</p>
+<h1 id="_1">מצב לא מקוון<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
+<p>Nyroxis בנוי מהיסוד לפעול לחלוטין במצב לא מקוון — ללא גישה לענן, אימות מרחוק או ממשקי API חיצוניים.
+עיצוב זה מעניק למשתמשים אבטחה, פרטיות ואוטונומיה מלאה על המכשיר שלהם.</p>
 <hr />
-<h2 id="_2">למה אופליין חשוב?<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<p>מצב אופליין מבטיח:
-- <strong>אפס שליחת נתונים החוצה</strong><br />
-- <strong>ללא סיכוני ענן</strong><br />
-- <strong>ללא תלות בשרתי צד שלישי</strong><br />
-- <strong>ללא מעקב סמוי</strong>  </p>
+<h2 id="_2">מדוע הפעולה במצב לא מקוון חשובה<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>פעולה במצב לא מקוון מבטיחה:
+- <strong>אין נתונים שיוצאים מהמכשיר</strong> — לעולם
+- <strong>אין חשיפה לפרצות ענן</strong> או כשלי תשתית של צד שלישי
+- <strong>אין תלות בשרתים חיצוניים</strong> לצורך ניטור או זיהוי
+- <strong>אין סיכון לניטור צד שלישי</strong> או פרופיל התנהגותי
+- <strong>פונקציונליות מלאה גם ללא אינטרנט</strong> — כולל בסביבות מבודדות פיזית (air-gapped)</p>
+<p>המשתמשים שומרים על שליטה מלאה בנתוני האבטחה שלהם.</p>
 <hr />
 <h2 id="1">1. פעולה מקומית מלאה<a class="headerlink" href="#1" title="Link to this section">&para;</a></h2>
-<p>Nyroxis מבצעת באופן מקומי:
-- איסוף אירועים<br />
-- הצפנה<br />
-- אחסון<br />
-- ניתוח AI<br />
-- התאמת כללים<br />
-- קורלציות<br />
-- התראות  </p>
-<p>שום דבר לא יוצא מהמכשיר.</p>
+<p>כל פונקציה של פלטפורמת Nyroxis פועלת באופן מקומי:
+- איסוף ונרמול אירועים (Nyroxis Agent)
+- זיהוי, מתאם והערכת כללי שרשרת (Nyroxis Intelligence)
+- ניטור שירותים, גיבוי ואימות רישיון (Nyroxis System Guardian)
+- זיהוי חריגות בינה מלאכותית/למידת מכונה וניתוח סטטיסטי
+- ויזואליזציה של לוח המחוונים ודיווח</p>
+<p>שום דבר אינו מועלה. שום דבר אינו מועבר.</p>
 <hr />
-<h2 id="2">2. ללא ענן<a class="headerlink" href="#2" title="Link to this section">&para;</a></h2>
-<p>Nyroxis אינה משתמשת ב:
-- ענן<br />
-- טלמטריה<br />
-- לוגים מרוחקים<br />
-- סריקה אונליין  </p>
+<h2 id="2">2. אין ענן, אין שרתים<a class="headerlink" href="#2" title="Link to this section">&para;</a></h2>
+<p>Nyroxis אינו משתמש ב:
+- עיבוד או אחסון בענן
+- טלמטריה או מעקב שימוש
+- רישום מרחוק
+- סריקה מקוונת או עדכוני מודיעין איומים
+- שירותי אימות חיצוניים</p>
+<p>זה מבטל קטגוריות שלמות של סיכוני פרטיות וסיכוני תקיפה.</p>
 <hr />
-<h2 id="3-ai-nyxia">3. AI מקומי (NyXIA)<a class="headerlink" href="#3-ai-nyxia" title="Link to this section">&para;</a></h2>
-<p>NyXIA:
-- פועל אופליין<br />
-- מנתח אירועים מוצפנים<br />
-- מפיק תרחישים מקומיים  </p>
+<h2 id="3">3. אימות רישיון במצב לא מקוון<a class="headerlink" href="#3" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian מאמת את הרישיון המבוסס על HWID לחלוטין במצב לא מקוון:
+- אין צורך בחיבור לאינטרנט
+- האימות משתמש בהצפנת AES-GCM ואימות HMAC באופן מקומי
+- שלמות הרישיון נאכפת מבלי ליצור קשר עם שרת חיצוני כלשהו</p>
 <hr />
-<h2 id="4">4. עדכונים ידניים (אופציונלי)<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
-<p>עדכונים ניתנים להתקנה:
-- ידנית<br />
-- דרך חבילות אופליין  </p>
+<h2 id="4">4. מנוע בינה מלאכותית/למידת מכונה מקומי<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
+<p>מנוע Isolation Forest וניתוח הסטטיסטיקה פועלים לחלוטין במצב לא מקוון:
+- זיהוי חריגות התנהגותיות
+- סיווג Z-Score
+- זיהוי עליות וחריגות ביחס לבסיס</p>
+<p>הכל מחושב ישירות מאירועים מקומיים מוצפנים — ללא הסקה בענן, ללא עדכוני מודל דרך הרשת.</p>
 <hr />
-<h2 id="5">5. ארכיטקטורה שקופה<a class="headerlink" href="#5" title="Link to this section">&para;</a></h2>
-<p>אין תקשורת רשת נסתרת.
-המשתמש יכול לוודא זאת בעצמו.</p>
+<h2 id="5">5. בדיקת עדכונים (אופציונלי)<a class="headerlink" href="#5" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian יכול לבדוק עדכונים במרווחי זמן הניתנים להגדרה.
+התקנת עדכונים נשארת ידנית — אין חיבורי ענן כפויים או אוטומטיים.
+הפלטפורמה פועלת ביכולת מלאה ללא קשר למצב העדכון.</p>
+<hr />
+<h2 id="6">6. ארכיטקטורה שקופה<a class="headerlink" href="#6" title="Link to this section">&para;</a></h2>
+<p>Nyroxis חושף בלוח המחוונים אינדיקטורים ברורים המאפשרים למשתמשים לאמת:
+- אין חיבורי רשת יוצאים מתהליכי Nyroxis
+- אין טלמטריה ברקע
+- אין תלות בענן</p>
+<p>האמון ניתן למדידה — לא מניח מראש.</p>
 <hr />
 <h2 id="_3">סיכום<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<p>Nyroxis מספקת אבטחה פרטית, מקומית ועצמאית — ללא חשיפה לענן.</p>
+<p>מצב לא מקוון מבטיח ש-Nyroxis נשאר פרטי, מוצפן, אוטונומי ומקומי לחלוטין — פלטפורמת אבטחה שתוכננה להגן על משתמשים מבלי לחשוף את הנתונים שלהם אי פעם.</p>
 
 
 

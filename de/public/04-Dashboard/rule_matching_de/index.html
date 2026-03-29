@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rule-matching" class="md-skip">
+        <a href="#regelabgleich-erkennung" class="md-skip">
           Skip to content
         </a>
       
@@ -5386,10 +5386,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#was-rule-matching-macht" class="md-nav__link">
+  <a href="#was-der-regelabgleich-tut" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Was Rule Matching macht
+        Was der Regelabgleich tut
       
     </span>
   </a>
@@ -5397,22 +5397,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regeltypen" class="md-nav__link">
+  <a href="#drei-erkennungsschichten" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Regeltypen
+        Drei Erkennungsschichten
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Regeltypen">
+    <nav class="md-nav" aria-label="Drei Erkennungsschichten">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-schwellenwertbasierte-regeln" class="md-nav__link">
+  <a href="#schicht-1-erkennungsregeln-27-regeln" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Schwellenwertbasierte Regeln
+        Schicht 1 — Erkennungsregeln (27 Regeln)
       
     </span>
   </a>
@@ -5420,10 +5420,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sequenzregeln" class="md-nav__link">
+  <a href="#schicht-2-korrelationsregeln-12-regeln" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Sequenzregeln
+        Schicht 2 — Korrelationsregeln (12 Regeln)
       
     </span>
   </a>
@@ -5431,21 +5431,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-zeitfenster-regeln" class="md-nav__link">
+  <a href="#schicht-3-kettenregeln-2-regeln" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Zeitfenster-Regeln
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-entitatsspezifische-regeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Entitätsspezifische Regeln
+        Schicht 3 — Kettenregeln (2 Regeln)
       
     </span>
   </a>
@@ -5458,10 +5447,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wie-nyroxis-regeln-bewertet" class="md-nav__link">
+  <a href="#erweiterbar-durch-sicherheitsprofis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wie Nyroxis Regeln bewertet
+        Erweiterbar durch Sicherheitsprofis
       
     </span>
   </a>
@@ -5469,10 +5458,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details-bei-regel-treffern" class="md-nav__link">
+  <a href="#wie-die-engine-regeln-bewertet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details bei Regel-Treffern
+        Wie die Engine Regeln bewertet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wenn-eine-regel-ausgelost-wird" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wenn eine Regel ausgelöst wird
       
     </span>
   </a>
@@ -8779,59 +8779,76 @@
   
 
 
-<h1 id="rule-matching">Rule Matching<a class="headerlink" href="#rule-matching" title="Link to this section">&para;</a></h1>
-<p>Das Rule Matching Modul ermöglicht es Nyroxis, Ereignisse hervorzuheben, die vordefinierten Sicherheitsregeln entsprechen.<br />
-Es bringt SIEM-ähnliche Logik auf persönliche Endgeräte — vollständig offline und datenschutzorientiert.</p>
-<h2 id="was-rule-matching-macht">Was Rule Matching macht<a class="headerlink" href="#was-rule-matching-macht" title="Link to this section">&para;</a></h2>
-<p>Nyroxis bewertet Ereignisse nach lokalen Regeln, um zu erkennen:
-- verdächtige Verhaltensweisen<br />
-- wiederkehrende Anomalien<br />
-- riskante Kombinationen von Ereignissen<br />
-- Indikatoren für Kompromittierungen (IoCs)  </p>
-<p>Keine Regeln oder Logs werden jemals online übertragen.</p>
-<h2 id="regeltypen">Regeltypen<a class="headerlink" href="#regeltypen" title="Link to this section">&para;</a></h2>
-<h3 id="1-schwellenwertbasierte-regeln"><strong>1. Schwellenwertbasierte Regeln</strong><a class="headerlink" href="#1-schwellenwertbasierte-regeln" title="Link to this section">&para;</a></h3>
-<p>Werden ausgelöst, wenn etwas zu oft in kurzer Zeit passiert:
-- mehrere fehlgeschlagene Netzwerkverbindungen<br />
-- wiederholte Versuche der Rechteerhöhung<br />
-- exzessive Dateiänderungen  </p>
-<h3 id="2-sequenzregeln"><strong>2. Sequenzregeln</strong><a class="headerlink" href="#2-sequenzregeln" title="Link to this section">&para;</a></h3>
-<p>Erkennen gefährliche Ereignisketten:
-- Prozess → Netzwerk → Persistenz<br />
-- Skriptausführung → Systemänderung<br />
-- unbekannter Prozess → Zugriff auf sensible Datei  </p>
-<h3 id="3-zeitfenster-regeln"><strong>3. Zeitfenster-Regeln</strong><a class="headerlink" href="#3-zeitfenster-regeln" title="Link to this section">&para;</a></h3>
-<p>Identifizieren Muster, die nur über einen größeren Zeitraum sichtbar sind:
-- schrittweise Eskalation von Rechten<br />
-- langsame laterale Bewegung<br />
-- stündliche Fehlverbindungen  </p>
-<h3 id="4-entitatsspezifische-regeln"><strong>4. Entitätsspezifische Regeln</strong><a class="headerlink" href="#4-entitatsspezifische-regeln" title="Link to this section">&para;</a></h3>
-<p>Zielen auf Aktivitäten im Zusammenhang mit:
-- einem bestimmten Dateipfad<br />
-- einem bestimmten Prozess<br />
-- einem bestimmten Konfigurations-/Registry-Eintrag  </p>
-<h2 id="wie-nyroxis-regeln-bewertet">Wie Nyroxis Regeln bewertet<a class="headerlink" href="#wie-nyroxis-regeln-bewertet" title="Link to this section">&para;</a></h2>
-<p>Die Engine gleicht Regeln ab mit:
-- Ereignismetadaten<br />
-- Zeitstempeln<br />
-- Prozessverläufen<br />
-- Netzwerkendpunkten<br />
-- Schweregradindikatoren  </p>
-<p>Bewertungen erfolgen in Echtzeit und vollständig lokal.</p>
-<h2 id="details-bei-regel-treffern">Details bei Regel-Treffern<a class="headerlink" href="#details-bei-regel-treffern" title="Link to this section">&para;</a></h2>
-<p>Wird eine Regel ausgelöst, liefert Nyroxis:
-- eine klare Erklärung<br />
-- beteiligte Ereignisse<br />
-- Schweregrad<br />
-- empfohlene Maßnahmen<br />
-- Kontextinformationen  </p>
+<h1 id="regelabgleich-erkennung">Regelabgleich &amp; Erkennung<a class="headerlink" href="#regelabgleich-erkennung" title="Link to this section">&para;</a></h1>
+<p>Das Regelabgleichsmodul ist die Art und Weise, wie Nyroxis Intelligence Sicherheitsereignisse bewertet und Alarme generiert.
+Es bringt SIEM-ähnliche Erkennungslogik auf persönliche Geräte — vollständig offline, datenschutzorientiert und von Sicherheitsprofis erweiterbar.</p>
+<hr />
+<h2 id="was-der-regelabgleich-tut">Was der Regelabgleich tut<a class="headerlink" href="#was-der-regelabgleich-tut" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence bewertet Ereignisse anhand von drei Schichten lokaler Regeln, um Folgendes zu identifizieren:
+- Bekannte Bedrohungsmuster in einzelnen Ereignissen
+- Verdächtige Beziehungen zwischen Ereignissen über die Zeit
+- Mehrstufige Angriffssequenzen</p>
+<p>Keine Regeln oder Protokolle werden jemals online gesendet.</p>
+<hr />
+<h2 id="drei-erkennungsschichten">Drei Erkennungsschichten<a class="headerlink" href="#drei-erkennungsschichten" title="Link to this section">&para;</a></h2>
+<h3 id="schicht-1-erkennungsregeln-27-regeln">Schicht 1 — Erkennungsregeln (27 Regeln)<a class="headerlink" href="#schicht-1-erkennungsregeln-27-regeln" title="Link to this section">&para;</a></h3>
+<p>Mustererkennung gegen einzelne Ereignisse.</p>
+<p><strong>Auslösertypen:</strong>
+- Verdächtige Prozessausführung
+- Nicht autorisierte Dienstinstallation
+- Abnormales Netzwerkverhalten
+- Versuche des Zugriffs auf Anmeldeinformationen
+- Indikatoren bekannter Malware-Aktivität</p>
+<p>Wenn eine Erkennungsregel ausgelöst wird, wird sofort ein Alarm generiert und in der Erkennungsdatenbank gespeichert.</p>
+<hr />
+<h3 id="schicht-2-korrelationsregeln-12-regeln">Schicht 2 — Korrelationsregeln (12 Regeln)<a class="headerlink" href="#schicht-2-korrelationsregeln-12-regeln" title="Link to this section">&para;</a></h3>
+<p>Mustererkennung über verwandte Ereignisse hinweg, über Zeit und Quellen.</p>
+<p><strong>Auslösertypen:</strong>
+- Fehlgeschlagene Anmeldung gefolgt von einer erfolgreichen von einem anderen Standort
+- Neuer Prozess, der unmittelbar nach USB-Geräteanschluss startet
+- Wiederholte fehlgeschlagene Verbindungen gefolgt von einem erfolgreichen ausgehenden Anruf
+- Skriptausführung gefolgt von Dateisystemänderung</p>
+<p>Korrelationsregeln enthüllen Bedrohungsmuster, die kein einzelnes Ereignis allein aufdecken würde.</p>
+<hr />
+<h3 id="schicht-3-kettenregeln-2-regeln">Schicht 3 — Kettenregeln (2 Regeln)<a class="headerlink" href="#schicht-3-kettenregeln-2-regeln" title="Link to this section">&para;</a></h3>
+<p>Erkennung mehrstufiger Angriffssequenzen, die sich über mehrere Ereignisse und Zeitfenster erstrecken.</p>
+<p>Kettenregeln sind die Alarme mit höchster Priorität im System. Sie repräsentieren koordinierte, progressive Einbrüche — die Art, die für Advanced Persistent Threats charakteristisch ist.</p>
+<p>Jeder Kettenfund umfasst eine vollständige Rekonstruktion der erkannten Angriffssequenz.</p>
+<hr />
+<h2 id="erweiterbar-durch-sicherheitsprofis">Erweiterbar durch Sicherheitsprofis<a class="headerlink" href="#erweiterbar-durch-sicherheitsprofis" title="Link to this section">&para;</a></h2>
+<p>Die Regel-Engine ist vollständig für Erweiterungen offen. Sicherheitsprofis können:
+- Benutzerdefinierte Erkennungs-, Korrelations- oder Kettenregeln im JSON-Format schreiben
+- Sie direkt in das System einsetzen, ohne Kernkomponenten zu ändern
+- Regeln gegen bestehende Ereignisdaten vor der Bereitstellung testen
+- Ihre benutzerdefinierte Regelbibliothek versionieren und verwalten</p>
+<p>Dies ermöglicht es, Nyroxis an spezifische Umgebungen, Bedrohungsmodelle oder organisatorische Anforderungen anzupassen.</p>
+<hr />
+<h2 id="wie-die-engine-regeln-bewertet">Wie die Engine Regeln bewertet<a class="headerlink" href="#wie-die-engine-regeln-bewertet" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence gleicht Regeln ab gegen:
+- Ereignismetadaten und -inhalt
+- Zeitstempel und Zeitfenster
+- Prozessherkunft
+- Netzwerkendpunkte
+- Schweregradangaben
+- Ereignisübergreifende Beziehungen</p>
+<p>Alle Auswertungen erfolgen in Echtzeit und vollständig lokal.</p>
+<hr />
+<h2 id="wenn-eine-regel-ausgelost-wird">Wenn eine Regel ausgelöst wird<a class="headerlink" href="#wenn-eine-regel-ausgelost-wird" title="Link to this section">&para;</a></h2>
+<p>Wenn eine Regel übereinstimmt, führt Nyroxis folgende Aktionen durch:
+- Sofortiger Alarm wird ausgelöst
+- Der Befund wird in der dedizierten Erkennungsdatenbank gespeichert
+- Die übereinstimmenden Ereignisse, der Schweregrad und die Regeldetails werden aufgezeichnet
+- Der Befund wird in der Erkennungs-, Korrelations- oder Kettenansicht des Dashboards sichtbar gemacht</p>
+<hr />
 <h2 id="datenschutzgarantie">Datenschutzgarantie<a class="headerlink" href="#datenschutzgarantie" title="Link to this section">&para;</a></h2>
-<p>Alles Rule Matching:
-- erfolgt lokal<br />
-- nutzt nur verschlüsselte Ereignisdaten<br />
-- sendet nie Logs oder Ergebnisse nach außen  </p>
+<p>Alle Regelabgleiche:
+- Erfolgen lokal auf dem Gerät
+- Kommunizieren nicht mit externen Diensten
+- Verwenden ausschließlich verschlüsselte Ereignisdaten
+- Laden niemals Protokolle, Regeln oder Musterübereinstimmungen hoch</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Rule Matching bringt strukturierte, SIEM-ähnliche Erkennung auf persönliche Endgeräte — ohne Cloud-Abhängigkeit und ohne Datenschutzverlust.</p>
+<p>Die Regelabgleichs-Engine von Nyroxis bringt strukturierte, SIEM-ähnliche Erkennung auf persönliche Endpunkte — über drei Schichten, kontinuierlich wachsend und von Sicherheitsprofis erweiterbar — ohne Cloud-Abhängigkeit oder Datenschutzkompromisse.</p>
 
 
 

@@ -8627,11 +8627,29 @@
 
 
 <h1 id="glossaire">Glossaire<a class="headerlink" href="#glossaire" title="Link to this section">&para;</a></h1>
-<p><strong>IA</strong> — Intelligence Artificielle<br />
-<strong>Baseline</strong> — Profil comportemental normal<br />
-<strong>Hash-chain</strong> — Chaînage d’intégrité<br />
-<strong>Événement</strong> — Action technique enregistrée<br />
-<strong>Scénario</strong> — Regroupement d’événements  </p>
+<p><strong>AES-256</strong> — Advanced Encryption Standard avec une clé de 256 bits. Utilisé pour chiffrer tous les journaux d'événements Nyroxis et le stockage de la base de données au repos.</p>
+<p><strong>Agent</strong> — Voir <em>Nyroxis Agent</em>.</p>
+<p><strong>Score d'Anomalie</strong> — Une valeur entre 0,0 et 1,0 produite par le moteur Isolation Forest. Des scores plus élevés indiquent un comportement plus anormal. Les scores supérieurs à 0,6 déclenchent une détection.</p>
+<p><strong>Référence Comportementale</strong> — Un profil local de l'activité normale de l'appareil construit au fil du temps par le moteur IA/ML, utilisé pour identifier les déviations.</p>
+<p><strong>Règle de Chaîne</strong> — Une règle de détection ciblant les séquences d'attaques en plusieurs étapes réparties sur plusieurs événements et fenêtres temporelles. Nyroxis v1.0 inclut 2 règles de chaîne.</p>
+<p><strong>Règle de Corrélation</strong> — Une règle de détection qui connecte des événements liés dans le temps et entre les sources pour révéler des patterns qu'aucun événement unique n'exposerait. Nyroxis v1.0 inclut 12 règles de corrélation.</p>
+<p><strong>Règle de Détection</strong> — Une règle ciblant les patterns de menaces connues dans des événements individuels. Nyroxis v1.0 inclut 27 règles de détection.</p>
+<p><strong>Ed25519</strong> — Un schéma de signature cryptographique à clé publique utilisé dans la validation de licence Nyroxis.</p>
+<p><strong>Preuves Forensiques</strong> — Journaux d'événements inviolables et chiffrés adaptés aux procédures judiciaires et réglementaires.</p>
+<p><strong>Chaîne de Hachage</strong> — Une structure cryptographique où chaque bloc d'événement contient le hash du bloc précédent, rendant la suppression, la modification, l'injection ou le réordonnancement immédiatement détectables.</p>
+<p><strong>HMAC</strong> — Hash-based Message Authentication Code. Utilisé dans la validation de licence Nyroxis pour vérifier l'intégrité des fichiers hors ligne.</p>
+<p><strong>HWID</strong> — Identifiant Matériel (Hardware Identifier). Une valeur unique dérivée des caractéristiques physiques d'un appareil, utilisée pour lier une licence Nyroxis à une machine spécifique et dériver les clés de chiffrement.</p>
+<p><strong>Isolation Forest</strong> — Un algorithme d'apprentissage automatique qui détecte les anomalies en construisant des arbres de décision aléatoires et en mesurant la rapidité avec laquelle chaque point de données est isolé. Implémenté en Rust dans Nyroxis sans bibliothèque ML externe.</p>
+<p><strong>IQR</strong> — Interquartile Range (Écart Interquartile). Une méthode statistique pour la détection des valeurs aberrantes utilisée dans le moteur d'analyse statistique de Nyroxis.</p>
+<p><strong>Nyroxis Agent</strong> — Le service de surveillance central. Collecte, normalise, chiffre et stocke les événements de sécurité localement (~57 Mo de RAM, 0,1 % du CPU).</p>
+<p><strong>Nyroxis Dashboard</strong> — L'interface utilisateur pour la visibilité, l'analyse forensique, les informations IA/ML et les rapports.</p>
+<p><strong>Nyroxis Intelligence</strong> — Le moteur de détection et de corrélation. Fonctionne sur 27 règles de détection, 12 règles de corrélation et 2 règles de chaîne (~87 Mo de RAM, 1,8 % du CPU).</p>
+<p><strong>Nyroxis System Guardian</strong> — Le gardien de la plateforme. Surveille tous les services toutes les 3 secondes, gère les sauvegardes, valide la licence hors ligne et vérifie les mises à jour (~6,5 Mo de RAM, 0,1 % du CPU).</p>
+<p><strong>Moteur de Règles</strong> — Le composant à l'intérieur de Nyroxis Intelligence qui évalue les événements entrants par rapport aux règles de détection, de corrélation et de chaîne en temps réel.</p>
+<p><strong>SIEM</strong> — Security Information and Event Management (Gestion des Informations et des Événements de Sécurité). Un système qui collecte, corrèle et analyse les événements de sécurité. Nyroxis fonctionne comme un SIEM personnel endpoint.</p>
+<p><strong>SQLite</strong> — Le moteur de base de données local utilisé par Nyroxis pour stocker les journaux d'événements chiffrés et les résultats de détection.</p>
+<p><strong>Protection contre la Falsification</strong> — Mécanismes incluant les blocs d'événements enchaînés par hachage et la vérification de l'intégrité qui empêchent les attaquants de supprimer, modifier ou injecter des journaux sans être détectés.</p>
+<p><strong>Z-Score</strong> — Une mesure statistique indiquant de combien d'écarts-types une valeur s'éloigne de la moyenne. Utilisé par Nyroxis pour classer la sévérité des anomalies : Critique (&gt;3,0), Élevé (&gt;2,0), Moyen (&gt;1,5), Faible (&gt;1,0).</p>
 
 
 

@@ -6168,10 +6168,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#warum-offline-wichtig-ist" class="md-nav__link">
+  <a href="#1-keine-cloud-kommunikation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Warum Offline wichtig ist
+        1. Keine Cloud-Kommunikation
       
     </span>
   </a>
@@ -6179,10 +6179,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#was-offline-funktioniert" class="md-nav__link">
+  <a href="#2-ausschlielich-lokale-schlusselverwaltung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Was offline funktioniert
+        2. Ausschließlich Lokale Schlüsselverwaltung
       
     </span>
   </a>
@@ -6190,10 +6190,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updates-optional-offline" class="md-nav__link">
+  <a href="#3-offline-lizenzvalidierung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Updates (optional offline)
+        3. Offline-Lizenzvalidierung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-offline-kiml-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Offline KI/ML-Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lokale-verschlusselte-speicherung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Lokale Verschlüsselte Speicherung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-kein-externes-abrufen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Kein Externes Abrufen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-funktioniert-in-air-gapped-umgebungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Funktioniert in Air-Gapped-Umgebungen
       
     </span>
   </a>
@@ -8708,33 +8752,72 @@
 
 
 <h1 id="offline-sicherheit">Offline-Sicherheit<a class="headerlink" href="#offline-sicherheit" title="Link to this section">&para;</a></h1>
-<p>Nyroxis wurde so entwickelt, dass es vollständig offline betrieben werden kann – ohne Cloud, ohne Telemetrie und ohne Internetzugang.</p>
-<h2 id="warum-offline-wichtig-ist">Warum Offline wichtig ist<a class="headerlink" href="#warum-offline-wichtig-ist" title="Link to this section">&para;</a></h2>
-<p>Ein echtes Sicherheitsprodukt muss unabhängig sein von:
-- externen Servern<br />
-- Online-Verifizierung<br />
-- Internetqualität  </p>
-<p>Offline bedeutet:
-- geringere Angriffsfläche<br />
-- keine Datenübertragung<br />
-- mehr Kontrolle für den Nutzer  </p>
-<h2 id="was-offline-funktioniert">Was offline funktioniert<a class="headerlink" href="#was-offline-funktioniert" title="Link to this section">&para;</a></h2>
-<p>Alles in Nyroxis funktioniert offline:
-- Ereigniserfassung<br />
-- Verschlüsselung<br />
-- Speicherung<br />
-- lokale KI<br />
-- Rule Matching<br />
-- Detections<br />
-- Szenarien<br />
-- Dashboard  </p>
-<h2 id="updates-optional-offline">Updates (optional offline)<a class="headerlink" href="#updates-optional-offline" title="Link to this section">&para;</a></h2>
-<p>Updates können:
-- manuell<br />
-- über Offline-Pakete  </p>
-<p>installiert werden.</p>
+<p>Nyroxis ist darauf ausgelegt, vollständig offline zu arbeiten, ohne jegliche Abhängigkeit von Cloud-Diensten, externen APIs oder Remote-Servern.
+Dies gewährleistet vollständige Autonomie, Privatsphäre und Schutz auch in getrennten oder Air-Gapped-Umgebungen.</p>
+<hr />
+<h2 id="1-keine-cloud-kommunikation">1. Keine Cloud-Kommunikation<a class="headerlink" href="#1-keine-cloud-kommunikation" title="Link to this section">&para;</a></h2>
+<p>Nyroxis:
+- Sendet niemals Telemetrie oder Nutzungsdaten
+- Synchronisiert niemals Protokolle mit Remote-Servern
+- Kontaktiert niemals Cloud-Dienste für irgendeine Funktion
+- Verwendet niemals Cloud-KI oder externe ML-APIs
+- Erfordert niemals Online-Aktivierung</p>
+<p>Jede Funktion ist lokal.</p>
+<hr />
+<h2 id="2-ausschlielich-lokale-schlusselverwaltung">2. Ausschließlich Lokale Schlüsselverwaltung<a class="headerlink" href="#2-ausschlielich-lokale-schlusselverwaltung" title="Link to this section">&para;</a></h2>
+<p>Verschlüsselungsschlüssel sind:
+- Lokal aus Hardware-Identifikatoren (HWID) abgeleitet
+- An das spezifische Gerät gebunden
+- Niemals an einen Server übertragen
+- Niemals im Klartext gespeichert
+- Nur bei Bedarf im Arbeitsspeicher rekonstruiert</p>
+<p>Alle kryptografischen Operationen erfolgen offline.</p>
+<hr />
+<h2 id="3-offline-lizenzvalidierung">3. Offline-Lizenzvalidierung<a class="headerlink" href="#3-offline-lizenzvalidierung" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian validiert die Lizenz vollständig offline:
+- Lizenz gebunden an den HWID-abgeleiteten kryptografischen Schlüssel
+- Validierung erfolgt lokal über AES-GCM-Verschlüsselung und HMAC-Verifizierung
+- Keine Internetverbindung für irgendeinen Aspekt der Lizenzverwaltung erforderlich
+- Dienste stoppen automatisch, wenn die Lizenz ungültig ist — lokal durchgesetzt</p>
+<hr />
+<h2 id="4-offline-kiml-engine">4. Offline KI/ML-Engine<a class="headerlink" href="#4-offline-kiml-engine" title="Link to this section">&para;</a></h2>
+<p>Der Isolation Forest und die statistische Analyse-Engine laufen vollständig offline:
+- Verhaltensanomalie-Erkennung
+- Z-Score-statistische Klassifizierung
+- Spitzenwert-Erkennung und Baseline-Vergleich</p>
+<p>Alles direkt aus verschlüsselten lokalen Ereignissen berechnet — keine Cloud-Inferenz, kein Netzwerkzugang.</p>
+<hr />
+<h2 id="5-lokale-verschlusselte-speicherung">5. Lokale Verschlüsselte Speicherung<a class="headerlink" href="#5-lokale-verschlusselte-speicherung" title="Link to this section">&para;</a></h2>
+<p>Alle Ereignisprotokolle, Erkennungsbefunde und KI-Ergebnisse bleiben:
+- Vollständig verschlüsselt (AES-256)
+- In einer geschützten lokalen Datenbank gespeichert
+- Nur auf demselben Gerät zugänglich
+- Durch hash-verkettete Integritätsstrukturen geschützt</p>
+<p>Kein Risiko von Remote-Einbrüchen oder Cloud-Lecks.</p>
+<hr />
+<h2 id="6-kein-externes-abrufen">6. Kein Externes Abrufen<a class="headerlink" href="#6-kein-externes-abrufen" title="Link to this section">&para;</a></h2>
+<p>Nyroxis lädt nicht herunter:
+- Erkennungsregeln oder Regelaktualisierungen
+- KI-Modelle oder Modellaktualisierungen
+- Signaturen oder Bedrohungsintelligenz-Feeds</p>
+<p>Alles ist eingebettet und wird lokal verwaltet. Regelaktualisierungen erfolgen durch manuelle Installation.</p>
+<hr />
+<h2 id="7-funktioniert-in-air-gapped-umgebungen">7. Funktioniert in Air-Gapped-Umgebungen<a class="headerlink" href="#7-funktioniert-in-air-gapped-umgebungen" title="Link to this section">&para;</a></h2>
+<p>Nyroxis läuft einwandfrei auf:
+- Vollständig offline Laptops
+- Isolierten Unternehmensumgebungen
+- Hochsicherheits-Regierungsumgebungen
+- Hochrisiko-Standorten ohne Internetzugang</p>
+<p>Der volle Funktionsumfang erfordert <strong>null Konnektivität</strong>.</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Nyroxis bietet vollständige Sicherheit ohne Internet – privat, lokal und verlässlich.</p>
+<p>Die Nyroxis Offline-Sicherheit gewährleistet:
+- Vollständige Autonomie — keine externe Infrastrukturabhängigkeit
+- Null Cloud-Exposition
+- Ausschließlich lokale KI/ML
+- Privater verschlüsselter Speicher
+- Vollständige Unabhängigkeit von Internetkonnektivität</p>
+<p>Ein Sicherheitsmodell für maximale Privatsphäre und Kontrolle.</p>
 
 
 

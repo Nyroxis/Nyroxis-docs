@@ -7178,7 +7178,7 @@
   <a href="#-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        מה ה-Agent עושה?
+        מה ה-Agent עושה
       
     </span>
   </a>
@@ -7189,7 +7189,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        פרטיות תחילה
+        צינור האיסוף
       
     </span>
   </a>
@@ -7200,7 +7200,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        קל ומהיר
+        פעולה המכוונת לפרטיות
       
     </span>
   </a>
@@ -7211,7 +7211,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        עמיד למניפולציה
+        קל משקל בתכנון
       
     </span>
   </a>
@@ -7222,7 +7222,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        עבודה מלאה אופליין
+        עמיד ומודע לחבלה
       
     </span>
   </a>
@@ -7231,6 +7231,17 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        פועל לחלוטין במצב לא מקוון
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8729,51 +8740,62 @@
   
 
 
-<h1 id="nyroxis-agent">Nyroxis Agent — סקירה<a class="headerlink" href="#nyroxis-agent" title="Link to this section">&para;</a></h1>
-<p>Nyroxis Agent הוא רכיב הניטור המרכזי של המערכת.<br />
-הוא רץ באופן מקומי על המכשיר, אוסף אירועי אבטחה חיוניים, ושומר על פרטיות מלאה תוך שימוש מינימלי במשאבים.</p>
+<h1 id="nyroxis-agent">Nyroxis Agent — סקירה כללית<a class="headerlink" href="#nyroxis-agent" title="Link to this section">&para;</a></h1>
+<p>ה-Nyroxis Agent הוא רכיב הניטור והאיסוף המרכזי של הפלטפורמה.
+הוא פועל באופן מקומי על מכשיר המשתמש, אוסף ומנרמל בשקט אירועי אבטחה, מצפין אותם ומאחסן אותם במסד נתונים מקומי עמיד לפני חבלה — הכל עם שימוש מינימלי במשאבים.</p>
 <hr />
-<h2 id="-agent">מה ה-Agent עושה?<a class="headerlink" href="#-agent" title="Link to this section">&para;</a></h2>
-<p>ה-Agent עוקב אחר פעילות מערכת ויוצר ציר זמן של אירועי אבטחה.</p>
+<h2 id="-agent">מה ה-Agent עושה<a class="headerlink" href="#-agent" title="Link to this section">&para;</a></h2>
+<p>ה-Agent צופה ברציפות בפעילות המערכת ובונה ציר זמן אבטחה מובנה ומוצפן.</p>
 <p>הוא מנטר:
-- יצירה וסגירת תהליכים<br />
-- חיבורים לרשת<br />
-- שינויים בקבצים<br />
-- פעולות הרשאה<br />
-- אירועי מערכת ואבטחה  </p>
-<p>כל המידע נשאר <strong>מקומי ופרטי</strong>.</p>
+- יצירה וסיום של תהליכים
+- חיבורי רשת ומטא-נתוני תעבורה
+- שינויי קבצים ושינויי רגיסטרי
+- פעולות הרשאות וניסיונות גישה לאישורים
+- אירועי מערכת ואבטחה (Windows Event Logs)
+- הרצת PowerShell וסקריפטים</p>
+<p>כל האירועים נאספים <strong>באופן פרטי ומקומי</strong> — שום דבר אינו מועבר לגורמים חיצוניים.</p>
 <hr />
-<h2 id="_1">פרטיות תחילה<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<p>ה-Agent אינו שולח נתונים לשום שרת חיצוני.</p>
-<p>המידע שנאסף:
-- מוצפן כבר ברגע האיסוף<br />
-- מוגן מפני שינוי<br />
-- נשמר בבסיס נתונים מקומי ומאובטח  </p>
+<h2 id="_1">צינור האיסוף<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
+<ol>
+<li><strong>איסוף</strong> — אירועים נקלטים ממספר ערוצי מערכת בו-זמנית</li>
+<li><strong>נרמול</strong> — נתונים גולמיים מועשרים ומתוקננים עבור מנוע הזיהוי</li>
+<li><strong>הצפנה</strong> — המטען מוצפן עם AES-256 לפני כל פעולת כתיבה</li>
+<li><strong>אחסון</strong> — אירועים מוצפנים נכתבים למסד הנתונים המקומי SQLite</li>
+<li><strong>הזנה</strong> — נתונים זורמים ל-Nyroxis Intelligence להערכת כללים בזמן אמת</li>
+</ol>
 <hr />
-<h2 id="_2">קל ומהיר<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<p>ה-Agent מותאם ל:
-- שימוש CPU נמוך<br />
-- צריכת זיכרון מינימלית<br />
-- עבודה שקטה ברקע<br />
-- יציבות גם במחשבים ישנים  </p>
-<p>מתאים למשפחות, אנשי מקצוע וסביבות רגישות.</p>
+<h2 id="_2">פעולה המכוונת לפרטיות<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>ה-Agent לעולם אינו מעלה יומנים או שולח נתוני אירועים לשרתים חיצוניים.
+הכל נשאר על המכשיר והוא:
+- מוצפן ברגע האיסוף
+- מוגן מפני חבלה באמצעות בלוקי אירועים המקושרים בחשיש
+- מאוחסן במסד נתונים מקומי מאובטח SQLite
+- תחת שליטתו הבלעדית של המשתמש בכל עת</p>
 <hr />
-<h2 id="_3">עמיד למניפולציה<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<p>ה-Agent כולל מנגנונים המבטיחים:
-- שלא ניתן לשנות נתונים שנאספו<br />
-- שקשה לתוקף למחוק עקבות<br />
-- שהמערכת תישאר אמינה  </p>
+<h2 id="_3">קל משקל בתכנון<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
+<p>ה-Agent מותאם לטביעת רגל מינימלית:
+- ~57 MB RAM
+- ~0.1% CPU
+- פעולת רקע שקטה כשירות Windows
+- מתאים לפעולה רציפה על מחשבים ניידים אישיים ללא פגיעה בפרודוקטיביות היומית</p>
 <hr />
-<h2 id="_4">עבודה מלאה אופליין<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
-<p>אין צורך באינטרנט עבור:
-- ניטור<br />
-- הצפנה<br />
-- אחסון<br />
-- ניתוח  </p>
-<p>Nyroxis פועל במלואו גם בסביבות מבודדות.</p>
+<h2 id="_4">עמיד ומודע לחבלה<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
+<p>ה-Agent משלב מנגנוני הגנה כדי להבטיח:
+- נתוני אירועים שנאספו אינם יכולים להשתנות או להימחק ללא זיהוי
+- תוקפים אינם יכולים למחוק בשקט את פעילותם
+- בלוקי אירועים המקושרים בחשיש חושפים כל ניסיון מחיקה, שינוי או הזרקה</p>
+<p>Nyroxis System Guardian מנטר את המצב התפעולי של ה-Agent כל 3 שניות ונוקט פעולה מתקנת אם השירות נעצר באופן בלתי צפוי.</p>
 <hr />
-<h2 id="_5">סיכום<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
-<p>Nyroxis Agent מספק ניטור רציף, מוצפן ואופליין — עם נראות מקצועית ובלי ויתור על פרטיות.</p>
+<h2 id="_5">פועל לחלוטין במצב לא מקוון<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
+<p>אין צורך בחיבור לאינטרנט עבור:
+- ניטור
+- נרמול והצפנה
+- אחסון נתונים
+- הזנת Nyroxis Intelligence</p>
+<p>Nyroxis פועל באופן מלא בסביבות מבודדות או air-gapped.</p>
+<hr />
+<h2 id="_6">סיכום<a class="headerlink" href="#_6" title="Link to this section">&para;</a></h2>
+<p>ה-Nyroxis Agent מספק ניטור רציף, מוצפן ולא מקוון — נותן למשתמשים נראות ברמה ארגונית מבלי לחשוף את נתוניהם לצדדים שלישיים, ומספק ראיות באיכות פורנזית המתאימות להליכים משפטיים ורגולטוריים.</p>
 
 
 

@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rule-matching-correspondance-de-regles" class="md-skip">
+        <a href="#correspondance-de-regles-detection" class="md-skip">
           Skip to content
         </a>
       
@@ -3354,10 +3354,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectif" class="md-nav__link">
+  <a href="#ce-que-fait-la-correspondance-de-regles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectif
+        Ce que fait la correspondance de règles
       
     </span>
   </a>
@@ -3365,22 +3365,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-de-regles" class="md-nav__link">
+  <a href="#trois-couches-de-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types de règles
+        Trois couches de détection
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types de règles">
+    <nav class="md-nav" aria-label="Trois couches de détection">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-regles-de-seuil" class="md-nav__link">
+  <a href="#couche-1-regles-de-detection-27-regles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Règles de seuil
+        Couche 1 — Règles de détection (27 règles)
       
     </span>
   </a>
@@ -3388,10 +3388,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-regles-de-sequence" class="md-nav__link">
+  <a href="#couche-2-regles-de-correlation-12-regles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Règles de séquence
+        Couche 2 — Règles de corrélation (12 règles)
       
     </span>
   </a>
@@ -3399,21 +3399,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-regles-temporelles" class="md-nav__link">
+  <a href="#couche-3-regles-de-chaine-2-regles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Règles temporelles
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-regles-specifiques" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Règles spécifiques
+        Couche 3 — Règles de chaîne (2 règles)
       
     </span>
   </a>
@@ -3426,10 +3415,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#evaluation" class="md-nav__link">
+  <a href="#extensible-par-les-professionnels-de-la-securite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Évaluation
+        Extensible par les professionnels de la sécurité
       
     </span>
   </a>
@@ -3437,10 +3426,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details-des-correspondances" class="md-nav__link">
+  <a href="#comment-le-moteur-evalue-les-regles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Détails des correspondances
+        Comment le moteur évalue les règles
       
     </span>
   </a>
@@ -3448,10 +3437,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#confidentialite" class="md-nav__link">
+  <a href="#quand-une-regle-se-declenche" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Confidentialité
+        Quand une règle se déclenche
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#garantie-de-confidentialite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Garantie de confidentialité
       
     </span>
   </a>
@@ -8779,67 +8779,76 @@
   
 
 
-<h1 id="rule-matching-correspondance-de-regles">Rule Matching — Correspondance de règles<a class="headerlink" href="#rule-matching-correspondance-de-regles" title="Link to this section">&para;</a></h1>
-<p>Le module Rule Matching permet à Nyroxis d’identifier les événements correspondant à des règles de sécurité prédéfinies.<br />
-Il apporte une logique de type SIEM aux appareils personnels — entièrement hors-ligne.</p>
+<h1 id="correspondance-de-regles-detection">Correspondance de règles &amp; Détection<a class="headerlink" href="#correspondance-de-regles-detection" title="Link to this section">&para;</a></h1>
+<p>Le module de correspondance de règles est la façon dont Nyroxis Intelligence évalue les événements de sécurité et génère des alertes.
+Il apporte une logique de détection de style SIEM aux appareils personnels — entièrement hors ligne, axé sur la confidentialité et extensible par les professionnels de la sécurité.</p>
 <hr />
-<h2 id="objectif">Objectif<a class="headerlink" href="#objectif" title="Link to this section">&para;</a></h2>
-<p>Identifier :
-- Comportements suspects<br />
-- Schémas anormaux répétés<br />
-- Combinaisons d’événements à risque<br />
-- Indicateurs de compromission  </p>
+<h2 id="ce-que-fait-la-correspondance-de-regles">Ce que fait la correspondance de règles<a class="headerlink" href="#ce-que-fait-la-correspondance-de-regles" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence évalue les événements selon trois couches de règles locales pour identifier :
+- Les modèles de menaces connus dans des événements individuels
+- Les relations suspectes entre événements au fil du temps
+- Les séquences d'attaques en plusieurs étapes</p>
+<p>Aucune règle ni aucun journal n'est jamais envoyé en ligne.</p>
 <hr />
-<h2 id="types-de-regles">Types de règles<a class="headerlink" href="#types-de-regles" title="Link to this section">&para;</a></h2>
-<h3 id="1-regles-de-seuil"><strong>1. Règles de seuil</strong><a class="headerlink" href="#1-regles-de-seuil" title="Link to this section">&para;</a></h3>
-<p>Déclenchées lorsque quelque chose se produit trop souvent :
-- Connexions échouées répétées<br />
-- Tentatives d’élévation multiples<br />
-- Modifications de fichiers en masse  </p>
+<h2 id="trois-couches-de-detection">Trois couches de détection<a class="headerlink" href="#trois-couches-de-detection" title="Link to this section">&para;</a></h2>
+<h3 id="couche-1-regles-de-detection-27-regles">Couche 1 — Règles de détection (27 règles)<a class="headerlink" href="#couche-1-regles-de-detection-27-regles" title="Link to this section">&para;</a></h3>
+<p>Correspondance de modèles contre des événements individuels.</p>
+<p><strong>Types de déclencheurs :</strong>
+- Exécution suspecte de processus
+- Installation non autorisée de service
+- Comportement réseau anormal
+- Tentatives d'accès aux informations d'identification
+- Indicateurs d'activité de logiciels malveillants connus</p>
+<p>Lorsqu'une règle de détection se déclenche, une alerte immédiate est générée et stockée dans la base de données de détections.</p>
 <hr />
-<h3 id="2-regles-de-sequence"><strong>2. Règles de séquence</strong><a class="headerlink" href="#2-regles-de-sequence" title="Link to this section">&para;</a></h3>
-<p>Détectent des chaînes d’événements :
-- Processus → réseau → persistance<br />
-- Script → modification système<br />
-- Processus inconnu → fichier sensible  </p>
+<h3 id="couche-2-regles-de-correlation-12-regles">Couche 2 — Règles de corrélation (12 règles)<a class="headerlink" href="#couche-2-regles-de-correlation-12-regles" title="Link to this section">&para;</a></h3>
+<p>Correspondance de modèles à travers des événements liés dans le temps et selon différentes sources.</p>
+<p><strong>Types de déclencheurs :</strong>
+- Échec de connexion suivi d'un succès depuis un emplacement différent
+- Nouveau processus se lançant immédiatement après la connexion d'un périphérique USB
+- Tentatives de connexion répétées échouées suivies d'un appel sortant réussi
+- Exécution de script suivie d'une modification du système de fichiers</p>
+<p>Les règles de corrélation révèlent des modèles de menaces qu'aucun événement isolé ne pourrait exposer seul.</p>
 <hr />
-<h3 id="3-regles-temporelles"><strong>3. Règles temporelles</strong><a class="headerlink" href="#3-regles-temporelles" title="Link to this section">&para;</a></h3>
-<p>Visent des modèles visibles uniquement sur une période :
-- Escalade progressive de privilèges<br />
-- Mouvement latéral lent<br />
-- Tentatives échouées récurrentes  </p>
+<h3 id="couche-3-regles-de-chaine-2-regles">Couche 3 — Règles de chaîne (2 règles)<a class="headerlink" href="#couche-3-regles-de-chaine-2-regles" title="Link to this section">&para;</a></h3>
+<p>Détection de séquences d'attaques en plusieurs étapes réparties sur plusieurs événements et fenêtres temporelles.</p>
+<p>Les règles de chaîne sont les alertes de la plus haute priorité dans le système. Elles représentent des intrusions coordonnées et progressives — le type caractéristique des menaces persistantes avancées.</p>
+<p>Chaque résultat de chaîne inclut une reconstruction complète de la séquence d'attaque détectée.</p>
 <hr />
-<h3 id="4-regles-specifiques"><strong>4. Règles spécifiques</strong><a class="headerlink" href="#4-regles-specifiques" title="Link to this section">&para;</a></h3>
-<p>Basées sur :
-- Un fichier<br />
-- Un processus<br />
-- Une clé de configuration  </p>
+<h2 id="extensible-par-les-professionnels-de-la-securite">Extensible par les professionnels de la sécurité<a class="headerlink" href="#extensible-par-les-professionnels-de-la-securite" title="Link to this section">&para;</a></h2>
+<p>Le moteur de règles est entièrement ouvert à l'extension. Les professionnels de la sécurité peuvent :
+- Écrire des règles de détection, de corrélation ou de chaîne personnalisées en format JSON
+- Les déployer directement dans le système sans modifier les composants principaux
+- Tester les règles sur des données d'événements existantes avant le déploiement
+- Gérer leur bibliothèque de règles personnalisées avec versioning</p>
+<p>Cela permet à Nyroxis d'être adapté à des environnements, des modèles de menaces ou des exigences organisationnelles spécifiques.</p>
 <hr />
-<h2 id="evaluation">Évaluation<a class="headerlink" href="#evaluation" title="Link to this section">&para;</a></h2>
-<p>L’analyse compare les règles à :
-- Métadonnées<br />
-- Horodatage<br />
-- Arbre de processus<br />
-- Endpoints réseau<br />
-- Sévérité  </p>
-<p>Tout est local et en temps réel.</p>
+<h2 id="comment-le-moteur-evalue-les-regles">Comment le moteur évalue les règles<a class="headerlink" href="#comment-le-moteur-evalue-les-regles" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence fait correspondre les règles avec :
+- Les métadonnées et le contenu des événements
+- Les horodatages et fenêtres temporelles
+- La lignée des processus
+- Les points de terminaison réseau
+- Les indicateurs de gravité
+- Les relations inter-événements</p>
+<p>Toutes les évaluations sont en temps réel et entièrement locales.</p>
 <hr />
-<h2 id="details-des-correspondances">Détails des correspondances<a class="headerlink" href="#details-des-correspondances" title="Link to this section">&para;</a></h2>
-<p>Lors d’un déclenchement :
-- Explication claire<br />
-- Événements associés<br />
-- Niveau de sévérité<br />
-- Actions recommandées<br />
-- Contexte détaillé  </p>
+<h2 id="quand-une-regle-se-declenche">Quand une règle se déclenche<a class="headerlink" href="#quand-une-regle-se-declenche" title="Link to this section">&para;</a></h2>
+<p>Lorsqu'une règle est correspondante, Nyroxis :
+- Déclenche une alerte immédiate
+- Stocke le résultat dans la base de données de détections dédiée
+- Enregistre les événements correspondants, le niveau de gravité et les détails de la règle
+- Rend le résultat visible dans la vue Détection, Corrélation ou Chaîne du tableau de bord</p>
 <hr />
-<h2 id="confidentialite">Confidentialité<a class="headerlink" href="#confidentialite" title="Link to this section">&para;</a></h2>
-<p>Aucune communication externe :
-- Correspondances locales<br />
-- Journaux chiffrés<br />
-- Aucune transmission  </p>
+<h2 id="garantie-de-confidentialite">Garantie de confidentialité<a class="headerlink" href="#garantie-de-confidentialite" title="Link to this section">&para;</a></h2>
+<p>Toute correspondance de règles :
+- Se produit localement sur l'appareil
+- Ne communique pas avec des services externes
+- Utilise uniquement des données d'événements chiffrées
+- Ne télécharge jamais des journaux, des règles ou des correspondances de modèles</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Rule Matching apporte une détection structurée de type SIEM aux appareils personnels — sans cloud.</p>
+<p>Le moteur de correspondance de règles de Nyroxis apporte une détection structurée de style SIEM aux points de terminaison personnels — sur trois couches, en croissance continue et extensible par les professionnels de la sécurité — sans dépendance au cloud ni compromis sur la vie privée.</p>
 
 
 

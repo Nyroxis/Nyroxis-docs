@@ -3541,10 +3541,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectif" class="md-nav__link">
+  <a href="#objectif-des-scenarios-ia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectif
+        Objectif des scénarios IA
       
     </span>
   </a>
@@ -3586,10 +3586,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-activite-fichier-anormale" class="md-nav__link">
+  <a href="#3-activite-de-fichiers-anormale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Activité fichier anormale
+        3. Activité de fichiers anormale
       
     </span>
   </a>
@@ -3600,7 +3600,7 @@
   <a href="#4-tentative-delevation-de-privileges" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Tentative d’élévation de privilèges
+        4. Tentative d'élévation de privilèges
       
     </span>
   </a>
@@ -3619,10 +3619,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-intrusion-lente" class="md-nav__link">
+  <a href="#6-modele-dintrusion-lent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Intrusion lente
+        6. Modèle d'intrusion lent
       
     </span>
   </a>
@@ -3635,10 +3635,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rapport-dun-scenario" class="md-nav__link">
+  <a href="#details-du-rapport-de-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rapport d’un scénario
+        Détails du rapport de scénario
       
     </span>
   </a>
@@ -3646,10 +3646,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interpretation-locale" class="md-nav__link">
+  <a href="#entierement-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interprétation locale
+        Entièrement local
       
     </span>
   </a>
@@ -8791,74 +8791,79 @@
 
 
 <h1 id="scenarios-ia">Scénarios IA<a class="headerlink" href="#scenarios-ia" title="Link to this section">&para;</a></h1>
-<p>Les Scénarios IA représentent des situations de sécurité pré-définies que NyXIA peut identifier à partir de comportements, séquences et anomalies.<br />
-Ils apportent une compréhension contextuelle des risques.</p>
+<p>Les scénarios IA représentent des situations de sécurité de haut niveau que le moteur IA/ML local identifie sur la base de modèles comportementaux, de séquences d'événements et de corrélations d'anomalies.
+Ils aident les utilisateurs à comprendre le <em>contexte</em> — pas seulement des événements individuels ou des anomalies isolées.</p>
 <hr />
-<h2 id="objectif">Objectif<a class="headerlink" href="#objectif" title="Link to this section">&para;</a></h2>
-<p>Les scénarios expliquent <em>pourquoi</em> une détection est importante en regroupant plusieurs signaux dans un contexte cohérent.</p>
-<p>Ils permettent de comprendre :
-- Le type de menace<br />
-- La cause probable<br />
-- Le lien entre les événements<br />
-- L’impact réel potentiel  </p>
+<h2 id="objectif-des-scenarios-ia">Objectif des scénarios IA<a class="headerlink" href="#objectif-des-scenarios-ia" title="Link to this section">&para;</a></h2>
+<p>Tandis que les détections mettent en évidence des anomalies spécifiques et que les correspondances de règles signalent des menaces individuelles, les <strong>Scénarios</strong> expliquent <em>pourquoi ces signaux sont importants</em> en regroupant les résultats connexes dans des contextes d'attaques réelles significatifs.</p>
+<p>Les scénarios donnent aux utilisateurs de la clarté sur :
+- Le type de menace observée
+- Comment les événements et anomalies individuels sont liés
+- Ce que le modèle combiné signifie en termes concrets
+- Quelles sont les prochaines étapes recommandées</p>
+<p>Cela rend les modèles de menaces sophistiqués compréhensibles même pour les utilisateurs non techniques.</p>
 <hr />
 <h2 id="types-de-scenarios">Types de scénarios<a class="headerlink" href="#types-de-scenarios" title="Link to this section">&para;</a></h2>
-<h3 id="1-chaine-de-processus-suspecte"><strong>1. Chaîne de processus suspecte</strong><a class="headerlink" href="#1-chaine-de-processus-suspecte" title="Link to this section">&para;</a></h3>
-<p>Exemples :
-- Processus inconnu → moteur de script<br />
-- Script → modification → connexion réseau<br />
-- Multiplication rapide de processus enfants  </p>
-<p>Permet de détecter malware ou automatisations malveillantes.</p>
+<h3 id="1-chaine-de-processus-suspecte">1. Chaîne de processus suspecte<a class="headerlink" href="#1-chaine-de-processus-suspecte" title="Link to this section">&para;</a></h3>
+<p>Détecté lorsqu'une séquence d'activité de processus ressemble à un comportement malveillant connu :
+- Processus inconnu lançant un moteur de scripts
+- Moteur de scripts déclenchant une modification de fichier suivie d'un appel réseau
+- Processus engendrant plusieurs enfants en succession rapide</p>
+<p>Utile pour détecter les malwares en phase initiale, les comportements de dropper ou les techniques de living-off-the-land.</p>
 <hr />
-<h3 id="2-activite-reseau-non-autorisee"><strong>2. Activité réseau non autorisée</strong><a class="headerlink" href="#2-activite-reseau-non-autorisee" title="Link to this section">&para;</a></h3>
-<p>Déclenché en cas de :
-- Connexions sortantes inhabituelles<br />
-- Endpoints rares<br />
-- Tentatives répétées échouées  </p>
-<p>Peut indiquer exfiltration ou beaconing.</p>
+<h3 id="2-activite-reseau-non-autorisee">2. Activité réseau non autorisée<a class="headerlink" href="#2-activite-reseau-non-autorisee" title="Link to this section">&para;</a></h3>
+<p>Déclenché lorsque le moteur observe :
+- Des connexions sortantes vers des points de terminaison réseau inconnus ou rares
+- Des tentatives de connexion répétées échouées suivies d'un appel sortant réussi
+- Une activité réseau à volume élevé bien en dehors des modèles de base normaux</p>
+<p>Peut indiquer un balayage, un beaconing ou des tentatives d'exfiltration de données.</p>
 <hr />
-<h3 id="3-activite-fichier-anormale"><strong>3. Activité fichier anormale</strong><a class="headerlink" href="#3-activite-fichier-anormale" title="Link to this section">&para;</a></h3>
-<p>Inclut :
-- Accès inattendu à des fichiers sensibles<br />
-- Modifications massives<br />
-- Corrélation avec des comportements suspects  </p>
+<h3 id="3-activite-de-fichiers-anormale">3. Activité de fichiers anormale<a class="headerlink" href="#3-activite-de-fichiers-anormale" title="Link to this section">&para;</a></h3>
+<p>Se produit lorsque :
+- Des fichiers ou répertoires sensibles sont accédés de manière inattendue
+- Un grand nombre de fichiers sont modifiés dans une courte fenêtre temporelle
+- Les modifications de fichiers sont corrélées avec un comportement de processus ou réseau suspect</p>
+<p>Utile pour détecter les comportements de type ransomware, la mise en scène de données ou la manipulation.</p>
 <hr />
-<h3 id="4-tentative-delevation-de-privileges"><strong>4. Tentative d’élévation de privilèges</strong><a class="headerlink" href="#4-tentative-delevation-de-privileges" title="Link to this section">&para;</a></h3>
-<p>Signaux :
-- Appels système rares<br />
-- Répétition anormale d’actions élevées<br />
-- Activité incohérente avec l’usage normal  </p>
+<h3 id="4-tentative-delevation-de-privileges">4. Tentative d'élévation de privilèges<a class="headerlink" href="#4-tentative-delevation-de-privileges" title="Link to this section">&para;</a></h3>
+<p>Déclenché par :
+- Des tentatives répétées d'élévation de privilèges
+- Des appels système rares ou inhabituels
+- Un comportement incompatible avec le modèle d'activité normal de l'utilisateur de l'appareil</p>
+<p>Aide à identifier les tentatives d'exploitation locale ou l'abus d'informations d'identification.</p>
 <hr />
-<h3 id="5-indicateur-de-persistance"><strong>5. Indicateur de persistance</strong><a class="headerlink" href="#5-indicateur-de-persistance" title="Link to this section">&para;</a></h3>
-<p>Survient lorsque :
-- Un processus modifie des zones de démarrage<br />
-- Crée des tâches planifiées<br />
-- Change la configuration système  </p>
+<h3 id="5-indicateur-de-persistance">5. Indicateur de persistance<a class="headerlink" href="#5-indicateur-de-persistance" title="Link to this section">&para;</a></h3>
+<p>Se produit lorsqu'un processus tente de :
+- Modifier les emplacements de démarrage ou les tâches planifiées
+- Modifier la configuration système pour survivre au redémarrage
+- Installer des services ou des pilotes de manière inattendue</p>
+<p>Avertit d'une compromission à long terme et de l'établissement d'un point d'ancrage par l'attaquant.</p>
 <hr />
-<h3 id="6-intrusion-lente"><strong>6. Intrusion lente</strong><a class="headerlink" href="#6-intrusion-lente" title="Link to this section">&para;</a></h3>
-<p>Détecte :
-- Escalade progressive<br />
-- Activité périodique rare<br />
-- Étapes espacées sur plusieurs heures/jours  </p>
+<h3 id="6-modele-dintrusion-lent">6. Modèle d'intrusion lent<a class="headerlink" href="#6-modele-dintrusion-lent" title="Link to this section">&para;</a></h3>
+<p>Le moteur identifie des anomalies à long terme et à faible bruit telles que :
+- Escalade graduelle d'une activité inhabituelle sur des heures ou des jours
+- Activité périodique rare se répétant selon un calendrier
+- Séquences comportementales multi-étapes réparties sur de longues fenêtres temporelles</p>
+<p>Détecte les attaquants furtifs qui évitent délibérément de déclencher des règles basées sur des seuils.</p>
 <hr />
-<h2 id="rapport-dun-scenario">Rapport d’un scénario<a class="headerlink" href="#rapport-dun-scenario" title="Link to this section">&para;</a></h2>
-<p>Comprend :
-- Description<br />
-- Événements liés<br />
-- Explication séquentielle<br />
-- Sévérité<br />
-- Interprétation<br />
-- Recommandations  </p>
+<h2 id="details-du-rapport-de-scenario">Détails du rapport de scénario<a class="headerlink" href="#details-du-rapport-de-scenario" title="Link to this section">&para;</a></h2>
+<p>Chaque scénario fournit :
+- Description de la situation en langage simple
+- Événements et résultats affectés
+- Explication de la séquence montrant comment les signaux sont connectés
+- Niveau de gravité
+- Interprétation réelle
+- Prochaines étapes recommandées</p>
 <hr />
-<h2 id="interpretation-locale">Interprétation locale<a class="headerlink" href="#interpretation-locale" title="Link to this section">&para;</a></h2>
-<p>Toute l’analyse :
-- Se fait hors-ligne<br />
-- Avec données chiffrées<br />
-- Sans cloud<br />
-- Respecte la vie privée  </p>
+<h2 id="entierement-local">Entièrement local<a class="headerlink" href="#entierement-local" title="Link to this section">&para;</a></h2>
+<p>Toute la logique des scénarios :
+- S'exécute hors ligne sur l'appareil
+- Utilise des données d'événements locaux chiffrées
+- Ne contacte jamais les services cloud
+- Préserve la confidentialité totale de l'utilisateur</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Les Scénarios IA donnent du sens aux anomalies en identifiant des schémas d’attaque réels — tout en restant 100% locaux.</p>
+<p>Les scénarios IA aident les utilisateurs à voir la vue d'ensemble — donnant du sens aux anomalies individuelles et aux correspondances de règles en les associant à des contextes d'attaques réelles, permettant une détection précoce des menaces sophistiquées entièrement hors ligne et en privé.</p>
 
 
 

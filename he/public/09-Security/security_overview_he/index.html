@@ -8147,19 +8147,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        עקרונות מרכזיים
+        עקרונות אבטחה מרכזיים
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="עקרונות מרכזיים">
+    <nav class="md-nav" aria-label="עקרונות אבטחה מרכזיים">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. פרטיות כברירת מחדל
+        1. פרטיות כעיקרון עיצובי
       
     </span>
   </a>
@@ -8170,7 +8170,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. הצפנה מלאה
+        2. הצפנה בכל מקום
       
     </span>
   </a>
@@ -8181,7 +8181,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. ללא ענן
+        3. אפס תלות בענן
       
     </span>
   </a>
@@ -8189,10 +8189,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-ai-nyxia" class="md-nav__link">
+  <a href="#4-" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. AI אופליין (NyXIA)
+        4. זיהוי רב-שכבתי
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. בינה מלאכותית/ML מקומית
       
     </span>
   </a>
@@ -8208,19 +8219,19 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        מנגנוני אבטחה
+        מנגנוני אבטחה מרכזיים
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="מנגנוני אבטחה">
+    <nav class="md-nav" aria-label="מנגנוני אבטחה מרכזיים">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. איסוף אירועים מאובטח
+        1. לכידת אירועים מאובטחת
       
     </span>
   </a>
@@ -8231,7 +8242,7 @@
   <a href="#2_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. אחסון עמיד לשינוי
+        2. אחסון עמיד בפני חבלה
       
     </span>
   </a>
@@ -8242,7 +8253,7 @@
   <a href="#3_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. פרופילים התנהגותיים מקומיים
+        3. חוסן הפלטפורמה
       
     </span>
   </a>
@@ -8250,10 +8261,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4-hwid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. מנוע כללים
+        4. רישוי מבוסס HWID
       
     </span>
   </a>
@@ -8261,10 +8272,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#5-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. אבטחת הדשבורד
+        5. אבטחת Dashboard
       
     </span>
   </a>
@@ -8278,6 +8289,17 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        סיכום שכבות האבטחה
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8807,56 +8829,89 @@
   
 
 
-<h1 id="_1">סקירת אבטחה<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
-<p>Nyroxis בנויה עם גישה קשוחה של אבטחה: הכול מקומי, מוצפן, מוגן מפני שינוי ואינו מסתמך על ענן בשום שלב.</p>
+<h1 id="_1">סקירת האבטחה<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
+<p>Nyroxis בנוי עם פילוסופיית אבטחה-קודמת קפדנית: כל הפעולות הן מקומיות, מוצפנות, עמידות בפני חבלה ומתוכננות להגן על המשתמש מבלי לחשוף נתונים כלשהם לצדדים שלישיים.</p>
+<p>סקירה זו מסכמת את עקרונות ומנגנוני האבטחה המרכזיים המשמשים ברחבי הפלטפורמה.</p>
 <hr />
-<h2 id="_2">עקרונות מרכזיים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<h3 id="1"><strong>1. פרטיות כברירת מחדל</strong><a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
-<p>אין שליחת מידע.<br />
-כל הניתוחים וה-AI מקומיים בלבד.</p>
-<h3 id="2"><strong>2. הצפנה מלאה</strong><a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
-<p>כל אירוע:
-- מוצפן מיד<br />
-- נשמר רק כמוצפן<br />
-- מפוענח בזיכרון בלבד<br />
-- כולל בדיקת שלמות  </p>
-<p>אין לוגים גלויים.</p>
-<h3 id="3"><strong>3. ללא ענן</strong><a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
-<p>Nyroxis אינה משתמשת:
-- בענן<br />
-- ב-API חיצוני<br />
-- בטלמטריה  </p>
-<p>השליטה ביד המשתמש.</p>
-<h3 id="4-ai-nyxia"><strong>4. AI אופליין (NyXIA)</strong><a class="headerlink" href="#4-ai-nyxia" title="Link to this section">&para;</a></h3>
-<p>מבצע:
-- ניתוח התנהגות<br />
-- ציוני אנומליה<br />
-- יצירת תרחישים  </p>
-<p>ללא צורך באינטרנט.</p>
+<h2 id="_2">עקרונות אבטחה מרכזיים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<h3 id="1">1. פרטיות כעיקרון עיצובי<a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
+<p>Nyroxis אינה מעלה, מסנכרנת או מעבירה נתונים כלשהם לשרתים.
+כל לוגיקת האבטחה, הניטור, הזיהוי וניתוח הבינה המלאכותית פועלים לחלוטין על המכשיר.</p>
+<h3 id="2">2. הצפנה בכל מקום<a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
+<p>כל אירוע שנלכד:
+- מוצפן מיידית בלכידה (AES-256)
+- מאוחסן רק בצורה מוצפנת — לעולם לא בטקסט גלוי
+- מפוענח אך ורק בזיכרון במהלך העיבוד
+- מוגן עם גיבובי שלמות</p>
+<p>אף יומן בטקסט גלוי לעולם אינו קיים על הדיסק.</p>
+<h3 id="3">3. אפס תלות בענן<a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
+<p>Nyroxis אינה מסתמכת על:
+- אחסון או עיבוד ענן
+- ממשקי API חיצוניים
+- שרתים מרוחקים
+- צינורות טלמטריה
+- אימות מקוון</p>
+<p>המשתמשים שומרים על אוטונומיה מלאה ואפס חשיפה חיצונית.</p>
+<h3 id="4-">4. זיהוי רב-שכבתי<a class="headerlink" href="#4-" title="Link to this section">&para;</a></h3>
+<p>Nyroxis Intelligence מספקת:
+- 27 כללי זיהוי — דפוסי איומים ידועים
+- 12 כללי מתאם — דפוסי אירועים מרובים לאורך זמן
+- 2 כללי שרשרת — רצפי התקפה רב-שלביים
+- ניתן להרחבה על ידי אנשי אבטחה מבלי לשנות רכיבים מרכזיים</p>
+<h3 id="5-ml">5. בינה מלאכותית/ML מקומית<a class="headerlink" href="#5-ml" title="Link to this section">&para;</a></h3>
+<p>מנוע הבינה המלאכותית/ML מעבד נתונים באופן מקומי:
+- זיהוי אנומליות Isolation Forest
+- סיווג סטטיסטי Z-Score
+- זיהוי מאפיינים תורמים</p>
+<p>ללא אימון ענן, ללא היסק ענן, ללא שיתוף נתונים.</p>
 <hr />
-<h2 id="_3">מנגנוני אבטחה<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<h3 id="1_1"><strong>1. איסוף אירועים מאובטח</strong><a class="headerlink" href="#1_1" title="Link to this section">&para;</a></h3>
-<p>תהליכים, רשת, קבצים, הרשאות — מוצפנים מיד.</p>
+<h2 id="_3">מנגנוני אבטחה מרכזיים<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
+<h3 id="1_1">1. לכידת אירועים מאובטחת<a class="headerlink" href="#1_1" title="Link to this section">&para;</a></h3>
+<p>Nyroxis Agent לוכד:
+- תהליכים ושירותים
+- שינויי מערכת קבצים ורגיסטרי
+- חיבורי רשת
+- פעולות הרשאות
+- רשומות יומן האירועים של Windows</p>
+<p>כל האירועים מוצפנים מיידית בלכידה.</p>
+<h3 id="2_1">2. אחסון עמיד בפני חבלה<a class="headerlink" href="#2_1" title="Link to this section">&para;</a></h3>
+<p>מסד הנתונים המקומי SQLite כולל:
+- הצפנת AES-256
+- בלוקי אירועים המקושרים בגיבוב
+- נתיבי כתיבה מוגנים
+- אימות שלמות בכל קריאה</p>
+<p>תוקפים אינם יכולים לשנות, למחוק או להזריק יומנים מבלי להתגלות.</p>
+<h3 id="3_1">3. חוסן הפלטפורמה<a class="headerlink" href="#3_1" title="Link to this section">&para;</a></h3>
+<p>Nyroxis System Guardian:
+- מנטר את Agent ו-Intelligence כל 3 שניות
+- מזהה עצירות שירות בלתי צפויות באופן מיידי
+- מתעד ניסיונות כיבוי כאירועי אבטחה
+- מנהל גיבויים ואימות רישיון לא מקוון</p>
+<p>לא ניתן להשבית את הפלטפורמה בשקט.</p>
+<h3 id="4-hwid">4. רישוי מבוסס HWID<a class="headerlink" href="#4-hwid" title="Link to this section">&para;</a></h3>
+<p>אימות רישיון:
+- קשור לחומרת המכשיר (מפתח נגזר מ-HWID)
+- מאומת במצב לא מקוון באמצעות AES-GCM ו-HMAC
+- נאכף על ידי System Guardian — שירותים עוצרים אוטומטית אם הרישיון אינו תקף</p>
+<h3 id="5-dashboard">5. אבטחת Dashboard<a class="headerlink" href="#5-dashboard" title="Link to this section">&para;</a></h3>
+<p>ה-Dashboard:
+- קורא סיכומים מפוענחים רק ב-RAM
+- לעולם אינו כותב נתונים מפוענחים חזרה לדיסק
+- אינו מתחבר למקורות חיצוניים
+- מספק גישה לקריאה בלבד לאחסון היומנים</p>
 <hr />
-<h3 id="2_1"><strong>2. אחסון עמיד לשינוי</strong><a class="headerlink" href="#2_1" title="Link to this section">&para;</a></h3>
-<p>כולל:
-- הצפנת AES<br />
-- Hash-Chaining<br />
-- בדיקות שלמות  </p>
-<p>מונע שינוי לוגים.</p>
+<h2 id="_4">סיכום שכבות האבטחה<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
+<p>Nyroxis משלבת מספר שכבות הגנה:
+- הצפנת AES-256 בלכידה
+- אחסון עמיד בפני חבלה המקושר בגיבוב
+- שומר פלטפורמה לחוסן השירותים
+- מנוע בינה מלאכותית/ML מקומי בלבד
+- אימות רישיון לא מקוון
+- אפס חשיפה לענן
+- ארכיטקטורה המעמידה פרטיות בראש סדר העדיפויות לאורך כל הדרך</p>
 <hr />
-<h3 id="3_1"><strong>3. פרופילים התנהגותיים מקומיים</strong><a class="headerlink" href="#3_1" title="Link to this section">&para;</a></h3>
-<p>מאפשר זיהוי אנומליות בלי לשלוח מידע.</p>
-<hr />
-<h3 id="4"><strong>4. מנוע כללים</strong><a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
-<p>מתריע לפי תבניות וספים.</p>
-<hr />
-<h3 id="5"><strong>5. אבטחת הדשבורד</strong><a class="headerlink" href="#5" title="Link to this section">&para;</a></h3>
-<p>תצוגה מקומית בלבד.<br />
-ללא חשיפת נתונים.</p>
-<hr />
-<h2 id="_4">סיכום<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
-<p>Nyroxis מספקת מודל אבטחה מודרני, פרטי ואופליין — ללא מעקב וללא ענן.</p>
+<h2 id="_5">סיכום<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
+<p>Nyroxis מספקת מודל אבטחה מודרני, פרטי ולא מקוון המגן על משתמשים מבלי לעקוב אחריהם — משלבת שקיפות, שליטה, שלמות פורנזית ועיצוב הגנתי חזק בכל שכבה.</p>
 
 
 

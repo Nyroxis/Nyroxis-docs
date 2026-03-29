@@ -4164,10 +4164,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-blocs-chaines-par-hash" class="md-nav__link">
+  <a href="#1-blocs-devenements-enchaines-par-hachage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Blocs chaînés par hash
+        1. Blocs d'Événements Enchaînés par Hachage
       
     </span>
   </a>
@@ -4175,10 +4175,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-verification-a-la-lecture" class="md-nav__link">
+  <a href="#2-verification-de-lintegrite-a-la-lecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Vérification à la lecture
+        2. Vérification de l'Intégrité à la Lecture
       
     </span>
   </a>
@@ -4186,10 +4186,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ecriture-protegee" class="md-nav__link">
+  <a href="#3-chemin-decriture-protege" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Écriture protégée
+        3. Chemin d'Écriture Protégé
       
     </span>
   </a>
@@ -4197,10 +4197,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-protection-antisuppression" class="md-nav__link">
+  <a href="#4-protection-contre-la-suppression" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Protection anti‑suppression
+        4. Protection contre la Suppression
       
     </span>
   </a>
@@ -4208,10 +4208,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-protection-antimodification" class="md-nav__link">
+  <a href="#5-protection-contre-la-modification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Protection anti‑modification
+        5. Protection contre la Modification
       
     </span>
   </a>
@@ -4219,10 +4219,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-protection-antiinjection" class="md-nav__link">
+  <a href="#6-protection-contre-linjection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Protection anti‑injection
+        6. Protection contre l'Injection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-protection-des-services-de-la-plateforme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Protection des Services de la Plateforme
       
     </span>
   </a>
@@ -8740,60 +8751,88 @@
   
 
 
-<h1 id="protection-contre-la-falsification">Protection contre la falsification<a class="headerlink" href="#protection-contre-la-falsification" title="Link to this section">&para;</a></h1>
-<p>Nyroxis intègre des mécanismes avancés empêchant toute modification, suppression ou insertion de journaux — toute falsification est détectable immédiatement, sans cloud.</p>
+<h1 id="protection-contre-la-falsification">Protection contre la Falsification<a class="headerlink" href="#protection-contre-la-falsification" title="Link to this section">&para;</a></h1>
+<p>Nyroxis intègre des mécanismes de protection anti-falsification robustes conçus pour garantir qu'aucun attaquant ne puisse supprimer, modifier, falsifier ou réordonner les journaux sans être détecté.
+Ces protections fonctionnent entièrement hors ligne et sont appliquées à l'intérieur de la base de données locale et du pipeline d'événements.</p>
 <hr />
-<h2 id="1-blocs-chaines-par-hash">1. Blocs chaînés par hash<a class="headerlink" href="#1-blocs-chaines-par-hash" title="Link to this section">&para;</a></h2>
-<p>Chaque événement inclut :
-- Données chiffrées<br />
-- Hash d’intégrité<br />
-- Index séquentiel<br />
-- Lien vers le bloc précédent  </p>
-<p>Ce mécanisme agit comme une <strong>chaîne de blocs</strong>.</p>
-<p>Toute falsification brise la chaîne.</p>
+<h2 id="1-blocs-devenements-enchaines-par-hachage">1. Blocs d'Événements Enchaînés par Hachage<a class="headerlink" href="#1-blocs-devenements-enchaines-par-hachage" title="Link to this section">&para;</a></h2>
+<p>Chaque événement est stocké sous la forme :
+- Charge utile chiffrée
+- Hash d'intégrité du contenu du bloc
+- Index séquentiel
+- Hash du bloc précédent</p>
+<p>Cette structure forme une <strong>chaîne de hachage</strong>.</p>
+<p>La falsification devient visible si :
+- Un bloc est supprimé — le hash-précédent du bloc suivant ne correspondra pas
+- Un bloc est modifié — le hash du bloc ne correspondra pas
+- Un bloc est injecté — les numéros de séquence et les hashes de chaîne échoueront
+- La séquence est réordonnée — l'incohérence des index est détectée</p>
+<p>Toute discordance brise la chaîne et déclenche une alerte immédiate.</p>
 <hr />
-<h2 id="2-verification-a-la-lecture">2. Vérification à la lecture<a class="headerlink" href="#2-verification-a-la-lecture" title="Link to this section">&para;</a></h2>
-<p>Lors de chaque lecture :
-- Le hash est recalculé<br />
-- L’index est vérifié<br />
-- Le lien au bloc précédent est validé  </p>
-<p>En cas d’échec :
-- Données rejetées<br />
-- Alerte de falsification  </p>
+<h2 id="2-verification-de-lintegrite-a-la-lecture">2. Vérification de l'Intégrité à la Lecture<a class="headerlink" href="#2-verification-de-lintegrite-a-la-lecture" title="Link to this section">&para;</a></h2>
+<p>Chaque fois que le moteur IA/ML ou le Dashboard lit des données :
+- Le hash est recalculé pour chaque bloc
+- Le numéro de séquence est vérifié
+- La correspondance du hash-précédent est validée</p>
+<p>Si quelque chose a été altéré, le système :
+- Rejette les données falsifiées
+- Signale un événement de falsification
+- Stocke une alerte de sécurité dans la base de données locale</p>
+<p>Toutes les vérifications sont locales et hors ligne.</p>
 <hr />
-<h2 id="3-ecriture-protegee">3. Écriture protégée<a class="headerlink" href="#3-ecriture-protegee" title="Link to this section">&para;</a></h2>
-<p>L’agent utilise :
-- Écriture atomique<br />
-- Séquence vérifiée<br />
-- Tampons chiffrés  </p>
-<p>Empêche :
-- Écritures partielles<br />
-- Corruption<br />
-- Injections  </p>
+<h2 id="3-chemin-decriture-protege">3. Chemin d'Écriture Protégé<a class="headerlink" href="#3-chemin-decriture-protege" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Agent écrit les journaux en utilisant :
+- Des opérations d'écriture atomiques
+- Des descripteurs de fichiers contrôlés
+- Des séquences d'écriture vérifiées
+- Des tampons chiffrés</p>
+<p>Cela prévient :
+- Les écritures partielles qui corrompent la chaîne
+- L'injection de données non vérifiées
+- La corruption due aux conditions de course</p>
 <hr />
-<h2 id="4-protection-antisuppression">4. Protection anti‑suppression<a class="headerlink" href="#4-protection-antisuppression" title="Link to this section">&para;</a></h2>
-<p>Si un bloc est supprimé :
-- Le hash suivant ne correspond plus<br />
-- Une alerte est générée  </p>
+<h2 id="4-protection-contre-la-suppression">4. Protection contre la Suppression<a class="headerlink" href="#4-protection-contre-la-suppression" title="Link to this section">&para;</a></h2>
+<p>Si un attaquant supprime des blocs d'événements :
+- Le hash-précédent du bloc suivant ne correspondra pas au hash du bloc supprimé
+- Nyroxis détecte l'écart dans la chaîne
+- Une alerte de suppression par falsification est générée et stockée localement</p>
+<p>Rien ne peut être supprimé silencieusement.</p>
 <hr />
-<h2 id="5-protection-antimodification">5. Protection anti‑modification<a class="headerlink" href="#5-protection-antimodification" title="Link to this section">&para;</a></h2>
-<p>Toute modification entraîne :
-- Hash incorrect<br />
-- Chaîne cassée<br />
-- Incohérence d’index  </p>
+<h2 id="5-protection-contre-la-modification">5. Protection contre la Modification<a class="headerlink" href="#5-protection-contre-la-modification" title="Link to this section">&para;</a></h2>
+<p>Si un attaquant modifie :
+- L'horodatage
+- Les métadonnées de l'événement
+- Le contenu de l'événement
+- L'ordre des blocs</p>
+<p>Nyroxis le détecte via :
+- La discordance de hash sur le bloc modifié
+- L'incohérence des index
+- La rupture de la chaîne</p>
+<p>La modification est impossible sans détection.</p>
 <hr />
-<h2 id="6-protection-antiinjection">6. Protection anti‑injection<a class="headerlink" href="#6-protection-antiinjection" title="Link to this section">&para;</a></h2>
-<p>Les faux journaux échouent sur :
-- Hash<br />
-- Séquence<br />
-- Intégrité  </p>
+<h2 id="6-protection-contre-linjection">6. Protection contre l'Injection<a class="headerlink" href="#6-protection-contre-linjection" title="Link to this section">&para;</a></h2>
+<p>Si quelqu'un essaie d'insérer de fausses entrées de journal :
+- Les numéros de séquence échouent à la validation
+- La validation de la chaîne de hachage échoue
+- La vérification de l'intégrité échoue</p>
+<p>Nyroxis rejette toute la tranche de données affectée et avertit l'utilisateur.</p>
+<hr />
+<h2 id="7-protection-des-services-de-la-plateforme">7. Protection des Services de la Plateforme<a class="headerlink" href="#7-protection-des-services-de-la-plateforme" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian surveille Nyroxis Agent et Intelligence toutes les 3 secondes.</p>
+<p>Si l'un ou l'autre des services est arrêté — par un crash, un événement système ou une interférence délibérée :
+- Guardian le détecte immédiatement
+- La tentative d'arrêt est enregistrée comme événement de sécurité
+- Une action corrective est prise</p>
+<p>La plateforme de surveillance elle-même ne peut pas être désactivée silencieusement.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Les journaux Nyroxis sont :
-- Inaltérables<br />
-- Indélébiles<br />
-- Vérifiables<br />
-- Entièrement locaux et hors‑ligne  </p>
+<p>La protection anti-falsification de Nyroxis garantit :
+- Les journaux ne peuvent pas être supprimés sans détection
+- Les journaux ne peuvent pas être modifiés sans détection
+- Les journaux ne peuvent pas être injectés sans détection
+- Les journaux ne peuvent pas être réordonnés sans détection
+- La plateforme ne peut pas être désactivée silencieusement</p>
+<p>Toutes les protections fonctionnent <strong>localement, hors ligne et sans assistance cloud</strong> — garantissant une intégrité des preuves de qualité forensique à tout moment.</p>
 
 
 

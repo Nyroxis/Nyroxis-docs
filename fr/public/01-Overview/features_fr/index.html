@@ -2825,6 +2825,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#moteur-de-detection-multicouche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moteur de détection multicouche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Moteur de détection multicouche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#couche-1-detection-27-regles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Couche 1 — Détection (27 règles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#couche-2-correlation-12-regles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Couche 2 — Corrélation (12 règles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#couche-3-chaine-2-regles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Couche 3 — Chaîne (2 règles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#surveillance-locale-des-evenements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2836,10 +2886,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stockage-local-chiffre" class="md-nav__link">
+  <a href="#stockage-chiffre-de-qualite-forensique" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stockage local chiffré
+        Stockage chiffré de qualité forensique
       
     </span>
   </a>
@@ -2847,10 +2897,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#analyse-comportementale-assistee-par-ia" class="md-nav__link">
+  <a href="#moteur-iaml-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Analyse comportementale assistée par IA
+        Moteur IA/ML local
       
     </span>
   </a>
@@ -2858,10 +2908,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tableau-de-bord-clair-et-accessible" class="md-nav__link">
+  <a href="#gardien-de-plateforme-nyroxis-system-guardian" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tableau de bord clair et accessible
+        Gardien de plateforme (Nyroxis System Guardian)
       
     </span>
   </a>
@@ -2869,10 +2919,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-resistante-a-la-falsification" class="md-nav__link">
+  <a href="#tableau-de-bord-intuitif" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture résistante à la falsification
+        Tableau de bord intuitif
       
     </span>
   </a>
@@ -2880,10 +2930,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#utilisation-horsligne" class="md-nav__link">
+  <a href="#fonctionnement-hors-ligne-prioritaire" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Utilisation hors‑ligne
+        Fonctionnement hors ligne prioritaire
       
     </span>
   </a>
@@ -2891,10 +2941,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#concu-pour-les-utilisateurs-reels" class="md-nav__link">
+  <a href="#architecture-resistante-aux-manipulations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Conçu pour les utilisateurs réels
+        Architecture résistante aux manipulations
       
     </span>
   </a>
@@ -8741,62 +8791,80 @@
 
 
 <h1 id="fonctionnalites-cles">Fonctionnalités clés<a class="headerlink" href="#fonctionnalites-cles" title="Link to this section">&para;</a></h1>
-<p>Nyroxis apporte une visibilité de niveau entreprise aux appareils personnels et professionnels, tout en restant léger, privé et entièrement fonctionnel hors‑ligne.</p>
+<p>Nyroxis apporte une visibilité et une détection de niveau entreprise aux appareils personnels et professionnels, tout en restant léger, privé et entièrement utilisable hors ligne.</p>
+<hr />
+<h2 id="moteur-de-detection-multicouche">Moteur de détection multicouche<a class="headerlink" href="#moteur-de-detection-multicouche" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence opère sur trois couches de détection séquentielles :</p>
+<h3 id="couche-1-detection-27-regles">Couche 1 — Détection (27 règles)<a class="headerlink" href="#couche-1-detection-27-regles" title="Link to this section">&para;</a></h3>
+<p>Identifie les patterns de menaces connus dans les événements individuels :
+- Exécution de processus suspects
+- Installation de services non autorisés
+- Comportement réseau anormal
+- Tentatives d'accès aux identifiants</p>
+<h3 id="couche-2-correlation-12-regles">Couche 2 — Corrélation (12 règles)<a class="headerlink" href="#couche-2-correlation-12-regles" title="Link to this section">&para;</a></h3>
+<p>Relie des événements connexes dans le temps et entre les sources pour révéler des patterns qu'aucun événement isolé n'exposerait :
+- Échec de connexion suivi d'une connexion réussie depuis un emplacement différent
+- Nouveau processus lancé immédiatement après la connexion d'un périphérique USB</p>
+<h3 id="couche-3-chaine-2-regles">Couche 3 — Chaîne (2 règles)<a class="headerlink" href="#couche-3-chaine-2-regles" title="Link to this section">&para;</a></h3>
+<p>Détecte des séquences d'attaques en plusieurs étapes — les intrusions coordonnées et progressives qui caractérisent les menaces persistantes avancées.</p>
+<p>La bibliothèque de règles s'enrichit en continu. Les professionnels de la sécurité peuvent rédiger et déployer leurs propres règles personnalisées directement dans le moteur sans modifier le système central.</p>
 <hr />
 <h2 id="surveillance-locale-des-evenements">Surveillance locale des événements<a class="headerlink" href="#surveillance-locale-des-evenements" title="Link to this section">&para;</a></h2>
-<p>Nyroxis collecte en continu les activités importantes :
-- Création / arrêt de processus<br />
-- Connexions réseau<br />
-- Modifications de fichiers<br />
-- Actions liées aux privilèges<br />
-- Événements système et sécurité  </p>
-<p>Toute la surveillance est <strong>locale</strong>, sans envoi vers le cloud.</p>
+<p>L'agent Nyroxis collecte en continu les activités pertinentes pour la sécurité :
+- Création et arrêt de processus
+- Connexions réseau et métadonnées de trafic
+- Modifications de fichiers et du registre
+- Actions liées aux privilèges
+- Événements système et de sécurité (Journaux d'événements Windows)
+- Exécution de PowerShell et de scripts</p>
+<p>Toute la surveillance s'effectue <strong>localement</strong>, sans envoi de données vers le cloud.</p>
 <hr />
-<h2 id="stockage-local-chiffre">Stockage local chiffré<a class="headerlink" href="#stockage-local-chiffre" title="Link to this section">&para;</a></h2>
-<p>Tous les événements sont :
-- Chiffrés au repos<br />
-- Protégés contre la falsification<br />
-- Stockés uniquement sur l’appareil de l’utilisateur  </p>
-<p>Nyroxis garantit que les journaux restent privés et sous contrôle de l’utilisateur.</p>
+<h2 id="stockage-chiffre-de-qualite-forensique">Stockage chiffré de qualité forensique<a class="headerlink" href="#stockage-chiffre-de-qualite-forensique" title="Link to this section">&para;</a></h2>
+<p>Tous les événements collectés sont :
+- Chiffrés au repos (AES-256)
+- Protégés contre la falsification via des blocs d'événements chaînés par hachage
+- Stockés uniquement sur l'appareil de l'utilisateur
+- Appropriés aux procédures juridiques et réglementaires</p>
 <hr />
-<h2 id="analyse-comportementale-assistee-par-ia">Analyse comportementale assistée par IA<a class="headerlink" href="#analyse-comportementale-assistee-par-ia" title="Link to this section">&para;</a></h2>
-<p>Nyroxis utilise des modèles IA légers pour identifier :
-- Comportements suspects<br />
-- Séquences d’activités anormales<br />
-- Signes précoces de compromission<br />
-- Mécanismes potentiels de persistance  </p>
-<p>L’IA aide à réduire le bruit et à mettre en avant l’essentiel.</p>
+<h2 id="moteur-iaml-local">Moteur IA/ML local<a class="headerlink" href="#moteur-iaml-local" title="Link to this section">&para;</a></h2>
+<p>Nyroxis intègre une implémentation personnalisée d'Isolation Forest développée en Rust — aucune bibliothèque ML externe requise :
+- 100 arbres d'isolation par cycle d'analyse
+- 8 caractéristiques comportementales analysées par fenêtre
+- Analyse statistique Z-Score : Critique / Élevé / Moyen / Faible
+- Détection d'anomalies IQR, moyennes mobiles, détection de pics
+- Tout le calcul s'effectue sur l'appareil — jamais dans le cloud</p>
 <hr />
-<h2 id="tableau-de-bord-clair-et-accessible">Tableau de bord clair et accessible<a class="headerlink" href="#tableau-de-bord-clair-et-accessible" title="Link to this section">&para;</a></h2>
-<p>Le dashboard fournit :
-- Une timeline d’événements<br />
-- Graphiques et résumés visuels<br />
-- Indicateurs de sévérité<br />
-- Explications simples des actions suspectes  </p>
-<p>Conçu pour les non‑techniciens comme pour les experts cybersécurité.</p>
+<h2 id="gardien-de-plateforme-nyroxis-system-guardian">Gardien de plateforme (Nyroxis System Guardian)<a class="headerlink" href="#gardien-de-plateforme-nyroxis-system-guardian" title="Link to this section">&para;</a></h2>
+<p>Un service discret dans la barre des tâches qui :
+- Surveille tous les services de la plateforme toutes les 3 secondes
+- Gère les sauvegardes de base de données planifiées et à la demande
+- Valide la licence basée sur le HWID entièrement hors ligne
+- Vérifie automatiquement les mises à jour
+- Arrête automatiquement les services si la licence expire</p>
 <hr />
-<h2 id="architecture-resistante-a-la-falsification">Architecture résistante à la falsification<a class="headerlink" href="#architecture-resistante-a-la-falsification" title="Link to this section">&para;</a></h2>
+<h2 id="tableau-de-bord-intuitif">Tableau de bord intuitif<a class="headerlink" href="#tableau-de-bord-intuitif" title="Link to this section">&para;</a></h2>
+<p>Le tableau de bord offre :
+- Chronologie des événements en temps réel et indicateurs de gravité
+- Vues des résultats de détection, de corrélation et de chaîne
+- Recherche forensique avec filtrage avancé
+- Analyse IA/ML avec décomposition des caractéristiques contributives
+- Rapports — export PDF/CSV
+- Gestion des sauvegardes de base de données
+- Disponible en anglais, français et allemand</p>
+<hr />
+<h2 id="fonctionnement-hors-ligne-prioritaire">Fonctionnement hors ligne prioritaire<a class="headerlink" href="#fonctionnement-hors-ligne-prioritaire" title="Link to this section">&para;</a></h2>
+<p>Nyroxis fonctionne entièrement sans :
+- Connexion cloud
+- Dépendance à Internet
+- Authentification externe</p>
+<p>La plateforme est conçue pour les environnements à haute confidentialité et fonctionne dans des configurations isolées (air-gapped).</p>
+<hr />
+<h2 id="architecture-resistante-aux-manipulations">Architecture résistante aux manipulations<a class="headerlink" href="#architecture-resistante-aux-manipulations" title="Link to this section">&para;</a></h2>
 <p>Nyroxis protège :
-- Le service Agent<br />
-- Les journaux locaux<br />
-- L’intégrité des données collectées  </p>
-<p>Rendant difficile l’effacement de traces par un attaquant.</p>
-<hr />
-<h2 id="utilisation-horsligne">Utilisation hors‑ligne<a class="headerlink" href="#utilisation-horsligne" title="Link to this section">&para;</a></h2>
-<p>Nyroxis fonctionne sans :
-- Connexion cloud<br />
-- Dépendance Internet<br />
-- Authentification externe  </p>
-<p>La plateforme convient aux environnements à haute exigence de confidentialité.</p>
-<hr />
-<h2 id="concu-pour-les-utilisateurs-reels">Conçu pour les utilisateurs réels<a class="headerlink" href="#concu-pour-les-utilisateurs-reels" title="Link to this section">&para;</a></h2>
-<p>Nyroxis est adapté aux :
-- Postes de cadres<br />
-- Ordinateurs d’avocats / médecins<br />
-- Ordinateurs familiaux<br />
-- Home labs cybersécurité<br />
-- Ordinateurs de télétravail  </p>
-<p>Il apporte clarté et contrôle sans complexité.</p>
+- Tous les services de la plateforme via Nyroxis System Guardian
+- Les journaux locaux via des blocs d'événements chaînés par hachage
+- L'intégrité des données d'événements grâce à une vérification continue</p>
+<p>Les attaquants ne peuvent pas effacer leurs traces sans être détectés.</p>
 
 
 

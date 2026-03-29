@@ -3700,10 +3700,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectifs-principaux" class="md-nav__link">
+  <a href="#objectifs-fondamentaux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objectifs principaux
+        Objectifs fondamentaux
       
     </span>
   </a>
@@ -3722,10 +3722,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-stockage-anti-falsification" class="md-nav__link">
+  <a href="#2-stockage-resistant-aux-alterations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Stockage anti-falsification
+        2. Stockage résistant aux altérations
       
     </span>
   </a>
@@ -3733,10 +3733,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ia-privee-et-locale" class="md-nav__link">
+  <a href="#3-resilience-de-la-plateforme-nyroxis-system-guardian" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. IA privée et locale
+        3. Résilience de la plateforme (Nyroxis System Guardian)
       
     </span>
   </a>
@@ -3744,10 +3744,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-fonctionnement-100-hors-ligne" class="md-nav__link">
+  <a href="#4-moteur-iaml-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Fonctionnement 100% hors-ligne
+        4. Moteur IA/ML local
       
     </span>
   </a>
@@ -3755,10 +3755,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-retention-minimale" class="md-nav__link">
+  <a href="#5-fonctionnement-entierement-hors-ligne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Rétention minimale
+        5. Fonctionnement entièrement hors ligne
       
     </span>
   </a>
@@ -3766,10 +3766,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-logique-transparente" class="md-nav__link">
+  <a href="#6-retention-minimale-des-donnees" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Logique transparente
+        6. Rétention minimale des données
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-logique-transparente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Logique transparente
       
     </span>
   </a>
@@ -8752,70 +8763,88 @@
 
 
 <h1 id="modele-de-securite">Modèle de sécurité<a class="headerlink" href="#modele-de-securite" title="Link to this section">&para;</a></h1>
-<p>Le modèle de sécurité Nyroxis garantit que toute la collecte, l’analyse et le stockage des événements se font sous des principes stricts de confidentialité et d'intégrité.<br />
-Il est conçu pour les particuliers, professionnels et cadres exigeant une protection fiable sans compromis sur la vie privée.</p>
+<p>Le modèle de sécurité Nyroxis garantit que toute la surveillance, la détection, l'analyse IA et le stockage des événements fonctionnent selon des principes stricts de priorité à la vie privée et de résistance aux altérations.
+Ce modèle est conçu pour les particuliers, les professionnels et les cadres qui nécessitent une sécurité fiable sans sacrifier la confidentialité.</p>
 <hr />
-<h2 id="objectifs-principaux">Objectifs principaux<a class="headerlink" href="#objectifs-principaux" title="Link to this section">&para;</a></h2>
+<h2 id="objectifs-fondamentaux">Objectifs fondamentaux<a class="headerlink" href="#objectifs-fondamentaux" title="Link to this section">&para;</a></h2>
 <p>Nyroxis protège :
-- La confidentialité<br />
-- L’intégrité du système<br />
-- La vie privée de l’utilisateur<br />
-- L’autonomie locale  </p>
+- La confidentialité des données — pas d'accès non autorisé aux journaux d'événements
+- L'intégrité du système — chaîne de preuves résistante aux altérations
+- La vie privée des utilisateurs — pas de transmission cloud, pas de profilage comportemental
+- La résilience de la plateforme — surveillance continue, protégée contre les interférences</p>
+<p>Le résultat : une protection de niveau entreprise sur un appareil personnel.</p>
 <hr />
 <h2 id="1-chiffrement-local-de-bout-en-bout">1. Chiffrement local de bout en bout<a class="headerlink" href="#1-chiffrement-local-de-bout-en-bout" title="Link to this section">&para;</a></h2>
-<p>Tous les événements sont :
-- Chiffrés dès la collecte<br />
-- Stockés uniquement sous forme chiffrée<br />
-- Accessibles via des chemins sécurisés<br />
-- Jamais enregistrés en clair  </p>
-<p>Les clés sont :
-- Locales<br />
-- Dynamiques<br />
-- Non stockées dans l’application<br />
-- Jamais transmises  </p>
+<p>Toutes les données d'événements sont :
+- Chiffrées au moment de la capture (AES-256)
+- Stockées uniquement sous forme chiffrée — jamais écrites en clair
+- Accessibles uniquement via des chemins de lecture sécurisés
+- Déchiffrées uniquement en mémoire lors du traitement</p>
+<p>Les clés de chiffrement sont :
+- Dérivées du matériel de l'appareil (HWID)
+- Locales à l'appareil
+- Jamais stockées dans l'application
+- Jamais transmises à l'extérieur</p>
 <hr />
-<h2 id="2-stockage-anti-falsification">2. Stockage anti-falsification<a class="headerlink" href="#2-stockage-anti-falsification" title="Link to this section">&para;</a></h2>
-<p>Nyroxis intègre :
-- Vérifications d’intégrité<br />
-- Chemins d’écriture protégés<br />
-- Chaînage de hash<br />
-- Contrôles anti-tamper  </p>
+<h2 id="2-stockage-resistant-aux-alterations">2. Stockage résistant aux altérations<a class="headerlink" href="#2-stockage-resistant-aux-alterations" title="Link to this section">&para;</a></h2>
+<p>Nyroxis utilise des blocs d'événements à chaîne de hachage :
+- Chaque bloc contient un hash du bloc précédent
+- L'intégrité est vérifiée à chaque opération de lecture
+- Toute suppression, modification, injection ou réordonnancement brise la chaîne et déclenche une alerte
+- Des chemins d'écriture protégés empêchent les écritures partielles ou corrompues</p>
+<p>Les attaquants ne peuvent pas modifier les journaux ni effacer leurs traces sans être détectés.</p>
 <hr />
-<h2 id="3-ia-privee-et-locale">3. IA privée et locale<a class="headerlink" href="#3-ia-privee-et-locale" title="Link to this section">&para;</a></h2>
-<p>NyXIA :
-- Fonctionne hors-ligne<br />
-- Analyse les événements chiffrés<br />
-- Produit des détections localement<br />
-- N’envoie jamais de journaux  </p>
+<h2 id="3-resilience-de-la-plateforme-nyroxis-system-guardian">3. Résilience de la plateforme (Nyroxis System Guardian)<a class="headerlink" href="#3-resilience-de-la-plateforme-nyroxis-system-guardian" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian surveille l'état opérationnel de Nyroxis Agent et Nyroxis Intelligence toutes les 3 secondes.</p>
+<p>Si l'un ou l'autre service est arrêté — par un crash, un événement système ou une interférence délibérée :
+- Guardian détecte immédiatement la perturbation
+- Une action corrective est prise
+- La tentative d'arrêt est enregistrée comme un événement de sécurité</p>
+<p>La plateforme ne peut pas être désactivée silencieusement.</p>
 <hr />
-<h2 id="4-fonctionnement-100-hors-ligne">4. Fonctionnement 100% hors-ligne<a class="headerlink" href="#4-fonctionnement-100-hors-ligne" title="Link to this section">&para;</a></h2>
-<p>Nyroxis n’utilise :
-- Aucun cloud<br />
-- Aucune API externe<br />
-- Aucune authentification distante  </p>
+<h2 id="4-moteur-iaml-local">4. Moteur IA/ML local<a class="headerlink" href="#4-moteur-iaml-local" title="Link to this section">&para;</a></h2>
+<p>Le moteur IA/ML :
+- Fonctionne entièrement hors ligne
+- Traite uniquement les données d'événements chiffrées localement
+- Génère des détections d'anomalies et des résultats statistiques localement
+- N'envoie jamais de données à des serveurs
+- Ne télécharge jamais de profils comportementaux ou de retours de modèles</p>
+<p>Vos données restent sur votre appareil, toujours.</p>
 <hr />
-<h2 id="5-retention-minimale">5. Rétention minimale<a class="headerlink" href="#5-retention-minimale" title="Link to this section">&para;</a></h2>
-<p>Stockage uniquement :
-- Des événements de sécurité<br />
-- Des métadonnées techniques  </p>
-<p>Jamais :
-- Documents personnels<br />
-- Historique de navigation<br />
-- Données sensibles  </p>
+<h2 id="5-fonctionnement-entierement-hors-ligne">5. Fonctionnement entièrement hors ligne<a class="headerlink" href="#5-fonctionnement-entierement-hors-ligne" title="Link to this section">&para;</a></h2>
+<p>Nyroxis ne nécessite pas :
+- Traitement ou stockage cloud
+- Authentification en ligne
+- APIs externes
+- Serveurs distants de quelque nature que ce soit</p>
+<p>Cela supprime des catégories entières de risques pour la vie privée — violations cloud, accès tiers et attaques réseau contre la plateforme de sécurité elle-même.</p>
 <hr />
-<h2 id="6-logique-transparente">6. Logique transparente<a class="headerlink" href="#6-logique-transparente" title="Link to this section">&para;</a></h2>
-<p>Modèle volontairement simple :
-- Collecte locale<br />
-- Chiffrement local<br />
-- IA locale<br />
-- Alertes locales  </p>
+<h2 id="6-retention-minimale-des-donnees">6. Rétention minimale des données<a class="headerlink" href="#6-retention-minimale-des-donnees" title="Link to this section">&para;</a></h2>
+<p>Nyroxis stocke uniquement :
+- Événements de sécurité chiffrés
+- Résultats de détection et de corrélation
+- Résultats d'analyse IA/ML
+- Métadonnées nécessaires à la détection et à la forensique</p>
+<p>Il ne stocke <strong>pas</strong> :
+- Documents personnels ou fichiers
+- Historique de navigation
+- Identifiants ou mots de passe
+- Données de localisation
+- Tout contenu non lié aux événements de sécurité</p>
+<hr />
+<h2 id="7-logique-transparente">7. Logique transparente<a class="headerlink" href="#7-logique-transparente" title="Link to this section">&para;</a></h2>
+<p>Le modèle de sécurité est intentionnellement simple et vérifiable :
+- Collecte locale → chiffrement local → détection locale → IA locale → alertes locales
+- Pas de téléchargements silencieux, pas de télémétrie, pas de connexions réseau cachées</p>
+<p>Les utilisateurs peuvent vérifier le comportement de la plateforme via le tableau de bord et la surveillance réseau du système.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Un modèle moderne et privé :
-- Stockage chiffré<br />
-- Anti-tamper<br />
-- IA locale<br />
-- Aucun risque cloud.</p>
+<p>Nyroxis fournit un modèle de sécurité robuste, axé sur la confidentialité et forensiquement solide :
+- Stockage d'événements chiffré AES-256
+- Protection anti-altération à chaîne de hachage
+- IA/ML local uniquement
+- Gardien de plateforme pour la résilience
+- Pas de risques cloud, pas de télémétrie, pas de dépendances externes</p>
 
 
 

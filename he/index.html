@@ -8616,59 +8616,76 @@
   
 
 
-<h1 id="nyroxis">מהו Nyroxis?<a class="headerlink" href="#nyroxis" title="Link to this section">&para;</a></h1>
-<p>Nyroxis היא פלטפורמת סייבר קלה וחכמה המבוססת על בינה מלאכותית, המיועדת להגן על <strong>מכשירים אישיים ולא מנוהלים</strong>.</p>
-<p>המערכת מספקת ניטור מקומי רציף, ממוקד פרטיות, ללא תלות בענן וללא צורך בידע טכני.</p>
-<h2 id="nyroxis_1">למה Nyroxis קיימת<a class="headerlink" href="#nyroxis_1" title="Link to this section">&para;</a></h2>
-<p>תקיפות סייבר רבות מכוונות כיום אל <strong>המכשירים האישיים</strong> של משתמשים ללא הגנה ארגונית.</p>
-<p>Nyroxis מספקת נראות חכמה ברמה ארגונית — למשתמש הפרטי.</p>
+<h1 id="nyroxis">מהי Nyroxis?<a class="headerlink" href="#nyroxis" title="Link to this section">&para;</a></h1>
+<p>Nyroxis היא פלטפורמת אבטחת סייבר קלה ומסייעת בינה מלאכותית, שתוכננה להגן על <strong>נקודות קצה אישיות ולא מנוהלות</strong> — המכשירים שכלי האבטחה הארגוניים המסורתיים לרוב מתעלמים מהם.</p>
+<p>היא מספקת ניטור רציף המעמיד פרטיות בראש, ומביאה זיהוי ברמת SOC למכשירים אישיים, ללא צורך בקישוריות ענן, מומחיות טכנית או תשתית ארגונית.</p>
+<h2 id="nyroxis_1">מדוע Nyroxis קיימת<a class="headerlink" href="#nyroxis_1" title="Link to this section">&para;</a></h2>
+<p>מתקפות סייבר מודרניות כבר אינן מכוונות רק כלפי חברות. מנהלים, עורכי דין, שופטים, רופאים, עיתונאים ואפילו משפחות מותקפים על <strong>המכשירים האישיים שלהם</strong> — שם אין SOC, אין SIEM ואין צוות אבטחה שישמור עליהם.</p>
+<p>Nyroxis ממלאת את הפער הזה על ידי הבאת <strong>נראות וזיהוי ברמה ארגונית</strong> לרמה האישית — בשקט, באופן מקומי, וללא פשרות.</p>
 <h2 id="nyroxis_2">למי מיועדת Nyroxis?<a class="headerlink" href="#nyroxis_2" title="Link to this section">&para;</a></h2>
 <ul>
-<li>מנהלים ובעלי פרופיל גבוה</li>
-<li>עורכי דין ורופאים</li>
-<li>משפחות</li>
-<li>מומחי סייבר ואנליסטי SOC</li>
+<li>מנהלים ואנשים בעלי פרופיל גבוה</li>
+<li>עורכי דין, שופטים, רופאים ואנשי מקצוע המטפלים בנתונים רגישים</li>
+<li>משפחות המחפשות נראות אבטחה דיגיטלית</li>
+<li>מהנדסי אבטחת סייבר ואנליסטי SOC בבית</li>
 <li>נוסעים תכופים ועובדים מרחוק</li>
+<li>קבלנים עצמאיים ויועצים</li>
 </ul>
-<h2 id="nyroxis_3">איך Nyroxis עובדת<a class="headerlink" href="#nyroxis_3" title="Link to this section">&para;</a></h2>
-<p>שני רכיבים עיקריים:</p>
+<h2 id="nyroxis_3">כיצד Nyroxis פועלת (סקירה כללית)<a class="headerlink" href="#nyroxis_3" title="Link to this section">&para;</a></h2>
+<p>Nyroxis בנויה סביב ארבעה רכיבים מרכזיים הפועלים יחד:</p>
 <h3 id="nyroxis-agent">Nyroxis Agent<a class="headerlink" href="#nyroxis-agent" title="Link to this section">&para;</a></h3>
 <ul>
-<li>ניטור שקט</li>
-<li>איסוף אירועי אבטחה</li>
-<li>אחסון מוצפן מקומי</li>
-<li>פועל ללא אינטרנט</li>
-<li>עמיד למניפולציה</li>
+<li>ניטור שקט ורציף ממספר ערוצי מערכת</li>
+<li>מנרמל, מצפין ומאחסן הכל באופן מקומי</li>
+<li>פועל באופן לא מקוון לחלוטין — עיצוב עמיד בפני חבלה</li>
+<li>~57 MB זיכרון RAM, 0.1% מעבד</li>
+</ul>
+<h3 id="nyroxis-intelligence">Nyroxis Intelligence<a class="headerlink" href="#nyroxis-intelligence" title="Link to this section">&para;</a></h3>
+<ul>
+<li>מנוע זיהוי תלת-שכבתי</li>
+<li>27 כללי זיהוי, 12 כללי מתאם, 2 כללי שרשרת (גדל ברציפות)</li>
+<li>ניתן להרחבה על ידי אנשי אבטחה — כללים מותאמים אישית בפורמט JSON</li>
+<li>~87 MB זיכרון RAM, 1.8% מעבד</li>
+</ul>
+<h3 id="nyroxis-system-guardian">Nyroxis System Guardian<a class="headerlink" href="#nyroxis-system-guardian" title="Link to this section">&para;</a></h3>
+<ul>
+<li>שומר שקט במגש המערכת</li>
+<li>מנטר את כל השירותים כל 3 שניות</li>
+<li>מנהל גיבויים, אימות רישיון לא מקוון ובדיקת עדכונים</li>
+<li>עוצר שירותים אוטומטית אם הרישיון פג</li>
+<li>~6.5 MB זיכרון RAM, 0.1% מעבד</li>
 </ul>
 <h3 id="nyroxis-dashboard">Nyroxis Dashboard<a class="headerlink" href="#nyroxis-dashboard" title="Link to this section">&para;</a></h3>
 <ul>
-<li>תצוגת לוגים והתראות</li>
-<li>תובנות ומגמות</li>
-<li>ניתוח התנהגותי</li>
-<li>הסברים פשוטים</li>
+<li>נראות בזמן אמת על אירועים, זיהויים, מתאמים ושרשראות</li>
+<li>חיפוש פורנזי, ניתוח בינה מלאכותית/ML, דיווח PDF/CSV</li>
+<li>אנגלית, צרפתית וגרמנית</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Device ]
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |--&gt; Nyroxis Agent
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   |--&gt; Nyroxis Dashboard
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ מכשיר ]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |--&gt; Nyroxis Agent          (איסוף והצפנה)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   |--&gt; Nyroxis Intelligence   (זיהוי ומתאם)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   |--&gt; Nyroxis System Guardian (ניטור והגנה)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   |--&gt; Nyroxis Dashboard      (נראות וניתוח)
 </span></code></pre></div>
-<h2 id="_1">יתרונות<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
+<h2 id="_1">יתרונות מרכזיים<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
 <ul>
-<li>פרטיות מלאה</li>
-<li>אופליין</li>
-<li>קל ומהיר</li>
-<li>זיהוי מבוסס AI</li>
-<li>ידידותי למשתמש</li>
+<li>כל הנתונים נשארים על המכשיר שלך — תמיד</li>
+<li>אחסון מוצפן ברמה פורנזית (AES-256)</li>
+<li>27 + 12 + 2 שכבות כללי זיהוי, ניתנות להרחבה על ידי אנשי אבטחה</li>
+<li>זיהוי אנומליות מקומי באמצעות בינה מלאכותית/ML — ללא ענן, ללא טלמטריה</li>
+<li>רישוי לא מקוון מבוסס HWID</li>
+<li>קל ושקט — בלתי נראה לתוקפים</li>
 </ul>
-<h2 id="_2">מה כולל התיעוד<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<ul>
-<li>ארכיטקטורה</li>
-<li>Agent &amp; Dashboard</li>
-<li>אבטחה ופרטיות</li>
-<li>מקרי שימוש</li>
-<li>מפת דרכים</li>
-<li>רישוי</li>
-<li>FAQ &amp; מילון</li>
-</ul>
+<h2 id="_2">מדריך התיעוד<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<p>תיעוד זה כולל:
+- ארכיטקטורה ורכיבים
+- Agent, Intelligence ו-System Guardian
+- Dashboard ומנוע בינה מלאכותית/ML
+- אבטחה ופרטיות
+- מקרי שימוש
+- מפת דרכים
+- רישוי
+- שאלות נפוצות ומילון מונחים</p>
 
 
 

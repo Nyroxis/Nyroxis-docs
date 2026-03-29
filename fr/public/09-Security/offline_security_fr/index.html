@@ -4139,7 +4139,7 @@
   <a href="#1-aucune-communication-cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Aucune communication cloud
+        1. Aucune Communication Cloud
       
     </span>
   </a>
@@ -4147,10 +4147,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-gestion-locale-des-cles" class="md-nav__link">
+  <a href="#2-gestion-des-cles-locale-uniquement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Gestion locale des clés
+        2. Gestion des Clés Locale Uniquement
       
     </span>
   </a>
@@ -4158,10 +4158,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ia-hors-ligne-nyxia" class="md-nav__link">
+  <a href="#3-validation-de-licence-hors-ligne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. IA hors-ligne (NyXIA)
+        3. Validation de Licence Hors Ligne
       
     </span>
   </a>
@@ -4169,10 +4169,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-stockage-chiffre-local" class="md-nav__link">
+  <a href="#4-moteur-iaml-hors-ligne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Stockage chiffré local
+        4. Moteur IA/ML Hors Ligne
       
     </span>
   </a>
@@ -4180,10 +4180,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-aucun-telechargement-externe" class="md-nav__link">
+  <a href="#5-stockage-chiffre-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Aucun téléchargement externe
+        5. Stockage Chiffré Local
       
     </span>
   </a>
@@ -4191,10 +4191,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-compatible-environnements-isoles" class="md-nav__link">
+  <a href="#6-aucune-recuperation-externe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Compatible environnements isolés
+        6. Aucune Récupération Externe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-fonctionne-dans-les-environnements-air-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Fonctionne dans les Environnements Air-Gap
       
     </span>
   </a>
@@ -8740,64 +8751,73 @@
   
 
 
-<h1 id="securite-hors-ligne">Sécurité hors-ligne<a class="headerlink" href="#securite-hors-ligne" title="Link to this section">&para;</a></h1>
-<p>Nyroxis fonctionne entièrement hors-ligne, sans dépendance à un cloud, serveur externe ou API.<br />
-Cela garantit autonomie, confidentialité et sécurité même en environnement isolé.</p>
+<h1 id="securite-hors-ligne">Sécurité Hors Ligne<a class="headerlink" href="#securite-hors-ligne" title="Link to this section">&para;</a></h1>
+<p>Nyroxis est conçu pour fonctionner entièrement hors ligne sans aucune dépendance aux services cloud, aux API externes ou aux serveurs distants.
+Cela garantit une autonomie complète, une confidentialité totale et une protection même dans des environnements déconnectés ou en mode air-gap.</p>
 <hr />
-<h2 id="1-aucune-communication-cloud">1. Aucune communication cloud<a class="headerlink" href="#1-aucune-communication-cloud" title="Link to this section">&para;</a></h2>
-<p>Nyroxis n’envoie jamais :
-- De télémétrie<br />
-- De journaux<br />
-- De requêtes externes<br />
-- D’analyses cloud  </p>
-<p>Toutes les opérations sont locales.</p>
+<h2 id="1-aucune-communication-cloud">1. Aucune Communication Cloud<a class="headerlink" href="#1-aucune-communication-cloud" title="Link to this section">&para;</a></h2>
+<p>Nyroxis ne :
+- Envoie jamais de télémétrie ou de données d'utilisation
+- Synchronise jamais les journaux avec des serveurs distants
+- Contacte jamais des services cloud pour quelque fonction que ce soit
+- Utilise jamais l'IA cloud ou des API ML externes
+- Nécessite jamais une activation en ligne</p>
+<p>Chaque fonction est locale.</p>
 <hr />
-<h2 id="2-gestion-locale-des-cles">2. Gestion locale des clés<a class="headerlink" href="#2-gestion-locale-des-cles" title="Link to this section">&para;</a></h2>
-<p>Les clés sont :
-- Générées localement<br />
-- Liées au matériel<br />
-- Jamais transmises<br />
-- Jamais stockées en clair  </p>
-<p>Toute cryptographie est locale.</p>
+<h2 id="2-gestion-des-cles-locale-uniquement">2. Gestion des Clés Locale Uniquement<a class="headerlink" href="#2-gestion-des-cles-locale-uniquement" title="Link to this section">&para;</a></h2>
+<p>Les clés de chiffrement sont :
+- Dérivées localement des identifiants matériels (HWID)
+- Liées à l'appareil spécifique
+- Jamais transmises à aucun serveur
+- Jamais stockées en clair
+- Reconstruites uniquement en mémoire lorsque nécessaire</p>
+<p>Toutes les opérations cryptographiques s'effectuent hors ligne.</p>
 <hr />
-<h2 id="3-ia-hors-ligne-nyxia">3. IA hors-ligne (NyXIA)<a class="headerlink" href="#3-ia-hors-ligne-nyxia" title="Link to this section">&para;</a></h2>
-<p>NyXIA réalise :
-- Détection comportementale<br />
-- Analyse de séquences<br />
-- Scores d’anomalie<br />
-- Scénarios  </p>
-<p>Sans cloud ni téléchargement.</p>
+<h2 id="3-validation-de-licence-hors-ligne">3. Validation de Licence Hors Ligne<a class="headerlink" href="#3-validation-de-licence-hors-ligne" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian valide la licence entièrement hors ligne :
+- Licence liée à la clé cryptographique dérivée du HWID
+- La validation utilise le chiffrement AES-GCM et la vérification HMAC localement
+- Aucune connexion Internet requise pour quelque aspect que ce soit de la gestion des licences
+- Les services s'arrêtent automatiquement si la licence est invalide — appliqué localement</p>
 <hr />
-<h2 id="4-stockage-chiffre-local">4. Stockage chiffré local<a class="headerlink" href="#4-stockage-chiffre-local" title="Link to this section">&para;</a></h2>
-<p>Les journaux restent :
-- Chiffrés<br />
-- Stockés en base sécurisée<br />
-- Non transférés  </p>
-<p>Aucun risque lié au cloud.</p>
+<h2 id="4-moteur-iaml-hors-ligne">4. Moteur IA/ML Hors Ligne<a class="headerlink" href="#4-moteur-iaml-hors-ligne" title="Link to this section">&para;</a></h2>
+<p>L'Isolation Forest et le moteur d'analyse statistique fonctionnent entièrement hors ligne :
+- Détection d'anomalies comportementales
+- Classification statistique Z-Score
+- Détection de pics et comparaison avec les références</p>
+<p>Tout est calculé directement à partir des événements locaux chiffrés — aucune inférence cloud, aucun accès réseau.</p>
 <hr />
-<h2 id="5-aucun-telechargement-externe">5. Aucun téléchargement externe<a class="headerlink" href="#5-aucun-telechargement-externe" title="Link to this section">&para;</a></h2>
+<h2 id="5-stockage-chiffre-local">5. Stockage Chiffré Local<a class="headerlink" href="#5-stockage-chiffre-local" title="Link to this section">&para;</a></h2>
+<p>Tous les journaux d'événements, résultats de détection et résultats IA restent :
+- Entièrement chiffrés (AES-256)
+- Stockés dans une base de données locale protégée
+- Accessibles uniquement sur le même appareil
+- Protégés par des structures d'intégrité enchaînées par hachage</p>
+<p>Aucun risque de violation à distance ou de fuite cloud.</p>
+<hr />
+<h2 id="6-aucune-recuperation-externe">6. Aucune Récupération Externe<a class="headerlink" href="#6-aucune-recuperation-externe" title="Link to this section">&para;</a></h2>
 <p>Nyroxis ne télécharge pas :
-- Règles<br />
-- Modèles<br />
-- Signatures<br />
-- Threat intel  </p>
-<p>Tout est intégré localement.</p>
+- Les règles de détection ou leurs mises à jour
+- Les modèles IA ou leurs mises à jour
+- Les signatures ou flux de renseignements sur les menaces</p>
+<p>Tout est intégré et géré localement. Les mises à jour des règles s'effectuent par installation manuelle.</p>
 <hr />
-<h2 id="6-compatible-environnements-isoles">6. Compatible environnements isolés<a class="headerlink" href="#6-compatible-environnements-isoles" title="Link to this section">&para;</a></h2>
-<p>Fonctionne dans :
-- Ordinateurs hors réseau<br />
-- Environnements sensibles<br />
-- Zones à risque<br />
-- Secteurs gouvernementaux  </p>
-<p>Aucune connexion requise.</p>
+<h2 id="7-fonctionne-dans-les-environnements-air-gap">7. Fonctionne dans les Environnements Air-Gap<a class="headerlink" href="#7-fonctionne-dans-les-environnements-air-gap" title="Link to this section">&para;</a></h2>
+<p>Nyroxis fonctionne parfaitement sur :
+- Les ordinateurs portables entièrement hors ligne
+- Les environnements d'entreprise isolés
+- Les configurations gouvernementales à haute sécurité
+- Les lieux à haut risque sans accès Internet</p>
+<p>Les fonctionnalités complètes ne nécessitent <strong>aucune connectivité</strong>.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Sécurité Nyroxis hors-ligne :
-- Autonomie totale<br />
-- Zéro cloud<br />
-- IA locale<br />
-- Données chiffrées<br />
-- Indépendance complète  </p>
+<p>La sécurité hors ligne de Nyroxis garantit :
+- Autonomie totale — aucune dépendance à une infrastructure externe
+- Zéro exposition au cloud
+- IA/ML local uniquement
+- Stockage chiffré privé
+- Indépendance complète vis-à-vis de la connectivité Internet</p>
+<p>Un modèle de sécurité conçu pour une confidentialité et un contrôle maximaux.</p>
 
 
 

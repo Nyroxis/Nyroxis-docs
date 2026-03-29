@@ -33,7 +33,7 @@
     
     
       
-        <title>Architektur – High-Level Übersicht - Nyroxis Documentation</title>
+        <title>Übergeordnete Architektur - Nyroxis Documentation</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architektur-high-level-ubersicht" class="md-skip">
+        <a href="#ubergeordnete-architektur" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architektur – High-Level Übersicht
+              Übergeordnete Architektur
             
           </span>
         </div>
@@ -8574,47 +8574,91 @@
   
 
 
-<h1 id="architektur-high-level-ubersicht">Architektur – High-Level Übersicht<a class="headerlink" href="#architektur-high-level-ubersicht" title="Link to this section">&para;</a></h1>
-<p>Nyroxis basiert auf einem vollständig lokalen Sicherheitsmodell, das moderne Schutzmechanismen bereitstellt, ohne personenbezogene Daten zu übertragen oder Cloud-Technologien einzusetzen.</p>
-<h2 id="grundprinzipien">Grundprinzipien<a class="headerlink" href="#grundprinzipien" title="Link to this section">&para;</a></h2>
-<p>Die Architektur orientiert sich an folgenden Leitlinien:</p>
-<h3 id="privacy-by-design">Privacy-by-Design<a class="headerlink" href="#privacy-by-design" title="Link to this section">&para;</a></h3>
+<h1 id="ubergeordnete-architektur">Übergeordnete Architektur<a class="headerlink" href="#ubergeordnete-architektur" title="Link to this section">&para;</a></h1>
+<p>Die Nyroxis-Architektur ist darauf ausgelegt, starke Sicherheit, vollständige Privatsphäre und komplette offline Autonomie zu bieten.
+Diese übergeordnete Übersicht erläutert, wie alle wichtigen Komponenten zusammenarbeiten, während die Benutzerdaten lokal geschützt und verschlüsselt bleiben.</p>
+<hr />
+<h2 id="grundlegende-architekturprinzipien">Grundlegende Architekturprinzipien<a class="headerlink" href="#grundlegende-architekturprinzipien" title="Link to this section">&para;</a></h2>
+<h3 id="1-vollstandig-lokaler-betrieb">1. Vollständig lokaler Betrieb<a class="headerlink" href="#1-vollstandig-lokaler-betrieb" title="Link to this section">&para;</a></h3>
+<p>Alle Verarbeitung — Erfassung, Erkennung, KI-Analyse, Speicherung, Berichte — findet auf dem Gerät statt. Nichts wird hochgeladen oder übertragen.</p>
+<h3 id="2-datenschutz-durch-design">2. Datenschutz durch Design<a class="headerlink" href="#2-datenschutz-durch-design" title="Link to this section">&para;</a></h3>
+<p>Keine Cloud. Keine Telemetrie. Keine Fernüberwachung. Kein Verhaltens-Profiling.</p>
+<h3 id="3-leichtgewichtig-und-effizient">3. Leichtgewichtig und effizient<a class="headerlink" href="#3-leichtgewichtig-und-effizient" title="Link to this section">&para;</a></h3>
+<p>Konzipiert für den Dauerbetrieb auf persönlichen Laptops ohne Beeinträchtigung der täglichen Produktivität.</p>
+<h3 id="4-forensische-integritat">4. Forensische Integrität<a class="headerlink" href="#4-forensische-integritat" title="Link to this section">&para;</a></h3>
+<p>Ereignisprotokolle sind verschlüsselt, hash-verkettet und manipulationssicher — geeignet für rechtliche und regulatorische Verfahren.</p>
+<hr />
+<h2 id="ubergeordnete-komponenten">Übergeordnete Komponenten<a class="headerlink" href="#ubergeordnete-komponenten" title="Link to this section">&para;</a></h2>
+<h3 id="1-nyroxis-agent">1. Nyroxis Agent<a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Keine Cloud-Analyse  </li>
-<li>Keine Datenübertragung  </li>
-<li>Lokal verschlüsselte Speicherung  </li>
+<li>Erfasst Systemereignisse in Echtzeit aus mehreren Kanälen</li>
+<li>Normalisiert und verschlüsselt sofort</li>
+<li>Speichert verschlüsselte Ereignisse in der lokalen Datenbank</li>
+<li>~57 MB RAM, ~0,1 % CPU</li>
 </ul>
-<h3 id="offline-first">Offline-First<a class="headerlink" href="#offline-first" title="Link to this section">&para;</a></h3>
-<p>Nyroxis arbeitet zu 100 % ohne Internetverbindung.</p>
-<h3 id="leichtgewichtiges-design">Leichtgewichtiges Design<a class="headerlink" href="#leichtgewichtiges-design" title="Link to this section">&para;</a></h3>
-<p>Optimiert für:
-- ältere Geräte<br />
-- energieeffiziente Nutzung<br />
-- stabile Dauerüberwachung  </p>
-<h3 id="transparenz">Transparenz<a class="headerlink" href="#transparenz" title="Link to this section">&para;</a></h3>
-<p>Alle internen Abläufe sind nachvollziehbar und überprüfbar.</p>
-<h2 id="ubergeordnete-architektur">Übergeordnete Architektur<a class="headerlink" href="#ubergeordnete-architektur" title="Link to this section">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Systemereignisse ] 
+<h3 id="2-nyroxis-intelligence">2. Nyroxis Intelligence<a class="headerlink" href="#2-nyroxis-intelligence" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Bewertet Ereignisse anhand von 27 Erkennungs- + 12 Korrelations- + 2 Kettenregeln</li>
+<li>Löst sofortige Warnungen bei Regelübereinstimmungen aus</li>
+<li>Vollständig erweiterbar durch Sicherheitsexperten (JSON-Regelformat)</li>
+<li>~87 MB RAM, ~1,8 % CPU</li>
+</ul>
+<h3 id="3-nyroxis-system-guardian">3. Nyroxis System Guardian<a class="headerlink" href="#3-nyroxis-system-guardian" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Überwacht Agent und Intelligence alle 3 Sekunden</li>
+<li>Verwaltet Sicherungen und offline HWID-Lizenzvalidierung</li>
+<li>Stoppt Dienste, wenn die Lizenz abläuft</li>
+<li>~6,5 MB RAM, ~0,1 % CPU</li>
+</ul>
+<h3 id="4-sichere-lokale-datenbank">4. Sichere Lokale Datenbank<a class="headerlink" href="#4-sichere-lokale-datenbank" title="Link to this section">&para;</a></h3>
+<ul>
+<li>SQLite mit AES-256-Verschlüsselung</li>
+<li>Hash-verkettete Ereignisblöcke zur Manipulationserkennung</li>
+<li>Speichert Ereignisse, Befunde, KI-Ergebnisse und Baselines</li>
+<li>Verlässt das Gerät niemals</li>
+</ul>
+<h3 id="5-lokale-kiml-engine">5. Lokale KI/ML-Engine<a class="headerlink" href="#5-lokale-kiml-engine" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Isolation Forest Anomalieerkennung (100 Bäume, 8 Merkmale)</li>
+<li>Z-Score, IQR, gleitender Durchschnitt, Spitzenwert-Erkennung</li>
+<li>Aufschlüsselung beitragender Merkmale für Analysten</li>
+<li>Vollständig offline — keine Cloud-Inferenz</li>
+</ul>
+<h3 id="6-nyroxis-dashboard">6. Nyroxis Dashboard<a class="headerlink" href="#6-nyroxis-dashboard" title="Link to this section">&para;</a></h3>
+<ul>
+<li>Echtzeit-Sichtbarkeit: Ereignisse, Erkennungen, Korrelationen, Ketten, KI/ML</li>
+<li>Forensische Suche, Diagramme, Berichte (PDF/CSV)</li>
+<li>Sicherungsverwaltung, Einstellungen, mehrsprachig (EN/FR/DE)</li>
+<li>Alle Daten lokal abgerufen</li>
+</ul>
+<hr />
+<h2 id="sicherheitsschichten">Sicherheitsschichten<a class="headerlink" href="#sicherheitsschichten" title="Link to this section">&para;</a></h2>
+<p>Die Architektur umfasst mehrere Verteidigungsschichten:
+- Verschlüsselung bei der Erfassung (AES-256)
+- Hash-verkettete Ereignisstrukturen
+- Geschützte Schreibpfade
+- Plattformwächter für Dienst-Resilienz
+- Offline-Lizenzvalidierung
+- Keinerlei externe Kommunikation</p>
+<hr />
+<h2 id="datenflusszusammenfassung">Datenflusszusammenfassung<a class="headerlink" href="#datenflusszusammenfassung" title="Link to this section">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Systemereignisse ]
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓ (Verschlüsselung)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Lokale verschlüsselte Datenbank ]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← erfassen, normalisieren, verschlüsseln
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Lokale Verschlüsselte DB ]  ← AES-256, SQLite, hash-verkettet
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Analyse-Engine + NyXIA ]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 Erkennungs- + 12 Korrelations- + 2 Kettenregeln
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Dashboard ]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ Lokale KI/ML-Engine ]    ← Isolation Forest + statistische Analyse
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↓
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis Dashboard ]      ← Sichtbarkeit, Forensik, Berichte
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        ↑
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[ Nyroxis System Guardian ] ← überwacht, sichert, validiert Lizenz
 </span></code></pre></div>
-<p>Jedes Element arbeitet unabhängig und ausschließlich lokal.</p>
-<h2 id="sicherheitsmerkmale">Sicherheitsmerkmale<a class="headerlink" href="#sicherheitsmerkmale" title="Link to this section">&para;</a></h2>
-<ul>
-<li>verschlüsselte Speicherung  </li>
-<li>manipulationsresistente Datenstruktur  </li>
-<li>lokale KI-Erkennung  </li>
-<li>keine Telemetrie  </li>
-<li>keine Hintergrundnetzwerkverbindungen  </li>
-</ul>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Die High-Level-Architektur von Nyroxis bietet ein modernes, privates, sicheres und vollständig offline arbeitendes Sicherheitsmodell für persönliche und berufliche Geräte.</p>
+<p>Die Nyroxis-Architektur liefert leistungsstarke, private, offline Sicherheit durch die Kombination von vier Kernkomponenten — Agent, Intelligence, System Guardian und Dashboard — die zusammen mit lokaler KI/ML und forensisch geeignetem Speicher arbeiten, vollständig ohne Cloud-Exposition.</p>
 
 
 

@@ -33,7 +33,7 @@
     
     
       
-        <title>Flux de données — Vue d’ensemble - Nyroxis Documentation</title>
+        <title>Flux de Données — Vue d'Ensemble de Haut Niveau - Nyroxis Documentation</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flux-de-donnees-vue-densemble" class="md-skip">
+        <a href="#flux-de-donnees-vue-densemble-de-haut-niveau" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flux de données — Vue d’ensemble
+              Flux de Données — Vue d'Ensemble de Haut Niveau
             
           </span>
         </div>
@@ -8574,82 +8574,92 @@
   
 
 
-<h1 id="flux-de-donnees-vue-densemble">Flux de données — Vue d’ensemble<a class="headerlink" href="#flux-de-donnees-vue-densemble" title="Link to this section">&para;</a></h1>
-<p>Cette section décrit le parcours des données dans Nyroxis — de la collecte à l’analyse IA — tout en restant totalement chiffrées, locales et privées.</p>
+<h1 id="flux-de-donnees-vue-densemble-de-haut-niveau">Flux de Données — Vue d'Ensemble de Haut Niveau<a class="headerlink" href="#flux-de-donnees-vue-densemble-de-haut-niveau" title="Link to this section">&para;</a></h1>
+<p>Cette section explique comment les données circulent à l'intérieur de Nyroxis — de la collecte des événements à l'analyse IA et à l'affichage dans le Dashboard — tout en restant entièrement chiffrées, hors ligne et privées à chaque étape.</p>
 <hr />
-<h2 id="1-capture-des-evenements-agent-nyroxis">1. Capture des événements (Agent Nyroxis)<a class="headerlink" href="#1-capture-des-evenements-agent-nyroxis" title="Link to this section">&para;</a></h2>
-<p>L’agent surveille :
-- Processus<br />
-- Réseau<br />
-- Fichiers<br />
-- Actions de privilèges  </p>
-<p>Chaque événement est capturé <strong>en temps réel</strong>, puis :
-- Sérialisé<br />
-- Chiffré immédiatement<br />
-- Préparé pour le stockage  </p>
-<p>Aucune donnée en clair n’est écrite.</p>
+<h2 id="1-capture-des-evenements-nyroxis-agent">1. Capture des Événements (Nyroxis Agent)<a class="headerlink" href="#1-capture-des-evenements-nyroxis-agent" title="Link to this section">&para;</a></h2>
+<p>Le flux commence avec Nyroxis Agent qui surveille :
+- Les processus et services
+- Les connexions réseau et les métadonnées de trafic
+- Les opérations du système de fichiers et les modifications du registre
+- Les actions de privilèges
+- Les entrées du journal d'événements Windows (Sécurité, Système, Application)
+- L'exécution de PowerShell et des scripts</p>
+<p>Chaque événement est capturé <strong>en temps réel</strong>.</p>
+<p>Immédiatement après la capture :
+- L'événement est normalisé et enrichi avec du contexte
+- Chiffré à l'aide de la clé locale dérivée du HWID de l'appareil (AES-256)
+- Préparé pour le stockage</p>
+<p>Aucun texte en clair ne touche jamais le disque.</p>
 <hr />
-<h2 id="2-stockage-chiffre-base-locale">2. Stockage chiffré (Base locale)<a class="headerlink" href="#2-stockage-chiffre-base-locale" title="Link to this section">&para;</a></h2>
-<p>Les événements chiffrés sont stockés dans :
-- La base de données sécurisée<br />
-- Les blocs hash‑chaînés<br />
-- Des chemins d’écriture protégés  </p>
-<p>Chaque entrée contient :
-- Horodatage<br />
-- Charge utile chiffrée<br />
-- Hash d’intégrité<br />
-- Métadonnées IA  </p>
-<p>Rien n’est envoyé en ligne.</p>
+<h2 id="2-stockage-chiffre-base-de-donnees-locale">2. Stockage Chiffré (Base de Données Locale)<a class="headerlink" href="#2-stockage-chiffre-base-de-donnees-locale" title="Link to this section">&para;</a></h2>
+<p>Une fois chiffrés, les événements sont écrits dans :
+- La base de données SQLite locale sécurisée
+- Les structures d'événements enchaînées par hachage
+- Les chemins d'écriture protégés</p>
+<p>Chaque entrée comprend :
+- Horodatage
+- Charge utile chiffrée
+- Hash d'intégrité
+- Index séquentiel lié au bloc précédent
+- Métadonnées requises pour l'évaluation des règles et l'analyse IA</p>
+<p>Toutes les données restent sur l'appareil de l'utilisateur — jamais synchronisées ni téléchargées.</p>
 <hr />
-<h2 id="3-analyse-ia-locale-nyxia">3. Analyse IA locale (NyXIA)<a class="headerlink" href="#3-analyse-ia-locale-nyxia" title="Link to this section">&para;</a></h2>
-<p>NyXIA lit les événements :
-- Toujours chiffrés à l’arrêt<br />
-- Déchiffrés uniquement en mémoire<br />
-- Analysés localement  </p>
-<p>Elle réalise :
-- Extraction comportementale<br />
-- Regroupement en séquences<br />
-- Scores d’anomalie<br />
-- Détection de scénarios  </p>
-<p>Sans cloud, sans télémétrie.</p>
+<h2 id="3-evaluation-des-regles-nyroxis-intelligence">3. Évaluation des Règles (Nyroxis Intelligence)<a class="headerlink" href="#3-evaluation-des-regles-nyroxis-intelligence" title="Link to this section">&para;</a></h2>
+<p>Nyroxis Intelligence lit depuis la base de données chiffrée et évalue les événements selon trois niveaux :
+- <strong>27 règles de détection</strong> — correspondance de patterns d'événements individuels
+- <strong>12 règles de corrélation</strong> — patterns multi-événements dans le temps et entre les sources
+- <strong>2 règles de chaîne</strong> — détection de séquences d'attaques en plusieurs étapes</p>
+<p>Lorsqu'une règle se déclenche :
+- Une alerte est immédiatement générée
+- Le résultat est écrit dans une base de données de détections dédiée
+- L'utilisateur est notifié via le Dashboard</p>
 <hr />
-<h2 id="4-moteur-de-regles">️ 4. Moteur de règles<a class="headerlink" href="#4-moteur-de-regles" title="Link to this section">&para;</a></h2>
-<p>En parallèle, le moteur analyse :
-- Fréquences<br />
-- Seuils<br />
-- Motifs<br />
-- Indices de corrélation  </p>
-<p>Complémentaire à l’IA.</p>
+<h2 id="4-traitement-iaml-local">4. Traitement IA/ML Local<a class="headerlink" href="#4-traitement-iaml-local" title="Link to this section">&para;</a></h2>
+<p>En parallèle, le moteur IA/ML lit les événements depuis la base de données :
+- Déchiffrés uniquement en mémoire — jamais réécrits en clair
+- Traités par l'algorithme Isolation Forest
+- Évalués par les méthodes Z-Score, IQR et détection de pics</p>
+<p>Résultats :
+- Score d'anomalie (0,0–1,0)
+- Classification de la sévérité
+- Caractéristiques contributives avec valeurs Z-Score
+- Mise à jour de la référence comportementale</p>
+<p>Aucune partie de l'IA ne nécessite un accès au cloud ou une communication externe.</p>
 <hr />
-<h2 id="5-affichage-dashboard">5. Affichage (Dashboard)<a class="headerlink" href="#5-affichage-dashboard" title="Link to this section">&para;</a></h2>
-<p>Le tableau de bord affiche :
-- Résumés déchiffrés en mémoire<br />
-- Résultats IA<br />
-- Corrélations<br />
-- Alertes  </p>
-<p>Tout est local.</p>
+<h2 id="5-affichage-dans-le-dashboard-interface-utilisateur-locale">5. Affichage dans le Dashboard (Interface Utilisateur Locale)<a class="headerlink" href="#5-affichage-dans-le-dashboard-interface-utilisateur-locale" title="Link to this section">&para;</a></h2>
+<p>Le Dashboard récupère uniquement :
+- Des résumés déchiffrés en mémoire
+- Les résultats de détection, corrélation et de chaîne
+- Les résultats IA/ML avec décomposition des caractéristiques contributives
+- Les graphiques et données de tendance</p>
+<p>Tout le rendu de l'interface s'effectue localement sans communication externe.</p>
 <hr />
-<h2 id="6-actions-utilisateur">6. Actions utilisateur<a class="headerlink" href="#6-actions-utilisateur" title="Link to this section">&para;</a></h2>
-<p>L’utilisateur peut :
-- Rechercher<br />
-- Effacer les données<br />
-- Ajuster les seuils<br />
-- Exporter des sauvegardes chiffrées (à venir)  </p>
+<h2 id="6-actions-utilisateur">6. Actions Utilisateur<a class="headerlink" href="#6-actions-utilisateur" title="Link to this section">&para;</a></h2>
+<p>Les utilisateurs peuvent :
+- Rechercher dans les journaux chiffrés (déchiffrés en mémoire lors de la recherche)
+- Exporter les résultats au format PDF ou CSV
+- Effacer ou réinitialiser les données à tout moment
+- Gérer les opérations de sauvegarde depuis la section Sauvegarde
+- Ajuster les paramètres et la rétention depuis la vue Paramètres</p>
+<p>Toutes les actions restent locales et privées.</p>
 <hr />
-<h2 id="confidentialite-par-conception">Confidentialité par conception<a class="headerlink" href="#confidentialite-par-conception" title="Link to this section">&para;</a></h2>
-<p>À chaque étape :
-- Aucun cloud<br />
-- Aucune télémétrie<br />
-- Aucun accès externe<br />
-- Aucune dépendance réseau  </p>
+<h2 id="confidentialite-par-architecture">Confidentialité par Architecture<a class="headerlink" href="#confidentialite-par-architecture" title="Link to this section">&para;</a></h2>
+<p>Chaque étape garantit :
+- Aucune utilisation du cloud
+- Aucune télémétrie
+- Aucun accès à distance
+- Aucune dépendance en ligne</p>
+<p>Nyroxis maintient une confidentialité totale par l'architecture — pas seulement par la configuration.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Flux Nyroxis :
-1. Capture → chiffrement<br />
-2. Stockage sécurisé<br />
-3. Analyse IA locale<br />
-4. Affichage local<br />
-5. Zéro cloud, zéro fuite  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Événement capturé   →  chiffré immédiatement
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Stocké en sécurité  →  enchaîné par hachage, protégé en intégrité
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Évaluation des règles → 27 détection + 12 corrélation + 2 chaîne
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Analyse IA/ML       →  Isolation Forest + moteur statistique
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Affiché localement  →  dashboard, forensique, rapports
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Aucun cloud         →  aucun téléchargement, aucune exposition, jamais
+</span></code></pre></div>
 
 
 

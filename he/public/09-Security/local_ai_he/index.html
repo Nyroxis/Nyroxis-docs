@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-nyxia" class="md-skip">
+        <a href="#ml" class="md-skip">
           Skip to content
         </a>
       
@@ -8256,10 +8256,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-ai" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. AI אופליין מלא
+        1. מנוע לא מקוון לחלוטין
       
     </span>
   </a>
@@ -8267,10 +8267,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-isolation-forest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. ניתוח רצפים
+        2. Isolation Forest — האלגוריתם המרכזי
       
     </span>
   </a>
@@ -8281,7 +8281,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. ציוני אנומליה
+        3. מנוע הניתוח הסטטיסטי
       
     </span>
   </a>
@@ -8292,7 +8292,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. פרופילים מקומיים
+        4. תוצאות מוסברות
       
     </span>
   </a>
@@ -8303,7 +8303,7 @@
   <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. יצירת תרחישים
+        5. קווי בסיס התנהגותיים מקומיים
       
     </span>
   </a>
@@ -8314,7 +8314,7 @@
   <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. ללא אימון בענן
+        6. ללא אימון או העלאה לענן
       
     </span>
   </a>
@@ -8325,7 +8325,7 @@
   <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ️ 7. יעיל במשאבים
+        7. קל ויעיל במשאבים
       
     </span>
   </a>
@@ -8751,75 +8751,146 @@
   
 
 
-<h1 id="ai-nyxia">AI מקומי (NyXIA)<a class="headerlink" href="#ai-nyxia" title="Link to this section">&para;</a></h1>
-<p>NyXIA הוא מנוע ה‑AI המקומי והאופליין של Nyroxis — ללא ענן, ללא שליחת מידע וללא תלות חיצונית.<br />
-כל הניתוחים נשארים על המכשיר בלבד.</p>
+<h1 id="ml">מנוע הבינה המלאכותית/ML המקומי<a class="headerlink" href="#ml" title="Link to this section">&para;</a></h1>
+<p>מנוע הבינה המלאכותית/ML של Nyroxis הוא מקומי ולא מקוון לחלוטין.
+הוא מבצע את כל ניתוח ההתנהגות, זיהוי האנומליות וניקוד הסטטיסטי <strong>מבלי לשלוח נתונים כלשהם לענן</strong>.</p>
 <hr />
-<h2 id="1-ai">1. AI אופליין מלא<a class="headerlink" href="#1-ai" title="Link to this section">&para;</a></h2>
-<p>NyXIA <strong>אינו</strong> מתחבר:
-- לשרתים<br />
-- לענן<br />
-- ל‑API חיצוני<br />
-- לטלמטריה  </p>
-<p>הכול מקומי.</p>
+<h2 id="1">1. מנוע לא מקוון לחלוטין<a class="headerlink" href="#1" title="Link to this section">&para;</a></h2>
+<p>מנוע הבינה המלאכותית/ML פועל לחלוטין על המכשיר:
+- ללא תקשורת עם שרתים
+- ללא עדכוני מודל מקוונים
+- ללא טלמטריה
+- ללא תלויות חיצוניות</p>
+<p>כל ההיסק והעיבוד מבודדים בתוך סביבת הריצה המקומית.
+בנוי ב-Rust ללא תלות בספריית ML חיצונית.</p>
 <hr />
-<h2 id="2">2. ניתוח רצפים<a class="headerlink" href="#2" title="Link to this section">&para;</a></h2>
-<p>NyXIA בוחן רצפי אירועים:
-- מתקפות רב־שלביות<br />
-- דפוסים חריגים<br />
-- גישה לקבצים<br />
-- פעולות הרשאה חשודות  </p>
-<p>מגדיל דיוק ומפחית false positives.</p>
+<h2 id="2-isolation-forest">2. Isolation Forest — האלגוריתם המרכזי<a class="headerlink" href="#2-isolation-forest" title="Link to this section">&para;</a></h2>
+<p>המנוע מיישם אלגוריתם Isolation Forest מותאם אישית:
+- 100 עצי בידוד לכל מחזור ניתוח
+- עד 256 דגימות לכל עץ
+- 8 מאפיינים התנהגותיים לכל חלון ניתוח
+- סף ציון אנומליה: 0.6</p>
+<p>אירועים חריגים דורשים פחות פיצולים לבידוד — נתיב בידוד קצר יותר = ציון אנומליה גבוה יותר.</p>
+<p><strong>8 מאפיינים התנהגותיים המנותחים:</strong></p>
+<table>
+<thead>
+<tr>
+<th>מאפיין</th>
+<th>תיאור</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ספירת אירועים</td>
+<td>סך האירועים בחלון הניתוח</td>
+</tr>
+<tr>
+<td>מקורות ייחודיים</td>
+<td>מקורות אירועים נבדלים</td>
+</tr>
+<tr>
+<td>יעדים ייחודיים</td>
+<td>יעדי רשת נבדלים</td>
+</tr>
+<tr>
+<td>שעת יום</td>
+<td>הקשר זמני לקו הבסיס ההתנהגותי</td>
+</tr>
+<tr>
+<td>יום בשבוע</td>
+<td>זיהוי דפוסים שבועיים</td>
+</tr>
+<tr>
+<td>אירועים לשעה</td>
+<td>נרמול קצב פעילות</td>
+</tr>
+<tr>
+<td>יחס מקורות חדשים</td>
+<td>שיעור המקורות שלא נראו בעבר</td>
+</tr>
+<tr>
+<td>יחס יעדים חדשים</td>
+<td>שיעור היעדים שלא נראו בעבר</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="3">3. ציוני אנומליה<a class="headerlink" href="#3" title="Link to this section">&para;</a></h2>
-<p>לכל רצף:
-- embedding<br />
-- ציון סטייה<br />
-- דירוג סיכון<br />
-- הסבר  </p>
-<p>AI שקוף ומובן.</p>
+<h2 id="3">3. מנוע הניתוח הסטטיסטי<a class="headerlink" href="#3" title="Link to this section">&para;</a></h2>
+<p>פועל במקביל ל-Isolation Forest:</p>
+<table>
+<thead>
+<tr>
+<th>Z-Score</th>
+<th>חומרה</th>
+<th>ביטחון</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 3.0</td>
+<td>קריטי</td>
+<td>99.7%</td>
+</tr>
+<tr>
+<td>&gt; 2.0</td>
+<td>גבוה</td>
+<td>95%</td>
+</tr>
+<tr>
+<td>&gt; 1.5</td>
+<td>בינוני</td>
+<td>86%</td>
+</tr>
+<tr>
+<td>&gt; 1.0</td>
+<td>נמוך</td>
+<td>68%</td>
+</tr>
+</tbody>
+</table>
+<p>שיטות נוספות:
+- זיהוי חריגים IQR
+- ממוצעים נעים פשוטים ואקספוננציאליים
+- זיהוי קפיצות מול קווי בסיס היסטוריים
+- ניתוח מתאם בין אותות התנהגותיים</p>
 <hr />
-<h2 id="4">4. פרופילים מקומיים<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
-<p>כל מכשיר בונה:
-- פרופיל התנהגות<br />
-- תבניות רשת<br />
-- שימוש רגיל<br />
-- פעילות קבצים  </p>
-<p>הכול נשאר מקומי בלבד.</p>
+<h2 id="4">4. תוצאות מוסברות<a class="headerlink" href="#4" title="Link to this section">&para;</a></h2>
+<p>כל זיהוי כולל:
+- ציון אנומליה (0.0–1.0)
+- סיווג חומרה
+- מאפיינים תורמים — הממדים ההתנהגותיים הספציפיים שסטו ביותר, עם ערכי Z-Score</p>
+<p>המערכת מדגישה <strong>מדוע</strong> משהו חשוד — שקוף וניתן לאימות באופן מקומי.</p>
 <hr />
-<h2 id="5">5. יצירת תרחישים<a class="headerlink" href="#5" title="Link to this section">&para;</a></h2>
-<p>NyXIA מאגד אירועים ל:
-- שרשראות תהליכים<br />
-- חריגות רשת<br />
-- שימוש חריג בקבצים<br />
-- ניסיונות הרשאה  </p>
-<p>עם:
-- חומרה<br />
-- רמת סיכון<br />
-- רשימת ראיות  </p>
+<h2 id="5">5. קווי בסיס התנהגותיים מקומיים<a class="headerlink" href="#5" title="Link to this section">&para;</a></h2>
+<p>כל מכשיר בונה פרופיל קו בסיס פרטי משלו:
+- פעילות תהליכים רגילה
+- דפוסי חיבורי רשת טיפוסיים
+- דפוסי גישה לקבצים צפויים
+- התנהגות רגילה לפי שעת יום ויום בשבוע</p>
+<p>קווי הבסיס:
+- מאוחסנים באופן מקומי בצורה מוצפנת
+- ניתנים לאיפוס על ידי המשתמש בכל עת
+- לעולם אינם מועברים או משותפים</p>
 <hr />
-<h2 id="6">6. ללא אימון בענן<a class="headerlink" href="#6" title="Link to this section">&para;</a></h2>
-<p>NyXIA <strong>לא</strong> שולח:
-- לוגים<br />
-- פרופילים<br />
-- דגימות אנומליה<br />
-- מידע אישי  </p>
-<p>הכול עובר עיבוד מקומי.</p>
+<h2 id="6">6. ללא אימון או העלאה לענן<a class="headerlink" href="#6" title="Link to this section">&para;</a></h2>
+<p>מנוע הבינה המלאכותית/ML <strong>אינו</strong> מעלה:
+- יומנים או נתוני אירועים
+- דגימות אנומליה
+- פרופילים התנהגותיים
+- משוב על המודל
+- כל נתוני משתמש</p>
+<p>האימון וההיסק הם לא מקוונים בלעדית.</p>
 <hr />
-<h2 id="7">️ 7. יעיל במשאבים<a class="headerlink" href="#7" title="Link to this section">&para;</a></h2>
-<p>מתאים ל:
-- מחשבים אישיים<br />
-- מכשירים רגישים<br />
-- סביבת Air‑Gap  </p>
-<p>ללא צורך בחומרה מיוחדת.</p>
+<h2 id="7">7. קל ויעיל במשאבים<a class="headerlink" href="#7" title="Link to this section">&para;</a></h2>
+<p>מותאם למחשבים ניידים אישיים, מכשירי מנהלים ומערכות air-gapped — מנוע הבינה המלאכותית/ML מספק זיהוי התנהגותי חזק מבלי לדרוש חומרה ארגונית.</p>
 <hr />
 <h2 id="_1">סיכום<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<p>NyXIA מספק:
-- AI מקומי<br />
-- פרטיות מלאה<br />
-- זיהוי התנהגות מתקדם<br />
-- יכולת הסבר  </p>
-<p>מנוע AI מודרני לאבטחת מידע אישית.</p>
+<p>מנוע הבינה המלאכותית/ML של Nyroxis מבטיח:
+- היסק מקומי בלבד — ללא תלות בענן
+- פרטיות מלאה — ללא שיתוף נתונים
+- זיהוי התנהגותי חזק דרך Isolation Forest
+- עומק סטטיסטי דרך Z-Score, IQR וזיהוי קפיצות
+- תוצאות שקופות ומוסברות עם מאפיינים תורמים</p>
 
 
 

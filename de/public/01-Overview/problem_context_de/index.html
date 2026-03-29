@@ -4773,10 +4773,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#personliche-endgerate-sind-heute-hauptziele" class="md-nav__link">
+  <a href="#personliche-endpunkte-sind-jetzt-hauptziele" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Persönliche Endgeräte sind heute Hauptziele
+        Persönliche Endpunkte sind jetzt Hauptziele
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#der-strukturelle-blinde-fleck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der strukturelle blinde Fleck
       
     </span>
   </a>
@@ -4787,7 +4798,7 @@
   <a href="#fehlende-sichtbarkeit-erhohtes-risiko" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fehlende Sichtbarkeit = erhöhtes Risiko
+        Fehlende Sichtbarkeit = Erhöhtes Risiko
       
     </span>
   </a>
@@ -8708,46 +8719,47 @@
 
 
 <h1 id="problem-kontext">Problem &amp; Kontext<a class="headerlink" href="#problem-kontext" title="Link to this section">&para;</a></h1>
-<p>Die Cybersicherheitslandschaft hat sich weiterentwickelt – doch der persönliche Schutz hat nicht Schritt gehalten.<br />
-Während Unternehmen über SOC-Teams, SIEM-Plattformen und fortgeschrittene Überwachung verfügen, bleiben Einzelpersonen und kleine professionelle Umgebungen weitgehend ungeschützt.</p>
-<h2 id="personliche-endgerate-sind-heute-hauptziele">Persönliche Endgeräte sind heute Hauptziele<a class="headerlink" href="#personliche-endgerate-sind-heute-hauptziele" title="Link to this section">&para;</a></h2>
-<p>Angreifer richten sich zunehmend gegen:
-- Führungskräfte und Personen mit hoher öffentlicher Sichtbarkeit<br />
-- Anwälte, Ärzte und andere Berufsgruppen mit sensiblen Daten<br />
-- Familien und Kinder<br />
-- Remote-Mitarbeiter und Vielreisende  </p>
-<p>Diese Geräte enthalten häufig:
-- private Kommunikation<br />
-- finanzielle Informationen<br />
-- juristische oder medizinische Daten<br />
-- Zugänge zu Unternehmenskonten<br />
-- persönliche Fotos und Dokumente  </p>
-<p>Dennoch verfügen sie über keinerlei strukturierte Überwachung.</p>
-<h2 id="fehlende-sichtbarkeit-erhohtes-risiko">Fehlende Sichtbarkeit = erhöhtes Risiko<a class="headerlink" href="#fehlende-sichtbarkeit-erhohtes-risiko" title="Link to this section">&para;</a></h2>
-<p>Die meisten Benutzer können nicht erkennen:
-- welche Prozesse laufen<br />
-- welche Anwendungen eine Internetverbindung herstellen<br />
-- welche Dateien geändert werden<br />
-- ob Malware oder Persistenzmechanismen vorhanden sind<br />
-- ob jemand sie überwacht oder ausspioniert  </p>
-<p>Ohne Sichtbarkeit bleiben Angriffe unentdeckt – bis es zu spät ist.</p>
+<p>Die Cybersicherheit hat sich weiterentwickelt, aber der persönliche Schutz nicht.
+Während Unternehmen SOC-Teams, SIEM-Plattformen und fortschrittliche Überwachung einsetzen, bleiben Einzelpersonen und kleine professionelle Umgebungen exponiert.</p>
+<h2 id="personliche-endpunkte-sind-jetzt-hauptziele">Persönliche Endpunkte sind jetzt Hauptziele<a class="headerlink" href="#personliche-endpunkte-sind-jetzt-hauptziele" title="Link to this section">&para;</a></h2>
+<p>Angreifer zielen zunehmend auf:
+- Führungskräfte und hochrangige Persönlichkeiten
+- Anwälte, Richter, Ärzte und Fachleute mit sensiblen Daten
+- SOC-Administratoren und IT-Leiter, deren persönliche Zugangsdaten Unternehmensinfrastruktur entsperren können
+- Familien und Kinder
+- Remote-Mitarbeiter und Reisende</p>
+<p>Diese Geräte enthalten oft:
+- Private Kommunikation und strategische Entscheidungen
+- Finanz- und Rechtsinformationen
+- Zugang zu Unternehmenskonten und -systemen
+- Persönliche Fotos und Dokumente</p>
+<p>Dennoch fehlt ihnen jede strukturierte Überwachungs- oder Erkennungsfähigkeit.</p>
+<h2 id="der-strukturelle-blinde-fleck">Der strukturelle blinde Fleck<a class="headerlink" href="#der-strukturelle-blinde-fleck" title="Link to this section">&para;</a></h2>
+<p>Heimnetzwerke werden nicht überwacht. Persönliche Laptops sind nicht in unternehmenseigene EDR-Systeme eingebunden. Familiengeräte teilen das WLAN mit sensiblen beruflichen Kommunikationen.</p>
+<p>Ein einziges kompromittiertes persönliches Gerät kann zum stillen Einstiegspunkt in kritische Infrastruktur, Führungskommunikation oder sensible Rechtsverfahren werden. Der Angreifer muss nicht die Firewall durchbrechen — er muss nur die Person dahinter erreichen.</p>
+<h2 id="fehlende-sichtbarkeit-erhohtes-risiko">Fehlende Sichtbarkeit = Erhöhtes Risiko<a class="headerlink" href="#fehlende-sichtbarkeit-erhohtes-risiko" title="Link to this section">&para;</a></h2>
+<p>Die meisten Benutzer können nicht sehen:
+- Welche Prozesse auf ihrem Gerät laufen
+- Was sich mit dem Internet verbindet
+- Welche Dateien verändert werden
+- Ob Malware oder Persistenzmechanismen vorhanden sind
+- Ob jemand sie ausspioniert</p>
+<p>Ohne Sichtbarkeit bleiben Angriffe unbemerkt, bis es zu spät ist.</p>
 <h2 id="warum-traditionelle-tools-nicht-ausreichen">Warum traditionelle Tools nicht ausreichen<a class="headerlink" href="#warum-traditionelle-tools-nicht-ausreichen" title="Link to this section">&para;</a></h2>
-<p>Antivirenprogramme arbeiten hauptsächlich mit signaturbasierter Erkennung.<br />
-Moderne Bedrohungen nutzen jedoch:
-- Living-off-the-land-Techniken<br />
-- langsame und unauffällige Verhaltensmuster<br />
-- fileless Angriffe<br />
-- Diebstahl von Zugangsdaten<br />
-- lokale Privilegieneskalation  </p>
-<p>Diese Techniken erfordern <strong>verhaltensbasierte Transparenz</strong>, nicht nur Scans.</p>
+<p>Antivirenprogramme konzentrieren sich auf signaturbasierte Erkennung.
+Aber moderne Bedrohungen setzen auf:
+- Living-off-the-land-Techniken
+- Langsame und verdeckte Verhaltensmuster
+- Dateilose Angriffe
+- Identitätsdiebstahl
+- Mehrstufige Eindringsequenzen</p>
+<p>Diese Techniken erfordern <strong>verhaltensbasierte Sichtbarkeit und mehrschichtige Erkennung</strong> — nicht nur Scannen.</p>
 <h2 id="das-kernproblem">Das Kernproblem<a class="headerlink" href="#das-kernproblem" title="Link to this section">&para;</a></h2>
-<p>Es gibt <strong>keine persönliche Sichtbarkeitsschicht</strong>, die einem Enterprise-SIEM entspricht.</p>
-<p>Nyroxis schließt diese Lücke durch:
-- lokale Überwachung<br />
-- verschlüsselten Ereignisspeicher<br />
-- verhaltens- und KI-gestützte Analyse<br />
-- ein verständliches, klar strukturiertes Dashboard  </p>
-<p>Und das alles ohne Cloud-Abhängigkeit oder technische Komplexität.</p>
+<p>Es gibt keine persönliche Sichtbarkeitsschicht, die dem Unternehmens-SIEM entspricht.
+Keine leichtgewichtige, datenschutzfreundliche, offline-fähige Lösung, die speziell zum Schutz persönlicher Endpunkte von hochrangigen Personen entwickelt wurde.</p>
+<p>Unternehmenstools sind zu schwer, zu aufdringlich und zu abhängig von Unternehmensinfrastruktur.
+Verbraucherantivirenprogramme sind zu oberflächlich.</p>
+<p><strong>Nyroxis existiert, um diese Lücke zu schließen.</strong></p>
 
 
 

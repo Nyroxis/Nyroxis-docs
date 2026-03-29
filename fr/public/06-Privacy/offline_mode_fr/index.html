@@ -3672,10 +3672,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pourquoi-le-hors-ligne-est-important" class="md-nav__link">
+  <a href="#pourquoi-le-mode-hors-ligne-est-important" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pourquoi le hors-ligne est important
+        Pourquoi le mode hors ligne est important
       
     </span>
   </a>
@@ -3694,10 +3694,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-aucun-cloud" class="md-nav__link">
+  <a href="#2-pas-de-cloud-pas-de-serveurs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Aucun cloud
+        2. Pas de cloud, pas de serveurs
       
     </span>
   </a>
@@ -3705,10 +3705,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ia-locale-nyxia" class="md-nav__link">
+  <a href="#3-validation-de-licence-hors-ligne" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. IA locale (NyXIA)
+        3. Validation de licence hors ligne
       
     </span>
   </a>
@@ -3716,10 +3716,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-mises-a-jour-securisees-optionnel" class="md-nav__link">
+  <a href="#4-moteur-iaml-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Mises à jour sécurisées (optionnel)
+        4. Moteur IA/ML local
       
     </span>
   </a>
@@ -3727,10 +3727,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-architecture-transparente" class="md-nav__link">
+  <a href="#5-verification-des-mises-a-jour-optionnel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Architecture transparente
+        5. Vérification des mises à jour (optionnel)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-architecture-transparente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Architecture transparente
       
     </span>
   </a>
@@ -8740,52 +8751,64 @@
   
 
 
-<h1 id="mode-hors-ligne">Mode hors-ligne<a class="headerlink" href="#mode-hors-ligne" title="Link to this section">&para;</a></h1>
-<p>Nyroxis a été conçu pour fonctionner entièrement hors-ligne — sans cloud, sans authentification distante, sans API externe.<br />
-Ce modèle garantit confidentialité, autonomie et sécurité totale.</p>
+<h1 id="mode-hors-ligne">Mode hors ligne<a class="headerlink" href="#mode-hors-ligne" title="Link to this section">&para;</a></h1>
+<p>Nyroxis est conçu de fond en comble pour fonctionner entièrement hors ligne — sans nécessiter d'accès au cloud, d'authentification à distance ou d'API externes.
+Cette conception offre aux utilisateurs sécurité, confidentialité et pleine autonomie sur leur appareil.</p>
 <hr />
-<h2 id="pourquoi-le-hors-ligne-est-important">Pourquoi le hors-ligne est important<a class="headerlink" href="#pourquoi-le-hors-ligne-est-important" title="Link to this section">&para;</a></h2>
-<p>Fonctionner hors-ligne assure :
-- <strong>Aucune fuite de données</strong><br />
-- <strong>Aucun risque lié au cloud</strong><br />
-- <strong>Aucune dépendance à un service externe</strong><br />
-- <strong>Aucun suivi invisible</strong>  </p>
+<h2 id="pourquoi-le-mode-hors-ligne-est-important">Pourquoi le mode hors ligne est important<a class="headerlink" href="#pourquoi-le-mode-hors-ligne-est-important" title="Link to this section">&para;</a></h2>
+<p>Fonctionner hors ligne garantit :
+- <strong>Aucune donnée ne quitte l'appareil</strong> — jamais
+- <strong>Aucune exposition aux violations cloud</strong> ni aux défaillances d'infrastructures tierces
+- <strong>Aucune dépendance envers des serveurs externes</strong> pour la surveillance ou la détection
+- <strong>Aucun risque de surveillance tierce</strong> ou de profilage comportemental
+- <strong>Fonctionnalité complète même sans internet</strong> — y compris dans les environnements à isolation physique (air-gapped)</p>
+<p>Les utilisateurs conservent un contrôle total sur leurs données de sécurité.</p>
 <hr />
 <h2 id="1-fonctionnement-entierement-local">1. Fonctionnement entièrement local<a class="headerlink" href="#1-fonctionnement-entierement-local" title="Link to this section">&para;</a></h2>
-<p>Nyroxis gère localement :
-- Collecte<br />
-- Chiffrement<br />
-- Stockage<br />
-- Analyse IA<br />
-- Correspondance de règles<br />
-- Corrélations<br />
-- Alertes  </p>
-<p>Rien n’est envoyé en ligne.</p>
+<p>Chaque fonction de la plateforme Nyroxis fonctionne localement :
+- Collecte et normalisation des événements (Nyroxis Agent)
+- Détection, corrélation et évaluation des règles de chaîne (Nyroxis Intelligence)
+- Surveillance des services, sauvegarde et validation de licence (Nyroxis System Guardian)
+- Détection d'anomalies IA/ML et analyse statistique
+- Visualisation du tableau de bord et reporting</p>
+<p>Rien n'est téléchargé. Rien n'est transmis.</p>
 <hr />
-<h2 id="2-aucun-cloud">2. Aucun cloud<a class="headerlink" href="#2-aucun-cloud" title="Link to this section">&para;</a></h2>
-<p>Nyroxis n’utilise pas :
-- Cloud<br />
-- Télémetrie<br />
-- Journalisation distante<br />
-- Analyse en ligne  </p>
+<h2 id="2-pas-de-cloud-pas-de-serveurs">2. Pas de cloud, pas de serveurs<a class="headerlink" href="#2-pas-de-cloud-pas-de-serveurs" title="Link to this section">&para;</a></h2>
+<p>Nyroxis n'utilise pas :
+- Traitement ou stockage cloud
+- Télémétrie ou suivi d'utilisation
+- Journalisation à distance
+- Analyse en ligne ou flux de renseignements sur les menaces
+- Services d'authentification externes</p>
+<p>Cela élimine des catégories entières de risques pour la vie privée et les risques d'attaque.</p>
 <hr />
-<h2 id="3-ia-locale-nyxia">3. IA locale (NyXIA)<a class="headerlink" href="#3-ia-locale-nyxia" title="Link to this section">&para;</a></h2>
-<p>NyXIA fonctionne :
-- 100% hors-ligne<br />
-- Sur les événements chiffrés locaux<br />
-- Sans serveur externe  </p>
+<h2 id="3-validation-de-licence-hors-ligne">3. Validation de licence hors ligne<a class="headerlink" href="#3-validation-de-licence-hors-ligne" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian valide la licence basée sur le HWID entièrement hors ligne :
+- Aucune connexion internet requise
+- La validation utilise le chiffrement AES-GCM et la vérification HMAC localement
+- L'intégrité de la licence est appliquée sans contacter de serveur externe</p>
 <hr />
-<h2 id="4-mises-a-jour-securisees-optionnel">4. Mises à jour sécurisées (optionnel)<a class="headerlink" href="#4-mises-a-jour-securisees-optionnel" title="Link to this section">&para;</a></h2>
-<p>Mises à jour possibles uniquement :
-- Manuellement<br />
-- Par paquet hors-ligne  </p>
+<h2 id="4-moteur-iaml-local">4. Moteur IA/ML local<a class="headerlink" href="#4-moteur-iaml-local" title="Link to this section">&para;</a></h2>
+<p>Le moteur Isolation Forest et d'analyse statistique fonctionne entièrement hors ligne :
+- Détection d'anomalies comportementales
+- Classification Z-Score
+- Détection de pics et comparaison de référence</p>
+<p>Tout est calculé directement à partir des événements locaux chiffrés — pas d'inférence cloud, pas de mises à jour de modèles via le réseau.</p>
 <hr />
-<h2 id="5-architecture-transparente">5. Architecture transparente<a class="headerlink" href="#5-architecture-transparente" title="Link to this section">&para;</a></h2>
-<p>Aucune communication réseau cachée.
-L’utilisateur peut vérifier par lui-même.</p>
+<h2 id="5-verification-des-mises-a-jour-optionnel">5. Vérification des mises à jour (optionnel)<a class="headerlink" href="#5-verification-des-mises-a-jour-optionnel" title="Link to this section">&para;</a></h2>
+<p>Nyroxis System Guardian peut vérifier les mises à jour à des intervalles configurables.
+L'installation des mises à jour reste manuelle — il n'y a pas de connexions cloud forcées ou automatiques.
+La plateforme fonctionne à pleine capacité indépendamment du statut des mises à jour.</p>
+<hr />
+<h2 id="6-architecture-transparente">6. Architecture transparente<a class="headerlink" href="#6-architecture-transparente" title="Link to this section">&para;</a></h2>
+<p>Nyroxis expose des indicateurs clairs dans le tableau de bord qui permettent aux utilisateurs de vérifier :
+- Aucune connexion réseau sortante depuis les processus Nyroxis
+- Aucune télémétrie en arrière-plan
+- Aucune dépendance cloud</p>
+<p>La confiance est mesurable — pas supposée.</p>
 <hr />
 <h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Link to this section">&para;</a></h2>
-<p>Nyroxis offre une protection privée, locale et autonome — sans exposition au cloud.</p>
+<p>Le mode hors ligne garantit que Nyroxis reste privé, chiffré, autonome et entièrement local — une plateforme de sécurité conçue pour protéger les utilisateurs sans jamais exposer leurs données.</p>
 
 
 

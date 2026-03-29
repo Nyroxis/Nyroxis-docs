@@ -33,7 +33,7 @@
     
     
       
-        <title>ארכיטקטורה — מבט כללי - Nyroxis Documentation</title>
+        <title>ארכיטקטורה ברמה גבוהה - Nyroxis Documentation</title>
       
     
     
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ארכיטקטורה — מבט כללי
+              ארכיטקטורה ברמה גבוהה
             
           </span>
         </div>
@@ -8574,69 +8574,91 @@
   
 
 
-<h1 id="_1">ארכיטקטורה — מבט כללי<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
-<p>הארכיטקטורה של Nyroxis בנויה לספק אבטחה חזקה, פרטיות מלאה ועבודה מקומית לחלוטין — ללא תלות בענן.<br />
-המסמך מתאר כיצד כל הרכיבים עובדים יחד בצורה מאובטחת.</p>
+<h1 id="_1">ארכיטקטורה ברמה גבוהה<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h1>
+<p>ארכיטקטורת Nyroxis מתוכננת לספק אבטחה חזקה, פרטיות מלאה ואוטונומיה לא מקוונת מוחלטת.
+סקירה ברמה גבוהה זו מסבירה כיצד כל הרכיבים המרכזיים פועלים יחד תוך שמירה על נתוני המשתמש מוגנים ומוצפנים באופן מקומי.</p>
 <hr />
-<h2 id="_2">עקרונות מרכזיים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<h3 id="1"><strong>1. כל הפעולות מקומיות</strong><a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
-<p>איסוף, ניתוח, אחסון ו-AI — הכול על המכשיר.</p>
-<h3 id="2"><strong>2. פרטיות מלאה</strong><a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
-<p>ללא ענן, ללא טלמטריה, ללא שליחה החוצה.</p>
-<h3 id="3"><strong>3. קל ויעיל</strong><a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
-<p>מתאים למחשבים אישיים ומקצועיים.</p>
-<h3 id="4"><strong>4. עמיד בפני שינוי</strong><a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
-<p>לוגים מוצפנים + בדיקות שלמות.</p>
+<h2 id="_2">עקרונות ארכיטקטוניים מרכזיים<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<h3 id="1">1. פעולה מקומית מלאה<a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
+<p>כל העיבוד — איסוף, זיהוי, ניתוח בינה מלאכותית, אחסון, דיווח — מתרחש על המכשיר. שום דבר לא מועלה או מועבר.</p>
+<h3 id="2">2. פרטיות כעיקרון עיצובי<a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
+<p>ללא ענן. ללא טלמטריה. ללא ניטור מרחוק. ללא יצירת פרופיל התנהגותי.</p>
+<h3 id="3">3. קל ויעיל<a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
+<p>מתוכנן לפעול ברציפות על מחשבים ניידים אישיים מבלי לפגוע בפרודוקטיביות היומיומית.</p>
+<h3 id="4">4. שלמות פורנזית<a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
+<p>יומני אירועים מוצפנים, מקושרים בגיבוב ועמידים בפני חבלה — מתאימים להליכים משפטיים ורגולטוריים.</p>
 <hr />
-<h2 id="_3">רכיבים מרכזיים<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<h3 id="1-agent-nyroxis"><strong>1. Agent של Nyroxis</strong><a class="headerlink" href="#1-agent-nyroxis" title="Link to this section">&para;</a></h3>
-<p>אוסף:
-- תהליכים<br />
-- רשת<br />
-- קבצים<br />
-- הרשאות  </p>
-<p>מוצפן מידית.</p>
-<hr />
-<h3 id="2_1"><strong>2. בסיס נתונים מקומי ומוצפן</strong><a class="headerlink" href="#2_1" title="Link to this section">&para;</a></h3>
-<p>מאחסן:
-- לוגים מוצפנים<br />
-- מטא־דאטה<br />
-- פרופיל התנהגות  </p>
-<p>נשמר מקומית בלבד.</p>
-<hr />
-<h3 id="3-ai-nyxia"><strong>3. מנוע AI — NyXIA</strong><a class="headerlink" href="#3-ai-nyxia" title="Link to this section">&para;</a></h3>
-<p>מבצע:
-- זיהוי אנומליות<br />
-- ניתוח תרחישים<br />
-- חישוב רמות סיכון  </p>
-<p>פועל אופליין בלבד.</p>
-<hr />
-<h3 id="4_1"><strong>4. מנוע כללים</strong><a class="headerlink" href="#4_1" title="Link to this section">&para;</a></h3>
-<p>כולל:
-- זיהוי תבניות<br />
-- התראות מבוססות סף<br />
-- קורלציות בסיסיות  </p>
-<p>משלים את ה-AI.</p>
-<hr />
-<h3 id="5"><strong>5. לוח בקרה</strong><a class="headerlink" href="#5" title="Link to this section">&para;</a></h3>
-<p>מציג:
-- לוגים<br />
-- התראות<br />
-- תרחישים<br />
-- ניתוחים  </p>
-<p>ניהול מלא — מקומי.</p>
-<hr />
-<h2 id="_4">שכבות אבטחה<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
+<h2 id="_3">רכיבים ברמה גבוהה<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
+<h3 id="1-nyroxis-agent">1. Nyroxis Agent<a class="headerlink" href="#1-nyroxis-agent" title="Link to this section">&para;</a></h3>
 <ul>
-<li>הצפנה ברגע האיסוף  </li>
-<li>אחסון מוצפן  </li>
-<li>Hash-chaining  </li>
-<li>AI אופליין  </li>
-<li>בדיקות anti-tamper  </li>
+<li>לוכד אירועי מערכת בזמן אמת ממספר ערוצים</li>
+<li>מנרמל ומצפין באופן מיידי</li>
+<li>מאחסן אירועים מוצפנים במסד הנתונים המקומי</li>
+<li>~57 MB זיכרון RAM, ~0.1% מעבד</li>
+</ul>
+<h3 id="2-nyroxis-intelligence">2. Nyroxis Intelligence<a class="headerlink" href="#2-nyroxis-intelligence" title="Link to this section">&para;</a></h3>
+<ul>
+<li>מעריך אירועים לפי 27 כללי זיהוי + 12 כללי מתאם + 2 כללי שרשרת</li>
+<li>מעלה התראות מיידיות בעת התאמת כללים</li>
+<li>ניתן להרחבה מלאה על ידי אנשי אבטחה (פורמט כללי JSON)</li>
+<li>~87 MB זיכרון RAM, ~1.8% מעבד</li>
+</ul>
+<h3 id="3-nyroxis-system-guardian">3. Nyroxis System Guardian<a class="headerlink" href="#3-nyroxis-system-guardian" title="Link to this section">&para;</a></h3>
+<ul>
+<li>מנטר את Agent ו-Intelligence כל 3 שניות</li>
+<li>מנהל גיבויים ואימות רישיון HWID לא מקוון</li>
+<li>עוצר שירותים אם הרישיון פג</li>
+<li>~6.5 MB זיכרון RAM, ~0.1% מעבד</li>
+</ul>
+<h3 id="4_1">4. מסד הנתונים המקומי המאובטח<a class="headerlink" href="#4_1" title="Link to this section">&para;</a></h3>
+<ul>
+<li>SQLite עם הצפנת AES-256</li>
+<li>בלוקי אירועים המקושרים בגיבוב לזיהוי חבלה</li>
+<li>מאחסן אירועים, ממצאים, תוצאות בינה מלאכותית וקווי בסיס</li>
+<li>לעולם אינו עוזב את המכשיר</li>
+</ul>
+<h3 id="5-ml">5. מנוע הבינה המלאכותית/ML המקומי<a class="headerlink" href="#5-ml" title="Link to this section">&para;</a></h3>
+<ul>
+<li>זיהוי אנומליות Isolation Forest (100 עצים, 8 מאפיינים)</li>
+<li>Z-Score, IQR, ממוצע נע, זיהוי קפיצות</li>
+<li>פירוט מאפיינים תורמים לאנליסטים</li>
+<li>לחלוטין לא מקוון — ללא היסק בענן</li>
+</ul>
+<h3 id="6-nyroxis-dashboard">6. Nyroxis Dashboard<a class="headerlink" href="#6-nyroxis-dashboard" title="Link to this section">&para;</a></h3>
+<ul>
+<li>נראות בזמן אמת: אירועים, זיהויים, מתאמים, שרשראות, בינה מלאכותית/ML</li>
+<li>חיפוש פורנזי, תרשימים, דיווח (PDF/CSV)</li>
+<li>ניהול גיבויים, הגדרות, רב-לשוני (EN/FR/DE)</li>
+<li>כל הנתונים נשלפים באופן מקומי</li>
 </ul>
 <hr />
-<h2 id="_5">סיכום<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
-<p>ארכיטקטורה מקומית, פרטית וחזקה — ללא ענן.</p>
+<h2 id="_4">שכבות אבטחה<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
+<p>הארכיטקטורה כוללת מספר שכבות הגנה:
+- הצפנה בלכידה (AES-256)
+- מבני אירועים המקושרים בגיבוב
+- נתיבי כתיבה מוגנים
+- שומר פלטפורמה לחוסן השירותים
+- אימות רישיון לא מקוון
+- ללא תקשורת חיצונית מכל סוג</p>
+<hr />
+<h2 id="_5">סיכום זרימת הנתונים<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ אירועי מערכת ]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Nyroxis Agent ]          ← איסוף, נרמול, הצפנה
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ מסד נתונים מוצפן מקומי ]  ← AES-256, SQLite, מקושר בגיבוב
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ↓
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[ Nyroxis Intelligence ]   ← 27 זיהוי + 12 מתאם + 2 כללי שרשרת
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ↓
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ מנוע בינה מלאכותית/ML מקומי ] ← Isolation Forest + ניתוח סטטיסטי
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↓
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[ Nyroxis Dashboard ]      ← נראות, פורנזיקה, דיווח
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        ↑
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[ Nyroxis System Guardian ] ← מנטר, מגבה, מאמת רישיון
+</span></code></pre></div>
+<hr />
+<h2 id="_6">סיכום<a class="headerlink" href="#_6" title="Link to this section">&para;</a></h2>
+<p>ארכיטקטורת Nyroxis מספקת אבטחה עוצמתית, פרטית ולא מקוונת על ידי שילוב ארבעה רכיבים מרכזיים — Agent, Intelligence, System Guardian ו-Dashboard — הפועלים יחד עם בינה מלאכותית/ML מקומית ואחסון ברמה פורנזית, לחלוטין ללא חשיפה לענן.</p>
 
 
 

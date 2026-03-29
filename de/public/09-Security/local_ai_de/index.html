@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lokale-ki" class="md-skip">
+        <a href="#lokale-kiml-engine" class="md-skip">
           Skip to content
         </a>
       
@@ -6224,10 +6224,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#warum-lokale-ki" class="md-nav__link">
+  <a href="#1-vollstandig-offline-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Warum lokale KI?
+        1. Vollständig Offline-Engine
       
     </span>
   </a>
@@ -6235,10 +6235,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#was-lokale-ki-bedeutet" class="md-nav__link">
+  <a href="#2-isolation-forest-kernalgorithmus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Was lokale KI bedeutet
+        2. Isolation Forest — Kernalgorithmus
       
     </span>
   </a>
@@ -6246,10 +6246,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#was-nyxia-analysiert" class="md-nav__link">
+  <a href="#3-statistische-analyse-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Was NyXIA analysiert
+        3. Statistische Analyse-Engine
       
     </span>
   </a>
@@ -6257,10 +6257,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vorteile" class="md-nav__link">
+  <a href="#4-erklarbare-ergebnisse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vorteile
+        4. Erklärbare Ergebnisse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lokale-verhaltens-baselines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Lokale Verhaltens-Baselines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-kein-cloud-training-oder-hochladen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Kein Cloud-Training oder Hochladen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-leichtgewichtig-und-ressourceneffizient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Leichtgewichtig und Ressourceneffizient
       
     </span>
   </a>
@@ -8718,39 +8751,146 @@
   
 
 
-<h1 id="lokale-ki">Lokale KI<a class="headerlink" href="#lokale-ki" title="Link to this section">&para;</a></h1>
-<p>Nyroxis verwendet eine vollständig lokale KI-Engine (NyXIA), die sicherheitsrelevante Ereignisse analysiert, ohne jemals Daten an einen Server zu senden.</p>
-<h2 id="warum-lokale-ki">Warum lokale KI?<a class="headerlink" href="#warum-lokale-ki" title="Link to this section">&para;</a></h2>
-<p>Die KI soll helfen:
-- ungewöhnliches Verhalten zu erkennen<br />
-- Muster sichtbar zu machen<br />
-- Risiken besser einzuschätzen  </p>
-<p>ohne Privatsphäre zu gefährden.</p>
-<h2 id="was-lokale-ki-bedeutet">Was lokale KI bedeutet<a class="headerlink" href="#was-lokale-ki-bedeutet" title="Link to this section">&para;</a></h2>
-<p>Lokale KI bedeutet:
-- keine Cloud<br />
-- keine Telemetrie<br />
-- keine Online-Analyse<br />
-- alles bleibt auf dem Gerät  </p>
-<h2 id="was-nyxia-analysiert">Was NyXIA analysiert<a class="headerlink" href="#was-nyxia-analysiert" title="Link to this section">&para;</a></h2>
-<p>NyXIA bewertet:
-- Prozessketten<br />
-- Netzwerkverhalten<br />
-- Dateiaktivität<br />
-- zeitliche Muster  </p>
-<p>und erzeugt:
-- Anomaliewerte<br />
-- Erklärungen<br />
-- Szenarien  </p>
-<h2 id="vorteile">Vorteile<a class="headerlink" href="#vorteile" title="Link to this section">&para;</a></h2>
-<ul>
-<li>funktioniert offline  </li>
-<li>schützt die Privatsphäre  </li>
-<li>geringe Systemlast  </li>
-<li>schnelle Analyse  </li>
-</ul>
+<h1 id="lokale-kiml-engine">Lokale KI/ML-Engine<a class="headerlink" href="#lokale-kiml-engine" title="Link to this section">&para;</a></h1>
+<p>Die Nyroxis KI/ML-Engine ist vollständig lokal und offline.
+Sie führt alle Verhaltensanalysen, Anomalieerkennung und statistische Bewertung <strong>durch, ohne Daten an die Cloud zu senden</strong>.</p>
+<hr />
+<h2 id="1-vollstandig-offline-engine">1. Vollständig Offline-Engine<a class="headerlink" href="#1-vollstandig-offline-engine" title="Link to this section">&para;</a></h2>
+<p>Die KI/ML-Engine läuft vollständig auf dem Gerät:
+- Keine Serverkommunikation
+- Keine Online-Modellaktualisierungen
+- Keine Telemetrie
+- Keine externen Abhängigkeiten</p>
+<p>Alle Inferenz und Verarbeitung sind innerhalb der lokalen Laufzeitumgebung isoliert.
+In Rust entwickelt ohne externe ML-Bibliotheksabhängigkeit.</p>
+<hr />
+<h2 id="2-isolation-forest-kernalgorithmus">2. Isolation Forest — Kernalgorithmus<a class="headerlink" href="#2-isolation-forest-kernalgorithmus" title="Link to this section">&para;</a></h2>
+<p>Die Engine implementiert einen angepassten Isolation Forest-Algorithmus:
+- 100 Isolationsbäume pro Analysezyklus
+- Maximal 256 Stichproben pro Baum
+- 8 Verhaltensmerkmale pro Analysefenster
+- Anomalie-Score-Schwellenwert: 0,6</p>
+<p>Anomale Ereignisse benötigen weniger Teilungen zur Isolation — kürzerer Isolationspfad = höherer Anomalie-Score.</p>
+<p><strong>8 analysierte Verhaltensmerkmale:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Merkmal</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ereignisanzahl</td>
+<td>Gesamtereignisse im Analysefenster</td>
+</tr>
+<tr>
+<td>Eindeutige Quellen</td>
+<td>Verschiedene Ereignisquellen</td>
+</tr>
+<tr>
+<td>Eindeutige Ziele</td>
+<td>Verschiedene Netzwerkziele</td>
+</tr>
+<tr>
+<td>Tageszeit</td>
+<td>Zeitlicher Kontext für Verhaltens-Baseline</td>
+</tr>
+<tr>
+<td>Wochentag</td>
+<td>Wöchentliche Mustererkennung</td>
+</tr>
+<tr>
+<td>Ereignisse pro Stunde</td>
+<td>Normalisierung der Aktivitätsrate</td>
+</tr>
+<tr>
+<td>Neue-Quellen-Verhältnis</td>
+<td>Anteil bisher unbekannter Quellen</td>
+</tr>
+<tr>
+<td>Neue-Ziele-Verhältnis</td>
+<td>Anteil bisher unbekannter Ziele</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-statistische-analyse-engine">3. Statistische Analyse-Engine<a class="headerlink" href="#3-statistische-analyse-engine" title="Link to this section">&para;</a></h2>
+<p>Parallel zu Isolation Forest laufend:</p>
+<table>
+<thead>
+<tr>
+<th>Z-Score</th>
+<th>Schweregrad</th>
+<th>Konfidenz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 3,0</td>
+<td>Kritisch</td>
+<td>99,7 %</td>
+</tr>
+<tr>
+<td>&gt; 2,0</td>
+<td>Hoch</td>
+<td>95 %</td>
+</tr>
+<tr>
+<td>&gt; 1,5</td>
+<td>Mittel</td>
+<td>86 %</td>
+</tr>
+<tr>
+<td>&gt; 1,0</td>
+<td>Niedrig</td>
+<td>68 %</td>
+</tr>
+</tbody>
+</table>
+<p>Zusätzliche Methoden:
+- IQR-Ausreißererkennung
+- Einfache und exponentielle gleitende Durchschnitte
+- Spitzenwert-Erkennung gegenüber historischen Baselines
+- Korrelationsanalyse zwischen Verhaltenssignalen</p>
+<hr />
+<h2 id="4-erklarbare-ergebnisse">4. Erklärbare Ergebnisse<a class="headerlink" href="#4-erklarbare-ergebnisse" title="Link to this section">&para;</a></h2>
+<p>Jede Erkennung enthält:
+- Anomalie-Score (0,0–1,0)
+- Schweregrad-Klassifizierung
+- Beitragende Merkmale — die spezifischen Verhaltensdimensionen, die am stärksten abgewichen sind, mit Z-Score-Werten</p>
+<p>Das System hebt hervor, <strong>warum</strong> etwas verdächtig ist — transparent und lokal überprüfbar.</p>
+<hr />
+<h2 id="5-lokale-verhaltens-baselines">5. Lokale Verhaltens-Baselines<a class="headerlink" href="#5-lokale-verhaltens-baselines" title="Link to this section">&para;</a></h2>
+<p>Jedes Gerät erstellt sein eigenes privates Baseline-Profil:
+- Normale Prozessaktivität
+- Typische Netzwerkverbindungsmuster
+- Erwartete Dateizugriffsmuster
+- Übliches Tageszeit- und Wochentagsverhalten</p>
+<p>Baselines:
+- Lokal in verschlüsselter Form gespeichert
+- Jederzeit vom Benutzer zurücksetzbar
+- Niemals übertragen oder geteilt</p>
+<hr />
+<h2 id="6-kein-cloud-training-oder-hochladen">6. Kein Cloud-Training oder Hochladen<a class="headerlink" href="#6-kein-cloud-training-oder-hochladen" title="Link to this section">&para;</a></h2>
+<p>Die KI/ML-Engine lädt <strong>nicht</strong> hoch:
+- Protokolle oder Ereignisdaten
+- Anomalie-Stichproben
+- Verhaltensprofile
+- Modell-Feedback
+- Keinerlei Benutzerdaten</p>
+<p>Training und Inferenz erfolgen ausschließlich offline.</p>
+<hr />
+<h2 id="7-leichtgewichtig-und-ressourceneffizient">7. Leichtgewichtig und Ressourceneffizient<a class="headerlink" href="#7-leichtgewichtig-und-ressourceneffizient" title="Link to this section">&para;</a></h2>
+<p>Optimiert für persönliche Laptops, Führungskräfte-Geräte und Air-Gapped-Systeme — die KI/ML-Engine bietet starke Verhaltenserkennung ohne Enterprise-Hardware zu erfordern.</p>
+<hr />
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this section">&para;</a></h2>
-<p>Die lokale KI von Nyroxis stärkt Sicherheit – ohne Daten offenzulegen.</p>
+<p>Die Nyroxis KI/ML-Engine gewährleistet:
+- Ausschließlich lokale Inferenz — keine Cloud-Abhängigkeit
+- Vollständige Privatsphäre — keine Datenweitergabe
+- Starke Verhaltenserkennung über Isolation Forest
+- Statistische Tiefe über Z-Score, IQR und Spitzenwert-Erkennung
+- Transparente, erklärbare Ergebnisse mit beitragenden Merkmalen</p>
 
 
 

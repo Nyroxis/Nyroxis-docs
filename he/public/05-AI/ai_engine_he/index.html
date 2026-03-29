@@ -7552,19 +7552,19 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        עקרונות מרכזיים
+        עקרונות עיצוב מרכזיים
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="עקרונות מרכזיים">
+    <nav class="md-nav" aria-label="עקרונות עיצוב מרכזיים">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. פרטיות מלאה
+        1. פרטיות ראשונה
       
     </span>
   </a>
@@ -7575,7 +7575,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. מודלים קלים
+        2. יישום קל משקל
       
     </span>
   </a>
@@ -7586,7 +7586,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. ניתוח התנהגותי
+        3. הבנה התנהגותית
       
     </span>
   </a>
@@ -7597,7 +7597,7 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. עבודה אופליין בלבד
+        4. פעולה לחלוטין לא מקוונת
       
     </span>
   </a>
@@ -7606,6 +7606,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isolation-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isolation Forest — כיצד זה עובד
+      
+    </span>
+  </a>
   
 </li>
       
@@ -7613,19 +7624,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        איך המנוע עובד?
+        צינור ניתוח סטטיסטי
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="איך המנוע עובד?">
+    <nav class="md-nav" aria-label="צינור ניתוח סטטיסטי">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
+  <a href="#z-score" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. קליטת אירועים
+        סיווג Z-Score
       
     </span>
   </a>
@@ -7633,10 +7644,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
+  <a href="#iqr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. בניית רצפים
+        זיהוי חריגים IQR
       
     </span>
   </a>
@@ -7644,10 +7655,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. הפקת מאפיינים
+        ממוצעים נעים
       
     </span>
   </a>
@@ -7655,21 +7666,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_1" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. ניתוח מקומי
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. זיהוי תרחישים
+        זיהוי עליות חדות
       
     </span>
   </a>
@@ -7682,10 +7682,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        פרופיל התנהגות מקומי
+        מה המנוע מפיק
       
     </span>
   </a>
@@ -7693,10 +7693,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AI מאובטח
+        קו בסיס התנהגותי מקומי
       
     </span>
   </a>
@@ -7704,7 +7704,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         סיכום
@@ -8829,72 +8829,86 @@
   
 
 
-<h1 id="-ai">מנוע ה-AI — מנגנון פנימי<a class="headerlink" href="#-ai" title="Link to this section">&para;</a></h1>
-<p>מנוע ה-AI של Nyroxis (NyXIA) פועל כולו מקומית, ומנתח אירועי אבטחה מוצפנים ללא שימוש בענן.<br />
-המסמך מסביר את המנגנון בצורה פשוטה וחצי‑טכנית.</p>
+<h1 id="-ai">מנוע ה-AI — מכניקה פנימית<a class="headerlink" href="#-ai" title="Link to this section">&para;</a></h1>
+<p>מנוע ה-AI/ML של Nyroxis מתוכנן לפעול באופן מקומי לחלוטין, מבצע ניתוח חכם על אירועי אבטחה מוצפנים מבלי להסתמך על שירותי ענן.</p>
 <hr />
-<h2 id="_1">עקרונות מרכזיים<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
-<h3 id="1"><strong>1. פרטיות מלאה</strong><a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
+<h2 id="_1">עקרונות עיצוב מרכזיים<a class="headerlink" href="#_1" title="Link to this section">&para;</a></h2>
+<h3 id="1">1. פרטיות ראשונה<a class="headerlink" href="#1" title="Link to this section">&para;</a></h3>
 <ul>
-<li>ללא ענן  </li>
-<li>ללא API חיצוני  </li>
-<li>ללא שליחת מידע  </li>
+<li>ללא עיבוד ענן</li>
+<li>ללא ממשקי API חיצוניים</li>
+<li>ללא שיתוף נתונים</li>
 </ul>
-<h3 id="2"><strong>2. מודלים קלים</strong><a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
-<p>מותאמים ל:
-- שימוש CPU נמוך<br />
-- מעט זיכרון<br />
-- ביצועים בזמן אמת  </p>
-<h3 id="3"><strong>3. ניתוח התנהגותי</strong><a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
-<p>NyXIA מחפש <em>דפוסים</em>, לא אירועים בודדים.</p>
-<h3 id="4"><strong>4. עבודה אופליין בלבד</strong><a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
-<p>כל העיבוד מקומי.</p>
+<p>כל האינטליגנציה פועלת על המכשיר הפרטי של המשתמש.</p>
+<h3 id="2">2. יישום קל משקל<a class="headerlink" href="#2" title="Link to this section">&para;</a></h3>
+<p>פותח לחלוטין ב-Rust ללא ספריות ML חיצוניות:
+- ~שימוש נמוך ב-CPU
+- טביעת זיכרון מינימלית
+- ביצוע בזמן אמת</p>
+<h3 id="3">3. הבנה התנהגותית<a class="headerlink" href="#3" title="Link to this section">&para;</a></h3>
+<p>במקום לנתח אירועים בנפרד, המנוע מבין <em>דפוסים</em> המתרחשים לאורך זמן ובפני מספר ממדי אירועים.</p>
+<h3 id="4">4. פעולה לחלוטין לא מקוונת<a class="headerlink" href="#4" title="Link to this section">&para;</a></h3>
+<p>כל הניתוח, הניקוד וחילוץ התכונות מתרחשים באופן מקומי — אין צורך בחיבור לאינטרנט בשום שלב.</p>
 <hr />
-<h2 id="_2">איך המנוע עובד?<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
-<h3 id="1_1"><strong>1. קליטת אירועים</strong><a class="headerlink" href="#1_1" title="Link to this section">&para;</a></h3>
-<p>ה-Agent אוסף:
-- תהליכים<br />
-- רשת<br />
-- קבצים<br />
-- הרשאות  </p>
-<p>הכול מוצפן לפני כניסה ל-NyXIA.</p>
-<h3 id="2_1"><strong>2. בניית רצפים</strong><a class="headerlink" href="#2_1" title="Link to this section">&para;</a></h3>
-<p>אירועים מקובצים לחלונות:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>w(t) = {event_t ... event_t+k}
-</span></code></pre></div></p>
-<h3 id="3_1"><strong>3. הפקת מאפיינים</strong><a class="headerlink" href="#3_1" title="Link to this section">&para;</a></h3>
-<p>NyXIA בוחן:
-- עץ תהליכים<br />
-- התנהגות רשת<br />
-- דפוסי קבצים<br />
-- חריגות זמן  </p>
-<h3 id="4_1"><strong>4. ניתוח מקומי</strong><a class="headerlink" href="#4_1" title="Link to this section">&para;</a></h3>
-<p>המנוע מחשב:
-- דרגת אנומליה<br />
-- סוג התנהגות<br />
-- סטייה מהפרופיל הרגיל  </p>
-<h3 id="5"><strong>5. זיהוי תרחישים</strong><a class="headerlink" href="#5" title="Link to this section">&para;</a></h3>
-<p>כמו:
-- Persistence<br />
-- פעילות רשת חשודה<br />
-- העלאת הרשאות<br />
-- חדירה רב-שלבית  </p>
+<h2 id="isolation-forest">Isolation Forest — כיצד זה עובד<a class="headerlink" href="#isolation-forest" title="Link to this section">&para;</a></h2>
+<p>אלגוריתם Isolation Forest מבודד חריגות על ידי בניית עצי החלטה אקראיים ומדידת מהירות ההפרדה של כל נקודת נתונים מהשאר.</p>
+<p><strong>העיקרון:</strong>
+- אירועים רגילים דורשים פיצולים רבים לבידוד (הם מתמזגים עם אחרים)
+- אירועים חריגים דורשים פחות פיצולים (הם בולטים)
+- נתיב בידוד קצר יותר = ציון חריגות גבוה יותר</p>
+<p><strong>יישום Nyroxis:</strong>
+- 100 עצי בידוד נבנים לכל מחזור ניתוח
+- 256 דגימות אקראיות משמשות לכל עץ
+- כל 8 התכונות ההתנהגותיות מנורמלות לפני הניתוח
+- סף ציון חריגות: 0.6 (מעל זה = זיהוי מופעל)
+- תכונות תורמות מזוהות דרך סטייה Z-score (סף: 2.0 סטיות תקן)</p>
 <hr />
-<h2 id="_3">פרופיל התנהגות מקומי<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h2>
-<p>כולל:
-- תהליכים רגילים<br />
-- חיבורים שכיחים<br />
-- פעילות קבצים טיפוסית  </p>
-<p>מאוחסן מקומית ומוצפן.</p>
+<h2 id="_2">צינור ניתוח סטטיסטי<a class="headerlink" href="#_2" title="Link to this section">&para;</a></h2>
+<h3 id="z-score">סיווג Z-Score<a class="headerlink" href="#z-score" title="Link to this section">&para;</a></h3>
+<p>כל ערך מנוטר מוערך מול קו הבסיס ההיסטורי שלו:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>z = (ערך - ממוצע) / סטיית_תקן
+</span></code></pre></div>
+<p>| |z| | חומרה | ביטחון |
+|------|----------|------------|
+| &gt; 3.0 | קריטי | 99.7% |
+| &gt; 2.0 | גבוה | 95% |
+| &gt; 1.5 | בינוני | 86% |
+| &gt; 1.0 | נמוך | 68% |</p>
+<h3 id="iqr">זיהוי חריגים IQR<a class="headerlink" href="#iqr" title="Link to this section">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>גבול_תחתון = Q1 - 1.5 × IQR
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>גבול_עליון = Q3 + 1.5 × IQR
+</span></code></pre></div>
+ערכים מחוץ לטווח זה מסומנים כחריגים סטטיסטיים.</p>
+<h3 id="_3">ממוצעים נעים<a class="headerlink" href="#_3" title="Link to this section">&para;</a></h3>
+<ul>
+<li><strong>ממוצע נע פשוט</strong> — מגמת קו בסיס על פני חלונות זמן ניתנים לתצורה</li>
+<li><strong>ממוצע נע מעריכי</strong> — מעניק משקל רב יותר לפעילות האחרונה לתגובה מהירה יותר לדפוסים מתפתחים</li>
+</ul>
+<h3 id="_4">זיהוי עליות חדות<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ערך_נוכחי &gt; ממוצע + (מכפיל_סף × סטיית_תקן)
+</span></code></pre></div>
 <hr />
-<h2 id="ai">AI מאובטח<a class="headerlink" href="#ai" title="Link to this section">&para;</a></h2>
-<p>NyXIA:
-- לא עוקב<br />
-- לא שולח מידע<br />
-- לא משתמש בענן  </p>
+<h2 id="_5">מה המנוע מפיק<a class="headerlink" href="#_5" title="Link to this section">&para;</a></h2>
+<p>לכל מחזור ניתוח:
+- <code>is_anomaly</code> — דגל בוליאני
+- <code>anomaly_score</code> — 0.0 עד 1.0 (גבוה יותר = חריג יותר)
+- <code>confidence</code> — 0.0 עד 0.95
+- <code>contributing_features</code> — רשימת תכונות עם Z-scores שהובילו לזיהוי</p>
+<p>פלטים אלה מוצגים בחלק ניתוח AI / ML בלוח המחוונים.</p>
 <hr />
-<h2 id="_4">סיכום<a class="headerlink" href="#_4" title="Link to this section">&para;</a></h2>
-<p>NyXIA מספק ניתוח התנהגות חכם ומקומי — ללא תלות בענן וללא פגיעה בפרטיות.</p>
+<h2 id="_6">קו בסיס התנהגותי מקומי<a class="headerlink" href="#_6" title="Link to this section">&para;</a></h2>
+<p>המנוע בונה קו בסיס פרטי לכל מכשיר:
+- דפוסי תהליכים רגילים
+- התנהגות חיבורי רשת טיפוסית
+- פעילות קבצים צפויה
+- התנהגות רגילה לפי שעת היום ויום השבוע</p>
+<p>קו הבסיס:
+- מאוחסן באופן מקומי בצורה מוצפנת
+- ניתן לאיפוס על ידי המשתמש בכל עת
+- לעולם אינו מועבר או משותף</p>
+<hr />
+<h2 id="_7">סיכום<a class="headerlink" href="#_7" title="Link to this section">&para;</a></h2>
+<p>מנוע ה-AI משלב Isolation Forest עם ניתוח סטטיסטי כדי לספק זיהוי חריגות שקוף, ניתן להסבר ושומר פרטיות — לחלוטין על מכשיר המשתמש, ללא תלות בענן.</p>
 
 
 
