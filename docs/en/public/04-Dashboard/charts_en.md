@@ -63,7 +63,7 @@ Charts are generated directly from the encrypted local database and AI/ML engine
 
 ## Privacy & Offline Operation
 
-Nothing is sent to external services — ever.
+Charts are built entirely on-device; your event data is not sent to external services.
 Analytics are computed and rendered locally from encrypted events, entirely offline.
 
 ---

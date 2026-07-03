@@ -28,7 +28,7 @@ Nyroxis bietet:
 - Vollständig lokale Erkennung und Speicherung
 - Manipulationsresistente forensische Beweise
 - Keine Verhaltensdaten, die das Gerät verlassen
-- Schutz geeignet für rechtliche und regulatorische Anforderungen
+- Schutz von forensischer Qualität für Sicherheitsuntersuchungen
 
 ---
 

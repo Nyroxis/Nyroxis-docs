@@ -21,15 +21,15 @@ Every captured event is:
 
 No plaintext logs ever exist on disk.
 
-### 3. Zero Cloud Dependency
-Nyroxis does not rely on:
+### 3. Zero Cloud Dependency (Core Platform)
+The core Nyroxis platform does not rely on:
 - Cloud storage or processing
 - External APIs
 - Remote servers
 - Telemetry pipelines
 - Online authentication
 
-Users maintain full autonomy and zero external exposure.
+Users maintain full autonomy and zero external exposure for the offline core. The only optional, opt-in exception is the **AI Copilot** cloud feature (disabled by default) — see the *AI Copilot* page.
 
 ### 4. Multi-Layer Detection
 Nyroxis Intelligence provides:
@@ -71,7 +71,7 @@ Attackers cannot modify, delete, or inject logs without detection.
 
 ### 3. Platform Resilience
 Nyroxis System Guardian:
-- Monitors Agent and Intelligence every 3 seconds
+- Monitors Agent and Intelligence continuously
 - Detects unexpected service stops immediately
 - Logs shutdown attempts as security events
 - Manages backups and offline license validation

@@ -29,7 +29,7 @@ Nyroxis stützt sich nicht auf:
 - Telemetrie-Pipelines
 - Online-Authentifizierung
 
-Benutzer behalten vollständige Autonomie und null externe Exposition.
+Benutzer behalten vollständige Autonomie und null externe Exposition für den Offline-Kern. Die einzige optionale Ausnahme, auf Aktivierung, ist die Cloud-Funktion **AI Copilot** (standardmäßig deaktiviert) — siehe die Seite *AI Copilot*.
 
 ### 4. Mehrschichtige Erkennung
 Nyroxis Intelligence bietet:
@@ -71,7 +71,7 @@ Angreifer können Protokolle nicht unbemerkt ändern, löschen oder injizieren.
 
 ### 3. Plattformresilienz
 Nyroxis System Guardian:
-- Überwacht Agent und Intelligence alle 3 Sekunden
+- Überwacht Agent und Intelligence kontinuierlich
 - Erkennt unerwartete Dienststopps sofort
 - Protokolliert Abschaltversuche als Sicherheitsereignisse
 - Verwaltet Sicherungen und Offline-Lizenzvalidierung

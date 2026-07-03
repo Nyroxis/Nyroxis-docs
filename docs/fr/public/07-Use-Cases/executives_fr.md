@@ -32,7 +32,7 @@ Nyroxis résout ce problème avec :
 - Traitement des données zéro-cloud
 - Aucune télémétrie d'aucune sorte
 
-Rien n'est téléchargé. Jamais.
+Vos données de sécurité ne sont jamais téléversées. (L'AI Copilot optionnel est sur activation et désactivé par défaut.)
 
 ---
 

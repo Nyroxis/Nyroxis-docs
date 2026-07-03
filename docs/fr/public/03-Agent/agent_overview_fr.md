@@ -59,7 +59,7 @@ L'Agent intègre des mécanismes de protection pour garantir :
 - Les attaquants ne peuvent pas effacer silencieusement leur activité
 - Les blocs d'événements chaînés par hachage exposent toute tentative de suppression, modification ou injection
 
-Nyroxis System Guardian surveille l'état opérationnel de l'Agent toutes les 3 secondes et prend des mesures correctives si le service s'arrête de manière inattendue.
+Nyroxis System Guardian surveille l'état opérationnel de l'Agent en continu et prend des mesures correctives si le service s'arrête de manière inattendue.
 
 ---
 
@@ -77,4 +77,4 @@ Nyroxis est entièrement fonctionnel dans des environnements isolés ou à air g
 
 ## Résumé
 
-Le Nyroxis Agent offre une surveillance continue, chiffrée et hors ligne — donnant aux utilisateurs une visibilité de niveau entreprise sans exposer leurs données à des tiers, et fournissant des preuves de qualité forensique adaptées aux procédures judiciaires et réglementaires.
+Le Nyroxis Agent offre une surveillance continue, chiffrée et hors ligne — donnant aux utilisateurs une visibilité de niveau entreprise sans exposer leurs données à des tiers, et fournissant des preuves de qualité forensique de qualité forensique, adaptées à l'investigation de sécurité.

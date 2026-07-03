@@ -37,7 +37,7 @@ Nyroxis est construit autour de quatre composants fondamentaux fonctionnant de c
 
 ### Nyroxis System Guardian
 - Gardien silencieux dans la barre d'état système
-- Surveille tous les services toutes les 3 secondes
+- Surveille tous les services en continu
 - Gère les sauvegardes, la validation de licence hors ligne et la vérification des mises à jour
 - Arrête les services automatiquement si la licence expire
 - ~6,5 Mo de RAM, 0,1 % du CPU
@@ -57,12 +57,15 @@ Nyroxis est construit autour de quatre composants fondamentaux fonctionnant de c
 
 ## Avantages Clés
 
-- Toutes les données restent sur votre appareil — toujours
+- Vos données de sécurité restent sur votre appareil par défaut
 - Stockage chiffré de qualité forensique (AES-256)
 - 27 + 12 + 2 couches de règles de détection, extensibles par les professionnels de la sécurité
-- Détection d'anomalies IA/ML locale — aucun cloud, aucune télémétrie
+- Détection d'anomalies IA/ML locale — s'exécute entièrement sur l'appareil, sans cloud
+- AI Copilot optionnel — un assistant cloud hébergé dans l'UE, sur activation, pour l'analyse en langage naturel d'une seule alerte (désactivé par défaut)
 - Licence hors ligne basée sur le HWID
 - Léger et silencieux — invisible pour les attaquants
+
+> **Sur la confidentialité :** Nyroxis est hors ligne par défaut. La collecte d'événements, la détection, la corrélation, l'analyse de chaînes et le moteur IA/ML local s'exécutent tous sur votre appareil. La seule exception optionnelle est l'**AI Copilot**, que vous activez et déclenchez explicitement par alerte ; consultez la page AI Copilot pour savoir exactement ce qu'il envoie.
 
 ## Guide de la Documentation
 

@@ -30,9 +30,9 @@ Nyroxis solves this with:
 - Multi-layer rule-based detection (27 + 12 + 2 rules)
 - Local AI/ML anomaly detection
 - Zero-cloud data processing
-- No telemetry of any kind
+- No telemetry from the core platform
 
-Nothing is uploaded. Ever.
+Your security event data is never uploaded. (The optional AI Copilot is opt-in and off by default.)
 
 ---
 

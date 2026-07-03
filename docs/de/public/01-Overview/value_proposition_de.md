@@ -26,7 +26,7 @@ Nyroxis ist speziell für die goldene Mitte konzipiert:
 Die Regelbibliothek wächst kontinuierlich, und Sicherheitsprofis können eigene benutzerdefinierte Regeln hinzufügen, ohne das Kernsystem zu modifizieren.
 
 ### ✔ Forensische Beweise
-Alle Ereignisse sind verschlüsselt, mit Zeitstempel versehen und in manipulationsresistenten hash-verketteten Blöcken gespeichert — geeignet für rechtliche und regulatorische Verfahren.
+Alle Ereignisse sind verschlüsselt, mit Zeitstempel versehen und in manipulationsresistenten hash-verketteten Blöcken gespeichert — von forensischer Qualität, geeignet für Sicherheitsuntersuchungen.
 
 ### ✔ Vollständige lokale Verschlüsselung
 Alle Protokolle und Ereignisse sind im Ruhezustand verschlüsselt (AES-256) und werden lokal gespeichert.
@@ -37,7 +37,7 @@ Benutzerdefinierte Isolation-Forest-Implementierung — keine externe ML-Bibliot
 Anomalieerkennung mit Aufschlüsselung der beitragenden Merkmale, Z-Score-Klassifizierung und Spike-Erkennung.
 
 ### ✔ Plattformresilienz
-Nyroxis System Guardian überwacht alle Dienste alle 3 Sekunden, verwaltet Backups, validiert die HWID-basierte Lizenz offline und stellt sicher, dass die Plattform nicht still deaktiviert werden kann.
+Nyroxis System Guardian überwacht alle Dienste kontinuierlich, verwaltet Backups, validiert die HWID-basierte Lizenz offline und stellt sicher, dass die Plattform nicht still deaktiviert werden kann.
 
 ### ✔ Einfach für Nicht-Experten, leistungsstark für Profis
 Nicht-technische Nutzer erhalten klare Schweregradindikatoren und Ein-Klick-Regelladung.

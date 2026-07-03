@@ -52,7 +52,7 @@ Toute manipulation est signalée comme un événement de sécurité.
 
 Nyroxis System Guardian est responsable de s'assurer que Nyroxis Agent et Nyroxis Intelligence restent en fonctionnement à tout moment.
 
-Toutes les 3 secondes, Guardian vérifie l'état opérationnel des deux services. Si l'un ou l'autre service s'arrête de manière inattendue — en raison d'un événement système, d'un plantage ou d'une interférence délibérée — Guardian le détecte immédiatement et prend des mesures correctives.
+En continu, Guardian vérifie l'état opérationnel des deux services. Si l'un ou l'autre service s'arrête de manière inattendue — en raison d'un événement système, d'un plantage ou d'une interférence délibérée — Guardian le détecte immédiatement et prend des mesures correctives.
 
 Les tentatives d'arrêt sont enregistrées comme des événements de sécurité, préservant ainsi les preuves d'interférence.
 

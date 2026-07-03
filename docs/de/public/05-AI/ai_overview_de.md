@@ -1,7 +1,9 @@
 # KI & Machine-Learning-Engine — Übersicht
 
 Die Nyroxis KI/ML-Engine ist ein vollständig lokales, offline betriebenes Anomalieerkennungssystem, das in das Dashboard integriert ist.
-Es analysiert Sicherheitsereignisse, ohne Daten in die Cloud zu senden, und liefert verhaltensbasierte Intelligenz mit absoluter Privatsphäre.
+Es analysiert Sicherheitsereignisse, ohne Daten in die Cloud zu senden, und liefert verhaltensbasierte Intelligenz mit starkem Datenschutz.
+
+> **Hinweis:** Diese Seite beschreibt die **lokale, geräteinterne** KI/ML-Engine, die vollständig offline läuft. Nyroxis bietet außerdem einen separaten, optionalen **AI Copilot** — einen in der EU gehosteten Cloud-Assistenten, auf Aktivierung, für die natürlichsprachliche Analyse einzelner Warnungen. Beide sind unabhängig; siehe die Seite *AI Copilot*.
 
 ---
 

@@ -97,7 +97,7 @@ Nyroxis rejects the entire affected data slice and warns the user.
 
 ## 7. Platform Service Protection
 
-Nyroxis System Guardian monitors Nyroxis Agent and Intelligence every 3 seconds.
+Nyroxis System Guardian monitors Nyroxis Agent and Intelligence continuously.
 
 If either service is stopped — by crash, system event, or deliberate interference:
 - Guardian detects it immediately

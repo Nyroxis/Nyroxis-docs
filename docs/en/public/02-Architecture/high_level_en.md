@@ -25,7 +25,7 @@ A high-speed detection and correlation engine that:
 
 ### 3. Nyroxis System Guardian
 A silent system tray guardian that:
-- Monitors Nyroxis Agent and Intelligence every 3 seconds
+- Monitors Nyroxis Agent and Intelligence continuously
 - Manages backups and HWID-based license validation (fully offline)
 - Checks for updates automatically
 - Stops services automatically if license expires
@@ -70,7 +70,7 @@ At no stage are logs or sensitive data uploaded to external servers.
 ### Forensic Integrity
 - AES-256 encrypted logs
 - Hash-chained event blocks
-- Tamper-resistant storage suitable for legal proceedings
+- Tamper-resistant storage suitable for security investigation
 
 ### Lightweight Operation
 Built to run smoothly on personal laptops and workstations without impacting daily productivity.

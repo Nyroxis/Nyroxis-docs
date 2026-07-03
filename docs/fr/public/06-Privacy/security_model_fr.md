@@ -47,7 +47,7 @@ Les attaquants ne peuvent pas modifier les journaux ni effacer leurs traces sans
 
 ## 3. Résilience de la plateforme (Nyroxis System Guardian)
 
-Nyroxis System Guardian surveille l'état opérationnel de Nyroxis Agent et Nyroxis Intelligence toutes les 3 secondes.
+Nyroxis System Guardian surveille l'état opérationnel de Nyroxis Agent et Nyroxis Intelligence en continu.
 
 Si l'un ou l'autre service est arrêté — par un crash, un événement système ou une interférence délibérée :
 - Guardian détecte immédiatement la perturbation

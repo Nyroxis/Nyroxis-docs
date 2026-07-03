@@ -1,5 +1,7 @@
 # Mode hors ligne
 
+> **Une exception optionnelle :** l'**AI Copilot** est une fonctionnalité cloud hébergée dans l'UE, sur activation. Lorsque vous l'activez délibérément et analysez une alerte précise, les données de cette alerte sont envoyées à nyroxis.ai. Elle est désactivée par défaut. Tout ce qui est décrit sur cette page concerne le cœur hors ligne, qui fonctionne sans aucune connectivité. Voir la page *AI Copilot*.
+
 Nyroxis est conçu de fond en comble pour fonctionner entièrement hors ligne — sans nécessiter d'accès au cloud, d'authentification à distance ou d'API externes.
 Cette conception offre aux utilisateurs sécurité, confidentialité et pleine autonomie sur leur appareil.
 

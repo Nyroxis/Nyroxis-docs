@@ -63,7 +63,7 @@ Les graphiques sont générés directement depuis la base de données locale chi
 
 ## Confidentialité & fonctionnement hors ligne
 
-Rien n'est envoyé à des services externes — jamais.
+Les graphiques sont générés entièrement sur l'appareil ; vos données d'événements ne sont pas envoyées à des services externes.
 Les analyses sont calculées et rendues localement à partir d'événements chiffrés, entièrement hors ligne.
 
 ---

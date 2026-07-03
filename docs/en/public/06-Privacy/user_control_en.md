@@ -1,7 +1,7 @@
 # User Control & Transparency
 
 Nyroxis is designed to give users full control over their security data, system behavior, and privacy settings.
-No hidden processes, no background uploads, no cloud connections — everything is transparent and locally managed.
+No hidden processes and no background uploads — everything is transparent and locally managed. The only network feature is the optional, opt-in AI Copilot (off by default).
 
 ---
 

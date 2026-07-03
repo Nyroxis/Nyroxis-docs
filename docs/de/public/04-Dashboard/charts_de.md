@@ -63,7 +63,7 @@ Diagramme werden direkt aus der verschlüsselten lokalen Datenbank und der KI/ML
 
 ## Datenschutz & Offline-Betrieb
 
-Nichts wird jemals an externe Dienste gesendet.
+Diagramme werden vollständig auf dem Gerät erstellt; Ihre Ereignisdaten werden nicht an externe Dienste gesendet.
 Analysen werden lokal aus verschlüsselten Ereignissen berechnet und gerendert, vollständig offline.
 
 ---

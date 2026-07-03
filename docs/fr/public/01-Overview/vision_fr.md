@@ -35,8 +35,10 @@ Nyroxis croit que la vie privée est un droit fondamental.
 Notre vision est de fournir **une sécurité solide sans extraction de données** :
 - Les journaux restent locaux
 - Le chiffrement est par défaut et non négociable
-- Rien ne quitte l'appareil
-- Aucune dépendance au cloud, jamais
+- Vos données de sécurité restent sur l'appareil par défaut
+- Aucune dépendance au cloud pour la plateforme principale
+
+La seule exception délibérée est l'AI Copilot optionnel — un assistant cloud hébergé dans l'UE pour analyser des alertes individuelles, désactivé par défaut.
 
 La sécurité doit responsabiliser l'utilisateur — jamais compromettre sa vie privée.
 

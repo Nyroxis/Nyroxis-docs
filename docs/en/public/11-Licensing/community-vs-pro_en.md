@@ -1,52 +1,54 @@
-# Licensing Tiers — Comparison
+# Plans — Comparison
 
-## Trial
-- Duration: 1 month, full access
-- Target: All new users
-- Cost: Free — no credit card, no registration required
-- Includes: Complete platform with no restrictions
+Nyroxis keeps licensing deliberately simple. The desktop platform has one free trial and one paid license; the optional AI Copilot is a separate cloud subscription.
 
 ---
 
-## Personal
-- Device: Single device, HWID-bound
-- Target: Executives, professionals, individuals
-- Includes: Full platform — Agent, Intelligence, System Guardian, Dashboard, AI/ML engine
-- License validation: Fully offline
+## Desktop Platform
+
+### Free Trial
+- **Duration:** 30 days, full access
+- **Target:** All new users
+- **Cost:** Free — no credit card, no registration
+- **Includes:** The complete platform with no restrictions
+
+### Full License
+- **Price:** €490 / year (365 days)
+- **Device:** Single device, HWID-bound (up to 3 activations per key)
+- **Includes:** Full platform — Agent, Intelligence, System Guardian, Dashboard, local AI/ML engine
+- **License validation:** Fully offline after activation
+
+Both include the same complete platform. The Full License simply continues use after the trial ends.
 
 ---
 
-## Professional
-- Device: Single or multiple devices
-- Target: Security practitioners, consultants
-- Includes: Full platform + custom rule deployment capability
-- Support: Priority support included
+## AI Copilot (Optional Cloud Subscription)
+
+Billed separately from the desktop license. Adds cloud-assisted, natural-language analysis of individual alerts.
+
+| Plan | Price | Analyses / month |
+|------|-------|------------------|
+| Free | €0 | 30 |
+| Pro | €29 / month | 1,000 |
+| Team | €59 / month | 5,000 |
+| Business | €149 / month | 15,000 |
+
+The desktop platform works fully without any AI Copilot subscription. See the *AI Copilot* page for what it does and what it sends.
 
 ---
 
-## Enterprise
-- Device: Multi-device organizational deployment
-- Target: Organizations, holdings, institutions
-- Includes: Full platform + organizational oversight capabilities
-- Support: Dedicated support and SLA
+## What Every Desktop Installation Includes
 
----
-
-## What Every Tier Includes
-
-All tiers share the same complete platform:
 - Nyroxis Agent + Nyroxis Intelligence + Nyroxis System Guardian
-- Local AI/ML engine (Isolation Forest + statistical analysis)
+- Local AI/ML engine (Isolation Forest + statistical analysis) — fully offline
 - Full rule library: 27 detection + 12 correlation + 2 chain rules
-- Extensible rule engine — write and deploy custom rules (Professional and Enterprise)
+- Extensible rule engine — write and deploy custom rules in JSON
 - Multilingual Dashboard — English, French, German
 - AES-256 encrypted local storage
 - Offline license validation
-- No telemetry, no cloud, no data collection
 
 ---
 
 ## Summary
 
-Start with the Trial — one month, full access, no commitment.
-Upgrade when you need more devices, custom rule deployment, or organizational oversight.
+Start with the **30-day Free Trial** — full access, no commitment. Continue with a **Full License** (€490/year) when the trial ends. Add the optional **AI Copilot** only if you want cloud-assisted alert analysis.

@@ -22,7 +22,7 @@ Nyroxis leur offre une visibilité locale et silencieuse sur les activités susp
 
 Les professionnels occupant des fonctions sensibles ont besoin de :
 - Forte confidentialité — aucune transmission cloud des activités liées aux dossiers
-- Journalisation d'événements inviolable pour d'éventuelles procédures judiciaires
+- Journalisation d'événements inviolable pour l'investigation d'incidents
 - Détection précoce des tentatives de surveillance ou de compromission
 
 Nyroxis aide à protéger les appareils contenant des documents juridiques, des dossiers, des contrats et des communications confidentielles — avec des preuves forensiques toujours disponibles.

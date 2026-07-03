@@ -14,9 +14,7 @@
 
 **Detection Rule** — A rule targeting known threat patterns in individual events. Nyroxis v1.0 includes 27 detection rules.
 
-**Ed25519** — A public-key cryptographic signature scheme used in Nyroxis license validation.
-
-**Forensic Evidence** — Tamper-resistant, encrypted event logs suitable for legal and regulatory proceedings.
+**Forensic Evidence** — Tamper-resistant, encrypted event logs forensic-grade and suitable for security investigation.
 
 **Hash Chain** — A cryptographic structure where each event block contains the hash of the previous block, making deletion, modification, injection, or reordering immediately detectable.
 
@@ -34,7 +32,7 @@
 
 **Nyroxis Intelligence** — The detection and correlation engine. Operates across 27 detection rules, 12 correlation rules, and 2 chain rules (~87 MB RAM, 1.8% CPU).
 
-**Nyroxis System Guardian** — The platform guardian. Monitors all services every 3 seconds, manages backups, validates the license offline, and checks for updates (~6.5 MB RAM, 0.1% CPU).
+**Nyroxis System Guardian** — The platform guardian. Monitors all services continuously, manages backups, validates the license offline, and checks for updates (~6.5 MB RAM, 0.1% CPU).
 
 **Rule Engine** — The component inside Nyroxis Intelligence that evaluates incoming events against detection, correlation, and chain rules in real time.
 

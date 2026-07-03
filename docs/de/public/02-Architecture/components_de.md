@@ -48,7 +48,7 @@ Die Erkennungs- und Korrelations-Engine — der analytische Kern der Plattform.
 Der Plattformwächter — läuft still als Windows-Systemtray-Anwendung.
 
 ### Aufgaben
-- Überwacht Nyroxis Agent und Nyroxis Intelligence alle 3 Sekunden
+- Überwacht Nyroxis Agent und Nyroxis Intelligence kontinuierlich
 - Erkennt unerwartete Dienststopps und leitet Korrekturmaßnahmen ein
 - Verwaltet geplante und bedarfsgesteuerte Datenbanksicherungen
 - Validiert die HWID-basierte Lizenz offline (AES-GCM + HMAC-Überprüfung)

@@ -9,7 +9,10 @@ Nyroxis ist ein persönliches Endpoint-SIEM — eine leichtgewichtige, offline-f
 Führungskräfte, leitende Manager, Richter, Rechtsanwälte, Ärzte, Journalisten, SOC-Administratoren, Familien, freie Mitarbeiter und Sicherheitsexperten — jeder, dessen persönliches Gerät ein potenzieller Angriffsvektor ist.
 
 **Ist Nyroxis vollständig offline?**
-Ja. Keine Cloud, keine Telemetrie, keine Datenübertragung jeglicher Art. Alle Überwachung, Erkennung, KI/ML-Analyse und Lizenzvalidierung erfolgen vollständig auf Ihrem Gerät.
+Der Kern der Plattform ist vollständig offline: Ereigniserfassung, Erkennung, Korrelation, Kettenanalyse, die lokale KI/ML-Engine und die Lizenzvalidierung erfolgen alle vollständig auf Ihrem Gerät, ohne Telemetrie. Die einzige optionale Ausnahme ist der **AI Copilot** — eine in der EU gehostete Cloud-Funktion, auf Aktivierung, standardmäßig deaktiviert, die nur dann Daten sendet, wenn Sie eine bestimmte Warnung ausdrücklich analysieren. (Lizenzaktivierung und Update-Prüfungen kontaktieren ebenfalls Nyroxis-Server, tauschen jedoch nur Lizenz-/Versionsinformationen aus, keine Ereignisdaten.)
+
+**Was ist der AI Copilot?**
+Eine optionale Cloud-Funktion, auf Aktivierung, die eine natürlichsprachliche Erklärung einer bestimmten Warnung liefert. Sie ist von der lokalen KI/ML-Engine getrennt und standardmäßig deaktiviert. Wenn sie aktiviert und auf einer Warnung ausgelöst wird, sendet sie die Metadaten dieser Warnung, die Quell-IP, Ihre Notiz und die Definition der übereinstimmenden Regel an den in der EU gehosteten Dienst nyroxis.ai. Sie sendet niemals rohe Ereignisprotokolle oder Ergebnisse der lokalen KI/ML-Engine. Siehe die Seite *AI Copilot*.
 
 **Welche Plattformen unterstützt Nyroxis?**
 Derzeit Windows (v1.0). macOS- und Linux-Unterstützung befindet sich in aktiver Entwicklung.
@@ -46,7 +49,7 @@ Alle Daten werden lokal in einer AES-256-verschlüsselten SQLite-Datenbank auf I
 Ja — vom Dashboard aus können Sie Befunde im PDF- oder CSV-Format für Berichte oder Gerichtsverfahren exportieren.
 
 **Ist die KI/ML-Engine lokal?**
-Zu 100 % lokal. Der Isolation Forest-Algorithmus ist in Rust ohne externe ML-Bibliothek implementiert. Es werden niemals Verhaltensdaten an einen Server gesendet.
+Die lokale KI/ML-Engine ist zu 100 % lokal. Der Isolation Forest-Algorithmus ist in Rust ohne externe ML-Bibliothek implementiert, und es werden keine Verhaltensdaten an einen Server gesendet. (Dies ist getrennt von der optionalen Cloud-Funktion AI Copilot — siehe oben.)
 
 **Kann ich meine Daten zurücksetzen?**
 Ja. Vom Dashboard aus können Sie Ereignisprotokolle, Erkennungsbefunde, die KI-Verhaltens-Baseline und alle Metadaten jederzeit zurücksetzen.
@@ -75,10 +78,10 @@ Nyroxis System Guardian stoppt automatisch Nyroxis Agent und Nyroxis Intelligenc
 - Nyroxis Dashboard: ~32 MB RAM wenn geöffnet
 
 **Was ist Nyroxis System Guardian?**
-Eine stille Systemtray-Anwendung, die alle Plattformdienste alle 3 Sekunden überwacht, Sicherungen verwaltet, die HWID-basierte Lizenz offline validiert und auf Updates prüft. Sie stoppt automatisch Dienste, wenn die Lizenz abläuft.
+Eine stille Systemtray-Anwendung, die alle Plattformdienste kontinuierlich überwacht, Sicherungen verwaltet, die HWID-basierte Lizenz offline validiert und auf Updates prüft. Sie stoppt automatisch Dienste, wenn die Lizenz abläuft.
 
 **Mit welcher Technologie ist Nyroxis entwickelt?**
-Kerndienste sind in Rust entwickelt. Das Dashboard verwendet Tauri + WebView. Die lokale Datenbank ist SQLite. Die Verschlüsselung verwendet AES-256, Ed25519-Signaturen und SHA-256-Hashing. Die KI/ML-Engine ist eine benutzerdefinierte Isolation Forest-Implementierung in Rust ohne externe ML-Bibliothek.
+Kerndienste sind in Rust entwickelt. Das Dashboard verwendet Tauri + WebView. Die lokale Datenbank ist SQLite. Ereignisdaten werden im Ruhezustand mit AES-256 verschlüsselt, und die Ereignisintegrität wird durch eine Hash-Kette geschützt. Die KI/ML-Engine ist eine benutzerdefinierte Isolation-Forest-Implementierung in Rust ohne externe ML-Bibliothek.
 
 **Funktioniert Nyroxis in Air-Gapped-Umgebungen?**
 Ja. Der vollständige Funktionsumfang erfordert null Internetkonnektivität — Überwachung, Erkennung, KI/ML-Analyse und Lizenzvalidierung funktionieren alle vollständig offline.

@@ -1,52 +1,54 @@
-# Lizenzstufen — Vergleich
+# Tarife — Vergleich
 
-## Testversion
-- Dauer: 1 Monat, vollständiger Zugang
-- Zielgruppe: Alle neuen Benutzer
-- Kosten: Kostenlos — keine Kreditkarte, keine Registrierung erforderlich
-- Enthält: Vollständige Plattform ohne Einschränkungen
+Nyroxis hält die Lizenzierung bewusst einfach. Die Desktop-Plattform hat eine kostenlose Testversion und eine kostenpflichtige Lizenz; der optionale AI Copilot ist ein separates Cloud-Abonnement.
 
 ---
 
-## Persönlich
-- Gerät: Einzelnes Gerät, HWID-gebunden
-- Zielgruppe: Führungskräfte, Fachleute, Einzelpersonen
-- Enthält: Vollständige Plattform — Agent, Intelligence, System Guardian, Dashboard, KI/ML-Engine
-- Lizenzvalidierung: Vollständig offline
+## Desktop-Plattform
+
+### Kostenlose Testversion
+- **Dauer:** 30 Tage, vollständiger Zugang
+- **Zielgruppe:** Alle neuen Benutzer
+- **Kosten:** Kostenlos — keine Kreditkarte, keine Registrierung
+- **Umfasst:** Die vollständige Plattform ohne Einschränkungen
+
+### Volllizenz
+- **Preis:** 490 € / Jahr (365 Tage)
+- **Gerät:** Einzelnes Gerät, an HWID gebunden (bis zu 3 Aktivierungen pro Schlüssel)
+- **Umfasst:** Vollständige Plattform — Agent, Intelligence, System Guardian, Dashboard, lokale KI/ML-Engine
+- **Lizenzvalidierung:** Nach der Aktivierung vollständig offline
+
+Beide umfassen dieselbe vollständige Plattform. Die Volllizenz setzt die Nutzung nach dem Ende der Testversion einfach fort.
 
 ---
 
-## Professionell
-- Gerät: Einzelnes oder mehrere Geräte
-- Zielgruppe: Sicherheitsexperten, Berater
-- Enthält: Vollständige Plattform + Möglichkeit zur Bereitstellung benutzerdefinierter Regeln
-- Support: Prioritätssupport inbegriffen
+## AI Copilot (optionales Cloud-Abonnement)
+
+Getrennt von der Desktop-Lizenz abgerechnet. Fügt die cloudgestützte, natürlichsprachliche Analyse einzelner Warnungen hinzu.
+
+| Tarif | Preis | Analysen / Monat |
+|-------|-------|------------------|
+| Free | 0 € | 30 |
+| Pro | 29 € / Monat | 1.000 |
+| Team | 59 € / Monat | 5.000 |
+| Business | 149 € / Monat | 15.000 |
+
+Die Desktop-Plattform funktioniert vollständig ohne jegliches AI-Copilot-Abonnement. Siehe die Seite *AI Copilot* für das, was er tut und was er sendet.
 
 ---
 
-## Enterprise
-- Gerät: Organisatorische Bereitstellung auf mehreren Geräten
-- Zielgruppe: Organisationen, Holdings, Institutionen
-- Enthält: Vollständige Plattform + organisatorische Überwachungsfähigkeiten
-- Support: Dedizierter Support und SLA
+## Was jede Desktop-Installation umfasst
 
----
-
-## Was Jede Stufe Enthält
-
-Alle Stufen teilen dieselbe vollständige Plattform:
 - Nyroxis Agent + Nyroxis Intelligence + Nyroxis System Guardian
-- Lokale KI/ML-Engine (Isolation Forest + statistische Analyse)
-- Vollständige Regelbibliothek: 27 Erkennungs- + 12 Korrelations- + 2 Kettenregeln
-- Erweiterbare Regel-Engine — benutzerdefinierte Regeln schreiben und bereitstellen (Professionell und Enterprise)
+- Lokale KI/ML-Engine (Isolation Forest + statistische Analyse) — vollständig offline
+- Vollständige Regelbibliothek: 27 Erkennung + 12 Korrelation + 2 Kette
+- Erweiterbare Regel-Engine — eigene Regeln im JSON-Format schreiben und bereitstellen
 - Mehrsprachiges Dashboard — Englisch, Französisch, Deutsch
-- AES-256-verschlüsselter lokaler Speicher
+- Lokaler AES-256-verschlüsselter Speicher
 - Offline-Lizenzvalidierung
-- Keine Telemetrie, keine Cloud, keine Datenerfassung
 
 ---
 
 ## Zusammenfassung
 
-Beginnen Sie mit der Testversion — ein Monat, vollständiger Zugang, ohne Verpflichtung.
-Wechseln Sie zu einer höheren Stufe, wenn Sie mehr Geräte, benutzerdefinierte Regelbereitstellung oder organisatorische Aufsicht benötigen.
+Beginnen Sie mit der **30-tägigen kostenlosen Testversion** — vollständiger Zugang, ohne Verpflichtung. Fahren Sie nach dem Ende der Testversion mit einer **Volllizenz** (490 €/Jahr) fort. Fügen Sie den optionalen **AI Copilot** nur hinzu, wenn Sie eine cloudgestützte Warnungsanalyse wünschen.

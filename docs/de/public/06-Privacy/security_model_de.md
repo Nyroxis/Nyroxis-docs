@@ -47,7 +47,7 @@ Angreifer können Protokolle nicht ändern oder ihre Spuren unentdeckt verwische
 
 ## 3. Plattformresilienz (Nyroxis System Guardian)
 
-Nyroxis System Guardian überwacht den Betriebsstatus von Nyroxis Agent und Nyroxis Intelligence alle 3 Sekunden.
+Nyroxis System Guardian überwacht den Betriebsstatus von Nyroxis Agent und Nyroxis Intelligence kontinuierlich.
 
 Wenn einer der Dienste gestoppt wird — durch einen Absturz, ein Systemereignis oder absichtliche Störung:
 - Guardian erkennt die Störung sofort

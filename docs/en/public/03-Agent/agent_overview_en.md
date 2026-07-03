@@ -59,7 +59,7 @@ The Agent incorporates protective mechanisms to ensure:
 - Attackers cannot silently erase their activity
 - Hash-chained event blocks expose any deletion, modification, or injection attempt
 
-Nyroxis System Guardian monitors the Agent's operational status every 3 seconds and takes corrective action if the service stops unexpectedly.
+Nyroxis System Guardian monitors the Agent's operational status continuously and takes corrective action if the service stops unexpectedly.
 
 ---
 
@@ -77,4 +77,4 @@ Nyroxis is fully functional in isolated or air-gapped environments.
 
 ## Summary
 
-The Nyroxis Agent delivers continuous, encrypted, offline monitoring — giving users enterprise-grade visibility without exposing their data to third parties, and providing forensic-grade evidence suitable for legal and regulatory proceedings.
+The Nyroxis Agent delivers continuous, encrypted, offline monitoring — giving users enterprise-grade visibility without exposing their data to third parties, and providing forensic-grade evidence forensic-grade and suitable for security investigation.

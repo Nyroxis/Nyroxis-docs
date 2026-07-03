@@ -97,7 +97,7 @@ Nyroxis lehnt das gesamte betroffene Datensegment ab und warnt den Benutzer.
 
 ## 7. Plattform-Dienst-Schutz
 
-Nyroxis System Guardian überwacht Nyroxis Agent und Intelligence alle 3 Sekunden.
+Nyroxis System Guardian überwacht Nyroxis Agent und Intelligence kontinuierlich.
 
 Wenn einer der Dienste gestoppt wird — durch Absturz, Systemereignis oder absichtliche Eingriffe:
 - Guardian erkennt es sofort

@@ -63,7 +63,7 @@ Résultats de la couche de détection de chaîne à 2 règles :
 Documentation structurée et exportable :
 - Fenêtres temporelles configurables
 - Export en PDF et CSV
-- Approprié pour révision interne, soumission réglementaire ou procédures légales
+- Approprié pour la révision interne ou l'investigation de sécurité
 
 ### 7. Analyse IA / ML
 Accès au moteur d'apprentissage automatique local :

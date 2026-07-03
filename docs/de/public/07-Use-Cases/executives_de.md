@@ -32,7 +32,7 @@ Nyroxis löst dies mit:
 - Zero-Cloud-Datenverarbeitung
 - Keinerlei Telemetrie
 
-Nichts wird hochgeladen. Jemals.
+Ihre Sicherheitsdaten werden niemals hochgeladen. (Der optionale AI Copilot ist auf Aktivierung und standardmäßig deaktiviert.)
 
 ---
 

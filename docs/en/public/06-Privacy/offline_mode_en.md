@@ -1,14 +1,16 @@
 # Offline Mode
 
-Nyroxis is built from the ground up to operate fully offline — without requiring cloud access, remote authentication, or external APIs.
+Nyroxis is built from the ground up to operate fully offline — its core monitoring, detection, and local analysis require no cloud access, remote authentication, or external APIs.
 This design gives users security, privacy, and full autonomy over their device.
+
+> **One optional exception:** the **AI Copilot** is an opt-in, EU-hosted cloud feature. When you deliberately enable it and analyze a specific alert, that alert's data is sent to nyroxis.ai. It is disabled by default. Everything described on this page refers to the offline core, which works with no connectivity at all. See the *AI Copilot* page for details.
 
 ---
 
 ## Why Offline Matters
 
 Operating offline ensures:
-- **No data leaves the device** — ever
+- **No security event data leaves the device** in offline operation
 - **No exposure to cloud breaches** or third-party infrastructure failures
 - **No dependency on external servers** for monitoring or detection
 - **No risk of third-party monitoring** or behavioral profiling
@@ -40,7 +42,7 @@ Nyroxis does not use:
 - Online scanning or threat intelligence feeds
 - External authentication services
 
-This eliminates entire classes of privacy and attack risks.
+For the offline core, this eliminates entire classes of privacy and attack risks. (The optional AI Copilot is the single, opt-in exception noted above.)
 
 ---
 

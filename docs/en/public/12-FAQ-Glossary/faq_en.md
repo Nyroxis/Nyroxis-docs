@@ -9,7 +9,10 @@ Nyroxis is a personal endpoint SIEM — a lightweight, offline-capable cybersecu
 Executives, senior managers, judges, lawyers, doctors, journalists, SOC administrators, families, independent contractors, and security professionals — anyone whose personal device is a potential attack vector.
 
 **Is Nyroxis fully offline?**
-Yes. No cloud, no telemetry, no data transmission of any kind. All monitoring, detection, AI/ML analysis, and license validation happen entirely on your device.
+The core platform is fully offline: event collection, detection, correlation, chain analysis, the local AI/ML engine, and license validation all happen entirely on your device, with no telemetry. The one optional exception is the **AI Copilot** — an opt-in, EU-hosted cloud feature that is disabled by default and only sends data when you explicitly analyze a specific alert. (License activation and update checks also contact Nyroxis servers, but exchange only license/version information, not event data.)
+
+**What is the AI Copilot?**
+An optional, opt-in cloud feature that provides a natural-language explanation of a specific alert. It is separate from the local AI/ML engine and is disabled by default. When enabled and triggered on an alert, it sends that alert's metadata, source IP, your note, and the matched rule definition to the EU-hosted nyroxis.ai service. It never sends raw event logs or local AI/ML output. See the *AI Copilot* page for full details.
 
 **What platforms does Nyroxis support?**
 Currently Windows (v1.0). macOS and Linux support is in active development.
@@ -43,10 +46,10 @@ No. Nyroxis only collects security-relevant technical events — processes, netw
 All data is stored locally in an AES-256 encrypted SQLite database on your device. It never leaves your machine.
 
 **Can logs be exported?**
-Yes — from the Dashboard, you can export findings in PDF or CSV format for reporting or legal proceedings.
+Yes — from the Dashboard, you can export findings in PDF or CSV format for reporting or security investigation.
 
 **Is the AI/ML engine local?**
-100% local. The Isolation Forest algorithm is implemented in Rust with no external ML library. No behavioral data is ever sent to a server.
+The local AI/ML engine is 100% local. The Isolation Forest algorithm is implemented in Rust with no external ML library, and no behavioral data is ever sent to a server. (This is separate from the optional AI Copilot cloud feature — see above.)
 
 **Can I reset my data?**
 Yes. From the Dashboard you can reset event logs, detection findings, AI behavioral baseline, and all metadata at any time.
@@ -75,10 +78,10 @@ Nyroxis System Guardian automatically stops Nyroxis Agent and Nyroxis Intelligen
 - Nyroxis Dashboard: ~32 MB RAM when open
 
 **What is Nyroxis System Guardian?**
-A silent system tray application that monitors all platform services every 3 seconds, manages backups, validates the HWID-based license offline, and checks for updates. It automatically stops services if the license expires.
+A silent system tray application that monitors all platform services continuously, manages backups, validates the HWID-based license offline, and checks for updates. It automatically stops services if the license expires.
 
 **What technology is Nyroxis built with?**
-Core services are built in Rust. The Dashboard uses Tauri + WebView. The local database is SQLite. Encryption uses AES-256, Ed25519 signatures, and SHA-256 hashing. The AI/ML engine is a custom Isolation Forest implementation in Rust with no external ML library.
+Core services are built in Rust. The Dashboard uses Tauri + WebView. The local database is SQLite. Event data is encrypted at rest with AES-256, and event integrity is protected by a hash chain. The AI/ML engine is a custom Isolation Forest implementation in Rust with no external ML library.
 
 **Does Nyroxis work in air-gapped environments?**
 Yes. Full functionality requires zero internet connectivity — monitoring, detection, AI/ML analysis, and license validation all work completely offline.

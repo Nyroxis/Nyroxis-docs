@@ -37,7 +37,7 @@ Nyroxis ist um vier Kernkomponenten aufgebaut, die zusammenarbeiten:
 
 ### Nyroxis System Guardian
 - Stiller Systemtray-Wächter
-- Überwacht alle Dienste alle 3 Sekunden
+- Überwacht alle Dienste kontinuierlich
 - Verwaltet Sicherungen, Offline-Lizenzvalidierung und Update-Prüfung
 - Stoppt Dienste automatisch, wenn die Lizenz abläuft
 - ~6,5 MB RAM, 0,1 % CPU
@@ -57,12 +57,15 @@ Nyroxis ist um vier Kernkomponenten aufgebaut, die zusammenarbeiten:
 
 ## Hauptvorteile
 
-- Alle Daten verbleiben auf Ihrem Gerät — immer
+- Ihre Sicherheitsdaten verbleiben standardmäßig auf Ihrem Gerät
 - Forensisch geeigneter verschlüsselter Speicher (AES-256)
 - 27 + 12 + 2 Erkennungsregelschichten, erweiterbar durch Sicherheitsexperten
-- Lokale KI/ML-Anomalieerkennung — keine Cloud, keine Telemetrie
+- Lokale KI/ML-Anomalieerkennung — läuft vollständig auf dem Gerät, ohne Cloud
+- Optionaler AI Copilot — ein in der EU gehosteter Cloud-Assistent, auf Aktivierung, für die natürlichsprachliche Analyse einer einzelnen Warnung (standardmäßig deaktiviert)
 - HWID-basierte Offline-Lizenzierung
 - Leichtgewichtig und still — für Angreifer unsichtbar
+
+> **Zum Datenschutz:** Nyroxis ist standardmäßig offline. Ereigniserfassung, Erkennung, Korrelation, Kettenanalyse und die lokale KI/ML-Engine laufen alle auf Ihrem Gerät. Die einzige optionale Ausnahme ist der **AI Copilot**, den Sie ausdrücklich aktivieren und pro Warnung auslösen; siehe die AI-Copilot-Seite für genau das, was er sendet.
 
 ## Dokumentationsübersicht
 

@@ -47,7 +47,7 @@ All collected events are:
 - Encrypted at rest (AES-256)
 - Protected against tampering via hash-chained event blocks
 - Stored only on the user's device
-- Suitable for legal and regulatory proceedings
+- Suitable for security investigation and record-keeping
 
 ---
 
@@ -65,7 +65,7 @@ Nyroxis includes a custom Isolation Forest implementation built in Rust — no e
 ## Platform Guardian (Nyroxis System Guardian)
 
 A silent system tray service that:
-- Monitors all platform services every 3 seconds
+- Monitors all platform services continuously
 - Manages scheduled and on-demand database backups
 - Validates HWID-based license fully offline
 - Checks for updates automatically
@@ -88,12 +88,12 @@ The dashboard provides:
 
 ## Offline-First Operation
 
-Nyroxis works fully without:
+The Nyroxis core works fully without:
 - Cloud connection
 - Internet dependency
 - External authentication
 
-The platform is designed for high-privacy environments and works in air-gapped setups.
+The platform is designed for high-privacy environments and works in air-gapped setups. The only optional online feature is the **AI Copilot** (opt-in, disabled by default).
 
 ---
 

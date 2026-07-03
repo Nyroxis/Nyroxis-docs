@@ -25,7 +25,7 @@ Un moteur de détection et de corrélation à haute vitesse qui :
 
 ### 3. Nyroxis System Guardian
 Un gardien discret dans la barre des tâches qui :
-- Surveille Nyroxis Agent et Intelligence toutes les 3 secondes
+- Surveille Nyroxis Agent et Intelligence en continu
 - Gère les sauvegardes et la validation de licence basée sur le HWID (entièrement hors ligne)
 - Vérifie automatiquement les mises à jour
 - Arrête automatiquement les services si la licence expire
@@ -70,7 +70,7 @@ Une interface claire et intuitive qui :
 ### Intégrité forensique
 - Journaux chiffrés AES-256
 - Blocs d'événements chaînés par hachage
-- Stockage inviolable adapté aux procédures judiciaires
+- Stockage inviolable adapté aux investigations de sécurité
 
 ### Fonctionnement léger
 Conçu pour fonctionner en douceur sur des ordinateurs portables et des postes de travail personnels sans impacter la productivité quotidienne.

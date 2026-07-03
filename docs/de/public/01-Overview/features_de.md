@@ -47,7 +47,7 @@ Alle erfassten Ereignisse sind:
 - Im Ruhezustand verschlüsselt (AES-256)
 - Durch hash-verkettete Ereignisblöcke gegen Manipulation geschützt
 - Nur auf dem Gerät des Benutzers gespeichert
-- Für rechtliche und regulatorische Verfahren geeignet
+- Von forensischer Qualität für Sicherheitsuntersuchungen geeignet
 
 ---
 
@@ -65,7 +65,7 @@ Nyroxis enthält eine benutzerdefinierte Isolation-Forest-Implementierung, die i
 ## Plattformwächter (Nyroxis System Guardian)
 
 Ein stiller Systemtray-Dienst, der:
-- Alle Plattformdienste alle 3 Sekunden überwacht
+- Alle Plattformdienste kontinuierlich überwacht
 - Geplante und bedarfsgesteuerte Datenbanksicherungen verwaltet
 - Die HWID-basierte Lizenz vollständig offline validiert
 - Automatisch auf Updates prüft
@@ -88,12 +88,12 @@ Das Dashboard bietet:
 
 ## Offline-First-Betrieb
 
-Nyroxis funktioniert vollständig ohne:
+Der Nyroxis-Kern funktioniert vollständig ohne:
 - Cloud-Verbindung
 - Internetabhängigkeit
 - Externe Authentifizierung
 
-Die Plattform ist für hochprivate Umgebungen konzipiert und funktioniert in Air-Gapped-Setups.
+Die Plattform ist für hochprivate Umgebungen konzipiert und funktioniert in Air-Gapped-Setups. Die einzige optionale Online-Funktion ist der **AI Copilot** (auf Aktivierung, standardmäßig deaktiviert).
 
 ---
 

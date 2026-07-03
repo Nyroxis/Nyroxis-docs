@@ -28,7 +28,7 @@ Nyroxis provides:
 - Fully local detection and storage
 - Tamper-resistant forensic evidence
 - No behavioral data leaving the device
-- Protection suitable for legal and regulatory requirements
+- Protection forensic-grade and suitable for security investigation
 
 ---
 

@@ -67,7 +67,7 @@ The Logs interface includes a powerful filtering panel:
 ### Search Capabilities
 - Real-time filtering
 - Multi-field search
-- Export to CSV for legal documentation or external analysis
+- Export to CSV for documentation or external analysis
 
 Designed to support both beginners and professional analysts.
 

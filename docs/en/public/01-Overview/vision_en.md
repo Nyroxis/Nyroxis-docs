@@ -35,8 +35,10 @@ Nyroxis believes privacy is a fundamental right.
 Our vision is to deliver **strong security without data extraction**:
 - Logs remain local
 - Encryption is default and non-negotiable
-- Nothing leaves the device
-- No cloud dependency, ever
+- Your security event data stays on the device by default
+- No cloud dependency for the core platform
+
+The one deliberate exception is the optional, opt-in AI Copilot — an EU-hosted cloud assistant for analyzing individual alerts, which is disabled by default.
 
 Security must empower the user — never compromise their privacy.
 

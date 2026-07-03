@@ -1,4 +1,4 @@
-﻿# ============================================================
+# ============================================================
 #  NYROXIS DOCUMENTATION - MkDocs Configuration
 #  Professional Multi-language Documentation Site
 # ============================================================
@@ -8,7 +8,7 @@ site_name: Nyroxis Documentation
 site_description: Lightweight, Privacy-First, Offline Cybersecurity Platform
 site_author: Nyroxis Team
 site_url: https://Nyroxis.github.io/Nyroxis-docs/
-copyright: Copyright &copy; 2025 Nyroxis
+copyright: Copyright &copy; 2026 Nyroxis
 
 # Repository
 repo_name: Nyroxis/Nyroxis-docs
@@ -174,10 +174,6 @@ extra:
       link: de/
       lang: de
       icon: 🇩🇪
-    - name: עברית
-      link: he/
-      lang: he
-      icon: 🇮🇱
       
 # Navigation Structure
 nav:
@@ -214,6 +210,7 @@ nav:
           - AI Engine: en/public/05-AI/ai_engine_en.md
           - Detections: en/public/05-AI/detections_en.md
           - Scenarios: en/public/05-AI/scenarios_en.md
+          - AI Copilot (Cloud): en/public/05-AI/ai_copilot_en.md
       
       - Privacy:
           - Data Storage: en/public/06-Privacy/data_storage_en.md
@@ -280,6 +277,7 @@ nav:
           - Moteur IA: fr/public/05-AI/ai_engine_fr.md
           - Détections: fr/public/05-AI/detections_fr.md
           - Scénarios: fr/public/05-AI/scenarios_fr.md
+          - AI Copilot (Cloud): fr/public/05-AI/ai_copilot_fr.md
       
       - Confidentialité:
           - Stockage: fr/public/06-Privacy/data_storage_fr.md
@@ -347,6 +345,7 @@ nav:
           - KI Engine: de/public/05-AI/ai_engine_de.md
           - Erkennungen: de/public/05-AI/detections_de.md
           - Szenarien: de/public/05-AI/scenarios_de.md
+          - AI Copilot (Cloud): de/public/05-AI/ai_copilot_de.md
       
       - Datenschutz:
           - Datenspeicherung: de/public/06-Privacy/data_storage_de.md
@@ -379,74 +378,6 @@ nav:
       - FAQ & Glossar:
           - FAQ: de/public/12-FAQ-Glossary/faq_de.md
           - Glossar: de/public/12-FAQ-Glossary/glossary_de.md
-  
-
-  # Hebrew Documentation
-  - 🇮🇱 עברית:
-      - בית: he/index.md
-      - סקירה:
-          - מבוא: he/public/01-Overview/introduction_he.md
-          - חזון: he/public/01-Overview/vision_he.md
-          - בעייתיות: he/public/01-Overview/problem_context_he.md
-          - פרסונות: he/public/01-Overview/personas_he.md
-          - ערך: he/public/01-Overview/value_proposition_he.md
-          - פיצ'רים: he/public/01-Overview/features_he.md
-          - אינדקס: he/public/01-Overview/overview_index_he.md
-      
-      - ארכיטקטורה:
-          - רכיבים: he/public/02-Architecture/components_he.md
-          - זרימת נתונים: he/public/02-Architecture/data_flow_he.md
-          - רמה גבוהה: he/public/02-Architecture/high_level_he.md
-      
-      - Agent:
-          - סקירה: he/public/03-Agent/agent_overview_he.md
-          - איסוף אירועים: he/public/03-Agent/event_collector_he.md
-          - הגנה: he/public/03-Agent/protection_he.md
-      
-      - Dashboard:
-          - ממשק: he/public/04-Dashboard/ui_design_he.md
-          - לוגים: he/public/04-Dashboard/logs_he.md
-          - גרפים: he/public/04-Dashboard/charts_he.md
-          - חוקים: he/public/04-Dashboard/rule_matching_he.md
-      
-      - מנוע AI:
-          - סקירת AI: he/public/05-AI/ai_overview_he.md
-          - מנוע AI: he/public/05-AI/ai_engine_he.md
-          - זיהויים: he/public/05-AI/detections_he.md
-          - תרחישים: he/public/05-AI/scenarios_he.md
-      
-      - פרטיות:
-          - אחסון: he/public/06-Privacy/data_storage_he.md
-          - מצב אופליין: he/public/06-Privacy/offline_mode_he.md
-          - מודל אבטחה: he/public/06-Privacy/security_model_he.md
-          - שליטת משתמש: he/public/06-Privacy/user_control_he.md
-      
-      - מקרי שימוש:
-          - סקירה: he/public/07-Use-Cases/use_cases_overview_he.md
-          - הגנת משפחות: he/public/07-Use-Cases/family_protection_he.md
-          - מנהלים: he/public/07-Use-Cases/executives_he.md
-          - מקצועיים: he/public/07-Use-Cases/professionals_he.md
-          - טכנאים: he/public/07-Use-Cases/technical_users_he.md
-          - קבלנים: he/public/07-Use-Cases/contractors_he.md
-      
-      - אבטחה:
-          - סקירת אבטחה: he/public/09-Security/security_overview_he.md
-          - הצפנה: he/public/09-Security/encryption_he.md
-          - אבטחה אופליין: he/public/09-Security/offline_security_he.md
-          - אנטי-טמפר: he/public/09-Security/tamper_protection_he.md
-          - AI מקומי: he/public/09-Security/local_ai_he.md
-      
-      - מפת דרכים:
-          - Roadmap 2025: he/public/10-Roadmap/roadmap-2025_he.md
-      
-      - רישוי:
-          - סקירת מהדורות: he/public/11-Licensing/editions-overview_he.md
-          - Community vs Pro: he/public/11-Licensing/community-vs-pro_he.md
-      
-      - FAQ & מילון:
-          - שאלות נפוצות: he/public/12-FAQ-Glossary/faq_he.md
-          - מילון מונחים: he/public/12-FAQ-Glossary/glossary_he.md
-
 
 # Validation
 validation:

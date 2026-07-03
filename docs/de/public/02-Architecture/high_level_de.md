@@ -25,7 +25,7 @@ Eine hochgeschwindigkeits-Erkennungs- und Korrelations-Engine, die:
 
 ### 3. Nyroxis System Guardian
 Ein stiller Systemtray-Wächter, der:
-- Nyroxis Agent und Intelligence alle 3 Sekunden überwacht
+- Nyroxis Agent und Intelligence kontinuierlich überwacht
 - Backups und HWID-basierte Lizenzvalidierung verwaltet (vollständig offline)
 - Automatisch auf Updates prüft
 - Dienste automatisch stoppt, wenn die Lizenz abläuft

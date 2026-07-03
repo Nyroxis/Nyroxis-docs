@@ -1,52 +1,54 @@
-# Niveaux de Licence — Comparaison
+# Formules — Comparaison
 
-## Essai
-- Durée : 1 mois, accès complet
-- Cible : Tous les nouveaux utilisateurs
-- Coût : Gratuit — aucune carte bancaire, aucune inscription requise
-- Inclut : Plateforme complète sans restriction
+Nyroxis garde une licence délibérément simple. La plateforme de bureau a un essai gratuit et une licence payante ; l'AI Copilot optionnel est un abonnement cloud séparé.
 
 ---
 
-## Personnel
-- Appareil : Appareil unique, lié au HWID
-- Cible : Dirigeants, professionnels, particuliers
-- Inclut : Plateforme complète — Agent, Intelligence, System Guardian, Dashboard, moteur IA/ML
-- Validation de licence : Entièrement hors ligne
+## Plateforme de bureau
+
+### Essai gratuit
+- **Durée :** 30 jours, accès complet
+- **Public :** Tous les nouveaux utilisateurs
+- **Coût :** Gratuit — sans carte bancaire, sans inscription
+- **Comprend :** La plateforme complète sans restriction
+
+### Licence complète
+- **Prix :** 490 € / an (365 jours)
+- **Appareil :** Appareil unique, lié au HWID (jusqu'à 3 activations par clé)
+- **Comprend :** Plateforme complète — Agent, Intelligence, System Guardian, Dashboard, moteur IA/ML local
+- **Validation de licence :** Entièrement hors ligne après activation
+
+Les deux incluent la même plateforme complète. La Licence complète prolonge simplement l'utilisation après l'essai.
 
 ---
 
-## Professionnel
-- Appareil : Appareil unique ou plusieurs appareils
-- Cible : Praticiens de la sécurité, consultants
-- Inclut : Plateforme complète + capacité de déploiement de règles personnalisées
-- Support : Support prioritaire inclus
+## AI Copilot (abonnement cloud optionnel)
+
+Facturé séparément de la licence de bureau. Ajoute l'analyse en langage naturel, assistée par le cloud, d'alertes individuelles.
+
+| Forfait | Prix | Analyses / mois |
+|---------|------|-----------------|
+| Free | 0 € | 30 |
+| Pro | 29 € / mois | 1 000 |
+| Team | 59 € / mois | 5 000 |
+| Business | 149 € / mois | 15 000 |
+
+La plateforme de bureau fonctionne pleinement sans aucun abonnement AI Copilot. Voir la page *AI Copilot* pour ce qu'il fait et ce qu'il envoie.
 
 ---
 
-## Entreprise
-- Appareil : Déploiement organisationnel multi-appareils
-- Cible : Organisations, holdings, institutions
-- Inclut : Plateforme complète + capacités de supervision organisationnelle
-- Support : Support dédié et SLA
+## Ce que comprend chaque installation de bureau
 
----
-
-## Ce que Chaque Niveau Inclut
-
-Tous les niveaux partagent la même plateforme complète :
 - Nyroxis Agent + Nyroxis Intelligence + Nyroxis System Guardian
-- Moteur IA/ML local (Isolation Forest + analyse statistique)
-- Bibliothèque de règles complète : 27 règles de détection + 12 règles de corrélation + 2 règles de chaîne
-- Moteur de règles extensible — écrire et déployer des règles personnalisées (Professionnel et Entreprise)
+- Moteur IA/ML local (Isolation Forest + analyse statistique) — entièrement hors ligne
+- Bibliothèque complète de règles : 27 détection + 12 corrélation + 2 chaîne
+- Moteur de règles extensible — écrire et déployer des règles personnalisées au format JSON
 - Dashboard multilingue — anglais, français, allemand
 - Stockage local chiffré AES-256
 - Validation de licence hors ligne
-- Aucune télémétrie, aucun cloud, aucune collecte de données
 
 ---
 
 ## Résumé
 
-Commencez avec l'Essai — un mois, accès complet, sans engagement.
-Passez à un niveau supérieur lorsque vous avez besoin de plusieurs appareils, du déploiement de règles personnalisées ou d'une supervision organisationnelle.
+Commencez par l'**essai gratuit de 30 jours** — accès complet, sans engagement. Poursuivez avec une **Licence complète** (490 €/an) à la fin de l'essai. Ajoutez l'**AI Copilot** optionnel uniquement si vous souhaitez l'analyse d'alertes assistée par le cloud.

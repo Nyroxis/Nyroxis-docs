@@ -23,7 +23,7 @@ Nyroxis comble ce fossé en offrant une couche de sécurité structurée, intell
 Nyroxis s'appuie sur quatre principes fondamentaux :
 - **Sécurité locale en priorité** — tous les journaux et analyses restent sur l'appareil
 - **Détection multicouche** — 27 règles de détection, 12 règles de corrélation, 2 règles de chaîne et IA locale
-- **Disponibilité forensique** — preuves chiffrées inviolables et admissibles devant les tribunaux
+- **Disponibilité forensique** — preuves chiffrées inviolables de qualité forensique
 - **Visibilité conviviale** — tableaux de bord clairs et explications accessibles à tout utilisateur
 
 Le résultat est un système qui apporte une conscience et une détection de niveau entreprise dans une forme adaptée aux familles, aux professionnels, aux cadres dirigeants et aux praticiens de la cybersécurité.

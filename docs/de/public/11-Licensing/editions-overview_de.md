@@ -1,64 +1,76 @@
 # Lizenzmodell
 
-Nyroxis bietet ein einfaches, transparentes Lizenzmodell — keine Abonnement-Fallen, keine versteckte Datenerfassung, keine Abhängigkeit von externen Servern.
+Nyroxis bietet ein einfaches, transparentes Lizenzmodell — keine Abonnement-Fallen, keine versteckte Datenerhebung und keine Abhängigkeit von externen Servern für den Plattformbetrieb.
 
 ---
 
-## Wie die Lizenzierung Funktioniert
+## Funktionsweise der Lizenzierung
 
-Jede Nyroxis-Lizenz ist über einen eindeutigen HWID-abgeleiteten Identifikator an die Hardware des Benutzers gebunden.
-Ein kryptografischer Schlüssel wird aus demselben Hardware-Profil generiert und erstellt eine Lizenz, die:
+Jede Nyroxis-Lizenz ist über eine eindeutige, aus dem HWID abgeleitete Kennung an die Hardware des Benutzers gebunden.
+Ein kryptografischer Schlüssel wird aus demselben Hardwareprofil erzeugt, wodurch eine Lizenz entsteht, die:
 
-- **Nicht übertragbar** — an das spezifische Gerät gebunden, für das sie ausgestellt wurde
-- **Manipulationssicher** — jede Änderung wird sofort von Nyroxis System Guardian erkannt
-- **Vollständig offline** — die Validierung erfordert keine Internetverbindung, keinen externen Server
-
----
-
-## Testversion
-
-Jede neue Nyroxis-Installation enthält eine **kostenlose einmonatige Testversion** — vollständiger Zugang zu allen Plattformfunktionen ohne Einschränkungen.
-Keine Kreditkarte erforderlich. Keine Registrierung.
+- **Nicht übertragbar** ist — an das spezifische Gerät gebunden, für das sie ausgestellt wurde (bis zu 3 Geräteaktivierungen pro Lizenzschlüssel)
+- **Manipulationssicher** ist — jede Änderung wird sofort von Nyroxis System Guardian erkannt
+- **Nach der Aktivierung offline** ist — einmal aktiviert, erfordert die Validierung keine dauerhafte Internetverbindung
 
 ---
 
-## Lizenzstufen
+## Desktop-Tarife
 
-| Stufe | Zielgruppe | Funktionen |
-|-------|------------|------------|
-| **Testversion** | Alle Benutzer | Vollständiger Plattformzugang — 1 Monat, keine Einschränkungen |
-| **Persönlich** | Führungskräfte, Fachleute, Einzelpersonen | Vollständige Plattform, einzelnes Gerät, HWID-gebunden |
-| **Professionell** | Sicherheitsexperten, Berater | Vollständige Plattform, benutzerdefinierte Regelbereitstellung, Prioritätssupport |
-| **Enterprise** | Organisationen, Holdings, Institutionen | Multi-Gerät-Bereitstellung, organisatorische Aufsicht, dedizierter Support |
+Die Nyroxis-Desktop-Plattform bietet zwei unkomplizierte Optionen:
+
+| Tarif | Preis | Beschreibung |
+|-------|-------|--------------|
+| **Kostenlose Testversion** | 0 € | Vollständiger Plattformzugang — 30 Tage, ohne Einschränkungen, ohne Kreditkarte |
+| **Volllizenz** | 490 € / Jahr (365 Tage) | Vollständige Plattform, einzelnes Gerät, an HWID gebunden |
+
+Die kostenlose Testversion umfasst die vollständige Plattform ohne Funktionsbeschränkungen. Nach ihrem Ablauf schaltet eine Volllizenz die weitere Nutzung frei.
 
 ---
 
-## Was Immer Enthalten Ist
+## AI Copilot — Separates optionales Abonnement
 
-Jede Nyroxis-Installation — unabhängig von der Stufe — enthält:
+Der optionale **AI Copilot** (cloudgestützte Warnungsanalyse) wird getrennt von der Desktop-Lizenz abgerechnet und verfügt über eigene kostenlose und kostenpflichtige Stufen:
+
+| Tarif | Preis | Analysen pro Monat |
+|-------|-------|--------------------|
+| Free | 0 € | 30 |
+| Pro | 29 € / Monat | 1.000 |
+| Team | 59 € / Monat | 5.000 |
+| Business | 149 € / Monat | 15.000 |
+
+Die Desktop-Plattform und das AI-Copilot-Abonnement sind unabhängig voneinander — die Desktop-Plattform ist ohne jegliches AI-Copilot-Abonnement voll funktionsfähig. Siehe die Seite *AI Copilot*. Preise und Limits sind Richtwerte und können sich ändern; aktuelle Angaben finden Sie unter [www.nyroxis.com](https://www.nyroxis.com).
+
+---
+
+## Was immer enthalten ist (Desktop)
+
+Jede Nyroxis-Desktop-Installation umfasst:
 - Nyroxis Agent, Nyroxis Intelligence, Nyroxis System Guardian — vollständige Plattform
-- Lokale KI/ML-Engine — vollständig offline, keine Cloud-Abhängigkeit
-- Vollständige Erkennungs-, Korrelations- und Kettenregelbibliothek (27 + 12 + 2)
+- Lokale KI/ML-Engine — vollständig offline, ohne Cloud-Abhängigkeit
+- Vollständige Bibliothek von Erkennungs-, Korrelations- und Kettenregeln (27 + 12 + 2)
 - Mehrsprachiges Dashboard — Englisch, Französisch, Deutsch
-- Forensisch geeigneter AES-256-verschlüsselter lokaler Speicher
-- Datenbank-Sicherungsverwaltung
+- Lokaler AES-256-verschlüsselter Speicher in forensischer Qualität
+- Verwaltung von Datenbank-Backups
 - Offline-Lizenzvalidierung
 
 ---
 
-## Was Nie Enthalten Ist
+## Was niemals enthalten ist
 
-- Keine Telemetrie an Nyroxis oder Dritte gesendet
-- Keine Verhaltensdaten für Lizenzzwecke erfasst
-- Keine Abhängigkeit von Internetkonnektivität für den Plattformbetrieb
-- Keine versteckten Kosten gebunden an Datenvolumen oder Ereignisanzahl
+- Keine Telemetrie, die von der Kernplattform an Nyroxis oder Dritte gesendet wird
+- Keine Erhebung von Verhaltensdaten zu Lizenzzwecken
+- Keine Abhängigkeit von einer Internetverbindung für den Plattformbetrieb
+- Keine versteckten Kosten, die an Datenvolumen oder Ereignisanzahl gebunden sind
+
+> **Wichtig — Daten- und Hardwareänderungen:** Da die Verschlüsselungsschlüssel an die Gerätehardware gebunden sind, kann eine größere Hardwareänderung oder eine Neuinstallation des Betriebssystems die Geräteidentität verändern und zuvor verschlüsselte Daten unlesbar machen. Dies wird in den Lizenzbedingungen offengelegt.
 
 ---
 
 ## Kontakt
 
-Für Lizenzanfragen, Testerweiterungen oder Enterprise-Bereitstellungsgespräche:
+Für Fragen zur Lizenzierung, zur Testversion oder zur Unternehmensbereitstellung:
 
 **Nyroxis Security**
-www.nyroxis.com | contact@nyroxis.com
+[www.nyroxis.com](https://www.nyroxis.com) | contact@nyroxis.com
 Nizza, Frankreich

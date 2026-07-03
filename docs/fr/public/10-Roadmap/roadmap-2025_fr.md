@@ -8,9 +8,10 @@ La feuille de route publique de Nyroxis présente les améliorations à venir, l
 
 - **Nyroxis Agent** — collecte de journaux multicanal, normalisation, stockage local chiffré AES-256 (~57 Mo de RAM, 0,1 % du CPU)
 - **Nyroxis Intelligence** — moteur de détection à trois niveaux : 27 règles de détection + 12 règles de corrélation + 2 règles de chaîne, extensible par les professionnels de la sécurité
-- **Nyroxis System Guardian** — surveillance des services toutes les 3 secondes, gestion des sauvegardes, validation de licence HWID hors ligne, vérification des mises à jour (~6,5 Mo de RAM)
+- **Nyroxis System Guardian** — surveillance des services en continu, gestion des sauvegardes, validation de licence HWID hors ligne, vérification des mises à jour (~6,5 Mo de RAM)
 - **Nyroxis Dashboard** — visibilité en temps réel, recherche forensique, vues de détection et de corrélation, analyse IA/ML, rapports PDF/CSV
 - **Moteur IA/ML Local** — détection d'anomalies Isolation Forest, analyse statistique Z-Score, entièrement hors ligne
+- **AI Copilot (optionnel)** — assistant cloud hébergé dans l'UE, sur activation, pour l'analyse en langage naturel d'alertes individuelles
 - **Interface multilingue** — anglais, français, allemand
 - **Plateforme Windows** — un mois d'essai gratuit
 

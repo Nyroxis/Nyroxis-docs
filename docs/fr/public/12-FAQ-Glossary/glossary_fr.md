@@ -14,9 +14,7 @@
 
 **Règle de Détection** — Une règle ciblant les patterns de menaces connues dans des événements individuels. Nyroxis v1.0 inclut 27 règles de détection.
 
-**Ed25519** — Un schéma de signature cryptographique à clé publique utilisé dans la validation de licence Nyroxis.
-
-**Preuves Forensiques** — Journaux d'événements inviolables et chiffrés adaptés aux procédures judiciaires et réglementaires.
+**Preuves Forensiques** — Journaux d'événements inviolables et chiffrés de qualité forensique, adaptés à l'investigation de sécurité.
 
 **Chaîne de Hachage** — Une structure cryptographique où chaque bloc d'événement contient le hash du bloc précédent, rendant la suppression, la modification, l'injection ou le réordonnancement immédiatement détectables.
 
@@ -34,7 +32,7 @@
 
 **Nyroxis Intelligence** — Le moteur de détection et de corrélation. Fonctionne sur 27 règles de détection, 12 règles de corrélation et 2 règles de chaîne (~87 Mo de RAM, 1,8 % du CPU).
 
-**Nyroxis System Guardian** — Le gardien de la plateforme. Surveille tous les services toutes les 3 secondes, gère les sauvegardes, valide la licence hors ligne et vérifie les mises à jour (~6,5 Mo de RAM, 0,1 % du CPU).
+**Nyroxis System Guardian** — Le gardien de la plateforme. Surveille tous les services en continu, gère les sauvegardes, valide la licence hors ligne et vérifie les mises à jour (~6,5 Mo de RAM, 0,1 % du CPU).
 
 **Moteur de Règles** — Le composant à l'intérieur de Nyroxis Intelligence qui évalue les événements entrants par rapport aux règles de détection, de corrélation et de chaîne en temps réel.
 

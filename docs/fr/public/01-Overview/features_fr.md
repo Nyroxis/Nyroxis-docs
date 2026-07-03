@@ -65,7 +65,7 @@ Nyroxis intègre une implémentation personnalisée d'Isolation Forest développ
 ## Gardien de plateforme (Nyroxis System Guardian)
 
 Un service discret dans la barre des tâches qui :
-- Surveille tous les services de la plateforme toutes les 3 secondes
+- Surveille tous les services de la plateforme en continu
 - Gère les sauvegardes de base de données planifiées et à la demande
 - Valide la licence basée sur le HWID entièrement hors ligne
 - Vérifie automatiquement les mises à jour
@@ -93,7 +93,7 @@ Nyroxis fonctionne entièrement sans :
 - Dépendance à Internet
 - Authentification externe
 
-La plateforme est conçue pour les environnements à haute confidentialité et fonctionne dans des configurations isolées (air-gapped).
+La plateforme est conçue pour les environnements à haute confidentialité et fonctionne dans des configurations isolées (air-gapped). La seule fonctionnalité en ligne optionnelle est l'**AI Copilot** (sur activation, désactivé par défaut).
 
 ---
 

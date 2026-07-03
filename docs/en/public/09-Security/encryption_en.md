@@ -60,7 +60,7 @@ This eliminates the risk of forensic recovery of plaintext from disk.
 
 Encryption keys are:
 - Derived from the user's hardware identifiers (HWID)
-- Generated locally using salted hashing
+- Generated locally on the device
 - Never stored directly inside the application
 - Never transmitted to any server
 

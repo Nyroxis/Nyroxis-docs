@@ -35,8 +35,10 @@ Nyroxis ist überzeugt, dass Datenschutz ein grundlegendes Recht ist.
 Unsere Vision ist es, **starke Sicherheit ohne Datenextraktion** zu liefern:
 - Protokolle bleiben lokal
 - Verschlüsselung ist Standard und nicht verhandelbar
-- Nichts verlässt das Gerät
-- Keine Cloud-Abhängigkeit, niemals
+- Ihre Sicherheitsdaten verbleiben standardmäßig auf dem Gerät
+- Keine Cloud-Abhängigkeit für die Kernplattform
+
+Die einzige bewusste Ausnahme ist der optionale AI Copilot — ein in der EU gehosteter Cloud-Assistent zur Analyse einzelner Warnungen, standardmäßig deaktiviert.
 
 Sicherheit muss den Benutzer stärken — niemals seine Privatsphäre gefährden.
 

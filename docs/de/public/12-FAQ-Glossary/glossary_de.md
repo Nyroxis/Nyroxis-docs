@@ -14,9 +14,7 @@
 
 **Erkennungsregel** — Eine Regel, die bekannte Bedrohungsmuster in einzelnen Ereignissen anvisiert. Nyroxis v1.0 enthält 27 Erkennungsregeln.
 
-**Ed25519** — Ein kryptografisches Public-Key-Signaturverfahren, das bei der Nyroxis-Lizenzvalidierung verwendet wird.
-
-**Forensische Beweise** — Manipulationssichere, verschlüsselte Ereignisprotokolle, die für rechtliche und regulatorische Verfahren geeignet sind.
+**Forensische Beweise** — Manipulationssichere, verschlüsselte Ereignisprotokolle, die von forensischer Qualität und für Sicherheitsuntersuchungen geeignet sind.
 
 **Hash-Kette** — Eine kryptografische Struktur, bei der jeder Ereignisblock den Hash des vorherigen Blocks enthält, wodurch Löschung, Modifikation, Injektion oder Neuanordnung sofort erkennbar werden.
 
@@ -34,7 +32,7 @@
 
 **Nyroxis Intelligence** — Die Erkennungs- und Korrelations-Engine. Arbeitet mit 27 Erkennungsregeln, 12 Korrelationsregeln und 2 Kettenregeln (~87 MB RAM, 1,8 % CPU).
 
-**Nyroxis System Guardian** — Der Plattformwächter. Überwacht alle Dienste alle 3 Sekunden, verwaltet Sicherungen, validiert die Lizenz offline und prüft auf Updates (~6,5 MB RAM, 0,1 % CPU).
+**Nyroxis System Guardian** — Der Plattformwächter. Überwacht alle Dienste kontinuierlich, verwaltet Sicherungen, validiert die Lizenz offline und prüft auf Updates (~6,5 MB RAM, 0,1 % CPU).
 
 **Regel-Engine** — Die Komponente innerhalb von Nyroxis Intelligence, die eingehende Ereignisse in Echtzeit gegen Erkennungs-, Korrelations- und Kettenregeln auswertet.
 

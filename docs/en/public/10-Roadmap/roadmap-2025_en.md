@@ -8,11 +8,12 @@ The Nyroxis public roadmap outlines upcoming improvements, strategic milestones,
 
 - **Nyroxis Agent** — multi-channel log collection, normalization, AES-256 encrypted local storage (~57 MB RAM, 0.1% CPU)
 - **Nyroxis Intelligence** — three-layer detection engine: 27 detection + 12 correlation + 2 chain rules, extensible by security professionals
-- **Nyroxis System Guardian** — service monitoring every 3 seconds, backup management, offline HWID license validation, update checking (~6.5 MB RAM)
+- **Nyroxis System Guardian** — service monitoring continuously, backup management, offline HWID license validation, update checking (~6.5 MB RAM)
 - **Nyroxis Dashboard** — real-time visibility, forensic search, detection and correlation views, AI/ML analysis, PDF/CSV reporting
 - **Local AI/ML Engine** — Isolation Forest anomaly detection, Z-Score statistical analysis, fully offline
+- **AI Copilot (optional)** — opt-in, EU-hosted cloud assistant for natural-language analysis of individual alerts
 - **Multilingual interface** — English, French, German
-- **Windows platform** — one month free trial
+- **Windows platform** — 30-day free trial
 
 ---
 

@@ -1,5 +1,7 @@
 # Offline-Modus
 
+> **Eine optionale Ausnahme:** Der **AI Copilot** ist eine in der EU gehostete Cloud-Funktion, auf Aktivierung. Wenn Sie ihn bewusst aktivieren und eine bestimmte Warnung analysieren, werden die Daten dieser Warnung an nyroxis.ai gesendet. Er ist standardmäßig deaktiviert. Alles auf dieser Seite bezieht sich auf den Offline-Kern, der ohne jegliche Konnektivität funktioniert. Siehe die Seite *AI Copilot*.
+
 Nyroxis ist von Grund auf für den vollständig offline Betrieb ausgelegt — ohne Cloud-Zugang, Remote-Authentifizierung oder externe APIs zu benötigen.
 Dieses Design gibt Benutzern Sicherheit, Privatsphäre und volle Autonomie über ihr Gerät.
 

@@ -37,7 +37,7 @@ Nyroxis is built around four core components working in concert:
 
 ### Nyroxis System Guardian
 - Silent system tray guardian
-- Monitors all services every 3 seconds
+- Monitors all services continuously
 - Manages backups, offline license validation, and update checking
 - Stops services automatically if license expires
 - ~6.5 MB RAM, 0.1% CPU
@@ -57,12 +57,15 @@ Nyroxis is built around four core components working in concert:
 
 ## Key Advantages
 
-- All data stays on your device — always
+- Your security data stays on your device by default
 - Forensic-grade encrypted storage (AES-256)
 - 27 + 12 + 2 detection rule layers, extensible by security professionals
-- Local AI/ML anomaly detection — no cloud, no telemetry
+- Local AI/ML anomaly detection — runs fully on-device, no cloud
+- Optional AI Copilot — an opt-in, EU-hosted cloud assistant for natural-language analysis of a single alert (disabled by default)
 - HWID-based offline licensing
 - Lightweight and silent — invisible to attackers
+
+> **On privacy:** Nyroxis is offline-first. Event collection, detection, correlation, chain analysis, and the local AI/ML engine all run on your device. The only optional exception is the **AI Copilot**, which you explicitly enable and trigger per alert; see the AI Copilot page for exactly what it sends.
 
 ## Documentation Guide
 

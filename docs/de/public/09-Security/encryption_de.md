@@ -60,7 +60,7 @@ Dies eliminiert das Risiko der forensischen Wiederherstellung von Klartext von d
 
 Verschlüsselungsschlüssel sind:
 - Aus den Hardware-Identifikatoren des Benutzers (HWID) abgeleitet
-- Lokal mit gesalzenem Hashing generiert
+- Lokal auf dem Gerät generiert
 - Niemals direkt in der Anwendung gespeichert
 - Niemals an einen Server übertragen
 

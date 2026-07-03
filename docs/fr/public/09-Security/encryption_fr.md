@@ -60,7 +60,7 @@ Cela élimine le risque de récupération forensique de données en clair depuis
 
 Les clés de chiffrement sont :
 - Dérivées des identifiants matériels de l'utilisateur (HWID)
-- Générées localement à l'aide d'un hachage salé
+- Générées localement sur l'appareil
 - Jamais stockées directement dans l'application
 - Jamais transmises à aucun serveur
 

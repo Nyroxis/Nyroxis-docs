@@ -1,7 +1,9 @@
 # Moteur IA & Apprentissage automatique — Vue d'ensemble
 
 Le moteur IA/ML de Nyroxis est un système de détection d'anomalies entièrement local et hors ligne, intégré dans le tableau de bord.
-Il analyse les événements de sécurité sans envoyer de données vers le cloud, offrant une intelligence comportementale avec une confidentialité absolue.
+Il analyse les événements de sécurité sans envoyer de données vers le cloud, offrant une intelligence comportementale avec une forte confidentialité.
+
+> **Remarque :** Cette page décrit le moteur IA/ML **local, sur l'appareil**, qui s'exécute entièrement hors ligne. Nyroxis propose aussi un **AI Copilot** séparé et optionnel — un assistant cloud hébergé dans l'UE, sur activation, pour l'analyse en langage naturel d'alertes individuelles. Les deux sont indépendants ; voir la page *AI Copilot*.
 
 ---
 

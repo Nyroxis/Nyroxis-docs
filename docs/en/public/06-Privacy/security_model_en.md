@@ -47,7 +47,7 @@ Attackers cannot alter logs or cover their tracks undetected.
 
 ## 3. Platform Resilience (Nyroxis System Guardian)
 
-Nyroxis System Guardian monitors the operational status of Nyroxis Agent and Nyroxis Intelligence every 3 seconds.
+Nyroxis System Guardian monitors the operational status of Nyroxis Agent and Nyroxis Intelligence continuously.
 
 If either service is stopped — by a crash, system event, or deliberate interference:
 - Guardian detects the disruption immediately

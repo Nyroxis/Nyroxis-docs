@@ -59,7 +59,7 @@ Der Agent beinhaltet Schutzmechanismen, um sicherzustellen:
 - Angreifer können ihre Aktivitäten nicht still löschen
 - Hash-verkettete Ereignisblöcke decken jeden Lösch-, Änderungs- oder Injektionsversuch auf
 
-Nyroxis System Guardian überwacht den Betriebsstatus des Agents alle 3 Sekunden und ergreift Korrekturmaßnahmen, wenn der Dienst unerwartet stoppt.
+Nyroxis System Guardian überwacht den Betriebsstatus des Agents kontinuierlich und ergreift Korrekturmaßnahmen, wenn der Dienst unerwartet stoppt.
 
 ---
 

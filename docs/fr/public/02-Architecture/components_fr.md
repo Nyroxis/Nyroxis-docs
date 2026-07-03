@@ -48,7 +48,7 @@ Le moteur de détection et de corrélation — le cœur analytique de la platefo
 Le gardien de la plateforme — fonctionne silencieusement en tant qu'application dans la barre des tâches Windows.
 
 ### Responsabilités
-- Surveille Nyroxis Agent et Nyroxis Intelligence toutes les 3 secondes
+- Surveille Nyroxis Agent et Nyroxis Intelligence en continu
 - Détecte les arrêts de service inattendus et prend des mesures correctives
 - Gère les sauvegardes de base de données planifiées et à la demande
 - Valide la licence basée sur le HWID hors ligne (vérification AES-GCM + HMAC)

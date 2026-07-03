@@ -1,7 +1,9 @@
 # AI & Machine Learning Engine — Overview
 
 The Nyroxis AI/ML engine is a fully local, offline anomaly detection system embedded in the Dashboard.
-It analyzes security events without sending any data to the cloud, delivering behavioral intelligence with absolute privacy.
+It analyzes security events without sending any data to the cloud, delivering behavioral intelligence with strong privacy.
+
+> **Note:** This page describes the **local, on-device** AI/ML engine, which runs fully offline. Nyroxis also offers a separate, optional **AI Copilot** — an opt-in, EU-hosted cloud assistant for natural-language analysis of individual alerts. The two are independent; see the *AI Copilot* page for details.
 
 ---
 

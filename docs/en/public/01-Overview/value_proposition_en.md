@@ -3,7 +3,7 @@
 Nyroxis delivers a new category of personal cybersecurity:
 **enterprise-grade visibility and detection, without enterprise complexity.**
 
-Unlike traditional antivirus tools, Nyroxis provides ongoing situational awareness with a multi-layer detection engine, forensic-grade evidence, and local AI analysis — all without sending a single byte to the cloud.
+Unlike traditional antivirus tools, Nyroxis provides ongoing situational awareness with a multi-layer detection engine, forensic-grade evidence, and local AI analysis — all without sending your security event data to the cloud.
 
 ## Why Nyroxis Is Different
 
@@ -26,18 +26,18 @@ Nyroxis is designed specifically for the middle ground:
 The rule library grows continuously, and security professionals can add their own custom rules without modifying the core system.
 
 ### ✔ Forensic-Grade Evidence
-All events are encrypted, timestamped, and stored in tamper-resistant hash-chained blocks — suitable for legal and regulatory proceedings.
+All events are encrypted, timestamped, and stored in tamper-resistant hash-chained blocks — forensic-grade and suitable for security investigation.
 
 ### ✔ Full Local Encryption
 All logs and events are encrypted at rest (AES-256) and stored locally.
-No cloud storage. No third-party access. Ever.
+No cloud storage of your event data, and no third-party access to it. (The optional AI Copilot is opt-in and off by default.)
 
 ### ✔ Local AI/ML Intelligence
 Custom Isolation Forest implementation — no external ML library, no cloud inference.
 Anomaly detection with contributing feature breakdown, Z-Score classification, and spike detection.
 
 ### ✔ Platform Resilience
-Nyroxis System Guardian monitors all services every 3 seconds, manages backups, validates the HWID-based license offline, and ensures the platform cannot be silently disabled.
+Nyroxis System Guardian monitors all services continuously, manages backups, validates the HWID-based license offline, and ensures the platform cannot be silently disabled.
 
 ### ✔ Simple for Non-Experts, Powerful for Professionals
 Non-technical users get clear severity indicators and one-click rule loading.

@@ -63,7 +63,7 @@ Ergebnisse der 2-Regel-Kettenerkennungsschicht:
 Strukturierte, exportierbare Dokumentation:
 - Konfigurierbare Zeitfenster
 - PDF- und CSV-Export
-- Geeignet für interne Überprüfung, behördliche Einreichung oder rechtliche Verfahren
+- Geeignet für interne Überprüfung oder Sicherheitsuntersuchung
 
 ### 7. KI / ML-Analyse
 Zugang zur lokalen Machine-Learning-Engine:

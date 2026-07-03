@@ -48,7 +48,7 @@ The detection and correlation engine — the analytical core of the platform.
 The platform guardian — runs silently as a Windows system tray application.
 
 ### Responsibilities
-- Monitors Nyroxis Agent and Nyroxis Intelligence every 3 seconds
+- Monitors Nyroxis Agent and Nyroxis Intelligence continuously
 - Detects unexpected service stops and takes corrective action
 - Manages scheduled and on-demand database backups
 - Validates HWID-based license offline (AES-GCM + HMAC verification)

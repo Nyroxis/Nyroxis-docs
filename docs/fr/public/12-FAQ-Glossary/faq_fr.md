@@ -9,7 +9,10 @@ Nyroxis est un SIEM personnel endpoint — une plateforme de cybersécurité lé
 Les dirigeants, les cadres supérieurs, les juges, les avocats, les médecins, les journalistes, les administrateurs SOC, les familles, les contractants indépendants et les professionnels de la sécurité — toute personne dont l'appareil personnel est un vecteur d'attaque potentiel.
 
 **Nyroxis est-il entièrement hors ligne ?**
-Oui. Aucun cloud, aucune télémétrie, aucune transmission de données d'aucune sorte. Toute la surveillance, la détection, l'analyse IA/ML et la validation de licence s'effectuent entièrement sur votre appareil.
+Le cœur de la plateforme est entièrement hors ligne : la collecte d'événements, la détection, la corrélation, l'analyse de chaînes, le moteur IA/ML local et la validation de licence s'effectuent tous entièrement sur votre appareil, sans télémétrie. La seule exception optionnelle est l'**AI Copilot** — une fonctionnalité cloud hébergée dans l'UE, sur activation, désactivée par défaut, qui n'envoie de données que lorsque vous analysez explicitement une alerte précise. (L'activation de licence et la vérification des mises à jour contactent aussi les serveurs Nyroxis, mais n'échangent que des informations de licence/version, pas de données d'événements.)
+
+**Qu'est-ce que l'AI Copilot ?**
+Une fonctionnalité cloud optionnelle, sur activation, qui fournit une explication en langage naturel d'une alerte précise. Elle est distincte du moteur IA/ML local et désactivée par défaut. Lorsqu'elle est activée et déclenchée sur une alerte, elle envoie les métadonnées de cette alerte, l'IP source, votre note et la définition de la règle correspondante au service nyroxis.ai hébergé dans l'UE. Elle n'envoie jamais de journaux d'événements bruts ni de résultats du moteur IA/ML local. Voir la page *AI Copilot*.
 
 **Quelles plateformes Nyroxis prend-il en charge ?**
 Actuellement Windows (v1.0). La prise en charge de macOS et Linux est en développement actif.
@@ -43,10 +46,10 @@ Non. Nyroxis collecte uniquement des événements techniques pertinents pour la 
 Toutes les données sont stockées localement dans une base de données SQLite chiffrée en AES-256 sur votre appareil. Elles ne quittent jamais votre machine.
 
 **Les journaux peuvent-ils être exportés ?**
-Oui — depuis le Dashboard, vous pouvez exporter les résultats au format PDF ou CSV pour les rapports ou les procédures judiciaires.
+Oui — depuis le Dashboard, vous pouvez exporter les résultats au format PDF ou CSV pour les rapports ou l'investigation de sécurité.
 
 **Le moteur IA/ML est-il local ?**
-À 100 % local. L'algorithme Isolation Forest est implémenté en Rust sans bibliothèque ML externe. Aucune donnée comportementale n'est jamais envoyée à un serveur.
+Le moteur IA/ML local est à 100 % local. L'algorithme Isolation Forest est implémenté en Rust sans bibliothèque ML externe, et aucune donnée comportementale n'est envoyée à un serveur. (Ceci est distinct de la fonctionnalité cloud optionnelle AI Copilot — voir ci-dessus.)
 
 **Puis-je réinitialiser mes données ?**
 Oui. Depuis le Dashboard, vous pouvez réinitialiser les journaux d'événements, les résultats de détection, la référence comportementale IA et toutes les métadonnées à tout moment.
@@ -75,10 +78,10 @@ Nyroxis System Guardian arrête automatiquement Nyroxis Agent et Nyroxis Intelli
 - Nyroxis Dashboard : ~32 Mo de RAM lorsqu'ouvert
 
 **Qu'est-ce que Nyroxis System Guardian ?**
-Une application silencieuse dans la barre d'état système qui surveille tous les services de la plateforme toutes les 3 secondes, gère les sauvegardes, valide la licence basée sur le HWID hors ligne et vérifie les mises à jour. Il arrête automatiquement les services si la licence expire.
+Une application silencieuse dans la barre d'état système qui surveille tous les services de la plateforme en continu, gère les sauvegardes, valide la licence basée sur le HWID hors ligne et vérifie les mises à jour. Il arrête automatiquement les services si la licence expire.
 
 **Avec quelle technologie Nyroxis est-il construit ?**
-Les services principaux sont construits en Rust. Le Dashboard utilise Tauri + WebView. La base de données locale est SQLite. Le chiffrement utilise AES-256, les signatures Ed25519 et le hachage SHA-256. Le moteur IA/ML est une implémentation personnalisée de Isolation Forest en Rust sans bibliothèque ML externe.
+Les services principaux sont construits en Rust. Le Dashboard utilise Tauri + WebView. La base de données locale est SQLite. Les données d'événements sont chiffrées au repos avec AES-256, et l'intégrité des événements est protégée par une chaîne de hachage. Le moteur IA/ML est une implémentation personnalisée d'Isolation Forest en Rust sans bibliothèque ML externe.
 
 **Nyroxis fonctionne-t-il dans des environnements air-gap ?**
 Oui. Les fonctionnalités complètes ne nécessitent aucune connectivité Internet — la surveillance, la détection, l'analyse IA/ML et la validation de licence fonctionnent toutes entièrement hors ligne.

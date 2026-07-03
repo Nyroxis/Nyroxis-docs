@@ -23,7 +23,7 @@ Nyroxis bridges this gap by offering a structured, intelligent, and offline-capa
 Nyroxis focuses on four core principles:
 - **Local-first security** — all logs and analysis remain on the device
 - **Multi-layer detection** — 27 detection rules, 12 correlation rules, 2 chain rules, and local AI
-- **Forensic readiness** — tamper-resistant, court-admissible encrypted evidence
+- **Forensic readiness** — tamper-resistant, forensic-grade encrypted evidence
 - **Human-friendly visibility** — clear dashboards and explanations for any user
 
 The result is a system that brings enterprise-grade awareness and detection into a form suitable for families, professionals, executives, and cybersecurity practitioners.

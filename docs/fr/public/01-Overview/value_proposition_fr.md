@@ -37,7 +37,7 @@ Implémentation personnalisée d'Isolation Forest — aucune bibliothèque ML ex
 Détection d'anomalies avec décomposition des caractéristiques contributives, classification Z-Score et détection de pics.
 
 ### ✔ Résilience de la plateforme
-Nyroxis System Guardian surveille tous les services toutes les 3 secondes, gère les sauvegardes, valide la licence basée sur le HWID hors ligne et garantit que la plateforme ne peut pas être désactivée silencieusement.
+Nyroxis System Guardian surveille tous les services en continu, gère les sauvegardes, valide la licence basée sur le HWID hors ligne et garantit que la plateforme ne peut pas être désactivée silencieusement.
 
 ### ✔ Simple pour les non-experts, puissant pour les professionnels
 Les utilisateurs non techniques bénéficient d'indicateurs de gravité clairs et d'un chargement de règles en un clic.

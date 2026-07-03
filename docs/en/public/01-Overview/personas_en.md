@@ -22,7 +22,7 @@ Nyroxis gives them local, silent visibility into suspicious activity without rel
 
 Professionals in sensitive roles need:
 - Strong privacy — no cloud transmission of case-related activity
-- Tamper-resistant event logging for potential legal proceedings
+- Tamper-resistant event logging for incident investigation
 - Early detection of surveillance or compromise attempts
 
 Nyroxis helps protect devices that store legal documents, case files, contracts, and confidential communications — with forensic-grade evidence always ready.

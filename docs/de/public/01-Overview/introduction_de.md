@@ -23,7 +23,7 @@ Nyroxis überbrückt diese Lücke, indem es eine strukturierte, intelligente und
 Nyroxis konzentriert sich auf vier Kernprinzipien:
 - **Local-first-Sicherheit** — alle Protokolle und Analysen verbleiben auf dem Gerät
 - **Mehrschichtige Erkennung** — 27 Erkennungsregeln, 12 Korrelationsregeln, 2 Kettenregeln und lokale KI
-- **Forensische Bereitschaft** — manipulationsresistente, vor Gericht verwertbare verschlüsselte Beweise
+- **Forensische Bereitschaft** — manipulationsresistente, forensische verschlüsselte Beweise
 - **Benutzerfreundliche Sichtbarkeit** — übersichtliche Dashboards und Erklärungen für jeden Nutzer
 
 Das Ergebnis ist ein System, das unternehmensweites Bewusstsein und Erkennung in eine Form bringt, die für Familien, Fachleute, Führungskräfte und Cybersicherheitspraktiker geeignet ist.

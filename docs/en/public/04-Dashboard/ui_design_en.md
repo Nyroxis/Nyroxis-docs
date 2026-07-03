@@ -38,7 +38,7 @@ The forensic core of the dashboard:
 - Search across all event fields: source, channel, severity, content
 - Filter by time range, severity, source, and channel
 - Forensic inspection of individual events with full payload detail
-- Export to CSV for legal documentation
+- Export to CSV for documentation
 
 ### 3. Detection
 All findings from Nyroxis Intelligence's 27-rule detection layer:
@@ -63,7 +63,7 @@ Findings from the 2-rule chain detection layer:
 Structured, exportable documentation:
 - Configurable time windows
 - PDF and CSV export
-- Suitable for internal review, regulatory submission, or legal proceedings
+- Suitable for internal review, or security investigation
 
 ### 7. AI / ML Analysis
 Access to the local machine learning engine:

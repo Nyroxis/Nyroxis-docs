@@ -101,7 +101,7 @@ All storage is:
 - Local-only on the user's device
 - Fully offline
 - AES-256 encrypted
-- Zero cloud upload — ever
+- No cloud upload of security event data
 
 Your security data stays on your machine — always.
 
